@@ -1,0 +1,75 @@
+/**
+ * Base
+ */
+
+/* Imports */
+
+@use "sass:color";
+@use "../config/mixins" as m;
+@use "@alanizcreative/formation/src/base/mixins" as mix;
+@use "@alanizcreative/formation/src/utils/functions" as func;
+@use "@alanizcreative/formation/src/utils/mixins" as mixi;
+
+/* Root */
+
+:root {
+  @include mix.set-root;
+  @include m.set-text;
+
+  --text-color: #{rgba(func.get-color("foreground-base"), 0.85)};
+  --heading-color: var(--foreground-base);
+  --link-color: var(--foreground-base);
+}
+
+html {
+  scroll-behavior: smooth;
+
+  @include mixi.fluid-size(
+    --logo-width,
+    func.calc-rem(110px) func.calc-rem(180px),
+    "s" "l"
+  );
+
+  @include mixi.fluid-size(
+    --logo-height,
+    func.calc-rem(51px) func.calc-rem(84px),
+    "s" "l"
+  );
+}
+
+html,
+body {
+  @extend %u-font-weight-normal;
+  @extend %u-font-family-primary;
+
+  color: var(--text-color);
+  background: var(--foreground-base);
+  min-height: 100vh;
+}
+
+main {
+  @extend %u-overflow-x-hidden;
+}
+
+a {
+  color: var(--link-color);
+}
+
+p {
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+blockquote {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

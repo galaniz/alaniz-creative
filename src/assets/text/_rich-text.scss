@@ -1,0 +1,15 @@
+/**
+ * Text - rich text
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/src/utils/mixins" as mix;
+
+/* Styles */
+
+.t-rich-text {
+  a[data-button] {
+    margin-top: var(--m);
+  }
+}

@@ -1,0 +1,239 @@
+/**
+ * Config
+ */
+
+/* Vertical padding */
+
+$padding-vertical: (
+  "3xs",
+  "2xs",
+  "xs",
+  "m",
+  "l",
+  "xl",
+  "2xl",
+  "3xl",
+  "4xl",
+);
+
+/* Gaps */
+
+$gaps: (
+  "3xs",
+  "2xs",
+  "xs",
+  "m",
+  "l",
+  "xl",
+);
+
+/* Config variables */
+
+@use "@alanizcreative/formation/src/config" with (
+
+  /* Colors */
+
+  $colors: (
+    "foreground": (
+      "base": #222222,
+    ),
+    "background": (
+      "light": #ffffff,
+    ),
+    "negative": (
+      "light": #e491a0,
+      "dark": #9c263c,
+    ),
+    "positive": (
+      "light": #6ac28d,
+      "dark": #1d5634,
+    ),
+  ),
+
+  $text-colors: (
+    "foreground-base",
+    "background-light",
+  ),
+
+  $background-colors: (
+    "foreground-base",
+    "background-light",
+  ),
+
+  /* Fonts */
+
+  $font-families: (
+    "primary": (
+      "Larsseit",
+      Helvetica,
+      Arial,
+      sans-serif,
+    ),
+  ),
+
+  $font-weights: (
+    "normal": 400,
+    "medium": 500,
+    "bold": 700,
+  ),
+
+  /* Breakpoints */
+
+  $breakpoints: (
+    "0": 0px,
+    "xs": 300px,
+    "s": 600px,
+    "m": 900px,
+    "l": 1200px,
+  ),
+
+  /* Spacing */
+
+  $spacing: (
+    "3xs": 10px,
+    "2xs": 15px,
+    "xs": 20px,
+    "s": 25px,
+    "m": 30px,
+    "l": 50px,
+    "xl": 100px,
+    "2xl": 150px,
+    "3xl": 200px,
+    "4xl": 300px,
+  ),
+
+  /* Padding */
+
+  $padding-top: $padding-vertical,
+  $padding-bottom: $padding-vertical,
+  $padding-vertical-breakpoints: ("m"),
+
+  /* Margin */
+
+  $margin-bottom: $gaps,
+  $margin-bottom-all: $gaps,
+  $margin-vertical-breakpoints: ("m"),
+
+  /* Aspect ratios */
+
+  $aspect-ratio-padding: (
+    "62": 62.5%,
+  ),
+
+  /* Widths */
+
+  $width-percentage-breakpoints: (
+    "s",
+    "m",
+    "l",
+  ),
+
+  $widths: ("m", "l"),
+  $width-breakpoints: ("s", "m"),
+
+  /* Heights */
+
+  $heights: ("m", "l"),
+  $height-breakpoints: ("s", "m"),
+
+  /* Gaps */
+
+  $gaps: $gaps,
+  $gap-breakpoints: ("s", "m", "l"),
+
+  /* Containers */
+
+  $container-padding: 20px,
+  $containers: (
+    "default": 1340px,
+    "xl": 1840px,
+    "l": 1440px,
+    "m": 1240px,
+    "s": 1090px,
+    "xs": 840px,
+  ),
+
+  /* Nav icon */
+
+  $nav: (
+    "icon": (
+      "width": 40px,
+      "line-width": 1px,
+      "margin": 10px,
+    )
+  ),
+
+  /* Borders */
+
+  $borders: (
+    "sides": ("all"),
+    "colors": (
+      "current": "currentcolor"
+    ),
+    "widths": (
+      "default": 0.0625rem,
+    ),
+  ),
+
+  $border-radius: (
+    "s": 10px,
+    "m": 15px,
+    "l": 50px,
+  ),
+
+  /* Outline */
+
+  $outline: (
+    "width": 0.3rem,
+    "color": "var(--foreground-base)",
+    "offset": 0.3rem,
+  ),
+
+  /* Placeholders */
+
+  $placeholders: (
+    (
+      "name": "line-height-165-pc",
+      "prop": (
+        line-height: 1.65
+      ),
+    ),
+    (
+      "name": "line-height-150-pc",
+      "prop": (
+        line-height: 1.5
+      ),
+    ),
+    (
+      "name": "line-height-130-pc",
+      "prop": (
+        line-height: 1.3
+      ),
+    ),
+    (
+      "name": "line-height-120-pc",
+      "prop": (
+        line-height: 1.2
+      ),
+    ),
+    (
+      "name": "letter-spacing-1-pc",
+      "prop": (
+        letter-spacing: 0.01em
+      ),
+    ),
+    (
+      "name": "letter-spacing-2-pc",
+      "prop": (
+        letter-spacing: 0.02em
+      ),
+    ),
+    (
+      "name": "letter-spacing-3-pc",
+      "prop": (
+        letter-spacing: 0.03em
+      ),
+    ),
+  ),
+
+);

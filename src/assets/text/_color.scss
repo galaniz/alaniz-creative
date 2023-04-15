@@ -1,0 +1,28 @@
+/**
+ * Text - color
+ */
+
+/* Imports */
+
+@use "sass:color";
+@use "@alanizcreative/formation/src/text/color" as c;
+@use "@alanizcreative/formation/src/utils/functions" as func;
+
+/* Styles */
+
+.t-light {
+  --outline-color: var(--background-light);
+  --heading-color: var(--background-light);
+  --link-color: var(--background-light);
+  --text-color: #{rgba(func.get-color("background-light"), 0.75)};
+
+  color: var(--text-color);
+}
+
+.t-link-current {
+  --link-color: currentcolor;
+}
+
+.t-current {
+  color: currentcolor;
+}
