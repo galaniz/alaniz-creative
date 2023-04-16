@@ -3,3 +3,4 @@ package-lock.json
 site/
 .DS_Store
 .cache
+.env
