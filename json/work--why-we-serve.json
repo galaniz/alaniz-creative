@@ -1,101 +1,102 @@
 {
   "contentType": "work",
   "title": "Why We Serve",
+  "slug": "why-we-serve",
   "metaDescription": "",
   "metaImage": "",
   "heroImage": "",
   "content": [
     {
-      "component": "container",
+      "renderType": "container",
       "maxWidth": "xs",
       "tag": "section",
       "content": [
         {
-          "component": "rich-text",
+          "renderType": "rich-text",
           "tag": "h2",
           "content": "Overview"
         },
         {
-          "component": "container",
+          "renderType": "container",
           "layout": "row",
           "gap": "m",
           "gapLarge": "l",
           "tag": "dl",
           "content": [
             {
-              "component": "rich-text",
+              "renderType": "rich-text",
               "tag": "div",
               "content": [
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "dt",
                   "content": "Year"
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "dd",
                   "content": "2020"
                 }
               ]
             },
             {
-              "component": "rich-text",
+              "renderType": "rich-text",
               "tag": "div",
               "content": [
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "dt",
                   "content": "Agency"
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "dd",
                   "content": "Kalamuna"
                 }
               ]
             },
             {
-              "component": "rich-text",
+              "renderType": "rich-text",
               "tag": "div",
               "content": [
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "dt",
                   "content": "Team"
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "dd",
                   "content": "Project Manager"
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "dd",
                   "content": "2 UX/UI Designers"
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "dd",
                   "content": "Front-end Developer"
                 }
               ]
             },
             {
-              "component": "rich-text",
+              "renderType": "rich-text",
               "tag": "div",
               "content": [
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "dt",
                   "content": "Role"
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "dd",
                   "content": "UI design"
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "dd",
                   "content": "Front-end development"
                 }
@@ -104,7 +105,7 @@
           ]
         },
         {
-          "component": "button",
+          "renderType": "button",
           "text": "View Why We Serve",
           "externalLink": "https://americanindian.si.edu/why-we-serve/",
           "type": "main"
@@ -112,70 +113,70 @@
       ]
     },
     {
-      "component": "container",
+      "renderType": "container",
       "maxWidth": "xs",
       "tag": "section",
       "content": [
         {
-          "component": "rich-text",
+          "renderType": "rich-text",
           "tag": "h2",
           "content": "What is Why We Serve?"
         },
         {
-          "component": "rich-text",
+          "renderType": "rich-text",
           "tag": "p",
           "content": "Why We Serve is a physical exhibition at the National Museum of the American Indian (NMAI) and also a book, video and, as a result of this project, a website. It honours the generations of Native Americans who have served in the armed forces of the United States, often in extraordinary numbers, since the American Revolution and grapples with the many reasons why. It also commemorates the National Native American Veterans Memorial (NNAVM) opening November 11, 2020."
         }
       ]
     },
     {
-      "component": "container",
+      "renderType": "container",
       "tag": "section",
       "content": [
         {
-          "component": "container",
+          "renderType": "container",
           "maxWidth": "xs",
           "content": [
             {
-              "component": "rich-text",
+              "renderType": "rich-text",
               "tag": "h2",
               "content": "The Project"
             },
             {
-              "component": "rich-text",
+              "renderType": "rich-text",
               "tag": "p",
               "content": "Design and develop a static site that translates the physical Why We Serve exhibition into an accessible, responsive, engaging, educational and culturally sensitive digital experience in time for Veteran's Day."
             },
             {
-              "component": "rich-text",
+              "renderType": "rich-text",
               "tag": "h3",
               "content": "The Brief"
             },
             {
-              "component": "rich-text",
+              "renderType": "rich-text",
               "tag": "h4",
               "content": "Context"
             },
             {
-              "component": "rich-text",
+              "renderType": "rich-text",
               "tag": "p",
               "content": "Why We Serve was originally designed as a 16-panel gallery exhibition but in the midst of a global pandemic an in-person exhibition was increasingly uncertain. The NMAI shifted gears and set their sights on transforming the physical exhibition into an online experience for a global audience, specifically looking to reach native communities, educators, veterans and the general public. As a result of this shift, the timeline was very condensed. We had less than two months for discovery, design and development."
             },
             {
-              "component": "rich-text",
+              "renderType": "rich-text",
               "tag": "p",
               "content": "It was also important to the NMAI that the site elevate not replicate the physical exhibition. Their vision was for the site to go beyond what is offered in the physical exhibition, bring veterans' stories to the fore to show why the NNAVM is so vital, and remind audiences that native cultures still thrive today and are not a monolith."
             }
           ]
         },
         {
-          "component": "container",
+          "renderType": "container",
           "paddingTop": "l",
           "paddingTopLarge": "xl",
           "tag": "figure",
           "content": [
             {
-              "component": "container",
+              "renderType": "container",
               "maxWidth": "s",
               "paddingTop": "m",
               "paddingTopLarge": "l",
@@ -183,26 +184,26 @@
               "paddingBottomLarge": "l",
               "content": [
                 {
-                  "component": "container",
+                  "renderType": "container",
                   "layout": "row",
                   "justify": "center",
                   "gap": "m",
                   "gapLarge": "l",
                   "content": [
                     {
-                      "component": "image",
+                      "renderType": "image",
                       "src": "",
                       "alt": "",
                       "border": true
                     },
                     {
-                      "component": "image",
+                      "renderType": "image",
                       "src": "",
                       "alt": "",
                       "border": true
                     },
                     {
-                      "component": "image",
+                      "renderType": "image",
                       "src": "",
                       "alt": "",
                       "border": true
@@ -210,7 +211,7 @@
                   ]
                 },
                 {
-                  "component": "container",
+                  "renderType": "container",
                   "tag": "figcaption",
                   "maxWidth": "xs",
                   "content": "Two-dimensional mockups of panels from the physical exhibition."
@@ -220,64 +221,64 @@
           ]
         },
         {
-          "component": "container",
+          "renderType": "container",
           "maxWidth": "xs",
           "content": [
             {
-              "component": "rich-text",
+              "renderType": "rich-text",
               "tag": "h4",
               "content": "Requirements"
             },
             {
-              "component": "rich-text",
+              "renderType": "rich-text",
               "tag": "ul",
               "content": [
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "Site must be static and responsive."
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "Image manipulation disallowed outside of minimal cropping."
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "Image gallery must contain all images and credits from the site. Users should be able to enlarge each image view in a carousel."
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "Topics (translation of panels from physical exhibit) must be easy to access and include main text, 3-4 images, quotes, expanded image captions and image credits."
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "An 8-10 minute video designed to look at the idea of service must be included on the site."
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "Site must pass Smithsonian security and accessibility scans."
                 }
               ]
             },
             {
-              "component": "rich-text",
+              "renderType": "rich-text",
               "tag": "h4",
               "content": "Guiding Keywords"
             },
             {
-              "component": "rich-text",
+              "renderType": "rich-text",
               "tag": "p",
               "content": "From this brief and quick interviews with stakeholders these keywords were captured by the two lead UX designers to use as our focus throughout all phases of the project:"
             }
           ]
         },
         {
-          "component": "container",
+          "renderType": "container",
           "maxWidth": "s",
           "paddingTop": "l",
           "paddingTopLarge": "xl",
@@ -285,7 +286,7 @@
           "paddingBottomLarge": "xl",
           "content": [
             {
-              "component": "container",
+              "renderType": "container",
               "layout": "row",
               "gap": "m",
               "gapLarge": "l",
@@ -298,43 +299,43 @@
               "paddingBottomLarge": "xl",
               "content": [
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "h2-d",
                   "content": "Elegant"
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "h2-d",
                   "content": "Streamlined"
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "h2-d",
                   "content": "User-friendly"
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "h2-r",
                   "content": "Clean"
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "h2-r",
                   "content": "Open"
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "h2-r",
                   "content": "Innovative"
                 },
                 {
-                  "component": "rich-text",
+                  "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "h2-r",
                   "content": "Accessible"
@@ -346,22 +347,22 @@
       ]
     },
     {
-      "component": "container",
+      "renderType": "container",
       "maxWidth": "xs",
       "tag": "section",
       "content": [
         {
-          "component": "rich-text",
+          "renderType": "rich-text",
           "tag": "h2",
           "content": "The Process"
         },
         {
-          "component": "rich-text",
+          "renderType": "rich-text",
           "tag": "h3",
           "content": "Content"
         },
         {
-          "component": "rich-text",
+          "renderType": "rich-text",
           "tag": "p",
           "content": "Given the tight timeline we had to move through all phases of the project quickly. After a short discovery phase we focused our attention on content. The two lead UX designers got to work on a content map organizing content from the physical exhibition into pages, content pieces and navigation structures suited for digital consumption."
         }

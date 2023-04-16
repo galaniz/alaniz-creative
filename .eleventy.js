@@ -28,9 +28,9 @@ module.exports = (config) => {
 
   /* Process scss and js files */
 
-  config.on('afterBuild', () => {
+  config.on('eleventy.after', () => {
     const entryPoints = {}
-    const namespace = 'ok'
+    const namespace = 'ac'
 
     entryPoints[`js/${namespace}`] = 'src/assets/index.js'
     entryPoints[`css/${namespace}`] = 'src/assets/index.scss'
@@ -65,8 +65,6 @@ module.exports = (config) => {
     })
   })
 
-  config.addWatchTarget('./src/assets/')
-
   /* Minify HTML */
 
   config.addTransform('htmlmin', (content, outputPath) => {
@@ -81,6 +79,14 @@ module.exports = (config) => {
     }
 
     return content
+  })
+
+  /* Delete render from cache on watch */
+
+  config.on('eleventy.beforeWatch', async () => {
+    const renderPath = './src/render/index.js'
+
+    delete require.cache[require.resolve(renderPath)]
   })
 
   /* Copy static asset folders */

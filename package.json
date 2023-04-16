@@ -1,0 +1,36 @@
+{
+  "name": "alaniz-creative",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.njk",
+  "engines": {
+    "node": ">=19"
+  },
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "debug": "DEBUG=* npx @11ty/eleventy"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-fetch": "^4.0.0",
+    "@alanizcreative/formation": "^4.1.1",
+    "autoprefixer": "^10.4.14",
+    "dotenv": "^16.0.3",
+    "esbuild": "^0.17.16",
+    "esbuild-sass-plugin": "^2.8.0",
+    "html-minifier": "^4.0.0",
+    "normalize.css": "^8.0.1",
+    "postcss": "^8.4.21",
+    "postcss-preset-env": "^8.3.1",
+    "standard": "^17.0.0",
+    "stylelint": "^15.4.0",
+    "stylelint-config-standard-scss": "^8.0.0",
+    "uuid": "^9.0.0"
+  },
+  "browserslist": [
+    "edge 16"
+  ]
+}
