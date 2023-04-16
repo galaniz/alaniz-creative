@@ -54,11 +54,13 @@ const layout = ({
 
   /* No index */
 
-  let noIndex = meta?.noIndex ? meta.noIndex : false
+  /*let noIndex = meta?.noIndex ? meta.noIndex : false
 
   if (envData.dev) {
     noIndex = true
-  }
+  }*/
+
+  const noIndex = true
 
   /* Preload font links */
 
