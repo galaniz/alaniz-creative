@@ -5,7 +5,10 @@
 /**
  * Function - recursively set internal props from outer data
  *
- * @return {object}
+ * @param {object} data
+ * @param {object} currentData
+ * @param {array} props
+ * @return {void}
  */
 
 const resolveInternalLinks = (data = {}, currentData = {}, props = ['internalLink']) => {

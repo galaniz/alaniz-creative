@@ -4,7 +4,7 @@
   "slug": "why-we-serve",
   "metaDescription": "",
   "metaImage": "",
-  "heroImage": "",
+  "heroImage": "why-we-serve/hero",
   "content": [
     {
       "renderType": "container",
@@ -192,19 +192,19 @@
                   "content": [
                     {
                       "renderType": "image",
-                      "src": "",
+                      "src": "why-we-serve/panel-1",
                       "alt": "",
                       "border": true
                     },
                     {
                       "renderType": "image",
-                      "src": "",
+                      "src": "why-we-serve/panel-2",
                       "alt": "",
                       "border": true
                     },
                     {
                       "renderType": "image",
-                      "src": "",
+                      "src": "why-we-serve/panel-3",
                       "alt": "",
                       "border": true
                     }

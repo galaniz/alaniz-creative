@@ -1,6 +1,7 @@
 node_modules/
 package-lock.json
 site/
+src/json/image-data.json
 .DS_Store
 .cache
 .env

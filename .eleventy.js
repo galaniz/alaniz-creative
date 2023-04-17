@@ -12,6 +12,7 @@ const autoprefixer = require('autoprefixer')
 const postcssPresetEnv = require('postcss-preset-env')
 const { sassPlugin } = require('esbuild-sass-plugin')
 const { envData } = require('./src/vars/data')
+const { processImages } = require('./src/utils')
 
 /* Config */
 
@@ -26,9 +27,17 @@ module.exports = (config) => {
     envData.prod = env.ENVIRONMENT === 'production'
   }
 
+  /* Process images */
+
+  config.on('eleventy.before', async ({ runMode }) => {
+    if (runMode === 'build') {
+      await processImages('src/assets/img', 'site/assets/img', 'src/json/image-data.json')
+    }
+  })
+
   /* Process scss and js files */
 
-  config.on('eleventy.after', () => {
+  config.on('eleventy.after', async () => {
     const entryPoints = {}
     const namespace = 'ac'
 
@@ -65,6 +74,14 @@ module.exports = (config) => {
     })
   })
 
+  /* Delete render from cache on watch */
+
+  config.on('eleventy.beforeWatch', async () => {
+    const renderPath = './src/render/index.js'
+
+    delete require.cache[require.resolve(renderPath)]
+  })
+
   /* Minify HTML */
 
   config.addTransform('htmlmin', (content, outputPath) => {
@@ -81,22 +98,10 @@ module.exports = (config) => {
     return content
   })
 
-  /* Delete render from cache on watch */
-
-  config.on('eleventy.beforeWatch', async () => {
-    const renderPath = './src/render/index.js'
-
-    delete require.cache[require.resolve(renderPath)]
-  })
-
   /* Copy static asset folders */
 
   config.addPassthroughCopy({
     'src/assets/fonts': 'assets/fonts'
-  })
-
-  config.addPassthroughCopy({
-    'src/assets/img': 'assets/img'
   })
 
   config.addPassthroughCopy({

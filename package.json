@@ -25,6 +25,7 @@
     "normalize.css": "^8.0.1",
     "postcss": "^8.4.21",
     "postcss-preset-env": "^8.3.1",
+    "sharp": "^0.32.0",
     "standard": "^17.0.0",
     "stylelint": "^15.4.0",
     "stylelint-config-standard-scss": "^8.0.0",

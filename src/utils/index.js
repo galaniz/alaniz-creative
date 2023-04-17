@@ -12,6 +12,7 @@ const getPermalink = require('./get-permalink')
 const getSlug = require('./get-slug')
 const getYear = require('./get-year')
 const resolveInternalLinks = require('./resolve-internal-links')
+const processImages = require('./process-images')
 
 /* Exports */
 
@@ -23,5 +24,6 @@ module.exports = {
   getPermalink,
   getSlug,
   getYear,
-  resolveInternalLinks
+  resolveInternalLinks,
+  processImages
 }
