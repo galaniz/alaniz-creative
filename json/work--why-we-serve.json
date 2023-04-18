@@ -191,22 +191,40 @@
                   "gapLarge": "l",
                   "content": [
                     {
-                      "renderType": "image",
-                      "src": "why-we-serve/panel-1",
-                      "alt": "",
-                      "border": true
+                      "renderType": "column",
+                      "width": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/panel-1",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
                     },
                     {
-                      "renderType": "image",
-                      "src": "why-we-serve/panel-2",
-                      "alt": "",
-                      "border": true
+                      "renderType": "column",
+                      "width": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/panel-2",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
                     },
                     {
-                      "renderType": "image",
-                      "src": "why-we-serve/panel-3",
-                      "alt": "",
-                      "border": true
+                      "renderType": "column",
+                      "width": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/panel-3",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
                     }
                   ]
                 },
@@ -214,7 +232,13 @@
                   "renderType": "container",
                   "tag": "figcaption",
                   "maxWidth": "xs",
-                  "content": "Two-dimensional mockups of panels from the physical exhibition."
+                  "content": [
+                    {
+                      "renderType": "rich-text",
+                      "tag": "p",
+                      "content": "Two-dimensional mockups of panels from the physical exhibition."
+                    }
+                  ]
                 }
               ]
             }

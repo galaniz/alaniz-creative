@@ -4,9 +4,9 @@
 
 /* Imports */
 
-const { writeFile, mkdir } = require('fs')
-const render = require('../src/render')
+const { writeFile, mkdir } = require('node:fs/promises')
 const getLocalDataEleventy = require('../src/utils/get-local-data-eleventy')
+const render = require('../src/render')
 
 /* Get and render json data */
 
@@ -17,21 +17,18 @@ module.exports = async (args = {}) => {
     return render({
       ...args,
       getLocalData: getLocalDataEleventy,
-      onRenderEnd: ({ jsonData, serverlessRoutes = [], redirects = [] }) => {
+      onRenderEnd: async ({ jsonData, serverlessRoutes = [], redirects = [] }) => {
         if (jsonData) {
           const jsonDataKeys = Object.keys(jsonData)
 
           for (let i = 0; i < jsonDataKeys.length; i++) {
             const json = jsonData[jsonDataKeys[i]]
 
-            writeFile(`./src/json/${json.name}`, JSON.stringify(json.data, null, 2), (error) => {
-              if (error) {
-                console.error(`Error writing ${json.name} `, error)
-                return
-              }
+            const jsonFile = await writeFile(`./src/json/${json.name}`, JSON.stringify(json.data))
 
+            if (jsonFile) {
               console.log(`Successfully wrote ${json.name}`)
-            })
+            }
           }
         }
 
@@ -48,21 +45,13 @@ module.exports = async (args = {}) => {
 
             const content = `import reload from '${serverlessPath}src/serverless/reload'; const render = async ({ request, env }) => { return await reload({ request, env }) }; export const onRequestGet = [render];`
 
-            mkdir(`./functions${path}`, { recursive: true }, (error) => {
-              if (error) {
-                console.error(`Error writing ./functions${path} `, error)
-                return
-              }
+            await mkdir(`./functions${path}`, { recursive: true })
 
-              writeFile(`./functions${path}index.js`, content, (err) => {
-                if (err) {
-                  console.error(`Error writing ./functions${path}index.js `, err)
-                  return
-                }
+            const functionsFile = await writeFile(`./functions${path}index.js`, content)
 
-                console.log(`Successfully wrote ./functions${path}index.js`)
-              })
-            })
+            if (functionsFile) {
+              console.log(`Successfully wrote ./functions${path}index.js`)
+            }
           }
         }*/
 
@@ -78,14 +67,11 @@ module.exports = async (args = {}) => {
           })
 
           if (redirectsData) {
-            writeFile('./site/_redirects', redirectsData, (err) => {
-              if (err) {
-                console.error('Error writing ./site/_redirects ', err)
-                return
-              }
+            const redirectsFile = await writeFile('./site/_redirects', redirectsData)
 
+            if (redirectsFile) {
               console.log('Successfully wrote ./site/_redirects')
-            })
+            }
           }
         }*/
       }

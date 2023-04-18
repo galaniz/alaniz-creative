@@ -32,7 +32,7 @@ const _getContent = ({
 
     /* Nested content */
 
-    if (Array.isArray(content)) {
+    if (Array.isArray(con)) {
       const inner = _getContent({
         content: con,
         cardLink,
@@ -78,7 +78,7 @@ const _getContent = ({
  * @return {string}
  */
 
-const richText = (args = {}, parents = []) => {
+const richText = ({ args = {}, parents = [] }) => {
   let {
     tag = 'p',
     content = [],
@@ -103,7 +103,7 @@ const richText = (args = {}, parents = []) => {
   let card = false
 
   if (parents.length) {
-    if (parents[1].renderType === 'card') {
+    /*if (parents[1].renderType === 'card') {
       card = true
     }
 
@@ -117,7 +117,7 @@ const richText = (args = {}, parents = []) => {
       if (!embed) {
         cardLink = getLink(internalLink, externalLink)
       }
-    }
+    }*/
   }
 
   /* Classes */
@@ -148,6 +148,8 @@ const richText = (args = {}, parents = []) => {
       cardLink,
       outerTag: tag
     })
+  } else {
+    output = content
   }
 
   /* Attributes */

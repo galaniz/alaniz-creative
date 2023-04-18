@@ -19,10 +19,19 @@ const slugData = {
     work: {
       slug: 'work',
       title: 'Work',
-      singular: 'Work'
+      singular: 'Work',
+      archiveId: ''
     }
   }
 }
+
+/**
+ * Nav data for json storage
+ *
+ * @type {object}
+ */
+
+const navData = {}
 
 /**
  * Script data for front end
@@ -31,6 +40,41 @@ const slugData = {
  */
 
 const scriptData = {}
+
+/**
+ * Archive data
+ *
+ * @type {object}
+ */
+
+const archiveData = {
+  ids: {}, // Page archive ids by content type
+}
+
+/**
+ * Data to store in json files
+ *
+ * @type {object}
+ */
+
+const jsonFileData = {
+  slugs: {
+    data: '',
+    name: 'slugs.json'
+  },
+  slugParents: {
+    data: '',
+    name: 'slug-parents.json'
+  },
+  archiveIds: {
+    data: '',
+    name: 'archive-ids.json'
+  },
+  navData: {
+    data: '',
+    name: 'nav-data.json'
+  }
+}
 
 /**
  * Env/context data
@@ -43,7 +87,7 @@ const envData = {
   prod: false,
   urls: {
     dev: '/',
-    prod: 'https://alanizcreative.com/'
+    prod: 'https://alaniz-creative.pages.dev/'
   },
   eleventy: {
     cache: false
@@ -57,6 +101,9 @@ const envData = {
 
 module.exports = {
   slugData,
+  navData,
   scriptData,
+  archiveData,
+  jsonFileData,
   envData
 }

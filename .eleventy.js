@@ -11,7 +11,9 @@ const postcss = require('postcss')
 const autoprefixer = require('autoprefixer')
 const postcssPresetEnv = require('postcss-preset-env')
 const { sassPlugin } = require('esbuild-sass-plugin')
-const { envData } = require('./src/vars/data')
+const { writeFile } = require('node:fs/promises')
+const { existsSync } = require('node:fs')
+const { envData, jsonFileData } = require('./src/vars/data')
 const { processImages } = require('./src/utils')
 
 /* Config */
@@ -27,10 +29,26 @@ module.exports = (config) => {
     envData.prod = env.ENVIRONMENT === 'production'
   }
 
-  /* Process images */
+  /* Process images and check/build json files */
 
   config.on('eleventy.before', async ({ runMode }) => {
     if (runMode === 'build') {
+      const jsonFiles = Object.keys(jsonFileData)
+
+      for (const j of jsonFiles) {
+        const path = `./src/json/${jsonFileData[j].name}`
+
+        if (!existsSync(path)) {
+          await writeFile(path, JSON.stringify({}))
+        }
+      }
+
+      const imageDataPath = './src/json/image-data.json'
+
+      if (!existsSync(imageDataPath)) {
+        await writeFile(imageDataPath, JSON.stringify({}))
+      }
+
       await processImages('src/assets/img', 'site/assets/img', 'src/json/image-data.json')
     }
   })

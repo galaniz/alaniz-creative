@@ -59,7 +59,7 @@ const processImages = async (inputDir = '', outputDir = '', savePath = '') => {
   
       const metadata = await sharp(path).metadata()
       const { width, height } = metadata
-      store[base] = { width, height }
+      store[base] = { base, width, height }
   
       let sizes = [200, 400, 600, 800, 1200, 1600, 2000, width]
       sizes = sizes.filter(s => s <= width)

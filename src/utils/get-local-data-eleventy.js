@@ -56,6 +56,7 @@ const getLocalDataEleventy = async (key, params = {}) => {
 
     if (all) {
       const files = await readdir(`./json/`)
+      const imageData = require('../json/image-data.json')
 
       if (files.length) {
         for (let i = 0; i < files.length; i++) {
@@ -79,6 +80,7 @@ const getLocalDataEleventy = async (key, params = {}) => {
         }
 
         resolveInternalLinks(flatData, flatData)
+        resolveInternalLinks(imageData, flatData, ['metaImage', 'heroImage', 'image'])
 
         Object.keys(flatData).forEach((f) => {
           const ff = flatData[f]

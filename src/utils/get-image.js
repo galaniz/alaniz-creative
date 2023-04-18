@@ -9,7 +9,6 @@
  *  @prop {object} data
  *  @prop {string} classes
  *  @prop {string} attr
- *  @prop {number} quality
  *  @prop {string|integer} width
  *  @prop {string|integer} height
  *  @prop {boolean} returnAspectRatio
@@ -21,7 +20,6 @@ const getImage = ({
   data,
   classes = '',
   attr = '',
-  quality = 75,
   width = 'auto',
   height = 'auto',
   returnAspectRatio = false,
@@ -34,26 +32,15 @@ const getImage = ({
     return ''
   }
 
-  const { file, description = '' } = data
-
-  /* File required */
-
-  if (!file) {
-    return ''
-  }
-
-  const { url = '', details } = file
-
-  /* Details required */
-
-  if (!details) {
-    return ''
-  }
+  const {
+    base,
+    alt = "",
+    width: naturalWidth,
+    height: naturalHeight
+  } = data
 
   /* Dimensions */
 
-  const naturalWidth = details.image.width
-  const naturalHeight = details.image.height
   const aspectRatio = naturalHeight / naturalWidth
   const aspectRatioReverse = naturalWidth / naturalHeight
 
@@ -72,7 +59,7 @@ const getImage = ({
 
   /* Src and sizes attributes */
 
-  const src = `https:${url}?fm=webp&q=${quality}&w=${w}&h=${h}`
+  const src = `/assets/img/${base}.webp`
   const sizes = `(min-width: ${w / 16}rem) ${w / 16}rem, 100vw`
 
   let srcset = [200, 400, 600, 800, 1200, 1600, 2000]
@@ -84,13 +71,13 @@ const getImage = ({
   }
 
   srcset = srcset.map(s => {
-    return `https:${url}?fm=webp&q=${quality}&w=${s}&h=${Math.round(s * aspectRatio)} ${s}w`
+    return `/assets/img/${base}${s !== naturalWidth ? `@${s}` : ''}.webp ${s}w`
   })
 
   /* Output */
 
   const output = `
-    <img${classes ? ` class="${classes}"` : ''} alt="${description}" src="${src}" srcset="${srcset}" sizes="${sizes}" width="${w}" height="${h}"${attr ? ` ${attr}` : ''}${lazy ? ' loading="lazy"' : ''}>
+    <img${classes ? ` class="${classes}"` : ''} alt="${alt}" src="${src}" srcset="${srcset}" sizes="${sizes}" width="${w}" height="${h}"${attr ? ` ${attr}` : ''}${lazy ? ' loading="lazy"' : ''}>
   `
 
   if (returnAspectRatio) {

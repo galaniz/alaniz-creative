@@ -57,7 +57,7 @@ const container = ({ args = {} }) => {
   /* Max width */
 
   if (maxWidth) {
-    classes.push(`l-${maxWidth}`)
+    classes.push(`l-container${maxWidth !== 'default' ? `-${maxWidth}` : ''}`)
   }
 
   /* Flex */

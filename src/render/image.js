@@ -22,7 +22,8 @@ const richText = require('./rich-text')
 const image = ({ args = {}, parents = [] }) => {
   const {
     image = {},
-    aspectRatio = '1:1',
+    alt = "",
+    aspectRatio = '',
     caption = {}
   } = args
 
@@ -48,11 +49,11 @@ const image = ({ args = {}, parents = [] }) => {
     }
 
     imageOutput = getImage({
-      data: image,
+      data: {...image, alt},
       classes: imageClasses.join(' '),
       attr: card ? 'data-scale' : '',
       returnAspectRatio: true,
-      max: card ? 800 : 1200
+      max: card ? 800 : 1600
     })
 
     let classes = 'l-relative l-overflow-hidden'

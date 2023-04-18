@@ -6,17 +6,29 @@
 
 const { enumNamespace } = require('../vars/enums')
 const { getAllLocalData, getSlug, getPermalink } = require('../utils')
-const { slugData, envData, scriptData } = require('../vars/data')
+const { slugData, envData, navData, archiveData, scriptData, jsonFileData } = require('../vars/data')
+const slugParentsJson = require('../json/slug-parents.json')
+const archiveIdsJson = require('../json/archive-ids.json')
+const navDataJson = require('../json/nav-data.json')
 const layout = require('./layout')
 const header = require('./header')
 const footer = require('./footer')
 const button = require('./button')
 const container = require('./container')
+const column = require('./column')
 const richText = require('./rich-text')
 const image = require('./image')
 const navigations = require('./navigations')
 const hero = require('./hero')
 const httpError = require('./http-error')
+
+/**
+ * Store slug data for json
+ *
+ * @type {object}
+ */
+
+const _slugs = {}
 
 /**
  * Function - recurse and output nested content
@@ -71,6 +83,9 @@ const _renderContent = async ({
       }
 
       switch (renderType) {
+        case 'column':
+          renderObj = column({ args: props, parents })
+          break
         case 'container':
           renderObj = container({ args: props, parents })
           break
@@ -192,7 +207,6 @@ const _renderItem = async ({
   }
 
   const s = getSlug(slugArgs)
-
   const slug = s.slug
   const permalink = getPermalink(s.slug)
 
@@ -206,6 +220,13 @@ const _renderItem = async ({
     })
   )
 
+  /* Add to data by slugs store */
+
+  _slugs[slug ? `/${slug}/` : '/'] = {
+    contentType,
+    id
+  }
+  
   /* Check if index */
 
   const index = props.slug === 'index'
@@ -215,8 +236,8 @@ const _renderItem = async ({
   /* Navigations */
 
   const navsOutput = navigations({
-    navs,
-    items: navItems,
+    navs: navData.navs,
+    items: navData.items,
     current: permalink,
     title,
     parents: s.parents
@@ -375,8 +396,6 @@ const render = async ({
 
   const allLocalData = await getAllLocalData(serverlessData, getLocalData)
 
-  console.log('ALL', allLocalData)
-
   if (!allLocalData) {
     return [{
       slug: '',
@@ -391,6 +410,11 @@ const render = async ({
     redirects = []
   } = allLocalData
 
+  /* Store navigations and items */
+
+  navData.navs = navs
+  navData.items = navItems
+
   /* Store content data */
 
   const data = []
@@ -403,7 +427,15 @@ const render = async ({
 
   if (!serverlessData) {
     content.page.forEach(item => {
-      let { parent, id } = item
+      let { parent, id, archive } = item
+
+      if (archive) {
+        archiveData.ids[archive] = id
+
+        if (slugData.bases?.[archive]) {
+          slugData.bases[archive].archiveId = id
+        }
+      }
 
       if (parent && id) {
         if (parent.slug && parent.title) {
@@ -416,6 +448,25 @@ const render = async ({
         }
       }
     })
+  } else {
+    if (slugParentsJson) {
+      Object.keys(slugParentsJson).forEach((s) => {
+        slugData.parents[s] = slugParentsJson[s]
+      })
+    }
+
+    if (archiveIdsJson) {
+      Object.keys(archiveIdsJson).forEach((a) => {
+        if (slugData.bases?.[a]) {
+          slugData.bases[a].archiveId = archiveIdsJson[a]
+        }
+      })
+    }
+
+    if (navDataJson) {
+      navData.navs = navDataJson.navs
+      navData.items = navDataJson.items
+    }
   }
 
   /* 404 page */
@@ -462,7 +513,19 @@ const render = async ({
   /* Render end callback */
 
   if (onRenderEnd) {
+    let jsonData = false
+
+    if (!serverlessData) {
+      jsonFileData.slugs.data = _slugs
+      jsonFileData.slugParents.data = slugData.parents
+      jsonFileData.archiveIds.data = archiveData.ids
+      jsonFileData.navData.data = navData
+
+      jsonData = jsonFileData
+    }
+
     onRenderEnd({
+      jsonData,
       serverlessRoutes,
       redirects
     })

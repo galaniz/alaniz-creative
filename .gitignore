@@ -1,6 +1,10 @@
 node_modules/
 package-lock.json
 site/
+src/json/slugs.json
+src/json/slug-parents.json
+src/json/archive-ids.json
+src/json/nav-data.json
 src/json/image-data.json
 .DS_Store
 .cache
