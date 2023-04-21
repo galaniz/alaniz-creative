@@ -225,8 +225,8 @@ class Navigation {
 
       const obj = this._itemsById[id]
 
-      obj.current = externalLink ? false : obj.link === current
-      obj.descendentCurrent = current.includes(obj.link)
+      obj.current = externalLink ? false : obj.internalLink === current
+      obj.descendentCurrent = current.includes(obj.internalLink)
 
       return this._itemsById[id]
     })

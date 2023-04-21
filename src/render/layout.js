@@ -4,6 +4,7 @@
 
 /* Imports */
 
+const { PurgeCSS } = require('purgecss')
 const { envData } = require('../vars/data')
 const { enumNamespace, enumSite, enumColors } = require('../vars/enums')
 const { getPermalink } = require('../utils')
@@ -19,7 +20,7 @@ const { getPermalink } = require('../utils')
  * @return {string} HTML - html
  */
 
-const layout = ({
+const layout = async ({
   meta = {},
   content = '',
   script = ''
@@ -71,7 +72,7 @@ const layout = ({
 
   /* Output */
 
-  return `
+  const output = `
     <!DOCTYPE html>
     <html lang="en" id="${enumNamespace}" data-root>
       <head>
@@ -94,7 +95,7 @@ const layout = ({
         <meta name="twitter:image" content="${image}">
         <meta content="summary_large_image" property="twitter:card">
         ${preloadFonts}
-        <link rel="stylesheet" href="${assetsLink}css/${enumNamespace}.css" media="all">
+        *|CSS|*
         <link rel="apple-touch-icon" sizes="180x180" href="${assetsLink}favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="${assetsLink}favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="${assetsLink}favicon/favicon-16x16.png">
@@ -111,6 +112,30 @@ const layout = ({
       </body>
     </html>
   `
+
+  /* Purge unused css */
+
+  let css = `<link rel="stylesheet" href="${assetsLink}css/${enumNamespace}.css" media="all">`
+
+  /*const purge = await new PurgeCSS().purge({
+    content: [
+      {
+        raw: output,
+        extension: 'html'
+      },
+    ],
+    css: [
+      `./site/assets/css/${enumNamespace}.css`
+    ]
+  })
+
+  if (purge.length) {
+    css = `<style>${purge[0].css}</style>`
+  }*/
+
+  /* Output */
+
+  return output.replace('*|CSS|*', css)
 }
 
 /* Exports */

@@ -13,8 +13,9 @@ const postcssPresetEnv = require('postcss-preset-env')
 const { sassPlugin } = require('esbuild-sass-plugin')
 const { writeFile } = require('node:fs/promises')
 const { existsSync } = require('node:fs')
+const { resolve } = require('node:path')
 const { envData, jsonFileData } = require('./src/vars/data')
-const { processImages } = require('./src/utils')
+const { processImages, getAllFilePaths } = require('./src/utils')
 
 /* Config */
 
@@ -62,7 +63,7 @@ module.exports = (config) => {
     entryPoints[`js/${namespace}`] = 'src/assets/index.js'
     entryPoints[`css/${namespace}`] = 'src/assets/index.scss'
 
-    return esbuild.build({
+    return await esbuild.build({
       entryPoints,
       outdir: 'site/assets',
       minify: true,
@@ -92,12 +93,22 @@ module.exports = (config) => {
     })
   })
 
+  config.addWatchTarget('./src/assets/')
+
   /* Delete render from cache on watch */
 
   config.on('eleventy.beforeWatch', async () => {
-    const renderPath = './src/render/index.js'
+    for await (const path of getAllFilePaths(`./src/render/`)) {
+      delete require.cache[resolve(path)]
+    }
 
-    delete require.cache[require.resolve(renderPath)]
+    for await (const path of getAllFilePaths(`./src/utils/`)) {
+      delete require.cache[resolve(path)]
+    }
+
+    for await (const path of getAllFilePaths(`./src/vars/`)) {
+      delete require.cache[resolve(path)]
+    }
   })
 
   /* Minify HTML */

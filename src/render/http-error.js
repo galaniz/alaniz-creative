@@ -20,7 +20,7 @@ const { getPermalink } = require('../utils')
  * @return {string} HTML - html
  */
 
-const httpError = (type = '404') => {
+const httpError = async (type = '404') => {
   /* Text by type */
 
   const text = {
@@ -63,7 +63,7 @@ const httpError = (type = '404') => {
 
   /* Output */
 
-  return layout({
+  return await layout({
     meta: {
       title: text[type].metaTitle,
       noIndex: true

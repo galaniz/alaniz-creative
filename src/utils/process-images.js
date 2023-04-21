@@ -5,9 +5,10 @@
 /* Imports */
 
 const sharp = require('sharp')
-const { readdir, mkdir, writeFile } = require('node:fs/promises')
-const { extname, join, dirname } = require('node:path')
+const { mkdir, writeFile } = require('node:fs/promises')
+const { extname, dirname } = require('node:path')
 const { existsSync } = require('node:fs')
+const getAllFilePaths = require('./get-all-file-paths')
 
 /**
  * Function - get and save image data and output multiple sizes
@@ -30,24 +31,12 @@ const processImages = async (inputDir = '', outputDir = '', savePath = '') => {
       .toFile(newPath)
   }
 
-  const recurse = async function* (dir) {
-    const files = await readdir(dir, { withFileTypes: true })
-
-    for (const file of files) {
-      if (file.isDirectory()) {
-        yield* await recurse(join(dir, file.name));
-      } else {
-        yield join(dir, file.name)
-      }
-    }
-  }
-
   try {
     if (!inputDir || !outputDir) {
       throw new Error('No input or output directories')
     }
 
-    for await (const path of recurse(`./${inputDir}`)) {
+    for await (const path of getAllFilePaths(`./${inputDir}`)) {
       if (path.includes('.DS_Store')) {
         continue
       }

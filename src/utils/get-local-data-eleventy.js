@@ -79,7 +79,7 @@ const getLocalDataEleventy = async (key, params = {}) => {
           }
         }
 
-        resolveInternalLinks(flatData, flatData)
+        resolveInternalLinks(flatData, flatData, ['items', 'internalLink'])
         resolveInternalLinks(imageData, flatData, ['metaImage', 'heroImage', 'image'])
 
         Object.keys(flatData).forEach((f) => {

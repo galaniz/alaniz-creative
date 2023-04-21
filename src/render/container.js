@@ -18,6 +18,7 @@
  *  @prop {string} justify
  *  @prop {string} align
  *  @prop {string} classes
+ *  @prop {string} richTextStyles
  * }
  * @return {object}
  */
@@ -34,7 +35,8 @@ const container = ({ args = {} }) => {
     gap = '',
     gapLarge = '',
     justify = '',
-    align = ''
+    align = '',
+    richTextStyles = false
   } = args
 
   let { classes = '' } = args
@@ -116,6 +118,12 @@ const container = ({ args = {} }) => {
 
   if (paddingBottomLarge && paddingBottomLarge !== paddingBottom) {
     classes.push(`l-padding-bottom-${paddingBottomLarge}-m`)
+  }
+
+  /* Rich text styles */
+
+  if (richTextStyles) {
+    classes.push('t-rich-text e-underline')
   }
 
   /* Classes */

@@ -345,22 +345,24 @@ const _renderItem = async ({
 
   /* Output */
 
+  const layoutOutput = await layout({
+    meta,
+    content: `
+      ${header(navsOutput)}
+      <main id="main">
+        ${heroOutput}
+        ${output}
+      </main>
+      ${footer(navsOutput)}
+    `,
+    script
+  })
+
   return {
     serverlessRender,
     data: {
       slug: slug ? `/${slug}/` : '/',
-      output: layout({
-        meta,
-        content: `
-          ${header(navsOutput)}
-          <main id="main">
-            ${heroOutput}
-            ${output}
-          </main>
-          ${footer(navsOutput)}
-        `,
-        script
-      })
+      output: layoutOutput
     }
   }
 }

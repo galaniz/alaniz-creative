@@ -4,12 +4,129 @@
 
 /* Imports */
 
+@use "@alanizcreative/formation/src/config";
 @use "@alanizcreative/formation/src/utils/mixins" as mix;
 
 /* Styles */
 
 .t-rich-text {
+  h2 {
+    margin: var(--l) 0 var(--m);
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: var(--m) 0 var(--m);
+  }
+
+  h4,
+  h5,
+  h6 {
+    padding-top: var(--4xs);
+  }
+
+  dd,
+  p[data-inline],
+  li[data-inline] {
+    font-size: var(--t);
+  }
+
+  figcaption[data-inline],
+  blockquote[data-inline] {
+    font-style: italic;
+  }
+
+  blockquote[data-inline] {
+    p {
+      font-size: inherit;
+    }
+  }
+
+  ul[data-inline],
+  ol[data-inline] {
+    margin: 0 0 var(--m) var(--2xs);
+  }
+
+  ol[data-inline] ol {
+    list-style-type: lower-alpha;
+  }
+
+  li[data-inline] {
+    margin-top: var(--4xs);
+    padding-left: var(--4xs);
+
+    &::marker {
+      font-size: 0.9em;
+    }
+  }
+
   a[data-button] {
     margin-top: var(--m);
+  }
+
+  dt,
+  dd {
+    @extend %u-line-height-130-pc;
+    @extend %u-letter-spacing-2-pc;
+
+    margin-bottom: var(--3xs);
+  }
+
+  dt {
+    @extend %u-line-height-130-pc;
+    @extend %u-font-weight-medium;
+    @extend %u-color-foreground-base;
+
+    font-size: var(--h5);
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  dd,
+  p[data-inline],
+  ul[data-inline],
+  ol[data-inline],
+  a[data-button] {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include mix.breakpoint-min("l") {
+    h2 {
+      margin: var(--xl) 0 var(--m);
+    }
+
+    h3 {
+      margin: var(--l) 0 var(--m);
+    }
+
+    h4,
+    h5,
+    h6 {
+      padding-top: var(--3xs);
+    }
+
+    dt {
+      margin-bottom: var(--2xs);
+    }
+
+    a[data-button] {
+      margin-top: var(--l);
+    }
+
+    ul[data-inline],
+    ol[data-inline] {
+      margin: 0 0 var(--m) var(--s);
+    }
   }
 }

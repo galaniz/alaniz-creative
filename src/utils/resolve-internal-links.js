@@ -16,7 +16,7 @@ const resolveInternalLinks = (data = {}, currentData = {}, props = ['internalLin
     const value = currentData[prop]
 
     if (props.includes(prop)) {
-      currentData[prop] = data[value]
+      currentData[prop] = Array.isArray(value) ? value.map((v) => data[v]) : data[value]
     } else {
       if (value !== null && typeof value === 'object') {
         resolveInternalLinks(data, value, props)

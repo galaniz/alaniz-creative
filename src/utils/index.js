@@ -13,6 +13,7 @@ const getSlug = require('./get-slug')
 const getYear = require('./get-year')
 const resolveInternalLinks = require('./resolve-internal-links')
 const processImages = require('./process-images')
+const getAllFilePaths = require('./get-all-file-paths')
 
 /* Exports */
 
@@ -25,5 +26,6 @@ module.exports = {
   getSlug,
   getYear,
   resolveInternalLinks,
-  processImages
+  processImages,
+  getAllFilePaths
 }

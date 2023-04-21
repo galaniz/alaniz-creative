@@ -10,6 +10,7 @@
       "renderType": "container",
       "maxWidth": "xs",
       "tag": "section",
+      "richTextStyles": true,
       "content": [
         {
           "renderType": "rich-text",
@@ -24,7 +25,7 @@
           "tag": "dl",
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "container",
               "tag": "div",
               "content": [
                 {
@@ -40,7 +41,7 @@
               ]
             },
             {
-              "renderType": "rich-text",
+              "renderType": "container",
               "tag": "div",
               "content": [
                 {
@@ -56,7 +57,7 @@
               ]
             },
             {
-              "renderType": "rich-text",
+              "renderType": "container",
               "tag": "div",
               "content": [
                 {
@@ -82,7 +83,7 @@
               ]
             },
             {
-              "renderType": "rich-text",
+              "renderType": "container",
               "tag": "div",
               "content": [
                 {
@@ -116,6 +117,9 @@
       "renderType": "container",
       "maxWidth": "xs",
       "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "xl",
+      "richTextStyles": true,
       "content": [
         {
           "renderType": "rich-text",
@@ -132,10 +136,13 @@
     {
       "renderType": "container",
       "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "xl",
       "content": [
         {
           "renderType": "container",
           "maxWidth": "xs",
+          "richTextStyles": true,
           "content": [
             {
               "renderType": "rich-text",
@@ -173,6 +180,8 @@
           "renderType": "container",
           "paddingTop": "l",
           "paddingTopLarge": "xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "xl",
           "tag": "figure",
           "content": [
             {
@@ -192,7 +201,8 @@
                   "content": [
                     {
                       "renderType": "column",
-                      "width": "1-3",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
                       "content": [
                         {
                           "renderType": "image",
@@ -204,7 +214,8 @@
                     },
                     {
                       "renderType": "column",
-                      "width": "1-3",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
                       "content": [
                         {
                           "renderType": "image",
@@ -216,7 +227,8 @@
                     },
                     {
                       "renderType": "column",
-                      "width": "1-3",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
                       "content": [
                         {
                           "renderType": "image",
@@ -232,10 +244,13 @@
                   "renderType": "container",
                   "tag": "figcaption",
                   "maxWidth": "xs",
+                  "paddingTop": "m",
+                  "paddingTopLarge": "l",
                   "content": [
                     {
                       "renderType": "rich-text",
                       "tag": "p",
+                      "textStyle": "t-s",
                       "content": "Two-dimensional mockups of panels from the physical exhibition."
                     }
                   ]
@@ -247,6 +262,7 @@
         {
           "renderType": "container",
           "maxWidth": "xs",
+          "richTextStyles": true,
           "content": [
             {
               "renderType": "rich-text",
@@ -258,32 +274,26 @@
               "tag": "ul",
               "content": [
                 {
-                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "Site must be static and responsive."
                 },
                 {
-                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "Image manipulation disallowed outside of minimal cropping."
                 },
                 {
-                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "Image gallery must contain all images and credits from the site. Users should be able to enlarge each image view in a carousel."
                 },
                 {
-                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "Topics (translation of panels from physical exhibit) must be easy to access and include main text, 3-4 images, quotes, expanded image captions and image credits."
                 },
                 {
-                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "An 8-10 minute video designed to look at the idea of service must be included on the site."
                 },
                 {
-                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "Site must pass Smithsonian security and accessibility scans."
                 }
@@ -325,43 +335,43 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "h2-d",
+                  "textStyle": "t-h2-d",
                   "content": "Elegant"
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "h2-d",
+                  "textStyle": "t-h2-d",
                   "content": "Streamlined"
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "h2-d",
+                  "textStyle": "t-h2-d",
                   "content": "User-friendly"
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "h2-r",
+                  "textStyle": "t-h2 t-weight-normal",
                   "content": "Clean"
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "h2-r",
+                  "textStyle": "t-h2 t-weight-normal",
                   "content": "Open"
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "h2-r",
+                  "textStyle": "t-h2 t-weight-normal",
                   "content": "Innovative"
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "h2-r",
+                  "textStyle": "t-h2 t-weight-normal",
                   "content": "Accessible"
                 }
               ]
@@ -372,23 +382,477 @@
     },
     {
       "renderType": "container",
-      "maxWidth": "xs",
       "tag": "section",
       "content": [
         {
-          "renderType": "rich-text",
-          "tag": "h2",
-          "content": "The Process"
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h2",
+              "content": "The Process"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "h3",
+              "content": "Content"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "Given the tight timeline we had to move through all phases of the project quickly. After a short discovery phase we focused our attention on content. The two lead UX designers got to work on a content map organizing content from the physical exhibition into pages, content pieces and navigation structures suited for digital consumption."
+            }
+          ]
         },
         {
-          "renderType": "rich-text",
-          "tag": "h3",
-          "content": "Content"
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "paddingBottomLarge": "l",
+              "content": [
+                {
+                  "renderType": "image",
+                  "image": "why-we-serve/content-map",
+                  "alt": "",
+                  "border": true
+                },
+                {
+                  "renderType": "container",
+                  "tag": "figcaption",
+                  "maxWidth": "xs",
+                  "paddingTop": "m",
+                  "paddingTopLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "rich-text",
+                      "tag": "p",
+                      "textStyle": "t-s",
+                      "content": "Content map breaking down content provided by the NMAI into groupings that became the IA for the site."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
-          "renderType": "rich-text",
-          "tag": "p",
-          "content": "Given the tight timeline we had to move through all phases of the project quickly. After a short discovery phase we focused our attention on content. The two lead UX designers got to work on a content map organizing content from the physical exhibition into pages, content pieces and navigation structures suited for digital consumption."
+          "renderType": "container",
+          "maxWidth": "xs",
+          "tag": "div",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h3",
+              "content": "Wireframes"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "We were ready to start wireframes. In this phase, the lead UX designer focused on the homepage, topics page, general layout and the main navigation. As mentioned earlier, elevating veterans’ stories was important for this project which is why we decided to open with a quote from a veteran and feature the video sharing their stories prominently on the homepage. In terms of layout, the client, coming from the art world, encouraged us to use open and interesting layouts. This along with the restriction to leave images uncropped created asymmetrical and visually dynamic layouts. We were also encouraged to apply this to the topics page, which we did with a timeline style that also worked well for easy scanning and discoverability of topics. For the main navigation, we decided on a streamlined and sticky navigation bar for topics to be easily accessible to users as outlined in the requirements."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "l",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "paddingBottomLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "justify": "center",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "1-1",
+                      "widthSmall": "1-2",
+                      "widthMedium": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/homepage-wireframe-top",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-1",
+                      "widthSmall": "1-2",
+                      "widthMedium": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/homepage-wireframe-bottom",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-1",
+                      "widthSmall": "1-2",
+                      "widthMedium": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/topics-wireframe",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "renderType": "container",
+                  "tag": "figcaption",
+                  "maxWidth": "xs",
+                  "paddingTop": "m",
+                  "paddingTopLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "rich-text",
+                      "tag": "p",
+                      "textStyle": "t-s",
+                      "content": "Homepage and topic landing page wireframes."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "tag": "div",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h3",
+              "content": "Visual Design"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "Like in the wireframe phase we concentrated on the homepage and topics pages. With the homepage, we created a composite showing Native American soldiers from the present and past to elevate the quote in the hero section and bridge the past and present to show Why We Serve as both historical and forward looking."
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "We also played with different symbols of patriotism to complement the subject matter. One image treatment was a reference to flags – a coloured line over top of images extended to the edge of the screen. It was also an opportunity to incorporate more colours from their wider colour palette to break up content blocks for easier scanning. We also made use of stars as subtle and elegant background elements to complement and not distract from the main content."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "m",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "paddingBottomLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "justify": "center",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "1-1",
+                      "widthSmall": "1-2",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/homepage-mockup-top",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-1",
+                      "widthSmall": "1-2",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/homepage-mockup-middle",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "renderType": "container",
+                  "tag": "figcaption",
+                  "maxWidth": "xs",
+                  "paddingTop": "m",
+                  "paddingTopLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "rich-text",
+                      "tag": "p",
+                      "textStyle": "t-s",
+                      "content": "Top portion of homepage visual design making use of flag motif."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "tag": "div",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "The flag motif continued on the topic landing page in the timeline layout of topics. Each colour also corresponds to the background colour for the individual topic pages to keep our use of colour intentional. It was also a great way to distinguish topics from each other as they are each unique pages of content. We also adjusted the original colours to have sufficient contrast for accessibility."
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "As mentioned before, we wanted to be intentional about our use of colour. We chose dark blue to be the main colour and maroon red as the secondary colour as a nod to the American flag and also simultaneous symbols of peace, justice and sacrifice that are key parts of Why We Serve. These colours being darker and more subdued also helped make the images on the site really stand out for viewers to appreciate and lended to an overall elegant and cinematic look."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xl",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "paddingBottomLarge": "l",
+              "classes": "l-breakout",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "justify": "center",
+                  "align": "center",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "1-1",
+                      "widthSmall": "1-2",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "row",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "column",
+                              "width": "1-2",
+                              "content": [
+                                {
+                                  "renderType": "container",
+                                  "gap": "m",
+                                  "gapLarge": "l",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-1-mockup",
+                                      "alt": "",
+                                      "border": true
+                                    },
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-9-mockup",
+                                      "alt": "",
+                                      "border": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-2",
+                              "content": [
+                                {
+                                  "renderType": "container",
+                                  "gap": "m",
+                                  "gapLarge": "l",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-2-mockup",
+                                      "alt": "",
+                                      "border": true
+                                    },
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-4-mockup",
+                                      "alt": "",
+                                      "border": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-1",
+                      "widthSmall": "3-5",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/topics-mockup",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-1",
+                      "widthSmall": "1-2",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "row",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "column",
+                              "width": "1-2",
+                              "content": [
+                                {
+                                  "renderType": "container",
+                                  "gap": "m",
+                                  "gapLarge": "l",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-5-mockup",
+                                      "alt": "",
+                                      "border": true
+                                    },
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-6-mockup",
+                                      "alt": "",
+                                      "border": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-2",
+                              "content": [
+                                {
+                                  "renderType": "container",
+                                  "gap": "m",
+                                  "gapLarge": "l",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-7-mockup",
+                                      "alt": "",
+                                      "border": true
+                                    },
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-8-mockup",
+                                      "alt": "",
+                                      "border": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "renderType": "container",
+                  "tag": "figcaption",
+                  "maxWidth": "xs",
+                  "paddingTop": "m",
+                  "paddingTopLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "rich-text",
+                      "tag": "p",
+                      "textStyle": "t-s",
+                      "content": "Topic landing page visual design and examples of individual topic pages to the left and right."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }
