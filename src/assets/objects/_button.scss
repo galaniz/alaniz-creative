@@ -1,0 +1,69 @@
+/**
+ * Objects - button
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/src/config";
+
+/* Styles */
+
+.o-button {
+  --padding: var(--3xs) var(--xs);
+  --size: var(--t);
+
+  @extend %u-font-weight-bold;
+  @extend %u-line-height-150-pc;
+  @extend %u-display-inline-flex;
+  @extend %u-justify-content-center;
+  @extend %u-position-relative;
+  @extend %u-letter-spacing-3-pc;
+
+  padding: var(--padding);
+  font-size: var(--t);
+
+  &:hover {
+    span span {
+      animation:
+        e-move-up var(--duration) var(--easing) forwards,
+        e-move-end var(--duration) var(--easing) forwards var(--duration);
+    }
+  }
+}
+
+.o-button-main {
+  background: var(--main-button-bg);
+  color: var(--main-button-color);
+}
+
+.o-button-secondary {
+  color: var(--secondary-button-color);
+}
+
+.o-button-large {
+  --padding: var(--2xs) var(--s);
+
+  @extend %u-line-height-130-pc;
+}
+
+/* Animations */
+
+@keyframes e-move-up {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes e-move-end {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

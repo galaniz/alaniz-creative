@@ -184,7 +184,8 @@ const _renderItem = async ({
     content: [],
     metaTitle: '',
     metaDescription: '',
-    metaImage: false
+    metaImage: false,
+    theme: false
   }, item)
 
   /* Meta */
@@ -324,6 +325,20 @@ const _renderItem = async ({
     meta.title = item.metaTitle
   }
 
+  /* Style */
+
+  let style = ''
+
+  if (item.theme) {
+    const styleArray = []
+
+    Object.keys(item.theme).forEach((t) => {
+      styleArray.push(`--theme-${t}:${item.theme[t].dark}`)
+    })
+
+    style = `:root{${styleArray.join(';')};--main-button-bg:var(--theme-main)}`
+  }
+
   /* Script data */
 
   let script = ''
@@ -355,7 +370,8 @@ const _renderItem = async ({
       </main>
       ${footer(navsOutput)}
     `,
-    script
+    script,
+    style
   })
 
   return {

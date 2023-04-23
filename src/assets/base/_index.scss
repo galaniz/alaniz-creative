@@ -19,6 +19,11 @@
   --text-color: #{rgba(func.get-color("foreground-base"), 0.85)};
   --heading-color: var(--foreground-base);
   --link-color: var(--foreground-base);
+  --main-button-bg: var(--foreground-base);
+  --main-button-color: var(--background-light);
+  --secondary-button-color: var(--foreground-base);
+  --underline: #{func.calc-rem(1px)};
+  --underline-offset: 0.3125rem;
 
   @include mixi.fluid-size(
     --logo-width,

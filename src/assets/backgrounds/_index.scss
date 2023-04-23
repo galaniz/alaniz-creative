@@ -1,0 +1,15 @@
+/**
+ * Backgrounds
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/src/config";
+@use "@alanizcreative/formation/src/utils/functions" as func;
+@use "@alanizcreative/formation/src/backgrounds/color";
+
+/* Styles */
+
+.bg-current {
+  background-color: currentcolor;
+}

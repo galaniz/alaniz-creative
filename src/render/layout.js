@@ -16,6 +16,7 @@ const { getPermalink } = require('../utils')
  *  @prop {object} meta
  *  @prop {string} content
  *  @prop {string} script
+ *  @prop {string} style
  * }
  * @return {string} HTML - html
  */
@@ -23,7 +24,8 @@ const { getPermalink } = require('../utils')
 const layout = async ({
   meta = {},
   content = '',
-  script = ''
+  script = '',
+  style = ''
 }) => {
   /* Assets link */
 
@@ -96,6 +98,7 @@ const layout = async ({
         <meta content="summary_large_image" property="twitter:card">
         ${preloadFonts}
         *|CSS|*
+        ${style ? `<style>${style}</style>` : ""}
         <link rel="apple-touch-icon" sizes="180x180" href="${assetsLink}favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="${assetsLink}favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="${assetsLink}favicon/favicon-16x16.png">

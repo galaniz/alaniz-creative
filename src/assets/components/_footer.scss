@@ -1,0 +1,38 @@
+/**
+ * Components - footer
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/src/utils/functions" as func;
+@use "@alanizcreative/formation/src/utils/mixins" as mix;
+
+/* Styles */
+
+.c-footer-blob {
+  z-index: -1;
+  min-width: 80rem;
+  height: calc(100% - var(--l));
+  right: var(--right);
+  bottom: func.calc-rem(-1px);
+
+  @include mix.fluid-size(
+    --right,
+    func.calc-rem(-450px) func.calc-rem(-100px) func.calc-rem(-270px),
+    "s" "m" "l"
+  );
+
+  @include mix.breakpoint-min("xl") {
+    width: calc(80rem + (50vw - #{func.calc-rem(650px)} - #{func.calc-rem(270px)})); // Account for container / 2 and right offset
+  }
+}
+
+.c-footer-copyright {
+  --color: var(--background-light);
+
+  color: var(--color);
+
+  @include mix.breakpoint-min("m") {
+    --color: var(--foreground-base);
+  }
+}

@@ -1,0 +1,122 @@
+/**
+ * Components - nav
+ */
+
+/* Imports */
+
+@use "sass:map";
+@use "@alanizcreative/formation/src/config" as con;
+@use "@alanizcreative/formation/src/utils/functions" as func;
+@use "@alanizcreative/formation/src/utils/mixins" as mix;
+@use "@alanizcreative/formation/src/components/nav";
+@use "@alanizcreative/formation/src/components/nav/overflow";
+@use "@alanizcreative/formation/src/components/nav/icon";
+@use "@alanizcreative/formation/src/components/nav/icon/five";
+
+/* Container */
+
+.c-nav {
+  --padding: var(--m);
+  --nav-height: calc(var(--logo-height) + (var(--padding) * 2));
+
+  z-index: map.get(con.$z-index, "nav");
+  height: var(--nav-height);
+
+  @include mix.breakpoint-min("m") {
+    --padding: var(--l);
+  }
+}
+
+/* Logo */
+
+.c-nav__logo {
+  margin-right: var(--xl);
+
+  .c-nav-overflow & {
+    top: var(--padding);
+    left: var(--container-padding);
+  }
+}
+
+/* Item */
+
+.c-nav__item {
+  .c-nav-overflow__list &[data-depth="0"] {
+    --prop: opacity, transform;
+    --duration: 200ms;
+    --delay: 200ms;
+  
+    @extend %u-opacity-0;
+  
+    transform: translateY(-33%);
+  
+    [data-show-items] & {
+      --delay: 0ms;
+  
+      @extend %u-opacity-1;
+  
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Link */
+
+.c-nav__link {
+  &::after {
+    @extend %u-transform-origin-0-100-pc;
+
+    transform: scaleY(0);
+    transition: transform var(--duration) var(--easing);
+    background: currentcolor;
+    height: var(--4xs);
+    width: calc(100% - var(--xs));
+    left: var(--3xs);
+    top: auto;
+  }
+
+  &:hover,
+  &:active,
+  &[data-current="true"],
+  &[data-descendent-current="true"] {
+    &::after {
+      transform: scaleY(1);
+    }
+  }
+}
+
+/* Toggle buttons */
+
+.c-nav__close {
+  right: var(--container-padding);
+  top: var(--m);
+}
+
+.c-nav-icon__label {
+  margin-top: var(--4xs);
+}
+
+/* Overflow */
+
+.c-nav-overflow__main {
+  margin-top: var(--nav-height);
+}
+
+/* Overlay */
+
+.c-nav__overlay {
+  --prop: visibility, opacity, transform;
+
+  @extend %u-opacity-0;
+  @extend %u-transform-origin-0-0;
+
+  transform: scaleY(0);
+
+  .c-nav[data-open="true"] & {
+    --delay: 10ms, 0ms;
+
+    @extend %u-opacity-1;
+
+    transform: scaleY(1);
+  }
+}

@@ -27,7 +27,7 @@ module.exports = async (args = {}) => {
             const jsonFile = await writeFile(`./src/json/${json.name}`, JSON.stringify(json.data))
 
             if (jsonFile) {
-              console.log(`Successfully wrote ${json.name}`)
+              console.info(`Successfully wrote ${json.name}`)
             }
           }
         }
@@ -50,7 +50,7 @@ module.exports = async (args = {}) => {
             const functionsFile = await writeFile(`./functions${path}index.js`, content)
 
             if (functionsFile) {
-              console.log(`Successfully wrote ./functions${path}index.js`)
+              console.info(`Successfully wrote ./functions${path}index.js`)
             }
           }
         }*/
@@ -70,7 +70,7 @@ module.exports = async (args = {}) => {
             const redirectsFile = await writeFile('./site/_redirects', redirectsData)
 
             if (redirectsFile) {
-              console.log('Successfully wrote ./site/_redirects')
+              console.info('Successfully wrote ./site/_redirects')
             }
           }
         }*/

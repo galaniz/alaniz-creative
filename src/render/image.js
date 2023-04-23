@@ -14,6 +14,7 @@ const richText = require('./rich-text')
  *  @prop {object} image
  *  @prop {string} aspectRatio
  *  @prop {object} caption
+ *  @prop {boolean} border
  * }
  * @param {array<object>} parents
  * @return {string} HTML - div
@@ -24,7 +25,8 @@ const image = ({ args = {}, parents = [] }) => {
     image = {},
     alt = "",
     aspectRatio = '',
-    caption = {}
+    caption = {},
+    border = false
   } = args
 
   /* Check card parent */
@@ -64,6 +66,10 @@ const image = ({ args = {}, parents = [] }) => {
 
     if (card) {
       classes += ' l-after bg-gradient-0'
+    }
+
+    if (border) {
+      classes += ' b-all b-theme b-radius-s b-radius-m-m l-isolate'
     }
 
     imageOutput = `

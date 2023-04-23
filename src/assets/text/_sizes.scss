@@ -93,7 +93,8 @@ ul[data-inline],
 ol[data-inline],
 .t-l,
 .t,
-.t-s {
+.t-s,
+.t-xs {
   @extend %u-line-height-165-pc;
   @extend %u-letter-spacing-2-pc;
 }

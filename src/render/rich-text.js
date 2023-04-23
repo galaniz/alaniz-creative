@@ -64,6 +64,7 @@ const _getContent = ({
  *  @prop {string} classes
  *  @prop {string} textStyle
  *  @prop {string} headingStyle
+ *  @prop {object} style
  * }
  * @param {array<object>} parents
  * @return {string}
@@ -75,7 +76,8 @@ const richText = ({ args = {}, parents = [] }) => {
     content = [],
     classes = '',
     textStyle,
-    headingStyle
+    headingStyle,
+    style,
   } = args
 
   /* Hr */
@@ -156,6 +158,16 @@ const richText = ({ args = {}, parents = [] }) => {
 
   if (classes) {
     attr.push(`class="${classes}"`)
+  }
+
+  if (style) {
+    const styleArray = []
+    
+    Object.keys(style).forEach((s) => {
+      styleArray.push(`${s}:${style[s]}`)
+    })
+
+    attr.push(`style="${styleArray.join(';')}"`)
   }
 
   /* Output */

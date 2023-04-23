@@ -16,6 +16,7 @@
 @use "@alanizcreative/formation/src/base";
 @use "@alanizcreative/formation/src/base/inputs-reset";
 @use "base" as b;
+@use "base/focus";
 
 /* A11y */
 
@@ -23,7 +24,7 @@
 
 /* Backgrounds */
 
-@use "@alanizcreative/formation/src/backgrounds/color";
+@use "backgrounds";
 
 /* Text */
 
@@ -36,7 +37,7 @@
 
 /* Layouts */
 
-@use "@alanizcreative/formation/src/layouts/position";
+@use "layouts/position";
 @use "@alanizcreative/formation/src/layouts/aspect-ratio";
 @use "@alanizcreative/formation/src/layouts/overflow";
 @use "@alanizcreative/formation/src/layouts/container";
@@ -52,13 +53,23 @@
 
 /* Borders */
 
-@use "@alanizcreative/formation/src/borders";
-@use "@alanizcreative/formation/src/borders/radius";
+@use "borders";
 
 /* Components */
 
 @use "@alanizcreative/formation/src/components/skip-link";
 @use "components/nav";
+@use "components/footer";
+
+/* Objects */
+
+@use "objects/logo";
+@use "objects/button";
+
+/* Effects */
+
+@use "@alanizcreative/formation/src/effects/transition";
+@use "effects/underline";
 
 /* Remove animations */
 

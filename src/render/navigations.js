@@ -41,11 +41,11 @@ const navigations = ({
       'main',
       current,
       {
-        listClass: 'c-nav__list l-flex l-align-center l-gap-margin-m t-list-style-none l-overflow-x-auto l-overflow-y-hidden',
+        listClass: 'c-nav__list l-flex l-align-center l-gap-margin-m t-list-style-none l-overflow-x-auto l-overflow-y-hidden outline-tight',
         listAttr: 'role="list"',
-        itemClass: 'c-nav__item',
+        itemClass: 'c-nav__item e-transition',
         itemAttr: 'data-overflow-group="0"',
-        linkClass: 'c-nav__link t t-weight-medium t-line-height-130-pc l-inline-flex',
+        linkClass: 'c-nav__link t t-weight-medium t-line-height-130-pc l-inline-flex l-padding-top-3xs l-padding-bottom-3xs l-padding-left-3xs l-padding-right-3xs l-relative l-after',
         internalLinkClass: 'js-pt-link'
       }
     ),

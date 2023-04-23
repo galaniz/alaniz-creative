@@ -5,11 +5,43 @@
   "metaDescription": "",
   "metaImage": "",
   "heroImage": "why-we-serve/hero",
+  "theme": {
+    "main": {
+      "dark": "#7a232f",
+      "light": "#e199a3"
+    },
+    "navy": {
+      "dark": "#00193a",
+      "light": "#548edb"
+    },
+    "gold": {
+      "dark": "#675023",
+      "light": "#a88849"
+    },
+    "brown": {
+      "dark": "#533a30",
+      "light": "#ab806e"
+    },
+    "blue": {
+      "dark": "#1d51a3",
+      "light": "#5289e0"
+    },
+    "green": {
+      "dark": "#545827",
+      "light": "#8b9240"
+    },
+    "black": {
+      "dark": "#070707",
+      "light": "#8f8f8f"
+    }
+  },
   "content": [
     {
       "renderType": "container",
       "maxWidth": "xs",
       "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "xl",
       "richTextStyles": true,
       "content": [
         {
@@ -107,9 +139,8 @@
         },
         {
           "renderType": "button",
-          "text": "View Why We Serve",
-          "externalLink": "https://americanindian.si.edu/why-we-serve/",
-          "type": "main"
+          "title": "View Why We Serve",
+          "externalLink": "https://americanindian.si.edu/why-we-serve/"
         }
       ]
     },
@@ -336,43 +367,64 @@
                   "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "t-h2-d",
-                  "content": "Elegant"
+                  "content": "Elegant",
+                  "style": {
+                    "color": "var(--theme-navy)"
+                  }
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "t-h2-d",
-                  "content": "Streamlined"
+                  "content": "Streamlined",
+                  "style": {
+                    "color": "var(--theme-main)"
+                  }
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "t-h2-d",
-                  "content": "User-friendly"
+                  "content": "User-friendly",
+                  "style": {
+                    "color": "var(--theme-gold)"
+                  }
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "t-h2 t-weight-normal",
-                  "content": "Clean"
+                  "content": "Clean",
+                  "style": {
+                    "color": "var(--theme-brown)"
+                  }
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "t-h2 t-weight-normal",
-                  "content": "Open"
+                  "content": "Open",
+                  "style": {
+                    "color": "var(--theme-blue)"
+                  }
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "t-h2 t-weight-normal",
-                  "content": "Innovative"
+                  "content": "Innovative",
+                  "style": {
+                    "color": "var(--theme-green)"
+                  }
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "t-h2 t-weight-normal",
-                  "content": "Accessible"
+                  "content": "Accessible",
+                  "style": {
+                    "color": "var(--theme-black)"
+                  }
                 }
               ]
             }

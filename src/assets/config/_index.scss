@@ -16,6 +16,13 @@ $padding-vertical: (
   "4xl",
 );
 
+/* Horizontal padding */
+
+$padding-horizontal: (
+  "3xs",
+  "xl",
+);
+
 /* Gaps */
 
 $gaps: (
@@ -72,8 +79,8 @@ $gaps: (
   ),
 
   $font-weights: (
-    "normal": 400,
     "medium": 500,
+    "normal": 400,
     "bold": 700,
   ),
 
@@ -85,6 +92,7 @@ $gaps: (
     "s": 600px,
     "m": 900px,
     "l": 1200px,
+    "xl": 2000px,
   ),
 
   /* Spacing */
@@ -107,6 +115,8 @@ $gaps: (
 
   $padding-top: $padding-vertical,
   $padding-bottom: $padding-vertical,
+  $padding-left: $padding-horizontal,
+  $padding-right: $padding-horizontal,
   $padding-vertical-breakpoints: ("m"),
 
   /* Margin */
@@ -142,6 +152,10 @@ $gaps: (
   $gaps: $gaps,
   $gap-breakpoints: ("s", "m", "l"),
 
+  /* Flex */
+
+  $flex-row-breakpoints: ("m"),
+
   /* Containers */
 
   $container-padding: 20px,
@@ -158,7 +172,7 @@ $gaps: (
 
   $nav: (
     "icon": (
-      "width": 40px,
+      "width": 38px,
       "line-width": 1px,
       "margin": 10px,
     )
@@ -169,7 +183,7 @@ $gaps: (
   $borders: (
     "sides": ("all"),
     "colors": (
-      "current": "currentcolor"
+      "theme": "var(--theme-main)",
     ),
     "widths": (
       "default": 0.0625rem,
@@ -185,9 +199,20 @@ $gaps: (
   /* Outline */
 
   $outline: (
-    "width": 0.3rem,
+    "width": 0.3125rem,
     "color": "var(--foreground-base)",
-    "offset": 0.3rem,
+    "offset": 0.3125rem,
+  ),
+
+  /* Transitions */
+
+  $transitions: (
+    "default": (
+      "duration": 300ms,
+    ),
+    "quad": (
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+    ),
   ),
 
   /* Placeholders */

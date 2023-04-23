@@ -1,0 +1,16 @@
+/**
+ * Layouts - position
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/src/utils/mixins" as mix;
+@use "@alanizcreative/formation/src/layouts/position";
+
+/* Styles */
+
+.l-relative-m {
+  @include mix.breakpoint-min("m") {
+    position: relative;
+  }
+}

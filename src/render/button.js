@@ -52,7 +52,17 @@ const button = ({ args = {} }) => {
 
   /* Classes */
 
-  let linkClasses = 'o-button'
+  let linkClasses = 'o-button b-radius-l e-transition-quad'
+
+  if (type === 'main') {
+    linkClasses += ' o-button-main'
+  } else if (type === 'secondary') {
+    linkClasses += ' o-button-secondary b-all'
+  }
+
+  if (size === 'large') {
+    linkClasses += ' o-button-large'
+  }
 
   if (!external) {
     linkClasses += ' js-pt-link'
@@ -64,7 +74,13 @@ const button = ({ args = {} }) => {
 
   /* Output */
 
-  let output = `<a class="${linkClasses}" href="${link}"${linkAttrs}>${title}</a>`
+  let output = `
+    <a class="${linkClasses}" href="${link}"${linkAttrs}>
+      <span class="l-inline-flex l-overflow-hidden">
+        <span class="l-inline-flex">${title}</span>
+      </span>
+    </a>
+  `
 
   if (justify || paddingTop || paddingBottom) {
     const classes = []
