@@ -86,7 +86,7 @@ const container = ({ args = {} }) => {
     if (layout === 'row') {
       classes.push(`l-gap-margin-${gapLarge}-l`)
     } else {
-      classes.push(`l-margin-bottom-${gapLarge}-all-m`)
+      classes.push(`l-margin-bottom-${gapLarge}-all-l`)
     }
   }
 

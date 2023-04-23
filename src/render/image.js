@@ -58,7 +58,7 @@ const image = ({ args = {}, parents = [] }) => {
       max: card ? 800 : 1600
     })
 
-    let classes = 'l-relative l-overflow-hidden'
+    let classes = 'l-relative l-overflow-hidden b-radius-s b-radius-m-m l-isolate l-height-100-pc'
 
     if (aspectRatio) {
       classes += ` l-aspect-ratio-${aspectRatio}`
@@ -69,7 +69,7 @@ const image = ({ args = {}, parents = [] }) => {
     }
 
     if (border) {
-      classes += ' b-all b-theme b-radius-s b-radius-m-m l-isolate'
+      classes += ' b-all b-theme'
     }
 
     imageOutput = `

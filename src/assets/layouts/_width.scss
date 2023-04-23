@@ -1,0 +1,32 @@
+/**
+ * Layouts - width
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/src/utils/mixins" as mix;
+@use "@alanizcreative/formation/src/layouts/width";
+
+/* Styles */
+
+.l-width-custom {
+  --width: 100%;
+  --widthSmall: 100%;
+  --widthMedium: 100%;
+  --widthLarge: 100%;
+  --w: var(--width);
+
+  width: var(--w);
+
+  @include mix.breakpoint-min("s") {
+    --w: var(--widthSmall);
+  }
+
+  @include mix.breakpoint-min("m") {
+    --w: var(--widthMedium);
+  }
+
+  @include mix.breakpoint-min("l") {
+    --w: var(--widthLarge);
+  }
+}

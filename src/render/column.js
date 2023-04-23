@@ -11,8 +11,13 @@
  *  @prop {string} widthSmall
  *  @prop {string} widthMedium
  *  @prop {string} widthLarge
+ *  @prop {object} widthCustom
  *  @prop {string} justify
  *  @prop {string} align
+ *  @prop {string} order
+ *  @prop {string} orderSmall
+ *  @prop {string} orderMedium
+ *  @prop {string} orderLarge
  *  @prop {string} classes
  * }
  * @return {object}
@@ -25,8 +30,10 @@ const column = ({ args = {} }) => {
     widthSmall = '',
     widthMedium = '',
     widthLarge = '',
+    widthCustom = false,
     justify = '',
     align = '',
+    grow = '',
     classes = '' // Back end option
   } = args
 
@@ -36,7 +43,7 @@ const column = ({ args = {} }) => {
 
   /* Width */
 
-  if (!width) {
+  if (!width && !widthCustom) {
     width = '1-1'
   }
 
@@ -68,10 +75,33 @@ const column = ({ args = {} }) => {
     classes.push(`l-align-${align}`)
   }
 
+  /* Grow */
+
+  if (grow) {
+    classes.push('l-flex-grow-1')
+  }
+
+  /* Attr */
+
+  const attr = []
+
+  if (widthCustom) {
+    classes.push('l-width-custom')
+
+    const styleArray = [
+      `--width:${widthCustom?.default ? widthCustom.default : '100%'}`,
+      `--widthSmall:${widthCustom?.small ? widthCustom.small : '100%'}`,
+      `--widthMedium:${widthCustom?.medium ? widthCustom.medium : '100%'}`,
+      `--widthLarge:${widthCustom?.large ? widthCustom.large : '100%'}`
+    ]
+
+    attr.push(` style=${styleArray.join(';')}`)
+  }
+
   /* Output */
 
   return {
-    start: `<${tag} class="${classes.join(' ')}">`,
+    start: `<${tag} class="${classes.join(' ')}"${attr.join(' ')}>`,
     end: `</${tag}>`
   }
 }
