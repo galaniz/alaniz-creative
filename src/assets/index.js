@@ -6,7 +6,7 @@
 
 import { setElements, usingMouse } from '@alanizcreative/formation/src/utils'
 import Nav from '@alanizcreative/formation/src/components/nav'
-import Video from '@alanizcreative/formation/src/objects/video'
+// import Video from '@alanizcreative/formation/src/objects/video'
 
 /**
  * Namespace
@@ -151,7 +151,7 @@ const initialize = () => {
 
   if (el.video.length) {
     const video = (args) => {
-      return new Video(args)
+      // return new Video(args)
     }
 
     el.video.forEach(v => {
