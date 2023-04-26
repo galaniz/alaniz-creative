@@ -64,6 +64,7 @@ const _getContent = ({
  *  @prop {string} classes
  *  @prop {string} textStyle
  *  @prop {string} headingStyle
+ *  @prop {string} align
  *  @prop {object} style
  * }
  * @param {array<object>} parents
@@ -75,9 +76,10 @@ const richText = ({ args = {}, parents = [] }) => {
     tag = 'p',
     content = [],
     classes = '',
-    textStyle,
-    headingStyle,
-    style,
+    textStyle = '',
+    headingStyle = '',
+    align = '',
+    style
   } = args
 
   /* Hr */
@@ -125,8 +127,16 @@ const richText = ({ args = {}, parents = [] }) => {
     classes.push(textStyle)
   }
 
+  if (tag === 'blockquote') {
+    classes.push('t-quote')
+  }
+
   if (headingStyle && heading) {
-    classes.push(`t-${headingStyle}`)
+    classes.push(headingStyle)
+  }
+
+  if (align) {
+    classes.push(`t-align-${align}`)
   }
 
   classes = classes.join(' ')

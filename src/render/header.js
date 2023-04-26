@@ -65,7 +65,7 @@ const header = (navigations = {}) => {
 
   return `
     <header>
-      <a href="#main" class="c-skip-link o-button o-button-secondary l-absolute l-left-0 l-top-0">
+      <a href="#main" class="c-skip-link o-button b-radius-l o-button-secondary b-all l-absolute l-left-0 l-top-0">
         Skip to main content
       </a>
       ${nav}

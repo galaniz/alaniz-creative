@@ -97,6 +97,17 @@ const layout = async ({
         <meta name="twitter:image" content="${image}">
         <meta content="summary_large_image" property="twitter:card">
         ${preloadFonts}
+        <style>
+          @media (prefers-reduced-motion: reduce) {
+            .reduce-motion-show {
+              display: block;
+            }
+
+            .reduce-motion-hide {
+              display: none;
+            }
+          }
+        </style>
         *|CSS|*
         ${style ? `<style>${style}</style>` : ""}
         <link rel="apple-touch-icon" sizes="180x180" href="${assetsLink}favicon/apple-touch-icon.png">

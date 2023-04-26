@@ -1,0 +1,44 @@
+/**
+ * Objects - video
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/src/config";
+@use "@alanizcreative/formation/src/utils/functions" as func;
+
+/* Styles */
+
+.o-video__bg {
+  background: var(--video-bg);
+}
+
+.o-video__play,
+.o-video__pause {
+  --outline-color: var(--video-play-bg);
+
+  svg {
+    height: 40%;
+  }
+}
+
+.o-video__play {
+  width: 15%;
+  min-width: var(--l);
+  max-width: var(--xl);
+  background: var(--video-play-bg);
+  color: var(--video-play-color);
+
+  [data-state="play"] & {
+    @extend %u-display-block;
+  }
+}
+
+.o-video__pause {
+  margin: var(--xs);
+  background: rgba(func.get-color("foreground-base"), 0.5);
+
+  [data-state="pause"] & {
+    @extend %u-display-block;
+  }
+}

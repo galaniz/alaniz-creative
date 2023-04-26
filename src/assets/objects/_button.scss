@@ -16,18 +16,19 @@
   @extend %u-line-height-150-pc;
   @extend %u-display-inline-flex;
   @extend %u-justify-content-center;
+  @extend %u-align-items-center;
   @extend %u-position-relative;
   @extend %u-letter-spacing-3-pc;
 
   padding: var(--padding);
   font-size: var(--t);
 
+  svg {
+    margin-left: var(--3xs);
+  }
+
   &:hover {
-    span span {
-      animation:
-        e-move-up var(--duration) var(--easing) forwards,
-        e-move-end var(--duration) var(--easing) forwards var(--duration);
-    }
+    transform: translate3d(0, -10%, 0) scale(1.01);
   }
 }
 
@@ -44,26 +45,4 @@
   --padding: var(--2xs) var(--s);
 
   @extend %u-line-height-130-pc;
-}
-
-/* Animations */
-
-@keyframes e-move-up {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(100%);
-  }
-}
-
-@keyframes e-move-end {
-  0% {
-    transform: translateY(-100%);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
 }

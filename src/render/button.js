@@ -5,6 +5,7 @@
 /* Imports */
 
 const { getLink } = require('../utils')
+const externalLinkSvg = require('./svg/external-link')
 
 /**
  * Function - output link button
@@ -31,9 +32,9 @@ const button = ({ args = {} }) => {
     type = 'main',
     size = '',
     justify = '',
+    richText = false,
     paddingTop = '',
-    paddingBottom = '',
-    theme = '' // Back end option
+    paddingBottom = ''
   } = args
 
   let { link = '' } = args // Back end option
@@ -68,19 +69,18 @@ const button = ({ args = {} }) => {
     linkClasses += ' js-pt-link'
   }
 
-  /* Attributes */
-
-  const linkAttrs = ` data-theme="${theme}" data-button`
-
   /* Output */
 
   let output = `
-    <a class="${linkClasses}" href="${link}"${linkAttrs}>
-      <span class="l-inline-flex l-overflow-hidden">
-        <span class="l-inline-flex">${title}</span>
-      </span>
+    <a class="${linkClasses}" href="${link}">
+      ${title}
+      ${external ? externalLinkSvg('l-width-xs l-height-xs') : ''}
     </a>
   `
+
+  if (richText) {
+    output = `<div data-button>${output}</div>`
+  }
 
   if (justify || paddingTop || paddingBottom) {
     const classes = []

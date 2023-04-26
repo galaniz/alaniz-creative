@@ -5,7 +5,6 @@
 /* Imports */
 
 const { getImage } = require('../utils')
-const button = require('./button')
 
 /**
  * Function - output hero
@@ -16,7 +15,7 @@ const button = require('./button')
  *  @prop {string} title
  *  @prop {string} text
  *  @prop {object} image
- *  @prop {object} callToAction
+ *  @prop {object} wave
  * }
  * @return {string} HTML - section
  */
@@ -24,55 +23,74 @@ const button = require('./button')
 const hero = (args = {}) => {
   let {
     contentType = 'page',
-    type = 'Minimal',
+    type = '',
     title = '',
     text = '',
     image = {},
-    callToAction
+    wave = false
   } = args
 
   /* Image */
 
   let imageOutput = ''
 
-  if (image?.fields) {
+  if (image) {
     imageOutput = getImage({
-      data: image?.fields,
+      data: image,
       classes: 'l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc l-object-cover',
       lazy: false,
-      max: 800
+      max: 1600
     })
-  }
 
-  /* Call to Action */
+    if (contentType === 'work') {
+      let waveOutput = ''
 
-  let callToActionOutput = ''
-
-  if (callToAction) {
-    callToActionOutput = button({
-      args: {
-        ...callToAction
+      if (wave) {
+        waveOutput = `
+          <div class="l-absolute l-width-100-vw l-max-height-100-pc l-center">
+            <div style="padding-top:${(wave.height / wave.width) * 100}%"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${wave.width} ${wave.height}" preserveAspectRatio="none" class="l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc">
+              <path d="${wave.path}" fill="none" stroke="var(--theme-main)" stroke-opacity="0.5" stroke-width="1" vector-effect="non-scaling-stroke" />
+            </svg>
+          </div>
+        `
       }
-    })
+
+      imageOutput = `
+        <div class="l-relative">
+          ${waveOutput}
+          <div class="l-aspect-ratio-62 l-relative l-overflow-hidden b-radius-s b-radius-m-m l-isolate">
+            ${imageOutput}
+          </div>
+        </div>
+      `
+    }
   }
 
   /* Text */
 
-  let textOutput = `<h1>${title}</h1>`
+  let textOutput = `<h1 class="t-align-center l-padding-bottom-m l-padding-bottom-l-m">${title}</h1>`
 
   if (text) {
-    let textClasses = 't-l'
-
-    if (callToActionOutput) {
-      textClasses += ' l-padding-bottom-m'
-    }
-
-    textOutput += `<p class="${textClasses}">${text}</p>`
+    textOutput += `<p class="t-l">${text}</p>`
   }
 
-  /* Minimal */
+  /* Output */
 
-  return ''
+  let output = ''
+
+  if (contentType === 'work') {
+    output = `
+      <section class="l-overflow-hidden l-padding-top-m l-padding-top-l-s">
+        <div class="l-container-xs">
+          ${textOutput}
+          ${imageOutput}
+        </div>
+      </section>
+    `
+  }
+
+  return output
 }
 
 /* Exports */

@@ -130,6 +130,10 @@ module.exports = (config) => {
   /* Copy static asset folders */
 
   config.addPassthroughCopy({
+    'src/assets/video': 'assets/video'
+  })
+
+  config.addPassthroughCopy({
     'src/assets/fonts': 'assets/fonts'
   })
 

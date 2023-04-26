@@ -5,12 +5,19 @@
   "metaDescription": "",
   "metaImage": "",
   "heroImage": "why-we-serve/hero",
+  "svg": {
+    "wave": {
+      "path": "m.35.37c.09.07.17.15.26.22,18.48,15.51,22.12.04,42.95,12.05,17.05,9.84,27.13,8.38,37.67,0,.85-.68,1.66-1.39,2.42-2.13",
+      "width": 84,
+      "height": 20
+    }
+  },
   "theme": {
     "main": {
       "dark": "#7a232f",
       "light": "#e199a3"
     },
-    "navy": {
+    "secondary": {
       "dark": "#00193a",
       "light": "#548edb"
     },
@@ -33,6 +40,15 @@
     "black": {
       "dark": "#070707",
       "light": "#8f8f8f"
+    },
+    "video-bg": "#00193a",
+    "video-play-bg": {
+      "dark": "var(--background-light)",
+      "light": "#e199a3"
+    },
+    "video-play-color": {
+      "dark": "#7a232f",
+      "light": "var(--foreground-base)"
     }
   },
   "content": [
@@ -58,7 +74,6 @@
           "content": [
             {
               "renderType": "container",
-              "tag": "div",
               "content": [
                 {
                   "renderType": "rich-text",
@@ -74,7 +89,6 @@
             },
             {
               "renderType": "container",
-              "tag": "div",
               "content": [
                 {
                   "renderType": "rich-text",
@@ -90,7 +104,6 @@
             },
             {
               "renderType": "container",
-              "tag": "div",
               "content": [
                 {
                   "renderType": "rich-text",
@@ -116,7 +129,6 @@
             },
             {
               "renderType": "container",
-              "tag": "div",
               "content": [
                 {
                   "renderType": "rich-text",
@@ -140,6 +152,7 @@
         {
           "renderType": "button",
           "title": "View Why We Serve",
+          "richText": true,
           "externalLink": "https://americanindian.si.edu/why-we-serve/"
         }
       ]
@@ -220,8 +233,6 @@
               "maxWidth": "s",
               "paddingTop": "m",
               "paddingTopLarge": "l",
-              "paddingBottom": "m",
-              "paddingBottomLarge": "l",
               "content": [
                 {
                   "renderType": "container",
@@ -270,21 +281,23 @@
                       ]
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
                 {
-                  "renderType": "container",
-                  "tag": "figcaption",
-                  "maxWidth": "xs",
-                  "paddingTop": "m",
-                  "paddingTopLarge": "l",
-                  "content": [
-                    {
-                      "renderType": "rich-text",
-                      "tag": "p",
-                      "textStyle": "t-s",
-                      "content": "Two-dimensional mockups of panels from the physical exhibition."
-                    }
-                  ]
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "t-s t-italic",
+                  "align": "center",
+                  "content": "Two-dimensional mockups of panels from the physical exhibition."
                 }
               ]
             }
@@ -369,7 +382,7 @@
                   "textStyle": "t-h2-d",
                   "content": "Elegant",
                   "style": {
-                    "color": "var(--theme-navy)"
+                    "color": "var(--theme-secondary)"
                   }
                 },
                 {
@@ -471,29 +484,29 @@
               "maxWidth": "s",
               "paddingTop": "m",
               "paddingTopLarge": "l",
-              "paddingBottom": "m",
-              "paddingBottomLarge": "l",
               "content": [
                 {
                   "renderType": "image",
                   "image": "why-we-serve/content-map",
                   "alt": "",
                   "border": true
-                },
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
                 {
-                  "renderType": "container",
-                  "tag": "figcaption",
-                  "maxWidth": "xs",
-                  "paddingTop": "m",
-                  "paddingTopLarge": "l",
-                  "content": [
-                    {
-                      "renderType": "rich-text",
-                      "tag": "p",
-                      "textStyle": "t-s",
-                      "content": "Content map breaking down content provided by the NMAI into groupings that became the IA for the site."
-                    }
-                  ]
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "t-s t-italic",
+                  "align": "center",
+                  "content": "Content map breaking down content provided by the NMAI into groupings that became the IA for the site."
                 }
               ]
             }
@@ -502,7 +515,6 @@
         {
           "renderType": "container",
           "maxWidth": "xs",
-          "tag": "div",
           "richTextStyles": true,
           "content": [
             {
@@ -530,8 +542,6 @@
               "maxWidth": "l",
               "paddingTop": "m",
               "paddingTopLarge": "l",
-              "paddingBottom": "m",
-              "paddingBottomLarge": "l",
               "content": [
                 {
                   "renderType": "container",
@@ -583,21 +593,23 @@
                       ]
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
                 {
-                  "renderType": "container",
-                  "tag": "figcaption",
-                  "maxWidth": "xs",
-                  "paddingTop": "m",
-                  "paddingTopLarge": "l",
-                  "content": [
-                    {
-                      "renderType": "rich-text",
-                      "tag": "p",
-                      "textStyle": "t-s",
-                      "content": "Homepage and topic landing page wireframes."
-                    }
-                  ]
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "t-s t-italic",
+                  "align": "center",
+                  "content": "Homepage and topic landing page wireframes."
                 }
               ]
             }
@@ -606,7 +618,6 @@
         {
           "renderType": "container",
           "maxWidth": "xs",
-          "tag": "div",
           "richTextStyles": true,
           "content": [
             {
@@ -639,8 +650,6 @@
               "maxWidth": "m",
               "paddingTop": "m",
               "paddingTopLarge": "l",
-              "paddingBottom": "m",
-              "paddingBottomLarge": "l",
               "content": [
                 {
                   "renderType": "container",
@@ -674,21 +683,23 @@
                       ]
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
                 {
-                  "renderType": "container",
-                  "tag": "figcaption",
-                  "maxWidth": "xs",
-                  "paddingTop": "m",
-                  "paddingTopLarge": "l",
-                  "content": [
-                    {
-                      "renderType": "rich-text",
-                      "tag": "p",
-                      "textStyle": "t-s",
-                      "content": "Top portion of homepage visual design making use of flag motif."
-                    }
-                  ]
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "t-s t-italic",
+                  "align": "center",
+                  "content": "Top portion of homepage visual design making use of flag motif."
                 }
               ]
             }
@@ -697,7 +708,6 @@
         {
           "renderType": "container",
           "maxWidth": "xs",
-          "tag": "div",
           "richTextStyles": true,
           "content": [
             {
@@ -725,8 +735,6 @@
               "maxWidth": "xl",
               "paddingTop": "m",
               "paddingTopLarge": "l",
-              "paddingBottom": "m",
-              "paddingBottomLarge": "l",
               "classes": "l-breakout",
               "content": [
                 {
@@ -879,21 +887,23 @@
                       ]
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
                 {
-                  "renderType": "container",
-                  "tag": "figcaption",
-                  "maxWidth": "xs",
-                  "paddingTop": "m",
-                  "paddingTopLarge": "l",
-                  "content": [
-                    {
-                      "renderType": "rich-text",
-                      "tag": "p",
-                      "textStyle": "t-s",
-                      "content": "Topic landing page visual design and examples of individual topic pages to the left and right."
-                    }
-                  ]
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "t-s t-italic",
+                  "align": "center",
+                  "content": "Topic landing page visual design and examples of individual topic pages to the left and right."
                 }
               ]
             }
@@ -902,7 +912,6 @@
         {
           "renderType": "container",
           "maxWidth": "xs",
-          "tag": "div",
           "richTextStyles": true,
           "content": [
             {
@@ -924,8 +933,101 @@
         },
         {
           "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "m",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "justify": "center",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "1-1",
+                      "widthSmall": "3-4",
+                      "widthMedium": "1-2",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "paddingBottom": "2xs",
+                          "paddingBottomLarge": "m",
+                          "content": [
+                            {
+                              "renderType": "rich-text",
+                              "tag": "h4",
+                              "content": "Default"
+                            }
+                          ]
+                        },
+                        {
+                          "renderType": "video",
+                          "title": "Default homepage animation",
+                          "source": "why-we-serve/home-default.mp4"
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-1",
+                      "widthSmall": "3-4",
+                      "widthMedium": "1-2",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "paddingBottom": "2xs",
+                          "paddingBottomLarge": "m",
+                          "content": [
+                            {
+                              "renderType": "rich-text",
+                              "tag": "h4",
+                              "content": "Reduce Motion"
+                            }
+                          ]
+                        },
+                        {
+                          "renderType": "video",
+                          "title": "Reduce motion homepage animation",
+                          "source": "why-we-serve/home-reduce-motion.mp4"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "t-s t-italic",
+                  "align": "center",
+                  "content": "The homepage with full animations and without when reduce motion is set."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
           "maxWidth": "xs",
-          "tag": "div",
           "richTextStyles": true,
           "content": [
             {
@@ -953,8 +1055,6 @@
               "maxWidth": "l",
               "paddingTop": "m",
               "paddingTopLarge": "l",
-              "paddingBottom": "m",
-              "paddingBottomLarge": "l",
               "content": [
                 {
                   "renderType": "container",
@@ -1086,21 +1186,23 @@
                       ]
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
                 {
-                  "renderType": "container",
-                  "tag": "figcaption",
-                  "maxWidth": "xs",
-                  "paddingTop": "m",
-                  "paddingTopLarge": "l",
-                  "content": [
-                    {
-                      "renderType": "rich-text",
-                      "tag": "p",
-                      "textStyle": "t-s",
-                      "content": "Gallery landing page and examples of images with different aspect ratios in the lightbox carousel."
-                    }
-                  ]
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "t-s t-italic",
+                  "align": "center",
+                  "content": "Gallery landing page and examples of images with different aspect ratios in the lightbox carousel."
                 }
               ]
             }
@@ -1128,11 +1230,10 @@
               "content": "Stakeholders were extremely pleased with the site. Together we created an elegant, engaging and accessible site fit to honour Native American veterans. From the product owner:"
             },
             {
-              "container": "container",
+              "renderType": "rich-text",
               "tag": "blockquote",
               "content": [
                 {
-                  "renderType": "rich-text",
                   "tag": "p",
                   "content": "\"Congrats to the team for creating such a beautiful and solid product! We are so pleased for the public to enjoy it starting tomorrow, Veterans Day.\""
                 }
@@ -1141,7 +1242,51 @@
             {
               "renderType": "button",
               "title": "View Why We Serve",
+              "richText": true,
               "externalLink": "https://americanindian.si.edu/why-we-serve/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "paddingTop": "xl",
+      "paddingBottom": "l",
+      "classes": "l-breakout",
+      "content": [
+        {
+          "renderType": "waveSeparator"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "s",
+      "tag": "section",
+      "content": [
+        {
+          "renderType": "container",
+          "paddingBottom": "m",
+          "paddingBottomLarge": "l",
+          "content": [
+            {
+              "renderType": "rich-text",
+              "headingStyle": "t-h3",
+              "tag": "h2",
+              "content": "Explore more work"
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "layout": "row",
+          "gap": "m",
+          "gapLarge": "l",
+          "content": [
+            {
+              "renderType": "card",
+              "headingLevel": "h3"
             }
           ]
         }

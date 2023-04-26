@@ -1,0 +1,17 @@
+/**
+ * Layouts - height
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/src/layouts/height";
+
+/* Styles */
+
+.l-max-height-3xl {
+  max-height: var(--3xl);
+}
+
+.l-max-height-100-pc {
+  max-height: 100%;
+}

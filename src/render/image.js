@@ -55,7 +55,7 @@ const image = ({ args = {}, parents = [] }) => {
       classes: imageClasses.join(' '),
       attr: card ? 'data-scale' : '',
       returnAspectRatio: true,
-      max: card ? 800 : 1600
+      max: card ? 800 : 2000
     })
 
     let classes = 'l-relative l-overflow-hidden b-radius-s b-radius-m-m l-isolate l-height-100-pc'

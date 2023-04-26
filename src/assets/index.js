@@ -6,6 +6,7 @@
 
 import { setElements, usingMouse } from '@alanizcreative/formation/src/utils'
 import Nav from '@alanizcreative/formation/src/components/nav'
+import Video from '@alanizcreative/formation/src/objects/video'
 
 /**
  * Namespace
@@ -82,6 +83,12 @@ const meta = [
         selector: '.c-nav__overlay'
       }
     ]
+  },
+  {
+    prop: 'video',
+    selector: '.o-video',
+    all: true,
+    array: true
   }
 ]
 
@@ -138,6 +145,62 @@ const initialize = () => {
     }
 
     nav()
+  }
+
+  /* Video */
+
+  if (el.video.length) {
+    const video = (args) => {
+      return new Video(args)
+    }
+
+    el.video.forEach(v => {
+      const meta = [
+        {
+          prop: 'video',
+          selector: 'video'
+        },
+        {
+          prop: 'source',
+          selector: 'source',
+          all: true,
+          array: true
+        },
+        {
+          prop: 'play',
+          selector: '.o-video__play'
+        },
+        {
+          prop: 'pause',
+          selector: '.o-video__pause'
+        },
+        {
+          prop: 'loader',
+          selector: '.o-video__loader'
+        },
+        {
+          prop: 'error',
+          selector: '.o-video__error'
+        }
+      ]
+
+      const vv = {}
+
+      setElements(v, meta, vv)
+
+      const args = {
+        container: v,
+        video: vv.video,
+        source: vv.source,
+        play: vv.play,
+        pause: vv.pause,
+        loader: vv.loader,
+        error: vv.error,
+        url: v.getAttribute('data-src').split(',')
+      }
+
+      video(args)
+    })
   }
 }
 

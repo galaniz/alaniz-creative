@@ -24,6 +24,14 @@
   --secondary-button-color: var(--foreground-base);
   --underline: #{func.calc-rem(1px)};
   --underline-offset: 0.3125rem;
+  --video-bg: var(--foreground-base);
+  --video-play-bg: var(--background-light);
+  --video-play-color: var(--foreground-base);
+  --negative: var(--negative-dark);
+  --positive: var(--positive-dark);
+  --negative-bg: #{rgba(func.get-color("negative-dark"), 0.075)};
+  --positive-bg: #{rgba(func.get-color("positive-dark"), 0.075)};
+  --loader-color: var(--background-light);
 
   @include mixi.fluid-size(
     --logo-width,
@@ -52,7 +60,7 @@ body {
 }
 
 main {
-  @extend %u-overflow-x-hidden;
+  @extend %u-overflow-hidden;
 }
 
 a {

@@ -25,6 +25,14 @@
   h5,
   h6 {
     padding-top: var(--4xs);
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  p[data-inline] {
+    margin-bottom: var(--m);
   }
 
   dd,
@@ -39,8 +47,13 @@
   }
 
   blockquote[data-inline] {
+    border-left: 0.1875rem solid var(--heading-color);
+    padding-left: var(--xs);
+    margin: var(--m) 0;
+
     p {
       font-size: inherit;
+      line-height: inherit;
     }
   }
 
@@ -62,7 +75,7 @@
     }
   }
 
-  a[data-button] {
+  div[data-button] {
     margin-top: var(--m);
   }
 
@@ -88,10 +101,11 @@
   h5,
   h6,
   dd,
+  blockquote[data-inline],
   p[data-inline],
   ul[data-inline],
   ol[data-inline],
-  a[data-button] {
+  div[data-button] {
     &:first-child {
       margin-top: 0;
     }
@@ -120,13 +134,18 @@
       margin-bottom: var(--2xs);
     }
 
-    a[data-button] {
+    div[data-button] {
       margin-top: var(--l);
     }
 
     ul[data-inline],
     ol[data-inline] {
       margin: 0 0 var(--m) var(--s);
+    }
+
+    blockquote[data-inline] {
+      padding-left: var(--m);
+      margin: var(--l) 0 var(--l) var(--xs);
     }
   }
 }

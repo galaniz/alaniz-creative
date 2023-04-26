@@ -18,6 +18,8 @@ const container = require('./container')
 const column = require('./column')
 const richText = require('./rich-text')
 const image = require('./image')
+const video = require('./video')
+const waveSeparator = require('./wave-separator')
 const navigations = require('./navigations')
 const hero = require('./hero')
 const httpError = require('./http-error')
@@ -97,6 +99,12 @@ const _renderContent = async ({
           break
         case 'button':
           renderObj.start = button({ args: props, parents })
+          break
+        case 'video':
+          renderObj.start = video({ args: props, parents })
+          break
+        case 'waveSeparator':
+          renderObj.start = waveSeparator()
           break
         case 'navigation': {
           const loc = props.location.toLowerCase().replace(/ /g, '')
@@ -185,7 +193,8 @@ const _renderItem = async ({
     metaTitle: '',
     metaDescription: '',
     metaImage: false,
-    theme: false
+    theme: false,
+    svg: false
   }, item)
 
   /* Meta */
@@ -250,7 +259,8 @@ const _renderItem = async ({
     contentType,
     type: props.heroType,
     title: props.heroTitle || props.title,
-    image: props.heroImage ? props.heroImage : false
+    image: props.heroImage ? props.heroImage : false,
+    wave: props.svg ? props.svg.wave : false
   })
 
   /* Main output */
@@ -333,7 +343,10 @@ const _renderItem = async ({
     const styleArray = []
 
     Object.keys(item.theme).forEach((t) => {
-      styleArray.push(`--theme-${t}:${item.theme[t].dark}`)
+      const prefix = t.includes('video') ? '' : 'theme-'
+      const color = item.theme[t]?.dark ? item.theme[t].dark : item.theme[t]
+
+      styleArray.push(`--${prefix}${t}:${color}`)
     })
 
     style = `:root{${styleArray.join(';')};--main-button-bg:var(--theme-main)}`
