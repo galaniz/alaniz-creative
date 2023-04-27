@@ -558,7 +558,7 @@
                       "content": [
                         {
                           "renderType": "image",
-                          "image": "why-we-serve/homepage-wireframe-top",
+                          "image": "why-we-serve/home-wireframe-top",
                           "alt": "",
                           "border": true
                         }
@@ -572,7 +572,7 @@
                       "content": [
                         {
                           "renderType": "image",
-                          "image": "why-we-serve/homepage-wireframe-bottom",
+                          "image": "why-we-serve/home-wireframe-bottom",
                           "alt": "",
                           "border": true
                         }
@@ -665,7 +665,7 @@
                       "content": [
                         {
                           "renderType": "image",
-                          "image": "why-we-serve/homepage-mockup-top",
+                          "image": "why-we-serve/home-top",
                           "alt": ""
                         }
                       ]
@@ -677,7 +677,7 @@
                       "content": [
                         {
                           "renderType": "image",
-                          "image": "why-we-serve/homepage-mockup-middle",
+                          "image": "why-we-serve/home-middle",
                           "alt": ""
                         }
                       ]
@@ -770,12 +770,12 @@
                                   "content": [
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-1-mockup",
+                                      "image": "why-we-serve/topic-1",
                                       "alt": ""
                                     },
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-9-mockup",
+                                      "image": "why-we-serve/topic-9",
                                       "alt": ""
                                     }
                                   ]
@@ -793,12 +793,12 @@
                                   "content": [
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-2-mockup",
+                                      "image": "why-we-serve/topic-2",
                                       "alt": ""
                                     },
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-4-mockup",
+                                      "image": "why-we-serve/topic-4",
                                       "alt": ""
                                     }
                                   ]
@@ -817,7 +817,7 @@
                       "content": [
                         {
                           "renderType": "image",
-                          "image": "why-we-serve/topics-mockup",
+                          "image": "why-we-serve/topics",
                           "alt": ""
                         }
                       ]
@@ -847,12 +847,12 @@
                                   "content": [
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-5-mockup",
+                                      "image": "why-we-serve/topic-5",
                                       "alt": ""
                                     },
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-6-mockup",
+                                      "image": "why-we-serve/topic-6",
                                       "alt": ""
                                     }
                                   ]
@@ -870,12 +870,12 @@
                                   "content": [
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-7-mockup",
+                                      "image": "why-we-serve/topic-7",
                                       "alt": ""
                                     },
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-8-mockup",
+                                      "image": "why-we-serve/topic-8",
                                       "alt": ""
                                     }
                                   ]
@@ -1071,7 +1071,7 @@
                       "content": [
                         {
                           "renderType": "image",
-                          "image": "why-we-serve/gallery-mockup",
+                          "image": "why-we-serve/gallery",
                           "alt": ""
                         }
                       ]
@@ -1097,7 +1097,7 @@
                               "content": [
                                 {
                                   "renderType": "image",
-                                  "image": "why-we-serve/gallery-item-vertical-desktop-mockup",
+                                  "image": "why-we-serve/gallery-item-vertical-desktop",
                                   "alt": ""
                                 }
                               ]
@@ -1113,7 +1113,7 @@
                               "content": [
                                 {
                                   "renderType": "image",
-                                  "image": "why-we-serve/gallery-item-vertical-mobile-mockup",
+                                  "image": "why-we-serve/gallery-item-vertical-mobile",
                                   "alt": ""
                                 }
                               ]
@@ -1129,7 +1129,7 @@
                               "content": [
                                 {
                                   "renderType": "image",
-                                  "image": "why-we-serve/gallery-item-vertical-tablet-mockup",
+                                  "image": "why-we-serve/gallery-item-vertical-tablet",
                                   "alt": ""
                                 }
                               ]
@@ -1145,7 +1145,7 @@
                               "content": [
                                 {
                                   "renderType": "image",
-                                  "image": "why-we-serve/gallery-item-horizontal-tablet-mockup",
+                                  "image": "why-we-serve/gallery-item-horizontal-tablet",
                                   "alt": ""
                                 }
                               ]
@@ -1161,7 +1161,7 @@
                               "content": [
                                 {
                                   "renderType": "image",
-                                  "image": "why-we-serve/gallery-item-horizontal-mobile-mockup",
+                                  "image": "why-we-serve/gallery-item-horizontal-mobile",
                                   "alt": ""
                                 }
                               ]
@@ -1176,7 +1176,7 @@
                               "content": [
                                 {
                                   "renderType": "image",
-                                  "image": "why-we-serve/gallery-item-horizontal-desktop-mockup",
+                                  "image": "why-we-serve/gallery-item-horizontal-desktop",
                                   "alt": ""
                                 }
                               ]
