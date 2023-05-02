@@ -18,6 +18,7 @@
  *  @prop {string} justify
  *  @prop {string} align
  *  @prop {string} classes
+ *  @prop {string} attr
  *  @prop {string} richTextStyles
  * }
  * @return {object}
@@ -36,7 +37,8 @@ const container = ({ args = {} }) => {
     gapLarge = '',
     justify = '',
     align = '',
-    richTextStyles = false
+    richTextStyles = false,
+    attr = '' // Back end option
   } = args
 
   let { classes = '' } = args
@@ -47,12 +49,12 @@ const container = ({ args = {} }) => {
 
   /* Attributes */
 
-  const attr = []
+  const attrs = []
 
   /* List check */
 
   if (tag === 'ul' || tag === 'ol') {
-    attr.push('role="list"')
+    attrs.push('role="list"')
     classes.push('t-list-style-none')
   }
 
@@ -129,13 +131,19 @@ const container = ({ args = {} }) => {
   /* Classes */
 
   if (classes.length) {
-    attr.push(`class="${classes.join(' ')}"`)
+    attrs.push(`class="${classes.join(' ')}"`)
+  }
+
+  /* Attributes */
+
+  if (attr) {
+    attrs.push(attr)
   }
 
   /* Output */
 
   return {
-    start: `<${tag}${attr ? ` ${attr.join(' ')}` : ''}>`,
+    start: `<${tag}${attrs.length ? ` ${attrs.join(' ')}` : ''}>`,
     end: `</${tag}>`
   }
 }

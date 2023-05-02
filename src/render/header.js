@@ -55,7 +55,7 @@ const header = (navigations = {}) => {
               <button class="c-nav__button c-nav__close c-nav-icon l-height-l l-fixed" type="button" aria-label="Close menu" data-visible="false"></button>
             </div>
           </div>
-          <div class="c-nav__overlay l-fixed l-top-0 l-left-0 l-width-100-pc l-height-100-pc bg-background-light e-transition-quad"></div>
+          <div class="c-nav__overlay l-fixed l-bottom-0 l-left-0 l-width-100-pc l-height-100-pc bg-background-light e-transition-quad"></div>
         </div>
       </nav>
     `
@@ -65,7 +65,7 @@ const header = (navigations = {}) => {
 
   return `
     <header>
-      <a href="#main" class="c-skip-link o-button b-radius-l o-button-secondary b-all l-absolute l-left-0 l-top-0">
+      <a href="#main" class="c-skip-link o-button b-radius-l o-button-secondary b-all l-absolute bg-background-light">
         Skip to main content
       </a>
       ${nav}

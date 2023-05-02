@@ -9,5 +9,8 @@
 /* Styles */
 
 .c-skip-link {
-  margin: var(--2xs);
+  &:focus {
+    top: var(--2xs);
+    left: var(--2xs);
+  }
 }

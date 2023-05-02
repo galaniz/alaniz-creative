@@ -34,7 +34,7 @@ const image = ({ args = {}, parents = [] }) => {
   let card = false
 
   if (parents.length) {
-    if (parents[0].type === 'card') {
+    if (parents[0].renderType === 'card') {
       card = true
     }
   }
@@ -55,7 +55,7 @@ const image = ({ args = {}, parents = [] }) => {
       classes: imageClasses.join(' '),
       attr: card ? 'data-scale' : '',
       returnAspectRatio: true,
-      max: card ? 800 : 2000
+      max: card ? 1600 : 2000
     })
 
     let classes = 'l-relative l-overflow-hidden b-radius-s b-radius-m-m l-isolate l-height-100-pc'
@@ -64,16 +64,18 @@ const image = ({ args = {}, parents = [] }) => {
       classes += ` l-aspect-ratio-${aspectRatio}`
     }
 
-    if (card) {
-      classes += ' l-after bg-gradient-0'
-    }
-
     if (border) {
       classes += ' b-all b-theme'
     }
 
+    let attr = ''
+
+    if (!aspectRatio) {
+      attr += ` style="padding-top:${imageOutput.aspectRatio * 100}%"`
+    }
+
     imageOutput = `
-      <div class="${classes}"${!aspectRatio ? ` style="padding-top:${imageOutput.aspectRatio * 100}%"` : ''}>
+      <div class="${classes}"${attr}>
         ${imageOutput.output}
       </div>
     `
@@ -83,7 +85,7 @@ const image = ({ args = {}, parents = [] }) => {
 
   if (imageOutput && card) {
     imageOutput = `
-      <div class="l-relative l-z-index--1 l-overflow-hidden l-after bg-overlay l-order-first" data-overlay>
+      <div class="l-order-first l-z-index--1 l-width-1-1" data-image>
         ${imageOutput}
       </div>
     `

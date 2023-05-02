@@ -49,10 +49,32 @@ const enumColors = {
   }
 }
 
+/**
+ * Posts layouts
+ *
+ * @type {object}
+ */
+
+const enumLayouts = {
+  cardsMinimal: {
+    type: 'cards',
+    subtype: 'minimal'
+  },
+  cardsAlternating: {
+    type: 'cards',
+    subtype: 'alternating'
+  },
+  cardsCascading: {
+    type: 'cards',
+    subtype: 'cascading'
+  }
+}
+
 /* Export */
 
 module.exports = {
   enumNamespace,
   enumSite,
-  enumColors
+  enumColors,
+  enumLayouts
 }

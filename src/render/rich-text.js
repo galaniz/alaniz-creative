@@ -24,7 +24,8 @@ const _getContent = ({
 }) => {
   content.forEach(c => {
     const {
-      tag = 'p',
+      tag = '',
+      link = '',
       content: con
     } = c
 
@@ -41,7 +42,7 @@ const _getContent = ({
 
     const attr = []
 
-    if (tag === 'ul' || tag === 'ol' || tag === 'li' || tag === 'blockquote' || tag === 'p') {
+    if (tag === 'ul' || tag === 'ol' || tag === 'li' || tag === 'blockquote' || tag === 'p' || tag === 'a') {
       attr.push('data-inline')
     }
 
@@ -49,7 +50,19 @@ const _getContent = ({
       attr.push('scope="col"')
     }
 
-    _output += `<${tag}${attr.length ? ` ${attr.join(' ')}` : ''}>${cc}</${tag}>`
+    if (tag === 'a' && link) {
+      attr.push(`href="${link}"`)
+    }
+
+    if (tag) {
+      _output += `<${tag}${attr.length ? ` ${attr.join(' ')}` : ''}>`
+    }
+
+    _output += cc
+
+    if (tag) {
+      _output += `</${tag}>`
+    }
   })
 
   return _output
@@ -65,6 +78,7 @@ const _getContent = ({
  *  @prop {string} textStyle
  *  @prop {string} headingStyle
  *  @prop {string} align
+ *  @prop {string} link
  *  @prop {object} style
  * }
  * @param {array<object>} parents
@@ -73,12 +87,13 @@ const _getContent = ({
 
 const richText = ({ args = {}, parents = [] }) => {
   let {
-    tag = 'p',
+    tag = '',
     content = [],
     classes = '',
     textStyle = '',
     headingStyle = '',
     align = '',
+    link = '',
     style
   } = args
 
@@ -98,21 +113,18 @@ const richText = ({ args = {}, parents = [] }) => {
   let card = false
 
   if (parents.length) {
-    /*if (parents[1].renderType === 'card') {
+    if (parents[0].renderType === 'card') {
       card = true
     }
 
     if (card && heading) {
       const {
         internalLink = false,
-        externalLink = '',
-        embed
-      } = parents[1]
+        externalLink = ''
+      } = parents[0]
 
-      if (!embed) {
-        cardLink = getLink(internalLink, externalLink)
-      }
-    }*/
+      cardLink = getLink(internalLink, externalLink)
+    }
   }
 
   /* Classes */
@@ -162,8 +174,12 @@ const richText = ({ args = {}, parents = [] }) => {
     attr.push(`id="${output.replace(/[\s,:;"'“”‘’]/g, '-').toLowerCase()}"`)
   }
 
-  if (tag === 'ul' || tag === 'ol' || tag === 'blockquote' || tag === 'p') {
+  if (tag === 'ul' || tag === 'ol' || tag === 'blockquote' || tag === 'p' || tag === 'a') {
     attr.push('data-inline')
+  }
+
+  if (tag === 'a' && link) {
+    attr.push(`href="${link}"`)
   }
 
   if (classes) {
@@ -180,9 +196,17 @@ const richText = ({ args = {}, parents = [] }) => {
     attr.push(`style="${styleArray.join(';')}"`)
   }
 
+  /* Card */
+
+  if (cardLink) {
+    output = `<a class="l-before outline-tight" href="${cardLink}" data-inline>${content}</a>`
+  }
+
   /* Output */
 
-  output = tag && output ? `<${tag}${attr.length ? ` ${attr.join(' ')}` : ''}>${output}</${tag}>` : ''
+  if (tag) {
+    output = `<${tag}${attr.length ? ` ${attr.join(' ')}` : ''}>${output}</${tag}>`
+  }
 
   return output
 }

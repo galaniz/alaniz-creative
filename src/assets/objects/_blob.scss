@@ -1,0 +1,49 @@
+/**
+ * Objects - blob
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/src/utils/functions" as func;
+@use "@alanizcreative/formation/src/utils/mixins" as mix;
+
+/* Styles */
+
+.o-blob {
+  --s: 1;
+  --l: auto;
+  --r: 66.667%;
+ 
+  width: var(--width);
+  height: var(--height);
+  transform: scaleX(var(--s));
+  left: var(--l);
+  right: var(--r);
+  z-index: -2;
+
+  &[data-reverse="true"] {
+    --l: 66.667%;
+    --r: auto;
+    --s: -1;
+  }
+
+  @include mix.fluid-size(
+    --width,
+    func.calc-rem(400px) func.calc-rem(600px) func.calc-rem(900px) func.calc-rem(1000px),
+    "xs" "s" "m" "l"
+  );
+
+  @include mix.fluid-size(
+    --height,
+    func.calc-rem(320px) func.calc-rem(480px) func.calc-rem(720px) func.calc-rem(800px),
+    "xs" "s" "m" "l"
+  );
+
+  @include mix.breakpoint-min("xl") {
+    --r: 50%;
+
+    &[data-reverse="true"] {
+      --l: 50%;
+    }
+  }
+}

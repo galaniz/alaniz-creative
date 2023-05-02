@@ -7,11 +7,15 @@
 .e-underline-all a,
 .e-underline a[data-inline],
 .e-underline-reverse a[data-inline] {
+  --duration: 200ms;
+
   text-decoration: underline;
   text-decoration-thickness: var(--underline);
   text-underline-offset: var(--underline-offset);
   text-decoration-color: var(--color);
-  transition: text-decoration-color var(--duration) var(--easing);
+  transition:
+    text-decoration-color var(--duration),
+    text-underline-offset var(--duration);
 }
 
 .e-underline-all a,
@@ -27,7 +31,7 @@
 .e-underline-all a:active,
 .e-underline a[data-inline]:hover,
 .e-underline a[data-inline]:active {
-  --color: var(--underline-hover);
+  --underline-offset: 0.25rem;
 }
 
 .e-underline-reverse a[data-inline]:hover,

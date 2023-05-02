@@ -49,6 +49,7 @@ const scriptData = {}
 
 const archiveData = {
   ids: {}, // Page archive ids by content type
+  posts: {} // Posts by content type
 }
 
 /**
@@ -69,6 +70,10 @@ const jsonFileData = {
   archiveIds: {
     data: '',
     name: 'archive-ids.json'
+  },
+  archivePosts: {
+    data: '',
+    name: 'archive-posts.json'
   },
   navData: {
     data: '',

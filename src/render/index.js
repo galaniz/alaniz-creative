@@ -9,6 +9,7 @@ const { getAllLocalData, getSlug, getPermalink } = require('../utils')
 const { slugData, envData, navData, archiveData, scriptData, jsonFileData } = require('../vars/data')
 const slugParentsJson = require('../json/slug-parents.json')
 const archiveIdsJson = require('../json/archive-ids.json')
+const archivePostsJson = require('../json/archive-posts.json')
 const navDataJson = require('../json/nav-data.json')
 const layout = require('./layout')
 const header = require('./header')
@@ -23,6 +24,9 @@ const waveSeparator = require('./wave-separator')
 const navigations = require('./navigations')
 const hero = require('./hero')
 const httpError = require('./http-error')
+const aspectRatio = require('./aspect-ratio')
+const posts = require('./posts')
+const { card } = require('./cards')
 
 /**
  * Store slug data for json
@@ -91,6 +95,12 @@ const _renderContent = async ({
         case 'container':
           renderObj = container({ args: props, parents })
           break
+        case 'aspect-ratio':
+          renderObj = aspectRatio({ args: props, parents })
+          break
+        case 'card':
+          renderObj = card({ args: props, parents })
+          break
         case 'rich-text':
           renderObj.start = richText({ args: props, parents })
           break
@@ -103,8 +113,11 @@ const _renderContent = async ({
         case 'video':
           renderObj.start = video({ args: props, parents })
           break
-        case 'waveSeparator':
+        case 'wave-separator':
           renderObj.start = waveSeparator()
+          break
+        case 'posts':
+          renderObj.start = posts({ args: props, parents })
           break
         case 'navigation': {
           const loc = props.location.toLowerCase().replace(/ /g, '')
@@ -159,8 +172,6 @@ const _renderContent = async ({
  *  @prop {string} contentType
  *  @prop {object} serverlessData
  *  @prop {function} getLocalData
- *  @prop {array} navs
- *  @prop {array} navItems
  * }
  * @return {object}
  */
@@ -169,9 +180,7 @@ const _renderItem = async ({
   item = {},
   contentType = 'page',
   serverlessData,
-  getLocalData,
-  navs,
-  navItems
+  getLocalData
 }) => {
   /* Serverless render check */
 
@@ -187,8 +196,8 @@ const _renderItem = async ({
     title: '',
     slug: '',
     pagination: false,
-    heroTitle: '',
-    heroImage: false,
+    archive: '',
+    hero: {},
     content: [],
     metaTitle: '',
     metaDescription: '',
@@ -255,13 +264,21 @@ const _renderItem = async ({
 
   /* Hero */
 
-  const heroOutput = hero({
+  const heroArgs = {
     contentType,
-    type: props.heroType,
-    title: props.heroTitle || props.title,
-    image: props.heroImage ? props.heroImage : false,
-    wave: props.svg ? props.svg.wave : false
-  })
+    archive: props.archive,
+    ...props.hero
+  }
+
+  if (props.slug === 'index') {
+    heroArgs.type = 'index'
+  }
+
+  if (!heroArgs.title) {
+    heroArgs.title = props.title
+  }
+
+  const heroOutput = hero(heroArgs)
 
   /* Main output */
 
@@ -438,7 +455,8 @@ const render = async ({
     content = {},
     navs = [],
     navItems = [],
-    redirects = []
+    redirects = [],
+    archivePosts = {}
   } = allLocalData
 
   /* Store navigations and items */
@@ -462,6 +480,10 @@ const render = async ({
 
       if (archive) {
         archiveData.ids[archive] = id
+
+        if (archivePosts?.[archive]) {
+          archiveData.posts[archive] = archivePosts[archive]
+        }
 
         if (slugData.bases?.[archive]) {
           slugData.bases[archive].archiveId = id
@@ -494,6 +516,12 @@ const render = async ({
       })
     }
 
+    if (archivePostsJson) {
+      Object.keys(archivePostsJson).forEach((a) => {
+        archiveData.posts[a] = archivePostsJson[a]
+      })
+    }
+
     if (navDataJson) {
       navData.navs = navDataJson.navs
       navData.items = navDataJson.items
@@ -521,9 +549,7 @@ const render = async ({
         item: content[contentType][i],
         contentType,
         serverlessData,
-        getLocalData,
-        navs,
-        navItems
+        getLocalData
       })
 
       const {
@@ -550,6 +576,7 @@ const render = async ({
       jsonFileData.slugs.data = _slugs
       jsonFileData.slugParents.data = slugData.parents
       jsonFileData.archiveIds.data = archiveData.ids
+      jsonFileData.archivePosts.data = archiveData.posts
       jsonFileData.navData.data = navData
 
       jsonData = jsonFileData

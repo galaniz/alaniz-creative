@@ -39,17 +39,18 @@ const video = ({ args = {} }) => {
 
   return `
     <figure class="o-video" role="group" data-state="play" data-src="${url}">
-      <div class="o-video__bg l-aspect-ratio-57 l-relative l-overflow-hidden b-radius-s b-radius-m-m l-isolate">
+      <div class="o-video__bg l-aspect-ratio-57 l-relative l-overflow-hidden b-all b-radius-s b-radius-m-m l-isolate">
         <video playsinline muted class="l-block l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc l-object-cover">
           <source src="" type="video/mp4">
           <p>Your browser doesn't support HTML video. <a href="${url}" data-inline>${title}</a>.</p>
         </video>
         ${loader({ classes: 'o-video__loader' })}
-        <button type="button" aria-label="Play ${title}" class="o-video__play l-none l-absolute l-center b-radius-100-pc">
-          <span class="l-block l-aspect-ratio-100"></span>
-          ${playSvg('l-absolute l-center l-width-2-5')}
+        <button type="button" aria-label="Play ${title}" class="o-video__play l-none l-absolute l-center e-scale">
+          <span class="b-radius-100-pc b-all l-block l-aspect-ratio-100 e-transition" data-scale>
+            ${playSvg('l-absolute l-center l-width-2-5')}
+          </span>
         </button>
-        <button type="button" aria-label="Pause ${title}" class="o-video__pause l-none l-absolute l-right-0 l-bottom-0 l-width-l l-height-l b-radius-100-pc">
+        <button type="button" aria-label="Pause ${title}" class="o-video__pause l-none l-absolute l-right-0 l-bottom-0 l-width-l l-height-l b-radius-100-pc b-all t-background-light">
           <span class="l-block l-aspect-ratio-100"></span>
           ${pauseSvg('l-absolute l-center l-width-2-5 t-background-light')}
         </button>

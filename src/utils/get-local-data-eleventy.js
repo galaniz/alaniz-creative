@@ -8,6 +8,7 @@ const { AssetCache } = require('@11ty/eleventy-fetch')
 const { envData } = require('../vars/data')
 const { readdir, readFile } = require('node:fs/promises')
 const { extname, basename, resolve } = require('node:path')
+const safeJsonStringify = require('safe-json-stringify')
 const resolveInternalLinks = require('./resolve-internal-links')
 
 /**
@@ -49,7 +50,10 @@ const getLocalDataEleventy = async (key, params = {}) => {
       },
       navs: [],
       navItems: [],
-      redirects: []
+      redirects: [],
+      archivePosts: {
+        work: []
+      }
     }
 
     const flatData = {}
@@ -79,8 +83,8 @@ const getLocalDataEleventy = async (key, params = {}) => {
           }
         }
 
+        resolveInternalLinks(imageData, flatData, ['metaImage', 'image'])
         resolveInternalLinks(flatData, flatData, ['items', 'internalLink'])
-        resolveInternalLinks(imageData, flatData, ['metaImage', 'heroImage', 'image'])
 
         Object.keys(flatData).forEach((f) => {
           const ff = flatData[f]
@@ -106,6 +110,14 @@ const getLocalDataEleventy = async (key, params = {}) => {
 
           if (contentType === 'work') {
             data.content.work.push(ff)
+
+            const fff = structuredClone(ff)
+
+            if (fff?.content) {
+              delete fff.content
+            }
+
+            data.archivePosts.work.push(fff)
           }
         })
       }
@@ -115,9 +127,9 @@ const getLocalDataEleventy = async (key, params = {}) => {
 
     }
 
-    /*if (envData.eleventy.cache && cache) {
-      await cache.save(JSON.parse(data), 'json')
-    }*/
+    if (envData.eleventy.cache && cache) {
+      await cache.save(JSON.parse(safeJsonStringify(data)), 'json')
+    }
 
     return data
   } catch (error) {

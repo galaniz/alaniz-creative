@@ -5,28 +5,33 @@
 /* Imports */
 
 @use "@alanizcreative/formation/src/utils/mixins" as mix;
+@use "@alanizcreative/formation/src/utils/functions" as func;
 @use "@alanizcreative/formation/src/layouts/width";
 
 /* Styles */
 
 .l-width-custom {
   --width: 100%;
-  --widthSmall: 100%;
-  --widthMedium: 100%;
-  --widthLarge: 100%;
+  --width-small: 100%;
+  --width-medium: 100%;
+  --width-large: 100%;
   --w: var(--width);
 
   width: var(--w);
 
   @include mix.breakpoint-min("s") {
-    --w: var(--widthSmall);
+    --w: var(--width-small);
   }
 
   @include mix.breakpoint-min("m") {
-    --w: var(--widthMedium);
+    --w: var(--width-medium);
   }
 
   @include mix.breakpoint-min("l") {
-    --w: var(--widthLarge);
+    --w: var(--width-large);
   }
+}
+
+.l-max-width-card {
+  max-width: func.calc-rem(900px)
 }

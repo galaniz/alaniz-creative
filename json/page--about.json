@@ -4,6 +4,8 @@
   "slug": "about",
   "metaDescription": "",
   "metaImage": "",
-  "heroTitle": "Hi, I'm Graciela Alaniz.",
-  "heroImage": ""
+  "hero": {
+    "title": "Hi, I'm Graciela Alaniz.",
+    "type": "profile"
+  }
 }

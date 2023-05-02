@@ -11,6 +11,7 @@
 
 .o-video__bg {
   background: var(--video-bg);
+  border-color: var(--video-border);
 }
 
 .o-video__play,
@@ -23,11 +24,17 @@
 }
 
 .o-video__play {
+  --scale: 1.08;
+
   width: 15%;
   min-width: var(--l);
-  max-width: var(--xl);
-  background: var(--video-play-bg);
+  max-width: var(--2xl);
   color: var(--video-play-color);
+
+  span {
+    background: var(--video-play-bg);
+    border-color: var(--video-bg);
+  }
 
   [data-state="play"] & {
     @extend %u-display-block;
@@ -36,7 +43,7 @@
 
 .o-video__pause {
   margin: var(--xs);
-  background: rgba(func.get-color("foreground-base"), 0.5);
+  background: rgba(func.get-color("foreground-base"), 0.75);
 
   [data-state="pause"] & {
     @extend %u-display-block;

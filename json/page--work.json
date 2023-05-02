@@ -4,6 +4,23 @@
   "slug": "work",
   "metaDescription": "",
   "metaImage": "",
-  "heroImage": "",
-  "archive": "work"
+  "archive": "work",
+  "content": [
+    {
+      "renderType": "container",
+      "tag": "section",
+      "maxWidth": "s",
+      "paddingBottom": "xl",
+      "paddingBottomLarge": "2xl",
+      "content": [
+        {
+          "renderType": "posts",
+          "contentType": "work",
+          "display": -1,
+          "headingLevel": 2,
+          "layout": "cardsCascading"
+        }
+      ]
+    }
+  ]
 }

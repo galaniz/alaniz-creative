@@ -20,6 +20,7 @@ const externalLinkSvg = require('./svg/external-link')
  *  @prop {string} justify
  *  @prop {string} paddingTop
  *  @prop {string} paddingBottom
+ *  @prop {boolean} newTab
  * }
  * @return {string} HTML - a || div
  */
@@ -34,7 +35,8 @@ const button = ({ args = {} }) => {
     justify = '',
     richText = false,
     paddingTop = '',
-    paddingBottom = ''
+    paddingBottom = '',
+    newTab = false
   } = args
 
   let { link = '' } = args // Back end option
@@ -49,7 +51,7 @@ const button = ({ args = {} }) => {
 
   /* Check if external */
 
-  const external = externalLink || false
+  const external = externalLink && newTab || false
 
   /* Classes */
 
@@ -72,7 +74,7 @@ const button = ({ args = {} }) => {
   /* Output */
 
   let output = `
-    <a class="${linkClasses}" href="${link}">
+    <a class="${linkClasses}" href="${link}"${newTab ? ` target="_blank" rel="noreferrer"` : ''}>
       ${title}
       ${external ? externalLinkSvg('l-width-xs l-height-xs') : ''}
     </a>

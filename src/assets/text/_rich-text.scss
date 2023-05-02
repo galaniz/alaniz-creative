@@ -25,10 +25,6 @@
   h5,
   h6 {
     padding-top: var(--4xs);
-
-    &:first-child {
-      padding-top: 0;
-    }
   }
 
   p[data-inline] {
@@ -95,29 +91,43 @@
     font-size: var(--h5);
   }
 
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  dd,
-  blockquote[data-inline],
-  p[data-inline],
-  ul[data-inline],
-  ol[data-inline],
-  div[data-button] {
-    &:first-child {
-      margin-top: 0;
-    }
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  h5:first-child,
+  h6:first-child,
+  dd:first-child,
+  blockquote[data-inline]:first-child,
+  p[data-inline]:first-child,
+  ul[data-inline]:first-child,
+  ol[data-inline]:first-child,
+  div[data-button]:first-child {
+    margin-top: 0;
+  }
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+  h2:last-child,
+  h3:last-child,
+  h4:last-child,
+  h5:last-child,
+  h6:last-child,
+  dd:last-child,
+  blockquote[data-inline]:last-child,
+  p[data-inline]:last-child,
+  ul[data-inline]:last-child,
+  ol[data-inline]:last-child,
+  div[data-button]:last-child {
+    margin-bottom: 0;
+  }
+
+  h4:first-child,
+  h5:first-child,
+  h6:first-child {
+    padding-top: 0;
   }
 
   @include mix.breakpoint-min("l") {
     h2 {
-      margin: var(--xl) 0 var(--m);
+      margin: var(--2xl) 0 var(--m);
     }
 
     h3 {

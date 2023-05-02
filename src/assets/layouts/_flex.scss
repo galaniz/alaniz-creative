@@ -1,0 +1,13 @@
+/**
+ * Layouts - flex
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/src/layouts/flex";
+
+/* Styles */
+
+.l-order-first {
+  order: -9999;
+}

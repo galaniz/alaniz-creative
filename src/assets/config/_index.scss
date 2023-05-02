@@ -14,13 +14,14 @@ $padding-vertical: (
   "2xl",
   "3xl",
   "4xl",
+  "5xl",
 );
 
 /* Horizontal padding */
 
 $padding-horizontal: (
   "3xs",
-  "xl",
+  "l",
 );
 
 /* Gaps */
@@ -31,7 +32,6 @@ $gaps: (
   "xs",
   "m",
   "l",
-  "xl",
 );
 
 /* Config variables */
@@ -86,14 +86,17 @@ $gaps: (
 
   /* Breakpoints */
 
+  /* stylelint-disable */
   $breakpoints: (
     "0": 0px,
     "xs": 300px,
     "s": 600px,
     "m": 900px,
     "l": 1200px,
-    "xl": 2000px,
+    "xl": 1400px,
+    "2xl": 2000px,
   ),
+  /* stylelint-enable */
 
   /* Spacing */
 
@@ -105,10 +108,11 @@ $gaps: (
     "s": 25px,
     "m": 30px,
     "l": 50px,
-    "xl": 100px,
-    "2xl": 150px,
-    "3xl": 200px,
-    "4xl": 300px,
+    "xl": 75px,
+    "2xl": 100px,
+    "3xl": 150px,
+    "4xl": 200px,
+    "5xl": 300px,
   ),
 
   /* Padding */
@@ -155,7 +159,7 @@ $gaps: (
 
   /* Flex */
 
-  $flex-row-breakpoints: ("m"),
+  $flex-row-breakpoints: ("s", "m"),
 
   /* Containers */
 

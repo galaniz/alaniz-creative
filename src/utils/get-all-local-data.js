@@ -33,6 +33,7 @@ const getAllLocalData = async (serverlessData, getLocalData) => {
     let navs = []
     let navItems = []
     let redirects = []
+    let archivePosts = {}
     let entry = false
 
     if (serverlessData) {
@@ -78,6 +79,10 @@ const getAllLocalData = async (serverlessData, getLocalData) => {
       if (all?.navItems) {
         navItems = all.navItems
       }
+
+      if (all?.archivePosts) {
+        archivePosts = all.archivePosts
+      }
     }
 
     /* Output */
@@ -86,7 +91,8 @@ const getAllLocalData = async (serverlessData, getLocalData) => {
       content,
       navs,
       navItems,
-      redirects
+      redirects,
+      archivePosts
     }
   } catch (error) {
     console.error('Error getting all local data: ', error)

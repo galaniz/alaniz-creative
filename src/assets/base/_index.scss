@@ -23,8 +23,9 @@
   --main-button-color: var(--background-light);
   --secondary-button-color: var(--foreground-base);
   --underline: #{func.calc-rem(1px)};
-  --underline-offset: 0.3125rem;
+  --underline-offset: 0.375rem;
   --video-bg: var(--foreground-base);
+  --video-border: var(--foreground-base);
   --video-play-bg: var(--background-light);
   --video-play-color: var(--foreground-base);
   --negative: var(--negative-dark);
@@ -32,6 +33,14 @@
   --negative-bg: #{rgba(func.get-color("negative-dark"), 0.075)};
   --positive-bg: #{rgba(func.get-color("positive-dark"), 0.075)};
   --loader-color: var(--background-light);
+  --nav-padding: var(--m);
+  --nav-height: calc(var(--logo-height) + (var(--nav-padding) * 2));
+}
+
+html {
+  @extend %u-overflow-x-hidden;
+
+  scroll-behavior: smooth;
 
   @include mixi.fluid-size(
     --logo-width,
@@ -44,10 +53,10 @@
     func.calc-rem(51px) func.calc-rem(84px),
     "s" "l"
   );
-}
 
-html {
-  scroll-behavior: smooth;
+  @include mixi.breakpoint-min("m") {
+    --nav-padding: var(--l);
+  }
 }
 
 html,
@@ -57,10 +66,6 @@ body {
 
   color: var(--text-color);
   min-height: 100vh;
-}
-
-main {
-  @extend %u-overflow-hidden;
 }
 
 a {

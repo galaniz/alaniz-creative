@@ -9,6 +9,10 @@
 
 /* Styles */
 
+.c-footer-title {
+  padding-right: var(--2xl);
+}
+
 .c-footer-blob {
   z-index: -1;
   min-width: 80rem;
@@ -22,7 +26,7 @@
     "s" "m" "l"
   );
 
-  @include mix.breakpoint-min("xl") {
+  @include mix.breakpoint-min("2xl") {
     width: calc(80rem + (50vw - #{func.calc-rem(650px)} - #{func.calc-rem(270px)})); // Account for container / 2 and right offset
   }
 }

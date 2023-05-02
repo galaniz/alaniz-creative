@@ -4,6 +4,7 @@
   "slug": "contact",
   "metaDescription": "",
   "metaImage": "",
-  "heroTitle": "Get In Touch",
-  "heroImage": ""
+  "hero": {
+    "title": "Get In Touch"
+  }
 }

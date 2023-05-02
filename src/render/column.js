@@ -19,6 +19,8 @@
  *  @prop {string} orderMedium
  *  @prop {string} orderLarge
  *  @prop {string} classes
+ *  @prop {string} style
+ *  @prop {string} attr
  * }
  * @return {object}
  */
@@ -34,7 +36,9 @@ const column = ({ args = {} }) => {
     justify = '',
     align = '',
     grow = '',
-    classes = '' // Back end option
+    classes = '', // Back end option
+    style = '', // Back end option
+    attr = '' // Back end option
   } = args
 
   /* Classes */
@@ -81,27 +85,41 @@ const column = ({ args = {} }) => {
     classes.push('l-flex-grow-1')
   }
 
-  /* Attr */
+  /* Style */
 
-  const attr = []
+  let styles = []
+
+  if (style) {
+    styles.push(style)
+  }
 
   if (widthCustom) {
     classes.push('l-width-custom')
 
     const styleArray = [
       `--width:${widthCustom?.default ? widthCustom.default : '100%'}`,
-      `--widthSmall:${widthCustom?.small ? widthCustom.small : '100%'}`,
-      `--widthMedium:${widthCustom?.medium ? widthCustom.medium : '100%'}`,
-      `--widthLarge:${widthCustom?.large ? widthCustom.large : '100%'}`
+      `--width-small:${widthCustom?.small ? widthCustom.small : '100%'}`,
+      `--width-medium:${widthCustom?.medium ? widthCustom.medium : '100%'}`,
+      `--width-large:${widthCustom?.large ? widthCustom.large : '100%'}`
     ]
 
-    attr.push(` style=${styleArray.join(';')}`)
+    styles.push(styleArray.join(';'))
+  }
+
+  styles = styles.length ? ` style="${styles.join(';')}"` : ''
+
+  /* Attributes */
+
+  let attrs = ''
+
+  if (attr) {
+    attrs = ` ${attr}`
   }
 
   /* Output */
 
   return {
-    start: `<${tag} class="${classes.join(' ')}"${attr.join(' ')}>`,
+    start: `<${tag} class="${classes.join(' ')}"${styles}${attrs}>`,
     end: `</${tag}>`
   }
 }
