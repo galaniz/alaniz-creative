@@ -2,8 +2,10 @@
   "contentType": "page",
   "title": "Home",
   "slug": "index",
-  "metaDescription": "",
-  "metaImage": "",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
   "hero": {
     "title": "Hi, I'm Graciela. I'm a designer<wbr>/<wbr>developer. I strive to create elegant, engaging and accessible digital experiences.",
     "action": {

@@ -3,8 +3,11 @@
   "title": "Why We Serve",
   "slug": "why-we-serve",
   "date": "2020-11-11",
-  "metaDescription": "",
-  "metaImage": "",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "passwordProtected": true,
   "hero": {
     "image": "why-we-serve/hero",
     "wave": {

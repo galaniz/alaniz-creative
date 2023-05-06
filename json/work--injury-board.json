@@ -3,8 +3,10 @@
   "title": "Injury Board",
   "slug": "injury-board",
   "date": "2018-10-15",
-  "metaDescription": "",
-  "metaImage": "",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
   "hero": {
     "image": "injury-board/hero",
     "wave": {

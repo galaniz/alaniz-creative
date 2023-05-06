@@ -3,8 +3,11 @@
   "title": "Later Newsroom",
   "slug": "later-newsroom",
   "date": "2022-12-15",
-  "metaDescription": "",
-  "metaImage": "",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "passwordProtected": true,
   "hero": {
     "image": "later-newsroom/hero",
     "border": true,

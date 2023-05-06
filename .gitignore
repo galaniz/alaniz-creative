@@ -9,4 +9,5 @@ src/json/nav-data.json
 src/json/image-data.json
 .DS_Store
 .cache
+.dev.vars
 .env

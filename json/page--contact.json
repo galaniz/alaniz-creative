@@ -2,8 +2,10 @@
   "contentType": "page",
   "title": "Contact",
   "slug": "contact",
-  "metaDescription": "",
-  "metaImage": "",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
   "hero": {
     "title": "Get In Touch"
   }

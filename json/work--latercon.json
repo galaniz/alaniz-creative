@@ -3,8 +3,11 @@
   "title": "LaterCon",
   "slug": "latercon",
   "date": "2021-09-29",
-  "metaDescription": "",
-  "metaImage": "",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "passwordProtected": true,
   "hero": {
     "image": "latercon/hero",
     "border": true,

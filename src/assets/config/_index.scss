@@ -5,6 +5,7 @@
 /* Vertical padding */
 
 $padding-vertical: (
+  "4xs",
   "3xs",
   "2xs",
   "xs",
@@ -21,6 +22,7 @@ $padding-vertical: (
 
 $padding-horizontal: (
   "3xs",
+  "xs",
   "l",
 );
 
@@ -144,12 +146,12 @@ $gaps: (
     "l",
   ),
 
-  $widths: ("m", "l"),
+  $widths: ("s", "m", "l"),
   $width-breakpoints: ("s", "m"),
 
   /* Heights */
 
-  $heights: ("m", "l"),
+  $heights: ("s", "m", "l"),
   $height-breakpoints: ("s", "m"),
 
   /* Gaps */

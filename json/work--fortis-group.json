@@ -3,8 +3,10 @@
   "title": "Fortis Group",
   "slug": "fortis-group",
   "date": "2019-09-10",
-  "metaDescription": "",
-  "metaImage": "",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
   "hero": {
     "image": "fortis-group/hero",
     "border": true,

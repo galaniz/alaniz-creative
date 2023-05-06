@@ -2,8 +2,10 @@
   "contentType": "page",
   "title": "About",
   "slug": "about",
-  "metaDescription": "",
-  "metaImage": "",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
   "hero": {
     "title": "Hi, I'm Graciela Alaniz.",
     "type": "profile"

@@ -2,8 +2,10 @@
   "contentType": "page",
   "title": "Work",
   "slug": "work",
-  "metaDescription": "",
-  "metaImage": "",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
   "archive": "work",
   "content": [
     {

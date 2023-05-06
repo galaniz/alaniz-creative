@@ -35,5 +35,9 @@
   },
   "browserslist": [
     "edge 16"
-  ]
+  ],
+  "devDependencies": {
+    "@types/node": "^18.16.3",
+    "typescript": "^5.0.4"
+  }
 }
