@@ -3,6 +3,12 @@
  */
 
 declare namespace Render {
+  interface Image {
+    base: string;
+    width: number;
+    height: number;
+  }
+
   interface InternalLink {
     id: string;
     contentType: string;
@@ -10,6 +16,8 @@ declare namespace Render {
     title?: string;
     hero?: {
       title: string;
+      border?: boolean;
+      image?: Image;
       action?: {
         text: string;
         internalLink: InternalLink;
@@ -29,6 +37,25 @@ declare namespace Render {
       main: {
         dark: string;
       }
+    }
+  }
+
+  interface ContainerProps {
+    args: {
+      tag?: string;
+      layout?: string;
+      maxWidth?: string;
+      paddingTop?: string;
+      paddingTopLarge?: string;
+      paddingBottom?: string;
+      paddingBottomLarge?: string;
+      gap?: string;
+      gapLarge?: string;
+      justify?: string;
+      align?: string;
+      classes?: string;
+      attr?: string;
+      richTextStyles?: boolean;
     }
   }
   

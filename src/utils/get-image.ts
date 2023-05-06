@@ -35,7 +35,7 @@ interface Args {
   max?: number;
 }
 
-const getImage = (args: Args = {}): string | object => {
+const getImage = (args: Args = {}): string | { output: string; aspectRatio: number; } => {
   const {
     data,
     classes = '',

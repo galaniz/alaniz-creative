@@ -26,7 +26,12 @@
  * @return {object}
  */
 
-const column = (props : Render.ColumnProps = { args: {} }): object => {
+interface ColumnReturn {
+  start: string;
+  end: string;
+}
+
+const column = (props : Render.ColumnProps = { args: {} }): ColumnReturn => {
   const { args = {} } = props
 
   const {

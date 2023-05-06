@@ -4,28 +4,43 @@
 
 /* Imports */
 
-const { getImage } = require('../utils')
-const richText = require('./rich-text')
+import { getImage } from '../utils'
+import richText from './rich-text'
 
 /**
  * Function - output image
  *
- * @param {object} args {
- *  @prop {object} image
- *  @prop {string} aspectRatio
- *  @prop {object} caption
- *  @prop {boolean} border
- * }
- * @param {array<object>} parents
+ * @param {object} props
+ * @param {object} props.args
+ * @param {object} props.args.image
+ * @param {string} props.args.aspectRatio
+ * @param {object} props.args.caption
+ * @param {boolean} props.args.border
+ * @param {array<object>} props.parents
  * @return {string} HTML - div
  */
 
-const image = ({ args = {}, parents = [] }) => {
+interface Props {
+  args: {
+    image?: Render.Image;
+    alt?: string;
+    aspectRatio?: string;
+    caption?: {
+      content: string;
+    }
+    border?: boolean;
+  }
+  parents?: { renderType: string; }[]
+}
+
+const image = (props : Props = { args: {}, parents: [] }): string => {
+  const { args = {}, parents = [] } = props
+
   const {
-    image = {},
-    alt = "",
+    image,
+    alt = '',
     aspectRatio = '',
-    caption = {},
+    caption,
     border = false
   } = args
 
@@ -34,7 +49,7 @@ const image = ({ args = {}, parents = [] }) => {
   let card = false
 
   if (parents.length) {
-    if (parents[0].renderType === 'card') {
+    if (parents[0]?.renderType === 'card') {
       card = true
     }
   }
@@ -50,13 +65,30 @@ const image = ({ args = {}, parents = [] }) => {
       imageClasses.push('e-transition l-object-left-top')
     }
 
-    imageOutput = getImage({
-      data: {...image, alt},
+    const { base, width, height } = image
+
+    const imageObj = getImage({
+      data: {
+        base,
+        width,
+        height,
+        alt
+      },
       classes: imageClasses.join(' '),
       attr: card ? 'data-scale' : '',
       returnAspectRatio: true,
       max: card ? 1600 : 2000
     })
+
+    let imageObjAspectRatio = 0
+    let imageObjOutput = ''
+
+    if (typeof imageObj === 'string') {
+      imageObjOutput = imageObj
+    } else {
+      imageObjAspectRatio = imageObj.aspectRatio
+      imageObjOutput = imageObj.output
+    }
 
     let classes = 'l-relative l-overflow-hidden b-radius-s b-radius-m-m l-isolate l-height-100-pc'
 
@@ -70,15 +102,17 @@ const image = ({ args = {}, parents = [] }) => {
 
     let attr = ''
 
-    if (!aspectRatio) {
-      attr += ` style="padding-top:${imageOutput.aspectRatio * 100}%"`
+    if (!aspectRatio && imageObjAspectRatio) {
+      attr += ` style="padding-top:${imageObjAspectRatio * 100}%"`
     }
 
-    imageOutput = `
-      <div class="${classes}"${attr}>
-        ${imageOutput.output}
-      </div>
-    `
+    if (imageObjOutput) {
+      imageOutput = `
+        <div class="${classes}"${attr}>
+          ${imageObjOutput}
+        </div>
+      `
+    }
   }
 
   /* Card wrapper */
@@ -93,14 +127,14 @@ const image = ({ args = {}, parents = [] }) => {
 
   /* Figure caption */
 
-  const { content } = caption
-
-  if (content) {
+  if (caption) {
     const captionContent = richText({
-      tag: 'p',
-      content: content[0].content,
-      textStyle: 'xs',
-      classes: 'l-padding-top-m l-padding-top-l-m'
+      args: {
+        tag: 'p',
+        content: caption.content,
+        textStyle: 'xs',
+        classes: 'l-padding-top-m l-padding-top-l-m'
+      }
     })
 
     if (captionContent) {

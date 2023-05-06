@@ -15,7 +15,7 @@ import image from './image'
  * @private
  * @param {object} args
  * @param {object} args.internalLink
- * @param {string} args.headingLevel
+ * @param {number} args.headingLevel
  * @param {string} args.type
  * @param {number} args.index
  * @return {string} - HTML
@@ -23,7 +23,7 @@ import image from './image'
 
 interface _CardProps {
   internalLink: Render.InternalLink;
-  headingLevel: string;
+  headingLevel: number;
   type: string;
   index: number;
 }
@@ -238,29 +238,41 @@ const card = (props : CardProps = { args: {} }): object => {
  * @return {string} HTML - ul
  */
 
-const cards = ({ args = {} }) => {
+interface CardsProps {
+  args: {
+    content?: string;
+    type?: string;
+    length?: number;
+  }
+}
+
+const cards = (props : CardsProps = { args: {} }): string => {
+  const { args = {} } = props
+
   const {
     content = '',
     type = 'minimal',
     length = 0
   } = args
 
-  let containerArgs = {
-    tag: 'ul'
+  const containerArgs: Render.ContainerProps = {
+    args: {
+      tag: 'ul'
+    }
   }
 
   if (type === 'minimal') {
-    containerArgs.layout = 'row'
-    containerArgs.gap = 'm'
-    containerArgs.gapLarge = 'l'
+    containerArgs.args.layout = 'row'
+    containerArgs.args.gap = 'm'
+    containerArgs.args.gapLarge = 'l'
   }
 
   if (type === 'cascading') {
-    containerArgs.layout = 'row'
-    containerArgs.attr = `data-widow="${length % 3 === 2 ? true : false}"`
+    containerArgs.args.layout = 'row'
+    containerArgs.args.attr = `data-widow="${length % 3 === 2 ? true : false}"`
   }
 
-  const cardsContainer = container({ args: containerArgs })
+  const cardsContainer = container(containerArgs)
 
   return (
     cardsContainer.start +

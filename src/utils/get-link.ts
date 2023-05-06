@@ -15,13 +15,7 @@ import getSlug from './get-slug'
  * @return {string}
  */
 
-interface InternalLink {
-  id: string;
-  contentType: string;
-  slug: string;
-}
-
-const getLink = (internalLink: InternalLink | undefined, externalLink: string = ''): string => {
+const getLink = (internalLink: Render.InternalLink | undefined, externalLink: string = ''): string => {
   if (internalLink) {
     const slug = getSlug(internalLink)
 

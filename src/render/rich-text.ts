@@ -4,24 +4,33 @@
 
 /* Imports */
 
-const { getLink } = require('../utils')
+import { getLink } from '../utils'
 
 /**
  * Function - recursively output content
  *
  * @private
- * @param {object} args {
- *  @prop {array|string} content
- *  @prop {string} cardLink
- * }
+ * @param {object} args
+ * @param {array|string} args.content
+ * @param {string} args.cardLink
  * @return {string}
  */
+
+interface _ContentProps {
+  content: {
+    tag?: string;
+    link?: string;
+    content?: string | object[]
+  }[];
+  cardLink?: string;
+  _output?: string;
+}
 
 const _getContent = ({
   content = [],
   cardLink = '',
   _output = ''
-}) => {
+}: _ContentProps): string => {
   content.forEach(c => {
     const {
       tag = '',
@@ -40,7 +49,7 @@ const _getContent = ({
       })
     }
 
-    const attr = []
+    const attr: string[] = []
 
     if (tag === 'ul' || tag === 'ol' || tag === 'li' || tag === 'blockquote' || tag === 'p' || tag === 'a') {
       attr.push('data-inline')
@@ -71,22 +80,42 @@ const _getContent = ({
 /**
  * Function - output rich text
  *
- * @param {object} args {
- *  @prop {string} tag
- *  @prop {string|array<object>} content
- *  @prop {string} classes
- *  @prop {string} textStyle
- *  @prop {string} headingStyle
- *  @prop {string} align
- *  @prop {string} link
- *  @prop {object} style
- * }
- * @param {array<object>} parents
+ * @param {object} props
+ * @param {object} props.args
+ * @param {string} props.args.tag
+ * @param {string|array<object>} props.args.content
+ * @param {string} props.args.classes
+ * @param {string} props.args.textStyle
+ * @param {string} props.args.headingStyle
+ * @param {string} props.args.align
+ * @param {string} props.args.link
+ * @param {object} props.args.style
+ * @param {array<object>} props.parents
  * @return {string}
  */
 
-const richText = ({ args = {}, parents = [] }) => {
-  let {
+interface RichTextProps {
+  args: {
+    tag?: string;
+    content?: string | object[];
+    classes?: string;
+    textStyle?: string;
+    headingStyle?: string;
+    align?: string;
+    link?: string;
+    style?: object;
+  }
+  parents?: {
+    renderType: string;
+    internalLink?: Render.InternalLink;
+    externalLink?: string;
+  }[]
+}
+
+const richText = (props : RichTextProps = { args: {}, parents: [] }): string => {
+  const { args = {}, parents = [] } = props
+
+  const {
     tag = '',
     content = [],
     classes = '',
@@ -119,7 +148,7 @@ const richText = ({ args = {}, parents = [] }) => {
 
     if (card && heading) {
       const {
-        internalLink = false,
+        internalLink,
         externalLink = ''
       } = parents[0]
 
@@ -129,29 +158,31 @@ const richText = ({ args = {}, parents = [] }) => {
 
   /* Classes */
 
-  classes = classes ? [classes] : []
+  const classesArray: string[] = []
+
+  if (classes) {
+    classesArray.push(classes)
+  }
 
   if (card && tag === 'p') {
-    classes.push('t-link-current')
+    classesArray.push('t-link-current')
   }
 
   if (textStyle && (tag === 'p' || tag === 'li' || tag === 'ul' || tag === 'ol' || tag === 'blockquote' || tag === 'table')) {
-    classes.push(textStyle)
+    classesArray.push(textStyle)
   }
 
   if (tag === 'blockquote') {
-    classes.push('t-quote')
+    classesArray.push('t-quote')
   }
 
   if (headingStyle && heading) {
-    classes.push(headingStyle)
+    classesArray.push(headingStyle)
   }
 
   if (align) {
-    classes.push(`t-align-${align}`)
+    classesArray.push(`t-align-${align}`)
   }
-
-  classes = classes.join(' ')
 
   /* Generate output */
 
@@ -168,7 +199,7 @@ const richText = ({ args = {}, parents = [] }) => {
 
   /* Attributes */
 
-  const attr = []
+  const attr: string[] = []
 
   if (heading) {
     attr.push(`id="${output.replace(/[\s,:;"'“”‘’]/g, '-').toLowerCase()}"`)
@@ -182,12 +213,12 @@ const richText = ({ args = {}, parents = [] }) => {
     attr.push(`href="${link}"`)
   }
 
-  if (classes) {
-    attr.push(`class="${classes}"`)
+  if (classesArray.length) {
+    attr.push(`class="${classesArray.join(' ')}"`)
   }
 
   if (style) {
-    const styleArray = []
+    const styleArray: string[] = []
     
     Object.keys(style).forEach((s) => {
       styleArray.push(`${s}:${style[s]}`)

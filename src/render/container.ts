@@ -24,26 +24,7 @@
  * @return {object}
  */
 
-interface Props {
-  args: {
-    tag?: string;
-    layout?: string;
-    maxWidth?: string;
-    paddingTop?: string;
-    paddingTopLarge?: string;
-    paddingBottom?: string;
-    paddingBottomLarge?: string;
-    gap?: string;
-    gapLarge?: string;
-    justify?: string;
-    align?: string;
-    classes?: string;
-    attr?: string;
-    richTextStyles?: boolean;
-  }
-}
-
-const container = (props : Props = { args: {} }): object => {
+const container = (props : Render.ContainerProps = { args: {} }): object => {
   const { args = {} } = props
 
   const {
