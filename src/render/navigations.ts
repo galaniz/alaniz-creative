@@ -4,23 +4,50 @@
 
 /* Imports */
 
-const Navigation = require('./navigation')
+import Navigation from './navigation'
 
 /**
  * Function - output navigations
  *
  * @param {object} args {
- *  @prop {array<object>} navs
- *  @prop {array<object>} items
- *  @prop {string} current
- * } 
+ * @param {array<object>} args.navs
+ * @param {array<object>} args.items
+ * @param {string} args.current
+ * @return {object}
  */
+
+interface Item {
+  id?: string;
+  title: string;
+  link?: string;
+  internalLink?: Render.InternalLink;
+  externalLink?: string;
+  children?: Item[];
+  props?: Item;
+  current?: boolean;
+  external?: boolean;
+  descendentCurrent?: boolean;
+}
+
+interface Nav {
+  title: string;
+  location: string;
+  items: Item[];
+}
+
+interface Args {
+  navs: Nav[];
+  items: Item[];
+  current: string;
+  title?: string;
+  parents?: object[];
+}
 
 const navigations = ({
   navs = [],
   items = [],
   current = ''
-}) => {
+}: Args) => {
   /* Navs and items required */
 
   if (!navs.length && !items.length) {

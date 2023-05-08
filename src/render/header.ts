@@ -4,10 +4,10 @@
 
 /* Imports */
 
-const { v4: uuidv4 } = require('uuid')
-const { getPermalink } = require('../utils')
-const { enumSite } = require('../vars/enums')
-const logoSvg = require('./svg/logo')
+import { uuid } from 'uuidv4'
+import { getPermalink } from '../utils'
+import { enumSite } from '../vars/enums'
+import logoSvg from './svg/logo'
 
 /**
  * Function - output header
@@ -16,10 +16,10 @@ const logoSvg = require('./svg/logo')
  * @return {string} HTML - header
  */
 
-const header = (navigations = {}) => {
+const header = (navigations: { main?: string; } = {}): string => {
   /* Id */
 
-  const id = `n-${uuidv4()}`
+  const id = `n-${uuid()}`
 
   /* Main nav */
 

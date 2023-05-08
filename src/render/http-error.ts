@@ -4,14 +4,14 @@
 
 /* Imports */
 
-const layout = require('./layout')
-const container = require('./container')
-const button = require('./button')
-const header = require('./header')
-const footer = require('./footer')
-const navigations = require('./navigations')
-const { getPermalink } = require('../utils')
-const { navData } = require('../vars/data')
+import layout from './layout'
+import container from './container'
+import button from './button'
+import header from './header'
+import footer from './footer'
+import navigations from './navigations'
+import { getPermalink } from '../utils'
+import { navData } from '../vars/data'
 
 /**
  * Function - output http error page (404 or 500)
@@ -20,7 +20,7 @@ const { navData } = require('../vars/data')
  * @return {string} HTML - html
  */
 
-const httpError = async (type = '404') => {
+const httpError = async (type: string = '404'): Promise<string> => {
   /* Text by type */
 
   const text = {
@@ -59,6 +59,7 @@ const httpError = async (type = '404') => {
         title: 'Back to Homepage',
         type: 'secondary',
         internalLink: {
+          id: 'page--index',
           contentType: 'page',
           slug: 'index'
         }

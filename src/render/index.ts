@@ -4,25 +4,25 @@
 
 /* Imports */
 
-const { enumNamespace } = require('../vars/enums')
-const { getAllData, getSlug, getPermalink } = require('../utils')
-const { slugData, envData, navData, archiveData, scriptData, jsonFileData } = require('../vars/data')
-const layout = require('./layout')
-const header = require('./header')
-const footer = require('./footer')
-const button = require('./button')
-const container = require('./container')
-const column = require('./column')
-const richText = require('./rich-text')
-const image = require('./image')
-const video = require('./video')
-const waveSeparator = require('./wave-separator')
-const navigations = require('./navigations')
-const hero = require('./hero')
-const httpError = require('./http-error')
-const aspectRatio = require('./aspect-ratio')
-const posts = require('./posts')
-const { card } = require('./cards')
+import { enumNamespace } from '../vars/enums'
+import { getAllData, getSlug, getPermalink } from '../utils'
+import { slugData, envData, navData, archiveData, scriptData, jsonFileData } from '../vars/data'
+import layout from './layout'
+import header from './header'
+import footer from './footer'
+import button from './button'
+import container from './container'
+import column from './column'
+import richText from './rich-text'
+import image from './image'
+import video from './video'
+import waveSeparator from './wave-separator'
+import navigations from './navigations'
+import hero from './hero'
+import httpError from './http-error'
+import aspectRatio from './aspect-ratio'
+import posts from './posts'
+import { card } from './cards'
 
 /**
  * Store slug data for json
@@ -30,29 +30,35 @@ const { card } = require('./cards')
  * @type {object}
  */
 
-const _slugs = {}
+const _slugs: object = {}
 
 /**
  * Function - recurse and output nested content
  *
  * @private
- * @param {object} args {
- *  @prop {array<object>} contentData
- *  @prop {object} output
- *  @prop {array<object>} parents
- *  @prop {object} pageData
- *  @prop {object} navs
- * }
+ * @param {object} args
+ * @param {array<object>} args.contentData
+ * @param {object} args.output
+ * @param {array<object>} args.parents
+ * @param {object} args.navs
  * @return {void}
  */
 
+interface _ContentArgs {
+  contentData: any[];
+  output: {
+    html: string;
+  }
+  parents: any[];
+  navs: object;
+}
+
 const _renderContent = async ({
   contentData = [],
-  output = {},
+  output,
   parents = [],
-  pageData = {},
   navs
-}) => {
+}: _ContentArgs): Promise<void> => {
   if (Array.isArray(contentData) && contentData.length) {
     for (let i = 0; i < contentData.length; i++) {
       let c = contentData[i]
@@ -137,7 +143,6 @@ const _renderContent = async ({
           contentData: children,
           output,
           parents: parentsCopy,
-          pageData,
           navs
         })
       }
@@ -157,17 +162,24 @@ const _renderContent = async ({
  * Function - output single post or page
  *
  * @private
- * @param {object} args {
- *  @prop {object} item
- *  @prop {string} contentType
- * }
+ * @param {object} args
+ * @param {object} args.item
+ * @param {string} args.contentType
  * @return {object}
  */
 
+interface _ItemArgs {
+  item: {
+    id: string;
+    basePermalink?: string;
+  }
+  contentType: string;
+}
+
 const _renderItem = async ({
-  item = {},
+  item,
   contentType = 'page'
-}) => {
+}: _ItemArgs): Promise<object> => {
   /* Item id */
 
   const id = item.id
@@ -180,16 +192,20 @@ const _renderItem = async ({
     archive: '',
     hero: {},
     content: [],
-    meta: {},
+    meta: {
+      title: '',
+      canonical: '',
+      isIndex: false
+    },
     passwordProtected: false,
-    theme: false,
+    theme: {},
     svg: false
   }, item)
 
   /* Meta */
 
   const title = props.title
-  const meta = props.meta
+  const meta = props.meta || {}
 
   if (!meta?.title) {
     meta.title = title
@@ -205,18 +221,19 @@ const _renderItem = async ({
   }
 
   const s = getSlug(slugArgs)
-  const slug = s.slug
-  const permalink = getPermalink(s.slug)
+
+  let slug = ''
+  let permalink = ''
+  let parents: object[] = []
+
+  if (typeof s === 'object') {
+    slug = s.slug
+    parents = s.parents
+    permalink = getPermalink(s.slug)
+    item.basePermalink = getPermalink(s.slug)
+  }
 
   meta.canonical = permalink
-
-  item.basePermalink = getPermalink(
-    getSlug({
-      id,
-      contentType,
-      slug: props.slug
-    })
-  )
 
   /* Add to data by slugs store */
 
@@ -238,7 +255,7 @@ const _renderItem = async ({
     items: navData.items,
     current: permalink,
     title,
-    parents: s.parents
+    parents
   })
 
   /* Hero */
@@ -274,7 +291,6 @@ const _renderItem = async ({
       contentData,
       output: contentOutput,
       parents: [],
-      pageData: item,
       navs: navsOutput
     })
   }
@@ -286,7 +302,7 @@ const _renderItem = async ({
   let style = ''
 
   if (item.theme) {
-    const styleArray = []
+    const styleArray: string[] = []
 
     Object.keys(item.theme).forEach((t) => {
       const prefix = t.includes('video') ? '' : 'theme-'
@@ -303,7 +319,7 @@ const _renderItem = async ({
   let script = ''
 
   if (Object.keys(scriptData).length) {
-    const scriptJSON = JSON.stringify(scriptData, null, null)
+    const scriptJSON = JSON.stringify(scriptData)
 
     script = `
       <script>
@@ -344,14 +360,21 @@ const _renderItem = async ({
 /**
  * Function - loop through all content types to output pages and posts
  *
- * @param {object} args {
- *  @prop {object} env
- *  @prop {function} onRenderEnd
- * }
+ * @param {object} args
+ * @param {object} args.env
+ * @param {function} args.onRenderEnd
  * @return {array|object}
  */
 
-const render = async ({ env, onRenderEnd }): Promise<object[]> => {
+interface RenderArgs {
+  env: {
+    dev: boolean;
+    prod: boolean;
+  }
+  onRenderEnd: Function;
+}
+
+const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
   /* Set env */
 
   if (env) {
@@ -385,7 +408,7 @@ const render = async ({ env, onRenderEnd }): Promise<object[]> => {
 
   /* Store content data */
 
-  const data = []
+  const data: object[] = []
 
   /* Store routes for render end */
 
@@ -435,15 +458,13 @@ const render = async ({ env, onRenderEnd }): Promise<object[]> => {
     const contentType = contentTypes[c]
 
     for (let i = 0; i < content[contentType].length; i++) {
-      const item = await _renderItem({
+      const item: any = await _renderItem({
         item: content[contentType][i],
         contentType
       })
 
-      const { data: itemData } = item
-
-      if (itemData) {
-        data.push(itemData)
+      if (item?.data) {
+        data.push(item.data)
       }
     }
   }
@@ -451,11 +472,11 @@ const render = async ({ env, onRenderEnd }): Promise<object[]> => {
   /* Render end callback */
 
   if (onRenderEnd) {
-    jsonFileData.slugs.data = _slugs
-    jsonFileData.slugParents.data = slugData.parents
-    jsonFileData.archiveIds.data = archiveData.ids
-    jsonFileData.archivePosts.data = archiveData.posts
-    jsonFileData.navData.data = navData
+    jsonFileData.slugs.data = JSON.stringify(_slugs)
+    jsonFileData.slugParents.data = JSON.stringify(slugData.parents)
+    jsonFileData.archiveIds.data = JSON.stringify(archiveData.ids)
+    jsonFileData.archivePosts.data = JSON.stringify(archiveData.posts)
+    jsonFileData.navData.data = JSON.stringify(navData)
 
     onRenderEnd({
       jsonData: jsonFileData,

@@ -4,28 +4,40 @@
 
 /* Imports */
 
-const { v4: uuidv4 } = require('uuid')
-const { enumNamespace } = require('../vars/enums')
-const { scriptData } = require('../vars/data')
-const errorSvg = require('./svg/error')
-const checkSvg = require('./svg/check')
-const loader = require('./loader')
+import { uuid } from 'uuidv4'
+import { enumNamespace } from '../vars/enums'
+import { scriptData } from '../vars/data'
+import errorSvg from './svg/error'
+import checkSvg from './svg/check'
+import loader from './loader'
 
 /**
  * Function - output form wrapper
  *
- * @param {object} args {
- *  @prop {string} subject
- *  @prop {string} submitLabel
- *  @prop {string} successTitle
- *  @prop {string} successText
- * }
- * @param {string} id
+ * @param {object} props
+ * @param {object} props.args
+ * @param {string} props.args.subject
+ * @param {string} props.args.submitLabel
+ * @param {string} props.args.successTitle
+ * @param {string} props.args.successText
+ * @param {string} props.args.id
  * @return {object}
  */
 
-const form = ({ args = {}, id }) => {
+interface Props {
+  args: {
+    id?: string;
+    submitLabel?: string;
+    successTitle?: string;
+    successText?: string;
+  }
+}
+
+const form = (props : Props = { args: {} }): object => {
+  const { args = {} } = props
+
   const {
+    id = '',
     submitLabel = 'Send',
     successTitle = '',
     successText = ''
@@ -55,7 +67,7 @@ const form = ({ args = {}, id }) => {
 
   /* Honeypot */
 
-  const honeypotId = `h-${uuidv4()}`
+  const honeypotId = `h-${uuid()}`
   const honeypotName = `${enumNamespace}_asi`
   const honeypot = `
     <div class="o-form__field l-width-1-1" data-asi>

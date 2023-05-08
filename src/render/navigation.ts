@@ -4,24 +4,99 @@
 
 /* Imports */
 
-const { getSlug, getPermalink, getLink } = require('../utils')
+import { getSlug, getPermalink, getLink } from '../utils'
 
 /**
  * Class - recursively generate navigation output
  */
 
+interface Item {
+  id?: string;
+  title: string;
+  link?: string;
+  internalLink?: Render.InternalLink;
+  externalLink?: string;
+  children?: Item[];
+  props?: Item;
+  current?: boolean;
+  external?: boolean;
+  descendentCurrent?: boolean;
+}
+
+interface ItemBread {
+  id?: string;
+  slug: string;
+  contentType: string;
+  title: string;
+  link?: string;
+  internalLink?: Render.InternalLink;
+  externalLink?: string;
+  children?: Item[];
+  props?: Item;
+  current?: boolean;
+  external?: boolean;
+  descendentCurrent?: boolean;
+}
+
+interface Nav {
+  title: string;
+  location: string;
+  items: Item[];
+}
+
+interface Args {
+  navs: Nav[];
+  items: Item[];
+}
+
+interface RecurseArgs {
+  listClass?: string;
+  listAttr?: string;
+  itemClass?: string;
+  itemAttr?: string;
+  linkClass?: string;
+  internalLinkClass?: string;
+  linkAttr?: string;
+  filterBeforeItem?: Function;
+  filterAfterItem?: Function;
+  filterBeforeLink?: Function;
+  filterAfterLink?: Function;
+  filterBeforeLinkText?: Function;
+  filterAfterLinkText?: Function;
+}
+
+interface BreadcrumbRecurseArgs {
+  listClass?: string;
+  listAttr?: string;
+  itemClass?: string;
+  itemAttr?: string;
+  linkClass?: string;
+  internalLinkClass?: string;
+  linkAttr?: string;
+  currentClass?: string;
+  a11yClass?: string;
+  filterBeforeLink?: Function;
+  filterAfterLink?: Function;
+}
+
 class Navigation {
   /**
-   * Set public properties and initialize
+   * Set properties and initialize
    *
    * @param {object} args {
-   *  @prop {array<object>} navs
-   *  @prop {array<object>} items
-   * }
+   * @param {array<object>} args.navs
+   * @param {array<object>} args.items
    * @return {void|boolean} - False if init errors
    */
 
-  constructor (args) {
+  public navs: Nav[];
+  public items: Item[];
+  public init: boolean;
+
+  private _itemsById: object;
+  private _navsByLocation: object;
+
+  constructor (args: Args) {
     const {
       navs = [],
       items = []
@@ -48,24 +123,9 @@ class Navigation {
 
     this._navsByLocation = {}
 
-    /**
-     * Check if contentful vs static
-     *
-     * @private
-     * @type {boolean}
-     */
-
-    this._isContentful = false
-
     /* Initialize */
 
-    const init = this._initialize()
-
-    if (!init) {
-      return false
-    } else {
-      return true
-    }
+    this.init = this._initialize()
   }
 
   /**
@@ -75,7 +135,7 @@ class Navigation {
    * @return {boolean}
    */
 
-  _initialize () {
+  _initialize (): boolean {
     /* Check that required items exist */
 
     if (!this.navs || !this.items) {
@@ -90,14 +150,10 @@ class Navigation {
       this._itemsById[info.id] = info.props
     })
 
-    /* Contentful check */
-
-    this._isContentful = this.navs[0]?.fields ? true : false
-
     /* Navs by location */
 
     this.navs.forEach(nav => {
-      const fields = this._isContentful ? nav.fields : nav
+      const fields = nav
 
       const navFields = Object.assign({
         title: '',
@@ -126,15 +182,14 @@ class Navigation {
    * @return {object}
    */
 
-  _getItemInfo (item) {
-    const fields = this._isContentful ? item.fields : item
+  _getItemInfo (item: Item): {id: string; props: Item} {
+    const fields = item
 
     const {
       title = '',
-      internalLink = false,
+      internalLink,
       externalLink = '',
-      children = false,
-      style
+      children
     } = fields
 
     let id = title
@@ -148,15 +203,14 @@ class Navigation {
     }
 
     if (internalLink) {
-      id = this._isContentful ? internalLink.sys.id : internalLink.id
+      id = internalLink.id
     }
 
-    const props = {
+    const props: Item = {
       id,
       title,
       link,
-      external,
-      style
+      external
     }
 
     if (children) {
@@ -182,7 +236,7 @@ class Navigation {
    * @return {void}
    */
 
-  _recurseItemChildren (children = [], store = []) {
+  _recurseItemChildren (children: Item[] = [], store: object[] = []): void {
     children.forEach(child => {
       const info = this._getItemInfo(child)
 
@@ -199,28 +253,28 @@ class Navigation {
    * @return {array<object>}
    */
 
-  _getItems (items = [], current = '') {
+  _getItems (items: Item[] = [], current: string = ''): Item[] {
     if (!items.length) {
       return []
     }
 
     return items.map(item => {
-      const fields = this._isContentful ? item.fields : item
+      const fields = item
 
       const {
         title = '',
-        internalLink = false,
+        internalLink,
         externalLink = ''
       } = fields
 
       let id = title
 
-      if (externalLink) {
-        id = this._isContentful ? item.fields.externalLink : item.externalLink
+      if (externalLink && item?.externalLink) {
+        id = item.externalLink
       }
 
-      if (internalLink) {
-        id = this._isContentful ? item.fields.internalLink.sys.id : item.internalLink.id
+      if (internalLink && item?.internalLink?.id) {
+        id = item.internalLink.id
       }
 
       const obj = this._itemsById[id]
@@ -243,7 +297,7 @@ class Navigation {
    * @return {void}
    */
 
-  _recurseOutput = (items = [], output = {}, depth = -1, args = {}) => {
+  _recurseOutput = (items: Item[] = [], output: {html: string}, depth: number = -1, args: RecurseArgs): void => {
     depth += 1
 
     const listClasses = args.listClass ? ` class="${args.listClass}"` : ''
@@ -263,7 +317,9 @@ class Navigation {
 
       /* Item start */
 
-      args.filterBeforeItem(args, item, output)
+      if (typeof args.filterBeforeItem === 'function') {
+        args.filterBeforeItem(args, item, output)
+      }
 
       const itemClasses = args.itemClass ? ` class="${args.itemClass}"` : ''
       let itemAttrs = args.itemAttr ? ` ${args.itemAttr}` : ''
@@ -280,55 +336,63 @@ class Navigation {
 
       /* Link start */
 
-      args.filterBeforeLink(args, item, output)
+      if (typeof args.filterBeforeLink === 'function') {
+        args.filterBeforeLink(args, item, output)
+      }
 
-      let linkClasses = []
+      let linkClassesArray: string[] = []
 
       if (args.linkClass) {
-        linkClasses.push(args.linkClass)
+        linkClassesArray.push(args.linkClass)
       }
 
       if (!external && args.internalLinkClass) {
-        linkClasses.push(args.internalLinkClass)
+        linkClassesArray.push(args.internalLinkClass)
       }
 
-      linkClasses = linkClasses.length ? ` class="${linkClasses.join(' ')}"` : ''
+      const linkClasses = linkClassesArray.length ? ` class="${linkClassesArray.join(' ')}"` : ''
 
-      let linkAttrs = [link ? `href="${link}"` : 'type="button"']
+      const linkAttrsArray = [link ? `href="${link}"` : 'type="button"']
 
       if (args.linkAttr) {
-        linkAttrs.push(args.linkAttr)
+        linkAttrsArray.push(args.linkAttr)
       }
 
       if (current) {
-        linkAttrs.push('data-current="true"')
+        linkAttrsArray.push('data-current="true"')
 
         if (link) {
-          linkAttrs.push('aria-current="page"')
+          linkAttrsArray.push('aria-current="page"')
         }
       }
 
       if (descendentCurrent) {
-        linkAttrs.push('data-descendent-current="true"')
+        linkAttrsArray.push('data-descendent-current="true"')
       }
 
-      linkAttrs = linkAttrs.length ? ` ${linkAttrs.join(' ')}` : ''
+      const linkAttrs = linkAttrsArray.length ? ` ${linkAttrsArray.join(' ')}` : ''
 
       const linkTag = link ? 'a' : 'button'
 
       output.html += `<${linkTag} data-depth="${depth}"${linkClasses}${linkAttrs}>`
 
-      args.filterBeforeLinkText(args, item, output)
+      if (typeof args.filterBeforeLinkText === 'function') {
+        args.filterBeforeLinkText(args, item, output)
+      }
 
       output.html += title
 
-      args.filterAfterLinkText(args, item, output)
+      if (typeof args.filterAfterLinkText === 'function') {
+        args.filterAfterLinkText(args, item, output)
+      }
 
       /* Link end */
 
       output.html += `</${linkTag}>`
 
-      args.filterAfterLink(args, item, output)
+      if (typeof args.filterAfterLink === 'function') {
+        args.filterAfterLink(args, item, output)
+      }
 
       /* Nested content */
 
@@ -340,7 +404,9 @@ class Navigation {
 
       output.html += '</li>'
 
-      args.filterAfterItem(args, item, output)
+      if (typeof args.filterAfterItem === 'function') {
+        args.filterAfterItem(args, item, output)
+      }
     })
 
     output.html += '</ul>'
@@ -355,7 +421,7 @@ class Navigation {
    * @return {string} HTML - ul
    */
 
-  getOutput (location = '', current = '', args = {}) {
+  getOutput (location: string = '', current: string = '', args: RecurseArgs): string {
     if (!this._navsByLocation?.[location]) {
       return ''
     }
@@ -397,7 +463,7 @@ class Navigation {
    * @return {string} HTML - ol
    */
 
-  getBreadcrumbs (items = [], current = '', args = {}) {
+  getBreadcrumbs (items: ItemBread[] = [], current: string = '', args: BreadcrumbRecurseArgs): string {
     /* Items required */
 
     if (!items.length) {
@@ -431,7 +497,7 @@ class Navigation {
     const itemAttrs = args.itemAttr ? ` ${args.itemAttr}` : ''
     const lastItemIndex = items.length - 1
 
-    items = items.map((item, index) => {
+    const itemsArray = items.map((item, index) => {
       const output = { html: '' }
       const isLastLevel = lastItemIndex === index
 
@@ -441,33 +507,37 @@ class Navigation {
 
       /* Link */
 
-      args.filterBeforeLink(output, isLastLevel)
+      if (typeof args.filterBeforeLink === 'function') {
+        args.filterBeforeLink(output, isLastLevel)
+      }
 
-      let linkClasses = []
+      let linkClassesArray: string[] = []
 
       if (args.linkClass) {
-        linkClasses.push(args.linkClass)
+        linkClassesArray.push(args.linkClass)
       }
 
       if (args.internalLinkClass) {
-        linkClasses.push(args.internalLinkClass)
+        linkClassesArray.push(args.internalLinkClass)
       }
 
-      linkClasses = linkClasses.length ? ` class="${linkClasses.join(' ')}"` : ''
+      const linkClasses = linkClassesArray.length ? ` class="${linkClassesArray.join(' ')}"` : ''
 
       const linkAttrs = args.linkAttr ? ` ${args.linkAttr}` : ''
 
-      const permalink = getPermalink(
-        getSlug({
-          id: item.id,
-          slug: item.slug,
-          contentType: item.contentType
-        })
-      )
+      const slug = getSlug({
+        id: item.id,
+        slug: item.slug,
+        contentType: item.contentType
+      })
+
+      let permalink = typeof slug === 'string' ? getPermalink(slug) : ''
 
       output.html += `<a${linkClasses} href="${permalink}"${linkAttrs}>${item.title}</a>`
 
-      args.filterAfterLink(output, isLastLevel)
+      if (typeof args.filterAfterLink === 'function') {
+        args.filterAfterLink(output, isLastLevel)
+      }
 
       /* Close item */
 
@@ -482,7 +552,7 @@ class Navigation {
 
     return `
       <ol${listClasses}${listAttrs}>
-        ${items.join('')}
+        ${itemsArray.join('')}
         <li${itemClasses}${itemAttrs} data-current="true">
           <span${currentClasses}>${current}<span class="${args.a11yClass}"> (current page)</span></span>
         </li>

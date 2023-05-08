@@ -26,12 +26,7 @@
  * @return {object}
  */
 
-interface ColumnReturn {
-  start: string;
-  end: string;
-}
-
-const column = (props : Render.ColumnProps = { args: {} }): ColumnReturn => {
+const column = (props : Render.ColumnProps = { args: {} }): Render.Return => {
   const { args = {} } = props
 
   const {
@@ -48,7 +43,9 @@ const column = (props : Render.ColumnProps = { args: {} }): ColumnReturn => {
     attr = ''
   } = args
 
-  let { width } = args
+  let {
+    width
+  } = args
 
   /* Classes */
 

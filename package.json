@@ -31,7 +31,8 @@
     "standard": "^17.0.0",
     "stylelint": "^15.4.0",
     "stylelint-config-standard-scss": "^8.0.0",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "uuidv4": "^6.2.13"
   },
   "browserslist": [
     "edge 16"

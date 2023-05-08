@@ -24,7 +24,7 @@
  * @return {object}
  */
 
-const container = (props : Render.ContainerProps = { args: {} }): object => {
+const container = (props : Render.ContainerProps = { args: {} }): Render.Return => {
   const { args = {} } = props
 
   const {

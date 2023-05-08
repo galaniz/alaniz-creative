@@ -4,30 +4,51 @@
 
 /* Imports */
 
-const { v4: uuidv4 } = require('uuid')
+import { uuid } from 'uuidv4'
 
 /**
  * Function - output checkbox and radio inputs from options
  *
  * @private
  * @param {object} args {
- *  @prop {array<object>} opts
- *  @prop {string} name
- *  @prop {string} classes
- *  @prop {string} attr
- *  @prop {string} type
- * }
+ * @param {array<object>} args.opts
+ * @param {string} args.name
+ * @param {string} args.classes
+ * @param {string} args.attr
+ * @param {string} args.type
  * @return {array<string>}
  */
 
-const _getCheckboxRadioOpts = (args = {}) => {
+interface _Opt {
+  text: string;
+  value: string;
+  selected?: boolean;
+}
+
+interface _Args {
+  opts?: _Opt[];
+  name?: string;
+  classes?: string;
+  attr?: string;
+  type?: string;
+}
+
+const _getCheckboxRadioOpts = (args: _Args = {}): string => {
   const {
     opts = [],
     name = '',
     classes = '',
     attr = '',
-    type = ''
+    type = 'checkbox'
   } = args
+
+  /* Opts and name required */
+
+  if (!opts.length || !name) {
+    return ''
+  }
+
+  /* Output */
 
   return opts.map((opt) => {
     const {
@@ -36,7 +57,7 @@ const _getCheckboxRadioOpts = (args = {}) => {
       selected
     } = opt
 
-    const id = `c-${uuidv4()}`
+    const id = `c-${uuid()}`
 
     return `
       <div data-${type}-opt>
@@ -46,33 +67,55 @@ const _getCheckboxRadioOpts = (args = {}) => {
         </label>
       </div>
     `
-  })
+  }).join('')
 }
 
 /**
  * Function - output form field
  *
- * @param {object} args {
- *  @prop {string} type
- *  @prop {string} name
- *  @prop {string} label
- *  @prop {string} value
- *  @prop {boolean} required
- *  @prop {string} width
- *  @prop {string} autoCompleteToken
- *  @prop {string} placeholder
- *  @prop {array<string>} options
- *  @prop {number} rows
- *  @prop {string} emptyErrorMessage
- *  @prop {string} invalidErrorMessage
- *  @prop {string} fieldClasses
- *  @prop {string} classes
- *  @prop {boolean} fieldset
- * }
+ * @param {object} props
+ * @param {object} props.args
+ * @param {string} props.args.type
+ * @param {string} props.args.name
+ * @param {string} props.args.label
+ * @param {string} props.args.value
+ * @param {boolean} props.args.required
+ * @param {string} props.args.width
+ * @param {string} props.args.autoCompleteToken
+ * @param {string} props.args.placeholder
+ * @param {array<string>} props.args.options
+ * @param {number} props.args.rows
+ * @param {string} props.args.emptyErrorMessage
+ * @param {string} props.args.invalidErrorMessage
+ * @param {string} props.args.fieldClasses
+ * @param {string} props.args.classes
+ * @param {boolean} props.args.fieldset
  * @return {string} HTML - div
  */
 
-const field = ({ args = {} }) => {
+interface Props {
+  args: {
+    type?: string;
+    name?: string;
+    label?: string;
+    value?: string;
+    required?: boolean;
+    width?: string;
+    autoCompleteToken?: string;
+    placeholder?: string;
+    options?: string[];
+    rows?: number;
+    emptyErrorMessage?: string;
+    invalidErrorMessage?: string;
+    fieldClasses?: string;
+    classes?: string;
+    fieldset?: boolean;
+  }
+}
+
+const field = (props : Props = { args: {} }): string => {
+  const { args = {} } = props
+
   const {
     type = 'text',
     name = '',
@@ -87,7 +130,10 @@ const field = ({ args = {} }) => {
     emptyErrorMessage = '',
     invalidErrorMessage = '',
     fieldClasses = '',
-    classes = '',
+    classes = ''
+  } = args
+
+  let {
     fieldset = false
   } = args
 
@@ -99,12 +145,20 @@ const field = ({ args = {} }) => {
 
   /* Id */
 
-  const id = `f-${uuidv4()}`
+  const id = `f-${uuid()}`
 
   /* Classes */
 
-  fieldClasses = `o-form__field l-width-1-1 l-width-${width}-m${fieldClasses ? ` ${fieldClasses}` : ''}`
-  classes = `js-input${classes ? ` ${classes}` : ''}`
+  const fieldClassesArray = [`o-form__field l-width-1-1 l-width-${width}-m`]
+  const classesArray = ['js-input']
+
+  if (fieldClasses) {
+    fieldClassesArray.push(fieldClasses)
+  }
+
+  if (classes) {
+    classesArray.push(classes)
+  }
 
   /* Checkbox or radio */
 
@@ -112,7 +166,7 @@ const field = ({ args = {} }) => {
 
   /* Options */
 
-  let opts = []
+  let opts: _Opt[] = []
 
   if (options.length) {
     options.forEach((option) => {
@@ -139,7 +193,7 @@ const field = ({ args = {} }) => {
 
   /* Attributes */
 
-  let attr = []
+  const attr: string[] = []
 
   if (required) {
     attr.push('aria-required="true"')
@@ -169,7 +223,11 @@ const field = ({ args = {} }) => {
     attr.push(`rows="${rows}"`)
   }
 
-  attr = attr.length ? ` ${attr.join(' ')}` : ''
+  let attrs = ''
+
+  if (attr.length) {
+    attrs = ` ${attr.join(' ')}`
+  }
 
   /* Label */
 
@@ -221,17 +279,17 @@ const field = ({ args = {} }) => {
     case 'number':
     case 'tel': {
       if (checkboxRadio) {
-        classes += ' a11y-hide-input'
+        classesArray.push('a11y-hide-input')
       }
 
-      input = `<input type="${type}" name="${name}" id="${id}" class="${classes}"${attr}>`
+      input = `<input type="${type}" name="${name}" id="${id}" class="${classesArray.join(' ')}"${attrs}>`
 
       if (checkboxRadioOpts) {
         input = _getCheckboxRadioOpts({
           opts,
           name,
           classes,
-          attr,
+          attr: attrs,
           type
         })
       }
@@ -239,12 +297,12 @@ const field = ({ args = {} }) => {
       break
     }
     case 'textarea': {
-      input = `<textarea name="${name}" id="${id}" class="${classes}"${attr}></textarea>`
+      input = `<textarea name="${name}" id="${id}" class="${classesArray.join(' ')}"${attrs}></textarea>`
       break
     }
     case 'select': {
       if (opts.length) {
-        opts = opts.map((opt) => {
+        const optsOutput = opts.map((opt) => {
           const {
             text,
             value,
@@ -256,7 +314,7 @@ const field = ({ args = {} }) => {
 
         input = `
           <div data-type="select">
-            <select name="${name}" id="${id}" class="${classes}"${attr}>${opts.join('')}</select>
+            <select name="${name}" id="${id}" class="${classesArray.join(' ')}"${attrs}>${optsOutput}</select>
             <div data-select-arrow></div>
           </div>
         `
@@ -273,7 +331,7 @@ const field = ({ args = {} }) => {
   /* Output */
 
   return `
-    <div class="${fieldClasses}" data-type="${type}">
+    <div class="${fieldClassesArray.join(' ')}" data-type="${type}">
       ${fieldset ? '<fieldset class="o-field__group">' : ''}
       ${labelBefore}
       ${input}

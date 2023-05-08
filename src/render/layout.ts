@@ -4,29 +4,43 @@
 
 /* Imports */
 
-const { PurgeCSS } = require('purgecss')
-const { envData } = require('../vars/data')
-const { enumNamespace, enumSite, enumColors } = require('../vars/enums')
-const { getPermalink } = require('../utils')
+import { PurgeCSS } from 'purgecss'
+import { envData } from '../vars/data'
+import { enumNamespace, enumSite, enumColors } from '../vars/enums'
+import { getPermalink } from '../utils'
 
 /**
  * Function - output html
  *
- * @param {object} args {
- *  @prop {object} meta
- *  @prop {string} content
- *  @prop {string} script
- *  @prop {string} style
- * }
+ * @param {object} args
+ * @prop {object} args.meta
+ * @prop {string} args.content
+ * @prop {string} args.script
+ * @prop {string} args.style
  * @return {string} HTML - html
  */
+
+interface Args {
+  meta?: {
+    title?: string;
+    description?: string;
+    image?: string;
+    canonical?: string;
+    prev?: boolean;
+    next?: boolean;
+    noIndex?: boolean;
+  }
+  content?: string;
+  script?: string;
+  style?: string;
+}
 
 const layout = async ({
   meta = {},
   content = '',
   script = '',
   style = ''
-}) => {
+}: Args): Promise<string> => {
   /* Assets link */
 
   const assetsLink = `${getPermalink()}assets/`
@@ -41,7 +55,7 @@ const layout = async ({
 
   /* Image */
 
-  const image = meta?.image ? `https:${meta.image.fields.file.url}` : `${assetsLink}${enumSite.meta.image}`
+  const image = meta?.image ? `https:${meta.image}` : `${assetsLink}${enumSite.meta.image}`
 
   /* Canonical */
 
@@ -57,13 +71,15 @@ const layout = async ({
 
   /* No index */
 
-  /*let noIndex = meta?.noIndex ? meta.noIndex : false
+  let noIndex = meta?.noIndex ? meta.noIndex : false
 
   if (envData.dev) {
     noIndex = true
-  }*/
+  }
 
-  const noIndex = true
+  if (envData.prod) {
+    noIndex = true
+  }
 
   /* Preload font links */
 

@@ -23,7 +23,8 @@ interface Props {
   args: {
     source?: string;
     title?: string;
-  }
+  },
+  parents?: object[];
 }
 
 const video = (props : Props = { args: {} }): string => {

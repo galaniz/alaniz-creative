@@ -4,8 +4,8 @@
 
 /* Imports */
 
-const { writeFile, mkdir } = require('node:fs/promises')
-const render = require('../src/render')
+import { writeFile, mkdir } from 'node:fs/promises'
+import render from '../src/render'
 
 /* Get and render json data */
 
@@ -22,7 +22,7 @@ module.exports = async (args = {}): Promise<object[]> => {
           for (let i = 0; i < jsonDataKeys.length; i++) {
             const json = jsonData[jsonDataKeys[i]]
 
-            const jsonFile = await writeFile(`./src/json/${json.name}`, JSON.stringify(json.data))
+            const jsonFile = await writeFile(`./src/json/${json.name}`, json.data)
 
             if (jsonFile) {
               console.info(`Successfully wrote ${json.name}`)

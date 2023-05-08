@@ -110,10 +110,11 @@ interface CardProps {
     type?: string;
     internalLink?: Render.InternalLink;
     index?: number;
-  }
+  },
+  parents?: object[];
 }
 
-const card = (props : CardProps = { args: {} }): object => {
+const card = (props : CardProps = { args: {} }): Render.Return => {
   const { args = {} } = props
 
   const {

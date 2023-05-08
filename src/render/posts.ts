@@ -4,32 +4,46 @@
 
 /* Imports */
 
-const { enumLayouts } = require('../vars/enums')
-const { archiveData, slugData } = require('../vars/data')
-const { card, cards } = require('./cards')
+import { enumLayouts } from '../vars/enums'
+import { archiveData, slugData } from '../vars/data'
+import { card, cards } from './cards'
 // const info = require('./info')
 
 /**
  * Function - output posts
  *
- * @param {object} args {
- *  @prop {string} contentType
- *  @prop {number} display
- *  @prop {string} headingLevel
- *  @prop {string} layout
- *  @prop {boolean} nothingFoundText
- *  @prop {string} order
- * }
+ * @param {object} props
+ * @param {object} props.args
+ * @param {string} props.args.contentType
+ * @param {number} props.args.display
+ * @param {string} props.args.headingLevel
+ * @param {string} props.args.layout
+ * @param {boolean} props.args.nothingFound
+ * @param {string} props.args.order
  * @return {string} - HTML
  */
 
-const posts = ({ args = {} }) => {
-  let {
+interface Props {
+  args: {
+    contentType?: string;
+    display?: number;
+    headingLevel?: number;
+    layout?: string;
+    nothingFound?: boolean;
+    order?: string;
+  },
+  parents?: object[];
+}
+
+const posts = (props : Props = { args: {} }): string => {
+  const { args = {} } = props
+
+  const {
     contentType = 'work',
     display = 1,
     headingLevel = 3,
     layout = 'cardsMinimal',
-    nothingFoundText = true, // Display nothing found message
+    nothingFound = true, // Display nothing found message
     order = 'date'
   } = args
 
@@ -49,7 +63,7 @@ const posts = ({ args = {} }) => {
 
   if (!posts.length) {
     return ''
-    // return nothingFoundText ? info(`Looks like no ${slugData.bases[contentType].title.toLowerCase()} were found.`) : ''
+    // return nothingFound ? info(`Looks like no ${slugData.bases[contentType].title.toLowerCase()} were found.`) : ''
   }
 
   /* Order */

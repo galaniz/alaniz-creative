@@ -60,10 +60,16 @@ const slugData: Slug = {
  */
 
 interface Items {
-  contentType: string;
+  id?: string;
   title: string;
-  internalLink: object;
-  id: string;
+  link?: string;
+  internalLink?: Render.InternalLink;
+  externalLink?: string;
+  children?: Items[];
+  props?: Items;
+  current?: boolean;
+  external?: boolean;
+  descendentCurrent?: boolean;
 }
 
 interface Navs {
@@ -90,7 +96,12 @@ const navData: Nav = {
  * @type {object}
  */
 
-const scriptData: object = {}
+interface Script {
+  id?: string;
+  sendUrl?: string;
+}
+
+const scriptData: Script = {}
 
 /**
  * Archive data

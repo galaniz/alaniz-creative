@@ -50,7 +50,7 @@ interface SlugBase {
   archiveId?: string;
 }
 
-const getSlug = (args: SlugArgs): string | object => {
+const getSlug = (args: SlugArgs): string | {slug: string; parents: object[]} => {
   const {
     id = '',
     slug = '',

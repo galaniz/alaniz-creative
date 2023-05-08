@@ -40,7 +40,8 @@ interface Props {
     paddingTop?: string;
     paddingBottom?: string;
     newTab?: boolean;
-  }
+  },
+  parents?: object[];
 }
 
 const button = (props : Props = { args: {} }): string => {

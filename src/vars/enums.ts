@@ -113,7 +113,7 @@ const enumLayouts: Layouts = {
 
 /* Export */
 
-export default {
+export {
   enumNamespace,
   enumSite,
   enumColors,

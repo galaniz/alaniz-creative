@@ -14,7 +14,7 @@ const { getYear } = require('../utils')
  * @return {string} HTML - footer
  */
 
-const footer = (navigations = {}) => {
+const footer = (navigations: { footer?: string; } = {}): string => {
   /* Nav */
 
   let nav = ''

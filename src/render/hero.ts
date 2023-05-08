@@ -4,37 +4,58 @@
 
 /* Imports */
 
-const { getImage } = require('../utils')
-const button = require('./button')
+import { getImage } from '../utils'
+import button from './button'
 
 /**
  * Function - output hero
  *
- * @param {object} args {
- *  @prop {string} contentType
- *  @prop {string} archive
- *  @prop {string} type // index || profile || minimal
- *  @prop {string} title
- *  @prop {string} text
- *  @prop {object} image
- *  @prop {object} wave
- *  @prop {object} blob
- *  @prop {boolean} border
- *  @prop {object} action
- * }
+ * @param {object} args
+ * @prop {string} args.contentType
+ * @prop {string} args.archive
+ * @prop {string} args.type // index || profile || minimal
+ * @prop {string} args.title
+ * @prop {string} args.text
+ * @prop {object} args.image
+ * @prop {object} args.wave
+ * @prop {object} args.blob
+ * @prop {boolean} args.border
+ * @prop {object} args.action
  * @return {string} HTML - section
  */
 
-const hero = (args = {}) => {
-  let {
+interface Args {
+  contentType?: string;
+  archive?: string;
+  type?: string;
+  title?: string;
+  text?: string;
+  image?: Render.Image;
+  wave?: {
+    path: string;
+    width: number;
+    height: number;
+  }
+  blob?: {
+    path: string;
+  }
+  border?: boolean;
+  action?: {
+    text: string;
+    internalLink: Render.InternalLink;
+  }
+}
+
+const hero = (args: Args = {}) => {
+  const {
     contentType = 'page',
     archive = '',
     type = 'minimal',
     title = '',
     text = '',
-    image = {},
-    wave = false,
-    blob = false,
+    image,
+    wave,
+    blob,
     border = false,
     action = false
   } = args
@@ -44,7 +65,7 @@ const hero = (args = {}) => {
   let imageOutput = ''
 
   if (image) {
-    imageOutput = getImage({
+    const imageStr = getImage({
       data: image,
       classes: 'l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc l-object-cover',
       lazy: false,
@@ -84,7 +105,7 @@ const hero = (args = {}) => {
         <div class="l-relative">
           ${waveOutput}
           <div class="l-aspect-ratio-62 l-relative l-overflow-hidden b-radius-s b-radius-m-m l-isolate${border ? ' b-all b-theme' : ''}">
-            ${imageOutput}
+            ${imageStr}
           </div>
         </div>
       `

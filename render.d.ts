@@ -3,6 +3,11 @@
  */
 
 declare namespace Render {
+  interface Return {
+    start: string;
+    end: string;
+  }
+
   interface Image {
     base: string;
     width: number;
@@ -56,7 +61,8 @@ declare namespace Render {
       classes?: string;
       attr?: string;
       richTextStyles?: boolean;
-    }
+    },
+    parents?: object[];
   }
   
   interface ColumnProps {
@@ -78,6 +84,7 @@ declare namespace Render {
       classes?: string;
       style?: string;
       attr?: string;
-    }
-  }  
+    },
+    parents?: object[];
+  }
 }
