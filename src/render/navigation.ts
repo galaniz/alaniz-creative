@@ -10,43 +10,14 @@ import { getSlug, getPermalink, getLink } from '../utils'
  * Class - recursively generate navigation output
  */
 
-interface Item {
-  id?: string;
-  title: string;
-  link?: string;
-  internalLink?: Render.InternalLink;
-  externalLink?: string;
-  children?: Item[];
-  props?: Item;
-  current?: boolean;
-  external?: boolean;
-  descendentCurrent?: boolean;
-}
-
-interface ItemBread {
-  id?: string;
+interface ItemBreadcrumb extends Render.NavItem {
   slug: string;
   contentType: string;
-  title: string;
-  link?: string;
-  internalLink?: Render.InternalLink;
-  externalLink?: string;
-  children?: Item[];
-  props?: Item;
-  current?: boolean;
-  external?: boolean;
-  descendentCurrent?: boolean;
-}
-
-interface Nav {
-  title: string;
-  location: string;
-  items: Item[];
 }
 
 interface Args {
-  navs: Nav[];
-  items: Item[];
+  navs: Render.Nav[];
+  items: Render.NavItem[];
 }
 
 interface RecurseArgs {
@@ -65,18 +36,9 @@ interface RecurseArgs {
   filterAfterLinkText?: Function;
 }
 
-interface BreadcrumbRecurseArgs {
-  listClass?: string;
-  listAttr?: string;
-  itemClass?: string;
-  itemAttr?: string;
-  linkClass?: string;
-  internalLinkClass?: string;
-  linkAttr?: string;
+interface BreadcrumbRecurseArgs extends RecurseArgs {
   currentClass?: string;
   a11yClass?: string;
-  filterBeforeLink?: Function;
-  filterAfterLink?: Function;
 }
 
 class Navigation {
@@ -89,8 +51,8 @@ class Navigation {
    * @return {void|boolean} - False if init errors
    */
 
-  public navs: Nav[];
-  public items: Item[];
+  public navs: Render.Nav[];
+  public items: Render.NavItem[];
   public init: boolean;
 
   private _itemsById: object;
@@ -147,7 +109,9 @@ class Navigation {
     this.items.forEach(item => {
       const info = this._getItemInfo(item)
 
-      this._itemsById[info.id] = info.props
+      if (info?.id) {
+        this._itemsById[info.id] = info
+      }
     })
 
     /* Navs by location */
@@ -182,7 +146,7 @@ class Navigation {
    * @return {object}
    */
 
-  _getItemInfo (item: Item): {id: string; props: Item} {
+  _getItemInfo (item: Render.NavItem): Render.NavItem {
     const fields = item
 
     const {
@@ -206,7 +170,7 @@ class Navigation {
       id = internalLink.id
     }
 
-    const props: Item = {
+    const props: Render.NavItem = {
       id,
       title,
       link,
@@ -221,10 +185,7 @@ class Navigation {
       props.children = c
     }
 
-    return {
-      id,
-      props
-    }
+    return props
   }
 
   /**
@@ -236,11 +197,11 @@ class Navigation {
    * @return {void}
    */
 
-  _recurseItemChildren (children: Item[] = [], store: object[] = []): void {
+  _recurseItemChildren (children: Render.NavItem[] = [], store: object[] = []): void {
     children.forEach(child => {
       const info = this._getItemInfo(child)
 
-      store.push(info.props)
+      store.push(info)
     })
   }
 
@@ -253,7 +214,7 @@ class Navigation {
    * @return {array<object>}
    */
 
-  _getItems (items: Item[] = [], current: string = ''): Item[] {
+  _getItems (items: Render.NavItem[] = [], current: string = ''): Render.NavItem[] {
     if (!items.length) {
       return []
     }
@@ -297,7 +258,7 @@ class Navigation {
    * @return {void}
    */
 
-  _recurseOutput = (items: Item[] = [], output: {html: string}, depth: number = -1, args: RecurseArgs): void => {
+  _recurseOutput = (items: Render.NavItem[] = [], output: {html: string}, depth: number = -1, args: RecurseArgs): void => {
     depth += 1
 
     const listClasses = args.listClass ? ` class="${args.listClass}"` : ''
@@ -463,7 +424,7 @@ class Navigation {
    * @return {string} HTML - ol
    */
 
-  getBreadcrumbs (items: ItemBread[] = [], current: string = '', args: BreadcrumbRecurseArgs): string {
+  getBreadcrumbs (items: ItemBreadcrumb[] = [], current: string = '', args: BreadcrumbRecurseArgs): string {
     /* Items required */
 
     if (!items.length) {

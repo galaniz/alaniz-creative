@@ -49,7 +49,10 @@ interface _ContentArgs {
   output: {
     html: string;
   }
-  parents: any[];
+  parents: {
+    renderType: string;
+    props: object;
+  }[];
   navs: object;
 }
 
@@ -118,10 +121,13 @@ const _renderContent = async ({
           renderObj.start = posts({ args: props, parents })
           break
         case 'navigation': {
-          const loc = props.location.toLowerCase().replace(/ /g, '')
-          const nav = navs?.[loc] ? navs[loc] : ''
+          if (props?.location) {
+            const loc = props.location.toLowerCase().replace(/ /g, '')
+            const nav = navs?.[loc] ? navs[loc] : ''
+  
+            renderObj.start = `<nav aria-label="${props.title}">${nav}</nav>`
+          }
 
-          renderObj.start = `<nav aria-label="${props.title}">${nav}</nav>`
           break
         }
       }
@@ -176,10 +182,17 @@ interface _ItemArgs {
   contentType: string;
 }
 
+interface _ItemReturn {
+  data: {
+    slug: string;
+    output: string;
+  }
+}
+
 const _renderItem = async ({
   item,
   contentType = 'page'
-}: _ItemArgs): Promise<object> => {
+}: _ItemArgs): Promise<_ItemReturn> => {
   /* Item id */
 
   const id = item.id
@@ -260,7 +273,7 @@ const _renderItem = async ({
 
   /* Hero */
 
-  const heroArgs = {
+  const heroArgs: Render.HeroArgs = {
     contentType,
     archive: props.archive,
     ...props.hero
@@ -301,12 +314,12 @@ const _renderItem = async ({
 
   let style = ''
 
-  if (item.theme) {
+  if (props.theme) {
     const styleArray: string[] = []
 
-    Object.keys(item.theme).forEach((t) => {
+    Object.keys(props.theme).forEach((t) => {
       const prefix = t.includes('video') ? '' : 'theme-'
-      const color = item.theme[t]?.dark ? item.theme[t].dark : item.theme[t]
+      const color = props.theme[t]?.dark ? props.theme[t].dark : props.theme[t]
 
       styleArray.push(`--${prefix}${t}:${color}`)
     })
@@ -367,11 +380,11 @@ const _renderItem = async ({
  */
 
 interface RenderArgs {
-  env: {
+  env?: {
     dev: boolean;
     prod: boolean;
   }
-  onRenderEnd: Function;
+  onRenderEnd?: Function;
 }
 
 const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
@@ -394,11 +407,11 @@ const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
   }
 
   const {
-    content = {},
-    navs = [],
-    navItems = [],
-    redirects = [],
-    archivePosts = {}
+    content,
+    navs,
+    navItems,
+    redirects,
+    archivePosts
   } = allData
 
   /* Store navigations and items */
@@ -412,7 +425,7 @@ const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
 
   /* Store routes for render end */
 
-  const serverlessRoutes = []
+  const serverlessRoutes: string[] = []
 
   /* Loop through pages first to set parent slugs */
 
@@ -458,7 +471,7 @@ const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
     const contentType = contentTypes[c]
 
     for (let i = 0; i < content[contentType].length; i++) {
-      const item: any = await _renderItem({
+      const item: _ItemReturn = await _renderItem({
         item: content[contentType][i],
         contentType
       })

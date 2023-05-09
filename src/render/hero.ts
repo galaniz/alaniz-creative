@@ -24,29 +24,7 @@ import button from './button'
  * @return {string} HTML - section
  */
 
-interface Args {
-  contentType?: string;
-  archive?: string;
-  type?: string;
-  title?: string;
-  text?: string;
-  image?: Render.Image;
-  wave?: {
-    path: string;
-    width: number;
-    height: number;
-  }
-  blob?: {
-    path: string;
-  }
-  border?: boolean;
-  action?: {
-    text: string;
-    internalLink: Render.InternalLink;
-  }
-}
-
-const hero = (args: Args = {}) => {
+const hero = (args: Render.HeroArgs = {}) => {
   const {
     contentType = 'page',
     archive = '',

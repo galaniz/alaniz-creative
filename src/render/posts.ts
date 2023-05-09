@@ -55,7 +55,7 @@ const posts = (props : Props = { args: {} }): string => {
 
   /* Layout */
 
-  layout = enumLayouts[layout]
+  const l = enumLayouts[layout]
 
   /* Check posts */
 
@@ -68,7 +68,7 @@ const posts = (props : Props = { args: {} }): string => {
 
   /* Order */
 
-  posts.sort((a, b) => {
+  posts.sort((a: { date: Date }, b: { date: Date }) => {
     if (order === 'date' && a?.date && b?.date) {
       const dateA = new Date(a.date)
       const dateB = new Date(b.date)
@@ -92,17 +92,17 @@ const posts = (props : Props = { args: {} }): string => {
 
   /* Items output */
 
-  let output = []
+  const outputArray: string[] = []
 
-  posts.forEach((post, index) => {
+  posts.forEach((post: Render.InternalLink, index: number) => {
     let itemOutput = ''
 
-    if (layout.type === 'cards') {
+    if (l.type === 'cards') {
       const cardOutput = card({
         args: {
           headingLevel,
           internalLink: post,
-          type: layout.subtype,
+          type: l.subtype,
           index
         }
       })
@@ -111,19 +111,19 @@ const posts = (props : Props = { args: {} }): string => {
     }
 
     if (itemOutput) {
-      output.push(itemOutput)
+      outputArray.push(itemOutput)
     }
   })
 
   /* Container output */
 
-  output = output.length ? output.join('') : ''
+  let output = outputArray.length ? outputArray.join('') : ''
 
-  if (output && layout.type === 'cards') {
+  if (output && l.type === 'cards') {
     output = cards({
       args: {
         content: output,
-        type: layout.subtype,
+        type: l.subtype,
         length: posts.length
       }
     })

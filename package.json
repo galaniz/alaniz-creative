@@ -7,8 +7,9 @@
     "node": ">=19"
   },
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy && stylelint 'src/assets/**/*.scss' && standard 'src/**/*.js' 'data/**/*.js'",
+    "start": "build:ts npx @11ty/eleventy --serve",
+    "build": "build:ts npx @11ty/eleventy && stylelint 'src/assets/**/*.scss' && standard 'src/**/*.js' 'data/**/*.js'",
+    "build:ts": "tsc --outDir src/_js",
     "debug": "DEBUG=* npx @11ty/eleventy"
   },
   "author": "",

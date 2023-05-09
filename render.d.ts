@@ -45,6 +45,24 @@ declare namespace Render {
     }
   }
 
+  interface NavItem {
+    id?: string;
+    title: string;
+    link?: string;
+    internalLink?: Render.InternalLink;
+    externalLink?: string;
+    children?: NavItem[];
+    current?: boolean;
+    external?: boolean;
+    descendentCurrent?: boolean;
+  }
+
+  interface Nav {
+    title?: string;
+    location: string;
+    items: NavItem[];
+  }
+
   interface ContainerProps {
     args: {
       tag?: string;
@@ -86,5 +104,27 @@ declare namespace Render {
       attr?: string;
     },
     parents?: object[];
+  }
+
+  interface HeroArgs {
+    contentType?: string;
+    archive?: string;
+    type?: string;
+    title?: string;
+    text?: string;
+    image?: Render.Image;
+    wave?: {
+      path: string;
+      width: number;
+      height: number;
+    }
+    blob?: {
+      path: string;
+    }
+    border?: boolean;
+    action?: {
+      text: string;
+      internalLink: Render.InternalLink;
+    }
   }
 }

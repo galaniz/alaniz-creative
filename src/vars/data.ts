@@ -59,30 +59,9 @@ const slugData: Slug = {
  * @prop {array<object>} items
  */
 
-interface Items {
-  id?: string;
-  title: string;
-  link?: string;
-  internalLink?: Render.InternalLink;
-  externalLink?: string;
-  children?: Items[];
-  props?: Items;
-  current?: boolean;
-  external?: boolean;
-  descendentCurrent?: boolean;
-}
-
-interface Navs {
-  contentType: string;
-  title: string;
-  location: string;
-  id: string;
-  items: Items[];
-}
-
 interface Nav {
-  navs: Navs[];
-  items: Items[];
+  navs: Render.Nav[];
+  items: Render.NavItem[];
 }
 
 const navData: Nav = {

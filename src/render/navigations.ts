@@ -16,28 +16,9 @@ import Navigation from './navigation'
  * @return {object}
  */
 
-interface Item {
-  id?: string;
-  title: string;
-  link?: string;
-  internalLink?: Render.InternalLink;
-  externalLink?: string;
-  children?: Item[];
-  props?: Item;
-  current?: boolean;
-  external?: boolean;
-  descendentCurrent?: boolean;
-}
-
-interface Nav {
-  title: string;
-  location: string;
-  items: Item[];
-}
-
 interface Args {
-  navs: Nav[];
-  items: Item[];
+  navs: Render.Nav[];
+  items: Render.NavItem[];
   current: string;
   title?: string;
   parents?: object[];

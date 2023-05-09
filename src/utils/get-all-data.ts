@@ -24,19 +24,36 @@ interface Params {
   id?: number;
 }
 
-interface DataItem {
-  id?: string;
-  contentType: string;
-  content?: object[];
-}
-
 interface Cache {
-  isCacheValid: Function;
-  getCachedValue: Function;
-  save: Function;
+  isCacheValid?: Function;
+  getCachedValue?: Function;
+  save?: Function;
 }
 
-const getAllData = async (key: string, params: Params = {}): Promise<boolean | object> => {
+interface Page {
+  parent: {
+    id: string;
+    slug: string;
+    title: string;
+  }
+  id: string;
+  archive: string;
+}
+
+interface Return {
+  content: {
+    page: Page[];
+    work: object[];
+  }
+  navs: Render.Nav[];
+  navItems: Render.NavItem[];
+  redirects: object[];
+  archivePosts: {
+    work: object[];
+  }
+}
+
+const getAllData = async (key: string, params: Params = {}): Promise<Return | undefined> => {
   try {
     if (!key) {
       throw new Error('No key')
@@ -44,14 +61,14 @@ const getAllData = async (key: string, params: Params = {}): Promise<boolean | o
 
     /* Cache is only for local dev */
 
-    let cache: Cache
+    let cache: Cache = {}
 
     if (envData.eleventy.cache) {
       cache = new AssetCache(key)
 
       /* Check if the cache is fresh within the last day */
 
-      if (cache.isCacheValid('1d')) {
+      if (cache?.isCacheValid && cache?.getCachedValue && cache.isCacheValid('1d')) {
         return cache.getCachedValue()
       }
     }
@@ -103,13 +120,13 @@ const getAllData = async (key: string, params: Params = {}): Promise<boolean | o
 
     /* All data */
 
-    let content: { page: object[], work: object[] } = {
+    let content: { page: Page[], work: object[] } = {
       page: [],
       work: []
     }
 
-    let navs: object[] = []
-    let navItems: object[] = []
+    let navs: Render.Nav[] = []
+    let navItems: Render.NavItem[] = []
     let redirects: object[] = []
     let archivePosts: { work: object[] } = {
       work: []
@@ -122,7 +139,7 @@ const getAllData = async (key: string, params: Params = {}): Promise<boolean | o
       resolveInternalLinks(data, data, ['items', 'internalLink'])
     
       Object.keys(data).forEach((d) => {
-        const dd: DataItem = data[d]
+        const dd = data[d]
         const { contentType } = dd
     
         dd.id = d
@@ -167,7 +184,7 @@ const getAllData = async (key: string, params: Params = {}): Promise<boolean | o
 
     /* Store in local cache */
 
-    if (envData.eleventy.cache && cache) {
+    if (envData.eleventy.cache && cache?.save) {
       await cache.save(JSON.parse(safeJsonStringify(allData)), 'json')
     }
 
@@ -176,8 +193,6 @@ const getAllData = async (key: string, params: Params = {}): Promise<boolean | o
     return allData
   } catch (error) {
     console.error('Error getting all data: ', error)
-
-    return false
   }
 }
 
