@@ -17,13 +17,13 @@ import { getLink } from '../../utils'
  */
 
 interface _ContentProps {
-  content: {
-    tag?: string;
-    link?: string;
+  content: Array<{
+    tag?: string
+    link?: string
     content?: string | object[]
-  }[];
-  cardLink?: string;
-  _output?: string;
+  }>
+  cardLink?: string
+  _output?: string
 }
 
 const _getContent = ({
@@ -45,7 +45,7 @@ const _getContent = ({
     if (Array.isArray(con)) {
       cc = _getContent({
         content: con,
-        cardLink,
+        cardLink
       })
     }
 
@@ -64,7 +64,7 @@ const _getContent = ({
     }
 
     if (tag) {
-      _output += `<${tag}${attr.length ? ` ${attr.join(' ')}` : ''}>`
+      _output += `<${tag}${(attr.length > 0) ? ` ${attr.join(' ')}` : ''}>`
     }
 
     _output += cc
@@ -96,23 +96,23 @@ const _getContent = ({
 
 interface RichTextProps {
   args: {
-    tag?: string;
-    content?: string | object[];
-    classes?: string;
-    textStyle?: string;
-    headingStyle?: string;
-    align?: string;
-    link?: string;
-    style?: object;
+    tag?: string
+    content?: string | object[]
+    classes?: string
+    textStyle?: string
+    headingStyle?: string
+    align?: string
+    link?: string
+    style?: object
   }
-  parents?: {
-    renderType: string;
-    internalLink?: Render.InternalLink;
-    externalLink?: string;
-  }[]
+  parents?: Array<{
+    renderType: string
+    internalLink?: Render.InternalLink
+    externalLink?: string
+  }>
 }
 
-const richText = (props : RichTextProps = { args: {}, parents: [] }): string => {
+const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
   const { args = {}, parents = [] } = props
 
   const {
@@ -141,7 +141,7 @@ const richText = (props : RichTextProps = { args: {}, parents: [] }): string => 
   let cardLink = ''
   let card = false
 
-  if (parents.length) {
+  if (parents.length > 0) {
     if (parents[0].renderType === 'card') {
       card = true
     }
@@ -213,13 +213,13 @@ const richText = (props : RichTextProps = { args: {}, parents: [] }): string => 
     attr.push(`href="${link}"`)
   }
 
-  if (classesArray.length) {
+  if (classesArray.length > 0) {
     attr.push(`class="${classesArray.join(' ')}"`)
   }
 
-  if (style) {
+  if (style != null) {
     const styleArray: string[] = []
-    
+
     Object.keys(style).forEach((s) => {
       styleArray.push(`${s}:${style[s]}`)
     })
@@ -236,7 +236,7 @@ const richText = (props : RichTextProps = { args: {}, parents: [] }): string => 
   /* Output */
 
   if (tag) {
-    output = `<${tag}${attr.length ? ` ${attr.join(' ')}` : ''}>${output}</${tag}>`
+    output = `<${tag}${(attr.length > 0) ? ` ${attr.join(' ')}` : ''}>${output}</${tag}>`
   }
 
   return output

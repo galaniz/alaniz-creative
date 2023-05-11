@@ -22,18 +22,18 @@ import richText from '../rich-text'
 
 interface Props {
   args: {
-    image?: Render.Image;
-    alt?: string;
-    aspectRatio?: string;
+    image?: Render.Image
+    alt?: string
+    aspectRatio?: string
     caption?: {
-      content: string;
+      content: string
     }
-    border?: boolean;
+    border?: boolean
   }
-  parents?: { renderType: string; }[]
+  parents?: Array<{ renderType: string }>
 }
 
-const image = (props : Props = { args: {}, parents: [] }): string => {
+const image = (props: Props = { args: {}, parents: [] }): string => {
   const { args = {}, parents = [] } = props
 
   const {
@@ -48,7 +48,7 @@ const image = (props : Props = { args: {}, parents: [] }): string => {
 
   let card = false
 
-  if (parents.length) {
+  if (parents.length > 0) {
     if (parents[0]?.renderType === 'card') {
       card = true
     }
@@ -58,7 +58,7 @@ const image = (props : Props = { args: {}, parents: [] }): string => {
 
   let imageOutput = ''
 
-  if (image) {
+  if (image != null) {
     const imageClasses = ['l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc l-object-cover']
 
     if (card) {
@@ -127,7 +127,7 @@ const image = (props : Props = { args: {}, parents: [] }): string => {
 
   /* Figure caption */
 
-  if (caption) {
+  if (caption != null) {
     const captionContent = richText({
       args: {
         tag: 'p',

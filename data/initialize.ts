@@ -27,41 +27,41 @@ module.exports = async (): Promise<object[]> => {
           }
         }
 
-        if (serverlessRoutes.length) {
+        if (serverlessRoutes.length > 0) {
           for (let i = 0; i < serverlessRoutes.length; i++) {
             const path: string = serverlessRoutes[i]
-            const pathDepth = path.match(/([/])/g) || []
+            const pathDepth = (path.match(/([/])/g) != null) || []
 
             let serverlessPath = ''
-        
+
             for (let j = 0; j < pathDepth.length; j++) {
               serverlessPath += '../'
             }
-        
+
             const content = `import reload from '${serverlessPath}src/serverless/reload'; const render = async ({ request, env }) => { return await reload({ request, env }) }; export const onRequestGet = [render];`
-        
+
             await mkdir(`./functions${path}`, { recursive: true })
-        
+
             await writeFile(`./functions${path}index.js`, content)
-        
+
             console.info(`Successfully wrote ./functions${path}index.js`)
           }
         }
-        
-        if (redirects.length) {
+
+        if (redirects.length > 0) {
           let redirectsData = ''
-        
+
           redirects.forEach((r) => {
             const { content = [] } = r
-        
-            if (content.length) {
+
+            if (content.length > 0) {
               redirectsData += content.join('\n')
             }
           })
-        
+
           if (redirectsData) {
             await writeFile('./site/_redirects', redirectsData)
-        
+
             console.info('Successfully wrote ./site/_redirects')
           }
         }

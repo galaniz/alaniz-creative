@@ -14,12 +14,12 @@ import { join } from 'node:path'
  * @yield {array<string>}
  */
 
-const getAllFilePaths = async function* (dir: string) {
+const getAllFilePaths = async function * (dir: string) {
   const files = await readdir(dir, { withFileTypes: true })
 
   for (const file of files) {
     if (file.isDirectory()) {
-      yield* getAllFilePaths(join(dir, file.name));
+      yield * getAllFilePaths(join(dir, file.name))
     } else {
       yield join(dir, file.name)
     }

@@ -22,10 +22,10 @@ import image from '../image'
  */
 
 interface _CardProps {
-  internalLink: Render.InternalLink;
-  headingLevel: number;
-  type: string;
-  index: number;
+  internalLink: Render.InternalLink
+  headingLevel: number
+  type: string
+  index: number
 }
 
 const _card = ({ internalLink, headingLevel, type, index }: _CardProps): string => {
@@ -37,7 +37,7 @@ const _card = ({ internalLink, headingLevel, type, index }: _CardProps): string 
 
   /* Title, image and slug required */
 
-  if (!title || !hero || !slug) {
+  if (!title || (hero == null) || !slug) {
     return ''
   }
 
@@ -106,15 +106,15 @@ const _card = ({ internalLink, headingLevel, type, index }: _CardProps): string 
 
 interface CardProps {
   args: {
-    headingLevel?: number;
-    type?: string;
-    internalLink?: Render.InternalLink;
-    index?: number;
-  },
-  parents?: object[];
+    headingLevel?: number
+    type?: string
+    internalLink?: Render.InternalLink
+    index?: number
+  }
+  parents?: object[]
 }
 
-const card = (props : CardProps = { args: {} }): Render.Return => {
+const card = (props: CardProps = { args: {} }): Render.Return => {
   const { args = {} } = props
 
   const {
@@ -144,12 +144,12 @@ const card = (props : CardProps = { args: {} }): Render.Return => {
   let blob = ''
   let themeColor = ''
 
-  if (internalLink) {
+  if (internalLink != null) {
     const { svg, theme } = internalLink
 
     /* Blob svg */
 
-    if (ac && svg?.blob) {
+    if (ac && ((svg?.blob) != null)) {
       blob = `
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +158,7 @@ const card = (props : CardProps = { args: {} }): Render.Return => {
           focusable="false"
           role="img"
           class="o-blob l-absolute l-top-0 l-left-0 l-right-0 l-margin-auto"
-          data-reverse="${index % 2 ? true : false}"
+          data-reverse="${!!(index % 2)}"
         >
           <path
             d="${svg.blob.path}"
@@ -174,7 +174,7 @@ const card = (props : CardProps = { args: {} }): Render.Return => {
 
     /* Theme color */
 
-    if (theme) {
+    if (theme != null) {
       themeColor = theme.main.dark
     }
 
@@ -241,13 +241,13 @@ const card = (props : CardProps = { args: {} }): Render.Return => {
 
 interface CardsProps {
   args: {
-    content?: string;
-    type?: string;
-    length?: number;
+    content?: string
+    type?: string
+    length?: number
   }
 }
 
-const cards = (props : CardsProps = { args: {} }): string => {
+const cards = (props: CardsProps = { args: {} }): string => {
   const { args = {} } = props
 
   const {
@@ -270,7 +270,7 @@ const cards = (props : CardsProps = { args: {} }): string => {
 
   if (type === 'cascading') {
     containerArgs.args.layout = 'row'
-    containerArgs.args.attr = `data-widow="${length % 3 === 2 ? true : false}"`
+    containerArgs.args.attr = `data-widow="${length % 3 === 2}"`
   }
 
   const cardsContainer = container(containerArgs)

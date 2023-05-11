@@ -26,14 +26,14 @@ import loader from '../loader'
 
 interface Props {
   args: {
-    id?: string;
-    submitLabel?: string;
-    successTitle?: string;
-    successText?: string;
+    id?: string
+    submitLabel?: string
+    successTitle?: string
+    successText?: string
   }
 }
 
-const form = (props : Props = { args: {} }): object => {
+const form = (props: Props = { args: {} }): object => {
   const { args = {} } = props
 
   const {

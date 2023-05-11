@@ -14,7 +14,7 @@ import { getYear } from '../../utils'
  * @return {string} HTML - footer
  */
 
-const footer = (navigations: { footer?: string; } = {}): string => {
+const footer = (navigations: { footer?: string } = {}): string => {
   /* Nav */
 
   let nav = ''

@@ -45,15 +45,15 @@ const _slugs: object = {}
  */
 
 interface _ContentArgs {
-  contentData: any[];
+  contentData: any[]
   output: {
-    html: string;
+    html: string
   }
-  parents: {
-    renderType: string;
-    props: object;
-  }[];
-  navs: object;
+  parents: Array<{
+    renderType: string
+    props: object
+  }>
+  navs: object
 }
 
 const _renderContent = async ({
@@ -62,18 +62,18 @@ const _renderContent = async ({
   parents = [],
   navs
 }: _ContentArgs): Promise<void> => {
-  if (Array.isArray(contentData) && contentData.length) {
+  if (Array.isArray(contentData) && (contentData.length > 0)) {
     for (let i = 0; i < contentData.length; i++) {
-      let c = contentData[i]
+      const c = contentData[i]
 
       /* Check for nested content */
 
-      let children = c?.content || []
+      const children = c?.content || []
       let recurse = false
 
       if (children) {
         if (Array.isArray(children)) {
-          if (children.length) {
+          if (children.length > 0) {
             recurse = true
           }
         }
@@ -124,7 +124,7 @@ const _renderContent = async ({
           if (props?.location) {
             const loc = props.location.toLowerCase().replace(/ /g, '')
             const nav = navs?.[loc] ? navs[loc] : ''
-  
+
             renderObj.start = `<nav aria-label="${props.title}">${nav}</nav>`
           }
 
@@ -176,16 +176,16 @@ const _renderContent = async ({
 
 interface _ItemArgs {
   item: {
-    id: string;
-    basePermalink?: string;
+    id: string
+    basePermalink?: string
   }
-  contentType: string;
+  contentType: string
 }
 
 interface _ItemReturn {
   data: {
-    slug: string;
-    output: string;
+    slug: string
+    output: string
   }
 }
 
@@ -254,7 +254,7 @@ const _renderItem = async ({
     contentType,
     id
   }
-  
+
   /* Check if index */
 
   const index = props.slug === 'index'
@@ -297,9 +297,9 @@ const _renderItem = async ({
 
   const contentOutput = { html: '' }
 
-  let contentData = props.content
+  const contentData = props.content
 
-  if (Array.isArray(contentData) && contentData.length) {
+  if (Array.isArray(contentData) && (contentData.length > 0)) {
     await _renderContent({
       contentData,
       output: contentOutput,
@@ -331,7 +331,7 @@ const _renderItem = async ({
 
   let script = ''
 
-  if (Object.keys(scriptData).length) {
+  if (Object.keys(scriptData).length > 0) {
     const scriptJSON = JSON.stringify(scriptData)
 
     script = `
@@ -381,16 +381,16 @@ const _renderItem = async ({
 
 interface RenderArgs {
   env?: {
-    dev: boolean;
-    prod: boolean;
+    dev: boolean
+    prod: boolean
   }
-  onRenderEnd?: Function;
+  onRenderEnd?: Function
 }
 
 const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
   /* Set env */
 
-  if (env) {
+  if (env != null) {
     envData.dev = env.dev
     envData.prod = env.prod
   }
@@ -399,7 +399,7 @@ const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
 
   const allData = await getAllData('init_all_data')
 
-  if (!allData) {
+  if (allData == null) {
     return [{
       slug: '',
       output: ''
@@ -430,7 +430,7 @@ const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
   /* Loop through pages first to set parent slugs */
 
   content.page.forEach(item => {
-    let { parent, id, archive } = item
+    const { parent, id, archive } = item
 
     if (archive) {
       archiveData.ids[archive] = id
@@ -484,7 +484,7 @@ const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
 
   /* Render end callback */
 
-  if (onRenderEnd) {
+  if (onRenderEnd != null) {
     jsonFileData.slugs.data = JSON.stringify(_slugs)
     jsonFileData.slugParents.data = JSON.stringify(slugData.parents)
     jsonFileData.archiveIds.data = JSON.stringify(archiveData.ids)

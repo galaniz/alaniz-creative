@@ -20,19 +20,19 @@
  */
 
 interface SlugBase {
-  slug: string;
-  title: string;
-  singular: string;
-  archiveId?: string;
+  slug: string
+  title: string
+  singular: string
+  archiveId?: string
 }
 
 interface Slug {
-  parents: object;
+  parents: object
   bases: {
-    page: SlugBase;
-    work: SlugBase;
-  };
-} 
+    page: SlugBase
+    work: SlugBase
+  }
+}
 
 const slugData: Slug = {
   parents: {}, // Parent items for slug generation
@@ -60,8 +60,8 @@ const slugData: Slug = {
  */
 
 interface Nav {
-  navs: Render.Nav[];
-  items: Render.NavItem[];
+  navs: Render.Nav[]
+  items: Render.NavItem[]
 }
 
 const navData: Nav = {
@@ -76,8 +76,8 @@ const navData: Nav = {
  */
 
 interface Script {
-  id?: string;
-  sendUrl?: string;
+  id?: string
+  sendUrl?: string
 }
 
 const scriptData: Script = {}
@@ -91,8 +91,8 @@ const scriptData: Script = {}
  */
 
 interface Archive {
-  ids: object;
-  posts: object;
+  ids: object
+  posts: object
 }
 
 const archiveData: Archive = {
@@ -122,16 +122,16 @@ const archiveData: Archive = {
  */
 
 interface File {
-  data: string;
-  name: string;
+  data: string
+  name: string
 }
 
 interface JsonFile {
-  slugs: File;
-  slugParents: File;
-  archiveIds: File;
-  archivePosts: File;
-  navData: File;
+  slugs: File
+  slugParents: File
+  archiveIds: File
+  archivePosts: File
+  navData: File
 }
 
 const jsonFileData: JsonFile = {
@@ -173,18 +173,18 @@ const jsonFileData: JsonFile = {
  */
 
 interface Env {
-  dev: boolean;
-  prod: boolean;
+  dev: boolean
+  prod: boolean
   urls: {
-    dev: string;
-    prod: string;
-  };
+    dev: string
+    prod: string
+  }
   eleventy: {
-    cache: boolean;
-  };
+    cache: boolean
+  }
   smtp2go: {
-    apiKey: string;
-  };
+    apiKey: string
+  }
 }
 
 const envData: Env = {

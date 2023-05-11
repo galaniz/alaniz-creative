@@ -44,23 +44,23 @@ const processImages = async (
       if (path.includes('.DS_Store')) {
         continue
       }
-  
+
       const ext = extname(path)
       const relPath = path.split(`${inputDir}/`)[1]
       const base = relPath.split(`${ext}`)[0]
       const folder = dirname(`./${outputDir}/${base}`)
-  
+
       const metadata = await sharp(path).metadata()
       const { width = 0, height } = metadata
       store[base] = { base, width, height }
-  
+
       let sizes = [200, 400, 600, 800, 1200, 1600, 2000, width]
       sizes = sizes.filter(s => s <= width)
-  
+
       if (!existsSync(folder)) {
         await mkdir(folder, { recursive: true })
       }
-  
+
       await Promise.all(
         sizes.map(async (size) => {
           return await create({ size, width, path, name: base })

@@ -22,17 +22,17 @@ import { getPermalink } from '../../utils'
 
 interface Args {
   meta?: {
-    title?: string;
-    description?: string;
-    image?: string;
-    canonical?: string;
-    prev?: boolean;
-    next?: boolean;
-    noIndex?: boolean;
+    title?: string
+    description?: string
+    image?: string
+    canonical?: string
+    prev?: boolean
+    next?: boolean
+    noIndex?: boolean
   }
-  content?: string;
-  script?: string;
-  style?: string;
+  content?: string
+  script?: string
+  style?: string
 }
 
 const layout = async ({
@@ -145,9 +145,9 @@ const layout = async ({
 
   /* Purge unused css */
 
-  let css = `<link rel="stylesheet" href="${assetsLink}css/${enumNamespace}.css" media="all">`
+  const css = `<link rel="stylesheet" href="${assetsLink}css/${enumNamespace}.css" media="all">`
 
-  /*const purge = await new PurgeCSS().purge({
+  /* const purge = await new PurgeCSS().purge({
     content: [
       {
         raw: output,
@@ -161,7 +161,7 @@ const layout = async ({
 
   if (purge.length) {
     css = `<style>${purge[0].css}</style>`
-  }*/
+  } */
 
   /* Output */
 

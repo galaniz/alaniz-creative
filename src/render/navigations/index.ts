@@ -17,11 +17,11 @@ import Navigation from '../navigation'
  */
 
 interface Args {
-  navs: Render.Nav[];
-  items: Render.NavItem[];
-  current: string;
-  title?: string;
-  parents?: object[];
+  navs: Render.Nav[]
+  items: Render.NavItem[]
+  current: string
+  title?: string
+  parents?: object[]
 }
 
 const navigations = ({
@@ -31,7 +31,7 @@ const navigations = ({
 }: Args) => {
   /* Navs and items required */
 
-  if (!navs.length && !items.length) {
+  if ((navs.length === 0) && (items.length === 0)) {
     return {
       main: '',
       footer: ''

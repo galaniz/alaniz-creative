@@ -20,17 +20,17 @@ import { v4 as uuid } from 'uuid'
  */
 
 interface _Opt {
-  text: string;
-  value: string;
-  selected?: boolean;
+  text: string
+  value: string
+  selected?: boolean
 }
 
 interface _Args {
-  opts?: _Opt[];
-  name?: string;
-  classes?: string;
-  attr?: string;
-  type?: string;
+  opts?: _Opt[]
+  name?: string
+  classes?: string
+  attr?: string
+  type?: string
 }
 
 const _getCheckboxRadioOpts = (args: _Args = {}): string => {
@@ -44,7 +44,7 @@ const _getCheckboxRadioOpts = (args: _Args = {}): string => {
 
   /* Opts and name required */
 
-  if (!opts.length || !name) {
+  if ((opts.length === 0) || !name) {
     return ''
   }
 
@@ -95,25 +95,25 @@ const _getCheckboxRadioOpts = (args: _Args = {}): string => {
 
 interface Props {
   args: {
-    type?: string;
-    name?: string;
-    label?: string;
-    value?: string;
-    required?: boolean;
-    width?: string;
-    autoCompleteToken?: string;
-    placeholder?: string;
-    options?: string[];
-    rows?: number;
-    emptyErrorMessage?: string;
-    invalidErrorMessage?: string;
-    fieldClasses?: string;
-    classes?: string;
-    fieldset?: boolean;
+    type?: string
+    name?: string
+    label?: string
+    value?: string
+    required?: boolean
+    width?: string
+    autoCompleteToken?: string
+    placeholder?: string
+    options?: string[]
+    rows?: number
+    emptyErrorMessage?: string
+    invalidErrorMessage?: string
+    fieldClasses?: string
+    classes?: string
+    fieldset?: boolean
   }
 }
 
-const field = (props : Props = { args: {} }): string => {
+const field = (props: Props = { args: {} }): string => {
   const { args = {} } = props
 
   const {
@@ -166,9 +166,9 @@ const field = (props : Props = { args: {} }): string => {
 
   /* Options */
 
-  let opts: _Opt[] = []
+  const opts: _Opt[] = []
 
-  if (options.length) {
+  if (options.length > 0) {
     options.forEach((option) => {
       const data = option.split(' : ')
 
@@ -186,7 +186,7 @@ const field = (props : Props = { args: {} }): string => {
 
   let checkboxRadioOpts = false
 
-  if (opts.length && checkboxRadio) {
+  if ((opts.length > 0) && checkboxRadio) {
     checkboxRadioOpts = true
     fieldset = true
   }
@@ -225,7 +225,7 @@ const field = (props : Props = { args: {} }): string => {
 
   let attrs = ''
 
-  if (attr.length) {
+  if (attr.length > 0) {
     attrs = ` ${attr.join(' ')}`
   }
 
@@ -301,7 +301,7 @@ const field = (props : Props = { args: {} }): string => {
       break
     }
     case 'select': {
-      if (opts.length) {
+      if (opts.length > 0) {
         const optsOutput = opts.map((opt) => {
           const {
             text,

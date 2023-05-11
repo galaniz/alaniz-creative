@@ -13,12 +13,12 @@
 
 interface Props {
   args: {
-    percent?: number;
-  },
-  parents?: object[];
+    percent?: number
+  }
+  parents?: object[]
 }
 
-const aspectRatio = (props : Props = { args: {} }): Render.Return => {
+const aspectRatio = (props: Props = { args: {} }): Render.Return => {
   const { args = {} } = props
   const { percent = 100 } = args
 

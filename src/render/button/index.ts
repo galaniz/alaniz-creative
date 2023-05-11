@@ -29,22 +29,22 @@ import externalLinkSvg from '../svg/external-link'
 
 interface Props {
   args: {
-    title?: string;
-    internalLink?: Render.InternalLink;
-    externalLink?: string;
-    link?: string;
-    type?: string;
-    size?: string;
-    justify?: string;
-    richText?: boolean;
-    paddingTop?: string;
-    paddingBottom?: string;
-    newTab?: boolean;
-  },
-  parents?: object[];
+    title?: string
+    internalLink?: Render.InternalLink
+    externalLink?: string
+    link?: string
+    type?: string
+    size?: string
+    justify?: string
+    richText?: boolean
+    paddingTop?: string
+    paddingBottom?: string
+    newTab?: boolean
+  }
+  parents?: object[]
 }
 
-const button = (props : Props = { args: {} }): string => {
+const button = (props: Props = { args: {} }): string => {
   const { args = {} } = props
 
   const {
@@ -64,7 +64,7 @@ const button = (props : Props = { args: {} }): string => {
 
   /* Link and title required */
 
-  if (internalLink || externalLink) {
+  if ((internalLink != null) || externalLink) {
     link = getLink(internalLink, externalLink)
   }
 
@@ -97,7 +97,7 @@ const button = (props : Props = { args: {} }): string => {
   /* Output */
 
   let output = `
-    <a class="${linkClasses}" href="${link}"${newTab ? ` target="_blank" rel="noreferrer"` : ''}>
+    <a class="${linkClasses}" href="${link}"${newTab ? ' target="_blank" rel="noreferrer"' : ''}>
       ${title}
       ${external ? externalLinkSvg('l-width-xs l-height-xs') : ''}
     </a>

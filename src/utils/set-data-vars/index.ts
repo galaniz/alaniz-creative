@@ -36,7 +36,7 @@ const setDataVars = (env: { dev: boolean, prod: boolean }): void => {
     }
 
     /* Set archive ids */
-    
+
     if (archiveIdsJson) {
       Object.keys(archiveIdsJson).forEach((a) => {
         if (slugData.bases?.[a]) {
@@ -46,7 +46,7 @@ const setDataVars = (env: { dev: boolean, prod: boolean }): void => {
     }
 
     /* Set archive posts */
-    
+
     if (archivePostsJson) {
       Object.keys(archivePostsJson).forEach((a) => {
         archiveData.posts[a] = archivePostsJson[a]
@@ -54,7 +54,7 @@ const setDataVars = (env: { dev: boolean, prod: boolean }): void => {
     }
 
     /* Set nav data */
-    
+
     if (navDataJson) {
       navData.navs = navDataJson.navs
       navData.items = navDataJson.items

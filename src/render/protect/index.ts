@@ -40,7 +40,7 @@ const protect = async () => {
 
   return await layout({
     meta: {
-      title: title,
+      title,
       noIndex: true
     },
     content: `

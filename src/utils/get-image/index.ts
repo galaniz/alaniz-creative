@@ -18,24 +18,24 @@
  */
 
 interface Data {
-  base: string;
-  alt?: string;
-  width: number;
-  height: number;
+  base: string
+  alt?: string
+  width: number
+  height: number
 }
 
 interface Args {
-  data?: Data;
-  classes?: string;
-  attr?: string;
-  width?: string | number;
-  height?: string | number;
-  returnAspectRatio?: boolean;
-  lazy?: boolean;
-  max?: number;
+  data?: Data
+  classes?: string
+  attr?: string
+  width?: string | number
+  height?: string | number
+  returnAspectRatio?: boolean
+  lazy?: boolean
+  max?: number
 }
 
-const getImage = (args: Args = {}): string | { output: string; aspectRatio: number; } => {
+const getImage = (args: Args = {}): string | { output: string, aspectRatio: number } => {
   const {
     data,
     classes = '',
@@ -49,13 +49,13 @@ const getImage = (args: Args = {}): string | { output: string; aspectRatio: numb
 
   /* Data required */
 
-  if (!data) {
+  if (data == null) {
     return ''
   }
 
   const {
     base,
-    alt = "",
+    alt = '',
     width: naturalWidth,
     height: naturalHeight
   } = data

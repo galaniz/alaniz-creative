@@ -36,21 +36,21 @@ const _getParentSlug = (id: string = '', p: object[] = []): void => {
  */
 
 interface SlugArgs {
-  id?: string;
-  slug: string;
-  page?: number;
-  contentType: string;
-  returnParents?: boolean;
+  id?: string
+  slug: string
+  page?: number
+  contentType: string
+  returnParents?: boolean
 }
 
 interface SlugBase {
-  slug: string;
-  title: string;
-  singular: string;
-  archiveId?: string;
+  slug: string
+  title: string
+  singular: string
+  archiveId?: string
 }
 
-const getSlug = (args: SlugArgs): string | {slug: string; parents: object[]} => {
+const getSlug = (args: SlugArgs): string | { slug: string, parents: object[] } => {
   const {
     id = '',
     slug = '',
@@ -76,7 +76,7 @@ const getSlug = (args: SlugArgs): string | {slug: string; parents: object[]} => 
 
   _getParentSlug(contentType === 'page' ? id : slugBase.archiveId, p)
 
-  if (p.length) {
+  if (p.length > 0) {
     pp = p
 
     p = `${p.map((item: { slug: string }): string => item.slug).join('/')}/`

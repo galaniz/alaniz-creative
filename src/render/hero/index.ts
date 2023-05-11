@@ -42,7 +42,7 @@ const hero = (args: Render.HeroArgs = {}) => {
 
   let imageOutput = ''
 
-  if (image) {
+  if (image != null) {
     const imageStr = getImage({
       data: image,
       classes: 'l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc l-object-cover',
@@ -53,7 +53,7 @@ const hero = (args: Render.HeroArgs = {}) => {
     if (contentType === 'work') {
       let waveOutput = ''
 
-      if (wave) {
+      if (wave != null) {
         waveOutput = `
           <div class="l-absolute l-width-100-vw l-max-height-100-pc l-center">
             <div style="padding-top:${(wave.height / wave.width) * 100}%"></div>
@@ -94,7 +94,7 @@ const hero = (args: Render.HeroArgs = {}) => {
 
   let blobOutput = ''
 
-  if (blob) {
+  if (blob != null) {
     blobOutput = `
       <svg
         xmlns="http://www.w3.org/2000/svg"

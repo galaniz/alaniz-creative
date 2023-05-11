@@ -4,127 +4,127 @@
 
 declare namespace Render {
   interface Return {
-    start: string;
-    end: string;
+    start: string
+    end: string
   }
 
   interface Image {
-    base: string;
-    width: number;
-    height: number;
+    base: string
+    width: number
+    height: number
   }
 
   interface InternalLink {
-    id: string;
-    contentType: string;
-    slug: string;
-    title?: string;
+    id: string
+    contentType: string
+    slug: string
+    title?: string
     hero?: {
-      title: string;
-      border?: boolean;
-      image?: Image;
+      title: string
+      border?: boolean
+      image?: Image
       action?: {
-        text: string;
-        internalLink: InternalLink;
+        text: string
+        internalLink: InternalLink
       }
       blob?: {
-        path: string;
-        width: number;
-        height: number;
+        path: string
+        width: number
+        height: number
       }
     }
     svg?: {
       blob?: {
-        path: string;
+        path: string
       }
     }
     theme?: {
       main: {
-        dark: string;
+        dark: string
       }
     }
   }
 
   interface NavItem {
-    id?: string;
-    title: string;
-    link?: string;
-    internalLink?: Render.InternalLink;
-    externalLink?: string;
-    children?: NavItem[];
-    current?: boolean;
-    external?: boolean;
-    descendentCurrent?: boolean;
+    id?: string
+    title: string
+    link?: string
+    internalLink?: Render.InternalLink
+    externalLink?: string
+    children?: NavItem[]
+    current?: boolean
+    external?: boolean
+    descendentCurrent?: boolean
   }
 
   interface Nav {
-    title?: string;
-    location: string;
-    items: NavItem[];
+    title?: string
+    location: string
+    items: NavItem[]
   }
 
   interface ContainerProps {
     args: {
-      tag?: string;
-      layout?: string;
-      maxWidth?: string;
-      paddingTop?: string;
-      paddingTopLarge?: string;
-      paddingBottom?: string;
-      paddingBottomLarge?: string;
-      gap?: string;
-      gapLarge?: string;
-      justify?: string;
-      align?: string;
-      classes?: string;
-      attr?: string;
-      richTextStyles?: boolean;
-    },
-    parents?: object[];
+      tag?: string
+      layout?: string
+      maxWidth?: string
+      paddingTop?: string
+      paddingTopLarge?: string
+      paddingBottom?: string
+      paddingBottomLarge?: string
+      gap?: string
+      gapLarge?: string
+      justify?: string
+      align?: string
+      classes?: string
+      attr?: string
+      richTextStyles?: boolean
+    }
+    parents?: object[]
   }
-  
+
   interface ColumnProps {
     args: {
-      tag?: string;
-      width?: string;
-      widthSmall?: string;
-      widthMedium?: string;
-      widthLarge?: string;
+      tag?: string
+      width?: string
+      widthSmall?: string
+      widthMedium?: string
+      widthLarge?: string
       widthCustom?: {
-        default: string;
-        small: string;
-        medium: string;
-        large: string;
+        default: string
+        small: string
+        medium: string
+        large: string
       }
-      justify?: string;
-      align?: string;
-      grow?: boolean;
-      classes?: string;
-      style?: string;
-      attr?: string;
-    },
-    parents?: object[];
+      justify?: string
+      align?: string
+      grow?: boolean
+      classes?: string
+      style?: string
+      attr?: string
+    }
+    parents?: object[]
   }
 
   interface HeroArgs {
-    contentType?: string;
-    archive?: string;
-    type?: string;
-    title?: string;
-    text?: string;
-    image?: Render.Image;
+    contentType?: string
+    archive?: string
+    type?: string
+    title?: string
+    text?: string
+    image?: Render.Image
     wave?: {
-      path: string;
-      width: number;
-      height: number;
+      path: string
+      width: number
+      height: number
     }
     blob?: {
-      path: string;
+      path: string
     }
-    border?: boolean;
+    border?: boolean
     action?: {
-      text: string;
-      internalLink: Render.InternalLink;
+      text: string
+      internalLink: Render.InternalLink
     }
   }
 }

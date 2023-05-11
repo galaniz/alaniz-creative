@@ -21,13 +21,13 @@ import loader from '../loader'
 
 interface Props {
   args: {
-    source?: string;
-    title?: string;
-  },
-  parents?: object[];
+    source?: string
+    title?: string
+  }
+  parents?: object[]
 }
 
-const video = (props : Props = { args: {} }): string => {
+const video = (props: Props = { args: {} }): string => {
   const { args = {} } = props
 
   const {

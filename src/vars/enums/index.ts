@@ -22,11 +22,11 @@ const enumNamespace: string = 'ac'
  */
 
 interface Site {
-  title: string;
-  email: string;
+  title: string
+  email: string
   meta: {
-    description: string;
-    image: string;
+    description: string
+    image: string
   }
 }
 
@@ -51,12 +51,12 @@ const enumSite: Site = {
  */
 
 interface Colors {
-  base: string;
+  base: string
   foreground: {
-    base: string;
+    base: string
   }
   background: {
-    light: string;
+    light: string
   }
 }
 
@@ -86,14 +86,14 @@ const enumColors: Colors = {
  */
 
 interface Card {
-  type: string;
-  subtype: string;
+  type: string
+  subtype: string
 }
 
 interface Layouts {
-  cardsMinimal: Card;
-  cardsAlternating: Card;
-  cardsCascading: Card;
+  cardsMinimal: Card
+  cardsAlternating: Card
+  cardsCascading: Card
 }
 
 const enumLayouts: Layouts = {

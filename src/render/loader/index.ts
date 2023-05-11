@@ -14,10 +14,10 @@
  */
 
 interface Args {
-  hide?: boolean;
-  classes?: string;
-  ariaHidden?: boolean;
-  a11yHideText?: string;
+  hide?: boolean
+  classes?: string
+  ariaHidden?: boolean
+  a11yHideText?: string
 }
 
 const loader = (args: Args = {}): string => {

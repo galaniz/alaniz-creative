@@ -16,7 +16,7 @@ import logoSvg from '../svg/logo'
  * @return {string} HTML - header
  */
 
-const header = (navigations: { main?: string; } = {}): string => {
+const header = (navigations: { main?: string } = {}): string => {
   /* Id */
 
   const id = `n-${uuid()}`

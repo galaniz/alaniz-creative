@@ -26,7 +26,7 @@
  * @return {object}
  */
 
-const column = (props : Render.ColumnProps = { args: {} }): Render.Return => {
+const column = (props: Render.ColumnProps = { args: {} }): Render.Return => {
   const { args = {} } = props
 
   const {
@@ -57,7 +57,7 @@ const column = (props : Render.ColumnProps = { args: {} }): Render.Return => {
 
   /* Width */
 
-  if (!width && !widthCustom) {
+  if (!width && (widthCustom == null)) {
     width = '1-1'
   }
 
@@ -97,13 +97,13 @@ const column = (props : Render.ColumnProps = { args: {} }): Render.Return => {
 
   /* Style */
 
-  let stylesArray: string[] = []
+  const stylesArray: string[] = []
 
   if (style) {
     stylesArray.push(style)
   }
 
-  if (widthCustom) {
+  if (widthCustom != null) {
     classesArray.push('l-width-custom')
 
     const styleArray = [
@@ -116,7 +116,7 @@ const column = (props : Render.ColumnProps = { args: {} }): Render.Return => {
     stylesArray.push(styleArray.join(';'))
   }
 
-  const styles = stylesArray.length ? ` style="${stylesArray.join(';')}"` : ''
+  const styles = (stylesArray.length > 0) ? ` style="${stylesArray.join(';')}"` : ''
 
   /* Attributes */
 

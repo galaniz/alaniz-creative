@@ -20,36 +20,36 @@ import resolveInternalLinks from '../resolve-internal-links'
  */
 
 interface Params {
-  all?: boolean;
-  id?: number;
+  all?: boolean
+  id?: number
 }
 
 interface Cache {
-  isCacheValid?: Function;
-  getCachedValue?: Function;
-  save?: Function;
+  isCacheValid?: Function
+  getCachedValue?: Function
+  save?: Function
 }
 
 interface Page {
   parent: {
-    id: string;
-    slug: string;
-    title: string;
+    id: string
+    slug: string
+    title: string
   }
-  id: string;
-  archive: string;
+  id: string
+  archive: string
 }
 
 interface Return {
   content: {
-    page: Page[];
-    work: object[];
+    page: Page[]
+    work: object[]
   }
-  navs: Render.Nav[];
-  navItems: Render.NavItem[];
-  redirects: object[];
+  navs: Render.Nav[]
+  navItems: Render.NavItem[]
+  redirects: object[]
   archivePosts: {
-    work: object[];
+    work: object[]
   }
 }
 
@@ -68,7 +68,7 @@ const getAllData = async (key: string, params: Params = {}): Promise<Return | un
 
       /* Check if the cache is fresh within the last day */
 
-      if (cache?.isCacheValid && cache?.getCachedValue && cache.isCacheValid('1d')) {
+      if (((cache?.isCacheValid) != null) && ((cache?.getCachedValue) != null) && cache.isCacheValid('1d')) {
         return cache.getCachedValue()
       }
     }
@@ -93,9 +93,9 @@ const getAllData = async (key: string, params: Params = {}): Promise<Return | un
         }
       }
     }
-    
+
     if (all) {
-      const files = await readdir(`./json/`)
+      const files = await readdir('./json/')
 
       for (let i = 0; i < files.length; i++) {
         const file = files[i]
@@ -107,7 +107,7 @@ const getAllData = async (key: string, params: Params = {}): Promise<Return | un
         }
 
         const fileContents = await readFile(resolve(`./json/${file}`), { encoding: 'utf8' })
-        
+
         if (fileContents) {
           const fileJson = JSON.parse(fileContents)
 
@@ -120,56 +120,56 @@ const getAllData = async (key: string, params: Params = {}): Promise<Return | un
 
     /* All data */
 
-    let content: { page: Page[], work: object[] } = {
+    const content: { page: Page[], work: object[] } = {
       page: [],
       work: []
     }
 
-    let navs: Render.Nav[] = []
-    let navItems: Render.NavItem[] = []
-    let redirects: object[] = []
-    let archivePosts: { work: object[] } = {
+    const navs: Render.Nav[] = []
+    const navItems: Render.NavItem[] = []
+    const redirects: object[] = []
+    const archivePosts: { work: object[] } = {
       work: []
     }
 
-    if (Object.keys(data).length) {
-      const imageJson = await readFile(resolve(`./src/json/image-data.json`), { encoding: 'utf8' })
+    if (Object.keys(data).length > 0) {
+      const imageJson = await readFile(resolve('./src/json/image-data.json'), { encoding: 'utf8' })
       const imageData = imageJson ? JSON.parse(imageJson) : {}
-    
+
       resolveInternalLinks(imageData, data, ['metaImage', 'image'])
       resolveInternalLinks(data, data, ['items', 'internalLink'])
-    
+
       Object.keys(data).forEach((d) => {
         const dd = data[d]
         const { contentType } = dd
-    
+
         dd.id = d
-    
+
         if (contentType === 'navigation') {
           navs.push(dd)
         }
-    
+
         if (contentType === 'navigationItem') {
           navItems.push(dd)
         }
-    
+
         if (contentType === 'redirect') {
           redirects.push(dd)
         }
-    
+
         if (contentType === 'page') {
           content.page.push(dd)
         }
-    
+
         if (contentType === 'work') {
           content.work.push(dd)
-    
+
           const ddd = structuredClone(dd)
-    
+
           if (ddd?.content) {
             delete ddd.content
           }
-    
+
           archivePosts.work.push(ddd)
         }
       })
@@ -185,7 +185,7 @@ const getAllData = async (key: string, params: Params = {}): Promise<Return | un
 
     /* Store in local cache */
 
-    if (envData.eleventy.cache && cache?.save) {
+    if (envData.eleventy.cache && ((cache?.save) != null)) {
       await cache.save(JSON.parse(safeJsonStringify(allData)), 'json')
     }
 

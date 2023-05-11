@@ -25,17 +25,17 @@ import { card, cards } from '../cards'
 
 interface Props {
   args: {
-    contentType?: string;
-    display?: number;
-    headingLevel?: number;
-    layout?: string;
-    nothingFound?: boolean;
-    order?: string;
-  },
-  parents?: object[];
+    contentType?: string
+    display?: number
+    headingLevel?: number
+    layout?: string
+    nothingFound?: boolean
+    order?: string
+  }
+  parents?: object[]
 }
 
-const posts = (props : Props = { args: {} }): string => {
+const posts = (props: Props = { args: {} }): string => {
   const { args = {} } = props
 
   const {
@@ -80,7 +80,7 @@ const posts = (props : Props = { args: {} }): string => {
         return 1
       }
     }
-  
+
     return 0
   })
 
@@ -117,7 +117,7 @@ const posts = (props : Props = { args: {} }): string => {
 
   /* Container output */
 
-  let output = outputArray.length ? outputArray.join('') : ''
+  let output = (outputArray.length > 0) ? outputArray.join('') : ''
 
   if (output && l.type === 'cards') {
     output = cards({

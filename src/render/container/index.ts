@@ -24,7 +24,7 @@
  * @return {object}
  */
 
-const container = (props : Render.ContainerProps = { args: {} }): Render.Return => {
+const container = (props: Render.ContainerProps = { args: {} }): Render.Return => {
   const { args = {} } = props
 
   const {
@@ -135,7 +135,7 @@ const container = (props : Render.ContainerProps = { args: {} }): Render.Return 
 
   /* Classes */
 
-  if (classesArray.length) {
+  if (classesArray.length > 0) {
     attrs.push(`class="${classesArray.join(' ')}"`)
   }
 
@@ -148,7 +148,7 @@ const container = (props : Render.ContainerProps = { args: {} }): Render.Return 
   /* Output */
 
   return {
-    start: `<${tag}${attrs.length ? ` ${attrs.join(' ')}` : ''}>`,
+    start: `<${tag}${(attrs.length > 0) ? ` ${attrs.join(' ')}` : ''}>`,
     end: `</${tag}>`
   }
 }
