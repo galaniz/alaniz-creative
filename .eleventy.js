@@ -95,6 +95,10 @@ module.exports = (config) => {
 
   config.addWatchTarget('./src/assets/')
 
+  /* */
+
+  config.setUseGitIgnore(false)
+
   /* Delete render from cache on watch */
 
   config.on('eleventy.beforeWatch', async () => {

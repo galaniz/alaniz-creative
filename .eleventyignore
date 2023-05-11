@@ -1,1 +1,14 @@
 README.md
+node_modules/
+package-lock.json
+site/
+src/json/slugs.json
+src/json/slug-parents.json
+src/json/archive-ids.json
+src/json/archive-posts.json
+src/json/nav-data.json
+src/json/image-data.json
+.DS_Store
+.cache
+.dev.vars
+.env

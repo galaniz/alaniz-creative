@@ -7,9 +7,8 @@
     "node": ">=19"
   },
   "scripts": {
-    "start": "build:ts npx @11ty/eleventy --serve",
-    "build": "build:ts npx @11ty/eleventy && stylelint 'src/assets/**/*.scss' && standard 'src/**/*.js' 'data/**/*.js'",
-    "build:ts": "tsc --outDir src/_js",
+    "start": "concurrently \"tsc --watch\" \"npx @11ty/eleventy --serve\"",
+    "build": "tsc && npx @11ty/eleventy && npx stylelint 'src/assets/**/*.scss' && npx ts-standard",
     "debug": "DEBUG=* npx @11ty/eleventy"
   },
   "author": "",
@@ -29,17 +28,17 @@
     "purgecss": "^5.0.0",
     "safe-json-stringify": "^1.2.0",
     "sharp": "^0.32.0",
-    "standard": "^17.0.0",
     "stylelint": "^15.4.0",
     "stylelint-config-standard-scss": "^8.0.0",
-    "uuid": "^9.0.0",
-    "uuidv4": "^6.2.13"
+    "ts-standard": "^12.0.2",
+    "uuid": "^9.0.0"
   },
   "browserslist": [
     "edge 16"
   ],
   "devDependencies": {
     "@types/node": "^18.16.3",
+    "concurrently": "^8.0.1",
     "typescript": "^5.0.4"
   }
 }
