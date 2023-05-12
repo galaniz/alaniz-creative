@@ -44,48 +44,48 @@ const column = (props: Render.ColumnProps = { args: {} }): Render.Return => {
   } = args
 
   let {
-    width
+    width = ''
   } = args
 
   /* Classes */
 
   const classesArray: string[] = []
 
-  if (classes) {
+  if (classes !== '') {
     classesArray.push(classes)
   }
 
   /* Width */
 
-  if (!width && (widthCustom == null)) {
+  if (width === '' && widthCustom === undefined) {
     width = '1-1'
   }
 
-  if (width) {
+  if (width !== '') {
     classesArray.push(`l-width-${width}`)
   }
 
-  if (widthSmall && widthSmall !== width) {
+  if (widthSmall !== '' && widthSmall !== width) {
     classesArray.push(`l-width-${widthSmall}-s`)
   }
 
-  if (widthMedium && widthMedium !== widthSmall) {
+  if (widthMedium !== '' && widthMedium !== widthSmall) {
     classesArray.push(`l-width-${widthMedium}-m`)
   }
 
-  if (widthLarge && widthLarge !== widthMedium) {
+  if (widthLarge !== '' && widthLarge !== widthMedium) {
     classesArray.push(`l-width-${widthLarge}-l`)
   }
 
   /* Justify */
 
-  if (justify) {
+  if (justify !== '') {
     classesArray.push(`l-justify-${justify}`)
   }
 
   /* Align */
 
-  if (align) {
+  if (align !== '') {
     classesArray.push(`l-align-${align}`)
   }
 
@@ -99,18 +99,18 @@ const column = (props: Render.ColumnProps = { args: {} }): Render.Return => {
 
   const stylesArray: string[] = []
 
-  if (style) {
+  if (style !== '') {
     stylesArray.push(style)
   }
 
-  if (widthCustom != null) {
+  if (widthCustom !== undefined) {
     classesArray.push('l-width-custom')
 
     const styleArray = [
-      `--width:${widthCustom?.default ? widthCustom.default : '100%'}`,
-      `--width-small:${widthCustom?.small ? widthCustom.small : '100%'}`,
-      `--width-medium:${widthCustom?.medium ? widthCustom.medium : '100%'}`,
-      `--width-large:${widthCustom?.large ? widthCustom.large : '100%'}`
+      `--width:${widthCustom?.default !== '' ? widthCustom.default : '100%'}`,
+      `--width-small:${widthCustom?.small !== '' ? widthCustom.small : '100%'}`,
+      `--width-medium:${widthCustom?.medium !== '' ? widthCustom.medium : '100%'}`,
+      `--width-large:${widthCustom?.large !== '' ? widthCustom.large : '100%'}`
     ]
 
     stylesArray.push(styleArray.join(';'))
@@ -122,7 +122,7 @@ const column = (props: Render.ColumnProps = { args: {} }): Render.Return => {
 
   let attrs = ''
 
-  if (attr) {
+  if (attr !== '') {
     attrs = ` ${attr}`
   }
 

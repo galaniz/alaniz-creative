@@ -63,13 +63,13 @@ const _getContent = ({
       attr.push(`href="${link}"`)
     }
 
-    if (tag) {
+    if (tag !== '') {
       _output += `<${tag}${(attr.length > 0) ? ` ${attr.join(' ')}` : ''}>`
     }
 
     _output += cc
 
-    if (tag) {
+    if (tag !== '') {
       _output += `</${tag}>`
     }
   })

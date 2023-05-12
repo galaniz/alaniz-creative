@@ -19,8 +19,8 @@ const footer = (navigations: { footer?: string } = {}): string => {
 
   let nav = ''
 
-  if (navigations?.footer) {
-    nav = navigations?.footer ? `<nav aria-label="Secondary">${navigations.footer}</nav>` : ''
+  if (navigations?.footer !== '' && navigations?.footer !== undefined) {
+    nav = `<nav aria-label="Secondary">${navigations.footer}</nav>`
   }
 
   /* Output */

@@ -48,7 +48,7 @@ const container = (props: Render.ContainerProps = { args: {} }): Render.Return =
 
   const classesArray: string[] = []
 
-  if (classes) {
+  if (classes !== '') {
     classesArray.push(classes)
   }
 
@@ -65,13 +65,13 @@ const container = (props: Render.ContainerProps = { args: {} }): Render.Return =
 
   /* Max width */
 
-  if (maxWidth) {
+  if (maxWidth !== '') {
     classesArray.push(`l-container${maxWidth !== 'default' ? `-${maxWidth}` : ''}`)
   }
 
   /* Flex */
 
-  if (layout === 'column' && (justify || align)) {
+  if (layout === 'column' && (justify !== '' || align !== '')) {
     classesArray.push('l-flex l-flex-column')
   }
 
@@ -81,7 +81,7 @@ const container = (props: Render.ContainerProps = { args: {} }): Render.Return =
 
   /* Gap */
 
-  if (gap) {
+  if (gap !== '') {
     if (layout === 'row') {
       classesArray.push(`l-gap-margin-${gap}`)
     } else {
@@ -89,7 +89,7 @@ const container = (props: Render.ContainerProps = { args: {} }): Render.Return =
     }
   }
 
-  if (gapLarge && gapLarge !== gap) {
+  if (gapLarge !== '' && gapLarge !== gap) {
     if (layout === 'row') {
       classesArray.push(`l-gap-margin-${gapLarge}-l`)
     } else {
@@ -99,31 +99,31 @@ const container = (props: Render.ContainerProps = { args: {} }): Render.Return =
 
   /* Justify */
 
-  if (justify) {
+  if (justify !== '') {
     classesArray.push(`l-justify-${justify}`)
   }
 
   /* Align */
 
-  if (align) {
+  if (align !== '') {
     classesArray.push(`l-align-${align}`)
   }
 
   /* Padding */
 
-  if (paddingTop) {
+  if (paddingTop !== '') {
     classesArray.push(`l-padding-top-${paddingTop}`)
   }
 
-  if (paddingTopLarge && paddingTopLarge !== paddingTop) {
+  if (paddingTopLarge !== '' && paddingTopLarge !== paddingTop) {
     classesArray.push(`l-padding-top-${paddingTopLarge}-m`)
   }
 
-  if (paddingBottom) {
+  if (paddingBottom !== '') {
     classesArray.push(`l-padding-bottom-${paddingBottom}`)
   }
 
-  if (paddingBottomLarge && paddingBottomLarge !== paddingBottom) {
+  if (paddingBottomLarge !== '' && paddingBottomLarge !== paddingBottom) {
     classesArray.push(`l-padding-bottom-${paddingBottomLarge}-m`)
   }
 
@@ -141,7 +141,7 @@ const container = (props: Render.ContainerProps = { args: {} }): Render.Return =
 
   /* Attributes */
 
-  if (attr) {
+  if (attr !== '') {
     attrs.push(attr)
   }
 

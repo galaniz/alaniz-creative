@@ -30,14 +30,14 @@ interface _CardProps {
 
 const _card = ({ internalLink, headingLevel, type, index }: _CardProps): string => {
   const {
-    title,
-    slug,
+    title = '',
+    slug = '',
     hero
   } = internalLink
 
   /* Title, image and slug required */
 
-  if (!title || (hero == null) || !slug) {
+  if (title === '' || hero === undefined || slug === '') {
     return ''
   }
 
@@ -61,7 +61,7 @@ const _card = ({ internalLink, headingLevel, type, index }: _CardProps): string 
 
   if (ac) {
     headingStyle = 't-h2'
-    textClasses = `l-padding-top-m l-padding-top-l-m ${index % 2 ? 'l-margin-right-auto' : 'l-margin-left-auto'}`
+    textClasses = `l-padding-top-m l-padding-top-l-m ${index % 2 === 0 ? 'l-margin-right-auto' : 'l-margin-left-auto'}`
   } else {
     textClasses = ' l-padding-top-2xs l-padding-top-m-m'
   }
@@ -75,7 +75,7 @@ const _card = ({ internalLink, headingLevel, type, index }: _CardProps): string 
     parents
   })
 
-  const text = `<div${textClasses ? ` class="${textClasses}"` : ''} data-text>${heading}</div>`
+  const text = `<div${textClasses !== '' ? ` class="${textClasses}"` : ''} data-text>${heading}</div>`
 
   /* Image */
 
@@ -150,6 +150,8 @@ const card = (props: CardProps = { args: {} }): Render.Return => {
     /* Blob svg */
 
     if (ac && ((svg?.blob) != null)) {
+      const reverse = index % 2 === 0
+
       blob = `
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +160,7 @@ const card = (props: CardProps = { args: {} }): Render.Return => {
           focusable="false"
           role="img"
           class="o-blob l-absolute l-top-0 l-left-0 l-right-0 l-margin-auto"
-          data-reverse="${!!(index % 2)}"
+          data-reverse="${reverse.toString()}"
         >
           <path
             d="${svg.blob.path}"
@@ -205,7 +207,7 @@ const card = (props: CardProps = { args: {} }): Render.Return => {
     columnArgs.args.classes = 'o-card l-relative l-padding-top-xl l-padding-bottom-xl l-padding-top-3xl-m l-padding-bottom-3xl-m'
   }
 
-  if (themeColor) {
+  if (themeColor !== '') {
     columnArgs.args.style = `--theme-main:${themeColor}`
   }
 
@@ -269,8 +271,10 @@ const cards = (props: CardsProps = { args: {} }): string => {
   }
 
   if (type === 'cascading') {
+    const widow = length % 3 === 2
+
     containerArgs.args.layout = 'row'
-    containerArgs.args.attr = `data-widow="${length % 3 === 2}"`
+    containerArgs.args.attr = `data-widow="${widow.toString()}"`
   }
 
   const cardsContainer = container(containerArgs)

@@ -44,7 +44,7 @@ const _getCheckboxRadioOpts = (args: _Args = {}): string => {
 
   /* Opts and name required */
 
-  if ((opts.length === 0) || !name) {
+  if (opts.length === 0 || name === '') {
     return ''
   }
 
@@ -54,10 +54,10 @@ const _getCheckboxRadioOpts = (args: _Args = {}): string => {
     const {
       text = '',
       value = '',
-      selected
+      selected = false
     } = opt
 
-    const id = `c-${uuid()}`
+    const id: string = uuid()
 
     return `
       <div data-${type}-opt>
@@ -139,24 +139,24 @@ const field = (props: Props = { args: {} }): string => {
 
   /* Name and label required */
 
-  if (!name || !label) {
+  if (name === '' || label === '') {
     return ''
   }
 
   /* Id */
 
-  const id = `f-${uuid()}`
+  const id: string = uuid()
 
   /* Classes */
 
   const fieldClassesArray = [`o-form__field l-width-1-1 l-width-${width}-m`]
   const classesArray = ['js-input']
 
-  if (fieldClasses) {
+  if (fieldClasses !== '') {
     fieldClassesArray.push(fieldClasses)
   }
 
-  if (classes) {
+  if (classes !== '') {
     classesArray.push(classes)
   }
 
@@ -186,7 +186,7 @@ const field = (props: Props = { args: {} }): string => {
 
   let checkboxRadioOpts = false
 
-  if ((opts.length > 0) && checkboxRadio) {
+  if (opts.length > 0 && checkboxRadio) {
     checkboxRadioOpts = true
     fieldset = true
   }
@@ -199,27 +199,27 @@ const field = (props: Props = { args: {} }): string => {
     attr.push('aria-required="true"')
   }
 
-  if (value && !checkboxRadioOpts) {
+  if (value !== '' && !checkboxRadioOpts) {
     attr.push(`value="${value}"`)
   }
 
-  if (placeholder) {
+  if (placeholder !== '') {
     attr.push(`placeholder="${placeholder}"`)
   }
 
-  if (autoCompleteToken) {
+  if (autoCompleteToken !== '') {
     attr.push(`autocomplete="${autoCompleteToken}"`)
   }
 
-  if (emptyErrorMessage) {
+  if (emptyErrorMessage !== '') {
     attr.push(`data-empty-message="${emptyErrorMessage}"`)
   }
 
-  if (invalidErrorMessage) {
+  if (invalidErrorMessage !== '') {
     attr.push(`data-invalid-message="${invalidErrorMessage}"`)
   }
 
-  if (rows && type === 'textarea') {
+  if (rows !== 0 && type === 'textarea') {
     attr.push(`rows="${rows}"`)
   }
 
@@ -306,11 +306,11 @@ const field = (props: Props = { args: {} }): string => {
           const {
             text,
             value,
-            selected
+            selected = false
           } = opt
 
           return `<option value="${value}"${selected ? ' selected' : ''}>${text}</option>`
-        })
+        }).join('')
 
         input = `
           <div data-type="select">
@@ -324,7 +324,7 @@ const field = (props: Props = { args: {} }): string => {
     }
   }
 
-  if (!input) {
+  if (input === '') {
     return ''
   }
 

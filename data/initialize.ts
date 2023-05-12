@@ -13,13 +13,24 @@ module.exports = async (): Promise<object[]> => {
   try {
     /* Output */
 
-    return await render({
-      onRenderEnd: async ({ jsonData, serverlessRoutes = [], redirects = [] }) => {
-        if (jsonData) {
-          const jsonDataKeys = Object.keys(jsonData)
+    interface RenderArgs {
+      jsonData: object
+      serverlessRoutes: string[]
+      redirects: string[]
+    }
 
+    interface JsonObj {
+      name: string
+      data: string
+    }
+
+    return await render({
+      onRenderEnd: async ({ jsonData = {}, serverlessRoutes = [], redirects = [] }: RenderArgs): Promise<void> => {
+        const jsonDataKeys = Object.keys(jsonData)
+
+        if (jsonDataKeys.length > 0) {
           for (let i = 0; i < jsonDataKeys.length; i++) {
-            const json = jsonData[jsonDataKeys[i]]
+            const json: JsonObj = jsonData[jsonDataKeys[i]]
 
             await writeFile(`./src/json/${json.name}`, json.data)
 
@@ -30,7 +41,11 @@ module.exports = async (): Promise<object[]> => {
         if (serverlessRoutes.length > 0) {
           for (let i = 0; i < serverlessRoutes.length; i++) {
             const path: string = serverlessRoutes[i]
-            const pathDepth = (path.match(/([/])/g) != null) || []
+            const pathDepth: string[] | null = path.match(/([/])/g)
+
+            if (pathDepth === null) {
+              continue
+            }
 
             let serverlessPath = ''
 
@@ -52,14 +67,10 @@ module.exports = async (): Promise<object[]> => {
           let redirectsData = ''
 
           redirects.forEach((r) => {
-            const { content = [] } = r
-
-            if (content.length > 0) {
-              redirectsData += content.join('\n')
-            }
+            redirectsData += `${r}\n`
           })
 
-          if (redirectsData) {
+          if (redirectsData !== '') {
             await writeFile('./site/_redirects', redirectsData)
 
             console.info('Successfully wrote ./site/_redirects')

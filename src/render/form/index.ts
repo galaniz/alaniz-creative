@@ -45,7 +45,7 @@ const form = (props: Props = { args: {} }): object => {
 
   /* Id required */
 
-  if (!id) {
+  if (id === '') {
     return {
       start: '',
       end: ''
@@ -54,7 +54,7 @@ const form = (props: Props = { args: {} }): object => {
 
   /* Add to script data */
 
-  if (!scriptData?.id && successTitle) {
+  if ((scriptData?.id === undefined || scriptData?.id === '') && successTitle !== '') {
     scriptData[`form-${id}`] = {
       successMessage: {
         primary: successTitle,
@@ -67,7 +67,7 @@ const form = (props: Props = { args: {} }): object => {
 
   /* Honeypot */
 
-  const honeypotId = `h-${uuid()}`
+  const honeypotId: string = uuid()
   const honeypotName = `${enumNamespace}_asi`
   const honeypot = `
     <div class="o-form__field l-width-1-1" data-asi>

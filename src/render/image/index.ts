@@ -92,7 +92,7 @@ const image = (props: Props = { args: {}, parents: [] }): string => {
 
     let classes = 'l-relative l-overflow-hidden b-radius-s b-radius-m-m l-isolate l-height-100-pc'
 
-    if (aspectRatio) {
+    if (aspectRatio !== '') {
       classes += ` l-aspect-ratio-${aspectRatio}`
     }
 
@@ -102,11 +102,11 @@ const image = (props: Props = { args: {}, parents: [] }): string => {
 
     let attr = ''
 
-    if (!aspectRatio && imageObjAspectRatio) {
+    if (aspectRatio === '' && imageObjAspectRatio !== 0) {
       attr += ` style="padding-top:${imageObjAspectRatio * 100}%"`
     }
 
-    if (imageObjOutput) {
+    if (imageObjOutput !== '') {
       imageOutput = `
         <div class="${classes}"${attr}>
           ${imageObjOutput}
@@ -117,7 +117,7 @@ const image = (props: Props = { args: {}, parents: [] }): string => {
 
   /* Card wrapper */
 
-  if (imageOutput && card) {
+  if (imageOutput !== '' && card) {
     imageOutput = `
       <div class="l-order-first l-z-index--1 l-width-1-1" data-image>
         ${imageOutput}
@@ -127,7 +127,7 @@ const image = (props: Props = { args: {}, parents: [] }): string => {
 
   /* Figure caption */
 
-  if (caption != null) {
+  if (caption !== undefined) {
     const captionContent = richText({
       args: {
         tag: 'p',
@@ -137,7 +137,7 @@ const image = (props: Props = { args: {}, parents: [] }): string => {
       }
     })
 
-    if (captionContent) {
+    if (captionContent !== '') {
       imageOutput = `
         <figure>
           ${imageOutput}

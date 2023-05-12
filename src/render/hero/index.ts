@@ -24,7 +24,7 @@ import button from '../button'
  * @return {string} HTML - section
  */
 
-const hero = (args: Render.HeroArgs = {}) => {
+const hero = (args: Render.HeroArgs = {}): string => {
   const {
     contentType = 'page',
     archive = '',
@@ -35,14 +35,14 @@ const hero = (args: Render.HeroArgs = {}) => {
     wave,
     blob,
     border = false,
-    action = false
+    action
   } = args
 
   /* Image */
 
   let imageOutput = ''
 
-  if (image != null) {
+  if (image !== undefined) {
     const imageStr = getImage({
       data: image,
       classes: 'l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc l-object-cover',
@@ -50,7 +50,7 @@ const hero = (args: Render.HeroArgs = {}) => {
       max: 1600
     })
 
-    if (contentType === 'work') {
+    if (contentType === 'work' && typeof imageStr === 'string') {
       let waveOutput = ''
 
       if (wave != null) {
@@ -121,30 +121,30 @@ const hero = (args: Render.HeroArgs = {}) => {
   if (contentType === 'work') {
     headingClasses = 't-align-center'
 
-    if (imageOutput) {
+    if (imageOutput !== '') {
       headingClasses += ' l-padding-bottom-m l-padding-bottom-l-m'
     }
   }
 
-  if (contentType === 'page' && action && !text) {
+  if (contentType === 'page' && action !== undefined && text === '') {
     headingClasses = 'l-padding-bottom-m l-padding-bottom-l-m'
   }
 
-  if (contentType === 'page' && !action && text) {
+  if (contentType === 'page' && action === undefined && text !== '') {
     headingClasses = 'l-padding-bottom-xs l-padding-bottom-m-m'
   }
 
-  let textOutput = `<h1${headingClasses ? ` class="${headingClasses}"` : ''}>${title}</h1>`
+  let textOutput = `<h1${headingClasses !== '' ? ` class="${headingClasses}"` : ''}>${title}</h1>`
 
-  if (text) {
-    if (action) {
+  if (text !== '') {
+    if (action !== undefined) {
       textClasses += ' l-padding-bottom-m l-padding-bottom-l-m'
     }
 
     textOutput += `<p class="${textClasses}">${text}</p>`
   }
 
-  if (action) {
+  if (action !== undefined) {
     textOutput += button({
       args: {
         title: action.text,
@@ -186,9 +186,9 @@ const hero = (args: Render.HeroArgs = {}) => {
 
   return `
     <section class="${sectionClasses}">
-      ${container ? `<div class="l-container-${container}">` : ''}
+      ${container !== '' ? `<div class="l-container-${container}">` : ''}
       ${output}
-      ${container ? '</div>' : ''}
+      ${container !== '' ? '</div>' : ''}
     </section>
   `
 }

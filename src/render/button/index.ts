@@ -64,17 +64,17 @@ const button = (props: Props = { args: {} }): string => {
 
   /* Link and title required */
 
-  if ((internalLink != null) || externalLink) {
+  if (link !== '') {
     link = getLink(internalLink, externalLink)
   }
 
-  if (!link || !title) {
+  if (link === '' || title === '') {
     return ''
   }
 
   /* Check if external */
 
-  const external = externalLink && newTab || false
+  const external = (externalLink !== '' && newTab) || false
 
   /* Classes */
 
@@ -107,18 +107,18 @@ const button = (props: Props = { args: {} }): string => {
     output = `<div data-button>${output}</div>`
   }
 
-  if (justify || paddingTop || paddingBottom) {
+  if (justify !== '' || paddingTop !== '' || paddingBottom !== '') {
     const classes: string[] = []
 
-    if (paddingTop) {
+    if (paddingTop !== '') {
       classes.push(`l-padding-top-${paddingTop}`)
     }
 
-    if (paddingBottom) {
+    if (paddingBottom !== '') {
       classes.push(`l-padding-top-${paddingBottom}`)
     }
 
-    if (justify) {
+    if (justify !== '') {
       classes.push(`l-flex l-justify-${justify}`)
     }
 

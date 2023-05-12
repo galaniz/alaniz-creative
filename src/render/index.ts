@@ -68,7 +68,7 @@ const _renderContent = async ({
 
       /* Check for nested content */
 
-      const children = c?.content || []
+      const children: object[] = c?.content || []
       let recurse = false
 
       if (children) {
@@ -81,8 +81,8 @@ const _renderContent = async ({
 
       /* Render and recursion */
 
-      const props = c || {}
-      const renderType = c?.renderType || ''
+      const props: object = c || {}
+      const renderType: string = c?.renderType || ''
 
       let renderObj = {
         start: '',
@@ -121,12 +121,12 @@ const _renderContent = async ({
           renderObj.start = posts({ args: props, parents })
           break
         case 'navigation': {
-          if (props?.location) {
+          /*if (props?.location) {
             const loc = props.location.toLowerCase().replace(/ /g, '')
             const nav = navs?.[loc] ? navs[loc] : ''
 
             renderObj.start = `<nav aria-label="${props.title}">${nav}</nav>`
-          }
+          }*/
 
           break
         }
@@ -137,7 +137,7 @@ const _renderContent = async ({
 
       output.html += start
 
-      if (children && recurse) {
+      if (children.length && recurse) {
         const parentsCopy = [...parents]
 
         parentsCopy.unshift({
@@ -157,7 +157,7 @@ const _renderContent = async ({
 
       /* Clear parents */
 
-      if (renderType && renderType !== 'content' && end) {
+      if (renderType !== '' && renderType !== 'content' && end !== '') {
         parents = []
       }
     }
@@ -220,7 +220,7 @@ const _renderItem = async ({
   const title = props.title
   const meta = props.meta || {}
 
-  if (!meta?.title) {
+  if (meta?.title === '') {
     meta.title = title
   }
 
@@ -250,7 +250,7 @@ const _renderItem = async ({
 
   /* Add to data by slugs store */
 
-  _slugs[slug ? `/${slug}/` : '/'] = {
+  _slugs[slug !== 'index' && slug !== '' ? `/${slug}/` : '/'] = {
     contentType,
     id
   }
@@ -283,7 +283,7 @@ const _renderItem = async ({
     heroArgs.type = 'index'
   }
 
-  if (!heroArgs.title) {
+  if (heroArgs.title === '') {
     heroArgs.title = props.title
   }
 
@@ -299,7 +299,7 @@ const _renderItem = async ({
 
   const contentData = props.content
 
-  if (Array.isArray(contentData) && (contentData.length > 0)) {
+  if (Array.isArray(contentData) && contentData.length > 0) {
     await _renderContent({
       contentData,
       output: contentOutput,
@@ -364,7 +364,7 @@ const _renderItem = async ({
 
   return {
     data: {
-      slug: slug ? `/${slug}/` : '/',
+      slug: slug !== 'index' && slug !== '' ? `/${slug}/` : '/',
       output: layoutOutput
     }
   }
@@ -432,20 +432,20 @@ const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
   content.page.forEach(item => {
     const { parent, id, archive } = item
 
-    if (archive) {
+    if (archive !== '') {
       archiveData.ids[archive] = id
 
-      if (archivePosts?.[archive]) {
+      if (archivePosts?.[archive] !== '') {
         archiveData.posts[archive] = archivePosts[archive]
       }
 
-      if (slugData.bases?.[archive]) {
+      if (slugData.bases?.[archive] !== '') {
         slugData.bases[archive].archiveId = id
       }
     }
 
-    if (parent && id) {
-      if (parent.slug && parent.title) {
+    if (parent !== undefined && id !== '') {
+      if (parent.slug !== '' && parent.title !== '') {
         slugData.parents[id] = {
           id: parent.id,
           slug: parent.slug,
@@ -476,9 +476,7 @@ const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
         contentType
       })
 
-      if (item?.data) {
-        data.push(item.data)
-      }
+      data.push(item.data)
     }
   }
 

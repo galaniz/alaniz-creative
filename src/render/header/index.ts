@@ -19,13 +19,13 @@ import logoSvg from '../svg/logo'
 const header = (navigations: { main?: string } = {}): string => {
   /* Id */
 
-  const id = `n-${uuid()}`
+  const id: string = uuid()
 
   /* Main nav */
 
   let nav = ''
 
-  if (navigations?.main) {
+  if (navigations?.main !== '' && navigations?.main !== undefined) {
     nav = `
       <nav class="c-nav l-relative l-container l-padding-top-m l-padding-bottom-m l-padding-top-l-m l-padding-bottom-l-m" aria-label="Main" data-overflow="false" data-overflow-all="false" data-open="false">
         <div class="l-flex l-justify-between l-align-center">
