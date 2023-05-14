@@ -9,7 +9,7 @@ import Navigation from '../navigation'
 /**
  * Function - output navigations
  *
- * @param {object} args {
+ * @param {object} args
  * @param {array<object>} args.navs
  * @param {array<object>} args.items
  * @param {string} args.current
@@ -28,7 +28,7 @@ const navigations = ({
   navs = [],
   items = [],
   current = ''
-}: Args) => {
+}: Args): object => {
   /* Navs and items required */
 
   if ((navs.length === 0) && (items.length === 0)) {
@@ -69,6 +69,36 @@ const navigations = ({
       }
     )
   }
+}
+
+/**
+ * Function - output nav element with contents
+ *
+ * @param {object} args
+ * @param {object} args.navs
+ * @param {object} args.props
+ * @return {string}
+ */
+
+interface NavArgs {
+  navs: object
+  props: {
+    location?: string
+    title?: string
+  }
+}
+
+export const navContainer = ({ navs = {}, props = {} }: NavArgs): string => {
+  const { location = '', title = '' } = props
+
+  if (location !== '' && title !== '') {
+    const loc = location.toLowerCase().replace(/ /g, '')
+    const nav: string = navs?.[loc] !== '' ? navs[loc] : ''
+
+    return `<nav aria-label="${title}">${nav}</nav>`
+  }
+
+  return ''
 }
 
 /* Exports */

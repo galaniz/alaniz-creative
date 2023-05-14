@@ -47,7 +47,6 @@ html {
     func.calc-rem(110px) func.calc-rem(180px),
     "s" "l"
   );
-
   @include mixi.fluid-size(
     --logo-height,
     func.calc-rem(51px) func.calc-rem(84px),

@@ -4,10 +4,17 @@
 
 /* Imports */
 
+@use "@alanizcreative/formation/src/utils/mixins" as mix;
 @use "@alanizcreative/formation/src/layouts/flex";
 
 /* Styles */
 
 .l-order-first {
   order: -9999;
+}
+
+.l-align-end-m {
+  @include mix.breakpoint-min("m") {
+    align-items: flex-end;
+  }
 }

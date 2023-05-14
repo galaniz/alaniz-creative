@@ -16,7 +16,7 @@ import resolveInternalLinks from '../resolve-internal-links'
  *
  * @param {string} key
  * @param {object} params
- * @return {object|boolean}
+ * @return {object}
  */
 
 interface Params {
@@ -53,9 +53,9 @@ interface Return {
   }
 }
 
-const getAllData = async (key: string, params: Params = {}): Promise<Return | undefined> => {
+const getAllData = async (key: string = '', params: Params = {}): Promise<Return | undefined> => {
   try {
-    if (!key) {
+    if (key === '') {
       throw new Error('No key')
     }
 
@@ -68,7 +68,7 @@ const getAllData = async (key: string, params: Params = {}): Promise<Return | un
 
       /* Check if the cache is fresh within the last day */
 
-      if (((cache?.isCacheValid) != null) && ((cache?.getCachedValue) != null) && cache.isCacheValid('1d')) {
+      if (((cache?.isCacheValid) != null) && ((cache?.getCachedValue) != null) && cache.isCacheValid('1d') === true) {
         return cache.getCachedValue()
       }
     }
@@ -77,18 +77,18 @@ const getAllData = async (key: string, params: Params = {}): Promise<Return | un
 
     const {
       all = true,
-      id = 0
+      id = ''
     } = params
 
     const data = {}
 
-    if (id) {
+    if (id !== '') {
       const file = await readFile(resolve(`./json/${id}.json`), { encoding: 'utf8' })
 
-      if (file) {
+      if (file !== '') {
         const fileJson = JSON.parse(file)
 
-        if (fileJson) {
+        if (fileJson !== '') {
           data[id] = fileJson
         }
       }
@@ -108,10 +108,10 @@ const getAllData = async (key: string, params: Params = {}): Promise<Return | un
 
         const fileContents = await readFile(resolve(`./json/${file}`), { encoding: 'utf8' })
 
-        if (fileContents) {
+        if (fileContents !== '') {
           const fileJson = JSON.parse(fileContents)
 
-          if (fileJson) {
+          if (fileJson !== '') {
             data[fileName] = fileJson
           }
         }
@@ -134,7 +134,7 @@ const getAllData = async (key: string, params: Params = {}): Promise<Return | un
 
     if (Object.keys(data).length > 0) {
       const imageJson = await readFile(resolve('./src/json/image-data.json'), { encoding: 'utf8' })
-      const imageData = imageJson ? JSON.parse(imageJson) : {}
+      const imageData = imageJson !== '' ? JSON.parse(imageJson) : {}
 
       resolveInternalLinks(imageData, data, ['metaImage', 'image'])
       resolveInternalLinks(data, data, ['items', 'internalLink'])
@@ -164,9 +164,9 @@ const getAllData = async (key: string, params: Params = {}): Promise<Return | un
         if (contentType === 'work') {
           content.work.push(dd)
 
-          const ddd = structuredClone(dd)
+          const ddd: { content?: object } = structuredClone(dd)
 
-          if (ddd?.content) {
+          if (ddd?.content !== undefined) {
             delete ddd.content
           }
 

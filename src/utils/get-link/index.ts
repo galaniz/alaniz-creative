@@ -16,7 +16,7 @@ import getSlug from '../get-slug'
  */
 
 const getLink = (internalLink: Render.InternalLink | undefined, externalLink: string = ''): string => {
-  if (internalLink != null) {
+  if (internalLink !== undefined) {
     const slug = getSlug(internalLink)
 
     if (typeof slug === 'string') {

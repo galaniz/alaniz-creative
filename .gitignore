@@ -1,6 +1,7 @@
 node_modules/
 package-lock.json
 site/
+functions/*
 data/initialize.js
 src/json/slugs.json
 src/json/slug-parents.json
@@ -15,3 +16,4 @@ src/vars/**/*.js
 .cache
 .dev.vars
 .env
+.eleventy.js

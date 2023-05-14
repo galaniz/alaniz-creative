@@ -21,7 +21,7 @@ const getPermalink = (slug: string = '', trailingSlash: boolean = true): string 
     url = envData.urls.prod
   }
 
-  return `${url}${slug}${slug && trailingSlash ? '/' : ''}`
+  return `${url}${slug}${slug !== '' && trailingSlash ? '/' : ''}`
 }
 
 /* Exports */

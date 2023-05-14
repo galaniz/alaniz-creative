@@ -34,6 +34,9 @@ const httpError = async (type: string = '404'): Promise<string> => {
     }
   }
 
+  const title: string = text[type].metaTitle
+  const heroText: string = text[type].heroText
+
   /* Navigations */
 
   const navs = navigations({
@@ -71,7 +74,7 @@ const httpError = async (type: string = '404'): Promise<string> => {
 
   return await layout({
     meta: {
-      title: text[type].metaTitle,
+      title,
       noIndex: true
     },
     content: `
@@ -79,7 +82,7 @@ const httpError = async (type: string = '404'): Promise<string> => {
       <main id="main">
         ${output.container.start}
           <h1>${type}</h1>
-          <p class="t l-padding-top-m l-padding-bottom-l">${text[type].heroText}</p>
+          <p class="t l-padding-top-m l-padding-bottom-l">${heroText}</p>
           ${output.button}
         ${output.container.end}
       </main>

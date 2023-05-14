@@ -10,7 +10,7 @@ import { v4 as uuid } from 'uuid'
  * Function - output checkbox and radio inputs from options
  *
  * @private
- * @param {object} args {
+ * @param {object} args
  * @param {array<object>} args.opts
  * @param {string} args.name
  * @param {string} args.classes
@@ -277,6 +277,7 @@ const field = (props: Props = { args: {} }): string => {
     case 'checkbox':
     case 'radio':
     case 'number':
+    case 'password':
     case 'tel': {
       if (checkboxRadio) {
         classesArray.push('a11y-hide-input')

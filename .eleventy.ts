@@ -4,22 +4,24 @@
 
 /* Imports */
 
-require('dotenv').config()
-const htmlmin = require('html-minifier')
-const esbuild = require('esbuild')
-const postcss = require('postcss')
-const autoprefixer = require('autoprefixer')
-const postcssPresetEnv = require('postcss-preset-env')
-const { sassPlugin } = require('esbuild-sass-plugin')
-const { writeFile } = require('node:fs/promises')
-const { existsSync } = require('node:fs')
-const { resolve } = require('node:path')
-const { envData, jsonFileData } = require('./src/vars/data')
-const { processImages, getAllFilePaths } = require('./src/utils')
+import * as dotenv from 'dotenv'
+dotenv.config()
+import htmlmin from 'html-minifier'
+import esbuild from 'esbuild'
+import postcss from 'postcss'
+import autoprefixer from 'autoprefixer'
+import postcssPresetEnv from 'postcss-preset-env'
+import { sassPlugin } from 'esbuild-sass-plugin'
+import { writeFile } from 'node:fs/promises'
+import { existsSync } from 'node:fs'
+import { resolve } from 'node:path'
+import { envData, jsonFileData } from './src/vars/data'
+import processImages from './src/utils/process-images'
+import getAllFilePaths from './src/utils/get-all-file-paths'
 
 /* Config */
 
-module.exports = (config) => {
+module.exports = (config: any) => {
   /* Add env variables */
 
   if (process) {
@@ -95,29 +97,29 @@ module.exports = (config) => {
 
   config.addWatchTarget('./src/assets/')
 
-  /* */
+  /* Ignore gitignore */
 
   config.setUseGitIgnore(false)
 
   /* Delete render from cache on watch */
 
   config.on('eleventy.beforeWatch', async () => {
-    for await (const path of getAllFilePaths(`./src/render/`)) {
+    for await (const path of getAllFilePaths('./src/render/')) {
       delete require.cache[resolve(path)]
     }
 
-    for await (const path of getAllFilePaths(`./src/utils/`)) {
+    for await (const path of getAllFilePaths('./src/utils/')) {
       delete require.cache[resolve(path)]
     }
 
-    for await (const path of getAllFilePaths(`./src/vars/`)) {
+    for await (const path of getAllFilePaths('./src/vars/')) {
       delete require.cache[resolve(path)]
     }
   })
 
   /* Minify HTML */
 
-  config.addTransform('htmlmin', (content, outputPath) => {
+  config.addTransform('htmlmin', (content: string, outputPath: string) => {
     if (outputPath.endsWith('.html')) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,

@@ -5,8 +5,9 @@
 /* Imports */
 
 import { enumNamespace } from '../vars/enums'
-import { getAllData, getSlug, getPermalink } from '../utils'
+import { getSlug, getPermalink } from '../utils'
 import { slugData, envData, navData, archiveData, scriptData, jsonFileData } from '../vars/data'
+import getAllData from '../utils/get-all-data'
 import layout from './layout'
 import header from './header'
 import footer from './footer'
@@ -17,7 +18,7 @@ import richText from './rich-text'
 import image from './image'
 import video from './video'
 import waveSeparator from './wave-separator'
-import navigations from './navigations'
+import navigations, { navContainer } from './navigations'
 import hero from './hero'
 import httpError from './http-error'
 import aspectRatio from './aspect-ratio'
@@ -68,10 +69,10 @@ const _renderContent = async ({
 
       /* Check for nested content */
 
-      const children: object[] = c?.content || []
+      const children: object[] = c?.content !== undefined ? c.content : []
       let recurse = false
 
-      if (children) {
+      if (children !== undefined) {
         if (Array.isArray(children)) {
           if (children.length > 0) {
             recurse = true
@@ -81,8 +82,8 @@ const _renderContent = async ({
 
       /* Render and recursion */
 
-      const props: object = c || {}
-      const renderType: string = c?.renderType || ''
+      const props: object = typeof c === 'object' ? c : {}
+      const renderType: string = typeof c.renderType === 'string' ? c.renderType : ''
 
       let renderObj = {
         start: '',
@@ -121,13 +122,7 @@ const _renderContent = async ({
           renderObj.start = posts({ args: props, parents })
           break
         case 'navigation': {
-          /*if (props?.location) {
-            const loc = props.location.toLowerCase().replace(/ /g, '')
-            const nav = navs?.[loc] ? navs[loc] : ''
-
-            renderObj.start = `<nav aria-label="${props.title}">${nav}</nav>`
-          }*/
-
+          renderObj.start = navContainer({ navs, props })
           break
         }
       }
@@ -137,7 +132,7 @@ const _renderContent = async ({
 
       output.html += start
 
-      if (children.length && recurse) {
+      if (children.length !== 0 && recurse) {
         const parentsCopy = [...parents]
 
         parentsCopy.unshift({
@@ -218,7 +213,7 @@ const _renderItem = async ({
   /* Meta */
 
   const title = props.title
-  const meta = props.meta || {}
+  const meta = props.meta
 
   if (meta?.title === '') {
     meta.title = title
@@ -283,8 +278,8 @@ const _renderItem = async ({
     heroArgs.type = 'index'
   }
 
-  if (heroArgs.title === '') {
-    heroArgs.title = props.title
+  if (heroArgs.title === undefined) {
+    heroArgs.title = title
   }
 
   const heroOutput = hero(heroArgs)
@@ -296,7 +291,6 @@ const _renderItem = async ({
   /* Content loop */
 
   const contentOutput = { html: '' }
-
   const contentData = props.content
 
   if (Array.isArray(contentData) && contentData.length > 0) {
@@ -314,14 +308,16 @@ const _renderItem = async ({
 
   let style = ''
 
-  if (props.theme) {
+  if (Object.keys(props.theme).length !== 0) {
     const styleArray: string[] = []
 
     Object.keys(props.theme).forEach((t) => {
       const prefix = t.includes('video') ? '' : 'theme-'
-      const color = props.theme[t]?.dark ? props.theme[t].dark : props.theme[t]
+      const color = props.theme[t]?.dark !== '' ? props.theme[t].dark : props.theme[t]
 
-      styleArray.push(`--${prefix}${t}:${color}`)
+      if (typeof color === 'string') {
+        styleArray.push(`--${prefix}${t}:${color}`)
+      }
     })
 
     style = `:root{${styleArray.join(';')};--main-button-bg:var(--theme-main)}`
@@ -344,7 +340,7 @@ const _renderItem = async ({
 
   /* Clear script data */
 
-  Object.keys(scriptData).forEach(k => delete scriptData[k])
+  Object.keys(scriptData).forEach(k => delete scriptData[k]) // eslint-disable-line @typescript-eslint/no-dynamic-delete
 
   /* Output */
 
@@ -390,7 +386,7 @@ interface RenderArgs {
 const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
   /* Set env */
 
-  if (env != null) {
+  if (env !== undefined) {
     envData.dev = env.dev
     envData.prod = env.prod
   }
@@ -430,9 +426,9 @@ const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
   /* Loop through pages first to set parent slugs */
 
   content.page.forEach(item => {
-    const { parent, id, archive } = item
+    const { parent, id = '', archive = '' } = item
 
-    if (archive !== '') {
+    if (archive !== '' && id !== '') {
       archiveData.ids[archive] = id
 
       if (archivePosts?.[archive] !== '') {
@@ -471,18 +467,25 @@ const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
     const contentType = contentTypes[c]
 
     for (let i = 0; i < content[contentType].length; i++) {
+      const itemObj = content[contentType][i]
+      const { passwordProtected = false } = itemObj
+
       const item: _ItemReturn = await _renderItem({
-        item: content[contentType][i],
+        item: itemObj,
         contentType
       })
 
       data.push(item.data)
+
+      if (passwordProtected === true) {
+        serverlessRoutes.push(item.data.slug)
+      }
     }
   }
 
   /* Render end callback */
 
-  if (onRenderEnd != null) {
+  if (typeof onRenderEnd === 'function') {
     jsonFileData.slugs.data = JSON.stringify(_slugs)
     jsonFileData.slugParents.data = JSON.stringify(slugData.parents)
     jsonFileData.archiveIds.data = JSON.stringify(archiveData.ids)

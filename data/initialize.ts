@@ -9,20 +9,20 @@ import render from '../src/render'
 
 /* Get and render json data */
 
+interface RenderArgs {
+  jsonData: object
+  serverlessRoutes: string[]
+  redirects: string[]
+}
+
+interface JsonObj {
+  name: string
+  data: string
+}
+
 module.exports = async (): Promise<object[]> => {
   try {
     /* Output */
-
-    interface RenderArgs {
-      jsonData: object
-      serverlessRoutes: string[]
-      redirects: string[]
-    }
-
-    interface JsonObj {
-      name: string
-      data: string
-    }
 
     return await render({
       onRenderEnd: async ({ jsonData = {}, serverlessRoutes = [], redirects = [] }: RenderArgs): Promise<void> => {
@@ -53,13 +53,13 @@ module.exports = async (): Promise<object[]> => {
               serverlessPath += '../'
             }
 
-            const content = `import reload from '${serverlessPath}src/serverless/reload'; const render = async ({ request, env }) => { return await reload({ request, env }) }; export const onRequestGet = [render];`
+            const content = `import passwordProtect from '${serverlessPath}src/serverless/password-protect'; const protect = async ({ request, env, next }) => { return await passwordProtect({ request, env, next }) }; export const onRequestGet = [protect];`
 
             await mkdir(`./functions${path}`, { recursive: true })
 
-            await writeFile(`./functions${path}index.js`, content)
+            await writeFile(`./functions${path}_middleware.js`, content)
 
-            console.info(`Successfully wrote ./functions${path}index.js`)
+            console.info(`Successfully wrote ./functions${path}_middleware.js`)
           }
         }
 

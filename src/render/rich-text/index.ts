@@ -59,7 +59,7 @@ const _getContent = ({
       attr.push('scope="col"')
     }
 
-    if (tag === 'a' && link) {
+    if (tag === 'a' && link !== '') {
       attr.push(`href="${link}"`)
     }
 
@@ -67,7 +67,9 @@ const _getContent = ({
       _output += `<${tag}${(attr.length > 0) ? ` ${attr.join(' ')}` : ''}>`
     }
 
-    _output += cc
+    if (typeof cc === 'string') {
+      _output += cc
+    }
 
     if (tag !== '') {
       _output += `</${tag}>`
@@ -160,7 +162,7 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
 
   const classesArray: string[] = []
 
-  if (classes) {
+  if (classes !== '') {
     classesArray.push(classes)
   }
 
@@ -168,7 +170,7 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
     classesArray.push('t-link-current')
   }
 
-  if (textStyle && (tag === 'p' || tag === 'li' || tag === 'ul' || tag === 'ol' || tag === 'blockquote' || tag === 'table')) {
+  if (textStyle !== '' && (tag === 'p' || tag === 'li' || tag === 'ul' || tag === 'ol' || tag === 'blockquote' || tag === 'table')) {
     classesArray.push(textStyle)
   }
 
@@ -176,11 +178,11 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
     classesArray.push('t-quote')
   }
 
-  if (headingStyle && heading) {
+  if (headingStyle !== '' && heading) {
     classesArray.push(headingStyle)
   }
 
-  if (align) {
+  if (align !== '') {
     classesArray.push(`t-align-${align}`)
   }
 
@@ -209,7 +211,7 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
     attr.push('data-inline')
   }
 
-  if (tag === 'a' && link) {
+  if (tag === 'a' && link !== '') {
     attr.push(`href="${link}"`)
   }
 
@@ -221,7 +223,9 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
     const styleArray: string[] = []
 
     Object.keys(style).forEach((s) => {
-      styleArray.push(`${s}:${style[s]}`)
+      const st: string = style[s]
+
+      styleArray.push(`${s}:${st}`)
     })
 
     attr.push(`style="${styleArray.join(';')}"`)
@@ -229,13 +233,13 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
 
   /* Card */
 
-  if (cardLink) {
+  if (cardLink !== '' && typeof content === 'string') {
     output = `<a class="l-before outline-tight" href="${cardLink}" data-inline>${content}</a>`
   }
 
   /* Output */
 
-  if (tag) {
+  if (tag !== '') {
     output = `<${tag}${(attr.length > 0) ? ` ${attr.join(' ')}` : ''}>${output}</${tag}>`
   }
 

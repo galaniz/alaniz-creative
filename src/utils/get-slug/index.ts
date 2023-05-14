@@ -16,7 +16,7 @@ import { slugData } from '../../vars/data'
  */
 
 const _getParentSlug = (id: string = '', p: object[] = []): void => {
-  if (slugData.parents?.[id]) {
+  if (slugData.parents?.[id] != null && id !== '') {
     p.unshift(slugData.parents[id])
 
     _getParentSlug(slugData.parents[id].id, p)
@@ -86,12 +86,12 @@ const getSlug = (args: SlugArgs): string | { slug: string, parents: object[] } =
 
   /* Slug */
 
-  const s = `${p}${slugBase.slug}${slugBase.slug ? '/' : ''}${slug}${page ? `/?page=${page}` : ''}`
+  const s = `${p}${slugBase.slug}${slugBase.slug !== '' ? '/' : ''}${slug}${page !== 0 ? `/?page=${page}` : ''}`
 
   /* Parents and slug return */
 
   if (returnParents) {
-    if (slugBase?.slug) {
+    if (slugBase?.slug !== '') {
       pp.push({
         ...slugBase,
         contentType: 'page',

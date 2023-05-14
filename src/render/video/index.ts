@@ -37,7 +37,7 @@ const video = (props: Props = { args: {} }): string => {
 
   /* Source and title required */
 
-  if (!source || !title) {
+  if (source === '' || title === '') {
     return ''
   }
 

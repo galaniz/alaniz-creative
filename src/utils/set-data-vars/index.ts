@@ -15,21 +15,23 @@ import { slugData, envData, navData, archiveData } from '../../vars/data'
 
 const setDataVars = (env: { dev: boolean, prod: boolean }): void => {
   try {
+    /* eslint-disable @typescript-eslint/no-var-requires */
+
     const slugParentsJson = require('../../json/slug-parents.json')
     const archiveIdsJson = require('../../json/archive-ids.json')
     const archivePostsJson = require('../../json/archive-posts.json')
     const navDataJson = require('../../json/nav-data.json')
 
+    /* eslint-enable @typescript-eslint/no-var-requires */
+
     /* Set env */
 
-    if (env) {
-      envData.dev = env.dev
-      envData.prod = env.prod
-    }
+    envData.dev = env.dev
+    envData.prod = env.prod
 
     /* Set slug parents */
 
-    if (slugParentsJson) {
+    if (slugParentsJson != null) {
       Object.keys(slugParentsJson).forEach((s) => {
         slugData.parents[s] = slugParentsJson[s]
       })
@@ -37,9 +39,9 @@ const setDataVars = (env: { dev: boolean, prod: boolean }): void => {
 
     /* Set archive ids */
 
-    if (archiveIdsJson) {
+    if (archiveIdsJson != null) {
       Object.keys(archiveIdsJson).forEach((a) => {
-        if (slugData.bases?.[a]) {
+        if (slugData.bases?.[a] != null) {
           slugData.bases[a].archiveId = archiveIdsJson[a]
         }
       })
@@ -47,7 +49,7 @@ const setDataVars = (env: { dev: boolean, prod: boolean }): void => {
 
     /* Set archive posts */
 
-    if (archivePostsJson) {
+    if (archivePostsJson != null) {
       Object.keys(archivePostsJson).forEach((a) => {
         archiveData.posts[a] = archivePostsJson[a]
       })
@@ -55,12 +57,12 @@ const setDataVars = (env: { dev: boolean, prod: boolean }): void => {
 
     /* Set nav data */
 
-    if (navDataJson) {
+    if (navDataJson != null) {
       navData.navs = navDataJson.navs
       navData.items = navDataJson.items
     }
-  } catch (err) {
-
+  } catch (error) {
+    console.error('Error setting data vars: ', error)
   }
 }
 

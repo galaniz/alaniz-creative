@@ -44,14 +44,14 @@ const loader = (args: Args = {}): string => {
 
   let a11yHideTextOutput = ''
 
-  if (a11yHideText) {
+  if (a11yHideText !== '') {
     a11yHideTextOutput = `<span class="a11y-visually-hidden reduce-motion-hide">${a11yHideText}</span>`
   }
 
   /* Output */
 
   return `
-    <span class="o-loader l-absolute l-top-0 l-left-0 l-right-0 l-bottom-0 l-flex l-align-center l-justify-center e-transition${classes ? ` ${classes}` : ''}"${attr}>
+    <span class="o-loader l-absolute l-top-0 l-left-0 l-right-0 l-bottom-0 l-flex l-align-center l-justify-center e-transition${classes !== '' ? ` ${classes}` : ''}"${attr}>
       <span class="l-height-l l-width-l b-radius-100-pc reduce-motion-hide"></span>
       <span class="t-s t-weight-bold l-none reduce-motion-show">Loading</span>
       ${a11yHideTextOutput}

@@ -45,7 +45,7 @@ class Navigation {
   /**
    * Set properties and initialize
    *
-   * @param {object} args {
+   * @param {object} args
    * @param {array<object>} args.navs
    * @param {array<object>} args.items
    * @return {void|boolean} - False if init errors
@@ -100,7 +100,7 @@ class Navigation {
   _initialize (): boolean {
     /* Check that required items exist */
 
-    if (!this.navs || !this.items) {
+    if (this.navs.length === 0 || this.items.length === 0) {
       return false
     }
 
@@ -109,7 +109,7 @@ class Navigation {
     this.items.forEach(item => {
       const info = this._getItemInfo(item)
 
-      if (info?.id) {
+      if (info?.id != null) {
         this._itemsById[info.id] = info
       }
     })
@@ -161,7 +161,7 @@ class Navigation {
 
     const link = getLink(internalLink, externalLink)
 
-    if (externalLink) {
+    if (externalLink !== '') {
       id = externalLink
       external = true
     }
@@ -230,17 +230,17 @@ class Navigation {
 
       let id = title
 
-      if (externalLink && item?.externalLink) {
+      if (externalLink !== '' && item?.externalLink != null) {
         id = item.externalLink
       }
 
-      if ((internalLink != null) && item?.internalLink?.id) {
+      if ((internalLink != null) && item?.internalLink?.id != null) {
         id = item.internalLink.id
       }
 
       const obj = this._itemsById[id]
 
-      obj.current = externalLink ? false : obj.link === current
+      obj.current = externalLink !== '' ? false : obj.link === current
       obj.descendentCurrent = current.includes(obj.link)
 
       return this._itemsById[id]
@@ -261,8 +261,8 @@ class Navigation {
   _recurseOutput = (items: Render.NavItem[] = [], output: { html: string }, depth: number = -1, args: RecurseArgs): void => {
     depth += 1
 
-    const listClasses = args.listClass ? ` class="${args.listClass}"` : ''
-    const listAttrs = args.listAttr ? ` ${args.listAttr}` : ''
+    const listClasses = args.listClass != null ? ` class="${args.listClass}"` : ''
+    const listAttrs = args.listAttr != null ? ` ${args.listAttr}` : ''
 
     output.html += `<ul data-depth="${depth}"${listClasses}${listAttrs}>`
 
@@ -282,8 +282,8 @@ class Navigation {
         args.filterBeforeItem(args, item, output)
       }
 
-      const itemClasses = args.itemClass ? ` class="${args.itemClass}"` : ''
-      let itemAttrs = args.itemAttr ? ` ${args.itemAttr}` : ''
+      const itemClasses = args.itemClass != null ? ` class="${args.itemClass}"` : ''
+      let itemAttrs = args.itemAttr != null ? ` ${args.itemAttr}` : ''
 
       if (current) {
         itemAttrs += ' data-current="true"'
@@ -303,26 +303,26 @@ class Navigation {
 
       const linkClassesArray: string[] = []
 
-      if (args.linkClass) {
+      if (args.linkClass != null) {
         linkClassesArray.push(args.linkClass)
       }
 
-      if (!external && args.internalLinkClass) {
+      if (!external && args.internalLinkClass != null) {
         linkClassesArray.push(args.internalLinkClass)
       }
 
       const linkClasses = (linkClassesArray.length > 0) ? ` class="${linkClassesArray.join(' ')}"` : ''
 
-      const linkAttrsArray = [link ? `href="${link}"` : 'type="button"']
+      const linkAttrsArray = [link !== '' ? `href="${link}"` : 'type="button"']
 
-      if (args.linkAttr) {
+      if (args.linkAttr != null) {
         linkAttrsArray.push(args.linkAttr)
       }
 
       if (current) {
         linkAttrsArray.push('data-current="true"')
 
-        if (link) {
+        if (link !== '') {
           linkAttrsArray.push('aria-current="page"')
         }
       }
@@ -333,7 +333,7 @@ class Navigation {
 
       const linkAttrs = (linkAttrsArray.length > 0) ? ` ${linkAttrsArray.join(' ')}` : ''
 
-      const linkTag = link ? 'a' : 'button'
+      const linkTag = link !== '' ? 'a' : 'button'
 
       output.html += `<${linkTag} data-depth="${depth}"${linkClasses}${linkAttrs}>`
 
@@ -383,7 +383,7 @@ class Navigation {
    */
 
   getOutput (location: string = '', current: string = '', args: RecurseArgs): string {
-    if (!this._navsByLocation?.[location]) {
+    if (this._navsByLocation?.[location] === null) {
       return ''
     }
 
@@ -449,13 +449,13 @@ class Navigation {
 
     /* List attributes */
 
-    const listClasses = args.listClass ? ` class="${args.listClass}"` : ''
-    const listAttrs = args.listAttr ? ` ${args.listAttr}` : ''
+    const listClasses = args.listClass != null ? ` class="${args.listClass}"` : ''
+    const listAttrs = args.listAttr != null ? ` ${args.listAttr}` : ''
 
     /* Loop through items */
 
-    const itemClasses = args.itemClass ? ` class="${args.itemClass}"` : ''
-    const itemAttrs = args.itemAttr ? ` ${args.itemAttr}` : ''
+    const itemClasses = args.itemClass != null ? ` class="${args.itemClass}"` : ''
+    const itemAttrs = args.itemAttr != null ? ` ${args.itemAttr}` : ''
     const lastItemIndex = items.length - 1
 
     const itemsArray = items.map((item, index) => {
@@ -474,17 +474,17 @@ class Navigation {
 
       const linkClassesArray: string[] = []
 
-      if (args.linkClass) {
+      if (args.linkClass != null) {
         linkClassesArray.push(args.linkClass)
       }
 
-      if (args.internalLinkClass) {
+      if (args.internalLinkClass != null) {
         linkClassesArray.push(args.internalLinkClass)
       }
 
       const linkClasses = (linkClassesArray.length > 0) ? ` class="${linkClassesArray.join(' ')}"` : ''
 
-      const linkAttrs = args.linkAttr ? ` ${args.linkAttr}` : ''
+      const linkAttrs = args.linkAttr != null ? ` ${args.linkAttr}` : ''
 
       const slug = getSlug({
         id: item.id,
@@ -509,13 +509,14 @@ class Navigation {
 
     /* Output */
 
-    const currentClasses = args.currentClass ? ` class="${args.currentClass}"` : ''
+    const currentClasses = args.currentClass != null ? ` class="${args.currentClass}"` : ''
+    const a11yClasses = args.a11yClass != null ? ` class="${args.a11yClass}"` : ''
 
     return `
       <ol${listClasses}${listAttrs}>
         ${itemsArray.join('')}
         <li${itemClasses}${itemAttrs} data-current="true">
-          <span${currentClasses}>${current}<span class="${args.a11yClass}"> (current page)</span></span>
+          <span${currentClasses}>${current}<span${a11yClasses}> (current page)</span></span>
         </li>
       </ol>
     `

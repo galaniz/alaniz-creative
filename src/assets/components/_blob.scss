@@ -23,7 +23,6 @@
     func.calc-rem(853.33px) func.calc-rem(1280px),
     "s" "l"
   );
-
   @include mix.fluid-size(
     --height,
     func.calc-rem(500px) func.calc-rem(750px),

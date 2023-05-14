@@ -5,7 +5,7 @@
 /* Imports */
 
 import { enumLayouts } from '../../vars/enums'
-import { archiveData, slugData } from '../../vars/data'
+import { archiveData } from '../../vars/data'
 import { card, cards } from '../cards'
 // const info = require('./info')
 
@@ -43,13 +43,13 @@ const posts = (props: Props = { args: {} }): string => {
     display = 1,
     headingLevel = 3,
     layout = 'cardsMinimal',
-    nothingFound = true, // Display nothing found message
+    // nothingFound = true, // Display nothing found message
     order = 'date'
   } = args
 
   /* Type required */
 
-  if (!contentType) {
+  if (contentType === '') {
     return ''
   }
 
@@ -59,9 +59,9 @@ const posts = (props: Props = { args: {} }): string => {
 
   /* Check posts */
 
-  let posts = archiveData.posts?.[contentType] ? archiveData.posts[contentType] : []
+  let posts = archiveData.posts?.[contentType] !== undefined ? archiveData.posts[contentType] : []
 
-  if (!posts.length) {
+  if (posts.length === 0) {
     return ''
     // return nothingFound ? info(`Looks like no ${slugData.bases[contentType].title.toLowerCase()} were found.`) : ''
   }
@@ -69,7 +69,7 @@ const posts = (props: Props = { args: {} }): string => {
   /* Order */
 
   posts.sort((a: { date: Date }, b: { date: Date }) => {
-    if (order === 'date' && a?.date && b?.date) {
+    if (order === 'date' && a?.date !== undefined && b?.date !== undefined) {
       const dateA = new Date(a.date)
       const dateB = new Date(b.date)
 
@@ -110,7 +110,7 @@ const posts = (props: Props = { args: {} }): string => {
       itemOutput = cardOutput.start + cardOutput.end
     }
 
-    if (itemOutput) {
+    if (itemOutput !== '') {
       outputArray.push(itemOutput)
     }
   })
@@ -119,7 +119,7 @@ const posts = (props: Props = { args: {} }): string => {
 
   let output = (outputArray.length > 0) ? outputArray.join('') : ''
 
-  if (output && l.type === 'cards') {
+  if (output !== '' && l.type === 'cards') {
     output = cards({
       args: {
         content: output,

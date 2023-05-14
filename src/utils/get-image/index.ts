@@ -54,13 +54,13 @@ const getImage = (args: Args = {}): string | { output: string, aspectRatio: numb
   }
 
   const {
-    base,
+    base = '',
     alt = '',
     width: naturalWidth,
     height: naturalHeight
   } = data
 
-  if (!base) {
+  if (base === '') {
     return ''
   }
 
@@ -85,7 +85,8 @@ const getImage = (args: Args = {}): string | { output: string, aspectRatio: numb
   /* Src and sizes attributes */
 
   const src = `/assets/img/${base}.webp`
-  const sizes = `(min-width: ${w / 16}rem) ${w / 16}rem, 100vw`
+  const size = w <= max ? w : max
+  const sizes = `(min-width: ${size / 16}rem) ${size / 16}rem, 100vw`
 
   let srcset: string[] | number[] = [200, 400, 600, 800, 1200, 1600, 2000]
 
@@ -102,7 +103,7 @@ const getImage = (args: Args = {}): string | { output: string, aspectRatio: numb
   /* Output */
 
   const output = `
-    <img${classes ? ` class="${classes}"` : ''} alt="${alt}" src="${src}" srcset="${srcset}" sizes="${sizes}" width="${w}" height="${h}"${attr ? ` ${attr}` : ''}${lazy ? ' loading="lazy"' : ''}>
+    <img${classes !== '' ? ` class="${classes}"` : ''} alt="${alt}" src="${src}" srcset="${srcset.join(', ')}" sizes="${sizes}" width="${w}" height="${h}"${attr !== '' ? ` ${attr}` : ''}${lazy ? ' loading="lazy"' : ''}>
   `
 
   if (returnAspectRatio) {

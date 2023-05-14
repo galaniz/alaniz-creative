@@ -64,7 +64,7 @@ const button = (props: Props = { args: {} }): string => {
 
   /* Link and title required */
 
-  if (link !== '') {
+  if (link === '') {
     link = getLink(internalLink, externalLink)
   }
 

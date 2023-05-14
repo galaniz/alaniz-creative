@@ -33,7 +33,7 @@ interface Props {
   }
 }
 
-const form = (props: Props = { args: {} }): object => {
+const form = (props: Props = { args: {} }): Render.Return => {
   const { args = {} } = props
 
   const {
@@ -80,7 +80,7 @@ const form = (props: Props = { args: {} }): object => {
 
   const start = `
     <form id="${id}" class="o-form js-send-form" method="post" novalidate>
-      <div class="l-flex l-flex-column l-flex-row-l l-flex-wrap l-align-end-l l-gap-margin-m">
+      <div class="l-flex l-flex-column l-flex-row-m l-align-end-m l-gap-margin-m">
         <div class="o-form-error__summary l-width-100-pc l-none outline-none" tabindex="-1">
           <div class="o-info-negative l-padding-left-xs l-padding-right-xs l-padding-top-xs l-padding-bottom-xs b-radius-s">
             <div class="l-flex l-gap-margin-3xs">

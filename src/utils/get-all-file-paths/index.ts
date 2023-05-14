@@ -14,7 +14,7 @@ import { join } from 'node:path'
  * @yield {array<string>}
  */
 
-const getAllFilePaths = async function * (dir: string) {
+const getAllFilePaths = async function * (dir: string): AsyncIterable<string> {
   const files = await readdir(dir, { withFileTypes: true })
 
   for (const file of files) {

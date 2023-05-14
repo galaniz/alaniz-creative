@@ -61,7 +61,7 @@ const _card = ({ internalLink, headingLevel, type, index }: _CardProps): string 
 
   if (ac) {
     headingStyle = 't-h2'
-    textClasses = `l-padding-top-m l-padding-top-l-m ${index % 2 === 0 ? 'l-margin-right-auto' : 'l-margin-left-auto'}`
+    textClasses = `l-padding-top-m l-padding-top-l-m ${index % 2 !== 0 ? 'l-margin-right-auto' : 'l-margin-left-auto'}`
   } else {
     textClasses = ' l-padding-top-2xs l-padding-top-m-m'
   }
@@ -144,7 +144,7 @@ const card = (props: CardProps = { args: {} }): Render.Return => {
   let blob = ''
   let themeColor = ''
 
-  if (internalLink != null) {
+  if (internalLink !== undefined) {
     const { svg, theme } = internalLink
 
     /* Blob svg */
@@ -176,7 +176,7 @@ const card = (props: CardProps = { args: {} }): Render.Return => {
 
     /* Theme color */
 
-    if (theme != null) {
+    if (theme !== undefined) {
       themeColor = theme.main.dark
     }
 

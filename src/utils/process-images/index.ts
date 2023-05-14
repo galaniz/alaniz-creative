@@ -19,6 +19,13 @@ import getAllFilePaths from '../get-all-file-paths'
  * @return {void}
  */
 
+interface CreateArgs {
+  size: number
+  width: number
+  path: string
+  name: string
+}
+
 const processImages = async (
   inputDir: string = '',
   outputDir: string = '',
@@ -26,7 +33,7 @@ const processImages = async (
 ): Promise<void> => {
   const store = {}
 
-  const create = async ({ size, width, path, name }) => {
+  const create = async ({ size, width, path, name }: CreateArgs): Promise<object> => {
     const newPath = `./${outputDir}/${name}${size !== width ? `@${size}` : ''}.webp`
 
     return await sharp(`./${path}`)
@@ -36,18 +43,18 @@ const processImages = async (
   }
 
   try {
-    if (!inputDir || !outputDir) {
+    if (inputDir === '' || outputDir === '') {
       throw new Error('No input or output directories')
     }
 
     for await (const path of getAllFilePaths(`./${inputDir}`)) {
-      if (path.includes('.DS_Store')) {
+      if (typeof path === 'string' && path.includes('.DS_Store')) {
         continue
       }
 
       const ext = extname(path)
-      const relPath = path.split(`${inputDir}/`)[1]
-      const base = relPath.split(`${ext}`)[0]
+      const relPath: string = path.split(`${inputDir}/`)[1]
+      const base: string = relPath.split(`${ext}`)[0]
       const folder = dirname(`./${outputDir}/${base}`)
 
       const metadata = await sharp(path).metadata()
@@ -68,7 +75,7 @@ const processImages = async (
       )
     }
 
-    if (savePath) {
+    if (savePath !== '') {
       await writeFile(`./${savePath}`, JSON.stringify(store))
     }
   } catch (error) {

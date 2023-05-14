@@ -4,7 +4,7 @@
 
 /* Imports */
 
-import { PurgeCSS } from 'purgecss'
+// import { PurgeCSS } from 'purgecss'
 import { envData } from '../../vars/data'
 import { enumNamespace, enumSite, enumColors } from '../../vars/enums'
 import { getPermalink } from '../../utils'
@@ -26,8 +26,8 @@ interface Args {
     description?: string
     image?: string
     canonical?: string
-    prev?: boolean
-    next?: boolean
+    prev?: string
+    next?: string
     noIndex?: boolean
   }
   content?: string
@@ -47,31 +47,31 @@ const layout = async ({
 
   /* Title */
 
-  const title = (meta?.title ? `${meta.title} | ` : '') + enumSite.title
+  const title = (meta?.title != null ? `${meta.title} | ` : '') + enumSite.title
 
   /* Description */
 
-  const description = meta?.description ? meta.description : enumSite.meta.description
+  const description = meta?.description != null ? meta.description : enumSite.meta.description
 
   /* Image */
 
-  const image = meta?.image ? `https:${meta.image}` : `${assetsLink}${enumSite.meta.image}`
+  const image = meta?.image != null ? `https:${meta.image}` : `${assetsLink}${enumSite.meta.image}`
 
   /* Canonical */
 
-  const canonical = meta?.canonical ? `<link rel="canonical" href="${meta.canonical}">` : ''
+  const canonical = meta?.canonical != null ? `<link rel="canonical" href="${meta.canonical}">` : ''
 
   /* Prev */
 
-  const prev = meta?.prev ? `<link rel="prev" href="${meta.prev}">` : ''
+  const prev = meta?.prev != null ? `<link rel="prev" href="${meta.prev}">` : ''
 
   /* Next */
 
-  const next = meta?.next ? `<link rel="next" href="${meta.next}">` : ''
+  const next = meta?.next != null ? `<link rel="next" href="${meta.next}">` : ''
 
   /* No index */
 
-  let noIndex = meta?.noIndex ? meta.noIndex : false
+  let noIndex = meta?.noIndex != null ? meta.noIndex : false
 
   if (envData.dev) {
     noIndex = true
@@ -125,7 +125,7 @@ const layout = async ({
           }
         </style>
         *|CSS|*
-        ${style ? `<style>${style}</style>` : ''}
+        ${style !== '' ? `<style>${style}</style>` : ''}
         <link rel="apple-touch-icon" sizes="180x180" href="${assetsLink}favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="${assetsLink}favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="${assetsLink}favicon/favicon-16x16.png">
