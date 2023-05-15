@@ -46,3 +46,9 @@
 
   @extend %u-line-height-130-pc;
 }
+
+.o-button-form {
+  --padding: var(--xs) var(--s);
+
+  @extend %u-line-height-165-pc;
+}

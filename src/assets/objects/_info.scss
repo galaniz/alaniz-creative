@@ -21,6 +21,7 @@
 .o-info-negative,
 .o-info-positive {
   --link-color: var(--text-color);
+  --heading-color: var(--text-color);
 
   color: var(--text-color);
   background: var(--bg);

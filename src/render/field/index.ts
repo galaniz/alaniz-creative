@@ -81,6 +81,8 @@ const _getCheckboxRadioOpts = (args: _Args = {}): string => {
  * @param {string} props.args.value
  * @param {boolean} props.args.required
  * @param {string} props.args.width
+ * @param {string} props.args.widthBreakpoint
+ * @param {boolean} props.args.grow
  * @param {string} props.args.autoCompleteToken
  * @param {string} props.args.placeholder
  * @param {array<string>} props.args.options
@@ -101,6 +103,8 @@ interface Props {
     value?: string
     required?: boolean
     width?: string
+    widthBreakpoint?: string
+    grow?: boolean
     autoCompleteToken?: string
     placeholder?: string
     options?: string[]
@@ -123,6 +127,8 @@ const field = (props: Props = { args: {} }): string => {
     value = '',
     required = false,
     width = '1-1',
+    widthBreakpoint = 'm',
+    grow = false,
     autoCompleteToken = '',
     placeholder = '',
     options = [],
@@ -149,11 +155,15 @@ const field = (props: Props = { args: {} }): string => {
 
   /* Classes */
 
-  const fieldClassesArray = [`o-form__field l-width-1-1 l-width-${width}-m`]
+  const fieldClassesArray = [`o-form__field l-width-1-1 l-width-${width}-${widthBreakpoint}`]
   const classesArray = ['js-input']
 
   if (fieldClasses !== '') {
     fieldClassesArray.push(fieldClasses)
+  }
+
+  if (grow) {
+    fieldClassesArray.push('l-flex-grow-1')
   }
 
   if (classes !== '') {

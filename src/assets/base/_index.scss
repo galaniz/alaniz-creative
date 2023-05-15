@@ -32,6 +32,7 @@
   --positive: var(--positive-dark);
   --negative-bg: #{rgba(func.get-color("negative-dark"), 0.075)};
   --positive-bg: #{rgba(func.get-color("positive-dark"), 0.075)};
+  --muted-bg: #{rgba(func.get-color("foreground-base"), 0.075)};
   --loader-color: var(--background-light);
   --nav-padding: var(--m);
   --nav-height: calc(var(--logo-height) + (var(--nav-padding) * 2));

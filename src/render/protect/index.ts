@@ -40,7 +40,10 @@ const protect = async (): Promise<string> => {
     form: form({
       args: {
         id: uuid(),
-        submitLabel: 'Go'
+        submitLabel: 'Go',
+        row: 's',
+        align: 's',
+        errorTitle: 'Incorrect password'
       }
     }),
     field: field({
@@ -49,8 +52,10 @@ const protect = async (): Promise<string> => {
         name: 'password',
         label: 'Password',
         required: true,
-        emptyErrorMessage: 'Enter the password',
-        invalidErrorMessage: 'Incorrect password'
+        emptyErrorMessage: 'Enter a password',
+        width: '3-4',
+        widthBreakpoint: 's',
+        grow: true
       }
     })
   }
@@ -65,7 +70,7 @@ const protect = async (): Promise<string> => {
     content: `
       <main id="main" class="l-flex l-align-center l-min-height-100-vh">
         ${output.container.start}
-          <div class="l-flex l-width-l l-height-l l-width-xl-m l-height-xl-m b-radius-100-pc t-sharp">
+          <div class="l-flex l-width-l l-height-l l-width-xl-m l-height-xl-m b-radius-100-pc bg-muted t-sharp">
             ${lockSvg('l-width-m l-height-m l-width-l-m l-height-l-m l-margin-auto')}
           </div>
           <h1 class="l-padding-top-m">${title}</h1>

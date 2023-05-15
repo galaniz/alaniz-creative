@@ -16,11 +16,15 @@ import loader from '../loader'
  *
  * @param {object} props
  * @param {object} props.args
- * @param {string} props.args.subject
+ * @param {string} props.args.id
  * @param {string} props.args.submitLabel
  * @param {string} props.args.successTitle
  * @param {string} props.args.successText
- * @param {string} props.args.id
+ * @param {string} props.args.errorTitle
+ * @param {string} props.args.errorText
+ * @param {boolean} props.args.wrap
+ * @param {string} props.args.row
+ * @param {string} props.args.align
  * @return {object}
  */
 
@@ -30,6 +34,11 @@ interface Props {
     submitLabel?: string
     successTitle?: string
     successText?: string
+    errorTitle?: string
+    errorText?: string
+    wrap?: boolean
+    row?: string
+    align?: string
   }
 }
 
@@ -40,7 +49,12 @@ const form = (props: Props = { args: {} }): Render.Return => {
     id = '',
     submitLabel = 'Send',
     successTitle = '',
-    successText = ''
+    successText = '',
+    errorTitle = '',
+    errorText = '',
+    wrap = true,
+    row = 'm',
+    align = 'm'
   } = args
 
   /* Id required */
@@ -54,13 +68,24 @@ const form = (props: Props = { args: {} }): Render.Return => {
 
   /* Add to script data */
 
-  if ((scriptData?.id === undefined || scriptData?.id === '') && successTitle !== '') {
-    scriptData[`form-${id}`] = {
-      successMessage: {
+  if (scriptData[`form-${id}`] === undefined && (successTitle !== '' || errorTitle !== '')) {
+    const messages: { successMessage?: object, errorMessage?: object } = {}
+
+    if (successTitle !== '') {
+      messages.successMessage = {
         primary: successTitle,
         secondary: successText
       }
     }
+
+    if (errorTitle !== '') {
+      messages.errorMessage = {
+        primary: errorTitle,
+        secondary: errorText
+      }
+    }
+
+    scriptData[`form-${id}`] = messages
   }
 
   scriptData.sendUrl = '/ajax/'
@@ -80,7 +105,7 @@ const form = (props: Props = { args: {} }): Render.Return => {
 
   const start = `
     <form id="${id}" class="o-form js-send-form" method="post" novalidate>
-      <div class="l-flex l-flex-column l-flex-row-m l-align-end-m l-gap-margin-m">
+      <div class="l-flex l-flex-column l-flex-row-${row}${wrap ? ' l-flex-wrap' : ''} l-align-end-${align} l-gap-margin-m">
         <div class="o-form-error__summary l-width-100-pc l-none outline-none" tabindex="-1">
           <div class="o-info-negative l-padding-left-xs l-padding-right-xs l-padding-top-xs l-padding-bottom-xs b-radius-s">
             <div class="l-flex l-gap-margin-3xs">
@@ -111,7 +136,7 @@ const form = (props: Props = { args: {} }): Render.Return => {
           </div>
         </div>
         <div data-type="submit">
-          <button class="o-button o-button-main o-button-large b-radius-l e-transition-quad js-submit" type="submit">
+          <button class="o-button o-button-main o-button-form b-radius-l e-transition-quad js-submit" type="submit">
             ${loader()}
             <span>${submitLabel}</span>
           </button>

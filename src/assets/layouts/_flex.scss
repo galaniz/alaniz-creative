@@ -13,6 +13,12 @@
   order: -9999;
 }
 
+.l-align-end-s {
+  @include mix.breakpoint-min("s") {
+    align-items: flex-end;
+  }
+}
+
 .l-align-end-m {
   @include mix.breakpoint-min("m") {
     align-items: flex-end;

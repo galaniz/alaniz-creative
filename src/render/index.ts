@@ -4,9 +4,8 @@
 
 /* Imports */
 
-import { enumNamespace } from '../vars/enums'
 import { getSlug, getPermalink } from '../utils'
-import { slugData, envData, navData, archiveData, scriptData, jsonFileData } from '../vars/data'
+import { slugData, envData, navData, archiveData, jsonFileData } from '../vars/data'
 import getAllData from '../utils/get-all-data'
 import layout from './layout'
 import header from './header'
@@ -323,25 +322,6 @@ const _renderItem = async ({
     style = `:root{${styleArray.join(';')};--main-button-bg:var(--theme-main)}`
   }
 
-  /* Script data */
-
-  let script = ''
-
-  if (Object.keys(scriptData).length > 0) {
-    const scriptJSON = JSON.stringify(scriptData)
-
-    script = `
-      <script>
-        var namespace = '${enumNamespace}';
-        var ${enumNamespace} = ${scriptJSON};
-      </script>
-    `
-  }
-
-  /* Clear script data */
-
-  Object.keys(scriptData).forEach(k => delete scriptData[k]) // eslint-disable-line @typescript-eslint/no-dynamic-delete
-
   /* Output */
 
   const layoutOutput = await layout({
@@ -354,7 +334,6 @@ const _renderItem = async ({
       </main>
       ${footer(navsOutput)}
     `,
-    script,
     style
   })
 

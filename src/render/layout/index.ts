@@ -5,7 +5,7 @@
 /* Imports */
 
 // import { PurgeCSS } from 'purgecss'
-import { envData } from '../../vars/data'
+import { envData, scriptData } from '../../vars/data'
 import { enumNamespace, enumSite, enumColors } from '../../vars/enums'
 import { getPermalink } from '../../utils'
 
@@ -15,7 +15,6 @@ import { getPermalink } from '../../utils'
  * @param {object} args
  * @prop {object} args.meta
  * @prop {string} args.content
- * @prop {string} args.script
  * @prop {string} args.style
  * @return {string} HTML - html
  */
@@ -31,14 +30,12 @@ interface Args {
     noIndex?: boolean
   }
   content?: string
-  script?: string
   style?: string
 }
 
 const layout = async ({
   meta = {},
   content = '',
-  script = '',
   style = ''
 }: Args): Promise<string> => {
   /* Assets link */
@@ -87,6 +84,25 @@ const layout = async ({
     <link rel="preload" href="${assetsLink}fonts/larsseit.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="${assetsLink}fonts/larsseit-medium.woff2" as="font" type="font/woff2" crossorigin>
   `
+
+  /* Script data */
+
+  let script = ''
+
+  if (Object.keys(scriptData).length > 0) {
+    const scriptJSON = JSON.stringify(scriptData)
+
+    script = `
+      <script>
+        var namespace = '${enumNamespace}';
+        var ${enumNamespace} = ${scriptJSON};
+      </script>
+    `
+  }
+
+  /* Clear script data */
+
+  Object.keys(scriptData).forEach(k => delete scriptData[k]) // eslint-disable-line @typescript-eslint/no-dynamic-delete
 
   /* Output */
 
