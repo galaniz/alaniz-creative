@@ -150,7 +150,7 @@ const card = (props: CardProps = { args: {} }): Render.Return => {
     /* Blob svg */
 
     if (ac && ((svg?.blob) != null)) {
-      const reverse = index % 2 === 0
+      const reverse = index % 2 !== 0
 
       blob = `
         <svg

@@ -4,7 +4,7 @@
 
 /* Imports */
 
-import { setElements, usingMouse } from '@alanizcreative/formation/src/utils'
+import { setSupports, setElements, usingMouse } from '@alanizcreative/formation/src/utils'
 import Nav from '@alanizcreative/formation/src/components/nav'
 import Video from '@alanizcreative/formation/src/objects/video'
 import SendForm from '@alanizcreative/formation/src/objects/form/send'
@@ -44,11 +44,6 @@ const meta = [
     prop: 'nav',
     selector: '.c-nav',
     items: [
-      {
-        prop: 'navLogo',
-        selector: '.c-nav__logo',
-        all: true
-      },
       {
         prop: 'navList',
         selector: '.c-nav__list'
@@ -106,12 +101,9 @@ const meta = [
  */
 
 const initialize = () => {
-  /* JavaScript enabled add js body class */
+  /* Set supports object */
 
-  const body = document.body
-
-  body.classList.remove('no-js')
-  body.classList.add('js')
+  setSupports()
 
   /* Set elements object */
 
@@ -123,7 +115,7 @@ const initialize = () => {
 
   /* Navigation */
 
-  if (el.nav && el.navLogo) {
+  if (el.nav) {
     const nav = () => {
       const itemSelector = '.c-nav__item[data-depth="0"]'
 
@@ -141,12 +133,6 @@ const initialize = () => {
         delay: {
           open: 300,
           close: 300
-        },
-        filterFocusableItem (item) {
-          return el.navLogo[0] !== item
-        },
-        done () {
-          this._firstFocusableItem = el.navLogo[1]
         }
       })
     }
@@ -155,8 +141,6 @@ const initialize = () => {
   }
 
   /* Forms */
-
-  console.log('WHATT', ns, n)
 
   if (n && el.forms.length) {
     /* Default result messages */
@@ -236,7 +220,7 @@ const initialize = () => {
         },
         {
           prop: 'error',
-          selector: '.o-form-result_negative',
+          selector: '.o-form-result__negative',
           items: [
             {
               prop: 'errorPrimary',
@@ -276,6 +260,10 @@ const initialize = () => {
 
       const messages = getDefaultMessages(id)
 
+      /* Action */
+
+      const action = form.getAttribute('data-action') || 'send-form'
+
       /* Args */
 
       const args = {
@@ -288,9 +276,7 @@ const initialize = () => {
         groupClass: 'o-form__group',
         fieldClass: 'o-form__field',
         labelClass: 'o-form__label',
-        data: {
-          action: 'sendForm'
-        },
+        data: { action },
         errorTemplate: `
           <span class='o-form__error l-flex l-gap-margin-4xs l-padding-top-3xs' id='%id'>
             <span class='t-line-height-0'>
@@ -317,6 +303,26 @@ const initialize = () => {
             primary: f.successPrimary,
             secondary: f.successSecondary,
             message: messages.success
+          }
+        },
+        onSuccess () {
+          if (action !== 'check-password') {
+            return
+          }
+
+          setTimeout(() => {
+            window.location.reload()
+          }, 500)
+        },
+        onError (err) {
+          this.result.error.message = getDefaultMessages(id).error
+
+          if (action !== 'check-password') {
+            return
+          }
+
+          if (err.status === 400) {
+            this.result.error.message.primary = 'Incorrect password'
           }
         }
       }

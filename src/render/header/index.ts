@@ -49,7 +49,7 @@ const header = (navigations: { main?: string } = {}): string => {
               <a class="c-nav__logo o-logo l-inline-flex l-fixed js-pt-link" href="${getPermalink()}" aria-label="${enumSite.title} Home"></a>
             </div>
             <div class="c-nav-overflow__main t-sharp t-link-current l-height-100-pc l-overflow-y-auto l-overscroll-none l-overflow-x-hidden l-padding-left-3xs l-padding-right-3xs l-padding-top-m l-padding-bottom-m">
-              <ul class="c-nav-overflow__list l-flex l-flex-column l-gap-margin-2xs t-list-style-none outline-tight" role="list"></ul>
+              <ul class="c-nav-overflow__list l-flex l-flex-column l-padding-bottom-l l-gap-margin-2xs t-list-style-none outline-tight" role="list"></ul>
             </div>
             <div class="c-nav__hide">
               <button class="c-nav__button c-nav__close c-nav-icon l-height-l l-fixed" type="button" aria-label="Close menu" data-visible="false"></button>

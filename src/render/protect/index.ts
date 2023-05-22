@@ -40,10 +40,10 @@ const protect = async (): Promise<string> => {
     form: form({
       args: {
         id: uuid(),
+        action: 'check-password',
         submitLabel: 'Go',
         row: 's',
-        align: 's',
-        errorTitle: 'Incorrect password'
+        align: 's'
       }
     }),
     field: field({

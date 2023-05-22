@@ -15,7 +15,8 @@
   "license": "ISC",
   "dependencies": {
     "@alanizcreative/formation": "^4.1.1",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "validator": "^13.9.0"
   },
   "browserslist": [
     "edge 16"

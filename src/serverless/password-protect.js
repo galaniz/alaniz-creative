@@ -12,11 +12,10 @@ import protect from '../render/protect'
  * Function - check password set before showing page
  *
  * @private
- * @param {object} {
- *  @prop {object} request
- *  @prop {object} env
- *  @prop {function} next
- * }
+ * @param {object} context
+ * @param {object} context.request
+ * @param {object} context.env
+ * @param {function} context.next
  * @return {object} Response
  */
 

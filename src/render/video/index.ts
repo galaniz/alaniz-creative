@@ -65,14 +65,14 @@ const video = (props: Props = { args: {} }): string => {
           ${pauseSvg('l-absolute l-center l-width-2-5 t-background-light')}
         </button>
       </div>
-      <div class="o-video__error l-padding-top-xs l-none" tabindex="-1">
+      <div class="o-video__error l-padding-top-xs l-none outline-none" tabindex="-1">
         <div class="o-info-negative l-padding-top-3xs l-padding-bottom-3xs l-padding-left-3xs l-padding-right-3xs b-radius-s">
-          <div class="l-flex l-gap-margin-3xs">
-            <div class="l-flex-shrink-0">
-              ${errorSvg('l-width-xs l-height-xs')}
+          <div class="l-flex l-gap-margin-4xs">
+            <div class="l-flex-shrink-0 t-line-height-0">
+              ${errorSvg('l-width-xs l-height-s')}
             </div>
-            <div>
-              <p class="t-s t-line-height-150-pc l-margin-0 e-underline">Sorry, there is a problem with the service. <a href="${url}" data-inline>${title}</a>.</p>
+            <div class="t-line-height-0">
+              <p class="t-s t-line-height-150-pc l-margin-0 e-underline">Sorry, there is a problem with the service. <a href="${url}" data-inline>${title} video</a>.</p>
             </div>
           </div>
         </div>

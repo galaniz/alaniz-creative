@@ -31,6 +31,7 @@ import loader from '../loader'
 interface Props {
   args: {
     id?: string
+    action?: string
     submitLabel?: string
     successTitle?: string
     successText?: string
@@ -47,6 +48,7 @@ const form = (props: Props = { args: {} }): Render.Return => {
 
   const {
     id = '',
+    action = 'send-form',
     submitLabel = 'Send',
     successTitle = '',
     successText = '',
@@ -104,7 +106,7 @@ const form = (props: Props = { args: {} }): Render.Return => {
   /* Output */
 
   const start = `
-    <form id="${id}" class="o-form js-send-form" method="post" novalidate>
+    <form id="${id}" class="o-form js-send-form" data-action="${action}" method="post" novalidate>
       <div class="l-flex l-flex-column l-flex-row-${row}${wrap ? ' l-flex-wrap' : ''} l-align-end-${align} l-gap-margin-m">
         <div class="o-form-error__summary l-width-100-pc l-none outline-none" tabindex="-1">
           <div class="o-info-negative l-padding-left-xs l-padding-right-xs l-padding-top-xs l-padding-bottom-xs b-radius-s">
@@ -130,7 +132,7 @@ const form = (props: Props = { args: {} }): Render.Return => {
                 ${errorSvg('l-width-s l-height-s l-width-m-m l-height-m-m')}
               </div>
               <div>
-                <h2 class="o-form-result__primary t t-weight-medium l-margin-0"></h2>
+                <h2 class="o-form-result__primary t t-line-height-150-pc t-weight-medium l-margin-0"></h2>
               </div>
             </div>
           </div>
@@ -148,7 +150,7 @@ const form = (props: Props = { args: {} }): Render.Return => {
                 ${checkSvg('l-width-s l-height-s l-width-m-m l-height-m-m')}
               </div>
               <div>
-                <h2 class="o-form-result__primary t t-weight-medium l-margin-0"></h2>
+                <h2 class="o-form-result__primary t t-line-height-150-pc t-weight-medium l-margin-0"></h2>
               </div>
             </div>
           </div>

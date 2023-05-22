@@ -10,6 +10,8 @@
 /* Styles */
 
 .o-video__bg {
+  --loader-color: var(--video-play-bg);
+
   background: var(--video-bg);
   border-color: var(--video-border);
 }

@@ -312,7 +312,7 @@ const _renderItem = async ({
 
     Object.keys(props.theme).forEach((t) => {
       const prefix = t.includes('video') ? '' : 'theme-'
-      const color = props.theme[t]?.dark !== '' ? props.theme[t].dark : props.theme[t]
+      const color = props.theme[t]?.dark !== undefined ? props.theme[t].dark : props.theme[t]
 
       if (typeof color === 'string') {
         styleArray.push(`--${prefix}${t}:${color}`)

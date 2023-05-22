@@ -7,7 +7,93 @@
     "image": ""
   },
   "hero": {
-    "title": "Hi, I'm Graciela Alaniz.",
-    "type": "profile"
-  }
+    "title": "Hi, I'm Graciela Alaniz."
+  },
+  "content": [
+    {
+      "renderType": "container",
+      "richTextStyles": true,
+      "maxWidth": "xs",
+      "content": [
+        {
+          "renderType": "rich-text",
+          "tag": "p",
+          "textStyle": "t-l",
+          "content": "I'm a designer/developer based in Toronto, currently combining my interests in design and code as a web designer at Later with a particular focus on accessibility."
+        },
+        {
+          "renderType": "rich-text",
+          "tag": "p",
+          "content": "I thrive on creative challenges and creating beautiful interfaces for all. My experience spans the gamut from participating in discovery activities to creating wireframes and high-fidelity mockups to participating and/or leading front and back-end development. Similarly, my services include:"
+        },
+        {
+          "renderType": "rich-text",
+          "classes": "l-column-2-s",
+          "tag": "ul",
+          "content": [
+            {
+              "tag": "li",
+              "content": "User interface/experience design"
+            },
+            {
+              "tag": "li",
+              "content": "Front-end development"
+            },
+            {
+              "tag": "li",
+              "content": "WordPress theme development"
+            },
+            {
+              "tag": "li",
+              "content": "Email marketing design/development"
+            },
+            {
+              "tag": "li",
+              "content": "Branding"
+            },
+            {
+              "tag": "li",
+              "content": "Hand-lettering"
+            }
+          ]
+        },
+        {
+          "renderType": "rich-text",
+          "tag": "p",
+          "content": "I thrive on creative challenges and creating beautiful interfaces for all. My experience spans the gamut from participating in discovery activities to creating wireframes and high-fidelity mockups to participating and/or leading front and back-end development. Similarly, my services include:"
+        },
+        {
+          "renderType": "container",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "blockquote",
+              "content": [
+                {
+                  "tag": "p",
+                  "content": "\"Inclusive design doesn't mean you're designing one thing for all people. You're designing a diversity of ways to participate so that everyone has a sense of belonging.\""
+                }
+              ]
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "figcaption",
+              "content": "Susan Goltsman"
+            }
+          ]
+        },
+        {
+          "renderType": "rich-text",
+          "tag": "p",
+          "content": "I'm always open to working on interesting and innovative projects. Let's collaborate!"
+        },
+        {
+          "renderType": "button",
+          "title": "Get in touch",
+          "internalLink": "page--contact"
+        }
+      ]
+    }
+  ]
 }

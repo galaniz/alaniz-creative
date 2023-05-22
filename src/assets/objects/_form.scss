@@ -63,17 +63,17 @@
       --border-color: var(--outline-color);
     }
 
-    &:focus,
-    &[aria-invalid="true"] {
-      --border-width: 0.1875rem;
-    }
-
     &[aria-invalid="true"] {
       --border-color: var(--negative);
+      --border-width: 0.1rem;
 
       &:focus {
         --border-color: var(--outline-color);
       }
+    }
+
+    &:focus {
+      --border-width: 0.1875rem;
     }
   }
 
