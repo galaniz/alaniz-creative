@@ -56,11 +56,11 @@ const _card = ({ internalLink, headingLevel, type, index }: _CardProps): string 
 
   /* Text */
 
-  let headingStyle = 't-h4'
+  let headingStyle = 'h4'
   let textClasses = ''
 
   if (ac) {
-    headingStyle = 't-h2'
+    headingStyle = 'h2'
     textClasses = `l-padding-top-m l-padding-top-l-m ${index % 2 !== 0 ? 'l-margin-right-auto' : 'l-margin-left-auto'}`
   } else {
     textClasses = ' l-padding-top-2xs l-padding-top-m-m'

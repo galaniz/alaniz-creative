@@ -903,7 +903,7 @@
           "content": [
             {
               "renderType": "rich-text",
-              "headingStyle": "t-h3",
+              "headingStyle": "h3",
               "tag": "h2",
               "content": "Explore more work"
             }

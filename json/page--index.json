@@ -26,7 +26,7 @@
             {
               "renderType": "rich-text",
               "tag": "h2",
-              "headingStyle": "t-h2-l",
+              "headingStyle": "h2-l",
               "content": "Work"
             }
           ]
