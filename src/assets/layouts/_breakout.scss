@@ -1,0 +1,19 @@
+/**
+ * Layouts - breakout
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/src/utils/mixins" as mix;
+
+/* Styles */
+
+.l-breakout {
+  @include mix.breakpoint-min-max("0", "container-xl-no-padding") {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: -5vw;
+    margin-right: -5vw;
+    max-width: 110vw;
+  }
+}

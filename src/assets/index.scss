@@ -16,6 +16,7 @@
 @use "@alanizcreative/formation/src/base";
 @use "@alanizcreative/formation/src/base/inputs-reset";
 @use "base" as b;
+@use "base/focus";
 
 /* A11y */
 
@@ -23,41 +24,64 @@
 
 /* Backgrounds */
 
-@use "@alanizcreative/formation/src/backgrounds/color";
+@use "backgrounds";
 
 /* Text */
 
+@use "text/rich-text";
 @use "text/color" as c;
 @use "text/list";
 @use "text/sizes";
-@use "text/rich-text";
+@use "text/style";
+@use "text/line-height";
 @use "@alanizcreative/formation/src/text/weight";
 @use "@alanizcreative/formation/src/text/align";
 
 /* Layouts */
 
-@use "@alanizcreative/formation/src/layouts/position";
+@use "layouts/position";
 @use "@alanizcreative/formation/src/layouts/aspect-ratio";
 @use "@alanizcreative/formation/src/layouts/overflow";
 @use "@alanizcreative/formation/src/layouts/container";
 @use "@alanizcreative/formation/src/layouts/display";
-@use "@alanizcreative/formation/src/layouts/flex";
+@use "layouts/flex";
 @use "@alanizcreative/formation/src/layouts/gap-margin";
 @use "@alanizcreative/formation/src/layouts/padding";
 @use "@alanizcreative/formation/src/layouts/margin";
-@use "@alanizcreative/formation/src/layouts/width";
-@use "@alanizcreative/formation/src/layouts/height";
+@use "layouts/width";
+@use "layouts/height";
 @use "@alanizcreative/formation/src/layouts/object";
+@use "layouts/breakout";
+@use "layouts/column";
 
 /* Borders */
 
-@use "@alanizcreative/formation/src/borders";
-@use "@alanizcreative/formation/src/borders/radius";
+@use "borders";
 
 /* Components */
 
-@use "@alanizcreative/formation/src/components/skip-link";
+@use "components/skip-link";
 @use "components/nav";
+@use "components/footer";
+@use "components/blob";
+
+/* Effects */
+
+@use "@alanizcreative/formation/src/effects/transition";
+@use "effects/underline";
+@use "effects/translate";
+@use "effects/scale";
+
+/* Objects */
+
+@use "objects/logo";
+@use "objects/button";
+@use "objects/blob" as bb;
+@use "objects/card";
+@use "objects/video";
+@use "objects/info";
+@use "objects/loader";
+@use "objects/form";
 
 /* Remove animations */
 

@@ -4,12 +4,176 @@
 
 /* Imports */
 
+@use "@alanizcreative/formation/src/config";
 @use "@alanizcreative/formation/src/utils/mixins" as mix;
 
 /* Styles */
 
 .t-rich-text {
-  a[data-button] {
+  h2 {
+    margin-top: var(--l);
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-top: var(--m);
+  }
+
+  h4,
+  h5,
+  h6 {
+    padding-top: var(--4xs);
+  }
+
+  dd,
+  p[data-inline],
+  li[data-inline] {
+    font-size: var(--t);
+  }
+
+  figcaption[data-inline],
+  blockquote[data-inline] {
+    font-style: italic;
+  }
+
+  figure[data-quote] {
+    border-left: 0.1875rem solid var(--heading-color);
+    padding-left: var(--xs);
+    margin-top: var(--m);
+
+    p {
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+
+  ul[data-inline],
+  ol[data-inline] {
+    margin-left: var(--2xs);
+    margin-top: -0.625rem;
+  }
+
+  ol[data-inline] ol {
+    list-style-type: lower-alpha;
+  }
+
+  li[data-inline] {
+    margin-top: var(--4xs);
+    padding-left: var(--4xs);
+
+    &::marker {
+      font-size: 0.9em;
+    }
+  }
+
+  div[data-button] {
+    margin-top: var(--mb-l);
+  }
+
+  dt,
+  dd {
+    @extend %u-line-height-130-pc;
+    @extend %u-letter-spacing-2-pc;
+
+    margin-bottom: var(--3xs);
+  }
+
+  dt {
+    @extend %u-line-height-130-pc;
+    @extend %u-font-weight-medium;
+    @extend %u-color-foreground-base;
+
+    font-size: var(--h5);
+  }
+
+  &[data-mb] {
+    --mb: var(--m);
+    --mb-l: var(--m);
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p[data-inline],
+    ul[data-inline],
+    ol[data-inline] {
+      margin-bottom: var(--mb);
+    }
+
+    figure[data-quote] {
+      margin-bottom: var(--mb-l);
+    }
+  }
+
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  h5:first-child,
+  h6:first-child,
+  dd:first-child,
+  figure[data-quote]:first-child,
+  p[data-inline]:first-child,
+  ul[data-inline]:first-child,
+  ol[data-inline]:first-child,
+  div[data-button]:first-child {
+    margin-top: 0;
+  }
+
+  h2:last-child,
+  h3:last-child,
+  h4:last-child,
+  h5:last-child,
+  h6:last-child,
+  dd:last-child,
+  figure[data-quote]:last-child,
+  p[data-inline]:last-child,
+  ul[data-inline]:last-child,
+  ol[data-inline]:last-child,
+  div[data-button]:last-child {
+    margin-bottom: 0;
+  }
+
+  h4:first-child,
+  h5:first-child,
+  h6:first-child {
+    padding-top: 0;
+  }
+
+  @include mix.breakpoint-min("l") {
+    &[data-mb] {
+      --mb-l: var(--l);
+    }
+
+    h2 {
+      margin-top: var(--2xl);
+    }
+
+    h3 {
+      margin-top: var(--l);
+    }
+
+    h4,
+    h5,
+    h6 {
+      padding-top: var(--3xs);
+    }
+
+    dt {
+      margin-bottom: var(--2xs);
+    }
+
+    ul[data-inline],
+    ol[data-inline] {
+      margin-left: var(--s);
+    }
+
+    figure[data-quote] {
+      margin-top: var(--l);
+      margin-left: var(--xs);
+      padding-left: var(--m);
+    }
   }
 }

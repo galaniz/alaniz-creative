@@ -5,6 +5,7 @@
 /* Vertical padding */
 
 $padding-vertical: (
+  "4xs",
   "3xs",
   "2xs",
   "xs",
@@ -14,17 +15,26 @@ $padding-vertical: (
   "2xl",
   "3xl",
   "4xl",
+  "5xl",
+);
+
+/* Horizontal padding */
+
+$padding-horizontal: (
+  "3xs",
+  "xs",
+  "l",
 );
 
 /* Gaps */
 
 $gaps: (
+  "4xs",
   "3xs",
   "2xs",
   "xs",
   "m",
   "l",
-  "xl",
 );
 
 /* Config variables */
@@ -72,52 +82,61 @@ $gaps: (
   ),
 
   $font-weights: (
-    "normal": 400,
     "medium": 500,
+    "normal": 400,
     "bold": 700,
   ),
 
   /* Breakpoints */
 
+  /* stylelint-disable */
   $breakpoints: (
     "0": 0px,
     "xs": 300px,
     "s": 600px,
     "m": 900px,
     "l": 1200px,
+    "xl": 1400px,
+    "2xl": 2000px,
   ),
+  /* stylelint-enable */
 
   /* Spacing */
 
   $spacing: (
+    "4xs": 5px,
     "3xs": 10px,
     "2xs": 15px,
     "xs": 20px,
     "s": 25px,
     "m": 30px,
     "l": 50px,
-    "xl": 100px,
-    "2xl": 150px,
-    "3xl": 200px,
-    "4xl": 300px,
+    "xl": 75px,
+    "2xl": 100px,
+    "3xl": 150px,
+    "4xl": 200px,
+    "5xl": 300px,
   ),
 
   /* Padding */
 
   $padding-top: $padding-vertical,
   $padding-bottom: $padding-vertical,
+  $padding-left: $padding-horizontal,
+  $padding-right: $padding-horizontal,
   $padding-vertical-breakpoints: ("m"),
 
   /* Margin */
 
   $margin-bottom: $gaps,
   $margin-bottom-all: $gaps,
-  $margin-vertical-breakpoints: ("m"),
+  $margin-vertical-breakpoints: ("s", "m", "l"),
 
   /* Aspect ratios */
 
   $aspect-ratio-padding: (
     "62": 62.5%,
+    "57": 57.7%,
   ),
 
   /* Widths */
@@ -128,18 +147,22 @@ $gaps: (
     "l",
   ),
 
-  $widths: ("m", "l"),
+  $widths: ("xs", "s", "m", "l", "xl"),
   $width-breakpoints: ("s", "m"),
 
   /* Heights */
 
-  $heights: ("m", "l"),
+  $heights: ("xs", "s", "m", "l", "xl"),
   $height-breakpoints: ("s", "m"),
 
   /* Gaps */
 
   $gaps: $gaps,
   $gap-breakpoints: ("s", "m", "l"),
+
+  /* Flex */
+
+  $flex-row-breakpoints: ("s", "m"),
 
   /* Containers */
 
@@ -157,7 +180,7 @@ $gaps: (
 
   $nav: (
     "icon": (
-      "width": 40px,
+      "width": 38px,
       "line-width": 1px,
       "margin": 10px,
     )
@@ -168,7 +191,7 @@ $gaps: (
   $borders: (
     "sides": ("all"),
     "colors": (
-      "current": "currentcolor"
+      "theme": "var(--theme-main)",
     ),
     "widths": (
       "default": 0.0625rem,
@@ -184,9 +207,20 @@ $gaps: (
   /* Outline */
 
   $outline: (
-    "width": 0.3rem,
+    "width": 0.3125rem,
     "color": "var(--foreground-base)",
-    "offset": 0.3rem,
+    "offset": 0.3125rem,
+  ),
+
+  /* Transitions */
+
+  $transitions: (
+    "default": (
+      "duration": 300ms,
+    ),
+    "quad": (
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+    ),
   ),
 
   /* Placeholders */

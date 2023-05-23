@@ -1,0 +1,10 @@
+{
+  "contentType": "navigation",
+  "title": "Main",
+  "location": "footer",
+  "items": [
+    "navigationItem--work",
+    "navigationItem--about",
+    "navigationItem--contact"
+  ]
+}

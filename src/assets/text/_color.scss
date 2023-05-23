@@ -15,8 +15,18 @@
   --heading-color: var(--background-light);
   --link-color: var(--background-light);
   --text-color: #{rgba(func.get-color("background-light"), 0.75)};
+  --negative: var(--negative-light);
+  --positive: var(--positive-light);
+  --negative-bg: #{rgba(func.get-color("negative-light"), 0.075)};
+  --positive-bg: #{rgba(func.get-color("positive-light"), 0.075)};
+  --muted-bg: #{rgba(func.get-color("background-light"), 0.075)};
+  --loader-color: var(--foreground-base);
 
   color: var(--text-color);
+}
+
+.t-sharp {
+  color: var(--heading-color);
 }
 
 .t-link-current {

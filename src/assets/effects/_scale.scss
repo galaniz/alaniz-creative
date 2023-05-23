@@ -1,0 +1,13 @@
+/**
+ * Effects - scale
+ */
+
+/* Styles */
+
+.e-scale {
+  --scale: 1.015;
+
+  &:hover [data-scale] {
+    transform: scale(var(--scale));
+  }
+}

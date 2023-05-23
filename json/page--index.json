@@ -1,0 +1,57 @@
+{
+  "contentType": "page",
+  "title": "Home",
+  "slug": "index",
+  "hero": {
+    "title": "Hi, I'm Graciela. I'm a designer<wbr>/<wbr>developer. I strive to create elegant, engaging and accessible digital experiences.",
+    "action": {
+      "text": "Get in touch",
+      "internalLink": "page--contact"
+    },
+    "blob": {
+      "path": "m6.26,0c0,8.36,4.57,13.69,4.57,21.1C10.83,32.85.5,43.19.5,53.15s7.15,21.35,22.16,21.35c16.99,0,28.72-13.59,42.63-13.59,18.55,0,39.95,12.34,62.4-3.38",
+      "width": 128,
+      "height": 75
+    }
+  },
+  "content": [
+    {
+      "renderType": "container",
+      "tag": "section",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "default",
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h2",
+              "headingStyle": "h2-l",
+              "content": "Work"
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "s",
+          "content": [
+            {
+              "renderType": "posts",
+              "contentType": "work",
+              "display": 3,
+              "headingLevel": 3,
+              "layout": "cardsAlternating"
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "Explore all work",
+          "type": "secondary",
+          "justify": "center",
+          "internalLink": "page--work"
+        }
+      ]
+    }
+  ]
+}
