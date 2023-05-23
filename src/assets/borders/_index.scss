@@ -1,0 +1,17 @@
+/**
+ * Borders
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/src/utils/mixins" as mix;
+@use "@alanizcreative/formation/src/borders";
+@use "@alanizcreative/formation/src/borders/radius";
+
+/* Styles */
+
+.b-radius-m-m {
+  @include mix.breakpoint-min("m") {
+    border-radius: var(--border-radius-m);
+  }
+}

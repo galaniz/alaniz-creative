@@ -1,0 +1,20 @@
+/**
+ * Layouts - column
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/src/utils/mixins" as mix;
+
+/* Styles */
+
+.l-column-2-s {
+  @include mix.breakpoint-min("s") {
+    column-count: 2;
+    column-gap: var(--m);
+  }
+}
+
+.l-column-span {
+  column-span: all;
+}

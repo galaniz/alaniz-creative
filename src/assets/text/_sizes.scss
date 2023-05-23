@@ -78,22 +78,13 @@ h6,
   @extend %u-font-weight-medium;
 }
 
-h5,
-.t-h5 {
-  @extend %u-letter-spacing-2-pc;
-}
-
-h6,
-.t-h6 {
-  @extend %u-letter-spacing-3-pc;
-}
-
 p,
 ul[data-inline],
 ol[data-inline],
 .t-l,
 .t,
-.t-s {
+.t-s,
+.t-xs {
   @extend %u-line-height-165-pc;
   @extend %u-letter-spacing-2-pc;
 }
@@ -128,11 +119,15 @@ h4,
 
 h5,
 .t-h5 {
+  @extend %u-letter-spacing-2-pc;
+
   font-size: var(--h5);
 }
 
 h6,
 .t-h6 {
+  @extend %u-letter-spacing-3-pc;
+
   font-size: var(--h6);
 }
 

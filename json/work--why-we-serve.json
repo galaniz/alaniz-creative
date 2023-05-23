@@ -2,14 +2,67 @@
   "contentType": "work",
   "title": "Why We Serve",
   "slug": "why-we-serve",
-  "metaDescription": "",
-  "metaImage": "",
-  "heroImage": "",
+  "date": "2020-11-11",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "passwordProtected": true,
+  "hero": {
+    "image": "why-we-serve/hero",
+    "wave": {
+      "path": "m.35.37c.09.07.17.15.26.22,18.48,15.51,22.12.04,42.95,12.05,17.05,9.84,27.13,8.38,37.67,0,.85-.68,1.66-1.39,2.42-2.13",
+      "width": 84,
+      "height": 20
+    }
+  },
+  "svg": {
+    "blob": {
+      "path": "m102.84,610.86c44.34,38.69,79.74,58.03,111.02,67.18,31.27,9.15,58.46,8.11,86.42,5.98,3.04-.23,6.09-.48,9.15-.72,25.11-2.01,51.26-4.11,81.78.19,34.26,4.82,74.01,17.7,124.05,47.73,81.84,49.11,146.89,69.99,204.07,68.17,57.17-1.82,106.56-26.32,157.1-68.12,126.18-104.37,147.59-281.79,99.22-425.96-48.38-144.18-166.43-254.84-318.98-225.99-88.72,16.78-153.03,17.07-202.59,9.05-49.57-8.02-84.35-24.36-114.03-40.79-6.56-3.63-12.87-7.27-19.03-10.82-21.71-12.51-41.58-23.96-64.24-30.52-29.04-8.41-62.69-8.79-110.62,7.09-47.85,15.85-83.14,53.53-107,103.09C15.3,165.98,2.9,227.39.82,290.61c-2.08,63.22,6.15,128.22,23.55,184.96,17.4,56.74,43.96,105.17,78.47,135.29Z"
+    }
+  },
+  "theme": {
+    "main": {
+      "dark": "#7a232f",
+      "light": "#e199a3"
+    },
+    "secondary": {
+      "dark": "#00193a",
+      "light": "#548edb"
+    },
+    "gold": {
+      "dark": "#675023",
+      "light": "#a88849"
+    },
+    "brown": {
+      "dark": "#533a30",
+      "light": "#ab806e"
+    },
+    "blue": {
+      "dark": "#1d51a3",
+      "light": "#5289e0"
+    },
+    "green": {
+      "dark": "#545827",
+      "light": "#8b9240"
+    },
+    "black": {
+      "dark": "#070707",
+      "light": "#8f8f8f"
+    },
+    "video-bg": "#00193a",
+    "video-border": "var(--video-bg)",
+    "video-play-bg": "var(--background-light)",
+    "video-play-color": "#7a232f"
+  },
   "content": [
     {
       "renderType": "container",
       "maxWidth": "xs",
       "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
       "content": [
         {
           "renderType": "rich-text",
@@ -22,10 +75,10 @@
           "gap": "m",
           "gapLarge": "l",
           "tag": "dl",
+          "classes": "l-flex-column l-flex-row-s",
           "content": [
             {
-              "renderType": "rich-text",
-              "tag": "div",
+              "renderType": "container",
               "content": [
                 {
                   "renderType": "rich-text",
@@ -40,8 +93,7 @@
               ]
             },
             {
-              "renderType": "rich-text",
-              "tag": "div",
+              "renderType": "container",
               "content": [
                 {
                   "renderType": "rich-text",
@@ -56,8 +108,7 @@
               ]
             },
             {
-              "renderType": "rich-text",
-              "tag": "div",
+              "renderType": "container",
               "content": [
                 {
                   "renderType": "rich-text",
@@ -82,8 +133,7 @@
               ]
             },
             {
-              "renderType": "rich-text",
-              "tag": "div",
+              "renderType": "container",
               "content": [
                 {
                   "renderType": "rich-text",
@@ -106,9 +156,9 @@
         },
         {
           "renderType": "button",
-          "text": "View Why We Serve",
-          "externalLink": "https://americanindian.si.edu/why-we-serve/",
-          "type": "main"
+          "title": "View Why We Serve",
+          "richText": true,
+          "externalLink": "https://americanindian.si.edu/why-we-serve/"
         }
       ]
     },
@@ -116,6 +166,9 @@
       "renderType": "container",
       "maxWidth": "xs",
       "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
       "content": [
         {
           "renderType": "rich-text",
@@ -132,10 +185,13 @@
     {
       "renderType": "container",
       "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
       "content": [
         {
           "renderType": "container",
           "maxWidth": "xs",
+          "richTextStyles": true,
           "content": [
             {
               "renderType": "rich-text",
@@ -172,7 +228,9 @@
         {
           "renderType": "container",
           "paddingTop": "l",
-          "paddingTopLarge": "xl",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
           "tag": "figure",
           "content": [
             {
@@ -180,8 +238,6 @@
               "maxWidth": "s",
               "paddingTop": "m",
               "paddingTopLarge": "l",
-              "paddingBottom": "m",
-              "paddingBottomLarge": "l",
               "content": [
                 {
                   "renderType": "container",
@@ -191,29 +247,62 @@
                   "gapLarge": "l",
                   "content": [
                     {
-                      "renderType": "image",
-                      "src": "",
-                      "alt": "",
-                      "border": true
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/panel-1",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
                     },
                     {
-                      "renderType": "image",
-                      "src": "",
-                      "alt": "",
-                      "border": true
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/panel-2",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
                     },
                     {
-                      "renderType": "image",
-                      "src": "",
-                      "alt": "",
-                      "border": true
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/panel-3",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
                 {
-                  "renderType": "container",
-                  "tag": "figcaption",
-                  "maxWidth": "xs",
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "s",
+                  "classes": "t-italic",
+                  "align": "center",
                   "content": "Two-dimensional mockups of panels from the physical exhibition."
                 }
               ]
@@ -223,6 +312,7 @@
         {
           "renderType": "container",
           "maxWidth": "xs",
+          "richTextStyles": true,
           "content": [
             {
               "renderType": "rich-text",
@@ -234,32 +324,26 @@
               "tag": "ul",
               "content": [
                 {
-                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "Site must be static and responsive."
                 },
                 {
-                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "Image manipulation disallowed outside of minimal cropping."
                 },
                 {
-                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "Image gallery must contain all images and credits from the site. Users should be able to enlarge each image view in a carousel."
                 },
                 {
-                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "Topics (translation of panels from physical exhibit) must be easy to access and include main text, 3-4 images, quotes, expanded image captions and image credits."
                 },
                 {
-                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "An 8-10 minute video designed to look at the idea of service must be included on the site."
                 },
                 {
-                  "renderType": "rich-text",
                   "tag": "li",
                   "content": "Site must pass Smithsonian security and accessibility scans."
                 }
@@ -281,9 +365,9 @@
           "renderType": "container",
           "maxWidth": "s",
           "paddingTop": "l",
-          "paddingTopLarge": "xl",
+          "paddingTopLarge": "2xl",
           "paddingBottom": "l",
-          "paddingBottomLarge": "xl",
+          "paddingBottomLarge": "2xl",
           "content": [
             {
               "renderType": "container",
@@ -294,51 +378,76 @@
               "align": "center",
               "tag": "ul",
               "paddingTop": "l",
-              "paddingTopLarge": "xl",
+              "paddingTopLarge": "2xl",
               "paddingBottom": "l",
-              "paddingBottomLarge": "xl",
+              "paddingBottomLarge": "2xl",
               "content": [
                 {
                   "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "h2-d",
-                  "content": "Elegant"
+                  "content": "Elegant",
+                  "style": {
+                    "color": "var(--theme-secondary)"
+                  }
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "h2-d",
-                  "content": "Streamlined"
+                  "content": "Streamlined",
+                  "style": {
+                    "color": "var(--theme-main)"
+                  }
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
                   "textStyle": "h2-d",
-                  "content": "User-friendly"
+                  "content": "User-friendly",
+                  "style": {
+                    "color": "var(--theme-gold)"
+                  }
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "h2-r",
-                  "content": "Clean"
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
+                  "content": "Clean",
+                  "style": {
+                    "color": "var(--theme-brown)"
+                  }
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "h2-r",
-                  "content": "Open"
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
+                  "content": "Open",
+                  "style": {
+                    "color": "var(--theme-blue)"
+                  }
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "h2-r",
-                  "content": "Innovative"
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
+                  "content": "Innovative",
+                  "style": {
+                    "color": "var(--theme-green)"
+                  }
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "h2-r",
-                  "content": "Accessible"
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
+                  "content": "Accessible",
+                  "style": {
+                    "color": "var(--theme-black)"
+                  }
                 }
               ]
             }
@@ -348,23 +457,856 @@
     },
     {
       "renderType": "container",
-      "maxWidth": "xs",
       "tag": "section",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h2",
+              "content": "The Process"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "h3",
+              "content": "Content"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "Given the tight timeline we had to move through all phases of the project quickly. After a short discovery phase we focused our attention on content. The two lead UX designers got to work on a content map organizing content from the physical exhibition into pages, content pieces and navigation structures suited for digital consumption."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "image",
+                  "image": "why-we-serve/content-map",
+                  "alt": "",
+                  "border": true
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "s",
+                  "classes": "t-italic",
+                  "align": "center",
+                  "content": "Content map breaking down content provided by the NMAI into groupings that became the IA for the site."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h3",
+              "content": "Wireframes"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "We were ready to start wireframes. In this phase, the lead UX designer focused on the homepage, topics page, general layout and the main navigation. As mentioned earlier, elevating veterans' stories was important for this project which is why we decided to open with a quote from a veteran and feature the video sharing their stories prominently on the homepage. In terms of layout, the client, coming from the art world, encouraged us to use open and interesting layouts. This along with the restriction to leave images uncropped created asymmetrical and visually dynamic layouts. We were also encouraged to apply this to the topics page, which we did with a timeline style that also worked well for easy scanning and discoverability of topics. For the main navigation, we decided on a streamlined and sticky navigation bar for topics to be easily accessible to users as outlined in the requirements."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "l",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "justify": "center",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "1-2",
+                      "widthMedium": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/home-wireframe-top",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "1-2",
+                      "widthMedium": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/home-wireframe-bottom",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "1-2",
+                      "widthMedium": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/topics-wireframe",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "s",
+                  "classes": "t-italic",
+                  "align": "center",
+                  "content": "Homepage and topic landing page wireframes."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h3",
+              "content": "Visual Design"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "Like in the wireframe phase we concentrated on the homepage and topics pages. With the homepage, we created a composite showing Native American soldiers from the present and past to elevate the quote in the hero section and bridge the past and present to show Why We Serve as both historical and forward looking."
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "We also played with different symbols of patriotism to complement the subject matter. One image treatment was a reference to flags – a coloured line over top of images extended to the edge of the screen. It was also an opportunity to incorporate more colours from their wider colour palette to break up content blocks for easier scanning. We also made use of stars as subtle and elegant background elements to complement and not distract from the main content."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "m",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "justify": "center",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "1-2",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/home-top",
+                          "alt": ""
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "1-2",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/home-middle",
+                          "alt": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "s",
+                  "classes": "t-italic",
+                  "align": "center",
+                  "content": "Top portion of homepage visual design making use of flag motif."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "The flag motif continued on the topic landing page in the timeline layout of topics. Each colour also corresponds to the background colour for the individual topic pages to keep our use of colour intentional. It was also a great way to distinguish topics from each other as they are each unique pages of content. We also adjusted the original colours to have sufficient contrast for accessibility."
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "As mentioned before, we wanted to be intentional about our use of colour. We chose dark blue to be the main colour and maroon red as the secondary colour as a nod to the American flag and also simultaneous symbols of peace, justice and sacrifice that are key parts of Why We Serve. These colours being darker and more subdued also helped make the images on the site really stand out for viewers to appreciate and lended to an overall elegant and cinematic look."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "2xl",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "classes": "l-breakout",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "justify": "center",
+                  "align": "center",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthCustom": {
+                        "small": "50%",
+                        "medium": "50%",
+                        "large": "30%"
+                      },
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "row",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "column",
+                              "width": "1-2",
+                              "content": [
+                                {
+                                  "renderType": "container",
+                                  "gap": "m",
+                                  "gapLarge": "l",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-1",
+                                      "alt": ""
+                                    },
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-9",
+                                      "alt": ""
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-2",
+                              "content": [
+                                {
+                                  "renderType": "container",
+                                  "gap": "m",
+                                  "gapLarge": "l",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-2",
+                                      "alt": ""
+                                    },
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-4",
+                                      "alt": ""
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "1-2",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/topics",
+                          "alt": ""
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthCustom": {
+                        "small": "50%",
+                        "medium": "50%",
+                        "large": "30%"
+                      },
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "row",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "column",
+                              "width": "1-2",
+                              "content": [
+                                {
+                                  "renderType": "container",
+                                  "gap": "m",
+                                  "gapLarge": "l",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-5",
+                                      "alt": ""
+                                    },
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-6",
+                                      "alt": ""
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-2",
+                              "content": [
+                                {
+                                  "renderType": "container",
+                                  "gap": "m",
+                                  "gapLarge": "l",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-7",
+                                      "alt": ""
+                                    },
+                                    {
+                                      "renderType": "image",
+                                      "image": "why-we-serve/topic-8",
+                                      "alt": ""
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "s",
+                  "classes": "t-italic",
+                  "align": "center",
+                  "content": "Topic landing page visual design and examples of individual topic pages to the left and right."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h3",
+              "content": "Development"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "I was initially tasked with leading only visual design but with some changes in the team also led the development effort. One of the first tasks was figuring out how to incorporate animation in a performant and accessible way that would also complement the goals of the site. One of the main goals of the site was to surpass the physical exhibit and enhance the storytelling element. We decided that subtle fade/reveal animations on scroll would be a great way to achieve this. The site would unfurl before site visitors and guide them through the content in a smooth and elegant way. One example is the quote in the hero section of the homepage fading in line by line."
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "In order to make this performant and accessible we made use of the Intersection Observer API and reduce motion media query. Intersection Observer was perfect for determining if an element was visible in the viewport to trigger animations. We were also careful to leave animation to mainly cheap properties like transform and opacity to ensure a smooth experience. Accessibility was also important as animations can create a negative experience for users with motion sensitivities. We made use of the reduce motion query to remove transitions and animations for users with reduced motion set in their system preferences. We also luckily passed all accessibility scans conducted by the NMAI in time for launch, but did have to make some adjustments to ensure interactive elements, in particular, functioned well on screen readers too."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "m",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "justify": "center",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "3-4",
+                      "widthMedium": "1-2",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "paddingBottom": "2xs",
+                          "paddingBottomLarge": "m",
+                          "content": [
+                            {
+                              "renderType": "rich-text",
+                              "tag": "h4",
+                              "content": "Default"
+                            }
+                          ]
+                        },
+                        {
+                          "renderType": "video",
+                          "title": "Default homepage animation",
+                          "source": "why-we-serve/home-default.mp4"
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "3-4",
+                      "widthMedium": "1-2",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "paddingBottom": "2xs",
+                          "paddingBottomLarge": "m",
+                          "content": [
+                            {
+                              "renderType": "rich-text",
+                              "tag": "h4",
+                              "content": "Reduce Motion"
+                            }
+                          ]
+                        },
+                        {
+                          "renderType": "video",
+                          "title": "Reduce motion homepage",
+                          "source": "why-we-serve/home-reduce-motion.mp4"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "s",
+                  "classes": "t-italic",
+                  "align": "center",
+                  "content": "The homepage with full animations and without when reduce motion is set."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "When it came to the image gallery, implementation became more of a challenge than initially anticipated. The wide range of aspect ratios of all images and varying lengths of captions were going to be tricky to accommodate especially across different viewport sizes. But with some testing and adjusting we were able to come up with a balanced result that kept the image prominent and information accessible regardless of the amount of text."
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "With the site being so image heavy, in particular the gallery, we needed to make sure images were being delivered in an optimized state. Automatic image resizing and compression were key parts of our static build process as there are about a hundred images on the site. We also made use of responsive image attributes to ensure browsers could pick the best image for the viewport size, especially for mobile users."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "l",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "justify": "center",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "3-5",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "why-we-serve/gallery",
+                          "alt": ""
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthLarge": "2-3",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "row",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "column",
+                              "widthCustom": {
+                                "small": "54.45%",
+                                "medium": "54.45%",
+                                "large": "53.25%"
+                              },
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "why-we-serve/gallery-item-vertical-desktop",
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "widthCustom": {
+                                "default": "43.45%",
+                                "small": "19.88%",
+                                "medium": "19.88%",
+                                "large": "20.65%"
+                              },
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "why-we-serve/gallery-item-vertical-mobile",
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "widthCustom": {
+                                "default": "56.55%",
+                                "small": "25.67%",
+                                "medium": "25.67%",
+                                "large": "26.1%"
+                              },
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "why-we-serve/gallery-item-vertical-tablet",
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "widthCustom": {
+                                "default": "56.55%",
+                                "small": "25.67%",
+                                "medium": "25.67%",
+                                "large": "26.1%"
+                              },
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "why-we-serve/gallery-item-horizontal-tablet",
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "widthCustom": {
+                                "default": "43.45%",
+                                "small": "19.88%",
+                                "medium": "19.88%",
+                                "large": "20.65%"
+                              },
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "why-we-serve/gallery-item-horizontal-mobile",
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "widthCustom": {
+                                "small": "54.45%",
+                                "medium": "54.45%",
+                                "large": "53.25%"
+                              },
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "why-we-serve/gallery-item-horizontal-desktop",
+                                  "alt": ""
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "s",
+                  "classes": "t-italic",
+                  "align": "center",
+                  "content": "Gallery landing page and examples of images with different aspect ratios in the lightbox carousel."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "maxWidth": "xs",
+      "richTextStyles": true,
       "content": [
         {
           "renderType": "rich-text",
           "tag": "h2",
-          "content": "The Process"
-        },
-        {
-          "renderType": "rich-text",
-          "tag": "h3",
-          "content": "Content"
+          "content": "The Outcome"
         },
         {
           "renderType": "rich-text",
           "tag": "p",
-          "content": "Given the tight timeline we had to move through all phases of the project quickly. After a short discovery phase we focused our attention on content. The two lead UX designers got to work on a content map organizing content from the physical exhibition into pages, content pieces and navigation structures suited for digital consumption."
+          "content": "Stakeholders were extremely pleased with the site. Together we created an elegant, engaging and accessible site fit to honour Native American veterans. From the product owner:"
+        },
+        {
+          "renderType": "rich-text",
+          "tag": "blockquote",
+          "content": [
+            {
+              "tag": "p",
+              "content": "\"Congrats to the team for creating such a beautiful and solid product! We are so pleased for the public to enjoy it starting tomorrow, Veterans Day.\""
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View Why We Serve",
+          "richText": true,
+          "externalLink": "https://americanindian.si.edu/why-we-serve/"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "paddingTop": "xl",
+      "paddingTopLarge": "2xl",
+      "paddingBottom": "l",
+      "classes": "l-breakout",
+      "content": [
+        {
+          "renderType": "wave-separator"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "s",
+      "tag": "section",
+      "content": [
+        {
+          "renderType": "container",
+          "paddingBottom": "m",
+          "paddingBottomLarge": "l",
+          "content": [
+            {
+              "renderType": "rich-text",
+              "headingStyle": "h3",
+              "tag": "h2",
+              "content": "Explore more work"
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "layout": "row",
+          "gap": "m",
+          "gapLarge": "l",
+          "tag": "ul",
+          "content": [
+            {
+              "renderType": "card",
+              "headingLevel": 3,
+              "internalLink": "work--latercon"
+            },
+            {
+              "renderType": "card",
+              "headingLevel": 3,
+              "internalLink": "work--fortis-group"
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "Back to all work",
+          "type": "secondary",
+          "justify": "center",
+          "internalLink": "page--work"
         }
       ]
     }

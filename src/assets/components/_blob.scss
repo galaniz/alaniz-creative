@@ -1,0 +1,35 @@
+/**
+ * Components - blob
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/src/utils/functions" as func;
+@use "@alanizcreative/formation/src/utils/mixins" as mix;
+
+/* Styles */
+
+.c-blob {
+  --l: 60%;
+
+  top: calc(var(--nav-height) * -1);
+  left: var(--l);
+  width: var(--width);
+  height: var(--height);
+  z-index: -2;
+
+  @include mix.fluid-size(
+    --width,
+    func.calc-rem(853.33px) func.calc-rem(1280px),
+    "s" "l"
+  );
+  @include mix.fluid-size(
+    --height,
+    func.calc-rem(500px) func.calc-rem(750px),
+    "s" "l"
+  );
+
+  @include mix.breakpoint-min("xl") {
+    --l: 50%;
+  }
+}

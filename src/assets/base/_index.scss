@@ -19,9 +19,28 @@
   --text-color: #{rgba(func.get-color("foreground-base"), 0.85)};
   --heading-color: var(--foreground-base);
   --link-color: var(--foreground-base);
+  --main-button-bg: var(--foreground-base);
+  --main-button-color: var(--background-light);
+  --secondary-button-color: var(--foreground-base);
+  --underline: #{func.calc-rem(1px)};
+  --underline-offset: 0.375rem;
+  --video-bg: var(--foreground-base);
+  --video-border: var(--foreground-base);
+  --video-play-bg: var(--background-light);
+  --video-play-color: var(--foreground-base);
+  --negative: var(--negative-dark);
+  --positive: var(--positive-dark);
+  --negative-bg: #{rgba(func.get-color("negative-dark"), 0.075)};
+  --positive-bg: #{rgba(func.get-color("positive-dark"), 0.075)};
+  --muted-bg: #{rgba(func.get-color("foreground-base"), 0.075)};
+  --loader-color: var(--background-light);
+  --nav-padding: var(--m);
+  --nav-height: calc(var(--logo-height) + (var(--nav-padding) * 2));
 }
 
 html {
+  @extend %u-overflow-x-hidden;
+
   scroll-behavior: smooth;
 
   @include mixi.fluid-size(
@@ -29,12 +48,15 @@ html {
     func.calc-rem(110px) func.calc-rem(180px),
     "s" "l"
   );
-
   @include mixi.fluid-size(
     --logo-height,
     func.calc-rem(51px) func.calc-rem(84px),
     "s" "l"
   );
+
+  @include mixi.breakpoint-min("m") {
+    --nav-padding: var(--l);
+  }
 }
 
 html,
@@ -43,12 +65,7 @@ body {
   @extend %u-font-family-primary;
 
   color: var(--text-color);
-  background: var(--foreground-base);
   min-height: 100vh;
-}
-
-main {
-  @extend %u-overflow-x-hidden;
 }
 
 a {
