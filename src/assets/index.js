@@ -4,7 +4,7 @@
 
 /* Imports */
 
-import { setSupports, setElements, usingMouse } from '@alanizcreative/formation/src/utils'
+import { setSettings, setElements, usingMouse } from '@alanizcreative/formation/src/utils'
 import Nav from '@alanizcreative/formation/src/components/nav'
 import Video from '@alanizcreative/formation/src/objects/video'
 import SendForm from '@alanizcreative/formation/src/objects/form/send'
@@ -101,9 +101,9 @@ const meta = [
  */
 
 const initialize = () => {
-  /* Set supports object */
+  /* Set settings object */
 
-  setSupports()
+  setSettings()
 
   /* Set elements object */
 
