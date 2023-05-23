@@ -63,17 +63,25 @@ const _getContent = ({
       attr.push(`href="${link}"`)
     }
 
+    let outputStr = ''
+
     if (tag !== '') {
-      _output += `<${tag}${(attr.length > 0) ? ` ${attr.join(' ')}` : ''}>`
+      outputStr += `<${tag}${(attr.length > 0) ? ` ${attr.join(' ')}` : ''}>`
     }
 
     if (typeof cc === 'string') {
-      _output += cc
+      outputStr += cc
     }
 
     if (tag !== '') {
-      _output += `</${tag}>`
+      outputStr += `</${tag}>`
     }
+
+    if (outputStr !== '' && tag === 'blockquote') {
+      outputStr = `<figure data-quote>${outputStr}</figure>`
+    }
+
+    _output += outputStr
   })
 
   return _output
@@ -103,6 +111,7 @@ interface RichTextProps {
     classes?: string
     textStyle?: string
     headingStyle?: string
+    caption?: string
     align?: string
     link?: string
     style?: object
@@ -123,6 +132,7 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
     classes = '',
     textStyle = '',
     headingStyle = '',
+    caption = '',
     align = '',
     link = '',
     style
@@ -171,7 +181,7 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
   }
 
   if (textStyle !== '' && (tag === 'p' || tag === 'li' || tag === 'ul' || tag === 'ol' || tag === 'blockquote' || tag === 'table')) {
-    classesArray.push(textStyle)
+    classesArray.push(textStyle === 'default' ? 't' : `t-${textStyle}`)
   }
 
   if (tag === 'blockquote') {
@@ -179,7 +189,7 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
   }
 
   if (headingStyle !== '' && heading) {
-    classesArray.push(headingStyle)
+    classesArray.push(`t-${headingStyle}`)
   }
 
   if (align !== '') {
@@ -241,6 +251,14 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
 
   if (tag !== '') {
     output = `<${tag}${(attr.length > 0) ? ` ${attr.join(' ')}` : ''}>${output}</${tag}>`
+
+    if (tag === 'blockquote') {
+      if (caption !== '') {
+        output = `${output}<figcaption class="t-s l-padding-top-2xs">${caption}</figcaption>`
+      }
+
+      output = `<figure data-quote>${output}</figure>`
+    }
   }
 
   return output

@@ -1,5 +1,5 @@
 /**
- * Serverless - send form
+ * Serverless - check password
  */
 
 /* Imports */
@@ -7,7 +7,7 @@
 import escape from 'validator/es/lib/escape'
 
 /**
- * Function - 
+ * Function - escape and check password against environment variable
  *
  * @param {object} args
  * @param {object} args.inputs
@@ -59,7 +59,7 @@ const checkPassword = ({ inputs, env }) => {
     success: {
       message: 'Correct credentials',
       headers: {
-        'Set-Cookie': `acp_set=true; path=/`
+        'Set-Cookie': 'acp_set=true; path=/'
       }
     }
   }

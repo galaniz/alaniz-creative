@@ -2,11 +2,49 @@
   "contentType": "page",
   "title": "Contact",
   "slug": "contact",
-  "meta": {
-    "description": "",
-    "image": ""
-  },
   "hero": {
-    "title": "Get In Touch"
-  }
+    "title": "Get In Touch",
+    "text": "Have an exciting project or collaboration you'd like to talk about? You can reach me at <a href='mailto:graciela@alanizcreative.com' data-inline>graciela@alanizcreative.com</a> or fill out the form below. Looking forward to hearing from you! "
+  },
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "content": [
+        {
+          "renderType": "form",
+          "id": "ac-contact-form",
+          "successTitle": "Thank you for your message!",
+          "successText": "I will get back to you as soon as possible.",
+          "toEmail": "hello@alanizcreative.com",
+          "senderEmail": "info@alanizcreative.com",
+          "content": [
+            {
+              "renderType": "field",
+              "name": "name",
+              "label": "Name"
+            },
+            {
+              "renderType": "field",
+              "type": "email",
+              "name": "email",
+              "label": "Email",
+              "required": true,
+              "emptyErrorMessage": "Enter your email address",
+              "invalidErrorMessage": "Enter a valid email address"
+            },
+            {
+              "renderType": "field",
+              "type": "textarea",
+              "name": "message",
+              "label": "Message",
+              "required": true,
+              "emptyErrorMessage": "Enter a message",
+              "rows": 6
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

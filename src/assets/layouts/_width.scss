@@ -35,3 +35,7 @@
 .l-max-width-card {
   max-width: func.calc-rem(900px)
 }
+
+.l-min-width-4xl {
+  min-width: var(--4xl);
+}

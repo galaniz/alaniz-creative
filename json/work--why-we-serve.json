@@ -300,7 +300,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Two-dimensional mockups of panels from the physical exhibition."
                 }
@@ -384,7 +385,7 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2-d",
+                  "textStyle": "h2-d",
                   "content": "Elegant",
                   "style": {
                     "color": "var(--theme-secondary)"
@@ -393,7 +394,7 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2-d",
+                  "textStyle": "h2-d",
                   "content": "Streamlined",
                   "style": {
                     "color": "var(--theme-main)"
@@ -402,7 +403,7 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2-d",
+                  "textStyle": "h2-d",
                   "content": "User-friendly",
                   "style": {
                     "color": "var(--theme-gold)"
@@ -411,7 +412,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2 t-weight-normal",
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
                   "content": "Clean",
                   "style": {
                     "color": "var(--theme-brown)"
@@ -420,7 +422,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2 t-weight-normal",
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
                   "content": "Open",
                   "style": {
                     "color": "var(--theme-blue)"
@@ -429,7 +432,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2 t-weight-normal",
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
                   "content": "Innovative",
                   "style": {
                     "color": "var(--theme-green)"
@@ -438,7 +442,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2 t-weight-normal",
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
                   "content": "Accessible",
                   "style": {
                     "color": "var(--theme-black)"
@@ -509,7 +514,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Content map breaking down content provided by the NMAI into groupings that became the IA for the site."
                 }
@@ -609,7 +615,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Homepage and topic landing page wireframes."
                 }
@@ -697,7 +704,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Top portion of homepage visual design making use of flag motif."
                 }
@@ -900,7 +908,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Topic landing page visual design and examples of individual topic pages to the left and right."
                 }
@@ -1014,7 +1023,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "The homepage with full animations and without when reduce motion is set."
                 }
@@ -1195,7 +1205,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Gallery landing page and examples of images with different aspect ratios in the lightbox carousel."
                 }

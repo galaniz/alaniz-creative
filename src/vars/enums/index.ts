@@ -34,8 +34,8 @@ const enumSite: Site = {
   title: 'Alaniz Creative',
   email: 'graciela@alanizcreative.com',
   meta: {
-    description: '',
-    image: ''
+    description: 'Graciela Alaniz is a designer/developer based in Toronto. She strives to create elegant, engaging and accessible digital experiences.',
+    image: 'alaniz-creative-meta.webp'
   }
 }
 

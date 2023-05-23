@@ -28,10 +28,10 @@
 
 /* Text */
 
+@use "text/rich-text";
 @use "text/color" as c;
 @use "text/list";
 @use "text/sizes";
-@use "text/rich-text";
 @use "text/style";
 @use "text/line-height";
 @use "@alanizcreative/formation/src/text/weight";

@@ -323,7 +323,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Mockup of landing page showing descriptions and speakers and contrast adjustments to main colours."
                 }
@@ -402,7 +403,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": [
                     {
@@ -584,7 +586,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "The homepage with full animations and without when reduce motion is set."
                 }
@@ -673,7 +676,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Mobile post-event version of the landing page and easter egg distortion of logo with cursor click."
                 }
@@ -756,7 +760,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Homepage banner at the top compared to entry popup promoting LaterCon."
                 }
@@ -836,7 +841,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "LaterCon entry on One Page Love site."
                 }

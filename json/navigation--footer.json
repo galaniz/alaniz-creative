@@ -5,7 +5,6 @@
   "items": [
     "navigationItem--work",
     "navigationItem--about",
-    "navigationItem--contact",
-    "navigationItem--accessibility-statement"
+    "navigationItem--contact"
   ]
 }

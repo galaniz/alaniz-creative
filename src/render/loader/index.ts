@@ -7,6 +7,7 @@
  *
  * @param {object} args
  * @param {boolean} args.hide
+ * @param {string} args.size
  * @param {string} args.classes
  * @param {boolean} args.ariaHidden
  * @param {string} args.a11yHideText
@@ -15,6 +16,7 @@
 
 interface Args {
   hide?: boolean
+  size?: string
   classes?: string
   ariaHidden?: boolean
   a11yHideText?: string
@@ -23,6 +25,7 @@ interface Args {
 const loader = (args: Args = {}): string => {
   const {
     hide = true,
+    size = 'default',
     classes = '',
     ariaHidden = true,
     a11yHideText = ''
@@ -38,6 +41,10 @@ const loader = (args: Args = {}): string => {
 
   if (ariaHidden) {
     attr += ' aria-hidden="true"'
+  }
+
+  if (size === 's') {
+    attr += 'data-size="s"'
   }
 
   /* A11y hidden text */

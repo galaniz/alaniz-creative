@@ -4,6 +4,7 @@
 
 /* Imports */
 
+import sendForm from '../../src/serverless/send-form'
 import checkPassword from '../../src/serverless/check-password'
 import { enumNamespace } from '../../src/vars/enums'
 import { envData } from '../../src/vars/data'
@@ -89,6 +90,7 @@ const ajax = async ({ request, env }) => {
 
     envData.dev = env.ENVIRONMENT === 'dev'
     envData.prod = env.ENVIRONMENT === 'production'
+    envData.smtp2go.apiKey = env.SMPT2GO_API_KEY
 
     /* Get form data */
 
@@ -143,6 +145,8 @@ const ajax = async ({ request, env }) => {
       data.env = env
 
       res = checkPassword(data)
+    } else {
+      res = await sendForm(data)
     }
 
     /* Result error */

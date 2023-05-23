@@ -75,12 +75,41 @@ const navData: Nav = {
  * @type {object}
  */
 
+interface ScriptItem {
+  successMessage?: {
+    primary?: string
+    secondary?: string
+  }
+  errorMessage?: {
+    primary?: string
+    secondary?: string
+  }
+}
+
 interface Script {
-  id?: string
+  [id: string]: ScriptItem | unknown
   sendUrl?: string
 }
 
 const scriptData: Script = {}
+
+/**
+ * Form meta data for serverless function
+ *
+ * @type {object}
+ */
+
+interface FormMetaItem {
+  subject?: string
+  toEmail?: string
+  senderEmail?: string
+}
+
+interface FormMeta {
+  [id: string]: FormMetaItem | unknown
+}
+
+const formMeta: FormMeta = {}
 
 /**
  * Archive data
@@ -103,7 +132,7 @@ const archiveData: Archive = {
 /**
  * Data to store in json files
  *
- * @type {object} {
+ * @type {object}
  * @prop {object} slugs
  * @prop {string} slugs.data
  * @prop {string} slugs.name
@@ -119,6 +148,9 @@ const archiveData: Archive = {
  * @prop {object} navData
  * @prop {string} navData.data
  * @prop {string} navData.name
+ * @prop {object} formMeta
+ * @prop {string} formMeta.data
+ * @prop {string} formMeta.name
  */
 
 interface File {
@@ -132,6 +164,7 @@ interface JsonFile {
   archiveIds: File
   archivePosts: File
   navData: File
+  formMeta: File
 }
 
 const jsonFileData: JsonFile = {
@@ -154,13 +187,17 @@ const jsonFileData: JsonFile = {
   navData: {
     data: '',
     name: 'nav-data.json'
+  },
+  formMeta: {
+    data: '',
+    name: 'form-meta.json'
   }
 }
 
 /**
  * Env/context data
  *
- * @type {object} {
+ * @type {object}
  * @prop {boolean} dev
  * @prop {boolean} prod
  * @prop {object} urls
@@ -208,6 +245,7 @@ export {
   slugData,
   navData,
   scriptData,
+  formMeta,
   archiveData,
   jsonFileData,
   envData

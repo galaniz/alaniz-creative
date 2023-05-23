@@ -6,7 +6,7 @@
 
 import { v4 as uuid } from 'uuid'
 import { enumNamespace } from '../../vars/enums'
-import { scriptData } from '../../vars/data'
+import { scriptData, formMeta } from '../../vars/data'
 import errorSvg from '../svg/error'
 import checkSvg from '../svg/check'
 import loader from '../loader'
@@ -17,6 +17,10 @@ import loader from '../loader'
  * @param {object} props
  * @param {object} props.args
  * @param {string} props.args.id
+ * @param {string} props.args.action
+ * @param {string} props.args.subject
+ * @param {string} props.args.toEmail
+ * @param {string} props.args.senderEmail
  * @param {string} props.args.submitLabel
  * @param {string} props.args.successTitle
  * @param {string} props.args.successText
@@ -32,6 +36,9 @@ interface Props {
   args: {
     id?: string
     action?: string
+    subject?: string
+    toEmail?: string
+    senderEmail?: string
     submitLabel?: string
     successTitle?: string
     successText?: string
@@ -49,6 +56,9 @@ const form = (props: Props = { args: {} }): Render.Return => {
   const {
     id = '',
     action = 'send-form',
+    subject = '',
+    toEmail = '',
+    senderEmail = '',
     submitLabel = 'Send',
     successTitle = '',
     successText = '',
@@ -66,6 +76,26 @@ const form = (props: Props = { args: {} }): Render.Return => {
       start: '',
       end: ''
     }
+  }
+
+  /* Add to form meta data */
+
+  if (subject !== '' || toEmail !== '' || senderEmail !== '') {
+    const meta: { subject?: string, toEmail?: string, senderEmail?: string } = {}
+
+    if (subject !== '') {
+      meta.subject = subject
+    }
+
+    if (toEmail !== '') {
+      meta.toEmail = toEmail
+    }
+
+    if (senderEmail !== '') {
+      meta.senderEmail = senderEmail
+    }
+
+    formMeta[id] = meta
   }
 
   /* Add to script data */
@@ -138,8 +168,8 @@ const form = (props: Props = { args: {} }): Render.Return => {
           </div>
         </div>
         <div data-type="submit">
-          <button class="o-button o-button-main o-button-form b-radius-l e-transition-quad js-submit" type="submit">
-            ${loader()}
+          <button class="o-button o-button-main o-button-form l-overflow-hidden b-radius-l e-transition-quad js-submit" type="submit">
+            ${loader({ size: 's' })}
             <span>${submitLabel}</span>
           </button>
         </div>

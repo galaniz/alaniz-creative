@@ -2,25 +2,32 @@
   "contentType": "page",
   "title": "About",
   "slug": "about",
-  "meta": {
-    "description": "",
-    "image": ""
-  },
   "hero": {
-    "title": "Hi, I'm Graciela Alaniz."
+    "title": "Hi, I'm Graciela Alaniz",
+    "type": "profile",
+    "image": "graciela-alaniz"
   },
   "content": [
     {
       "renderType": "container",
-      "richTextStyles": true,
       "maxWidth": "xs",
+      "paddingBottom": "m",
       "content": [
         {
           "renderType": "rich-text",
           "tag": "p",
-          "textStyle": "t-l",
+          "textStyle": "l",
           "content": "I'm a designer/developer based in Toronto, currently combining my interests in design and code as a web designer at Later with a particular focus on accessibility."
-        },
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "richTextStyles": true,
+      "maxWidth": "xs",
+      "gap": "m",
+      "gapLarge": "l",
+      "content": [
         {
           "renderType": "rich-text",
           "tag": "p",
@@ -63,23 +70,13 @@
           "content": "I thrive on creative challenges and creating beautiful interfaces for all. My experience spans the gamut from participating in discovery activities to creating wireframes and high-fidelity mockups to participating and/or leading front and back-end development. Similarly, my services include:"
         },
         {
-          "renderType": "container",
-          "tag": "figure",
+          "renderType": "rich-text",
+          "tag": "blockquote",
+          "caption": "Susan Goltsman",
           "content": [
             {
-              "renderType": "rich-text",
-              "tag": "blockquote",
-              "content": [
-                {
-                  "tag": "p",
-                  "content": "\"Inclusive design doesn't mean you're designing one thing for all people. You're designing a diversity of ways to participate so that everyone has a sense of belonging.\""
-                }
-              ]
-            },
-            {
-              "renderType": "rich-text",
-              "tag": "figcaption",
-              "content": "Susan Goltsman"
+              "tag": "p",
+              "content": "\"Inclusive design doesn't mean you're designing one thing for all people. You're designing a diversity of ways to participate so that everyone has a sense of belonging.\""
             }
           ]
         },
@@ -91,6 +88,7 @@
         {
           "renderType": "button",
           "title": "Get in touch",
+          "size": "large",
           "internalLink": "page--contact"
         }
       ]

@@ -52,7 +52,7 @@ const layout = async ({
 
   /* Image */
 
-  const image = meta?.image != null ? `https:${meta.image}` : `${assetsLink}${enumSite.meta.image}`
+  const image = meta?.image != null ? `${assetsLink}${meta.image}` : `${assetsLink}${enumSite.meta.image}`
 
   /* Canonical */
 

@@ -47,8 +47,18 @@ const hero = (args: Render.HeroArgs = {}): string => {
       data: image,
       classes: 'l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc l-object-cover',
       lazy: false,
-      max: 1600
+      max: contentType === 'page' && type === 'profile' ? 600 : 1600
     })
+
+    if (contentType === 'page' && type === 'profile' && typeof imageStr === 'string') {
+      imageOutput = `
+        <div class="l-padding-bottom-m l-padding-bottom-l-m l-width-2-5 l-min-width-4xl l-margin-auto">
+          <div class="l-aspect-ratio-100 l-relative l-overflow-hidden b-radius-100-pc">
+            ${imageStr}
+          </div>
+        </div>
+      `
+    }
 
     if (contentType === 'work' && typeof imageStr === 'string') {
       let waveOutput = ''
@@ -116,7 +126,7 @@ const hero = (args: Render.HeroArgs = {}): string => {
   /* Text */
 
   let headingClasses = ''
-  let textClasses = 't-l'
+  let textClasses = 't-l e-underline'
 
   if (contentType === 'work') {
     headingClasses = 't-align-center'
@@ -172,6 +182,7 @@ const hero = (args: Render.HeroArgs = {}): string => {
     }
 
     if (type === 'profile') {
+      output = imageOutput + output
       sectionClasses = 'l-container-xs l-relative l-padding-top-m l-padding-top-l-m l-padding-bottom-m l-padding-bottom-l-m t-align-center'
     }
 

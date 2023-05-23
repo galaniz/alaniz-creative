@@ -10,6 +10,14 @@
 /* Styles */
 
 .o-loader {
+  --s: 1;
+
+  &[data-size="s"] {
+    --s: 0.67;
+  }
+
+  transform: scale(var(--s));
+
   > span {
     animation: e-scale 1s ease-out infinite;
     border: 0.25rem solid var(--loader-color);

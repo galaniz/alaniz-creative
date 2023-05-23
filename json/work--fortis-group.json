@@ -252,7 +252,7 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2-d",
+                  "textStyle": "h2-d",
                   "content": "Modern",
                   "style": {
                     "color": "var(--theme-secondary)"
@@ -261,7 +261,7 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2-d",
+                  "textStyle": "h2-d",
                   "content": "Innovative",
                   "style": {
                     "color": "var(--theme-main)"
@@ -270,7 +270,7 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2-d",
+                  "textStyle": "h2-d",
                   "content": "Impressive",
                   "style": {
                     "color": "var(--theme-secondary)"
@@ -279,7 +279,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2 t-weight-normal",
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
                   "content": "Easy-to-use",
                   "style": {
                     "color": "var(--theme-main)"
@@ -288,7 +289,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2 t-weight-normal",
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
                   "content": "Sleek",
                   "style": {
                     "color": "var(--theme-secondary)"
@@ -297,7 +299,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2 t-weight-normal",
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
                   "content": "Trustworthy",
                   "style": {
                     "color": "var(--theme-main)"
@@ -460,7 +463,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Snapshots of some early concepts/moodboards."
                 }
@@ -542,7 +546,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Full homepage of Fortis Group on desktop devices."
                 }
@@ -701,7 +706,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "News and project pages on desktop and mobile views of news, about and projects pages."
                 }
@@ -758,7 +764,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Homepage loading and content animating in on scroll."
                 }
@@ -837,7 +844,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Back-end and front-end screens for a subcontractor request form."
                 }
@@ -890,7 +898,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Back-end screen for homepage to be easily edited."
                 }

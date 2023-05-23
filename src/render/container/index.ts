@@ -131,6 +131,10 @@ const container = (props: Render.ContainerProps = { args: {} }): Render.Return =
 
   if (richTextStyles) {
     classesArray.push('t-rich-text e-underline')
+
+    if (gap === '' && gapLarge === '' && layout === 'column') {
+      attrs.push('data-mb')
+    }
   }
 
   /* Classes */

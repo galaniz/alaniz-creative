@@ -316,7 +316,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "The first wireframe of the landing page compared to the more streamlined version we ended up with."
                 }
@@ -482,7 +483,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Hero, card, navigation, button and form element components before and after newsroom design update."
                 }
@@ -612,7 +614,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Initial article & press release graphics at the top vs versions using the art direction by the creative team."
                 }
@@ -698,7 +701,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Slider mockup overlaid with callouts and notes to communicate accessibility considerations."
                 }
@@ -897,7 +901,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Desktop views of landing page, contact, archive and media kit pages and mobile view of landing page."
                 }

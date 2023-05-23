@@ -5,7 +5,7 @@
 /* Imports */
 
 import { getSlug, getPermalink } from '../utils'
-import { slugData, envData, navData, archiveData, jsonFileData } from '../vars/data'
+import { slugData, envData, navData, archiveData, formMeta, jsonFileData } from '../vars/data'
 import getAllData from '../utils/get-all-data'
 import layout from './layout'
 import header from './header'
@@ -13,6 +13,8 @@ import footer from './footer'
 import button from './button'
 import container from './container'
 import column from './column'
+import form from './form'
+import field from './field'
 import richText from './rich-text'
 import image from './image'
 import video from './video'
@@ -101,6 +103,12 @@ const _renderContent = async ({
           break
         case 'card':
           renderObj = card({ args: props, parents })
+          break
+        case 'form':
+          renderObj = form({ args: props })
+          break
+        case 'field':
+          renderObj.start = field({ args: props })
           break
         case 'rich-text':
           renderObj.start = richText({ args: props, parents })
@@ -470,6 +478,7 @@ const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
     jsonFileData.archiveIds.data = JSON.stringify(archiveData.ids)
     jsonFileData.archivePosts.data = JSON.stringify(archiveData.posts)
     jsonFileData.navData.data = JSON.stringify(navData)
+    jsonFileData.formMeta.data = JSON.stringify(formMeta)
 
     onRenderEnd({
       jsonData: jsonFileData,

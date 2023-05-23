@@ -261,7 +261,7 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2-d",
+                  "textStyle": "h2-d",
                   "content": "Easy-to-use",
                   "style": {
                     "color": "var(--theme-secondary)"
@@ -270,7 +270,7 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2-d",
+                  "textStyle": "h2-d",
                   "content": "Beautiful",
                   "style": {
                     "color": "var(--theme-main)"
@@ -279,7 +279,7 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2-d",
+                  "textStyle": "h2-d",
                   "content": "Elegant/sleek",
                   "style": {
                     "color": "var(--theme-secondary)"
@@ -288,7 +288,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2 t-weight-normal",
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
                   "content": "Trustworthy",
                   "style": {
                     "color": "var(--theme-main)"
@@ -297,7 +298,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2 t-weight-normal",
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
                   "content": "Exclusive",
                   "style": {
                     "color": "var(--theme-secondary)"
@@ -306,7 +308,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "li",
-                  "textStyle": "t-h2 t-weight-normal",
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
                   "content": "Simple",
                   "style": {
                     "color": "var(--theme-main)"
@@ -458,7 +461,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Snapshots of some early concepts/moodboards."
                 }
@@ -557,7 +561,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "The homepage of the Injury Board on desktop and mobile devices."
                 }
@@ -672,7 +677,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Firm and individual member pages on desktop and mobile devices."
                 }
@@ -836,7 +842,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Directory page in full view, with a selected state and with a selected firm."
                 }
@@ -888,7 +895,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Homepage loading and content animating in on scroll."
                 }
@@ -967,7 +975,8 @@
                 {
                   "renderType": "rich-text",
                   "tag": "p",
-                  "textStyle": "t-s t-italic",
+                  "textStyle": "s",
+                  "classes": "t-italic",
                   "align": "center",
                   "content": "Back-end screens for firms and members to be easily edited."
                 }
