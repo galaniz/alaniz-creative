@@ -176,6 +176,17 @@ const layout = async ({
       css: [
         `./site/assets/css/${enumNamespace}.css`
       ],
+      safelist: [
+        'o-form__error',
+        'l-flex',
+        'l-gap-margin-4xs',
+        'l-padding-top-3xs',
+        't-line-height-0',
+        'l-width-xs',
+        'l-height-s',
+        't-s',
+        't-weight-medium'
+      ],
       dynamicAttributes: [
         'data-open',
         'data-overflow',
