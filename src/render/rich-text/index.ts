@@ -229,7 +229,7 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
     attr.push(`class="${classesArray.join(' ')}"`)
   }
 
-  if (style != null) {
+  if (style !== undefined) {
     const styleArray: string[] = []
 
     Object.keys(style).forEach((s) => {

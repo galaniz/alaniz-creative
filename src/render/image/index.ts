@@ -58,7 +58,7 @@ const image = (props: Props = { args: {}, parents: [] }): string => {
 
   let imageOutput = ''
 
-  if (image != null) {
+  if (image !== undefined) {
     const imageClasses = ['l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc l-object-cover']
 
     if (card) {

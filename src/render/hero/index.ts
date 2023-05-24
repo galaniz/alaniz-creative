@@ -63,7 +63,7 @@ const hero = (args: Render.HeroArgs = {}): string => {
     if (contentType === 'work' && typeof imageStr === 'string') {
       let waveOutput = ''
 
-      if (wave != null) {
+      if (wave !== undefined) {
         waveOutput = `
           <div class="l-absolute l-width-100-vw l-max-height-100-pc l-center">
             <div style="padding-top:${(wave.height / wave.width) * 100}%"></div>
@@ -104,7 +104,7 @@ const hero = (args: Render.HeroArgs = {}): string => {
 
   let blobOutput = ''
 
-  if (blob != null) {
+  if (blob !== undefined) {
     blobOutput = `
       <svg
         xmlns="http://www.w3.org/2000/svg"

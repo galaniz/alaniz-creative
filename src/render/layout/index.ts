@@ -4,7 +4,6 @@
 
 /* Imports */
 
-// import { PurgeCSS } from 'purgecss'
 import { envData, scriptData } from '../../vars/data'
 import { enumNamespace, enumSite, enumColors } from '../../vars/enums'
 import { getPermalink } from '../../utils'
@@ -31,12 +30,18 @@ interface Args {
   }
   content?: string
   style?: string
+  PurgeCSS?: any
+}
+
+interface Purge {
+  css: string
 }
 
 const layout = async ({
   meta = {},
   content = '',
-  style = ''
+  style = '',
+  PurgeCSS
 }: Args): Promise<string> => {
   /* Assets link */
 
@@ -44,37 +49,33 @@ const layout = async ({
 
   /* Title */
 
-  const title = (meta?.title != null ? `${meta.title} | ` : '') + enumSite.title
+  const title = (meta?.title !== undefined ? `${meta.title} | ` : '') + enumSite.title
 
   /* Description */
 
-  const description = meta?.description != null ? meta.description : enumSite.meta.description
+  const description = meta?.description !== undefined ? meta.description : enumSite.meta.description
 
   /* Image */
 
-  const image = meta?.image != null ? `${assetsLink}${meta.image}` : `${assetsLink}${enumSite.meta.image}`
+  const image = meta?.image !== undefined ? `${assetsLink}${meta.image}` : `${assetsLink}${enumSite.meta.image}`
 
   /* Canonical */
 
-  const canonical = meta?.canonical != null ? `<link rel="canonical" href="${meta.canonical}">` : ''
+  const canonical = meta?.canonical !== undefined ? `<link rel="canonical" href="${meta.canonical}">` : ''
 
   /* Prev */
 
-  const prev = meta?.prev != null ? `<link rel="prev" href="${meta.prev}">` : ''
+  const prev = meta?.prev !== undefined ? `<link rel="prev" href="${meta.prev}">` : ''
 
   /* Next */
 
-  const next = meta?.next != null ? `<link rel="next" href="${meta.next}">` : ''
+  const next = meta?.next !== undefined ? `<link rel="next" href="${meta.next}">` : ''
 
   /* No index */
 
-  let noIndex = meta?.noIndex != null ? meta.noIndex : false
+  let noIndex = meta?.noIndex !== undefined ? meta.noIndex : false
 
   if (envData.dev) {
-    noIndex = true
-  }
-
-  if (envData.prod) {
     noIndex = true
   }
 
@@ -161,23 +162,36 @@ const layout = async ({
 
   /* Purge unused css */
 
-  const css = `<link rel="stylesheet" href="${assetsLink}css/${enumNamespace}.css" media="all">`
+  let css = `<link rel="stylesheet" href="${assetsLink}css/${enumNamespace}.css" media="all">`
 
-  /* const purge = await new PurgeCSS().purge({
-    content: [
-      {
-        raw: output,
-        extension: 'html'
-      },
-    ],
-    css: [
-      `./site/assets/css/${enumNamespace}.css`
-    ]
-  })
+  if (envData.build && PurgeCSS !== undefined) {
+    const purge: Purge[] = await new PurgeCSS().purge({
+      content: [
+        {
+          raw: output,
+          extension: 'html'
+        }
+      ],
+      css: [
+        `./site/assets/css/${enumNamespace}.css`
+      ],
+      dynamicAttributes: [
+        'data-open',
+        'data-overflow',
+        'data-show-items',
+        'data-show',
+        'data-visible',
+        'data-state',
+        'data-using-mouse',
+        'data-no-scroll',
+        'data-hide'
+      ]
+    })
 
-  if (purge.length) {
-    css = `<style>${purge[0].css}</style>`
-  } */
+    if (purge.length !== 0) {
+      css = `<style>${purge[0].css}</style>`
+    }
+  }
 
   /* Output */
 
