@@ -162,7 +162,7 @@ const layout = async ({
 
   /* Purge unused css */
 
-  console.log('LAYOUT', envData)
+  console.log('LAYOUT', envData, PurgeCSS)
 
   let css = `<link rel="stylesheet" href="${assetsLink}css/${enumNamespace}.css" media="all">`
 

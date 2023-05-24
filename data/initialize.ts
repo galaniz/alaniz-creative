@@ -39,8 +39,6 @@ module.exports = async (args: Args): Promise<object[]> => {
       envData.build = true
     }
 
-    console.log('INIT', args)
-
     /* Output */
 
     return await render({
