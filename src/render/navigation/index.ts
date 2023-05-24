@@ -109,7 +109,7 @@ class Navigation {
     this.items.forEach(item => {
       const info = this._getItemInfo(item)
 
-      if (info?.id != null) {
+      if (info?.id !== undefined) {
         this._itemsById[info.id] = info
       }
     })
@@ -166,7 +166,7 @@ class Navigation {
       external = true
     }
 
-    if (internalLink != null) {
+    if (internalLink !== undefined) {
       id = internalLink.id
     }
 
@@ -177,7 +177,7 @@ class Navigation {
       external
     }
 
-    if (children != null) {
+    if (children !== undefined) {
       const c = []
 
       this._recurseItemChildren(children, c)
@@ -230,11 +230,11 @@ class Navigation {
 
       let id = title
 
-      if (externalLink !== '' && item?.externalLink != null) {
+      if (externalLink !== '' && item?.externalLink !== undefined) {
         id = item.externalLink
       }
 
-      if ((internalLink != null) && item?.internalLink?.id != null) {
+      if ((internalLink !== undefined) && item?.internalLink?.id !== undefined) {
         id = item.internalLink.id
       }
 
@@ -261,8 +261,8 @@ class Navigation {
   _recurseOutput = (items: Render.NavItem[] = [], output: { html: string }, depth: number = -1, args: RecurseArgs): void => {
     depth += 1
 
-    const listClasses = args.listClass != null ? ` class="${args.listClass}"` : ''
-    const listAttrs = args.listAttr != null ? ` ${args.listAttr}` : ''
+    const listClasses = args.listClass !== undefined ? ` class="${args.listClass}"` : ''
+    const listAttrs = args.listAttr !== undefined ? ` ${args.listAttr}` : ''
 
     output.html += `<ul data-depth="${depth}"${listClasses}${listAttrs}>`
 
@@ -282,8 +282,8 @@ class Navigation {
         args.filterBeforeItem(args, item, output)
       }
 
-      const itemClasses = args.itemClass != null ? ` class="${args.itemClass}"` : ''
-      let itemAttrs = args.itemAttr != null ? ` ${args.itemAttr}` : ''
+      const itemClasses = args.itemClass !== undefined ? ` class="${args.itemClass}"` : ''
+      let itemAttrs = args.itemAttr !== undefined ? ` ${args.itemAttr}` : ''
 
       if (current) {
         itemAttrs += ' data-current="true"'
@@ -303,11 +303,11 @@ class Navigation {
 
       const linkClassesArray: string[] = []
 
-      if (args.linkClass != null) {
+      if (args.linkClass !== undefined) {
         linkClassesArray.push(args.linkClass)
       }
 
-      if (!external && args.internalLinkClass != null) {
+      if (!external && args.internalLinkClass !== undefined) {
         linkClassesArray.push(args.internalLinkClass)
       }
 
@@ -315,7 +315,7 @@ class Navigation {
 
       const linkAttrsArray = [link !== '' ? `href="${link}"` : 'type="button"']
 
-      if (args.linkAttr != null) {
+      if (args.linkAttr !== undefined) {
         linkAttrsArray.push(args.linkAttr)
       }
 
@@ -449,13 +449,13 @@ class Navigation {
 
     /* List attributes */
 
-    const listClasses = args.listClass != null ? ` class="${args.listClass}"` : ''
-    const listAttrs = args.listAttr != null ? ` ${args.listAttr}` : ''
+    const listClasses = args.listClass !== undefined ? ` class="${args.listClass}"` : ''
+    const listAttrs = args.listAttr !== undefined ? ` ${args.listAttr}` : ''
 
     /* Loop through items */
 
-    const itemClasses = args.itemClass != null ? ` class="${args.itemClass}"` : ''
-    const itemAttrs = args.itemAttr != null ? ` ${args.itemAttr}` : ''
+    const itemClasses = args.itemClass !== undefined ? ` class="${args.itemClass}"` : ''
+    const itemAttrs = args.itemAttr !== undefined ? ` ${args.itemAttr}` : ''
     const lastItemIndex = items.length - 1
 
     const itemsArray = items.map((item, index) => {
@@ -474,17 +474,17 @@ class Navigation {
 
       const linkClassesArray: string[] = []
 
-      if (args.linkClass != null) {
+      if (args.linkClass !== undefined) {
         linkClassesArray.push(args.linkClass)
       }
 
-      if (args.internalLinkClass != null) {
+      if (args.internalLinkClass !== undefined) {
         linkClassesArray.push(args.internalLinkClass)
       }
 
       const linkClasses = (linkClassesArray.length > 0) ? ` class="${linkClassesArray.join(' ')}"` : ''
 
-      const linkAttrs = args.linkAttr != null ? ` ${args.linkAttr}` : ''
+      const linkAttrs = args.linkAttr !== undefined ? ` ${args.linkAttr}` : ''
 
       const slug = getSlug({
         id: item.id,
@@ -509,8 +509,8 @@ class Navigation {
 
     /* Output */
 
-    const currentClasses = args.currentClass != null ? ` class="${args.currentClass}"` : ''
-    const a11yClasses = args.a11yClass != null ? ` class="${args.a11yClass}"` : ''
+    const currentClasses = args.currentClass !== undefined ? ` class="${args.currentClass}"` : ''
+    const a11yClasses = args.a11yClass !== undefined ? ` class="${args.a11yClass}"` : ''
 
     return `
       <ol${listClasses}${listAttrs}>

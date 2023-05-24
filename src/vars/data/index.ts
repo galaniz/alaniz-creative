@@ -200,6 +200,7 @@ const jsonFileData: JsonFile = {
  * @type {object}
  * @prop {boolean} dev
  * @prop {boolean} prod
+ * @prop {boolean} build
  * @prop {object} urls
  * @prop {string} urls.dev
  * @prop {string} urls.prod
@@ -212,6 +213,7 @@ const jsonFileData: JsonFile = {
 interface Env {
   dev: boolean
   prod: boolean
+  build: boolean
   urls: {
     dev: string
     prod: string
@@ -227,9 +229,10 @@ interface Env {
 const envData: Env = {
   dev: true,
   prod: false,
+  build: false,
   urls: {
     dev: '/',
-    prod: 'https://alaniz-creative.pages.dev/'
+    prod: 'https://alanizcreative.com/'
   },
   eleventy: {
     cache: false
