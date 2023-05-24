@@ -58,7 +58,7 @@ module.exports = (config: any) => {
 
   /* Process scss and js files */
 
-  config.on('eleventy.after', async () => {
+  config.on('eleventy.before', async () => {
     const entryPoints = {}
     const namespace = 'ac'
 
