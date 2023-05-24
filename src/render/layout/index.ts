@@ -4,7 +4,6 @@
 
 /* Imports */
 
-import { PurgeCSS } from 'purgecss'
 import { envData, scriptData } from '../../vars/data'
 import { enumNamespace, enumSite, enumColors } from '../../vars/enums'
 import { getPermalink } from '../../utils'
@@ -31,13 +30,18 @@ interface Args {
   }
   content?: string
   style?: string
-  build?: boolean
+  PurgeCSS?: any
+}
+
+interface Purge {
+  css: string
 }
 
 const layout = async ({
   meta = {},
   content = '',
-  style = ''
+  style = '',
+  PurgeCSS
 }: Args): Promise<string> => {
   /* Assets link */
 
@@ -160,8 +164,8 @@ const layout = async ({
 
   let css = `<link rel="stylesheet" href="${assetsLink}css/${enumNamespace}.css" media="all">`
 
-  if (envData.build) {
-    const purge = await new PurgeCSS().purge({
+  if (envData.build && PurgeCSS !== undefined) {
+    const purge: Purge[] = await new PurgeCSS().purge({
       content: [
         {
           raw: output,

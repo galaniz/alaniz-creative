@@ -134,7 +134,7 @@ const getAllData = async (key: string = '', params: Params = {}): Promise<Return
 
     if (Object.keys(data).length > 0) {
       const imageJson = await readFile(resolve('./src/json/image-data.json'), { encoding: 'utf8' })
-      const imageData = imageJson !== '' ? JSON.parse(imageJson) : {}
+      const imageData = imageJson != null ? JSON.parse(imageJson) : {}
 
       resolveInternalLinks(imageData, data, ['metaImage', 'image'])
       resolveInternalLinks(data, data, ['items', 'internalLink'])

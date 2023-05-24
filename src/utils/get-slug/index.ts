@@ -91,7 +91,7 @@ const getSlug = (args: SlugArgs): string | { slug: string, parents: object[] } =
   /* Parents and slug return */
 
   if (returnParents) {
-    if (slugBase?.slug !== '') {
+    if (slugBase?.slug !== undefined) {
       pp.push({
         ...slugBase,
         contentType: 'page',

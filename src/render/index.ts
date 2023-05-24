@@ -4,6 +4,7 @@
 
 /* Imports */
 
+import { PurgeCSS } from 'purgecss'
 import { getSlug, getPermalink } from '../utils'
 import { slugData, envData, navData, archiveData, formMeta, jsonFileData } from '../vars/data'
 import getAllData from '../utils/get-all-data'
@@ -342,7 +343,8 @@ const _renderItem = async ({
       </main>
       ${footer(navsOutput)}
     `,
-    style
+    style,
+    PurgeCSS
   })
 
   return {
@@ -418,17 +420,17 @@ const render = async ({ env, onRenderEnd }: RenderArgs): Promise<object[]> => {
     if (archive !== '' && id !== '') {
       archiveData.ids[archive] = id
 
-      if (archivePosts?.[archive] !== '') {
+      if (archivePosts?.[archive] !== undefined) {
         archiveData.posts[archive] = archivePosts[archive]
       }
 
-      if (slugData.bases?.[archive] !== '') {
+      if (slugData.bases?.[archive] !== undefined) {
         slugData.bases[archive].archiveId = id
       }
     }
 
     if (parent !== undefined && id !== '') {
-      if (parent.slug !== '' && parent.title !== '') {
+      if (parent.slug !== undefined && parent.title !== undefined) {
         slugData.parents[id] = {
           id: parent.id,
           slug: parent.slug,
