@@ -189,8 +189,6 @@ const layout = async ({
       ]
     })
 
-    console.log('PURGE', purge)
-
     if (purge.length !== 0) {
       cssOutput = `<style>${purge[0].css}</style>`
     }
