@@ -173,7 +173,7 @@ const layout = async ({
         }
       ],
       css: [
-        `./site/assets/css/${enumNamespace}.css`
+        './site/assets/**/*.css'
       ],
       dynamicAttributes: [
         'data-open',
