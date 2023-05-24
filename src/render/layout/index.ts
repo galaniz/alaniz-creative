@@ -15,6 +15,7 @@ import { getPermalink } from '../../utils'
  * @prop {object} args.meta
  * @prop {string} args.content
  * @prop {string} args.style
+ * @prop {class} args.PurgeCSS
  * @return {string} HTML - html
  */
 
@@ -162,7 +163,7 @@ const layout = async ({
 
   /* Purge unused css */
 
-  let css = `<link rel="stylesheet" href="${assetsLink}css/${enumNamespace}.css" media="all">`
+  let cssOutput = `<link rel="stylesheet" href="${assetsLink}css/${enumNamespace}.css" media="all">`
 
   if (envData.build && PurgeCSS !== undefined) {
     const purge: Purge[] = await new PurgeCSS().purge({
@@ -189,13 +190,13 @@ const layout = async ({
     })
 
     if (purge.length !== 0) {
-      css = `<style>${purge[0].css}</style>`
+      cssOutput = `<style>${purge[0].css}</style>`
     }
   }
 
   /* Output */
 
-  return output.replace('*|CSS|*', css)
+  return output.replace('*|CSS|*', cssOutput)
 }
 
 /* Exports */
