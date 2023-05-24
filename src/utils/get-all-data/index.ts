@@ -68,7 +68,7 @@ const getAllData = async (key: string = '', params: Params = {}): Promise<Return
 
       /* Check if the cache is fresh within the last day */
 
-      if (((cache?.isCacheValid) != null) && ((cache?.getCachedValue) != null) && cache.isCacheValid('1d') === true) {
+      if (((cache?.isCacheValid) !== undefined) && ((cache?.getCachedValue) !== undefined) && cache.isCacheValid('1d') === true) {
         return cache.getCachedValue()
       }
     }
@@ -134,7 +134,7 @@ const getAllData = async (key: string = '', params: Params = {}): Promise<Return
 
     if (Object.keys(data).length > 0) {
       const imageJson = await readFile(resolve('./src/json/image-data.json'), { encoding: 'utf8' })
-      const imageData = imageJson !== '' ? JSON.parse(imageJson) : {}
+      const imageData = imageJson != null ? JSON.parse(imageJson) : {}
 
       resolveInternalLinks(imageData, data, ['metaImage', 'image'])
       resolveInternalLinks(data, data, ['items', 'internalLink'])
@@ -185,7 +185,7 @@ const getAllData = async (key: string = '', params: Params = {}): Promise<Return
 
     /* Store in local cache */
 
-    if (envData.eleventy.cache && ((cache?.save) != null)) {
+    if (envData.eleventy.cache && ((cache?.save) !== undefined)) {
       await cache.save(JSON.parse(safeJsonStringify(allData)), 'json')
     }
 

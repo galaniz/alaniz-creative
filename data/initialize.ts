@@ -5,6 +5,7 @@
 /* Imports */
 
 import { writeFile, mkdir } from 'node:fs/promises'
+import { envData } from '../src/vars/data'
 import render from '../src/render'
 
 /* Get and render json data */
@@ -15,13 +16,29 @@ interface RenderArgs {
   redirects: string[]
 }
 
+interface Args {
+  eleventy?: {
+    env?: {
+      runMode?: string
+    }
+  }
+}
+
 interface JsonObj {
   name: string
   data: string
 }
 
-module.exports = async (): Promise<object[]> => {
+module.exports = async (args: Args): Promise<object[]> => {
   try {
+    /* Build env set */
+
+    const mode: string = typeof args?.eleventy?.env?.runMode === 'string' ? args.eleventy.env.runMode : 'serve'
+
+    if (mode === 'build') {
+      envData.build = true
+    }
+
     /* Output */
 
     return await render({

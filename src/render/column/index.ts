@@ -107,10 +107,10 @@ const column = (props: Render.ColumnProps = { args: {} }): Render.Return => {
     classesArray.push('l-width-custom')
 
     const styleArray = [
-      `--width:${widthCustom?.default !== '' ? widthCustom.default : '100%'}`,
-      `--width-small:${widthCustom?.small !== '' ? widthCustom.small : '100%'}`,
-      `--width-medium:${widthCustom?.medium !== '' ? widthCustom.medium : '100%'}`,
-      `--width-large:${widthCustom?.large !== '' ? widthCustom.large : '100%'}`
+      `--width:${widthCustom?.default !== undefined ? widthCustom.default : '100%'}`,
+      `--width-small:${widthCustom?.small !== undefined ? widthCustom.small : '100%'}`,
+      `--width-medium:${widthCustom?.medium !== undefined ? widthCustom.medium : '100%'}`,
+      `--width-large:${widthCustom?.large !== undefined ? widthCustom.large : '100%'}`
     ]
 
     stylesArray.push(styleArray.join(';'))
