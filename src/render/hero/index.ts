@@ -5,6 +5,7 @@
 /* Imports */
 
 import { getImage } from '../../utils'
+import { enumWaves, enumBlobs } from '../../vars/enums'
 import button from '../button'
 
 /**
@@ -64,12 +65,14 @@ const hero = (args: Render.HeroArgs = {}): string => {
       let waveOutput = ''
 
       if (wave !== undefined) {
+        const w: { width: number, height: number, path: string } = enumWaves[wave]
+
         waveOutput = `
           <div class="l-absolute l-width-100-vw l-max-height-100-pc l-center">
-            <div style="padding-top:${(wave.height / wave.width) * 100}%"></div>
+            <div style="padding-top:${(w.height / w.width) * 100}%"></div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 ${wave.width} ${wave.height}"
+              viewBox="0 0 ${w.width} ${w.height}"
               preserveAspectRatio="none"
               class="l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc"
               aria-hidden="true"
@@ -77,7 +80,7 @@ const hero = (args: Render.HeroArgs = {}): string => {
               role="img"
             >
               <path
-                d="${wave.path}"
+                d="${w.path}"
                 fill="none"
                 stroke="var(--theme-main)"
                 stroke-opacity="0.5"
@@ -105,6 +108,8 @@ const hero = (args: Render.HeroArgs = {}): string => {
   let blobOutput = ''
 
   if (blob !== undefined) {
+    const path: string = enumBlobs[blob].path
+
     blobOutput = `
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +117,7 @@ const hero = (args: Render.HeroArgs = {}): string => {
         class="c-blob l-absolute"
       >
         <path
-          d="${blob.path}"
+          d="${path}"
           fill="none"
           stroke="var(--heading-color)"
           stroke-opacity="0.5"

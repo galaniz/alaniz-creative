@@ -1,0 +1,125 @@
+{
+  "contentType": "work",
+  "title": "Puffin Innovations",
+  "slug": "puffin-innovations",
+  "date": "2022-11-03",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "hero": {
+    "image": "puffin-innovations/hero",
+    "wave": "one"
+  },
+  "svg": {
+    "blob": "one"
+  },
+  "theme": {
+    "main": {
+      "dark": "#d84000",
+      "light": "#ff824e"
+    }
+  },
+  "related": [
+    "work--hey-tony",
+    "work--injury-board"
+  ],
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "rich-text",
+          "tag": "h2",
+          "content": "Overview"
+        },
+        {
+          "renderType": "container",
+          "layout": "row",
+          "gap": "m",
+          "gapLarge": "l",
+          "tag": "dl",
+          "classes": "l-flex-column l-flex-row-s",
+          "content": [
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
+                  "content": "Year"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "2022"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
+                  "content": "Team"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Web Developer"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Accessibility Tester"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
+                  "content": "Role"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Web design"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Copywriting"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Front-end development"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Back-end development"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View Puffin Innovations",
+          "richText": true,
+          "externalLink": "https://puffininno.com/"
+        }
+      ]
+    }
+  ]
+}

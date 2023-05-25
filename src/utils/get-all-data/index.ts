@@ -137,7 +137,7 @@ const getAllData = async (key: string = '', params: Params = {}): Promise<Return
       const imageData = imageJson != null ? JSON.parse(imageJson) : {}
 
       resolveInternalLinks(imageData, data, ['metaImage', 'image'])
-      resolveInternalLinks(data, data, ['items', 'internalLink'])
+      resolveInternalLinks(data, data, ['items', 'internalLink', 'related'])
 
       Object.keys(data).forEach((d) => {
         const dd = data[d]
@@ -164,10 +164,14 @@ const getAllData = async (key: string = '', params: Params = {}): Promise<Return
         if (contentType === 'work') {
           content.work.push(dd)
 
-          const ddd: { content?: object } = structuredClone(dd)
+          const ddd: { content?: object, related?: string[] } = structuredClone(dd)
 
           if (ddd?.content !== undefined) {
             delete ddd.content
+          }
+
+          if (ddd?.related !== undefined) {
+            delete ddd.related
           }
 
           archivePosts.work.push(ddd)

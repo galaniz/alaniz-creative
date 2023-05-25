@@ -23,20 +23,15 @@ declare namespace Render {
       title: string
       border?: boolean
       image?: Image
+      wave?: string
+      blob?: string
       action?: {
         text: string
         internalLink: InternalLink
       }
-      blob?: {
-        path: string
-        width: number
-        height: number
-      }
     }
     svg?: {
-      blob?: {
-        path: string
-      }
+      blob?: string
     }
     theme?: {
       main: {
@@ -113,14 +108,8 @@ declare namespace Render {
     title?: string
     text?: string
     image?: Render.Image
-    wave?: {
-      path: string
-      width: number
-      height: number
-    }
-    blob?: {
-      path: string
-    }
+    wave?: string
+    blob?: string
     border?: boolean
     action?: {
       text: string

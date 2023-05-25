@@ -1,0 +1,120 @@
+{
+  "contentType": "work",
+  "title": "HeyTony",
+  "slug": "hey-tony",
+  "date": "2022-06-10",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "passwordProtected": true,
+  "hero": {
+    "image": "hey-tony/hero",
+    "wave": "five"
+  },
+  "svg": {
+    "blob": "five"
+  },
+  "theme": {
+    "main": {
+      "dark": "#1b4ecc",
+      "light": "#a2b9f7"
+    }
+  },
+  "related": [
+    "work--puffin-innovations",
+    "work--fortis-group"
+  ],
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "rich-text",
+          "tag": "h2",
+          "content": "Overview"
+        },
+        {
+          "renderType": "container",
+          "layout": "row",
+          "gap": "m",
+          "gapLarge": "l",
+          "tag": "dl",
+          "classes": "l-flex-column l-flex-row-s",
+          "content": [
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
+                  "content": "Year"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "2022"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "classes": "l-flex-column l-flex-row-s l-flex l-flex-wrap",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
+                  "classes": "l-width-1-1",
+                  "content": "Role"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "classes": "l-padding-right-m",
+                  "content": "Web design"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "classes": "l-padding-right-m",
+                  "content": "Front-end development"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Back-end development"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View HeyTony",
+          "richText": true,
+          "externalLink": "https://heytony.ca/"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "rich-text",
+          "tag": "h2",
+          "content": "Details coming soon!"
+        }
+      ]
+    }
+  ]
+}

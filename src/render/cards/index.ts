@@ -4,6 +4,7 @@
 
 /* Imports */
 
+import { enumBlobs } from '../../vars/enums'
 import container from '../container'
 import column from '../column'
 import richText from '../rich-text'
@@ -151,6 +152,7 @@ const card = (props: CardProps = { args: {} }): Render.Return => {
 
     if (ac && svg?.blob !== undefined) {
       const reverse = index % 2 !== 0
+      const path: string = enumBlobs[svg.blob].path
 
       blob = `
         <svg
@@ -163,7 +165,7 @@ const card = (props: CardProps = { args: {} }): Render.Return => {
           data-reverse="${reverse.toString()}"
         >
           <path
-            d="${svg.blob.path}"
+            d="${path}"
             fill="none"
             stroke="var(--theme-main)"
             stroke-opacity="0.5"

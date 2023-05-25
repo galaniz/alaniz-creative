@@ -10,16 +10,10 @@
   "hero": {
     "image": "fortis-group/hero",
     "border": true,
-    "wave": {
-      "path": "m.34.39c5.6,4.98,12.55,7.39,19.64,5.4,27.44-7.73,33.19,18.71,61.75,18.71,6.91,0,12.53-2.2,16.93-5.9",
-      "width": 99,
-      "height": 25
-    }
+    "wave": "two"
   },
   "svg": {
-    "blob": {
-      "path": "m1.96,344.05c-8.51,84.45,20.8,170.22,69.83,229.93,49.02,59.71,117.68,93.28,187.88,73.54,55.89-15.72,100.78-14.07,140.29-2.73,39.5,11.33,73.6,32.33,107.93,55.26,5.27,3.52,10.55,7.09,15.86,10.67,63.8,43.1,131.41,88.78,238.52,88.78,91.95,0,155.7-47.87,193.78-118.86,38.1-71.01,50.51-165.15,39.71-257.58-10.8-92.43-44.82-183.08-99.49-247.11-54.66-64.02-129.97-101.43-223.45-87.46-43.56,6.51-77.77,4.26-107.17-2.79-29.4-7.05-53.96-18.88-78.23-31.51-3.63-1.89-7.24-3.79-10.87-5.7C431.62,24.85,385.35.5,308.87.5c-32.4,0-102.29,17.95-167.51,69.89C76.16,122.31,15.65,208.19,1.96,344.05Z"
-    }
+    "blob": "two"
   },
   "theme": {
     "main": {
@@ -35,6 +29,10 @@
     "video-play-bg": "var(--background-light)",
     "video-play-color": "#204389"
   },
+  "related": [
+    "work--injury-board",
+    "work--later-newsroom"
+  ],
   "content": [
     {
       "renderType": "container",
@@ -113,7 +111,7 @@
                 {
                   "renderType": "rich-text",
                   "tag": "dd",
-                  "content": "UI design"
+                  "content": "Web design"
                 },
                 {
                   "renderType": "rich-text",
@@ -930,66 +928,6 @@
           "title": "View Fortis Group",
           "richText": true,
           "externalLink": "https://fortisgroup.ca/"
-        }
-      ]
-    },
-    {
-      "renderType": "container",
-      "paddingTop": "xl",
-      "paddingTopLarge": "2xl",
-      "paddingBottom": "l",
-      "classes": "l-breakout",
-      "content": [
-        {
-          "renderType": "wave-separator"
-        }
-      ]
-    },
-    {
-      "renderType": "container",
-      "maxWidth": "s",
-      "tag": "section",
-      "content": [
-        {
-          "renderType": "container",
-          "paddingBottom": "m",
-          "paddingBottomLarge": "l",
-          "content": [
-            {
-              "renderType": "rich-text",
-              "headingStyle": "h3",
-              "tag": "h2",
-              "content": "Explore more work"
-            }
-          ]
-        },
-        {
-          "renderType": "container",
-          "paddingBottom": "l",
-          "paddingBottomLarge": "2xl",
-          "layout": "row",
-          "gap": "m",
-          "gapLarge": "l",
-          "tag": "ul",
-          "content": [
-            {
-              "renderType": "card",
-              "headingLevel": 3,
-              "internalLink": "work--injury-board"
-            },
-            {
-              "renderType": "card",
-              "headingLevel": 3,
-              "internalLink": "work--later-newsroom"
-            }
-          ]
-        },
-        {
-          "renderType": "button",
-          "title": "Back to all work",
-          "type": "secondary",
-          "justify": "center",
-          "internalLink": "page--work"
         }
       ]
     }

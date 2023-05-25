@@ -25,6 +25,7 @@ import hero from './hero'
 import httpError from './http-error'
 import aspectRatio from './aspect-ratio'
 import posts from './posts'
+import singleContent from './single-content'
 import { card } from './cards'
 
 /**
@@ -215,7 +216,8 @@ const _renderItem = async ({
     },
     passwordProtected: false,
     theme: {},
-    svg: false
+    svg: false,
+    related: []
   }, item)
 
   /* Meta */
@@ -308,6 +310,17 @@ const _renderItem = async ({
       parents: [],
       navs: navsOutput
     })
+  }
+
+  if (props.related.length > 0) {
+    const s = singleContent({
+      contentType,
+      related: props.related
+    })
+
+    if (s !== '') {
+      contentOutput.html += s
+    }
   }
 
   output += contentOutput.html
