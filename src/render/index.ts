@@ -213,6 +213,7 @@ const _renderItem = async ({
     meta: {
       title: '',
       canonical: '',
+      url: '',
       isIndex: false
     },
     passwordProtected: false,
@@ -252,6 +253,7 @@ const _renderItem = async ({
     item.basePermalink = getPermalink(s.slug)
   }
 
+  meta.url = permalink
   meta.canonical = permalink
 
   /* Add to data by slugs store */

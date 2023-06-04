@@ -23,6 +23,7 @@ interface Args {
   meta?: {
     title?: string
     description?: string
+    url?: string
     image?: string
     canonical?: string
     prev?: string
@@ -50,19 +51,23 @@ const layout = async ({
 
   /* Title */
 
-  const title = (meta?.title !== undefined ? `${meta.title} | ` : '') + enumSite.title
+  const title = (meta?.title !== undefined && meta?.title !== '' ? `${meta.title} | ` : '') + enumSite.title
 
   /* Description */
 
-  const description = meta?.description !== undefined ? meta.description : enumSite.meta.description
+  const description = meta?.description !== undefined && meta?.description !== '' ? meta.description : enumSite.meta.description
 
   /* Image */
 
-  const image = meta?.image !== undefined ? `${assetsLink}${meta.image}` : `${assetsLink}${enumSite.meta.image}`
+  const image = meta?.image !== undefined && meta?.image !== '' ? `${assetsLink}${meta.image}` : `${assetsLink}${enumSite.meta.image}`
+
+  /* Url */
+
+  const url = meta?.url !== undefined && meta?.url !== '' ? meta.url : ''
 
   /* Canonical */
 
-  const canonical = meta?.canonical !== undefined ? `<link rel="canonical" href="${meta.canonical}">` : ''
+  const canonical = meta?.canonical !== undefined && meta?.canonical !== '' ? `<link rel="canonical" href="${meta.canonical}">` : ''
 
   /* Prev */
 
@@ -122,7 +127,7 @@ const layout = async ({
         ${prev}
         ${next}
         <meta name="image" content="${image}">
-        <meta property="og:url" content="">
+        <meta property="og:url" content="${url}">
         <meta property="og:title" content="${title}">
         <meta property="og:description" content="${description}">
         <meta property="og:image" content="${image}">
