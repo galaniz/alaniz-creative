@@ -31,6 +31,7 @@ interface Slug {
   bases: {
     page: SlugBase
     work: SlugBase
+    workCategory: SlugBase
   }
 }
 
@@ -46,6 +47,12 @@ const slugData: Slug = {
       slug: 'work',
       title: 'Work',
       singular: 'Work',
+      archiveId: ''
+    },
+    workCategory: {
+      slug: 'categories',
+      title: 'Categories',
+      singular: 'Category',
       archiveId: ''
     }
   }

@@ -25,6 +25,8 @@ import hero from './hero'
 import httpError from './http-error'
 import aspectRatio from './aspect-ratio'
 import posts from './posts'
+import singleContent from './single-content'
+import termContent from './term-content'
 import { card } from './cards'
 
 /**
@@ -211,11 +213,13 @@ const _renderItem = async ({
     meta: {
       title: '',
       canonical: '',
+      url: '',
       isIndex: false
     },
     passwordProtected: false,
     theme: {},
-    svg: false
+    svg: false,
+    related: []
   }, item)
 
   /* Meta */
@@ -223,7 +227,7 @@ const _renderItem = async ({
   const title = props.title
   const meta = props.meta
 
-  if (meta?.title === '') {
+  if (meta?.title === undefined || meta?.title === '') {
     meta.title = title
   }
 
@@ -249,6 +253,7 @@ const _renderItem = async ({
     item.basePermalink = getPermalink(s.slug)
   }
 
+  meta.url = permalink
   meta.canonical = permalink
 
   /* Add to data by slugs store */
@@ -308,6 +313,21 @@ const _renderItem = async ({
       parents: [],
       navs: navsOutput
     })
+  }
+
+  if (props.related.length > 0) {
+    const s = singleContent({
+      contentType,
+      related: props.related
+    })
+
+    if (s !== '') {
+      contentOutput.html += s
+    }
+  }
+
+  if (contentType === 'workCategory') {
+    contentOutput.html += termContent(contentType, id)
   }
 
   output += contentOutput.html

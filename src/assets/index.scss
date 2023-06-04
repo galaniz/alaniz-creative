@@ -6,13 +6,16 @@
 
 @use "normalize.css/normalize.css";
 
+/* Fonts */
+
+@use "base/fonts";
+
 /* Config */
 
 @forward "config";
 
 /* Base */
 
-@use "base/fonts";
 @use "@alanizcreative/formation/src/base";
 @use "@alanizcreative/formation/src/base/inputs-reset";
 @use "base" as b;

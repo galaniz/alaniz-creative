@@ -23,6 +23,7 @@ $padding-vertical: (
 $padding-horizontal: (
   "3xs",
   "xs",
+  "m",
   "l",
 );
 
@@ -75,7 +76,8 @@ $gaps: (
   $font-families: (
     "primary": (
       "Larsseit",
-      Helvetica,
+      "Adjusted Tahoma",
+      Tahoma,
       Arial,
       sans-serif,
     ),

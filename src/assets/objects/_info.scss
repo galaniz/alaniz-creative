@@ -8,6 +8,10 @@
 
 /* Styles */
 
+.o-info-neutral {
+  --bg: var(--muted-bg);
+}
+
 .o-info-negative {
   --text-color: var(--negative);
   --bg: var(--negative-bg);
@@ -18,6 +22,7 @@
   --bg: var(--positive-bg);
 }
 
+.o-info-neutral,
 .o-info-negative,
 .o-info-positive {
   --link-color: var(--text-color);
