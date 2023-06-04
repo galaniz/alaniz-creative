@@ -23,8 +23,12 @@
   padding: var(--padding);
   font-size: var(--t);
 
-  svg {
-    margin-left: var(--3xs);
+  &[data-icon="before"] svg {
+    margin-right: var(--4xs);
+  }
+
+  &[data-icon="after"] svg {
+    margin-left: var(--4xs);
   }
 
   &:hover {

@@ -195,7 +195,7 @@ const hero = (args: Render.HeroArgs = {}): string => {
       sectionClasses = 'l-container l-relative l-padding-top-xl l-padding-bottom-2xl l-padding-top-3xl-m l-padding-bottom-4xl-m'
     }
 
-    if (archive === 'work') {
+    if (archive === 'work' || archive === 'workCategory' || contentType === 'workCategory') {
       sectionClasses = 'l-container l-padding-top-l l-padding-top-2xl-m'
     }
   }

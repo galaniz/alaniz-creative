@@ -4,8 +4,7 @@
 
 /* Imports */
 
-import { slugData } from '../../vars/data'
-import { getSlug, getPermalink } from '../../utils'
+import { getArchiveLink } from '../../utils'
 import { card } from '../cards'
 import container from '../container'
 import richText from '../rich-text'
@@ -50,24 +49,33 @@ const singleContent = ({ contentType = 'work', related = [] }: Args): string => 
     return ''
   }
 
+  /* Content output */
+
+  const content = {
+    title: richText({
+      args: {
+        headingStyle: 'h3',
+        tag: 'h2',
+        content: 'Explore more work'
+      }
+    }),
+    button: ''
+  }
+
   /* Archive title and link */
 
-  let archiveLink = ''
+  const archiveData = getArchiveLink(contentType)
 
-  const archiveTitle: string = slugData.bases[contentType].title
-  const archiveId: string = slugData.bases[contentType].archiveId
-  const archiveSlug: string = slugData.bases[contentType].slug
-
-  if (archiveId !== '' && archiveSlug !== '') {
-    const s = getSlug({
-      id: archiveId,
-      slug: archiveSlug,
-      contentType: 'page'
+  if (archiveData.title !== '' && archiveData.link !== '') {
+    content.button = button({
+      args: {
+        title: `All ${archiveData.title.toLowerCase()}`,
+        iconBefore: 'arrow',
+        type: 'secondary',
+        justify: 'center',
+        link: archiveData.link
+      }
     })
-
-    if (typeof s === 'string') {
-      archiveLink = getPermalink(s)
-    }
   }
 
   /* Containing output */
@@ -101,30 +109,6 @@ const singleContent = ({ contentType = 'work', related = [] }: Args): string => 
         gap: 'm',
         gapLarge: 'l',
         tag: 'ul'
-      }
-    })
-  }
-
-  /* Content output */
-
-  const content = {
-    title: richText({
-      args: {
-        headingStyle: 'h3',
-        tag: 'h2',
-        content: 'Explore more work'
-      }
-    }),
-    button: ''
-  }
-
-  if (archiveLink !== '' && archiveTitle !== '') {
-    content.button = button({
-      args: {
-        title: `Back to all ${archiveTitle.toLowerCase()}`,
-        type: 'secondary',
-        justify: 'center',
-        link: archiveLink
       }
     })
   }

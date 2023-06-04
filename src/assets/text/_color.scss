@@ -29,6 +29,10 @@
   color: var(--heading-color);
 }
 
+.t-theme-main {
+  --heading-color: var(--theme-main);
+}
+
 .t-link-current {
   --link-color: currentcolor;
 }

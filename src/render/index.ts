@@ -26,6 +26,7 @@ import httpError from './http-error'
 import aspectRatio from './aspect-ratio'
 import posts from './posts'
 import singleContent from './single-content'
+import termContent from './term-content'
 import { card } from './cards'
 
 /**
@@ -321,6 +322,10 @@ const _renderItem = async ({
     if (s !== '') {
       contentOutput.html += s
     }
+  }
+
+  if (contentType === 'workCategory') {
+    contentOutput.html += termContent(contentType, id)
   }
 
   output += contentOutput.html

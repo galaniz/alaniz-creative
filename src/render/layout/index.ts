@@ -115,6 +115,7 @@ const layout = async ({
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>${title}</title>
+        ${preloadFonts}
         ${noIndex ? '<meta name="robots" content="noindex, nofollow">' : ''}
         <meta name="description" content="${description}">
         ${canonical}
@@ -130,7 +131,6 @@ const layout = async ({
         <meta name="twitter:description" content="${description}">
         <meta name="twitter:image" content="${image}">
         <meta content="summary_large_image" property="twitter:card">
-        ${preloadFonts}
         <style>
           @media (prefers-reduced-motion: reduce) {
             .reduce-motion-show {

@@ -3,6 +3,15 @@
  */
 
 @font-face {
+  font-family: "Adjusted Tahoma Fallback";
+  src: local(Tahoma); /* stylelint-disable-line value-keyword-case */
+  size-adjust: 98%;
+  ascent-override: 107%;
+  descent-override: 33%;
+  line-gap-override: normal;
+}
+
+@font-face {
   font-family: Larsseit;
   src:
     url("/assets/fonts/larsseit.woff2") format("woff2"),

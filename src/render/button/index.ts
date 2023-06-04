@@ -6,6 +6,7 @@
 
 import { getLink } from '../../utils'
 import externalLinkSvg from '../svg/external-link'
+import arrowBackSvg from '../svg/arrow-back'
 
 /**
  * Function - output link button
@@ -24,6 +25,7 @@ import externalLinkSvg from '../svg/external-link'
  * @param {string} props.args.paddingBottom
  * @param {string} props.args.richText
  * @param {boolean} props.args.newTab
+ * @param {string} props.args.iconBefore
  * @return {string} HTML - a || div
  */
 
@@ -40,6 +42,7 @@ interface Props {
     paddingTop?: string
     paddingBottom?: string
     newTab?: boolean
+    iconBefore?: string
   }
   parents?: object[]
 }
@@ -57,7 +60,8 @@ const button = (props: Props = { args: {} }): string => {
     richText = false,
     paddingTop = '',
     paddingBottom = '',
-    newTab = false
+    newTab = false,
+    iconBefore = ''
   } = args
 
   let { link = '' } = args
@@ -94,12 +98,37 @@ const button = (props: Props = { args: {} }): string => {
     linkClasses += ' js-pt-link'
   }
 
+  /* Icon before title */
+
+  let iconBeforeOutput = ''
+
+  if (iconBefore === 'arrow') {
+    iconBeforeOutput = arrowBackSvg('l-width-xs l-height-xs')
+  }
+
+  /* Icon after title */
+
+  let iconAfterOutput = ''
+
+  if (external) {
+    iconAfterOutput = externalLinkSvg('l-width-xs l-height-xs')
+  }
+
+  /* Icon attribute */
+
+  let iconAttr = ''
+
+  if (iconBeforeOutput !== '' || iconAfterOutput !== '') {
+    iconAttr = ` data-icon="${iconBeforeOutput !== '' ? 'before' : 'after'}"`
+  }
+
   /* Output */
 
   let output = `
-    <a class="${linkClasses}" href="${link}"${newTab ? ' target="_blank" rel="noreferrer"' : ''}>
+    <a class="${linkClasses}" href="${link}"${newTab ? ' target="_blank" rel="noreferrer"' : ''}${iconAttr}>
+      ${iconBeforeOutput}
       ${title}
-      ${external ? externalLinkSvg('l-width-xs l-height-xs') : ''}
+      ${iconAfterOutput}
     </a>
   `
 

@@ -58,6 +58,7 @@ const _card = ({ internalLink, headingLevel, type, index }: _CardProps): string 
   /* Text */
 
   let headingStyle = 'h4'
+  let subText = ''
   let textClasses = ''
 
   if (ac) {
@@ -71,12 +72,31 @@ const _card = ({ internalLink, headingLevel, type, index }: _CardProps): string 
     args: {
       tag: `h${headingLevel}`,
       headingStyle,
-      content: title
+      content: title,
+      classes: 't-theme-main'
     },
     parents
   })
 
-  const text = `<div${textClasses !== '' ? ` class="${textClasses}"` : ''} data-text>${heading}</div>`
+  if (internalLink.contentType === 'work' && internalLink?.category !== undefined) {
+    subText = richText({
+      args: {
+        tag: 'p',
+        textStyle: 'xs',
+        classes: 'l-padding-top-3xs',
+        content: '<span class="a11y-visually-hidden">Categories: </span>' + internalLink.category.map((cat) => {
+          return cat.title
+        }).join(' + ')
+      }
+    })
+  }
+
+  const text = `
+    <div${textClasses !== '' ? ` class="${textClasses}"` : ''} data-text>
+      ${heading}
+      ${subText}
+    </div>
+  `
 
   /* Image */
 

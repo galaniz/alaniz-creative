@@ -34,6 +34,9 @@
     "work--why-we-serve",
     "work--later-newsroom"
   ],
+  "category": [
+    "work-category--front-end-development"
+  ],
   "content": [
     {
       "renderType": "container",
@@ -119,7 +122,13 @@
                 {
                   "renderType": "rich-text",
                   "tag": "dd",
-                  "content": "Front-end development"
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--front-end-development",
+                      "content": "Front-end development"
+                    }
+                  ]
                 }
               ]
             }

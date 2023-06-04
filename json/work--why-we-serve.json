@@ -53,6 +53,10 @@
     "work--latercon",
     "work--fortis-group"
   ],
+  "category": [
+    "work-category--web-design",
+    "work-category--front-end-development"
+  ],
   "content": [
     {
       "renderType": "container",
@@ -141,12 +145,24 @@
                 {
                   "renderType": "rich-text",
                   "tag": "dd",
-                  "content": "Web design"
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--web-design",
+                      "content": "Web design"
+                    }
+                  ]
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "dd",
-                  "content": "Front-end development"
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--front-end-development",
+                      "content": "Front-end development"
+                    }
+                  ]
                 }
               ]
             }

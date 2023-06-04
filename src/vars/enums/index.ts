@@ -35,7 +35,7 @@ const enumSite: Site = {
   email: 'graciela@alanizcreative.com',
   meta: {
     description: 'Graciela Alaniz is a designer/developer based in Toronto. She strives to create elegant, engaging and accessible digital experiences.',
-    image: 'alaniz-creative-meta.webp'
+    image: 'img/alaniz-creative-meta.webp'
   }
 }
 
@@ -189,12 +189,18 @@ interface Card {
 }
 
 interface Layouts {
+  listMinimal: {
+    type: string
+  }
   cardsMinimal: Card
   cardsAlternating: Card
   cardsCascading: Card
 }
 
 const enumLayouts: Layouts = {
+  listMinimal: {
+    type: 'listMinimal'
+  },
   cardsMinimal: {
     type: 'cards',
     subtype: 'minimal'

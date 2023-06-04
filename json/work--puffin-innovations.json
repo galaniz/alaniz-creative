@@ -24,6 +24,10 @@
     "work--hey-tony",
     "work--injury-board"
   ],
+  "category": [
+    "work-category--web-design",
+    "work-category--web-development"
+  ],
   "content": [
     {
       "renderType": "container",
@@ -92,22 +96,29 @@
                 {
                   "renderType": "rich-text",
                   "tag": "dd",
-                  "content": "Web design"
-                },
-                {
-                  "renderType": "rich-text",
-                  "tag": "dd",
                   "content": "Copywriting"
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "dd",
-                  "content": "Front-end development"
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--web-design",
+                      "content": "Web design"
+                    }
+                  ]
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "dd",
-                  "content": "Back-end development"
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--web-development",
+                      "content": "Web development"
+                    }
+                  ]
                 }
               ]
             }
@@ -118,6 +129,21 @@
           "title": "View Puffin Innovations",
           "richText": true,
           "externalLink": "https://puffininno.com/"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "rich-text",
+          "tag": "h2",
+          "content": "Details coming soon!"
         }
       ]
     }

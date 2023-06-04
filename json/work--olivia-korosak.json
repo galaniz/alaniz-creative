@@ -24,6 +24,10 @@
     "work--why-we-serve",
     "work--later-newsroom"
   ],
+  "category": [
+    "work-category--web-design",
+    "work-category--web-development"
+  ],
   "content": [
     {
       "renderType": "container",
@@ -75,18 +79,24 @@
                   "renderType": "rich-text",
                   "tag": "dd",
                   "classes": "l-padding-right-m",
-                  "content": "Web design"
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--web-design",
+                      "content": "Web design"
+                    }
+                  ]
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "dd",
-                  "classes": "l-padding-right-m",
-                  "content": "Front-end development"
-                },
-                {
-                  "renderType": "rich-text",
-                  "tag": "dd",
-                  "content": "Back-end development"
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--web-development",
+                      "content": "Web development"
+                    }
+                  ]
                 }
               ]
             }

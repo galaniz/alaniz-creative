@@ -57,7 +57,7 @@
   &:nth-child(3n) {
     width: var(--wd);
 
-    svg {
+    svg:first-child {
       display: var(--sd);
     }
   }
@@ -91,9 +91,19 @@
     --r2: 0;
     --l2: auto;
 
+    &:nth-child(3n+1) [data-text] {
+      --t-xs: var(--t-s);
+      --3xs: var(--2xs);
+      --s: var(--m);
+    }
+
     &:nth-child(3n-1),
     &:nth-child(3n) {
       --h2: var(--h4);
+
+      [data-text] {
+        padding-top: var(--m);
+      }
     }
 
     [data-widow="true"] &:nth-child(6n-1):last-child {

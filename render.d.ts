@@ -14,11 +14,18 @@ declare namespace Render {
     height: number
   }
 
+  interface WorkCat {
+    title: string
+  }
+
   interface InternalLink {
     id: string
     contentType: string
     slug: string
     title?: string
+    text?: string
+    category?: WorkCat[]
+    passwordProtected?: boolean
     hero?: {
       title: string
       border?: boolean

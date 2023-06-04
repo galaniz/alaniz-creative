@@ -59,8 +59,9 @@ const httpError = async (type: string = '404'): Promise<string> => {
     }),
     button: button({
       args: {
-        title: 'Back to Homepage',
+        title: 'Homepage',
         type: 'secondary',
+        iconBefore: 'arrow',
         internalLink: {
           id: 'page--index',
           contentType: 'page',
