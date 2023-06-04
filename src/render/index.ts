@@ -227,7 +227,7 @@ const _renderItem = async ({
   const title = props.title
   const meta = props.meta
 
-  if (meta?.title === '') {
+  if (meta?.title === undefined || meta?.title === '') {
     meta.title = title
   }
 
