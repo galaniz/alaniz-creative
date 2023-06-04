@@ -9,16 +9,10 @@
   },
   "hero": {
     "image": "injury-board/hero",
-    "wave": {
-      "path": "m.33,7.11c2.46,2.08,5.29,3.77,8.48,4.97,20.45,7.71,36.26-5.21,49.49-8.12,23.54-5.17,25.75,3.14,38.63,0,2.9-.71,5.49-1.92,7.78-3.53",
-      "width": 105,
-      "height": 15
-    }
+    "wave": "one"
   },
   "svg": {
-    "blob": {
-      "path": "m455.85,718.87c-90.3-19.8-139.71-13.79-178.9-5.83-5.35,1.09-10.5,2.21-15.54,3.31-31.87,6.94-59.13,12.88-101.62,2.52C66.74,696.2,14.26,605.41,2.87,504.32c-11.39-101.09,18.32-212.27,89.41-275.51,50.1-44.57,78.64-87.04,102.77-122.97,8.98-13.37,17.36-25.83,26-37.15,15.95-20.88,32.83-37.91,56.21-49.73C300.64,7.13,330.55.5,372.59.5c84.04,0,133.27,28,176.28,56.02,3.81,2.48,7.57,4.97,11.31,7.43,38.41,25.36,73.83,48.75,127.78,48.75,171.14,0,275.99,141.35,303.97,295.69,27.99,154.38-20.99,321.36-157.08,372.6-78.23,29.46-147.58,19.51-210.07-.6-26.97-8.68-52.66-19.25-77.23-29.36-3.9-1.61-7.78-3.2-11.62-4.77-28.06-11.48-54.68-21.84-80.08-27.41Z"
-    }
+    "blob": "one"
   },
   "theme": {
     "main": {
@@ -34,6 +28,14 @@
     "video-play-bg": "var(--background-light)",
     "video-play-color": "#007fb0"
   },
+  "related": [
+    "work--fortis-group",
+    "work--why-we-serve"
+  ],
+  "category": [
+    "work-category--web-design",
+    "work-category--web-development"
+  ],
   "content": [
     {
       "renderType": "container",
@@ -117,17 +119,24 @@
                 {
                   "renderType": "rich-text",
                   "tag": "dd",
-                  "content": "UI design"
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--web-design",
+                      "content": "Web design"
+                    }
+                  ]
                 },
                 {
                   "renderType": "rich-text",
                   "tag": "dd",
-                  "content": "Front-end development"
-                },
-                {
-                  "renderType": "rich-text",
-                  "tag": "dd",
-                  "content": "Back-end development"
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--web-development",
+                      "content": "Web development"
+                    }
+                  ]
                 }
               ]
             }
@@ -1007,66 +1016,6 @@
           "title": "View Injury Board",
           "richText": true,
           "externalLink": "https://www.injuryboard.org/"
-        }
-      ]
-    },
-    {
-      "renderType": "container",
-      "paddingTop": "xl",
-      "paddingTopLarge": "2xl",
-      "paddingBottom": "l",
-      "classes": "l-breakout",
-      "content": [
-        {
-          "renderType": "wave-separator"
-        }
-      ]
-    },
-    {
-      "renderType": "container",
-      "maxWidth": "s",
-      "tag": "section",
-      "content": [
-        {
-          "renderType": "container",
-          "paddingBottom": "m",
-          "paddingBottomLarge": "l",
-          "content": [
-            {
-              "renderType": "rich-text",
-              "headingStyle": "h3",
-              "tag": "h2",
-              "content": "Explore more work"
-            }
-          ]
-        },
-        {
-          "renderType": "container",
-          "paddingBottom": "l",
-          "paddingBottomLarge": "2xl",
-          "layout": "row",
-          "gap": "m",
-          "gapLarge": "l",
-          "tag": "ul",
-          "content": [
-            {
-              "renderType": "card",
-              "headingLevel": 3,
-              "internalLink": "work--fortis-group"
-            },
-            {
-              "renderType": "card",
-              "headingLevel": 3,
-              "internalLink": "work--why-we-serve"
-            }
-          ]
-        },
-        {
-          "renderType": "button",
-          "title": "Back to all work",
-          "type": "secondary",
-          "justify": "center",
-          "internalLink": "page--work"
         }
       ]
     }

@@ -5,6 +5,7 @@
 /* Imports */
 
 import { getLink } from '../../utils'
+import lockSvg from '../svg/lock'
 
 /**
  * Function - recursively output content
@@ -20,6 +21,7 @@ interface _ContentProps {
   content: Array<{
     tag?: string
     link?: string
+    internalLink?: Render.InternalLink
     content?: string | object[]
   }>
   cardLink?: string
@@ -35,6 +37,7 @@ const _getContent = ({
     const {
       tag = '',
       link = '',
+      internalLink,
       content: con
     } = c
 
@@ -59,8 +62,16 @@ const _getContent = ({
       attr.push('scope="col"')
     }
 
-    if (tag === 'a' && link !== '') {
-      attr.push(`href="${link}"`)
+    if (tag === 'a') {
+      let anchorLink = link
+
+      if (internalLink !== undefined) {
+        anchorLink = getLink(internalLink)
+      }
+
+      if (anchorLink !== '') {
+        attr.push(`href="${anchorLink}"`)
+      }
     }
 
     let outputStr = ''
@@ -99,6 +110,7 @@ const _getContent = ({
  * @param {string} props.args.headingStyle
  * @param {string} props.args.align
  * @param {string} props.args.link
+ * @param {object} props.args.internalLink
  * @param {object} props.args.style
  * @param {array<object>} props.parents
  * @return {string}
@@ -114,6 +126,7 @@ interface RichTextProps {
     caption?: string
     align?: string
     link?: string
+    internalLink?: Render.InternalLink
     style?: object
   }
   parents?: Array<{
@@ -135,6 +148,7 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
     caption = '',
     align = '',
     link = '',
+    internalLink,
     style
   } = args
 
@@ -151,6 +165,7 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
   /* Check content and card parent */
 
   let cardLink = ''
+  let cardProtected = false
   let card = false
 
   if (parents.length > 0) {
@@ -160,11 +175,15 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
 
     if (card && heading) {
       const {
-        internalLink,
+        internalLink: cardInternalLink,
         externalLink = ''
       } = parents[0]
 
-      cardLink = getLink(internalLink, externalLink)
+      if (cardInternalLink?.passwordProtected !== undefined) {
+        cardProtected = cardInternalLink.passwordProtected
+      }
+
+      cardLink = getLink(cardInternalLink, externalLink)
     }
   }
 
@@ -221,8 +240,16 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
     attr.push('data-inline')
   }
 
-  if (tag === 'a' && link !== '') {
-    attr.push(`href="${link}"`)
+  if (tag === 'a') {
+    let anchorLink = link
+
+    if (internalLink !== undefined) {
+      anchorLink = getLink(internalLink)
+    }
+
+    if (anchorLink !== '') {
+      attr.push(`href="${anchorLink}"`)
+    }
   }
 
   if (classesArray.length > 0) {
@@ -244,7 +271,13 @@ const richText = (props: RichTextProps = { args: {}, parents: [] }): string => {
   /* Card */
 
   if (cardLink !== '' && typeof content === 'string') {
-    output = `<a class="l-before outline-tight" href="${cardLink}" data-inline>${content}</a>`
+    let icon = ''
+
+    if (cardProtected) {
+      icon = lockSvg('l-width-s l-height-s', '(password protected)')
+    }
+
+    output = `<a class="l-before outline-tight" href="${cardLink}" data-inline>${content}</a>&nbsp;${icon}`
   }
 
   /* Output */

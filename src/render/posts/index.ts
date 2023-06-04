@@ -5,9 +5,10 @@
 /* Imports */
 
 import { enumLayouts } from '../../vars/enums'
-import { archiveData } from '../../vars/data'
+import { slugData, archiveData } from '../../vars/data'
 import { card, cards } from '../cards'
-// const info = require('./info')
+import { listMinimalItem, listMinimal } from '../list-minimal'
+import info from '../info'
 
 /**
  * Function - output posts
@@ -31,6 +32,7 @@ interface Props {
     layout?: string
     nothingFound?: boolean
     order?: string
+    id?: string
   }
   parents?: object[]
 }
@@ -43,14 +45,25 @@ const posts = (props: Props = { args: {} }): string => {
     display = 1,
     headingLevel = 3,
     layout = 'cardsMinimal',
-    // nothingFound = true, // Display nothing found message
-    order = 'date'
+    nothingFound = true, // Display nothing found message
+    order = 'date',
+    id = ''
   } = args
 
   /* Type required */
 
   if (contentType === '') {
     return ''
+  }
+
+  /* Content type title */
+
+  const typeTitle: string = slugData.bases[contentType].title.toLowerCase()
+
+  /* Id required if term */
+
+  if (contentType === 'workCategory' && id === '') {
+    return info(`Looks like no ${typeTitle} were found.`)
   }
 
   /* Layout */
@@ -61,9 +74,12 @@ const posts = (props: Props = { args: {} }): string => {
 
   let posts = archiveData.posts?.[contentType] !== undefined ? archiveData.posts[contentType] : []
 
+  if (contentType === 'workCategory') {
+    posts = posts[id]
+  }
+
   if (posts.length === 0) {
-    return ''
-    // return nothingFound ? info(`Looks like no ${slugData.bases[contentType].title.toLowerCase()} were found.`) : ''
+    return nothingFound ? info(`Looks like no ${typeTitle} were found.`) : ''
   }
 
   /* Order */
@@ -110,6 +126,22 @@ const posts = (props: Props = { args: {} }): string => {
       itemOutput = cardOutput.start + cardOutput.end
     }
 
+    if (l.type === 'listMinimal') {
+      const itemArgs = { ...post }
+
+      itemArgs.contentType = contentType
+
+      if (contentType === 'workCategory') {
+        const length: number = archiveData.posts[contentType][post.id].length
+
+        itemArgs.text = `${length} work item${length === 1 ? '' : 's'}`
+      }
+
+      itemOutput = listMinimalItem({
+        args: itemArgs
+      })
+    }
+
     if (itemOutput !== '') {
       outputArray.push(itemOutput)
     }
@@ -125,6 +157,14 @@ const posts = (props: Props = { args: {} }): string => {
         content: output,
         type: l.subtype,
         length: posts.length
+      }
+    })
+  }
+
+  if (output !== '' && l.type === 'listMinimal') {
+    output = listMinimal({
+      args: {
+        content: output
       }
     })
   }

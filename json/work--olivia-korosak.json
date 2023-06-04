@@ -1,0 +1,129 @@
+{
+  "contentType": "work",
+  "title": "Olivia Korosak",
+  "slug": "olivia-korosak",
+  "date": "2023-04-02",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "hero": {
+    "image": "olivia-korosak/hero",
+    "wave": "three"
+  },
+  "svg": {
+    "blob": "three"
+  },
+  "theme": {
+    "main": {
+      "dark": "#4c2956",
+      "light": "#b27dc1"
+    }
+  },
+  "related": [
+    "work--why-we-serve",
+    "work--later-newsroom"
+  ],
+  "category": [
+    "work-category--web-design",
+    "work-category--web-development"
+  ],
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "rich-text",
+          "tag": "h2",
+          "content": "Overview"
+        },
+        {
+          "renderType": "container",
+          "layout": "row",
+          "gap": "m",
+          "gapLarge": "l",
+          "tag": "dl",
+          "classes": "l-flex-column l-flex-row-s",
+          "content": [
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
+                  "content": "Year"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "2023"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "classes": "l-flex-column l-flex-row-s l-flex l-flex-wrap",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
+                  "classes": "l-width-1-1",
+                  "content": "Role"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "classes": "l-padding-right-m",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--web-design",
+                      "content": "Web design"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--web-development",
+                      "content": "Web development"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View Olivia Korosak",
+          "richText": true,
+          "externalLink": "https://www.oliviakorosak.com/"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "rich-text",
+          "tag": "h2",
+          "content": "Details coming soon!"
+        }
+      ]
+    }
+  ]
+}

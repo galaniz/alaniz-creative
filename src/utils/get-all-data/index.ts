@@ -40,16 +40,28 @@ interface Page {
   archive: string
 }
 
+interface Work {
+  category?: object[]
+  related?: object[]
+  content?: object[]
+}
+
+interface WorkCat {
+  id: string
+}
+
 interface Return {
   content: {
     page: Page[]
-    work: object[]
+    work: Work[]
+    workCategory: object[]
   }
   navs: Render.Nav[]
   navItems: Render.NavItem[]
   redirects: object[]
   archivePosts: {
     work: object[]
+    workCategory: object
   }
 }
 
@@ -120,16 +132,18 @@ const getAllData = async (key: string = '', params: Params = {}): Promise<Return
 
     /* All data */
 
-    const content: { page: Page[], work: object[] } = {
+    const content: { page: Page[], work: object[], workCategory: object[] } = {
       page: [],
-      work: []
+      work: [],
+      workCategory: []
     }
 
     const navs: Render.Nav[] = []
     const navItems: Render.NavItem[] = []
     const redirects: object[] = []
-    const archivePosts: { work: object[] } = {
-      work: []
+    const archivePosts: { work: object[], workCategory: object } = {
+      work: [],
+      workCategory: {}
     }
 
     if (Object.keys(data).length > 0) {
@@ -137,7 +151,30 @@ const getAllData = async (key: string = '', params: Params = {}): Promise<Return
       const imageData = imageJson != null ? JSON.parse(imageJson) : {}
 
       resolveInternalLinks(imageData, data, ['metaImage', 'image'])
-      resolveInternalLinks(data, data, ['items', 'internalLink'])
+      resolveInternalLinks(data, data, ['items', 'internalLink', 'category', 'parent'])
+      resolveInternalLinks(
+        data,
+        data,
+        ['related'],
+        (prop: string, value: Work[]) => {
+          if (prop === 'related') {
+            value = structuredClone(value)
+
+            value = value.map((v) => {
+              delete v.related
+              delete v.content
+
+              return v
+            })
+          }
+
+          return value
+        }
+      )
+
+      const workCatArchiveId = 'page--work-category'
+
+      /* Set content */
 
       Object.keys(data).forEach((d) => {
         const dd = data[d]
@@ -164,15 +201,47 @@ const getAllData = async (key: string = '', params: Params = {}): Promise<Return
         if (contentType === 'work') {
           content.work.push(dd)
 
-          const ddd: { content?: object } = structuredClone(dd)
+          const ddd: { content?: object, related?: object[] } = structuredClone(dd)
 
           if (ddd?.content !== undefined) {
             delete ddd.content
           }
 
+          if (ddd?.related !== undefined) {
+            delete ddd.related
+          }
+
           archivePosts.work.push(ddd)
         }
+
+        if (contentType === 'workCategory') {
+          content.workCategory.push(dd)
+
+          if (archivePosts.workCategory?.[workCatArchiveId] === undefined) {
+            archivePosts.workCategory[workCatArchiveId] = []
+          }
+
+          archivePosts.workCategory[workCatArchiveId].push(dd)
+        }
       })
+
+      /* Set archive posts for terms */
+
+      if (content.work.length !== 0) {
+        content.work.forEach((w: Work) => {
+          const { category } = w
+
+          if (category !== undefined) {
+            category.forEach((c: WorkCat) => {
+              if (archivePosts.workCategory?.[c.id] === undefined) {
+                archivePosts.workCategory[c.id] = []
+              }
+
+              archivePosts.workCategory[c.id].push(w)
+            })
+          }
+        })
+      }
     }
 
     const allData = {

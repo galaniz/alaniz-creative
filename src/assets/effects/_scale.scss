@@ -5,7 +5,7 @@
 /* Styles */
 
 .e-scale {
-  --scale: 1.015;
+  --scale: 1.01;
 
   &:hover [data-scale] {
     transform: scale(var(--scale));

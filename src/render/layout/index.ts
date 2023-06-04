@@ -23,6 +23,7 @@ interface Args {
   meta?: {
     title?: string
     description?: string
+    url?: string
     image?: string
     canonical?: string
     prev?: string
@@ -50,19 +51,23 @@ const layout = async ({
 
   /* Title */
 
-  const title = (meta?.title !== undefined ? `${meta.title} | ` : '') + enumSite.title
+  const title = (meta?.title !== undefined && meta?.title !== '' ? `${meta.title} | ` : '') + enumSite.title
 
   /* Description */
 
-  const description = meta?.description !== undefined ? meta.description : enumSite.meta.description
+  const description = meta?.description !== undefined && meta?.description !== '' ? meta.description : enumSite.meta.description
 
   /* Image */
 
-  const image = meta?.image !== undefined ? `${assetsLink}${meta.image}` : `${assetsLink}${enumSite.meta.image}`
+  const image = meta?.image !== undefined && meta?.image !== '' ? `${assetsLink}${meta.image}` : `${assetsLink}${enumSite.meta.image}`
+
+  /* Url */
+
+  const url = meta?.url !== undefined && meta?.url !== '' ? meta.url : ''
 
   /* Canonical */
 
-  const canonical = meta?.canonical !== undefined ? `<link rel="canonical" href="${meta.canonical}">` : ''
+  const canonical = meta?.canonical !== undefined && meta?.canonical !== '' ? `<link rel="canonical" href="${meta.canonical}">` : ''
 
   /* Prev */
 
@@ -83,8 +88,8 @@ const layout = async ({
   /* Preload font links */
 
   const preloadFonts = `
-    <link rel="preload" href="${assetsLink}fonts/larsseit.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="${assetsLink}fonts/larsseit-medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="${assetsLink}fonts/larsseit.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="${assetsLink}fonts/larsseit-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   `
 
   /* Script data */
@@ -115,13 +120,14 @@ const layout = async ({
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>${title}</title>
+        ${preloadFonts}
         ${noIndex ? '<meta name="robots" content="noindex, nofollow">' : ''}
         <meta name="description" content="${description}">
         ${canonical}
         ${prev}
         ${next}
         <meta name="image" content="${image}">
-        <meta property="og:url" content="">
+        <meta property="og:url" content="${url}">
         <meta property="og:title" content="${title}">
         <meta property="og:description" content="${description}">
         <meta property="og:image" content="${image}">
@@ -130,7 +136,6 @@ const layout = async ({
         <meta name="twitter:description" content="${description}">
         <meta name="twitter:image" content="${image}">
         <meta content="summary_large_image" property="twitter:card">
-        ${preloadFonts}
         <style>
           @media (prefers-reduced-motion: reduce) {
             .reduce-motion-show {
@@ -175,6 +180,17 @@ const layout = async ({
       ],
       css: [
         `./site/assets/css/${enumNamespace}.css`
+      ],
+      safelist: [
+        'o-form__error',
+        'l-flex',
+        'l-gap-margin-4xs',
+        'l-padding-top-3xs',
+        't-line-height-0',
+        'l-width-xs',
+        'l-height-s',
+        't-s',
+        't-weight-medium'
       ],
       dynamicAttributes: [
         'data-open',
