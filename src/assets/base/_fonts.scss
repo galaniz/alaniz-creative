@@ -9,7 +9,7 @@
   ascent-override: 104%;
   descent-override: 39%;
   line-gap-override: normal;
-  font-display: optional;
+  font-display: block;
 }
 
 @font-face {
@@ -18,7 +18,7 @@
     url("/assets/fonts/larsseit.woff2") format("woff2"),
     url("/assets/fonts/larsseit.woff") format("woff");
   font-weight: 400;
-  font-display: optional;
+  font-display: block;
 }
 
 @font-face {
@@ -27,7 +27,7 @@
     url("/assets/fonts/larsseit-medium.woff2") format("woff2"),
     url("/assets/fonts/larsseit-medium.woff") format("woff");
   font-weight: 500;
-  font-display: optional;
+  font-display: block;
 }
 
 @font-face {
@@ -36,5 +36,5 @@
     url("/assets/fonts/larsseit-bold.woff2") format("woff2"),
     url("/assets/fonts/larsseit-bold.woff") format("woff");
   font-weight: 700;
-  font-display: optional;
+  font-display: block;
 }
