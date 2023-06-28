@@ -12,10 +12,10 @@ import { getPermalink } from '../../utils'
  * Function - output html
  *
  * @param {object} args
- * @prop {object} args.meta
- * @prop {string} args.content
- * @prop {string} args.style
- * @prop {class} args.PurgeCSS
+ * @param {object} args.meta
+ * @param {string} args.content
+ * @param {string} args.style
+ * @param {class} args.PurgeCSS
  * @return {string} HTML - html
  */
 
