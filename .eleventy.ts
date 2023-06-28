@@ -15,9 +15,7 @@ import { sassPlugin } from 'esbuild-sass-plugin'
 import { writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { envData, jsonFileData } from './src/vars/data'
-import processImages from './src/utils/process-images'
-import getAllFilePaths from './src/utils/get-all-file-paths'
+import getAllFilePaths from '@alanizcreative/static-site-formation/src/utils/get-all-file-paths'
 
 /* Config */
 
@@ -27,15 +25,15 @@ module.exports = (config: any) => {
   if (process) {
     const env = process.env
 
-    envData.eleventy.cache = env?.USE_11TY_CACHE ? true : false
+    /*envData.eleventy.cache = env?.USE_11TY_CACHE ? true : false
     envData.dev = env.ENVIRONMENT === 'dev'
-    envData.prod = env.ENVIRONMENT === 'production'
+    envData.prod = env.ENVIRONMENT === 'production'*/
   }
 
   /* Process images and check/build json files */
 
   config.on('eleventy.before', async ({ runMode }) => {
-    if (runMode === 'build') {
+    /*if (runMode === 'build') {
       const jsonFiles = Object.keys(jsonFileData)
 
       for (const j of jsonFiles) {
@@ -53,7 +51,7 @@ module.exports = (config: any) => {
       }
 
       await processImages('src/assets/img', 'site/assets/img', 'src/json/image-data.json')
-    }
+    }*/
   })
 
   /* Process scss and js files */
