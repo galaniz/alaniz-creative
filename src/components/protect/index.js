@@ -1,6 +1,6 @@
 "use strict";
 /**
- * Render - protect
+ * Components - protect
  */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -8,11 +8,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 /* Imports */
 const uuid_1 = require("uuid");
-const layout_1 = __importDefault(require("../layout"));
-const container_1 = __importDefault(require("../container"));
-const form_1 = __importDefault(require("../form"));
-const field_1 = __importDefault(require("../field"));
-const lock_1 = __importDefault(require("../svg/lock"));
+const container_1 = __importDefault(require("@alanizcreative/static-site-formation/src/layouts/container"));
+const form_1 = __importDefault(require("@alanizcreative/static-site-formation/src/objects/form"));
+const field_1 = __importDefault(require("@alanizcreative/static-site-formation/src/objects/field"));
+const layout_1 = __importDefault(require("../../components/layout"));
+const lock_1 = __importDefault(require("../../svg/lock"));
 /**
  * Function - output password protected page
  *
@@ -38,8 +38,7 @@ const protect = async () => {
                 id: (0, uuid_1.v4)(),
                 action: 'check-password',
                 submitLabel: 'Go',
-                row: 's',
-                align: 's'
+                fieldsClasses: 'l-flex-row-s l-align-end-s'
             }
         }),
         field: (0, field_1.default)({
@@ -49,8 +48,7 @@ const protect = async () => {
                 label: 'Password',
                 required: true,
                 emptyErrorMessage: 'Enter a password',
-                width: '3-4',
-                widthBreakpoint: 's',
+                widthSmall: '3-4',
                 grow: true
             }
         })

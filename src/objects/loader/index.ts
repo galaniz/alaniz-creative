@@ -1,5 +1,5 @@
 /**
- * Render - loader
+ * Objects - loader
  */
 
 /**

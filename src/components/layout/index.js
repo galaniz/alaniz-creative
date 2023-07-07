@@ -1,21 +1,25 @@
 "use strict";
 /**
- * Render - layout
+ * Components - layout
  */
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 /* Imports */
-const data_1 = require("../../vars/data");
-const enums_1 = require("../../vars/enums");
-const utils_1 = require("../../utils");
+const get_permalink_1 = __importDefault(require("@alanizcreative/static-site-formation/src/utils/get-permalink"));
+const config_1 = __importDefault(require("../../config"));
 const layout = async ({ meta = {}, content = '', style = '', PurgeCSS }) => {
     /* Assets link */
-    const assetsLink = `${(0, utils_1.getPermalink)()}assets/`;
+    const assetsLink = `${(0, get_permalink_1.default)()}assets/`;
+    /* Namespace */
+    const ns = config_1.default.namespace;
     /* Title */
-    const title = (meta?.title !== undefined && meta?.title !== '' ? `${meta.title} | ` : '') + enums_1.enumSite.title;
+    const title = (meta?.title !== undefined && meta?.title !== '' ? `${meta.title} | ` : '') + config_1.default.title;
     /* Description */
-    const description = meta?.description !== undefined && meta?.description !== '' ? meta.description : enums_1.enumSite.meta.description;
+    const description = meta?.description !== undefined && meta?.description !== '' ? meta.description : config_1.default.meta.description;
     /* Image */
-    const image = meta?.image !== undefined && meta?.image !== '' ? `${assetsLink}${meta.image}` : `${assetsLink}${enums_1.enumSite.meta.image}`;
+    const image = meta?.image !== undefined && meta?.image !== '' ? `${assetsLink}${meta.image}` : `${assetsLink}${config_1.default.meta.image}`;
     /* Url */
     const url = meta?.url !== undefined && meta?.url !== '' ? meta.url : '';
     /* Canonical */
@@ -26,7 +30,7 @@ const layout = async ({ meta = {}, content = '', style = '', PurgeCSS }) => {
     const next = meta?.next !== undefined ? `<link rel="next" href="${meta.next}">` : '';
     /* No index */
     let noIndex = meta?.noIndex !== undefined ? meta.noIndex : false;
-    if (data_1.envData.dev) {
+    if (config_1.default.env.dev) {
         noIndex = true;
     }
     /* Preload font links */
@@ -36,21 +40,23 @@ const layout = async ({ meta = {}, content = '', style = '', PurgeCSS }) => {
   `;
     /* Script data */
     let script = '';
-    if (Object.keys(data_1.scriptData).length > 0) {
-        const scriptJSON = JSON.stringify(data_1.scriptData);
+    if (Object.keys(config_1.default.script).length > 0) {
+        const scriptJSON = JSON.stringify(config_1.default.script);
         script = `
       <script>
-        var namespace = '${enums_1.enumNamespace}';
-        var ${enums_1.enumNamespace} = ${scriptJSON};
+        var namespace = '${ns}';
+        var ${ns} = ${scriptJSON};
       </script>
     `;
     }
     /* Clear script data */
-    Object.keys(data_1.scriptData).forEach(k => delete data_1.scriptData[k]); // eslint-disable-line @typescript-eslint/no-dynamic-delete
+    Object.keys(config_1.default.script).forEach(k => delete config_1.default.script[k]); // eslint-disable-line @typescript-eslint/no-dynamic-delete
+    /* Theme color */
+    const theme = config_1.default.theme;
     /* Output */
     const output = `
     <!DOCTYPE html>
-    <html lang="en" id="${enums_1.enumNamespace}" data-root>
+    <html lang="en" id="${ns}" data-root>
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -88,21 +94,21 @@ const layout = async ({ meta = {}, content = '', style = '', PurgeCSS }) => {
         <link rel="icon" type="image/png" sizes="32x32" href="${assetsLink}favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="${assetsLink}favicon/favicon-16x16.png">
         <link rel="manifest" href="${assetsLink}favicon/site.webmanifest">
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="${enums_1.enumColors.foreground.base}">
-        <meta name="msapplication-TileColor" content="${enums_1.enumColors.foreground.base}">
-        <meta name="theme-color" content="${enums_1.enumColors.foreground.base}">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="${theme}">
+        <meta name="msapplication-TileColor" content="${theme}">
+        <meta name="theme-color" content="${theme}">
         <meta name="format-detection" content="telephone=no">
       </head>
-      <body class="${enums_1.enumNamespace} no-js l-flex l-flex-column">
+      <body class="${ns} no-js l-flex l-flex-column">
         ${content}
         ${script}
-        <script type="module" src="${assetsLink}js/${enums_1.enumNamespace}.js"></script>
+        <script type="module" src="${assetsLink}js/${ns}.js"></script>
       </body>
     </html>
   `;
     /* Purge unused css */
-    let cssOutput = `<link rel="stylesheet" href="${assetsLink}css/${enums_1.enumNamespace}.css" media="all">`;
-    if (data_1.envData.build && PurgeCSS !== undefined) {
+    let cssOutput = `<link rel="stylesheet" href="${assetsLink}css/${ns}.css" media="all">`;
+    if (config_1.default.env.build && PurgeCSS !== undefined) {
         const purge = await new PurgeCSS().purge({
             content: [
                 {
@@ -111,7 +117,7 @@ const layout = async ({ meta = {}, content = '', style = '', PurgeCSS }) => {
                 }
             ],
             css: [
-                `./site/assets/css/${enums_1.enumNamespace}.css`
+                `./site/assets/css/${ns}.css`
             ],
             safelist: [
                 'o-form__error',

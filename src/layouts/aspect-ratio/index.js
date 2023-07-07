@@ -1,6 +1,6 @@
 "use strict";
 /**
- * Render - aspect ratio
+ * Layouts - aspect ratio
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const aspectRatio = (props = { args: {} }) => {

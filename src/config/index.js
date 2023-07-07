@@ -2,18 +2,16 @@
 /**
  * Config
  */
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 /* Imports */
 const config_1 = require("@alanizcreative/static-site-formation/src/config");
-const check_password_1 = __importDefault(require("../serverless/check-password"));
-/* */
+// import checkPassword from '../serverless/check-password'
+/* Site options */
 const config = (0, config_1.setConfig)({
     namespace: 'ac',
     source: 'static',
     title: 'Alaniz Creative',
+    theme: '#222222',
     meta: {
         description: 'Graciela Alaniz is a designer/developer based in Toronto. She strives to create elegant, engaging and accessible digital experiences.',
         image: 'img/alaniz-creative-meta.webp'
@@ -49,12 +47,20 @@ const config = (0, config_1.setConfig)({
             'page',
             'work',
             'workCategory'
+        ],
+        archive: [
+            'work',
+            'workCategory'
         ]
     },
-    renderFunctions: {},
-    ajaxFunctions: {
-        checkPassword: check_password_1.default
+    taxonomy: {
+        workCategory: {
+            contentTypes: ['work'],
+            props: ['category']
+        }
     },
+    renderFunctions: {},
+    ajaxFunctions: {},
     modules: {
         cache: {
             path: '../',
@@ -129,6 +135,5 @@ const config = (0, config_1.setConfig)({
         }
     }
 });
-console.log("CONFIG", config);
 /* Exports */
 exports.default = config;

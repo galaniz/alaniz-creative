@@ -1,15 +1,15 @@
 /**
- * Render - single content
+ * Components - single content
  */
 
 /* Imports */
 
-import { getArchiveLink } from '../../utils'
-import { card } from '../cards'
-import container from '../container'
-import richText from '../rich-text'
-import button from '../button'
-import waveSeparator from '../wave-separator'
+import getArchiveLink from '@alanizcreative/static-site-formation/src/utils/get-archive-link'
+import container from '@alanizcreative/static-site-formation/src/layouts/container'
+import richText from '@alanizcreative/static-site-formation/src/text/rich-text'
+import waveSeparator from '../../components/wave-separator'
+import button from '../../objects/button'
+import { card } from '../../objects/cards'
 
 /**
  * Function - output additional content for single posts
@@ -22,7 +22,7 @@ import waveSeparator from '../wave-separator'
 
 interface Args {
   contentType: string
-  related: Render.InternalLink[]
+  related: AC.InternalLink[]
 }
 
 const singleContent = ({ contentType = 'work', related = [] }: Args): string => {

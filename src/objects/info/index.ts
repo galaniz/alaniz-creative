@@ -1,10 +1,10 @@
 /**
- * Render - info
+ * Objects - info
  */
 
 /* Imports */
 
-import infoSvg from '../svg/info'
+import infoSvg from '../../svg/info'
 
 /**
  * Function - output info message

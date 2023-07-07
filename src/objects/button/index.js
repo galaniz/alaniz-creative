@@ -1,22 +1,22 @@
 "use strict";
 /**
- * Render - button
+ * Objects - button
  */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 /* Imports */
-const utils_1 = require("../../utils");
-const external_link_1 = __importDefault(require("../svg/external-link"));
-const arrow_back_1 = __importDefault(require("../svg/arrow-back"));
+const get_link_1 = __importDefault(require("@alanizcreative/static-site-formation/src/utils/get-link"));
+const external_link_1 = __importDefault(require("../../svg/external-link"));
+const arrow_back_1 = __importDefault(require("../../svg/arrow-back"));
 const button = (props = { args: {} }) => {
     const { args = {} } = props;
     const { title = '', internalLink, externalLink = '', type = 'main', size = '', justify = '', richText = false, paddingTop = '', paddingBottom = '', newTab = false, iconBefore = '' } = args;
     let { link = '' } = args;
     /* Link and title required */
     if (link === '') {
-        link = (0, utils_1.getLink)(internalLink, externalLink);
+        link = (0, get_link_1.default)(internalLink, externalLink);
     }
     if (link === '' || title === '') {
         return '';

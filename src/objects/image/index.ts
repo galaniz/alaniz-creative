@@ -1,11 +1,11 @@
 /**
- * Render - image
+ * Objects - image
  */
 
 /* Imports */
 
-import { getImage } from '../../utils'
-import richText from '../rich-text'
+import getImage from '@alanizcreative/static-site-formation/src/utils/get-image'
+import richText from '@alanizcreative/static-site-formation/src/text/rich-text'
 
 /**
  * Function - output image
@@ -22,7 +22,7 @@ import richText from '../rich-text'
 
 interface Props {
   args: {
-    image?: Render.Image
+    image?: AC.Image
     alt?: string
     aspectRatio?: string
     caption?: {
@@ -77,7 +77,7 @@ const image = (props: Props = { args: {}, parents: [] }): string => {
       classes: imageClasses.join(' '),
       attr: card ? 'data-scale' : '',
       returnAspectRatio: true,
-      max: card ? 1600 : 2000
+      maxWidth: card ? 1600 : 2000
     })
 
     let imageObjAspectRatio = 0

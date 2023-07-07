@@ -1,13 +1,13 @@
 "use strict";
 /**
- * Render - info
+ * Objects - info
  */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 /* Imports */
-const info_1 = __importDefault(require("../svg/info"));
+const info_1 = __importDefault(require("../../svg/info"));
 /**
  * Function - output info message
  *

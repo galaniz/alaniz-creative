@@ -1,16 +1,16 @@
 "use strict";
 /**
- * Render - video
+ * Objects - video
  */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 /* Imports */
-const play_1 = __importDefault(require("../svg/play"));
-const pause_1 = __importDefault(require("../svg/pause"));
-const error_1 = __importDefault(require("../svg/error"));
 const loader_1 = __importDefault(require("../loader"));
+const play_1 = __importDefault(require("../../svg/play"));
+const pause_1 = __importDefault(require("../../svg/pause"));
+const error_1 = __importDefault(require("../../svg/error"));
 const video = (props = { args: {} }) => {
     const { args = {} } = props;
     const { source = '', title = '' } = args;

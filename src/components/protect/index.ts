@@ -1,15 +1,15 @@
 /**
- * Render - protect
+ * Components - protect
  */
 
 /* Imports */
 
 import { v4 as uuid } from 'uuid'
-import layout from '../layout'
-import container from '../container'
-import form from '../form'
-import field from '../field'
-import lockSvg from '../svg/lock'
+import container from '@alanizcreative/static-site-formation/src/layouts/container'
+import form from '@alanizcreative/static-site-formation/src/objects/form'
+import field from '@alanizcreative/static-site-formation/src/objects/field'
+import layout from '../../components/layout'
+import lockSvg from '../../svg/lock'
 
 /**
  * Function - output password protected page
@@ -42,8 +42,7 @@ const protect = async (): Promise<string> => {
         id: uuid(),
         action: 'check-password',
         submitLabel: 'Go',
-        row: 's',
-        align: 's'
+        fieldsClasses: 'l-flex-row-s l-align-end-s'
       }
     }),
     field: field({
@@ -53,8 +52,7 @@ const protect = async (): Promise<string> => {
         label: 'Password',
         required: true,
         emptyErrorMessage: 'Enter a password',
-        width: '3-4',
-        widthBreakpoint: 's',
+        widthSmall: '3-4',
         grow: true
       }
     })

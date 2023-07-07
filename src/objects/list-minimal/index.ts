@@ -1,11 +1,11 @@
 /**
- * Render - list minimal
+ * Objects - list minimal
  */
 
 /* Imports */
 
-import container from '../container'
-import richText from '../rich-text'
+import container from '@alanizcreative/static-site-formation/src/layouts/container'
+import richText from '@alanizcreative/static-site-formation/src/text/rich-text'
 
 /**
  * Function - output list container
@@ -80,7 +80,7 @@ const listMinimalItem = (props: ListMinimalItemProps = { args: {} }): string => 
 
   /* Output */
 
-  const containerArgs: Render.ContainerProps = {
+  const containerArgs: FRM.ContainerProps = {
     args: {
       tag: 'li'
     }
@@ -122,7 +122,7 @@ const listMinimal = (props: ListMinimalProps = { args: {} }): string => {
 
   /* Output */
 
-  const containerArgs: Render.ContainerProps = {
+  const containerArgs: FRM.ContainerProps = {
     args: {
       tag: 'ul',
       gap: 'm',

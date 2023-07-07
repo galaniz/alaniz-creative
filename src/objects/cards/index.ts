@@ -1,13 +1,13 @@
 /**
- * Render - card
+ * Objects - card
  */
 
 /* Imports */
 
-import { enumBlobs } from '../../vars/enums'
-import container from '../container'
-import column from '../column'
-import richText from '../rich-text'
+import container from '@alanizcreative/static-site-formation/src/layouts/container'
+import column from '@alanizcreative/static-site-formation/src/layouts/column'
+import richText from '@alanizcreative/static-site-formation/src/text/rich-text'
+import config from '../../config'
 import image from '../image'
 
 /**
@@ -23,7 +23,7 @@ import image from '../image'
  */
 
 interface _CardProps {
-  internalLink: Render.InternalLink
+  internalLink: AC.InternalLink
   headingLevel: number
   type: string
   index: number
@@ -129,13 +129,13 @@ interface CardProps {
   args: {
     headingLevel?: number
     type?: string
-    internalLink?: Render.InternalLink
+    internalLink?: AC.InternalLink
     index?: number
   }
   parents?: object[]
 }
 
-const card = (props: CardProps = { args: {} }): Render.Return => {
+const card = (props: CardProps = { args: {} }): FRM.StartEndReturn => {
   const { args = {} } = props
 
   const {
@@ -172,7 +172,7 @@ const card = (props: CardProps = { args: {} }): Render.Return => {
 
     if (ac && svg?.blob !== undefined) {
       const reverse = index % 2 !== 0
-      const path: string = enumBlobs[svg.blob].path
+      const path: string = config.blobs[svg.blob].path
 
       blob = `
         <svg
@@ -214,7 +214,7 @@ const card = (props: CardProps = { args: {} }): Render.Return => {
 
   /* Column */
 
-  const columnArgs: Render.ColumnProps = {
+  const columnArgs: FRM.ColumnProps = {
     args: {
       tag: 'li'
     }
@@ -280,7 +280,7 @@ const cards = (props: CardsProps = { args: {} }): string => {
     length = 0
   } = args
 
-  const containerArgs: Render.ContainerProps = {
+  const containerArgs: FRM.ContainerProps = {
     args: {
       tag: 'ul'
     }

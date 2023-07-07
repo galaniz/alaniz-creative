@@ -7,12 +7,13 @@
 import { setConfig } from '@alanizcreative/static-site-formation/src/config'
 import checkPassword from '../serverless/check-password'
 
-/* */
+/* Site options */
 
-const config = setConfig({
+const config: FRM.Config = setConfig({
   namespace: 'ac',
   source: 'static',
   title: 'Alaniz Creative',
+  theme: '#222222',
   meta: {
     description: 'Graciela Alaniz is a designer/developer based in Toronto. She strives to create elegant, engaging and accessible digital experiences.',
     image: 'img/alaniz-creative-meta.webp'
@@ -48,7 +49,17 @@ const config = setConfig({
       'page',
       'work',
       'workCategory'
+    ],
+    archive: [
+      'work',
+      'workCategory'
     ]
+  },
+  taxonomy: {
+    workCategory: {
+      contentTypes: ['work'],
+      props: ['category']
+    }
   },
   renderFunctions: {
 
@@ -130,8 +141,6 @@ const config = setConfig({
     }
   }
 })
-
-console.log("CONFIG", config)
 
 /* Exports */
 

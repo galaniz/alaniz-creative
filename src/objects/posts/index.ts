@@ -1,14 +1,13 @@
 /**
- * Render - posts
+ * Objects - posts
  */
 
 /* Imports */
 
-import { enumLayouts } from '../../vars/enums'
-import { slugData, archiveData } from '../../vars/data'
+import config from '../../config'
+import info from '../info'
 import { card, cards } from '../cards'
 import { listMinimalItem, listMinimal } from '../list-minimal'
-import info from '../info'
 
 /**
  * Function - output posts
@@ -58,7 +57,7 @@ const posts = (props: Props = { args: {} }): string => {
 
   /* Content type title */
 
-  const typeTitle: string = slugData.bases[contentType].title.toLowerCase()
+  const typeTitle: string = config.slug.bases[contentType].title.toLowerCase()
 
   /* Id required if term */
 
@@ -68,11 +67,11 @@ const posts = (props: Props = { args: {} }): string => {
 
   /* Layout */
 
-  const l = enumLayouts[layout]
+  const l = config.layouts[layout]
 
   /* Check posts */
 
-  let posts = archiveData.posts?.[contentType] !== undefined ? archiveData.posts[contentType] : []
+  let posts = config.archive.posts?.[contentType] !== undefined ? config.archive.posts[contentType] : []
 
   if (contentType === 'workCategory') {
     posts = posts[id]
@@ -110,7 +109,7 @@ const posts = (props: Props = { args: {} }): string => {
 
   const outputArray: string[] = []
 
-  posts.forEach((post: Render.InternalLink, index: number) => {
+  posts.forEach((post: AC.InternalLink, index: number) => {
     let itemOutput = ''
 
     if (l.type === 'cards') {
@@ -123,7 +122,7 @@ const posts = (props: Props = { args: {} }): string => {
         }
       })
 
-      itemOutput = cardOutput.start + cardOutput.end
+      itemOutput = `${cardOutput.start}${cardOutput.end}`
     }
 
     if (l.type === 'listMinimal') {
@@ -132,7 +131,7 @@ const posts = (props: Props = { args: {} }): string => {
       itemArgs.contentType = contentType
 
       if (contentType === 'workCategory') {
-        const length: number = archiveData.posts[contentType][post.id].length
+        const length: number = config.archive.posts[contentType][post.id].length
 
         itemArgs.text = `${length} work item${length === 1 ? '' : 's'}`
       }

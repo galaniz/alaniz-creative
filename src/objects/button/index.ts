@@ -1,12 +1,12 @@
 /**
- * Render - button
+ * Objects - button
  */
 
 /* Imports */
 
-import { getLink } from '../../utils'
-import externalLinkSvg from '../svg/external-link'
-import arrowBackSvg from '../svg/arrow-back'
+import getLink from '@alanizcreative/static-site-formation/src/utils/get-link'
+import externalLinkSvg from '../../svg/external-link'
+import arrowBackSvg from '../../svg/arrow-back'
 
 /**
  * Function - output link button
@@ -32,7 +32,7 @@ import arrowBackSvg from '../svg/arrow-back'
 interface Props {
   args: {
     title?: string
-    internalLink?: Render.InternalLink
+    internalLink?: AC.InternalLink
     externalLink?: string
     link?: string
     type?: string

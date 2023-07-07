@@ -1,13 +1,13 @@
 /**
- * Render - header
+ * Components - header
  */
 
 /* Imports */
 
 import { v4 as uuid } from 'uuid'
-import { getPermalink } from '../../utils'
-import { enumSite } from '../../vars/enums'
-import logoSvg from '../svg/logo'
+import getPermalink from '@alanizcreative/static-site-formation/src/utils/get-permalink'
+import config from '../../config'
+import logoSvg from '../../svg/logo'
 
 /**
  * Function - output header
@@ -21,6 +21,11 @@ const header = (navigations: { main?: string } = {}): string => {
 
   const id: string = uuid()
 
+  /* Site title and link */
+
+  const siteTitle: string = config.title
+  const siteLink: string = getPermalink()
+
   /* Main nav */
 
   let nav = ''
@@ -29,8 +34,8 @@ const header = (navigations: { main?: string } = {}): string => {
     nav = `
       <nav class="c-nav l-relative l-container l-padding-top-m l-padding-bottom-m l-padding-top-l-m l-padding-bottom-l-m" aria-label="Main" data-overflow="false" data-overflow-all="false" data-open="false">
         <div class="l-flex l-justify-between l-align-center">
-          <a class="c-nav__logo l-inline-flex l-z-index-1 js-pt-link" href="${getPermalink()}">
-            <span class="a11y-visually-hidden">${enumSite.title} Home</span>
+          <a class="c-nav__logo l-inline-flex l-z-index-1 js-pt-link" href="${siteLink}">
+            <span class="a11y-visually-hidden">${siteTitle} Home</span>
             ${logoSvg('o-logo')}
           </a>
           ${navigations.main}
@@ -46,7 +51,7 @@ const header = (navigations: { main?: string } = {}): string => {
           </div>
           <div class="c-nav-overflow l-fixed l-top-0 l-left-0 l-z-index-1 l-width-100-pc l-height-100-pc" role="dialog" aria-modal="true" aria-label="Main menu" id="${id}">
             <div class="c-nav__hide">
-              <a class="c-nav__logo o-logo l-inline-flex l-fixed js-pt-link" href="${getPermalink()}" aria-label="${enumSite.title} Home"></a>
+              <a class="c-nav__logo o-logo l-inline-flex l-fixed js-pt-link" href="${siteLink}" aria-label="${siteTitle} Home"></a>
             </div>
             <div class="c-nav-overflow__main t-sharp t-link-current l-height-100-pc l-overflow-y-auto l-overscroll-none l-overflow-x-hidden l-padding-left-3xs l-padding-right-3xs l-padding-top-m l-padding-bottom-m">
               <ul class="c-nav-overflow__list l-flex l-flex-column l-padding-bottom-l l-gap-margin-2xs t-list-style-none outline-tight" role="list"></ul>

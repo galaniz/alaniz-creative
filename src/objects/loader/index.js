@@ -1,6 +1,6 @@
 "use strict";
 /**
- * Render - loader
+ * Objects - loader
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const loader = (args = {}) => {

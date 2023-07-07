@@ -1,14 +1,14 @@
 "use strict";
 /**
- * Render - image
+ * Objects - image
  */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 /* Imports */
-const utils_1 = require("../../utils");
-const rich_text_1 = __importDefault(require("../rich-text"));
+const get_image_1 = __importDefault(require("@alanizcreative/static-site-formation/src/utils/get-image"));
+const rich_text_1 = __importDefault(require("@alanizcreative/static-site-formation/src/text/rich-text"));
 const image = (props = { args: {}, parents: [] }) => {
     const { args = {}, parents = [] } = props;
     const { image, alt = '', aspectRatio = '', caption, border = false } = args;
@@ -27,7 +27,7 @@ const image = (props = { args: {}, parents: [] }) => {
             imageClasses.push('e-transition l-object-left-top');
         }
         const { base, width, height } = image;
-        const imageObj = (0, utils_1.getImage)({
+        const imageObj = (0, get_image_1.default)({
             data: {
                 base,
                 width,
@@ -37,7 +37,7 @@ const image = (props = { args: {}, parents: [] }) => {
             classes: imageClasses.join(' '),
             attr: card ? 'data-scale' : '',
             returnAspectRatio: true,
-            max: card ? 1600 : 2000
+            maxWidth: card ? 1600 : 2000
         });
         let imageObjAspectRatio = 0;
         let imageObjOutput = '';

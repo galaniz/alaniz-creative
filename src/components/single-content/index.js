@@ -1,18 +1,18 @@
 "use strict";
 /**
- * Render - single content
+ * Components - single content
  */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 /* Imports */
-const utils_1 = require("../../utils");
-const cards_1 = require("../cards");
-const container_1 = __importDefault(require("../container"));
-const rich_text_1 = __importDefault(require("../rich-text"));
-const button_1 = __importDefault(require("../button"));
-const wave_separator_1 = __importDefault(require("../wave-separator"));
+const get_archive_link_1 = __importDefault(require("@alanizcreative/static-site-formation/src/utils/get-archive-link"));
+const container_1 = __importDefault(require("@alanizcreative/static-site-formation/src/layouts/container"));
+const rich_text_1 = __importDefault(require("@alanizcreative/static-site-formation/src/text/rich-text"));
+const wave_separator_1 = __importDefault(require("../../components/wave-separator"));
+const button_1 = __importDefault(require("../../objects/button"));
+const cards_1 = require("../../objects/cards");
 const singleContent = ({ contentType = 'work', related = [] }) => {
     /* Related required */
     if (related.length === 0) {
@@ -43,7 +43,7 @@ const singleContent = ({ contentType = 'work', related = [] }) => {
         button: ''
     };
     /* Archive title and link */
-    const archiveData = (0, utils_1.getArchiveLink)(contentType);
+    const archiveData = (0, get_archive_link_1.default)(contentType);
     if (archiveData.title !== '' && archiveData.link !== '') {
         content.button = (0, button_1.default)({
             args: {

@@ -1,11 +1,11 @@
 /**
- * Render - footer
+ * Components - footer
  */
 
 /* Imports */
 
-import { enumSite } from '../../vars/enums'
-import { getYear } from '../../utils'
+import config from '../../config'
+import getYear from '@alanizcreative/static-site-formation/src/utils/get-year'
 
 /**
  * Function - output footer
@@ -22,6 +22,10 @@ const footer = (navigations: { footer?: string } = {}): string => {
   if (navigations?.footer !== '' && navigations?.footer !== undefined) {
     nav = `<nav aria-label="Secondary">${navigations.footer}</nav>`
   }
+
+  /* Site title */
+
+  const siteTitle: string = config.title
 
   /* Output */
 
@@ -47,7 +51,7 @@ const footer = (navigations: { footer?: string } = {}): string => {
             </svg>
           </div>
           <div class="c-footer-copyright l-flex l-padding-bottom-l l-padding-bottom-2xl-m">
-            <span class="l-margin-top-auto t-xs">&copy; ${getYear()} ${enumSite.title}</span>
+            <span class="l-margin-top-auto t-xs">&copy; ${getYear()} ${siteTitle}</span>
           </div>
         </div>
       </div>

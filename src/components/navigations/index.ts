@@ -1,37 +1,37 @@
 /**
- * Render - navigations
+ * Components - navigations
  */
 
 /* Imports */
 
-import Navigation from '../navigation'
+import Navigation from '@alanizcreative/static-site-formation/src/components/navigation'
 
 /**
  * Function - output navigations
  *
  * @param {object} args
- * @param {array<object>} args.navs
+ * @param {array<object>} args.navigations
  * @param {array<object>} args.items
  * @param {string} args.current
  * @return {object}
  */
 
 interface Args {
-  navs: Render.Nav[]
-  items: Render.NavItem[]
+  navigations: FRM.Navigation[]
+  items: FRM.NavigationItem[]
   current: string
   title?: string
   parents?: object[]
 }
 
 const navigations = ({
-  navs = [],
+  navigations = [],
   items = [],
   current = ''
 }: Args): object => {
   /* Navs and items required */
 
-  if ((navs.length === 0) && (items.length === 0)) {
+  if ((navigations.length === 0) && (items.length === 0)) {
     return {
       main: '',
       footer: ''
@@ -40,7 +40,7 @@ const navigations = ({
 
   /* Navigation instance */
 
-  const nav = new Navigation({ navs, items })
+  const nav = new Navigation({ navigations, items })
 
   /* Output */
 
@@ -75,25 +75,25 @@ const navigations = ({
  * Function - output nav element with contents
  *
  * @param {object} args
- * @param {object} args.navs
+ * @param {object} args.navigations
  * @param {object} args.props
  * @return {string}
  */
 
 interface NavArgs {
-  navs: object
+  navigations: object
   props: {
     location?: string
     title?: string
   }
 }
 
-export const navContainer = ({ navs = {}, props = {} }: NavArgs): string => {
+export const nav = ({ navigations = {}, props = {} }: NavArgs): string => {
   const { location = '', title = '' } = props
 
   if (location !== '' && title !== '') {
     const loc = location.toLowerCase().replace(/ /g, '')
-    const nav: string = navs?.[loc] !== '' ? navs[loc] : ''
+    const nav: string = navigations?.[loc] !== '' ? navigations[loc] : ''
 
     return `<nav aria-label="${title}">${nav}</nav>`
   }

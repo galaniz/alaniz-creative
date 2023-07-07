@@ -1,29 +1,29 @@
 "use strict";
 /**
- * Render - hero
+ * Components - hero
  */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 /* Imports */
-const utils_1 = require("../../utils");
-const enums_1 = require("../../vars/enums");
-const button_1 = __importDefault(require("../button"));
+const get_image_1 = __importDefault(require("@alanizcreative/static-site-formation/src/utils/get-image"));
+const config_1 = __importDefault(require("../../config"));
+const button_1 = __importDefault(require("../../objects/button"));
 /**
  * Function - output hero
  *
  * @param {object} args
- * @prop {string} args.contentType
- * @prop {string} args.archive
- * @prop {string} args.type // index || profile || minimal
- * @prop {string} args.title
- * @prop {string} args.text
- * @prop {object} args.image
- * @prop {object} args.wave
- * @prop {object} args.blob
- * @prop {boolean} args.border
- * @prop {object} args.action
+ * @param {string} args.contentType
+ * @param {string} args.archive
+ * @param {string} args.type // index || profile || minimal
+ * @param {string} args.title
+ * @param {string} args.text
+ * @param {object} args.image
+ * @param {object} args.wave
+ * @param {object} args.blob
+ * @param {boolean} args.border
+ * @param {object} args.action
  * @return {string} HTML - section
  */
 const hero = (args = {}) => {
@@ -31,11 +31,11 @@ const hero = (args = {}) => {
     /* Image */
     let imageOutput = '';
     if (image !== undefined) {
-        const imageStr = (0, utils_1.getImage)({
+        const imageStr = (0, get_image_1.default)({
             data: image,
             classes: 'l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc l-object-cover',
             lazy: false,
-            max: contentType === 'page' && type === 'profile' ? 600 : 1600
+            maxWidth: contentType === 'page' && type === 'profile' ? 600 : 1600
         });
         if (contentType === 'page' && type === 'profile' && typeof imageStr === 'string') {
             imageOutput = `
@@ -49,7 +49,7 @@ const hero = (args = {}) => {
         if (contentType === 'work' && typeof imageStr === 'string') {
             let waveOutput = '';
             if (wave !== undefined) {
-                const w = enums_1.enumWaves[wave];
+                const w = config_1.default.waves[wave];
                 waveOutput = `
           <div class="l-absolute l-width-100-vw l-max-height-100-pc l-center">
             <div style="padding-top:${(w.height / w.width) * 100}%"></div>
@@ -87,7 +87,7 @@ const hero = (args = {}) => {
     /* Blob */
     let blobOutput = '';
     if (blob !== undefined) {
-        const path = enums_1.enumBlobs[blob].path;
+        const path = config_1.default.blobs[blob].path;
         blobOutput = `
       <svg
         xmlns="http://www.w3.org/2000/svg"

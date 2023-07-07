@@ -7,26 +7,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 /* Imports */
-const utils_1 = require("../utils");
-const http_error_1 = __importDefault(require("../../render/http-error"));
-const protect_1 = __importDefault(require("../../render/protect"));
-/**
- * Function - check password set before showing page
- *
- * @private
- * @param {object} context
- * @param {object} context.request
- * @param {object} context.env
- * @param {function} context.next
- * @return {object} Response
- */
-const passwordProtect = async ({ request, env, next }) => {
+const http_error_1 = __importDefault(require("../../components/http-error"));
+const protect_1 = __importDefault(require("../../components/protect"));
+const passwordProtect = async ({ request, next }) => {
     try {
         /* Check cookie */
         const cookieName = 'acp_set';
         const cookie = request.headers.get('cookie');
+        const cookieExists = cookie !== null ? cookie.includes(`${cookieName}=true`) : false;
         /* Show page if cookie set otherwise password page */
-        if (cookie && cookie.includes(`${cookieName}=true`)) {
+        if (cookieExists) {
             return next();
         }
         else {
@@ -41,9 +31,9 @@ const passwordProtect = async ({ request, env, next }) => {
     }
     catch (error) {
         console.error('Error with password protect function: ', error);
-        (0, utils_1.setDataVars)(env);
-        return new Response((0, http_error_1.default)('500'), {
-            status: error.httpStatusCode || 500
+        const statusCode = typeof error.httpStatusCode === 'number' ? error.httpStatusCode : 500;
+        return new Response(await (0, http_error_1.default)(500), {
+            status: statusCode
         });
     }
 };

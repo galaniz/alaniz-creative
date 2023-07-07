@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es2021",
+    "target": "esnext",
     "module": "commonjs",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "strictNullChecks": true
   },
-  "include": ["**/*.ts", ".eleventy.ts", "@alanizcreative/static-site-formation/formation.d.ts"],
-  "exclude": ["site"]
+  "include": ["**/*.ts", ".eleventy.ts"],
+  "exclude": ["node_modules", "site"]
 }

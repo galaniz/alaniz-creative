@@ -1,21 +1,21 @@
 /**
- * Render - video
+ * Objects - video
  */
 
 /* Imports */
 
-import playSvg from '../svg/play'
-import pauseSvg from '../svg/pause'
-import errorSvg from '../svg/error'
 import loader from '../loader'
+import playSvg from '../../svg/play'
+import pauseSvg from '../../svg/pause'
+import errorSvg from '../../svg/error'
 
 /**
  * Function - output video
  *
  * @param {object} props
  * @param {object} props.args
- * @prop {string} props.args.source
- * @prop {string} props.args.title
+ * @param {string} props.args.source
+ * @param {string} props.args.title
  * @return {string} HTML - figure
  */
 

@@ -1,13 +1,13 @@
 /**
- * Render - term content
+ * Components - term content
  */
 
 /* Imports */
 
-import { getArchiveLink } from '../../utils'
-import button from '../button'
-import container from '../container'
-import posts from '../posts'
+import getArchiveLink from '@alanizcreative/static-site-formation/src/utils/get-archive-link'
+import container from '@alanizcreative/static-site-formation/src/layouts/container'
+import button from '../../objects/button'
+import posts from '../../objects/posts'
 
 /**
  * Function - output main content for term

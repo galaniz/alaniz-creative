@@ -1,11 +1,14 @@
 "use strict";
 /**
- * Render - footer
+ * Components - footer
  */
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 /* Imports */
-const enums_1 = require("../../vars/enums");
-const utils_1 = require("../../utils");
+const config_1 = __importDefault(require("../../config"));
+const get_year_1 = __importDefault(require("@alanizcreative/static-site-formation/src/utils/get-year"));
 /**
  * Function - output footer
  *
@@ -18,6 +21,8 @@ const footer = (navigations = {}) => {
     if (navigations?.footer !== '' && navigations?.footer !== undefined) {
         nav = `<nav aria-label="Secondary">${navigations.footer}</nav>`;
     }
+    /* Site title */
+    const siteTitle = config_1.default.title;
     /* Output */
     return `
     <footer class="l-relative l-overflow-hidden l-margin-top-auto t-sharp">
@@ -41,7 +46,7 @@ const footer = (navigations = {}) => {
             </svg>
           </div>
           <div class="c-footer-copyright l-flex l-padding-bottom-l l-padding-bottom-2xl-m">
-            <span class="l-margin-top-auto t-xs">&copy; ${(0, utils_1.getYear)()} ${enums_1.enumSite.title}</span>
+            <span class="l-margin-top-auto t-xs">&copy; ${(0, get_year_1.default)()} ${siteTitle}</span>
           </div>
         </div>
       </div>

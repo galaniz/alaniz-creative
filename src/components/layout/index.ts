@@ -1,12 +1,11 @@
 /**
- * Render - layout
+ * Components - layout
  */
 
 /* Imports */
 
-import { envData, scriptData } from '../../vars/data'
-import { enumNamespace, enumSite, enumColors } from '../../vars/enums'
-import { getPermalink } from '../../utils'
+import getPermalink from '@alanizcreative/static-site-formation/src/utils/get-permalink'
+import config from '../../config'
 
 /**
  * Function - output html
@@ -49,17 +48,21 @@ const layout = async ({
 
   const assetsLink = `${getPermalink()}assets/`
 
+  /* Namespace */
+
+  const ns = config.namespace
+
   /* Title */
 
-  const title = (meta?.title !== undefined && meta?.title !== '' ? `${meta.title} | ` : '') + enumSite.title
+  const title = (meta?.title !== undefined && meta?.title !== '' ? `${meta.title} | ` : '') + config.title
 
   /* Description */
 
-  const description = meta?.description !== undefined && meta?.description !== '' ? meta.description : enumSite.meta.description
+  const description = meta?.description !== undefined && meta?.description !== '' ? meta.description : config.meta.description
 
   /* Image */
 
-  const image = meta?.image !== undefined && meta?.image !== '' ? `${assetsLink}${meta.image}` : `${assetsLink}${enumSite.meta.image}`
+  const image = meta?.image !== undefined && meta?.image !== '' ? `${assetsLink}${meta.image}` : `${assetsLink}${config.meta.image}`
 
   /* Url */
 
@@ -81,7 +84,7 @@ const layout = async ({
 
   let noIndex = meta?.noIndex !== undefined ? meta.noIndex : false
 
-  if (envData.dev) {
+  if (config.env.dev) {
     noIndex = true
   }
 
@@ -96,26 +99,30 @@ const layout = async ({
 
   let script = ''
 
-  if (Object.keys(scriptData).length > 0) {
-    const scriptJSON = JSON.stringify(scriptData)
+  if (Object.keys(config.script).length > 0) {
+    const scriptJSON = JSON.stringify(config.script)
 
     script = `
       <script>
-        var namespace = '${enumNamespace}';
-        var ${enumNamespace} = ${scriptJSON};
+        var namespace = '${ns}';
+        var ${ns} = ${scriptJSON};
       </script>
     `
   }
 
   /* Clear script data */
 
-  Object.keys(scriptData).forEach(k => delete scriptData[k]) // eslint-disable-line @typescript-eslint/no-dynamic-delete
+  Object.keys(config.script).forEach(k => delete config.script[k]) // eslint-disable-line @typescript-eslint/no-dynamic-delete
+
+  /* Theme color */
+
+  const theme: string = config.theme
 
   /* Output */
 
   const output = `
     <!DOCTYPE html>
-    <html lang="en" id="${enumNamespace}" data-root>
+    <html lang="en" id="${ns}" data-root>
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -153,24 +160,24 @@ const layout = async ({
         <link rel="icon" type="image/png" sizes="32x32" href="${assetsLink}favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="${assetsLink}favicon/favicon-16x16.png">
         <link rel="manifest" href="${assetsLink}favicon/site.webmanifest">
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="${enumColors.foreground.base}">
-        <meta name="msapplication-TileColor" content="${enumColors.foreground.base}">
-        <meta name="theme-color" content="${enumColors.foreground.base}">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="${theme}">
+        <meta name="msapplication-TileColor" content="${theme}">
+        <meta name="theme-color" content="${theme}">
         <meta name="format-detection" content="telephone=no">
       </head>
-      <body class="${enumNamespace} no-js l-flex l-flex-column">
+      <body class="${ns} no-js l-flex l-flex-column">
         ${content}
         ${script}
-        <script type="module" src="${assetsLink}js/${enumNamespace}.js"></script>
+        <script type="module" src="${assetsLink}js/${ns}.js"></script>
       </body>
     </html>
   `
 
   /* Purge unused css */
 
-  let cssOutput = `<link rel="stylesheet" href="${assetsLink}css/${enumNamespace}.css" media="all">`
+  let cssOutput = `<link rel="stylesheet" href="${assetsLink}css/${ns}.css" media="all">`
 
-  if (envData.build && PurgeCSS !== undefined) {
+  if (config.env.build && PurgeCSS !== undefined) {
     const purge: Purge[] = await new PurgeCSS().purge({
       content: [
         {
@@ -179,7 +186,7 @@ const layout = async ({
         }
       ],
       css: [
-        `./site/assets/css/${enumNamespace}.css`
+        `./site/assets/css/${ns}.css`
       ],
       safelist: [
         'o-form__error',

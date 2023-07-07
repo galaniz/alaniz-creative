@@ -1,18 +1,20 @@
-"use strict";
 /**
- * Render - wave separator
+ * Objects - wave separator
  */
-Object.defineProperty(exports, "__esModule", { value: true });
+
 /**
  * Function - output wave separator
  *
  * @return {string} HTML - div
  */
-const waveSeparator = () => {
-    const width = 102;
-    const height = 12;
-    /* Output */
-    return `
+
+const waveSeparator = (): string => {
+  const width = 102
+  const height = 12
+
+  /* Output */
+
+  return `
     <div class="l-relative l-max-height-4xl">
       <div style="padding-top:${(height / width) * 100}%"></div>
       <svg
@@ -34,7 +36,9 @@ const waveSeparator = () => {
         />
       </svg>
     </div>
-  `;
-};
+  `
+}
+
 /* Exports */
-exports.default = waveSeparator;
+
+export default waveSeparator

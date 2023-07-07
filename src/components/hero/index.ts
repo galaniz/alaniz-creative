@@ -1,31 +1,31 @@
 /**
- * Render - hero
+ * Components - hero
  */
 
 /* Imports */
 
-import { getImage } from '../../utils'
-import { enumWaves, enumBlobs } from '../../vars/enums'
-import button from '../button'
+import getImage from '@alanizcreative/static-site-formation/src/utils/get-image'
+import config from '../../config'
+import button from '../../objects/button'
 
 /**
  * Function - output hero
  *
  * @param {object} args
- * @prop {string} args.contentType
- * @prop {string} args.archive
- * @prop {string} args.type // index || profile || minimal
- * @prop {string} args.title
- * @prop {string} args.text
- * @prop {object} args.image
- * @prop {object} args.wave
- * @prop {object} args.blob
- * @prop {boolean} args.border
- * @prop {object} args.action
+ * @param {string} args.contentType
+ * @param {string} args.archive
+ * @param {string} args.type // index || profile || minimal
+ * @param {string} args.title
+ * @param {string} args.text
+ * @param {object} args.image
+ * @param {object} args.wave
+ * @param {object} args.blob
+ * @param {boolean} args.border
+ * @param {object} args.action
  * @return {string} HTML - section
  */
 
-const hero = (args: Render.HeroArgs = {}): string => {
+const hero = (args: AC.HeroArgs = {}): string => {
   const {
     contentType = 'page',
     archive = '',
@@ -48,7 +48,7 @@ const hero = (args: Render.HeroArgs = {}): string => {
       data: image,
       classes: 'l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc l-object-cover',
       lazy: false,
-      max: contentType === 'page' && type === 'profile' ? 600 : 1600
+      maxWidth: contentType === 'page' && type === 'profile' ? 600 : 1600
     })
 
     if (contentType === 'page' && type === 'profile' && typeof imageStr === 'string') {
@@ -65,7 +65,7 @@ const hero = (args: Render.HeroArgs = {}): string => {
       let waveOutput = ''
 
       if (wave !== undefined) {
-        const w: { width: number, height: number, path: string } = enumWaves[wave]
+        const w: { width: number, height: number, path: string } = config.waves[wave]
 
         waveOutput = `
           <div class="l-absolute l-width-100-vw l-max-height-100-pc l-center">
@@ -108,7 +108,7 @@ const hero = (args: Render.HeroArgs = {}): string => {
   let blobOutput = ''
 
   if (blob !== undefined) {
-    const path: string = enumBlobs[blob].path
+    const path: string = config.blobs[blob].path
 
     blobOutput = `
       <svg

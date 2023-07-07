@@ -1,16 +1,16 @@
 "use strict";
 /**
- * Render - term content
+ * Components - term content
  */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 /* Imports */
-const utils_1 = require("../../utils");
-const button_1 = __importDefault(require("../button"));
-const container_1 = __importDefault(require("../container"));
-const posts_1 = __importDefault(require("../posts"));
+const get_archive_link_1 = __importDefault(require("@alanizcreative/static-site-formation/src/utils/get-archive-link"));
+const container_1 = __importDefault(require("@alanizcreative/static-site-formation/src/layouts/container"));
+const button_1 = __importDefault(require("../../objects/button"));
+const posts_1 = __importDefault(require("../../objects/posts"));
 /**
  * Function - output main content for term
  *
@@ -33,7 +33,7 @@ const termContent = (contentType = 'workCategory', id = '') => {
     };
     /* Archive links */
     let archiveLink = '';
-    const termArchiveData = (0, utils_1.getArchiveLink)(contentType);
+    const termArchiveData = (0, get_archive_link_1.default)(contentType);
     if (termArchiveData.title !== '' && termArchiveData.link !== '') {
         archiveLink = (0, button_1.default)({
             args: {

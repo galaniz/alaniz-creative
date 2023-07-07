@@ -1,24 +1,24 @@
 "use strict";
 /**
- * Render - navigations
+ * Components - navigations
  */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.navContainer = void 0;
+exports.nav = void 0;
 /* Imports */
-const navigation_1 = __importDefault(require("../navigation"));
-const navigations = ({ navs = [], items = [], current = '' }) => {
+const navigation_1 = __importDefault(require("@alanizcreative/static-site-formation/src/components/navigation"));
+const navigations = ({ navigations = [], items = [], current = '' }) => {
     /* Navs and items required */
-    if ((navs.length === 0) && (items.length === 0)) {
+    if ((navigations.length === 0) && (items.length === 0)) {
         return {
             main: '',
             footer: ''
         };
     }
     /* Navigation instance */
-    const nav = new navigation_1.default({ navs, items });
+    const nav = new navigation_1.default({ navigations, items });
     /* Output */
     return {
         main: nav.getOutput('main', current, {
@@ -38,15 +38,15 @@ const navigations = ({ navs = [], items = [], current = '' }) => {
         })
     };
 };
-const navContainer = ({ navs = {}, props = {} }) => {
+const nav = ({ navigations = {}, props = {} }) => {
     const { location = '', title = '' } = props;
     if (location !== '' && title !== '') {
         const loc = location.toLowerCase().replace(/ /g, '');
-        const nav = navs?.[loc] !== '' ? navs[loc] : '';
+        const nav = navigations?.[loc] !== '' ? navigations[loc] : '';
         return `<nav aria-label="${title}">${nav}</nav>`;
     }
     return '';
 };
-exports.navContainer = navContainer;
+exports.nav = nav;
 /* Exports */
 exports.default = navigations;

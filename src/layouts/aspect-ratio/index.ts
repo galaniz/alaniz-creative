@@ -1,5 +1,5 @@
 /**
- * Render - aspect ratio
+ * Layouts - aspect ratio
  */
 
 /**
@@ -18,7 +18,7 @@ interface Props {
   parents?: object[]
 }
 
-const aspectRatio = (props: Props = { args: {} }): Render.Return => {
+const aspectRatio = (props: Props = { args: {} }): FRM.StartEndReturn => {
   const { args = {} } = props
   const { percent = 100 } = args
 

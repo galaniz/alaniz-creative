@@ -1,26 +1,26 @@
 /**
- * Render - http error
+ * Components - http error
  */
 
 /* Imports */
 
+import getPermalink from '@alanizcreative/static-site-formation/src/utils/get-permalink'
+import container from '@alanizcreative/static-site-formation/src/layouts/container'
+import config from '../../config'
 import layout from '../layout'
-import container from '../container'
-import button from '../button'
 import header from '../header'
 import footer from '../footer'
 import navigations from '../navigations'
-import { getPermalink } from '../../utils'
-import { navData } from '../../vars/data'
+import button from '../../objects/button'
 
 /**
  * Function - output http error page (404 or 500)
  *
- * @param {string} type - 404 or 500
+ * @param {number} type - 404 or 500
  * @return {string} HTML - html
  */
 
-const httpError = async (type: string = '404'): Promise<string> => {
+const httpError = async (type: number = 404): Promise<string> => {
   /* Text by type */
 
   const text = {
@@ -40,9 +40,9 @@ const httpError = async (type: string = '404'): Promise<string> => {
   /* Navigations */
 
   const navs = navigations({
-    navs: navData.navs,
-    items: navData.items,
-    current: getPermalink(type)
+    navigations: config.navigation,
+    items: config.navigationItem,
+    current: getPermalink(`${type}`)
   })
 
   /* Container and button */

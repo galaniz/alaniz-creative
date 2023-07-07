@@ -1,6 +1,6 @@
 "use strict";
 /**
- * Render - list minimal
+ * Objects - list minimal
  */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -8,8 +8,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.listMinimal = exports.listMinimalItem = void 0;
 /* Imports */
-const container_1 = __importDefault(require("../container"));
-const rich_text_1 = __importDefault(require("../rich-text"));
+const container_1 = __importDefault(require("@alanizcreative/static-site-formation/src/layouts/container"));
+const rich_text_1 = __importDefault(require("@alanizcreative/static-site-formation/src/text/rich-text"));
 const listMinimalItem = (props = { args: {} }) => {
     const { args = {} } = props;
     const { id = '', title = '', slug = '', contentType = '', text = '' } = args;

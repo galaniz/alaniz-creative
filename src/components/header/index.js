@@ -1,6 +1,6 @@
 "use strict";
 /**
- * Render - header
+ * Components - header
  */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -8,9 +8,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 /* Imports */
 const uuid_1 = require("uuid");
-const utils_1 = require("../../utils");
-const enums_1 = require("../../vars/enums");
-const logo_1 = __importDefault(require("../svg/logo"));
+const get_permalink_1 = __importDefault(require("@alanizcreative/static-site-formation/src/utils/get-permalink"));
+const config_1 = __importDefault(require("../../config"));
+const logo_1 = __importDefault(require("../../svg/logo"));
 /**
  * Function - output header
  *
@@ -20,14 +20,17 @@ const logo_1 = __importDefault(require("../svg/logo"));
 const header = (navigations = {}) => {
     /* Id */
     const id = (0, uuid_1.v4)();
+    /* Site title and link */
+    const siteTitle = config_1.default.title;
+    const siteLink = (0, get_permalink_1.default)();
     /* Main nav */
     let nav = '';
     if (navigations?.main !== '' && navigations?.main !== undefined) {
         nav = `
       <nav class="c-nav l-relative l-container l-padding-top-m l-padding-bottom-m l-padding-top-l-m l-padding-bottom-l-m" aria-label="Main" data-overflow="false" data-overflow-all="false" data-open="false">
         <div class="l-flex l-justify-between l-align-center">
-          <a class="c-nav__logo l-inline-flex l-z-index-1 js-pt-link" href="${(0, utils_1.getPermalink)()}">
-            <span class="a11y-visually-hidden">${enums_1.enumSite.title} Home</span>
+          <a class="c-nav__logo l-inline-flex l-z-index-1 js-pt-link" href="${siteLink}">
+            <span class="a11y-visually-hidden">${siteTitle} Home</span>
             ${(0, logo_1.default)('o-logo')}
           </a>
           ${navigations.main}
@@ -43,7 +46,7 @@ const header = (navigations = {}) => {
           </div>
           <div class="c-nav-overflow l-fixed l-top-0 l-left-0 l-z-index-1 l-width-100-pc l-height-100-pc" role="dialog" aria-modal="true" aria-label="Main menu" id="${id}">
             <div class="c-nav__hide">
-              <a class="c-nav__logo o-logo l-inline-flex l-fixed js-pt-link" href="${(0, utils_1.getPermalink)()}" aria-label="${enums_1.enumSite.title} Home"></a>
+              <a class="c-nav__logo o-logo l-inline-flex l-fixed js-pt-link" href="${siteLink}" aria-label="${siteTitle} Home"></a>
             </div>
             <div class="c-nav-overflow__main t-sharp t-link-current l-height-100-pc l-overflow-y-auto l-overscroll-none l-overflow-x-hidden l-padding-left-3xs l-padding-right-3xs l-padding-top-m l-padding-bottom-m">
               <ul class="c-nav-overflow__list l-flex l-flex-column l-padding-bottom-l l-gap-margin-2xs t-list-style-none outline-tight" role="list"></ul>

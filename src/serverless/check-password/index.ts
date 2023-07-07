@@ -15,7 +15,7 @@ import escape from 'validator/es/lib/escape'
  * @return {object}
  */
 
-const checkPassword = ({ inputs, env }) => {
+const checkPassword = ({ inputs, env }: FRM.AjaxActionArgs): FRM.AjaxActionReturn => {
   /* Password value */
 
   let password = ''
@@ -23,28 +23,28 @@ const checkPassword = ({ inputs, env }) => {
   Object.keys(inputs).forEach((name) => {
     const input = inputs[name]
     const inputType = input.type
+    const inputValue = input.value
 
-    let inputValue = input.value
+    let inputValueStr = ''
 
     /* Escape value */
 
     if (Array.isArray(inputValue)) {
-      inputValue = inputValue.map(v => escape(v + ''))
-      inputValue = inputValue.join('<br>')
+      inputValueStr = inputValue.map(v => escape(v.trim() + '')).join('')
     } else {
-      inputValue = escape(input.value + '')
+      inputValueStr = escape(inputValue.trim() + '')
     }
 
     /* Password */
 
-    if (inputType === 'password' && inputValue) {
-      password = inputValue
+    if (inputType === 'password' && inputValueStr !== '') {
+      password = inputValueStr
     }
   })
 
   /* Wrong password */
 
-  if (!password || password !== env.PASSWORD) {
+  if (password !== '' || password !== env.PASSWORD) {
     return {
       error: {
         message: 'Incorrect credentials',

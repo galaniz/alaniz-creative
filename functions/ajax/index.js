@@ -1,0 +1,1 @@
+import ajax from '@alanizcreative/static-site-formation/src/serverless/ajax'; export const onRequestPost = [ajax];

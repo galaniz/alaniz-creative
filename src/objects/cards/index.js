@@ -1,6 +1,6 @@
 "use strict";
 /**
- * Render - card
+ * Objects - card
  */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -8,10 +8,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cards = exports.card = void 0;
 /* Imports */
-const enums_1 = require("../../vars/enums");
-const container_1 = __importDefault(require("../container"));
-const column_1 = __importDefault(require("../column"));
-const rich_text_1 = __importDefault(require("../rich-text"));
+const container_1 = __importDefault(require("@alanizcreative/static-site-formation/src/layouts/container"));
+const column_1 = __importDefault(require("@alanizcreative/static-site-formation/src/layouts/column"));
+const rich_text_1 = __importDefault(require("@alanizcreative/static-site-formation/src/text/rich-text"));
+const config_1 = __importDefault(require("../../config"));
 const image_1 = __importDefault(require("../image"));
 const _card = ({ internalLink, headingLevel, type, index }) => {
     const { title = '', slug = '', hero } = internalLink;
@@ -97,7 +97,7 @@ const card = (props = { args: {} }) => {
         /* Blob svg */
         if (ac && svg?.blob !== undefined) {
             const reverse = index % 2 !== 0;
-            const path = enums_1.enumBlobs[svg.blob].path;
+            const path = config_1.default.blobs[svg.blob].path;
             blob = `
         <svg
           xmlns="http://www.w3.org/2000/svg"

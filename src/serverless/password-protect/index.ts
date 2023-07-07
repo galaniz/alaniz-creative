@@ -4,31 +4,36 @@
 
 /* Imports */
 
-import { setDataVars } from '../utils'
-import httpError from '../../render/http-error'
-import protect from '../../render/protect'
+import httpError from '../../components/http-error'
+import protect from '../../components/protect'
 
 /**
  * Function - check password set before showing page
  *
  * @private
- * @param {object} context
- * @param {object} context.request
- * @param {object} context.env
- * @param {function} context.next
+ * @param {object} args
+ * @param {object} args.request
+ * @param {object} args.env
+ * @param {function} args.next
  * @return {object} Response
  */
 
-const passwordProtect = async ({ request, env, next }) => {
+interface Args {
+  request: any
+  next: Function
+}
+
+const passwordProtect = async ({ request, next }: Args): Promise<object> => {
   try {
     /* Check cookie */
 
     const cookieName = 'acp_set'
     const cookie = request.headers.get('cookie')
+    const cookieExists: boolean = cookie !== null ? cookie.includes(`${cookieName}=true`) : false
 
     /* Show page if cookie set otherwise password page */
 
-    if (cookie && cookie.includes(`${cookieName}=true`)) {
+    if (cookieExists) {
       return next()
     } else {
       const html = await protect()
@@ -43,10 +48,10 @@ const passwordProtect = async ({ request, env, next }) => {
   } catch (error) {
     console.error('Error with password protect function: ', error)
 
-    setDataVars(env)
+    const statusCode = typeof error.httpStatusCode === 'number' ? error.httpStatusCode : 500
 
-    return new Response(httpError('500'), {
-      status: error.httpStatusCode || 500
+    return new Response(await httpError(500), {
+      status: statusCode
     })
   }
 }
