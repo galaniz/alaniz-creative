@@ -38,7 +38,7 @@
       "richTextStyles": true,
       "content": [
         {
-          "renderType": "rich-text",
+          "renderType": "richText",
           "tag": "h2",
           "content": "Overview"
         },
@@ -54,12 +54,12 @@
               "renderType": "container",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dt",
                   "content": "Year"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "2022"
                 }
@@ -69,17 +69,17 @@
               "renderType": "container",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dt",
                   "content": "Team"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "Web Developer"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "Accessibility Tester"
                 }
@@ -89,17 +89,17 @@
               "renderType": "container",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dt",
                   "content": "Role"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "Copywriting"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": [
                     {
@@ -110,7 +110,7 @@
                   ]
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": [
                     {
@@ -141,7 +141,7 @@
       "richTextStyles": true,
       "content": [
         {
-          "renderType": "rich-text",
+          "renderType": "richText",
           "tag": "h2",
           "content": "Details coming soon!"
         }

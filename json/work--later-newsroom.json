@@ -40,7 +40,7 @@
       "richTextStyles": true,
       "content": [
         {
-          "renderType": "rich-text",
+          "renderType": "richText",
           "tag": "h2",
           "content": "Overview"
         },
@@ -56,12 +56,12 @@
               "renderType": "container",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dt",
                   "content": "Year"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "2022"
                 }
@@ -72,38 +72,38 @@
               "classes": "l-column-2-s",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dt",
                   "classes": "l-column-span",
                   "content": "Team"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "Web Manager"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "PR Manager"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "SEO Manager"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "Copywriter"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "Graphic Designer"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "Web Developer"
                 }
@@ -113,12 +113,12 @@
               "renderType": "container",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dt",
                   "content": "Role"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": [
                     {
@@ -129,7 +129,7 @@
                   ]
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": [
                     {
@@ -160,12 +160,12 @@
       "richTextStyles": true,
       "content": [
         {
-          "renderType": "rich-text",
+          "renderType": "richText",
           "tag": "h2",
           "content": "What is Later?"
         },
         {
-          "renderType": "rich-text",
+          "renderType": "richText",
           "tag": "p",
           "content": "Later (formerly Latergramme) started in 2014 as an Instagram scheduler. It has since evolved into an all-in-one social media marketing platform with over 7 million users. Their tools help small business owners and creators plan, schedule and monetize their social content."
         }
@@ -183,37 +183,37 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h2",
               "content": "The Project"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": "Design and develop a dedicated space on later.com for all press related information."
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h3",
               "content": "The Brief"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h4",
               "content": "Context"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": "The communications team spearheaded this project around the opportunity to be more in control of the company brand and narrative by having a definitive, trustworthy source of company news for journalists and influencers. They also often handled inquiries an online newsroom could easily answer, which would be particularly helpful as they are a small team. Additionally, research on competitors' organic traffic from the demand generation SEO manager showed that all of Later's main competitors had newsrooms with good page authority scores and organic traffic levels increasing year over year."
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h4",
               "content": "Goals"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "ul",
               "content": [
                 {
@@ -246,17 +246,17 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h2",
               "content": "The Process"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h3",
               "content": "Wireframes"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": "Communications and SEO stakeholders initially imagined the newsroom as a single landing page as they wanted to keep things simple. But once we put their content outline into a wireframe it became apparent the page was trying to do too much by placing all articles in continuous sliders and including a full contact form. To avoid information overload we suggested dividing it up into a few pages accessible by local navigation. This way content on each page can be more focused but also flexible as the newsroom evolves."
             }
@@ -323,7 +323,7 @@
               "paddingBottom": "m",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "p",
                   "textStyle": "s",
                   "classes": "t-italic",
@@ -340,17 +340,17 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h3",
               "content": "Visual Design"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h4",
               "content": "Design System Enhancements"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": [
                 {
@@ -375,7 +375,7 @@
               ]
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": "During this project we also learned about non-text contrast guidelines which specify that all interactive elements have a contrast ratio of at least 3:1 against adjacent backgrounds, which helps make interactivity more obvious to users. The initial design of the contact form had light grey inputs, which had an abysmal 1.17:1 contrast ratio against white. To fix this we updated all inputs to use high-contrast borders instead of backgrounds to indicate visual boundaries. We also made subtle improvements to error messaging like including an error summary at the top of the form and moving input error messages into their labels for better readability and semantics."
             }
@@ -490,7 +490,7 @@
               "paddingBottom": "m",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "p",
                   "textStyle": "s",
                   "classes": "t-italic",
@@ -507,12 +507,12 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h4",
               "content": "Graphics Art Direction"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": "To start we reused thumbnails from the original news articles but variability in quality led us to create custom graphics. Our first pass at creating these graphics was based on an existing art direction for social media posts. Feedback from the creative team indicated that a custom direction was more suitable as the newsroom is a distinct part of the site. They put together a flowchart inspired design to show the link between Later and the media in a professional but playful way that better fits Later's fun brand identity."
             }
@@ -533,7 +533,7 @@
               "paddingTopLarge": "l",
               "content": [
                 {
-                  "renderType": "aspect-ratio",
+                  "renderType": "aspectRatio",
                   "percent": 68.875,
                   "content": [
                     {
@@ -621,7 +621,7 @@
               "paddingBottom": "m",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "p",
                   "textStyle": "s",
                   "classes": "t-italic",
@@ -638,12 +638,12 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h3",
               "content": "Development"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": [
                 {
@@ -708,7 +708,7 @@
               "paddingBottom": "m",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "p",
                   "textStyle": "s",
                   "classes": "t-italic",
@@ -725,7 +725,7 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": "The other development challenge was validating and processing the contact form. Later.com is a static site with only third-party generated forms. The first version of the form was created with Klaviyo, but substantial issues like lack of support for textareas and unreliable email delivery to one contact presented us with the opportunity to create our own forms and implement the form element improvements made in visual design. The additional time taken in this phase was well worth it in terms of better user experience–performance, usefulness of error and result messages and style consistency versus third-party forms. And also team development–learning about and implementing serverless functions, the honeypot anti-spam technique, autocomplete tokens as well as keyboard and screen reader testing."
             }
@@ -745,12 +745,12 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h2",
               "content": "The Outcome"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": "In the months after the newsroom was launched most short term SEO goals were met. Organic traffic was comparable to Later's main competitors and exceeded expectations. Backlinks also surpassed initial targets. Domain authority didn't increase but stayed around the same value. Similarly, page authority was average. Overall, these metrics indicate the newsroom met and continues to meet genuine user interest."
             }
@@ -908,7 +908,7 @@
               "paddingBottom": "m",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "p",
                   "textStyle": "s",
                   "classes": "t-italic",
@@ -925,12 +925,12 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": "Internally, the improvements to the design system from this project helped streamline other projects as many updated components were easy to reuse with little adjustment. One example is a project updating resource landing pages to a simplified version of the newsroom landing page as part of an ongoing effort to clean up old styles and have a more consistent visual language throughout the site. More importantly, stakeholders were extremely pleased with the end result. From the PR Manager:"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "blockquote",
               "content": [
                 {

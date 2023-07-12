@@ -5,8 +5,8 @@
 /* Styles */
 
 .e-underline-all a,
-.e-underline a[data-inline],
-.e-underline-reverse a[data-inline] {
+.e-underline a[data-rich],
+.e-underline-reverse a[data-rich] {
   --duration: 200ms;
 
   text-decoration: underline;
@@ -19,22 +19,22 @@
 }
 
 .e-underline-all a,
-.e-underline a[data-inline] {
+.e-underline a[data-rich] {
   --color: currentcolor;
 }
 
-.e-underline-reverse a[data-inline] {
+.e-underline-reverse a[data-rich] {
   --color: transparent;
 }
 
 .e-underline-all a:hover,
 .e-underline-all a:active,
-.e-underline a[data-inline]:hover,
-.e-underline a[data-inline]:active {
+.e-underline a[data-rich]:hover,
+.e-underline a[data-rich]:active {
   --underline-offset: 0.25rem;
 }
 
-.e-underline-reverse a[data-inline]:hover,
-.e-underline-reverse a[data-inline]:active {
+.e-underline-reverse a[data-rich]:hover,
+.e-underline-reverse a[data-rich]:active {
   --color: currentcolor;
 }

@@ -11,14 +11,14 @@
  * @return {object}
  */
 
-interface Props {
+interface AspectRatioProps {
   args: {
     percent?: number
   }
   parents?: object[]
 }
 
-const aspectRatio = (props: Props = { args: {} }): FRM.StartEndReturn => {
+const aspectRatio = (props: AspectRatioProps = { args: {} }): FRM.StartEndReturn => {
   const { args = {} } = props
   const { percent = 100 } = args
 

@@ -1,5 +1,5 @@
 /**
- * Components - single content
+ * Components - related
  */
 
 /* Imports */
@@ -7,34 +7,34 @@
 import getArchiveLink from '@alanizcreative/static-site-formation/src/utils/get-archive-link'
 import container from '@alanizcreative/static-site-formation/src/layouts/container'
 import richText from '@alanizcreative/static-site-formation/src/text/rich-text'
-import waveSeparator from '../../components/wave-separator'
+import wave from '../wave'
 import button from '../../objects/button'
 import { card } from '../../objects/cards'
 
 /**
- * Function - output additional content for single posts
+ * Function - output related cards in single post
  *
  * @param {object} args
  * @param {string} args.contentType
- * @param {array<object>} args.related
+ * @param {array<object>} args.posts
  * @return {string} HTML - html
  */
 
 interface Args {
   contentType: string
-  related: AC.InternalLink[]
+  posts: AC.InternalLink[]
 }
 
-const singleContent = ({ contentType = 'work', related = [] }: Args): string => {
-  /* Related required */
+const related = ({ contentType = '', posts = [] }: Args): string => {
+  /* All params required */
 
-  if (related.length === 0) {
+  if (contentType === '' || posts.length === 0) {
     return ''
   }
 
-  /* Related content */
+  /* Posts content */
 
-  const relatedCards = related.map((r) => {
+  const cards = posts.map((r) => {
     const c = card({
       args: {
         headingLevel: 3,
@@ -45,7 +45,7 @@ const singleContent = ({ contentType = 'work', related = [] }: Args): string => 
     return c.start + c.end
   }).join('')
 
-  if (relatedCards === '') {
+  if (cards === '') {
     return ''
   }
 
@@ -117,14 +117,14 @@ const singleContent = ({ contentType = 'work', related = [] }: Args): string => 
 
   return `
     ${containers.wave.start}
-    ${waveSeparator()}
+    ${wave()}
     ${containers.wave.end}
     ${containers.section.start}
       ${containers.title.start}
         ${content.title}
       ${containers.title.end}
       ${containers.cards.start}
-        ${relatedCards}
+        ${cards}
       ${containers.cards.end}
       ${content.button}
     ${containers.section.end}
@@ -133,4 +133,4 @@ const singleContent = ({ contentType = 'work', related = [] }: Args): string => 
 
 /* Exports */
 
-export default singleContent
+export default related

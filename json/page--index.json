@@ -20,7 +20,7 @@
           "maxWidth": "default",
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h2",
               "headingStyle": "h2-l",
               "content": "Work"

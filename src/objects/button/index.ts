@@ -29,7 +29,7 @@ import arrowBackSvg from '../../svg/arrow-back'
  * @return {string} HTML - a || div
  */
 
-interface Props {
+interface ButtonProps {
   args: {
     title?: string
     internalLink?: AC.InternalLink
@@ -47,7 +47,7 @@ interface Props {
   parents?: object[]
 }
 
-const button = (props: Props = { args: {} }): string => {
+const button = (props: ButtonProps = { args: {} }): string => {
   const { args = {} } = props
 
   const {

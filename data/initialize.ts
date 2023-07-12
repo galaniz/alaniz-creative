@@ -4,18 +4,18 @@
 
 /* Imports */
 
-import { addAction } from '@alanizcreative/static-site-formation/src/utils/actions'
 import getAllFileData from '@alanizcreative/static-site-formation/src/utils/get-all-file-data'
-import getPathDepth from '@alanizcreative/static-site-formation/src/utils/get-path-depth'
-// import processImages from '@alanizcreative/static-site-formation/src/utils/process-images'
+import processImages from '@alanizcreative/static-site-formation/src/utils/process-images'
 import writeStoreFiles from '@alanizcreative/static-site-formation/src/utils/write-store-files'
 import writeServerlessFiles from '@alanizcreative/static-site-formation/src/utils/write-serverless-files'
 import render from '@alanizcreative/static-site-formation/src/render'
+import filters from '../src/filters'
+import actions from '../src/actions'
 import config from '../src/config'
 
 /* Eleventy init */
 
-interface Args {
+interface InitArgs {
   eleventy?: {
     env?: {
       runMode?: string
@@ -23,22 +23,7 @@ interface Args {
   }
 }
 
-interface RenderEndArgs {
-  contentType: string
-  slug: string
-  output: string
-  props: {
-    id: string
-    title: string
-    slug: string
-    content?: any
-    meta?: object
-    basePermalink?: string
-    [key: string]: any
-  }
-}
-
-module.exports = async (args: Args): Promise<FRM.RenderReturn[]> => {
+module.exports = async (args: InitArgs): Promise<FRM.RenderReturn[]> => {
   try {
     /* Build env */
 
@@ -49,28 +34,13 @@ module.exports = async (args: Args): Promise<FRM.RenderReturn[]> => {
 
       /* Create images and image meta */
 
-      // await processImages()
+      await processImages()
     }
 
     /* Render output */
 
-    addAction('renderEnd', (args: RenderEndArgs): void => {
-      const { slug = '', props } = args
-      const { passwordProtected = false } = props
-
-      if (passwordProtected === true && slug !== '') {
-        if (config.serverless.routes.passwordProtect === undefined) {
-          config.serverless.routes.passwordProtect = []
-        }
-
-        const path = `${slug.replace(/^\/|\/$/gm, '')}/_middleware.js`
-
-        config.serverless.routes.passwordProtect.push({
-          path,
-          content: `import passwordProtect from '${getPathDepth(`${config.serverless.dir}/${path}`)}src/serverless/password-protect'; const protect = async ({ request, env, next }) => { return await passwordProtect({ request, env, next }) }; export const onRequestGet = [protect];`
-        })
-      }
-    })
+    filters()
+    actions()
 
     const output = await render({
       allData: await getAllFileData({
@@ -81,8 +51,8 @@ module.exports = async (args: Args): Promise<FRM.RenderReturn[]> => {
         excludeProps: {
           data: ['content', 'related', 'meta'],
           archive: {
-            posts: ['content', 'related'],
-            terms: ['content', 'related', 'category']
+            posts: ['content', 'related', 'meta'],
+            terms: ['content', 'related', 'category', 'meta']
           }
         }
       })
@@ -107,7 +77,7 @@ module.exports = async (args: Args): Promise<FRM.RenderReturn[]> => {
       output: ''
     }]
   } catch (error) {
-    console.error('Error rendering site: ', error)
+    console.error(config.console.red, '[AC] Error rendering site: ', error)
 
     /* Output */
 

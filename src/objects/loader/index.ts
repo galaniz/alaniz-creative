@@ -14,7 +14,7 @@
  * @return {string} HTML - span
  */
 
-interface Args {
+interface LoaderArgs {
   hide?: boolean
   size?: string
   classes?: string
@@ -22,7 +22,7 @@ interface Args {
   a11yHideText?: string
 }
 
-const loader = (args: Args = {}): string => {
+const loader = (args: LoaderArgs = {}): string => {
   const {
     hide = true,
     size = 'default',

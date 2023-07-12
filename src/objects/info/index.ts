@@ -18,7 +18,7 @@ const info = (text: string = ''): string => {
     <div class="o-info-neutral l-padding-left-xs l-padding-right-xs l-padding-top-xs l-padding-bottom-xs b-radius-s">
       <div class="l-flex l-gap-margin-3xs">
         <div>
-          ${infoSvg('l-width-s l-height-s l-width-m-m l-height-m-m')}
+          ${infoSvg('l-width-s l-height-s l-width-m-m l-height-m-m l-flex')}
         </div>
         <div>
           <p class="t t-line-height-150-pc t-weight-medium l-margin-0">${text}</p>

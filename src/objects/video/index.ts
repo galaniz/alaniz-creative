@@ -19,7 +19,7 @@ import errorSvg from '../../svg/error'
  * @return {string} HTML - figure
  */
 
-interface Props {
+interface VideoProps {
   args: {
     source?: string
     title?: string
@@ -27,7 +27,7 @@ interface Props {
   parents?: object[]
 }
 
-const video = (props: Props = { args: {} }): string => {
+const video = (props: VideoProps = { args: {} }): string => {
   const { args = {} } = props
 
   const {
@@ -52,7 +52,7 @@ const video = (props: Props = { args: {} }): string => {
       <div class="o-video__bg l-aspect-ratio-57 l-relative l-overflow-hidden b-all b-radius-s b-radius-m-m l-isolate">
         <video playsinline muted class="l-block l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc l-object-cover">
           <source src="" type="video/mp4">
-          <p>Your browser doesn't support HTML video. <a href="${url}" data-inline>${title}</a>.</p>
+          <p>Your browser doesn't support HTML video. <a href="${url}" data-rich>${title}</a>.</p>
         </video>
         ${loader({ classes: 'o-video__loader' })}
         <button type="button" aria-label="Play ${title}" class="o-video__play l-none l-absolute l-center e-scale">
@@ -72,7 +72,7 @@ const video = (props: Props = { args: {} }): string => {
               ${errorSvg('l-width-xs l-height-s')}
             </div>
             <div class="t-line-height-0">
-              <p class="t-s t-line-height-150-pc l-margin-0 e-underline">Sorry, there is a problem with the service. <a href="${url}" data-inline>${title} video</a>.</p>
+              <p class="t-s t-line-height-150-pc l-margin-0 e-underline">Sorry, there is a problem with the service. <a href="${url}" data-rich>${title} video</a>.</p>
             </div>
           </div>
         </div>

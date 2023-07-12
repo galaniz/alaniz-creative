@@ -12,17 +12,15 @@ declare global {
       height: number
     }
 
-    interface WorkCat {
-      title: string
-    }
-
     interface InternalLink {
       id: string
       contentType: string
       slug: string
       title?: string
       text?: string
-      category?: WorkCat[]
+      category?: Array<{
+        title: string
+      }>
       passwordProtected?: boolean
       hero?: {
         title: string

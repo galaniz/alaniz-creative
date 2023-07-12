@@ -12,51 +12,25 @@ import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
 import postcssPresetEnv from 'postcss-preset-env'
 import { sassPlugin } from 'esbuild-sass-plugin'
-import { writeFile } from 'node:fs/promises'
-import { existsSync } from 'node:fs'
-import { resolve } from 'node:path'
+import { resolve, extname } from 'node:path'
 import getAllFilePaths from '@alanizcreative/static-site-formation/src/utils/get-all-file-paths'
+import config from './src/config'
 
 /* Config */
 
-module.exports = (config: any) => {
+module.exports = (args: any) => {
   /* Add env variables */
 
   if (process) {
     const env = process.env
 
-    /*envData.eleventy.cache = env?.USE_11TY_CACHE ? true : false
-    envData.dev = env.ENVIRONMENT === 'dev'
-    envData.prod = env.ENVIRONMENT === 'production'*/
+    config.dev = env.ENVIRONMENT === 'dev'
+    config.prod = env.ENVIRONMENT === 'production'
   }
-
-  /* Process images and check/build json files */
-
-  config.on('eleventy.before', async ({ runMode }) => {
-    /*if (runMode === 'build') {
-      const jsonFiles = Object.keys(jsonFileData)
-
-      for (const j of jsonFiles) {
-        const path = `./src/json/${jsonFileData[j].name}`
-
-        if (!existsSync(path)) {
-          await writeFile(path, JSON.stringify({}))
-        }
-      }
-
-      const imageDataPath = './src/json/image-data.json'
-
-      if (!existsSync(imageDataPath)) {
-        await writeFile(imageDataPath, JSON.stringify({}))
-      }
-
-      await processImages('src/assets/img', 'site/assets/img', 'src/json/image-data.json')
-    }*/
-  })
-
+  
   /* Process scss and js files */
 
-  config.on('eleventy.before', async () => {
+  args.on('eleventy.before', async () => {
     const entryPoints = {}
     const namespace = 'ac'
 
@@ -93,31 +67,39 @@ module.exports = (config: any) => {
     })
   })
 
-  config.addWatchTarget('./src/assets/')
+  args.addWatchTarget('./src/assets/')
 
   /* Ignore gitignore */
 
-  config.setUseGitIgnore(false)
+  args.setUseGitIgnore(false)
 
   /* Delete render from cache on watch */
 
-  config.on('eleventy.beforeWatch', async () => {
-    for await (const path of getAllFilePaths('./src/render/')) {
-      delete require.cache[resolve(path)]
-    }
+  args.on('eleventy.beforeWatch', async () => {
+    const folders = [
+      './src/components/',
+      './src/config/',
+      './src/filters/',
+      './src/layouts/',
+      './src/objects/',
+      './src/serverless/',
+      './src/svg/',
+    ]
 
-    for await (const path of getAllFilePaths('./src/utils/')) {
-      delete require.cache[resolve(path)]
-    }
+    for (let i = 0; i < folders.length; i += 1) {
+      for await (const path of getAllFilePaths(folders[i])) {
+        const ext = extname(path)
 
-    for await (const path of getAllFilePaths('./src/vars/')) {
-      delete require.cache[resolve(path)]
+        if (ext === '.js') {
+          delete require.cache[resolve(path)]
+        }
+      }
     }
   })
 
   /* Minify HTML */
 
-  config.addTransform('htmlmin', (content: string, outputPath: string) => {
+  args.addTransform('htmlmin', (content: string, outputPath: string) => {
     if (outputPath.endsWith('.html')) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
@@ -133,15 +115,15 @@ module.exports = (config: any) => {
 
   /* Copy static asset folders */
 
-  config.addPassthroughCopy({
+  args.addPassthroughCopy({
     'src/assets/video': 'assets/video'
   })
 
-  config.addPassthroughCopy({
+  args.addPassthroughCopy({
     'src/assets/fonts': 'assets/fonts'
   })
 
-  config.addPassthroughCopy({
+  args.addPassthroughCopy({
     'src/assets/favicon': 'assets/favicon'
   })
 

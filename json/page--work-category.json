@@ -16,9 +16,9 @@
       "content": [
         {
           "renderType": "posts",
-          "contentType": "workCategory",
+          "contentType": "work",
+          "taxonomy": "workCategory",
           "layout": "listMinimal",
-          "id": "page--work-category",
           "display": -1,
           "headingLevel": 2
         },

@@ -2,14 +2,7 @@ README.md
 node_modules/
 package-lock.json
 site/
-src/json/archive-ids.json
-src/json/archive-posts.json
-src/json/archive-terms.json
-src/json/form-meta.json
-src/json/image-data.json
-src/json/navigations.json
-src/json/slug-parents.json
-src/json/slugs.json
+src/json/**/*.json
 .DS_Store
 .cache
 .dev.vars

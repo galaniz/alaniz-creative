@@ -20,10 +20,12 @@ import { listMinimalItem, listMinimal } from '../list-minimal'
  * @param {string} props.args.layout
  * @param {boolean} props.args.nothingFound
  * @param {string} props.args.order
+ * @param {string} props.args.taxonomy
+ * @param {string} props.args.termId
  * @return {string} - HTML
  */
 
-interface Props {
+interface PostsProps {
   args: {
     contentType?: string
     display?: number
@@ -31,22 +33,24 @@ interface Props {
     layout?: string
     nothingFound?: boolean
     order?: string
-    id?: string
+    taxonomy?: string
+    termId?: string
   }
   parents?: object[]
 }
 
-const posts = (props: Props = { args: {} }): string => {
+const posts = (props: PostsProps = { args: {} }): string => {
   const { args = {} } = props
 
   const {
-    contentType = 'work',
+    contentType = '',
     display = 1,
     headingLevel = 3,
     layout = 'cardsMinimal',
     nothingFound = true, // Display nothing found message
     order = 'date',
-    id = ''
+    taxonomy = '',
+    termId = ''
   } = args
 
   /* Type required */
@@ -55,14 +59,25 @@ const posts = (props: Props = { args: {} }): string => {
     return ''
   }
 
+  /* Taxonomy check */
+
+  const isTaxonomy = config.taxonomy?.[taxonomy] !== undefined && termId === ''
+
+  /* Term check */
+
+  const isTerm = config.taxonomy?.[taxonomy] !== undefined && termId !== ''
+
+  /* Type */
+
+  const type = isTaxonomy ? taxonomy : contentType
+
   /* Content type title */
 
-  const typeTitle: string = config.slug.bases[contentType].title.toLowerCase()
+  const typeTitle: string = config.slug.bases[type].title.toLowerCase()
+  const typeSingular: string = config.slug.bases[contentType].title.toLowerCase()
 
-  /* Id required if term */
-
-  if (contentType === 'workCategory' && id === '') {
-    return info(`Looks like no ${typeTitle} were found.`)
+  if (isTerm) {
+    console.log('POSTS', contentType, typeTitle, typeSingular)
   }
 
   /* Layout */
@@ -71,10 +86,11 @@ const posts = (props: Props = { args: {} }): string => {
 
   /* Check posts */
 
-  let posts = config.archive.posts?.[contentType] !== undefined ? config.archive.posts[contentType] : []
+  let posts = config.archive.posts?.[type] !== undefined ? config.archive.posts[type] : []
 
-  if (contentType === 'workCategory') {
-    posts = posts[id]
+  if (isTerm) {
+    posts = []
+    // posts = config.archive.terms?.[taxonomy]?.[contentType]?.[termId] !== undefined ? config.archive.terms[taxonomy][contentType][termId] : []
   }
 
   if (posts.length === 0) {
@@ -128,12 +144,12 @@ const posts = (props: Props = { args: {} }): string => {
     if (l.type === 'listMinimal') {
       const itemArgs = { ...post }
 
-      itemArgs.contentType = contentType
+      itemArgs.contentType = type
 
-      if (contentType === 'workCategory') {
-        const length: number = config.archive.posts[contentType][post.id].length
+      if (isTaxonomy) {
+        const length: number = config.archive.terms[taxonomy][contentType][post.id].length
 
-        itemArgs.text = `${length} work item${length === 1 ? '' : 's'}`
+        itemArgs.text = `${length} ${typeSingular} item${length === 1 ? '' : 's'}`
       }
 
       itemOutput = listMinimalItem({

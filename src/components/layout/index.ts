@@ -4,46 +4,39 @@
 
 /* Imports */
 
+import { PurgeCSS } from 'purgecss'
 import getPermalink from '@alanizcreative/static-site-formation/src/utils/get-permalink'
 import config from '../../config'
+import header from '../header'
+import footer from '../footer'
+import hero from '../hero'
+import related from '../related'
+import term from '../term'
 
 /**
  * Function - output html
  *
  * @param {object} args
  * @param {object} args.meta
+ * @param {object} args.navigations
  * @param {string} args.content
- * @param {string} args.style
- * @param {class} args.PurgeCSS
+ * @param {array<string>} args.contains
+ * @param {object} args.data
+ * @param {object|undefined} args.serverlessData
  * @return {string} HTML - html
  */
 
-interface Args {
-  meta?: {
-    title?: string
-    description?: string
-    url?: string
-    image?: string
-    canonical?: string
-    prev?: string
-    next?: string
-    noIndex?: boolean
-  }
-  content?: string
-  style?: string
-  PurgeCSS?: any
-}
-
-interface Purge {
+interface LayoutPurge {
   css: string
 }
 
 const layout = async ({
-  meta = {},
+  meta,
+  navigations,
   content = '',
-  style = '',
-  PurgeCSS
-}: Args): Promise<string> => {
+  contentType = 'page',
+  data
+}: FRM.LayoutArgs): Promise<string> => {
   /* Assets link */
 
   const assetsLink = `${getPermalink()}assets/`
@@ -52,37 +45,72 @@ const layout = async ({
 
   const ns = config.namespace
 
+  /* Meta */
+
+  let {
+    title = '',
+    description = '',
+    url = '',
+    image = '',
+    canonical = '',
+    prev = '',
+    next = '',
+    noIndex = false,
+    isIndex = false
+  } = meta
+
+  /* Data */
+
+  const d: FRM.RenderItem = Object.assign({
+    title: '',
+    hero: {},
+    archive: '',
+    related: [],
+    theme: {},
+    id: ''
+  }, data)
+
   /* Title */
 
-  const title = (meta?.title !== undefined && meta?.title !== '' ? `${meta.title} | ` : '') + config.title
+  if (title === '') {
+    title = config.title
+  } else {
+    title = `${title} | ${config.title}`
+  }
 
   /* Description */
 
-  const description = meta?.description !== undefined && meta?.description !== '' ? meta.description : config.meta.description
+  if (description === '') {
+    description = config.meta.description
+  }
 
   /* Image */
 
-  const image = meta?.image !== undefined && meta?.image !== '' ? `${assetsLink}${meta.image}` : `${assetsLink}${config.meta.image}`
+  if (image === '') {
+    image = config.meta.image
+  }
 
-  /* Url */
-
-  const url = meta?.url !== undefined && meta?.url !== '' ? meta.url : ''
+  image = `${assetsLink}${image}`
 
   /* Canonical */
 
-  const canonical = meta?.canonical !== undefined && meta?.canonical !== '' ? `<link rel="canonical" href="${meta.canonical}">` : ''
+  if (canonical !== '') {
+    canonical = `<link rel="canonical" href="${canonical}">`
+  }
 
   /* Prev */
 
-  const prev = meta?.prev !== undefined ? `<link rel="prev" href="${meta.prev}">` : ''
+  if (prev !== '') {
+    prev = `<link rel="prev" href="${prev}">`
+  }
 
   /* Next */
 
-  const next = meta?.next !== undefined ? `<link rel="next" href="${meta.next}">` : ''
+  if (next !== '') {
+    next = `<link rel="next" href="${next}">`
+  }
 
   /* No index */
-
-  let noIndex = meta?.noIndex !== undefined ? meta.noIndex : false
 
   if (config.env.dev) {
     noIndex = true
@@ -112,11 +140,86 @@ const layout = async ({
 
   /* Clear script data */
 
-  Object.keys(config.script).forEach(k => delete config.script[k]) // eslint-disable-line @typescript-eslint/no-dynamic-delete
+  config.script = {}
 
   /* Theme color */
 
   const theme: string = config.theme
+
+  /* Header and footer */
+
+  let headerOutput = ''
+  let footerOutput = ''
+
+  if (navigations !== undefined) {
+    headerOutput = header(navigations)
+    footerOutput = footer(navigations)
+  }
+
+  /* Hero */
+
+  let heroOutput = ''
+
+  /* Hero */
+
+  let heroArgs: AC.HeroArgs = {
+    contentType,
+    archive: d.archive
+  }
+
+  if (d.hero !== undefined) {
+    heroArgs = { ...heroArgs, ...d.hero }
+  }
+
+  if (isIndex) {
+    heroArgs.type = 'index'
+  }
+
+  if (heroArgs.title === undefined) {
+    heroArgs.title = d.title
+  }
+
+  heroOutput = hero(heroArgs)
+
+  /* Content */
+
+  let contentOutput: string = content
+
+  if (d.related.length > 0) {
+    const r = related({
+      contentType,
+      posts: d.related
+    })
+
+    if (r !== '') {
+      contentOutput += r
+    }
+  }
+
+  if (config.taxonomy?.[contentType] !== undefined && d.id !== '') {
+    contentOutput += term(contentType, '', d.id)
+  }
+
+  /* Style */
+
+  let style = ''
+
+  if (Object.keys(d.theme).length > 0) {
+    const styleArray: string[] = []
+
+    Object.keys(d.theme).forEach((t) => {
+      const prefix = t.includes('video') ? '' : 'theme-'
+      const color = d.theme[t]?.dark !== undefined ? d.theme[t].dark : d.theme[t]
+
+      if (typeof color === 'string') {
+        styleArray.push(`--${prefix}${t}:${color}`)
+      }
+    })
+
+    if (styleArray.length > 0) {
+      style = `:root{${styleArray.join(';')};--main-button-bg:var(--theme-main)}`
+    }
+  }
 
   /* Output */
 
@@ -143,17 +246,7 @@ const layout = async ({
         <meta name="twitter:description" content="${description}">
         <meta name="twitter:image" content="${image}">
         <meta content="summary_large_image" property="twitter:card">
-        <style>
-          @media (prefers-reduced-motion: reduce) {
-            .reduce-motion-show {
-              display: block;
-            }
-
-            .reduce-motion-hide {
-              display: none;
-            }
-          }
-        </style>
+        <style>@media (prefers-reduced-motion: reduce) {.reduce-motion-show {display: block;}.reduce-motion-hide {display: none;}}</style>
         *|CSS|*
         ${style !== '' ? `<style>${style}</style>` : ''}
         <link rel="apple-touch-icon" sizes="180x180" href="${assetsLink}favicon/apple-touch-icon.png">
@@ -166,7 +259,12 @@ const layout = async ({
         <meta name="format-detection" content="telephone=no">
       </head>
       <body class="${ns} no-js l-flex l-flex-column">
-        ${content}
+        ${headerOutput}
+        <main id="main">
+          ${heroOutput}
+          ${contentOutput}
+        </main>
+        ${footerOutput}
         ${script}
         <script type="module" src="${assetsLink}js/${ns}.js"></script>
       </body>
@@ -178,7 +276,7 @@ const layout = async ({
   let cssOutput = `<link rel="stylesheet" href="${assetsLink}css/${ns}.css" media="all">`
 
   if (config.env.build && PurgeCSS !== undefined) {
-    const purge: Purge[] = await new PurgeCSS().purge({
+    const purge: LayoutPurge[] = await new PurgeCSS().purge({
       content: [
         {
           raw: output,

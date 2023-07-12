@@ -1,5 +1,5 @@
 /**
- * Objects - wave separator
+ * Objects - wave
  */
 
 /**
@@ -8,7 +8,7 @@
  * @return {string} HTML - div
  */
 
-const waveSeparator = (): string => {
+const wave = (): string => {
   const width = 102
   const height = 12
 
@@ -41,4 +41,4 @@ const waveSeparator = (): string => {
 
 /* Exports */
 
-export default waveSeparator
+export default wave

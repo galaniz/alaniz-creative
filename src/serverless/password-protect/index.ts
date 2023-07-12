@@ -6,6 +6,7 @@
 
 import httpError from '../../components/http-error'
 import protect from '../../components/protect'
+import config from '../../config'
 
 /**
  * Function - check password set before showing page
@@ -18,12 +19,12 @@ import protect from '../../components/protect'
  * @return {object} Response
  */
 
-interface Args {
+interface PasswordProtectArgs {
   request: any
   next: Function
 }
 
-const passwordProtect = async ({ request, next }: Args): Promise<object> => {
+const passwordProtect = async ({ request, next }: PasswordProtectArgs): Promise<object> => {
   try {
     /* Check cookie */
 
@@ -46,7 +47,7 @@ const passwordProtect = async ({ request, next }: Args): Promise<object> => {
       })
     }
   } catch (error) {
-    console.error('Error with password protect function: ', error)
+    console.error(config.console.red, '[AC] Error with password protect function: ', error)
 
     const statusCode = typeof error.httpStatusCode === 'number' ? error.httpStatusCode : 500
 

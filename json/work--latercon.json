@@ -47,7 +47,7 @@
       "richTextStyles": true,
       "content": [
         {
-          "renderType": "rich-text",
+          "renderType": "richText",
           "tag": "h2",
           "content": "Overview"
         },
@@ -63,12 +63,12 @@
               "renderType": "container",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dt",
                   "content": "Year"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "2021"
                 }
@@ -79,33 +79,33 @@
               "classes": "l-column-2-s",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dt",
                   "classes": "l-column-span",
                   "content": "Team"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "Operations Manager"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "Campaign Manager"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "Project Manager"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "Creative Director"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "Copywriter"
                 }
@@ -115,12 +115,12 @@
               "renderType": "container",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dt",
                   "content": "Role"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": [
                     {
@@ -151,12 +151,12 @@
       "richTextStyles": true,
       "content": [
         {
-          "renderType": "rich-text",
+          "renderType": "richText",
           "tag": "h2",
           "content": "What is LaterCon?"
         },
         {
-          "renderType": "rich-text",
+          "renderType": "richText",
           "tag": "p",
           "content": "LaterCon is a free educational one-day event run annually and virtually by Later (an all-in-one social media marketing platform) to help small business owners learn how to grow their brand on social media."
         }
@@ -174,37 +174,37 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h2",
               "content": "The Project"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": "Develop a landing page on later.com to promote and drive sign-ups to LaterCon."
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h3",
               "content": "The Brief"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h4",
               "content": "Context"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": "LaterCon is organized by Later's content marketing team. After months long planning and preparation they were looking to have a landing page created to announce and promote it. The Creative Director finalized a custom art direction the month before and was in the process of completing the landing page visual design, which left a timeline of a little over two weeks to complete development. Expectations were also high for this year's LaterCon as the previous year saw a 60 percent increase in sign-up and attendance numbers. The marketing team wasn't expecting to replicate 2020 success as the pandemic played a unique role in this, but set ambitious targets nonetheless."
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h4",
               "content": "Goals"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "ul",
               "content": [
                 {
@@ -218,12 +218,12 @@
               ]
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h4",
               "content": "Requirements"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "ul",
               "content": [
                 {
@@ -252,17 +252,17 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h2",
               "content": "The Process"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h3",
               "content": "Design Feedback and Handoff"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": "Before jumping into development there was time to provide feedback on the visual design. The overall design had great rhythm and structure but there were some contrast issues with two of the main colours. Both the tangerine and main purple had contrast ratios of less than 3:1 against off-white. We initially pushed for 4.5:1 versions to cover all text sizes but the art direction was already in production so making this leap wasn't possible (which speaks to designing with contrast in mind from the outset) so we met in the middle with 3:1 versions."
             }
@@ -328,7 +328,7 @@
               "paddingBottom": "m",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "p",
                   "textStyle": "s",
                   "classes": "t-italic",
@@ -345,7 +345,7 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": "The Creative Director was also very proactive in communicating her vision for the end result and checking in with us on what was and wasn't possible in order to prioritize tasks. The idea behind the art direction was to get audiences thinking about how they can keep learning, growing, and morphing–the most successful businesses and influencers are the ones who can keep moving and adapting to new platforms and situations. Fluid and reveal transitions and animations were highlighted as ways to reflect and elevate this idea on the live site. Text distortion and text reveal examples served as inspirational references as we got ready to start development."
             }
@@ -366,7 +366,7 @@
               "paddingTopLarge": "l",
               "content": [
                 {
-                  "renderType": "aspect-ratio",
+                  "renderType": "aspectRatio",
                   "percent": 52.5,
                   "content": [
                     {
@@ -408,7 +408,7 @@
               "paddingBottom": "m",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "p",
                   "textStyle": "s",
                   "classes": "t-italic",
@@ -445,12 +445,12 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h3",
               "content": "Development"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": [
                 {
@@ -467,7 +467,7 @@
               ]
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": [
                 {
@@ -517,7 +517,7 @@
                           "paddingBottomLarge": "m",
                           "content": [
                             {
-                              "renderType": "rich-text",
+                              "renderType": "richText",
                               "tag": "h4",
                               "content": "Default"
                             }
@@ -541,7 +541,7 @@
                           "paddingBottomLarge": "m",
                           "content": [
                             {
-                              "renderType": "rich-text",
+                              "renderType": "richText",
                               "tag": "h4",
                               "content": "Reduce Motion"
                             }
@@ -565,7 +565,7 @@
                           "paddingBottomLarge": "m",
                           "content": [
                             {
-                              "renderType": "rich-text",
+                              "renderType": "richText",
                               "tag": "h4",
                               "content": "JavaScript Disabled"
                             }
@@ -591,7 +591,7 @@
               "paddingBottom": "m",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "p",
                   "textStyle": "s",
                   "classes": "t-italic",
@@ -608,7 +608,7 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": "Although stakeholders were pleased with how the page turned out, there were some things we didn't get. The Creative Director was hoping for a mouseover distort of the LaterCon logo in the hero section. A combination of time and performance constraints resulted in a compromise. The effect required a large library and page speed was already in the orange. We opted for a smaller library and a simpler effect–clicking the cursor icon changes svg paths to simulate a morphing effect. We also encountered a significant hiccup the day before the event–the post-event version was pushed live. For about an hour registration links were disabled. This was a lesson to draft pull requests and better communicate with team members about time sensitive launches."
             }
@@ -681,7 +681,7 @@
               "paddingBottom": "m",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "p",
                   "textStyle": "s",
                   "classes": "t-italic",
@@ -698,12 +698,12 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h3",
               "content": "Homepage Popup"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": [
                 {
@@ -765,7 +765,7 @@
               "paddingBottom": "m",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "p",
                   "textStyle": "s",
                   "classes": "t-italic",
@@ -788,17 +788,17 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "h2",
               "content": "The Outcome"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": "In post-event reports we fell short on some targets but still had notable wins. In terms of page views we only reached about a third of the initial goal at around 60,000 unique page views. For sign-ups we reached two-thirds of the original goal, but the landing page alone saw around 31,000 click-throughs to the registration page (we weren't able to get full attribution for completed registrations but can safely say the landing page converted well). The popup contributed to this as we saw a 300% increase in landing page clicks after its launch. We also saw significant improvements in average time on page and bounce rate in comparison to landings pages from previous years."
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": [
                 {
@@ -846,7 +846,7 @@
               "paddingBottom": "m",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "p",
                   "textStyle": "s",
                   "classes": "t-italic",
@@ -862,12 +862,12 @@
           "richTextStyles": true,
           "content": [
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "p",
               "content": "Internally the landing page also received lots of love from the marketing team. From the Operations and Editorial Managers:"
             },
             {
-              "renderType": "rich-text",
+              "renderType": "richText",
               "tag": "blockquote",
               "content": [
                 {

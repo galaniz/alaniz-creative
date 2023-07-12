@@ -20,7 +20,7 @@ import richText from '@alanizcreative/static-site-formation/src/text/rich-text'
  * @return {string} HTML - div
  */
 
-interface Props {
+interface ImageProps {
   args: {
     image?: AC.Image
     alt?: string
@@ -33,7 +33,7 @@ interface Props {
   parents?: Array<{ renderType: string }>
 }
 
-const image = (props: Props = { args: {}, parents: [] }): string => {
+const image = (props: ImageProps = { args: {}, parents: [] }): string => {
   const { args = {}, parents = [] } = props
 
   const {
@@ -141,7 +141,7 @@ const image = (props: Props = { args: {}, parents: [] }): string => {
       imageOutput = `
         <figure>
           ${imageOutput}
-          <figcaption data-inline>${captionContent}</figcaption>
+          <figcaption data-rich>${captionContent}</figcaption>
         </figure>
       `
     }

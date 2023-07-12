@@ -38,7 +38,7 @@
       "richTextStyles": true,
       "content": [
         {
-          "renderType": "rich-text",
+          "renderType": "richText",
           "tag": "h2",
           "content": "Overview"
         },
@@ -54,12 +54,12 @@
               "renderType": "container",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dt",
                   "content": "Year"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": "2023"
                 }
@@ -70,13 +70,13 @@
               "classes": "l-flex-column l-flex-row-s l-flex l-flex-wrap",
               "content": [
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dt",
                   "classes": "l-width-1-1",
                   "content": "Role"
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "classes": "l-padding-right-m",
                   "content": [
@@ -88,7 +88,7 @@
                   ]
                 },
                 {
-                  "renderType": "rich-text",
+                  "renderType": "richText",
                   "tag": "dd",
                   "content": [
                     {
@@ -119,7 +119,7 @@
       "richTextStyles": true,
       "content": [
         {
-          "renderType": "rich-text",
+          "renderType": "richText",
           "tag": "h2",
           "content": "Details coming soon!"
         }

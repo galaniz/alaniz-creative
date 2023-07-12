@@ -5,7 +5,16 @@
 /* Imports */
 
 import { setConfig } from '@alanizcreative/static-site-formation/src/config'
-import checkPassword from '../serverless/check-password'
+import navigations from '../components/navigations'
+import wave from '../components/wave'
+import layout from '../components/layout'
+import httpError from '../components/http-error'
+import aspectRatio from '../layouts/aspect-ratio'
+import button from '../objects/button'
+import image from '../objects/image'
+import posts from '../objects/posts'
+import { card } from '../objects/cards'
+// import checkPassword from '../serverless/check-password'
 
 /* Site options */
 
@@ -62,10 +71,18 @@ const config: FRM.Config = setConfig({
     }
   },
   renderFunctions: {
-
+    navigations,
+    wave,
+    layout,
+    httpError,
+    aspectRatio,
+    button,
+    image,
+    posts,
+    card
   },
   ajaxFunctions: {
-    checkPassword
+
   },
   modules: {
     cache: {

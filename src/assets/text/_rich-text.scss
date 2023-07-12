@@ -28,17 +28,17 @@
   }
 
   dd,
-  p[data-inline],
-  li[data-inline] {
+  p[data-rich],
+  li[data-rich] {
     font-size: var(--t);
   }
 
-  figcaption[data-inline],
-  blockquote[data-inline] {
+  figcaption[data-rich],
+  blockquote[data-rich] {
     font-style: italic;
   }
 
-  figure[data-quote] {
+  figure[data-rich="blockquote"] {
     border-left: 0.1875rem solid var(--heading-color);
     padding-left: var(--xs);
     margin-top: var(--m);
@@ -49,17 +49,17 @@
     }
   }
 
-  ul[data-inline],
-  ol[data-inline] {
+  ul[data-rich],
+  ol[data-rich] {
     margin-left: var(--2xs);
     margin-top: -0.625rem;
   }
 
-  ol[data-inline] ol {
+  ol[data-rich] ol {
     list-style-type: lower-alpha;
   }
 
-  li[data-inline] {
+  li[data-rich] {
     margin-top: var(--4xs);
     padding-left: var(--4xs);
 
@@ -97,13 +97,13 @@
     h4,
     h5,
     h6,
-    p[data-inline],
-    ul[data-inline],
-    ol[data-inline] {
+    p[data-rich],
+    ul[data-rich],
+    ol[data-rich] {
       margin-bottom: var(--mb);
     }
 
-    figure[data-quote] {
+    figure[data-rich="blockquote"] {
       margin-bottom: var(--mb-l);
     }
   }
@@ -114,10 +114,10 @@
   h5:first-child,
   h6:first-child,
   dd:first-child,
-  figure[data-quote]:first-child,
-  p[data-inline]:first-child,
-  ul[data-inline]:first-child,
-  ol[data-inline]:first-child,
+  figure[data-rich="blockquote"]:first-child,
+  p[data-rich]:first-child,
+  ul[data-rich]:first-child,
+  ol[data-rich]:first-child,
   div[data-button]:first-child {
     margin-top: 0;
   }
@@ -128,10 +128,10 @@
   h5:last-child,
   h6:last-child,
   dd:last-child,
-  figure[data-quote]:last-child,
-  p[data-inline]:last-child,
-  ul[data-inline]:last-child,
-  ol[data-inline]:last-child,
+  figure[data-rich="blockquote"]:last-child,
+  p[data-rich]:last-child,
+  ul[data-rich]:last-child,
+  ol[data-rich]:last-child,
   div[data-button]:last-child {
     margin-bottom: 0;
   }
@@ -165,12 +165,12 @@
       margin-bottom: var(--2xs);
     }
 
-    ul[data-inline],
-    ol[data-inline] {
+    ul[data-rich],
+    ol[data-rich] {
       margin-left: var(--s);
     }
 
-    figure[data-quote] {
+    figure[data-rich="blockquote"] {
       margin-top: var(--l);
       margin-left: var(--xs);
       padding-left: var(--m);

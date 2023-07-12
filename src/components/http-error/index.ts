@@ -8,8 +8,6 @@ import getPermalink from '@alanizcreative/static-site-formation/src/utils/get-pe
 import container from '@alanizcreative/static-site-formation/src/layouts/container'
 import config from '../../config'
 import layout from '../layout'
-import header from '../header'
-import footer from '../footer'
 import navigations from '../navigations'
 import button from '../../objects/button'
 
@@ -76,18 +74,22 @@ const httpError = async (type: number = 404): Promise<string> => {
   return await layout({
     meta: {
       title,
-      noIndex: true
+      description: '',
+      url: '',
+      image: '',
+      canonical: '',
+      prev: '',
+      next: '',
+      noIndex: true,
+      isIndex: false
     },
+    navigations: navs,
     content: `
-      ${header(navs)}
-      <main id="main">
-        ${output.container.start}
-          <h1>${type}</h1>
-          <p class="t l-padding-top-m l-padding-bottom-l">${heroText}</p>
-          ${output.button}
-        ${output.container.end}
-      </main>
-      ${footer(navs)}
+      ${output.container.start}
+        <h1>${type}</h1>
+        <p class="t l-padding-top-m l-padding-bottom-l">${heroText}</p>
+        ${output.button}
+      ${output.container.end}
     `
   })
 }

@@ -16,7 +16,7 @@ import Navigation from '@alanizcreative/static-site-formation/src/components/nav
  * @return {object}
  */
 
-interface Args {
+interface NavigationsArgs {
   navigations: FRM.Navigation[]
   items: FRM.NavigationItem[]
   current: string
@@ -28,10 +28,10 @@ const navigations = ({
   navigations = [],
   items = [],
   current = ''
-}: Args): object => {
+}: NavigationsArgs): object => {
   /* Navs and items required */
 
-  if ((navigations.length === 0) && (items.length === 0)) {
+  if ((navigations.length === 0) || (items.length === 0)) {
     return {
       main: '',
       footer: ''
@@ -65,7 +65,7 @@ const navigations = ({
         listAttr: 'role="list"',
         linkClass: 't-s',
         internalLinkClass: 'js-pt-link',
-        linkAttr: 'data-inline'
+        linkAttr: 'data-rich'
       }
     )
   }

@@ -1,5 +1,5 @@
 /**
- * Components - term content
+ * Components - term
  */
 
 /* Imports */
@@ -13,12 +13,19 @@ import posts from '../../objects/posts'
  * Function - output main content for term
  *
  * @param {object} args
+ * @param {string} args.taxonomy
  * @param {string} args.contentType
  * @param {string} args.id
  * @return {string} HTML - html
  */
 
-const termContent = (contentType: string = 'workCategory', id: string = ''): string => {
+const term = (taxonomy: string = '', contentType: string = '', id: string = ''): string => {
+  /* All params required */
+
+  if (taxonomy === '' || contentType === '' || id === '') {
+    return ''
+  }
+
   /* Containing output */
 
   const containers = {
@@ -36,7 +43,7 @@ const termContent = (contentType: string = 'workCategory', id: string = ''): str
 
   let archiveLink = ''
 
-  const termArchiveData = getArchiveLink(contentType)
+  const termArchiveData = getArchiveLink(taxonomy)
 
   if (termArchiveData.title !== '' && termArchiveData.link !== '') {
     archiveLink = button({
@@ -57,7 +64,8 @@ const termContent = (contentType: string = 'workCategory', id: string = ''): str
     ${posts({
       args: {
         contentType,
-        id,
+        taxonomy,
+        termId: id,
         display: -1,
         headingLevel: 2,
         layout: 'cardsCascading'
@@ -70,4 +78,4 @@ const termContent = (contentType: string = 'workCategory', id: string = ''): str
 
 /* Exports */
 
-export default termContent
+export default term

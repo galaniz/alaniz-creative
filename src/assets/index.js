@@ -82,7 +82,7 @@ const meta = [
   },
   {
     prop: 'forms',
-    selector: '.js-send-form',
+    selector: '.js-form',
     all: true,
     array: true
   },
