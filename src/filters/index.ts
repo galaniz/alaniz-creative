@@ -376,23 +376,23 @@ const filters = (): void => {
     let cardProtected = false
     let card = false
 
-    if (parents.length > 0) {
-      if (parents[0].renderType === 'card') {
-        card = true
+    const parentType = parents[0] !== undefined ? parents[0].renderType : ''
+
+    if (parentType === 'card') {
+      card = true
+    }
+
+    if (card && heading) {
+      const {
+        internalLink,
+        externalLink = ''
+      } = parents[0]
+
+      if (internalLink?.passwordProtected !== undefined) {
+        cardProtected = internalLink.passwordProtected
       }
 
-      if (card && heading) {
-        const {
-          internalLink,
-          externalLink = ''
-        } = parents[0]
-
-        if (internalLink?.passwordProtected !== undefined) {
-          cardProtected = internalLink.passwordProtected
-        }
-
-        cardLink = getLink(internalLink, externalLink)
-      }
+      cardLink = getLink(internalLink, externalLink)
     }
 
     /* Output */

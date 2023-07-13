@@ -66,6 +66,7 @@ const layout = async ({
     hero: {},
     archive: '',
     related: [],
+    linkContentType: '',
     theme: {},
     id: ''
   }, data)
@@ -196,8 +197,8 @@ const layout = async ({
     }
   }
 
-  if (config.taxonomy?.[contentType] !== undefined && d.id !== '') {
-    contentOutput += term(contentType, '', d.id)
+  if (config.taxonomy?.[contentType] !== undefined && d.linkContentType !== '' && d.id !== '') {
+    contentOutput += term(contentType, d.linkContentType, d.id)
   }
 
   /* Style */

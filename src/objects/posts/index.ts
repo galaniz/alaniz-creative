@@ -10,6 +10,41 @@ import { card, cards } from '../cards'
 import { listMinimalItem, listMinimal } from '../list-minimal'
 
 /**
+ * Function - singular and plural labels by content type
+ *
+ * @private
+ * @param {string} contentType
+ * @param {string|array<string>} linkContentType
+ * @param {boolean} isTerm
+ * @return {object}
+ */
+
+const _getContentTypeLabels = (
+  contentType: string = '',
+  linkContentType: string | string[],
+  isTerm: boolean = false
+): { singular: string, plural: string } => {
+  let singular = 'post'
+  let plural = 'posts'
+  let type = contentType
+
+  if (isTerm) {
+    linkContentType = Array.isArray(linkContentType) ? linkContentType : [linkContentType]
+    type = linkContentType.length > 0 ? linkContentType[0] : ''
+  }
+
+  if (type !== '') {
+    singular = config.slug.bases[type].singular.toLowerCase()
+    plural = config.slug.bases[type].plural.toLowerCase()
+  }
+
+  return {
+    singular,
+    plural
+  }
+}
+
+/**
  * Function - output posts
  *
  * @param {object} props
@@ -28,12 +63,12 @@ import { listMinimalItem, listMinimal } from '../list-minimal'
 interface PostsProps {
   args: {
     contentType?: string
+    linkContentType?: string[]
     display?: number
     headingLevel?: number
     layout?: string
     nothingFound?: boolean
     order?: string
-    taxonomy?: string
     termId?: string
   }
   parents?: object[]
@@ -44,12 +79,12 @@ const posts = (props: PostsProps = { args: {} }): string => {
 
   const {
     contentType = '',
+    linkContentType = [],
     display = 1,
     headingLevel = 3,
     layout = 'cardsMinimal',
     nothingFound = true, // Display nothing found message
     order = 'date',
-    taxonomy = '',
     termId = ''
   } = args
 
@@ -61,24 +96,17 @@ const posts = (props: PostsProps = { args: {} }): string => {
 
   /* Taxonomy check */
 
-  const isTaxonomy = config.taxonomy?.[taxonomy] !== undefined && termId === ''
+  const isTaxonomy = config.taxonomy?.[contentType] !== undefined && termId === ''
 
   /* Term check */
 
-  const isTerm = config.taxonomy?.[taxonomy] !== undefined && termId !== ''
+  const isTerm = config.taxonomy?.[contentType] !== undefined && termId !== ''
 
-  /* Type */
+  /* Content type labels */
 
-  const type = isTaxonomy ? taxonomy : contentType
+  const labels = _getContentTypeLabels(contentType, linkContentType, isTerm)
 
-  /* Content type title */
-
-  const typeTitle: string = config.slug.bases[type].title.toLowerCase()
-  const typeSingular: string = config.slug.bases[contentType].title.toLowerCase()
-
-  if (isTerm) {
-    console.log('POSTS', contentType, typeTitle, typeSingular)
-  }
+  const { plural } = labels
 
   /* Layout */
 
@@ -86,15 +114,30 @@ const posts = (props: PostsProps = { args: {} }): string => {
 
   /* Check posts */
 
-  let posts = config.archive.posts?.[type] !== undefined ? config.archive.posts[type] : []
+  let posts = config.archive.posts?.[contentType] !== undefined ? config.archive.posts[contentType] : []
+
+  if (isTaxonomy) {
+    posts = posts.filter((post: AC.InternalLink) => {
+      const postLinkContentType = post?.linkContentType !== undefined ? post.linkContentType : ''
+
+      return linkContentType.includes(postLinkContentType)
+    })
+  }
 
   if (isTerm) {
     posts = []
-    // posts = config.archive.terms?.[taxonomy]?.[contentType]?.[termId] !== undefined ? config.archive.terms[taxonomy][contentType][termId] : []
+
+    linkContentType.forEach((c: string) => {
+      const termPosts = config.archive.terms?.[contentType]?.[c]?.[termId]
+
+      if (Array.isArray(termPosts)) {
+        posts = [...posts, ...termPosts]
+      }
+    })
   }
 
   if (posts.length === 0) {
-    return nothingFound ? info(`Looks like no ${typeTitle} were found.`) : ''
+    return nothingFound ? info(`Looks like no ${plural} were found.`) : ''
   }
 
   /* Order */
@@ -144,12 +187,41 @@ const posts = (props: PostsProps = { args: {} }): string => {
     if (l.type === 'listMinimal') {
       const itemArgs = { ...post }
 
-      itemArgs.contentType = type
-
       if (isTaxonomy) {
-        const length: number = config.archive.terms[taxonomy][contentType][post.id].length
+        let length = 0
 
-        itemArgs.text = `${length} ${typeSingular} item${length === 1 ? '' : 's'}`
+        let {
+          contentType: postContentType,
+          linkContentType: postLinkContentType,
+          id: postId
+        } = post
+
+        postLinkContentType = postLinkContentType === undefined ? '' : postLinkContentType
+
+        const postLabels = _getContentTypeLabels(postContentType, postLinkContentType, true)
+
+        const {
+          singular: postSingular,
+          plural: postPlural
+        } = postLabels
+
+        let postLinkContentTypeArray: string[] = []
+
+        if (postLinkContentType === 'default' || postLinkContentType === '') {
+          postLinkContentTypeArray = config.taxonomy[postContentType].contentTypes
+        } else {
+          postLinkContentTypeArray = [postLinkContentType]
+        }
+
+        postLinkContentTypeArray.forEach((c) => {
+          const termPosts = config.archive.terms?.[contentType]?.[c]?.[postId]
+
+          if (Array.isArray(termPosts)) {
+            length += termPosts.length
+          }
+        })
+
+        itemArgs.text = `${length} ${length === 1 ? postSingular : postPlural}`
       }
 
       itemOutput = listMinimalItem({

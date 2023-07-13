@@ -1,5 +1,6 @@
 {
   "contentType": "workCategory",
+  "linkContentType": "work",
   "title": "Front-end development",
   "slug": "front-end-development"
 }

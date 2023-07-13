@@ -48,10 +48,10 @@ const image = (props: ImageProps = { args: {}, parents: [] }): string => {
 
   let card = false
 
-  if (parents.length > 0) {
-    if (parents[0]?.renderType === 'card') {
-      card = true
-    }
+  const parentType = parents[0] !== undefined ? parents[0].renderType : ''
+
+  if (parentType === 'card') {
+    card = true
   }
 
   /* Image */

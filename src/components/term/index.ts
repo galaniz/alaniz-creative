@@ -8,21 +8,22 @@ import getArchiveLink from '@alanizcreative/static-site-formation/src/utils/get-
 import container from '@alanizcreative/static-site-formation/src/layouts/container'
 import button from '../../objects/button'
 import posts from '../../objects/posts'
+import config from '../../config'
 
 /**
  * Function - output main content for term
  *
  * @param {object} args
- * @param {string} args.taxonomy
  * @param {string} args.contentType
+ * @param {string} args.linkContentType
  * @param {string} args.id
  * @return {string} HTML - html
  */
 
-const term = (taxonomy: string = '', contentType: string = '', id: string = ''): string => {
-  /* All params required */
+const term = (contentType: string = '', linkContentType: string = 'default', id: string = ''): string => {
+  /* Content type and link content type required */
 
-  if (taxonomy === '' || contentType === '' || id === '') {
+  if (contentType === '') {
     return ''
   }
 
@@ -43,7 +44,7 @@ const term = (taxonomy: string = '', contentType: string = '', id: string = ''):
 
   let archiveLink = ''
 
-  const termArchiveData = getArchiveLink(taxonomy)
+  const termArchiveData = getArchiveLink(contentType, linkContentType)
 
   if (termArchiveData.title !== '' && termArchiveData.link !== '') {
     archiveLink = button({
@@ -57,6 +58,16 @@ const term = (taxonomy: string = '', contentType: string = '', id: string = ''):
     })
   }
 
+  /* Link content type array */
+
+  let linkContentTypeArray: string[] = []
+
+  if (linkContentType === 'default') {
+    linkContentTypeArray = config.taxonomy[contentType].contentTypes
+  } else {
+    linkContentTypeArray = [linkContentType]
+  }
+
   /* Output */
 
   return `
@@ -64,7 +75,7 @@ const term = (taxonomy: string = '', contentType: string = '', id: string = ''):
     ${posts({
       args: {
         contentType,
-        taxonomy,
+        linkContentType: linkContentTypeArray,
         termId: id,
         display: -1,
         headingLevel: 2,

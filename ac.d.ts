@@ -15,6 +15,7 @@ declare global {
     interface InternalLink {
       id: string
       contentType: string
+      linkContentType?: string
       slug: string
       title?: string
       text?: string

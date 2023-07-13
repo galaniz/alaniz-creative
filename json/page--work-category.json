@@ -1,5 +1,6 @@
 {
   "contentType": "page",
+  "linkContentType": "work",
   "title": "Work Categories",
   "slug": "categories",
   "parent": "page--work",
@@ -16,8 +17,8 @@
       "content": [
         {
           "renderType": "posts",
-          "contentType": "work",
-          "taxonomy": "workCategory",
+          "contentType": "workCategory",
+          "linkContentType": ["work"],
           "layout": "listMinimal",
           "display": -1,
           "headingLevel": 2

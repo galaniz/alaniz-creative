@@ -38,14 +38,16 @@ const config: FRM.Config = setConfig({
       work: {
         slug: 'work',
         title: 'Work',
-        singular: 'Work',
-        archiveId: ''
+        singular: 'Work Item',
+        plural: 'Work Items',
+        archiveId: {}
       },
       workCategory: {
         slug: 'categories',
         title: 'Categories',
         singular: 'Category',
-        archiveId: ''
+        plural: 'Categories',
+        archiveId: {}
       }
     }
   },
