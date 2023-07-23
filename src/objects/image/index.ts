@@ -4,8 +4,8 @@
 
 /* Imports */
 
-import getImage from '@alanizcreative/static-site-formation/src/utils/get-image'
-import richText from '@alanizcreative/static-site-formation/src/text/rich-text'
+import getImage from '@alanizcreative/static-site-formation/lib/utils/get-image'
+import richText from '@alanizcreative/static-site-formation/lib/text/rich-text'
 
 /**
  * Function - output image
@@ -62,7 +62,7 @@ const image = (props: ImageProps = { args: {}, parents: [] }): string => {
     const imageClasses = ['l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc l-object-cover']
 
     if (card) {
-      imageClasses.push('e-transition l-object-left-top')
+      imageClasses.push('l-object-left-top')
     }
 
     const { base, width, height } = image
@@ -75,7 +75,6 @@ const image = (props: ImageProps = { args: {}, parents: [] }): string => {
         alt
       },
       classes: imageClasses.join(' '),
-      attr: card ? 'data-scale' : '',
       returnAspectRatio: true,
       maxWidth: card ? 1600 : 2000
     })
@@ -100,15 +99,23 @@ const image = (props: ImageProps = { args: {}, parents: [] }): string => {
       classes += ' b-all b-theme'
     }
 
-    let attr = ''
+    if (card) {
+      classes += ' e-transition'
+    }
+
+    const attr = []
 
     if (aspectRatio === '' && imageObjAspectRatio !== 0) {
-      attr += ` style="padding-top:${imageObjAspectRatio * 100}%"`
+      attr.push(`style="padding-top:${imageObjAspectRatio * 100}%"`)
+    }
+
+    if (card) {
+      attr.push('data-scale')
     }
 
     if (imageObjOutput !== '') {
       imageOutput = `
-        <div class="${classes}"${attr}>
+        <div class="${classes}"${attr.length > 0 ? attr.join(' ') : ''}>
           ${imageObjOutput}
         </div>
       `

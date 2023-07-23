@@ -4,14 +4,10 @@
 
 /* Imports */
 
-import getAllFileData from '@alanizcreative/static-site-formation/src/utils/get-all-file-data'
-import processImages from '@alanizcreative/static-site-formation/src/utils/process-images'
-import writeStoreFiles from '@alanizcreative/static-site-formation/src/utils/write-store-files'
-import writeServerlessFiles from '@alanizcreative/static-site-formation/src/utils/write-serverless-files'
-import render from '@alanizcreative/static-site-formation/src/render'
-import filters from '../src/filters'
-import actions from '../src/actions'
+import { PurgeCSS } from 'purgecss'
+import { render, getAllFileData, processImages, writeStoreFiles, writeServerlessFiles } from '@alanizcreative/static-site-formation/lib'
 import config from '../src/config'
+import cache from '../src/utils/cache'
 
 /* Eleventy init */
 
@@ -21,6 +17,10 @@ interface InitArgs {
       runMode?: string
     }
   }
+}
+
+interface InitPurge {
+  css: string
 }
 
 module.exports = async (args: InitArgs): Promise<FRM.RenderReturn[]> => {
@@ -35,12 +35,67 @@ module.exports = async (args: InitArgs): Promise<FRM.RenderReturn[]> => {
       /* Create images and image meta */
 
       await processImages()
+
+      /* Purge unused css */
+
+      config.filters.renderItem = async (output: string): Promise<string> => {
+        const purge: InitPurge[] = await new PurgeCSS().purge({
+          content: [
+            {
+              raw: output,
+              extension: 'html'
+            }
+          ],
+          css: [
+            `./site/assets/css/${config.namespace}.css`
+          ],
+          safelist: [
+            'o-form__error',
+            'l-flex',
+            'l-gap-margin-4xs',
+            'l-padding-top-3xs',
+            't-line-height-0',
+            'l-width-xs',
+            'l-height-s',
+            't-s',
+            't-weight-medium'
+          ],
+          dynamicAttributes: [
+            'data-open',
+            'data-overflow',
+            'data-show-items',
+            'data-show',
+            'data-visible',
+            'data-state',
+            'data-using-mouse',
+            'data-no-scroll',
+            'data-hide'
+          ]
+        })
+
+        if (purge.length !== 0) {
+          output = output.replace(config.vars.cssLink, `<style>${purge[0].css}</style>`)
+        }
+
+        return output
+      }
+    }
+
+    /* Cache data */
+
+    if (config.env.cache) {
+      config.filters.cacheData = async (cacheData: FRM.AnyObject, { key, type = 'get', data }: FRM.CacheDataFilterArgs): Promise<object> => {
+        const c = await cache(key, type, data)
+
+        if (c !== undefined) {
+          cacheData = c
+        }
+
+        return cacheData
+      }
     }
 
     /* Render output */
-
-    filters()
-    actions()
 
     const output = await render({
       allData: await getAllFileData({

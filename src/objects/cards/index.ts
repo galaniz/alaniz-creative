@@ -4,9 +4,9 @@
 
 /* Imports */
 
-import container from '@alanizcreative/static-site-formation/src/layouts/container'
-import column from '@alanizcreative/static-site-formation/src/layouts/column'
-import richText from '@alanizcreative/static-site-formation/src/text/rich-text'
+import container from '@alanizcreative/static-site-formation/lib/layouts/container'
+import column from '@alanizcreative/static-site-formation/lib/layouts/column'
+import richText from '@alanizcreative/static-site-formation/lib/text/rich-text'
 import config from '../../config'
 import image from '../image'
 
@@ -172,7 +172,7 @@ const card = (props: CardProps = { args: {} }): FRM.StartEndReturn => {
 
     if (ac && svg?.blob !== undefined) {
       const reverse = index % 2 !== 0
-      const path: string = config.blobs[svg.blob].path
+      const path: string = config.vars.blobs[svg.blob].path
 
       blob = `
         <svg
@@ -241,7 +241,7 @@ const card = (props: CardProps = { args: {} }): FRM.StartEndReturn => {
     start: `
       ${cardColumn.start}
       ${blob}
-      <div class="l-relative l-overflow-hidden e-transition-quad e-translate e-scale">
+      <div class="l-relative e-transition-quad e-translate e-scale">
         <div class="${classes}">${content}
     `,
     end: `

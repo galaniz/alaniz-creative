@@ -4,12 +4,12 @@
 
 /* Imports */
 
-import getArchiveLink from '@alanizcreative/static-site-formation/src/utils/get-archive-link'
-import container from '@alanizcreative/static-site-formation/src/layouts/container'
-import richText from '@alanizcreative/static-site-formation/src/text/rich-text'
-import wave from '../wave'
-import button from '../../objects/button'
+import getArchiveLink from '@alanizcreative/static-site-formation/lib/utils/get-archive-link'
+import container from '@alanizcreative/static-site-formation/lib/layouts/container'
+import richText from '@alanizcreative/static-site-formation/lib/text/rich-text'
 import { card } from '../../objects/cards'
+import button from '../../objects/button'
+import wave from '../wave'
 
 /**
  * Function - output related cards in single post

@@ -81,6 +81,7 @@ h6,
 p,
 ul[data-rich],
 ol[data-rich],
+figcaption[data-rich],
 .t-l,
 .t,
 .t-s,
@@ -148,7 +149,8 @@ p,
   font-size: var(--t);
 }
 
-.t-s {
+.t-s,
+figcaption[data-rich] {
   font-size: var(--t-s);
 }
 

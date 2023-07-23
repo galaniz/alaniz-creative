@@ -4,6 +4,8 @@
 
 /* Imports */
 
+import { setFilters } from '@alanizcreative/static-site-formation/lib/utils/filters'
+import { setActions } from '@alanizcreative/static-site-formation/lib/utils/actions'
 import httpError from '../../components/http-error'
 import protect from '../../components/protect'
 import config from '../../config'
@@ -20,7 +22,7 @@ import config from '../../config'
  */
 
 interface PasswordProtectArgs {
-  request: any
+  request: Request
   next: Function
 }
 
@@ -37,22 +39,28 @@ const passwordProtect = async ({ request, next }: PasswordProtectArgs): Promise<
     if (cookieExists) {
       return next()
     } else {
+      setFilters(config.filters)
+      setActions(config.actions)
+
       const html = await protect()
 
       return new Response(html, {
         status: 200,
         headers: {
-          'content-type': 'text/html;charset=UTF-8'
+          'Content-Type': 'text/html;charset=UTF-8'
         }
       })
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error(config.console.red, '[AC] Error with password protect function: ', error)
 
     const statusCode = typeof error.httpStatusCode === 'number' ? error.httpStatusCode : 500
 
     return new Response(await httpError(500), {
-      status: statusCode
+      status: statusCode,
+      headers: {
+        'Content-Type': 'text/html;charset=UTF-8'
+      }
     })
   }
 }

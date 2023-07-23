@@ -40,6 +40,10 @@
     margin-bottom: var(--label-margin);
   }
 
+  input[type="password"] {
+    letter-spacing: 0.15em;
+  }
+
   input[type="search"],
   input[type="password"],
   input[type="text"],

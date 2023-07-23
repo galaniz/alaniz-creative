@@ -4,24 +4,17 @@
 
 /* Imports */
 
-import { addAction, resetActions } from '@alanizcreative/static-site-formation/src/utils/actions'
-import getPathDepth from '@alanizcreative/static-site-formation/src/utils/get-path-depth'
+import getPathDepth from '@alanizcreative/static-site-formation/lib/utils/get-path-depth'
 import config from '../config'
 
 /**
- * Function - actions on render
+ * Site actions on render
  *
- * @return {void}
+ * @type {object}
  */
 
-const actions = (): void => {
-  /* Reset */
-
-  resetActions()
-
-  /* Render end */
-
-  addAction('renderEnd', (args: FRM.RenderEndActionArgs): void => {
+const actions: { [key: string]: Function } = {
+  renderItemEnd (args: FRM.RenderItemEndActionArgs): void {
     const { slug = '', props } = args
     const { passwordProtected = false } = props
 
@@ -34,10 +27,10 @@ const actions = (): void => {
 
       config.serverless.routes.passwordProtect.push({
         path,
-        content: `import passwordProtect from '${getPathDepth(`${config.serverless.dir}/${path}`)}src/serverless/password-protect'; const protect = async ({ request, env, next }) => { return await passwordProtect({ request, env, next }) }; export const onRequestGet = [protect];`
+        content: `import passwordProtect from '${getPathDepth(`${config.serverless.dir}/${path}`)}src/serverless/password-protect'\nconst protect = async ({ request, env, next }) => { return await passwordProtect({ request, env, next }) }\nexport const onRequestGet = [protect]\n`
       })
     }
-  })
+  }
 }
 
 /* Exports */

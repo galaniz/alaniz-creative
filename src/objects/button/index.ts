@@ -4,7 +4,7 @@
 
 /* Imports */
 
-import getLink from '@alanizcreative/static-site-formation/src/utils/get-link'
+import getLink from '@alanizcreative/static-site-formation/lib/utils/get-link'
 import externalLinkSvg from '../../svg/external-link'
 import arrowBackSvg from '../../svg/arrow-back'
 

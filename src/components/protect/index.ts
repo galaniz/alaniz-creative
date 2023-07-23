@@ -5,9 +5,9 @@
 /* Imports */
 
 import { v4 as uuid } from 'uuid'
-import container from '@alanizcreative/static-site-formation/src/layouts/container'
-import form from '@alanizcreative/static-site-formation/src/objects/form'
-import field from '@alanizcreative/static-site-formation/src/objects/field'
+import container from '@alanizcreative/static-site-formation/lib/layouts/container'
+import form from '@alanizcreative/static-site-formation/lib/objects/form'
+import field from '@alanizcreative/static-site-formation/lib/objects/field'
 import layout from '../../components/layout'
 import lockSvg from '../../svg/lock'
 
@@ -40,7 +40,7 @@ const protect = async (): Promise<string> => {
     form: form({
       args: {
         id: uuid(),
-        action: 'check-password',
+        action: 'checkPassword',
         submitLabel: 'Go',
         fieldsClasses: 'l-flex-row-s l-align-end-s'
       }

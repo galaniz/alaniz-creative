@@ -4,8 +4,8 @@
 
 /* Imports */
 
-import getPermalink from '@alanizcreative/static-site-formation/src/utils/get-permalink'
-import container from '@alanizcreative/static-site-formation/src/layouts/container'
+import getPermalink from '@alanizcreative/static-site-formation/lib/utils/get-permalink'
+import container from '@alanizcreative/static-site-formation/lib/layouts/container'
 import config from '../../config'
 import layout from '../layout'
 import navigations from '../navigations'
@@ -18,10 +18,17 @@ import button from '../../objects/button'
  * @return {string} HTML - html
  */
 
+interface HttpErrorText {
+  [key: number]: {
+    metaTitle: string
+    heroText: string
+  }
+}
+
 const httpError = async (type: number = 404): Promise<string> => {
   /* Text by type */
 
-  const text = {
+  const text: HttpErrorText = {
     404: {
       metaTitle: 'Page Not Found',
       heroText: 'Looks like nothing was found in this location.'

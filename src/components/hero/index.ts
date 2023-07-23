@@ -4,7 +4,7 @@
 
 /* Imports */
 
-import getImage from '@alanizcreative/static-site-formation/src/utils/get-image'
+import getImage from '@alanizcreative/static-site-formation/lib/utils/get-image'
 import config from '../../config'
 import button from '../../objects/button'
 
@@ -65,7 +65,7 @@ const hero = (args: AC.HeroArgs = {}): string => {
       let waveOutput = ''
 
       if (wave !== undefined) {
-        const w: { width: number, height: number, path: string } = config.waves[wave]
+        const w: { width: number, height: number, path: string } = config.vars.waves[wave]
 
         waveOutput = `
           <div class="l-absolute l-width-100-vw l-max-height-100-pc l-center">
@@ -108,7 +108,7 @@ const hero = (args: AC.HeroArgs = {}): string => {
   let blobOutput = ''
 
   if (blob !== undefined) {
-    const path: string = config.blobs[blob].path
+    const path: string = config.vars.blobs[blob].path
 
     blobOutput = `
       <svg

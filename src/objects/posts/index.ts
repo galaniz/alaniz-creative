@@ -110,7 +110,7 @@ const posts = (props: PostsProps = { args: {} }): string => {
 
   /* Layout */
 
-  const l = config.layouts[layout]
+  const l = config.vars.layouts[layout]
 
   /* Check posts */
 

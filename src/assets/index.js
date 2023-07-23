@@ -276,6 +276,7 @@ const initialize = () => {
         groupClass: 'o-form__group',
         fieldClass: 'o-form__field',
         labelClass: 'o-form__label',
+        jsonEncoded: true,
         data: { action },
         errorTemplate: `
           <span class='o-form__error l-flex l-gap-margin-4xs l-padding-top-3xs' id='%id'>
@@ -306,7 +307,7 @@ const initialize = () => {
           }
         },
         onSuccess () {
-          if (action !== 'check-password') {
+          if (action !== 'checkPassword') {
             return
           }
 
@@ -317,7 +318,7 @@ const initialize = () => {
         onError (err) {
           this.result.error.message = getDefaultMessages(id).error
 
-          if (action !== 'check-password') {
+          if (action !== 'checkPassword') {
             return
           }
 

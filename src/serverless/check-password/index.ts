@@ -4,7 +4,7 @@
 
 /* Imports */
 
-import escape from 'validator/es/lib/escape'
+import escape from '@alanizcreative/static-site-formation/lib/utils/escape'
 
 /**
  * Function - escape and check password against environment variable
@@ -44,7 +44,13 @@ const checkPassword = ({ inputs, env }: FRM.AjaxActionArgs): FRM.AjaxActionRetur
 
   /* Wrong password */
 
-  if (password !== '' || password !== env.PASSWORD) {
+  let correctPassword = ''
+
+  if (typeof env === 'object' && env !== undefined && env !== null) {
+    correctPassword = env.PASSWORD !== undefined ? env.PASSWORD : ''
+  }
+
+  if (password === '' || correctPassword === '' || password !== correctPassword) {
     return {
       error: {
         message: 'Incorrect credentials',

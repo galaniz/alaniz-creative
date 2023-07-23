@@ -4,8 +4,8 @@
 
 /* Imports */
 
-import getArchiveLink from '@alanizcreative/static-site-formation/src/utils/get-archive-link'
-import container from '@alanizcreative/static-site-formation/src/layouts/container'
+import getArchiveLink from '@alanizcreative/static-site-formation/lib/utils/get-archive-link'
+import container from '@alanizcreative/static-site-formation/lib/layouts/container'
 import button from '../../objects/button'
 import posts from '../../objects/posts'
 import config from '../../config'

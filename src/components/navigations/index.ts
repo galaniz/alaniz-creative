@@ -4,7 +4,7 @@
 
 /* Imports */
 
-import Navigation from '@alanizcreative/static-site-formation/src/components/navigation'
+import Navigation from '@alanizcreative/static-site-formation/lib/components/navigation'
 
 /**
  * Function - output navigations
@@ -81,7 +81,9 @@ const navigations = ({
  */
 
 interface NavArgs {
-  navigations: object
+  navigations: {
+    [key: string]: string
+  }
   props: {
     location?: string
     title?: string

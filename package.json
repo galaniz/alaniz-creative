@@ -1,18 +1,19 @@
 {
   "name": "alaniz-creative",
   "version": "1.0.0",
-  "description": "",
+  "description": "Static site for Alaniz Creative",
   "main": "index.njk",
   "engines": {
     "node": ">=19"
   },
   "scripts": {
-    "start": "concurrently \"tsc --watch\" \"npx @11ty/eleventy --serve\" \"npx stylelint 'src/assets/**/*.scss'\" \"npx ts-standard\"",
-    "build": "tsc && npx @11ty/eleventy",
-    "debug": "DEBUG=* npx @11ty/eleventy"
+    "start": "concurrently \"npx tsc --watch --project tsconfig.json\" \"npx @11ty/eleventy --serve\" \"npx stylelint 'src/assets/**/*.scss'\" \"npx ts-standard\"",
+    "build": "npx tsc --project tsconfig.json && npx @11ty/eleventy",
+    "debug": "DEBUG=* npx @11ty/eleventy",
+    "lint": "npx ts-standard && npx stylelint 'src/assets/**/*.scss'"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Graciela Alaniz (https://alanizcreative.com/)",
+  "license": "MIT",
   "dependencies": {
     "@alanizcreative/formation": "^4.1.2",
     "uuid": "^9.0.0",
@@ -25,24 +26,27 @@
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-fetch": "^4.0.0",
     "@miniflare/tre": "^3.0.0-next.13",
-    "@types/node": "^20.4.1",
+    "@types/html-minifier": "^4.0.2",
+    "@types/node": "^20.4.2",
+    "@types/safe-json-stringify": "^1.1.2",
+    "@types/uuid": "^9.0.2",
+    "@types/validator": "^13.7.17",
     "autoprefixer": "^10.4.14",
     "concurrently": "^8.2.0",
     "dotenv": "^16.3.1",
-    "esbuild": "^0.18.11",
+    "esbuild": "^0.18.13",
     "esbuild-sass-plugin": "^2.10.0",
     "html-minifier": "^4.0.0",
     "normalize.css": "^8.0.1",
-    "postcss": "^8.4.25",
+    "postcss": "^8.4.26",
     "postcss-modules": "^6.0.0",
     "postcss-preset-env": "^9.0.0",
     "purgecss": "^5.0.0",
     "safe-json-stringify": "^1.2.0",
-    "sharp": "^0.32.1",
     "stylelint": "^15.10.1",
     "stylelint-config-standard-scss": "^10.0.0",
     "ts-standard": "^12.0.2",
     "typescript": "^5.1.6",
-    "wrangler": "^3.1.2"
+    "wrangler": "^3.2.0"
   }
 }

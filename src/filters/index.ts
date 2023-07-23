@@ -4,27 +4,22 @@
 
 /* Imports */
 
-import { addFilter, resetFilters } from '@alanizcreative/static-site-formation/src/utils/filters'
-import getLink from '@alanizcreative/static-site-formation/src/utils/get-link'
+import getLink from '@alanizcreative/static-site-formation/lib/utils/get-link'
 import errorSvg from '../svg/error'
 import checkSvg from '../svg/check'
 import lockSvg from '../svg/lock'
 import loader from '../objects/loader'
 
 /**
- * Function - filters for props
+ * Site filters for props and rich text
  *
- * @return {void}
+ * @type {object}
  */
 
-const filters = (): void => {
-  /* Reset */
-
-  resetFilters()
-
+const filters: { [key: string]: Function } = {
   /* Container */
 
-  addFilter('containerProps', (props: FRM.ContainerProps): FRM.ContainerProps => {
+  containerProps (props: FRM.ContainerProps): FRM.ContainerProps {
     const { args } = props
 
     const {
@@ -122,11 +117,11 @@ const filters = (): void => {
     args.attr = attr
 
     return props
-  })
+  },
 
   /* Column */
 
-  addFilter('columnProps', (props: FRM.ColumnProps): FRM.ColumnProps => {
+  columnProps (props: FRM.ColumnProps): FRM.ColumnProps {
     const { args } = props
 
     const {
@@ -171,11 +166,11 @@ const filters = (): void => {
     args.classes = classes
 
     return props
-  })
+  },
 
   /* Form */
 
-  addFilter('formProps', (props: FRM.FormProps): FRM.FormProps => {
+  formProps (props: FRM.FormProps): FRM.FormProps {
     const { args } = props
 
     const {
@@ -255,11 +250,11 @@ const filters = (): void => {
     args.honeypotClasses = `${honeypotClasses}${honeypotClasses !== '' ? ' ' : ''}js-input`
 
     return props
-  })
+  },
 
   /* Field */
 
-  addFilter('fieldProps', (props: FRM.FieldProps): FRM.FieldProps => {
+  fieldProps (props: FRM.FieldProps): FRM.FieldProps {
     const { args } = props
 
     const {
@@ -295,11 +290,11 @@ const filters = (): void => {
     args.visuallyHiddenClass = 'a11y-visually-hidden'
 
     return props
-  })
+  },
 
   /* Rich text */
 
-  addFilter('richTextProps', (props: FRM.RichTextProps): FRM.RichTextProps => {
+  richTextProps (props: FRM.RichTextProps): FRM.RichTextProps {
     const { args, parents = [] } = props
 
     const {
@@ -328,7 +323,7 @@ const filters = (): void => {
 
     const styleArray: string[] = []
 
-    if (style !== undefined) {
+    if (typeof style === 'object' && style !== undefined) {
       Object.keys(style).forEach((s) => {
         const st: string = style[s]
 
@@ -356,9 +351,9 @@ const filters = (): void => {
     args.style = styleArray.length > 0 ? styleArray.join(';') : ''
 
     return props
-  })
+  },
 
-  addFilter('richTextOutput', (output: string, props: FRM.RichTextProps): string => {
+  richTextOutput (output: string, props: FRM.RichTextProps): string {
     const { args, parents = [] } = props
 
     const {
@@ -408,7 +403,7 @@ const filters = (): void => {
     }
 
     return output
-  })
+  }
 }
 
 /* Exports */

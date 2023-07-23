@@ -2,10 +2,17 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
-    "resolveJsonModule": true,
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "strictNullChecks": true
+    "noUnusedLocals": true,
+    "strict": true
   },
-  "include": ["**/*.ts", ".eleventy.ts"],
-  "exclude": ["node_modules", "site"]
+  "include": [
+    "**/*.ts",
+    ".eleventy.ts"
+  ],
+  "exclude": [
+    "./site",
+    "node_modules"
+  ]
 }

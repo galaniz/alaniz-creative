@@ -1,8 +1,0 @@
-{
-  "standard.engine": "ts-standard",
-  "standard.enable": true,
-  "standard.usePackageJson": true,
-  "standard.validate": [
-    "typescript"
-  ]
-}

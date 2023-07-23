@@ -4,8 +4,7 @@
 
 /* Imports */
 
-import { PurgeCSS } from 'purgecss'
-import getPermalink from '@alanizcreative/static-site-formation/src/utils/get-permalink'
+import getPermalink from '@alanizcreative/static-site-formation/lib/utils/get-permalink'
 import config from '../../config'
 import header from '../header'
 import footer from '../footer'
@@ -25,10 +24,6 @@ import term from '../term'
  * @param {object|undefined} args.serverlessData
  * @return {string} HTML - html
  */
-
-interface LayoutPurge {
-  css: string
-}
 
 const layout = async ({
   meta,
@@ -145,7 +140,7 @@ const layout = async ({
 
   /* Theme color */
 
-  const theme: string = config.theme
+  const theme: string = config.vars.theme
 
   /* Header and footer */
 
@@ -222,9 +217,15 @@ const layout = async ({
     }
   }
 
+  /* Css link */
+
+  const cssLink = `<link rel="stylesheet" href="${assetsLink}css/${ns}.css" media="all">`
+
+  config.vars.cssLink = cssLink
+
   /* Output */
 
-  const output = `
+  return `
     <!DOCTYPE html>
     <html lang="en" id="${ns}" data-root>
       <head>
@@ -248,7 +249,7 @@ const layout = async ({
         <meta name="twitter:image" content="${image}">
         <meta content="summary_large_image" property="twitter:card">
         <style>@media (prefers-reduced-motion: reduce) {.reduce-motion-show {display: block;}.reduce-motion-hide {display: none;}}</style>
-        *|CSS|*
+        ${cssLink}
         ${style !== '' ? `<style>${style}</style>` : ''}
         <link rel="apple-touch-icon" sizes="180x180" href="${assetsLink}favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="${assetsLink}favicon/favicon-32x32.png">
@@ -271,54 +272,6 @@ const layout = async ({
       </body>
     </html>
   `
-
-  /* Purge unused css */
-
-  let cssOutput = `<link rel="stylesheet" href="${assetsLink}css/${ns}.css" media="all">`
-
-  if (config.env.build && PurgeCSS !== undefined) {
-    const purge: LayoutPurge[] = await new PurgeCSS().purge({
-      content: [
-        {
-          raw: output,
-          extension: 'html'
-        }
-      ],
-      css: [
-        `./site/assets/css/${ns}.css`
-      ],
-      safelist: [
-        'o-form__error',
-        'l-flex',
-        'l-gap-margin-4xs',
-        'l-padding-top-3xs',
-        't-line-height-0',
-        'l-width-xs',
-        'l-height-s',
-        't-s',
-        't-weight-medium'
-      ],
-      dynamicAttributes: [
-        'data-open',
-        'data-overflow',
-        'data-show-items',
-        'data-show',
-        'data-visible',
-        'data-state',
-        'data-using-mouse',
-        'data-no-scroll',
-        'data-hide'
-      ]
-    })
-
-    if (purge.length !== 0) {
-      cssOutput = `<style>${purge[0].css}</style>`
-    }
-  }
-
-  /* Output */
-
-  return output.replace('*|CSS|*', cssOutput)
 }
 
 /* Exports */

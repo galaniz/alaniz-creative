@@ -4,8 +4,8 @@
 
 /* Imports */
 
+import getYear from '@alanizcreative/static-site-formation/lib/utils/get-year'
 import config from '../../config'
-import getYear from '@alanizcreative/static-site-formation/src/utils/get-year'
 
 /**
  * Function - output footer

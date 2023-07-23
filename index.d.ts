@@ -1,5 +1,5 @@
 /**
- * Alaniz Creative - interfaces
+ * Alaniz Creative - type definitions
  */
 
 import FRM from '@alanizcreative/static-site-formation'

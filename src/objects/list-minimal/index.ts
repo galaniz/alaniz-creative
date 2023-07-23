@@ -4,8 +4,8 @@
 
 /* Imports */
 
-import container from '@alanizcreative/static-site-formation/src/layouts/container'
-import richText from '@alanizcreative/static-site-formation/src/text/rich-text'
+import container from '@alanizcreative/static-site-formation/lib/layouts/container'
+import richText from '@alanizcreative/static-site-formation/lib/text/rich-text'
 
 /**
  * Function - output list container

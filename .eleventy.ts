@@ -13,25 +13,26 @@ import autoprefixer from 'autoprefixer'
 import postcssPresetEnv from 'postcss-preset-env'
 import { sassPlugin } from 'esbuild-sass-plugin'
 import { resolve, extname } from 'node:path'
-import getAllFilePaths from '@alanizcreative/static-site-formation/src/utils/get-all-file-paths'
+import { getAllFilePaths } from '@alanizcreative/static-site-formation/lib'
 import config from './src/config'
 
 /* Config */
 
 module.exports = (args: any) => {
-  /* Add env variables */
+  /* Set env config */
 
   if (process) {
     const env = process.env
 
-    config.dev = env.ENVIRONMENT === 'dev'
-    config.prod = env.ENVIRONMENT === 'production'
+    config.env.cache = env?.USE_11TY_CACHE ? true : false
+    config.env.dev = env.ENVIRONMENT === 'dev'
+    config.env.prod = env.ENVIRONMENT === 'production'
   }
   
   /* Process scss and js files */
 
   args.on('eleventy.before', async () => {
-    const entryPoints = {}
+    const entryPoints: FRM.AnyObject = {}
     const namespace = 'ac'
 
     entryPoints[`js/${namespace}`] = 'src/assets/index.js'

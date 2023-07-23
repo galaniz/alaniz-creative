@@ -5,7 +5,7 @@
 /* Imports */
 
 import { v4 as uuid } from 'uuid'
-import getPermalink from '@alanizcreative/static-site-formation/src/utils/get-permalink'
+import getPermalink from '@alanizcreative/static-site-formation/lib/utils/get-permalink'
 import config from '../../config'
 import logoSvg from '../../svg/logo'
 
