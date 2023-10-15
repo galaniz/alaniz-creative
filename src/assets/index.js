@@ -262,7 +262,7 @@ const initialize = () => {
 
       /* Action */
 
-      const action = form.getAttribute('data-action') || 'send-form'
+      const action = form.getAttribute('data-action') || 'sendForm'
 
       /* Args */
 

@@ -1,5 +1,5 @@
 /**
- * Render - svg check
+ * Svg - check
  */
 
 /**

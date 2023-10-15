@@ -4,45 +4,11 @@
 
 /* Imports */
 
+import getArchiveLabels from '@alanizcreative/static-site-formation/lib/utils/get-archive-labels'
 import config from '../../config'
 import info from '../info'
 import { card, cards } from '../cards'
 import { listMinimalItem, listMinimal } from '../list-minimal'
-
-/**
- * Function - singular and plural labels by content type
- *
- * @private
- * @param {string} contentType
- * @param {string|array<string>} linkContentType
- * @param {boolean} isTerm
- * @return {object}
- */
-
-const _getContentTypeLabels = (
-  contentType: string = '',
-  linkContentType: string | string[],
-  isTerm: boolean = false
-): { singular: string, plural: string } => {
-  let singular = 'post'
-  let plural = 'posts'
-  let type = contentType
-
-  if (isTerm) {
-    linkContentType = Array.isArray(linkContentType) ? linkContentType : [linkContentType]
-    type = linkContentType.length > 0 ? linkContentType[0] : ''
-  }
-
-  if (type !== '') {
-    singular = config.slug.bases[type].singular.toLowerCase()
-    plural = config.slug.bases[type].plural.toLowerCase()
-  }
-
-  return {
-    singular,
-    plural
-  }
-}
 
 /**
  * Function - output posts
@@ -50,12 +16,12 @@ const _getContentTypeLabels = (
  * @param {object} props
  * @param {object} props.args
  * @param {string} props.args.contentType
+ * @param {array<string>} props.args.linkContentType
  * @param {number} props.args.display
  * @param {string} props.args.headingLevel
  * @param {string} props.args.layout
  * @param {boolean} props.args.nothingFound
  * @param {string} props.args.order
- * @param {string} props.args.taxonomy
  * @param {string} props.args.termId
  * @return {string} - HTML
  */
@@ -71,7 +37,7 @@ interface PostsProps {
     order?: string
     termId?: string
   }
-  parents?: object[]
+  parents?: FRM.ParentArgs[]
 }
 
 const posts = (props: PostsProps = { args: {} }): string => {
@@ -96,15 +62,15 @@ const posts = (props: PostsProps = { args: {} }): string => {
 
   /* Taxonomy check */
 
-  const isTaxonomy = config.taxonomy?.[contentType] !== undefined && termId === ''
+  const isTaxonomy = config.contentTypes.taxonomy?.[contentType] !== undefined && termId === ''
 
   /* Term check */
 
-  const isTerm = config.taxonomy?.[contentType] !== undefined && termId !== ''
+  const isTerm = config.contentTypes.taxonomy?.[contentType] !== undefined && termId !== ''
 
   /* Content type labels */
 
-  const labels = _getContentTypeLabels(contentType, linkContentType, isTerm)
+  const labels = getArchiveLabels(contentType, linkContentType, isTerm)
 
   const { plural } = labels
 
@@ -198,7 +164,7 @@ const posts = (props: PostsProps = { args: {} }): string => {
 
         postLinkContentType = postLinkContentType === undefined ? '' : postLinkContentType
 
-        const postLabels = _getContentTypeLabels(postContentType, postLinkContentType, true)
+        const postLabels = getArchiveLabels(postContentType, postLinkContentType, true)
 
         const {
           singular: postSingular,
@@ -208,7 +174,7 @@ const posts = (props: PostsProps = { args: {} }): string => {
         let postLinkContentTypeArray: string[] = []
 
         if (postLinkContentType === 'default' || postLinkContentType === '') {
-          postLinkContentTypeArray = config.taxonomy[postContentType].contentTypes
+          postLinkContentTypeArray = config.contentTypes.taxonomy[postContentType].contentTypes
         } else {
           postLinkContentTypeArray = [postLinkContentType]
         }

@@ -1,5 +1,5 @@
 /**
- * Render - svg info icon
+ * Svg - info icon
  */
 
 /**

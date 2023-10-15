@@ -1,5 +1,5 @@
 /**
- * Render - svg arrow back
+ * Svg - arrow back
  */
 
 /**

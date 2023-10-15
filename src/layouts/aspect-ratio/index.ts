@@ -15,7 +15,7 @@ interface AspectRatioProps {
   args: {
     percent?: number
   }
-  parents?: object[]
+  parents?: FRM.ParentArgs[]
 }
 
 const aspectRatio = (props: AspectRatioProps = { args: {} }): FRM.StartEndReturn => {

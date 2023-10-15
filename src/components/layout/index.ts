@@ -18,9 +18,10 @@ import term from '../term'
  * @param {object} args
  * @param {object} args.meta
  * @param {object} args.navigations
+ * @param {string} args.contentType
  * @param {string} args.content
- * @param {array<string>} args.contains
  * @param {object} args.data
+ * @param {array<string>} args.contains
  * @param {object|undefined} args.serverlessData
  * @return {string} HTML - html
  */
@@ -28,8 +29,8 @@ import term from '../term'
 const layout = async ({
   meta,
   navigations,
-  content = '',
   contentType = 'page',
+  content = '',
   data
 }: FRM.LayoutArgs): Promise<string> => {
   /* Assets link */

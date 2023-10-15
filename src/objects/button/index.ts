@@ -14,7 +14,7 @@ import arrowBackSvg from '../../svg/arrow-back'
  * @param {object} props
  * @param {object} props.args
  * @param {string} props.args.title
- * @param {string} props.args.link // Back end option
+ * @param {string} props.args.link - Back end option
  * @param {object|boolean} props.args.internalLink
  * @param {string} props.args.externalLink
  * @param {string} props.args.link
@@ -44,7 +44,7 @@ interface ButtonProps {
     newTab?: boolean
     iconBefore?: string
   }
-  parents?: object[]
+  parents?: FRM.ParentArgs[]
 }
 
 const button = (props: ButtonProps = { args: {} }): string => {

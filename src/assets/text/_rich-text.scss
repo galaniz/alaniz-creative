@@ -111,38 +111,13 @@
     }
   }
 
-  h2:first-child,
-  h3:first-child,
-  h4:first-child,
-  h5:first-child,
-  h6:first-child,
-  dd:first-child,
-  figure[data-rich="blockquote"]:first-child,
-  p[data-rich]:first-child,
-  ul[data-rich]:first-child,
-  ol[data-rich]:first-child,
-  div[data-button]:first-child {
+  [data-rich]:first-child {
+    padding-top: 0;
     margin-top: 0;
   }
 
-  h2:last-child,
-  h3:last-child,
-  h4:last-child,
-  h5:last-child,
-  h6:last-child,
-  dd:last-child,
-  figure[data-rich="blockquote"]:last-child,
-  p[data-rich]:last-child,
-  ul[data-rich]:last-child,
-  ol[data-rich]:last-child,
-  div[data-button]:last-child {
+  [data-rich]:last-child {
     margin-bottom: 0;
-  }
-
-  h4:first-child,
-  h5:first-child,
-  h6:first-child {
-    padding-top: 0;
   }
 
   @include mix.breakpoint-min("l") {

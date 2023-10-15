@@ -1,5 +1,5 @@
 /**
- * Render - svg logo
+ * Svg - logo
  */
 
 /**

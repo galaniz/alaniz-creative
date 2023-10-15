@@ -63,7 +63,7 @@ const term = (contentType: string = '', linkContentType: string = 'default', id:
   let linkContentTypeArray: string[] = []
 
   if (linkContentType === 'default') {
-    linkContentTypeArray = config.taxonomy[contentType].contentTypes
+    linkContentTypeArray = config.contentTypes.taxonomy[contentType].contentTypes
   } else {
     linkContentTypeArray = [linkContentType]
   }

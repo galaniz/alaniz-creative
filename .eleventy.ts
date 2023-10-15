@@ -33,7 +33,7 @@ module.exports = (args: any) => {
 
   args.on('eleventy.before', async () => {
     const entryPoints: FRM.AnyObject = {}
-    const namespace = 'ac'
+    const namespace = config.namespace
 
     entryPoints[`js/${namespace}`] = 'src/assets/index.js'
     entryPoints[`css/${namespace}`] = 'src/assets/index.scss'
@@ -78,6 +78,7 @@ module.exports = (args: any) => {
 
   args.on('eleventy.beforeWatch', async () => {
     const folders = [
+      './src/actions/',
       './src/components/',
       './src/config/',
       './src/filters/',
@@ -85,6 +86,7 @@ module.exports = (args: any) => {
       './src/objects/',
       './src/serverless/',
       './src/svg/',
+      './src/utils/'
     ]
 
     for (let i = 0; i < folders.length; i += 1) {

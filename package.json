@@ -15,9 +15,7 @@
   "author": "Graciela Alaniz (https://alanizcreative.com/)",
   "license": "MIT",
   "dependencies": {
-    "@alanizcreative/formation": "^4.1.2",
-    "uuid": "^9.0.0",
-    "validator": "^13.9.0"
+    "uuid": "^9.0.0"
   },
   "browserslist": [
     "edge 16"
@@ -25,12 +23,12 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-fetch": "^4.0.0",
+    "@alanizcreative/formation": "^4.1.2",
     "@miniflare/tre": "^3.0.0-next.13",
     "@types/html-minifier": "^4.0.2",
     "@types/node": "^20.4.2",
     "@types/safe-json-stringify": "^1.1.2",
     "@types/uuid": "^9.0.2",
-    "@types/validator": "^13.7.17",
     "autoprefixer": "^10.4.14",
     "concurrently": "^8.2.0",
     "dotenv": "^16.3.1",

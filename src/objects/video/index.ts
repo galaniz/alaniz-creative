@@ -24,7 +24,7 @@ interface VideoProps {
     source?: string
     title?: string
   }
-  parents?: object[]
+  parents?: FRM.ParentArgs[]
 }
 
 const video = (props: VideoProps = { args: {} }): string => {

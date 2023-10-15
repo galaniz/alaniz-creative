@@ -1,5 +1,5 @@
 /**
- * Render - svg pause
+ * Svg - pause
  */
 
 /**

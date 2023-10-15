@@ -1,5 +1,5 @@
 /**
- * Render - svg lock
+ * Svg - lock
  */
 
 /**

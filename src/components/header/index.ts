@@ -16,7 +16,7 @@ import logoSvg from '../../svg/logo'
  * @return {string} HTML - header
  */
 
-const header = (navigations: { main?: string } = {}): string => {
+const header = (navigations: FRM.AnyObject = {}): string => {
   /* Id */
 
   const id: string = uuid()
@@ -30,7 +30,7 @@ const header = (navigations: { main?: string } = {}): string => {
 
   let nav = ''
 
-  if (navigations?.main !== '' && navigations?.main !== undefined) {
+  if (navigations.main !== '' && typeof navigations.main === 'string') {
     nav = `
       <nav class="c-nav l-relative l-container l-padding-top-m l-padding-bottom-m l-padding-top-l-m l-padding-bottom-l-m" aria-label="Main" data-overflow="false" data-overflow-all="false" data-open="false">
         <div class="l-flex l-justify-between l-align-center">
@@ -40,7 +40,7 @@ const header = (navigations: { main?: string } = {}): string => {
           </a>
           ${navigations.main}
           <div class="c-nav__hide">
-            <button class="c-nav__button c-nav__open l-relative l-padding-top-5xs l-z-index-1" type="button" aria-haspopup="dialog" aria-controls="${id}" aria-label="Open menu">
+            <button class="c-nav__button c-nav__open l-relative l-padding-top-5xs l-z-index-1" type="button" aria-haspopup="true" aria-controls="${id}" aria-label="Open menu">
               <span class="c-nav-icon l-block l-relative t-sharp e-transition" data-num="5">
                 <span class="c-nav-icon__top bg-current l-block e-transition"></span>
                 <span class="c-nav-icon__middle bg-current l-block e-transition"></span>

@@ -1,5 +1,5 @@
 /**
- * Render - svg play
+ * Svg - play
  */
 
 /**

@@ -22,14 +22,14 @@ import image from '../image'
  * @return {string} - HTML
  */
 
-interface _CardProps {
+interface _CardArgs {
   internalLink: AC.InternalLink
   headingLevel: number
   type: string
   index: number
 }
 
-const _card = ({ internalLink, headingLevel, type, index }: _CardProps): string => {
+const _card = ({ internalLink, headingLevel, type, index }: _CardArgs): string => {
   const {
     title = '',
     slug = '',
@@ -132,7 +132,7 @@ interface CardProps {
     internalLink?: AC.InternalLink
     index?: number
   }
-  parents?: object[]
+  parents?: FRM.ParentArgs[]
 }
 
 const card = (props: CardProps = { args: {} }): FRM.StartEndReturn => {

@@ -1,5 +1,5 @@
 /**
- * Render - svg external link
+ * Svg - external link
  */
 
 /**

@@ -20,18 +20,16 @@ interface NavigationsArgs {
   navigations: FRM.Navigation[]
   items: FRM.NavigationItem[]
   current: string
-  title?: string
-  parents?: object[]
 }
 
 const navigations = ({
   navigations = [],
   items = [],
   current = ''
-}: NavigationsArgs): object => {
+}: NavigationsArgs): FRM.AnyObject => {
   /* Navs and items required */
 
-  if ((navigations.length === 0) || (items.length === 0)) {
+  if (navigations.length === 0 || items.length === 0) {
     return {
       main: '',
       footer: ''
@@ -90,7 +88,7 @@ interface NavArgs {
   }
 }
 
-export const nav = ({ navigations = {}, props = {} }: NavArgs): string => {
+export const navigation = ({ navigations = {}, props = {} }: NavArgs): string => {
   const { location = '', title = '' } = props
 
   if (location !== '' && title !== '') {

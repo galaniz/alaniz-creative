@@ -19,7 +19,13 @@ import checkPassword from '../serverless/check-password'
 import actions from '../actions'
 import filters from '../filters'
 
-/* Site options */
+/**
+ * Site options
+ *
+ * @see {@link http://|Static Site Formation Config}
+ * @prop {string} vars.theme
+ * @prop {object} vars.waves
+ */
 
 const config: FRM.Config = setConfig({
   namespace: 'ac',
@@ -34,23 +40,15 @@ const config: FRM.Config = setConfig({
     bases: {
       page: {
         slug: '',
-        title: '',
-        singular: '',
-        plural: ''
+        title: ''
       },
       work: {
         slug: 'work',
-        title: 'Work',
-        singular: 'Work Item',
-        plural: 'Work Items',
-        archiveId: {}
+        title: 'Work'
       },
       workCategory: {
         slug: 'categories',
-        title: 'Categories',
-        singular: 'Category',
-        plural: 'Categories',
-        archiveId: {}
+        title: 'Categories'
       }
     }
   },
@@ -64,15 +62,25 @@ const config: FRM.Config = setConfig({
       'work',
       'workCategory'
     ],
-    archive: [
-      'work',
-      'workCategory'
-    ]
-  },
-  taxonomy: {
-    workCategory: {
-      contentTypes: ['work'],
-      props: ['category']
+    archive: {
+      work: {
+        title: 'Work',
+        singular: 'Work Item',
+        plural: 'Work Items',
+        id: {}
+      },
+      workCategory: {
+        title: 'Categories',
+        singular: 'Category',
+        plural: 'Categories',
+        id: {}
+      }
+    },
+    taxonomy: {
+      workCategory: {
+        contentTypes: ['work'],
+        props: ['category']
+      }
     }
   },
   renderFunctions: {

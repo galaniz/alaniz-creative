@@ -14,12 +14,12 @@ import config from '../../config'
  * @return {string} HTML - footer
  */
 
-const footer = (navigations: { footer?: string } = {}): string => {
+const footer = (navigations: FRM.AnyObject = {}): string => {
   /* Nav */
 
   let nav = ''
 
-  if (navigations?.footer !== '' && navigations?.footer !== undefined) {
+  if (navigations.footer !== '' && typeof navigations.footer === 'string') {
     nav = `<nav aria-label="Secondary">${navigations.footer}</nav>`
   }
 

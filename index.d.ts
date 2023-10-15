@@ -6,18 +6,17 @@ import FRM from '@alanizcreative/static-site-formation'
 
 declare global {
   namespace AC {
+    /* Image data */
+
     interface Image {
       base: string
       width: number
       height: number
     }
 
-    interface InternalLink {
-      id: string
-      contentType: string
-      linkContentType?: string
-      slug: string
-      title?: string
+    /* Item/link data */
+
+    interface InternalLink extends FRM.InternalLinkBase {
       text?: string
       category?: Array<{
         title: string
@@ -43,6 +42,8 @@ declare global {
         }
       }
     }
+
+    /* Hero arguments */
 
     interface HeroArgs {
       contentType?: string

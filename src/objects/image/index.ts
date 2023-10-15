@@ -30,7 +30,7 @@ interface ImageProps {
     }
     border?: boolean
   }
-  parents?: Array<{ renderType: string }>
+  parents?: FRM.ParentArgs[]
 }
 
 const image = (props: ImageProps = { args: {}, parents: [] }): string => {

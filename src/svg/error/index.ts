@@ -1,5 +1,5 @@
 /**
- * Render - svg error
+ * Svg - error
  */
 
 /**
