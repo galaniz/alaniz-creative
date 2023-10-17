@@ -143,7 +143,12 @@
         {
           "renderType": "rich-text",
           "tag": "h2",
-          "content": "Details coming soon!"
+          "content": "What is Puffin Innovations?"
+        },
+        {
+          "renderType": "rich-text",
+          "tag": "p",
+          "content": "Puffin Innovations is a smart assistive tech startup dedicated to helping people with disabilities lead more inclusive and independent lives. It was founded in 2015 by Adriana Mallozzi, entrepreneur, innovator and disability advocate, after winning the Massachusetts Institute of Technology (MIT) Assistive Technology Hackathon with the creation of an innovative input device (Puffin) that connects to and operates smart devices. It's a game changer for many people with physical disabilities to engage in everyday activities independently."
         }
       ]
     }
