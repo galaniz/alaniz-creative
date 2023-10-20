@@ -25,7 +25,8 @@
     "work--injury-board"
   ],
   "category": [
-    "work-category--web-design",
+    "work-category--ux-design",
+    "work-category--ui-design",
     "work-category--web-development"
   ],
   "content": [
@@ -104,8 +105,8 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--web-design",
-                      "content": "Web design"
+                      "internalLink": "work-category--ui-design",
+                      "content": "UI design"
                     }
                   ]
                 },
