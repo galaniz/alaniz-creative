@@ -1,14 +1,15 @@
 {
   "contentType": "work",
-  "title": "Olivia Korosak",
-  "slug": "olivia-korosak",
-  "date": "2023-04-02",
+  "title": "Kalamuna",
+  "slug": "kalamuna",
+  "date": "2021-06-10",
   "meta": {
     "description": "",
     "image": ""
   },
   "hero": {
-    "image": "olivia-korosak/hero",
+    "image": "kalamuna/hero",
+    "border": true,
     "wave": "three"
   },
   "svg": {
@@ -16,17 +17,17 @@
   },
   "theme": {
     "main": {
-      "dark": "#4c2956",
-      "light": "#b27dc1"
+      "dark": "#ce3c89",
+      "light": "#e085b5"
     }
   },
   "related": [
-    "work--why-we-serve",
-    "work--later-newsroom"
+    "work--link21",
+    "work--hey-tony"
   ],
   "category": [
-    "work-category--ui-design",
-    "work-category--web-development"
+    "work-category--ux-design",
+    "work-category--ui-design"
   ],
   "content": [
     {
@@ -61,19 +62,69 @@
                 {
                   "renderType": "rich-text",
                   "tag": "dd",
-                  "content": "2023"
+                  "content": "2021"
                 }
               ]
             },
             {
               "renderType": "container",
-              "classes": "l-flex-column l-flex-row-s l-flex l-flex-wrap",
               "content": [
                 {
                   "renderType": "rich-text",
                   "tag": "dt",
-                  "classes": "l-width-1-1",
+                  "content": "Agency"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Kalamuna"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
+                  "content": "Team"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Project Manager"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "UX Designer"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Web Developer"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
                   "content": "Role"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "classes": "l-padding-right-m",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--ux-design",
+                      "content": "UX design"
+                    }
+                  ]
                 },
                 {
                   "renderType": "rich-text",
@@ -86,17 +137,6 @@
                       "content": "UI design"
                     }
                   ]
-                },
-                {
-                  "renderType": "rich-text",
-                  "tag": "dd",
-                  "content": [
-                    {
-                      "tag": "a",
-                      "internalLink": "work-category--web-development",
-                      "content": "Web development"
-                    }
-                  ]
                 }
               ]
             }
@@ -104,9 +144,9 @@
         },
         {
           "renderType": "button",
-          "title": "View Olivia Korosak",
+          "title": "View Kalamuna",
           "richText": true,
-          "externalLink": "https://www.oliviakorosak.com/"
+          "externalLink": "https://www.kalamuna.com/"
         }
       ]
     },

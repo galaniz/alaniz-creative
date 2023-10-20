@@ -10,10 +10,14 @@ import render from '../src/render'
 
 /* Get and render json data */
 
+interface Redirect {
+  redirect: string[]
+}
+
 interface RenderArgs {
   jsonData: object
   serverlessRoutes: string[]
-  redirects: string[]
+  redirects: Redirect[]
 }
 
 interface Args {
@@ -84,7 +88,13 @@ module.exports = async (args: Args): Promise<object[]> => {
           let redirectsData = ''
 
           redirects.forEach((r) => {
-            redirectsData += `${r}\n`
+            const { redirect: redir = [] } = r
+
+            if (redir.length > 0) {
+              redir.forEach((rr) => {
+                redirectsData += `${rr}\n`
+              })
+            }
           })
 
           if (redirectsData !== '') {
