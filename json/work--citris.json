@@ -1,14 +1,16 @@
 {
   "contentType": "work",
-  "title": "Olivia Korosak",
-  "slug": "olivia-korosak",
-  "date": "2023-04-02",
+  "title": "CITRIS and the Banatao Institute",
+  "slug": "citris",
+  "date": "2020-03-10",
   "meta": {
     "description": "",
     "image": ""
   },
+  "passwordProtected": true,
   "hero": {
-    "image": "olivia-korosak/hero",
+    "image": "citris/hero",
+    "border": true,
     "wave": "three"
   },
   "svg": {
@@ -16,17 +18,16 @@
   },
   "theme": {
     "main": {
-      "dark": "#4c2956",
-      "light": "#b27dc1"
+      "dark": "#0081c8",
+      "light": "#3eb3f4"
     }
   },
   "related": [
-    "work--why-we-serve",
-    "work--later-newsroom"
+    "work--building-changes",
+    "work--grcc"
   ],
   "category": [
-    "work-category--ui-design",
-    "work-category--web-development"
+    "work-category--ui-design"
   ],
   "content": [
     {
@@ -61,18 +62,56 @@
                 {
                   "renderType": "rich-text",
                   "tag": "dd",
-                  "content": "2023"
+                  "content": "2020"
                 }
               ]
             },
             {
               "renderType": "container",
-              "classes": "l-flex-column l-flex-row-s l-flex l-flex-wrap",
               "content": [
                 {
                   "renderType": "rich-text",
                   "tag": "dt",
-                  "classes": "l-width-1-1",
+                  "content": "Agency"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Kalamuna"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
+                  "content": "Team"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Project Manager"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "UX Designer"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Web Developer"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
                   "content": "Role"
                 },
                 {
@@ -86,17 +125,6 @@
                       "content": "UI design"
                     }
                   ]
-                },
-                {
-                  "renderType": "rich-text",
-                  "tag": "dd",
-                  "content": [
-                    {
-                      "tag": "a",
-                      "internalLink": "work-category--web-development",
-                      "content": "Web development"
-                    }
-                  ]
                 }
               ]
             }
@@ -104,9 +132,9 @@
         },
         {
           "renderType": "button",
-          "title": "View Olivia Korosak",
+          "title": "View CITRIS",
           "richText": true,
-          "externalLink": "https://www.oliviakorosak.com/"
+          "externalLink": "https://citris-uc.org/"
         }
       ]
     },

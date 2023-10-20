@@ -10,10 +10,10 @@
   "passwordProtected": true,
   "hero": {
     "image": "why-we-serve/hero",
-    "wave": "three"
+    "wave": "five"
   },
   "svg": {
-    "blob": "three"
+    "blob": "five"
   },
   "theme": {
     "main": {
@@ -54,7 +54,7 @@
     "work--fortis-group"
   ],
   "category": [
-    "work-category--web-design",
+    "work-category--ui-design",
     "work-category--front-end-development"
   ],
   "content": [
@@ -148,8 +148,8 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--web-design",
-                      "content": "Web design"
+                      "internalLink": "work-category--ui-design",
+                      "content": "UI design"
                     }
                   ]
                 },

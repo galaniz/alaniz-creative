@@ -1,32 +1,34 @@
 {
   "contentType": "work",
-  "title": "Olivia Korosak",
-  "slug": "olivia-korosak",
-  "date": "2023-04-02",
+  "title": "Grand Rapids Community College",
+  "slug": "grcc",
+  "date": "2020-09-05",
   "meta": {
     "description": "",
     "image": ""
   },
+  "passwordProtected": true,
   "hero": {
-    "image": "olivia-korosak/hero",
-    "wave": "three"
+    "image": "grcc/hero",
+    "border": true,
+    "wave": "four"
   },
   "svg": {
-    "blob": "three"
+    "blob": "four"
   },
   "theme": {
     "main": {
-      "dark": "#4c2956",
-      "light": "#b27dc1"
+      "dark": "#005697",
+      "light": "#43abf9"
     }
   },
   "related": [
-    "work--why-we-serve",
-    "work--later-newsroom"
+    "work--link21",
+    "work--citris"
   ],
   "category": [
     "work-category--ui-design",
-    "work-category--web-development"
+    "work-category--prototype"
   ],
   "content": [
     {
@@ -61,18 +63,56 @@
                 {
                   "renderType": "rich-text",
                   "tag": "dd",
-                  "content": "2023"
+                  "content": "2020"
                 }
               ]
             },
             {
               "renderType": "container",
-              "classes": "l-flex-column l-flex-row-s l-flex l-flex-wrap",
               "content": [
                 {
                   "renderType": "rich-text",
                   "tag": "dt",
-                  "classes": "l-width-1-1",
+                  "content": "Agency"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Kalamuna"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
+                  "content": "Team"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Project Manager"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "UX Designers"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Web Developer"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
                   "content": "Role"
                 },
                 {
@@ -90,11 +130,12 @@
                 {
                   "renderType": "rich-text",
                   "tag": "dd",
+                  "classes": "l-padding-right-m",
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--web-development",
-                      "content": "Web development"
+                      "internalLink": "work-category--prototype",
+                      "content": "Prototype"
                     }
                   ]
                 }
@@ -104,9 +145,9 @@
         },
         {
           "renderType": "button",
-          "title": "View Olivia Korosak",
+          "title": "View GRCC",
           "richText": true,
-          "externalLink": "https://www.oliviakorosak.com/"
+          "externalLink": "https://www.grcc.edu/"
         }
       ]
     },
