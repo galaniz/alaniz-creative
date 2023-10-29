@@ -16,6 +16,7 @@ src/utils/**/*.js
 src/vars/**/*.js
 .DS_Store
 .cache
+.vscode
 .dev.vars
 .env
 .eleventy.js
