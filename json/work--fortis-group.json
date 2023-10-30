@@ -254,9 +254,9 @@
               "align": "center",
               "tag": "ul",
               "paddingTop": "l",
-              "paddingTopLarge": "2xl",
+              "paddingTopLarge": "xl",
               "paddingBottom": "l",
-              "paddingBottomLarge": "2xl",
+              "paddingBottomLarge": "xl",
               "content": [
                 {
                   "renderType": "rich-text",

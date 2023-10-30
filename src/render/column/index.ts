@@ -77,6 +77,12 @@ const column = (props: Render.ColumnProps = { args: {} }): Render.Return => {
     classesArray.push(`l-width-${widthLarge}-l`)
   }
 
+  /* Flex */
+
+  if (justify !== '' || align !== '' || grow) {
+    classesArray.push('l-flex')
+  }
+
   /* Justify */
 
   if (justify !== '') {
