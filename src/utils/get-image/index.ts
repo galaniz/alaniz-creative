@@ -88,7 +88,7 @@ const getImage = (args: Args = {}): string | { output: string, aspectRatio: numb
   const size = w <= max ? w : max
   const sizes = `(min-width: ${size / 16}rem) ${size / 16}rem, 100vw`
 
-  let srcset: string[] | number[] = [200, 400, 600, 800, 1200, 1600, 2000]
+  let srcset: string[] | number[] = [200, 400, 600, 800, 1000, 1200, 1600, 2000]
 
   srcset = srcset.filter(s => s < w && s <= max)
 

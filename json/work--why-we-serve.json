@@ -392,9 +392,9 @@
               "align": "center",
               "tag": "ul",
               "paddingTop": "l",
-              "paddingTopLarge": "2xl",
+              "paddingTopLarge": "xl",
               "paddingBottom": "l",
-              "paddingBottomLarge": "2xl",
+              "paddingBottomLarge": "xl",
               "content": [
                 {
                   "renderType": "rich-text",
@@ -656,7 +656,7 @@
             {
               "renderType": "rich-text",
               "tag": "p",
-              "content": "We also played with different symbols of patriotism to complement the subject matter. One image treatment was a reference to flags – a coloured line over top of images extended to the edge of the screen. It was also an opportunity to incorporate more colours from their wider colour palette to break up content blocks for easier scanning. We also made use of stars as subtle and elegant background elements to complement and not distract from the main content."
+              "content": "We also played with different symbols of patriotism to complement the subject matter. One image treatment was a reference to flags &ndash; a coloured line over top of images extended to the edge of the screen. It was also an opportunity to incorporate more colours from their wider colour palette to break up content blocks for easier scanning. We also made use of stars as subtle and elegant background elements to complement and not distract from the main content."
             }
           ]
         },
@@ -754,7 +754,7 @@
           "content": [
             {
               "renderType": "container",
-              "maxWidth": "2xl",
+              "maxWidth": "xl",
               "paddingTop": "m",
               "paddingTopLarge": "l",
               "classes": "l-breakout",
