@@ -77,7 +77,6 @@ module.exports = async (args: Args): Promise<object[]> => {
             const content = `import passwordProtect from '${serverlessPath}src/serverless/password-protect'; const protect = async ({ request, env, next }) => { return await passwordProtect({ request, env, next }) }; export const onRequestGet = [protect];`
 
             await mkdir(`./functions${path}`, { recursive: true })
-
             await writeFile(`./functions${path}_middleware.js`, content)
 
             console.info(`Successfully wrote ./functions${path}_middleware.js`)

@@ -225,7 +225,7 @@
                 },
                 {
                   "tag": "li",
-                  "content": "Long term – improve brand perception to potential and existing customers and investors to help drive growth and revenue"
+                  "content": "Long term &ndash; improve brand perception to potential and existing customers and investors to help drive growth and revenue"
                 }
               ]
             }
@@ -726,7 +726,7 @@
             {
               "renderType": "rich-text",
               "tag": "p",
-              "content": "The other development challenge was validating and processing the contact form. Later.com is a static site with only third-party generated forms. The first version of the form was created with Klaviyo, but substantial issues like lack of support for textareas and unreliable email delivery to one contact presented us with the opportunity to create our own forms and implement the form element improvements made in visual design. The additional time taken in this phase was well worth it in terms of better user experience–performance, usefulness of error and result messages and style consistency versus third-party forms. And also team development–learning about and implementing serverless functions, the honeypot anti-spam technique, autocomplete tokens as well as keyboard and screen reader testing."
+              "content": "The other development challenge was validating and processing the contact form. Later.com is a static site with only third-party generated forms. The first version of the form was created with Klaviyo, but substantial issues like lack of support for textareas and unreliable email delivery to one contact presented us with the opportunity to create our own forms and implement the form element improvements made in visual design. The additional time taken in this phase was well worth it in terms of better user experience&ndash;performance, usefulness of error and result messages and style consistency versus third-party forms. And also team development&ndash;learning about and implementing serverless functions, the honeypot anti-spam technique, autocomplete tokens as well as keyboard and screen reader testing."
             }
           ]
         }

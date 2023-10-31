@@ -16,6 +16,8 @@ import richText from '../rich-text'
  * @param {string} props.args.aspectRatio
  * @param {object} props.args.caption
  * @param {boolean} props.args.border
+ * @param {boolean} props.args.cover
+ * @param {string} props.args.classes
  * @param {array<object>} props.parents
  * @return {string} HTML - div
  */
@@ -29,6 +31,9 @@ interface Props {
       content: string
     }
     border?: boolean
+    borderRadius?: boolean
+    cover?: boolean
+    classes?: string
   }
   parents?: Array<{ renderType: string }>
 }
@@ -41,7 +46,10 @@ const image = (props: Props = { args: {}, parents: [] }): string => {
     alt = '',
     aspectRatio = '',
     caption,
-    border = false
+    border = false,
+    borderRadius = true,
+    cover = true,
+    classes = ''
   } = args
 
   /* Check card parent */
@@ -59,7 +67,13 @@ const image = (props: Props = { args: {}, parents: [] }): string => {
   let imageOutput = ''
 
   if (image !== undefined) {
-    const imageClasses = ['l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc l-object-cover']
+    const imageClasses = ['l-absolute l-top-0 l-left-0 l-width-100-pc l-height-100-pc']
+
+    if (cover) {
+      imageClasses.push('l-object-cover')
+    } else {
+      imageClasses.push('l-object-contain')
+    }
 
     if (card) {
       imageClasses.push('e-transition l-object-left-top')
@@ -90,14 +104,22 @@ const image = (props: Props = { args: {}, parents: [] }): string => {
       imageObjOutput = imageObj.output
     }
 
-    let classes = 'l-relative l-overflow-hidden b-radius-s b-radius-m-m l-isolate l-height-100-pc'
+    let containerClasses = 'l-relative l-overflow-hidden l-height-100-pc'
 
     if (aspectRatio !== '') {
-      classes += ` l-aspect-ratio-${aspectRatio}`
+      containerClasses += ` l-aspect-ratio-${aspectRatio}`
+    }
+
+    if (borderRadius) {
+      containerClasses += ' b-radius-s b-radius-m-m l-isolate'
     }
 
     if (border) {
-      classes += ' b-all b-theme'
+      containerClasses += ' b-all b-theme'
+    }
+
+    if (classes !== '') {
+      containerClasses += ` ${classes}`
     }
 
     let attr = ''
@@ -108,7 +130,7 @@ const image = (props: Props = { args: {}, parents: [] }): string => {
 
     if (imageObjOutput !== '') {
       imageOutput = `
-        <div class="${classes}"${attr}>
+        <div class="${containerClasses}"${attr}>
           ${imageObjOutput}
         </div>
       `
