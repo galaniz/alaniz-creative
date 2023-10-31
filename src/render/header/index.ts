@@ -35,7 +35,7 @@ const header = (navigations: { main?: string } = {}): string => {
           </a>
           ${navigations.main}
           <div class="c-nav__hide">
-            <button class="c-nav__button c-nav__open l-relative l-padding-top-5xs l-z-index-1" type="button" aria-haspopup="dialog" aria-controls="${id}" aria-label="Open menu">
+            <button class="c-nav__button c-nav__open l-relative l-padding-top-5xs l-z-index-1 t-sharp" type="button" aria-haspopup="dialog" aria-controls="${id}" aria-label="Open menu">
               <span class="c-nav-icon l-block l-relative t-sharp e-transition" data-num="5">
                 <span class="c-nav-icon__top bg-current l-block e-transition"></span>
                 <span class="c-nav-icon__middle bg-current l-block e-transition"></span>

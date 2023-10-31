@@ -18,6 +18,18 @@
     "main": {
       "dark": "#d84000",
       "light": "#ff824e"
+    },
+    "secondary": {
+      "dark": "#1b62a4",
+      "light": "#4c94d5"
+    },
+    "grey": {
+      "dark": "#626870",
+      "light": "#b8bcc1"
+    },
+    "black": {
+      "dark": "#141415",
+      "light": "#8c8c92"
     }
   },
   "related": [
@@ -25,7 +37,8 @@
     "work--injury-board"
   ],
   "category": [
-    "work-category--web-design",
+    "work-category--ux-design",
+    "work-category--ui-design",
     "work-category--web-development"
   ],
   "content": [
@@ -104,8 +117,8 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--web-design",
-                      "content": "Web design"
+                      "internalLink": "work-category--ui-design",
+                      "content": "UI design"
                     }
                   ]
                 },
@@ -143,7 +156,1412 @@
         {
           "renderType": "rich-text",
           "tag": "h2",
-          "content": "Details coming soon!"
+          "content": "What is Puffin Innovations?"
+        },
+        {
+          "renderType": "rich-text",
+          "tag": "p",
+          "content": "Puffin Innovations is a smart assistive tech startup dedicated to helping people with disabilities lead more inclusive and independent lives. It was founded in 2015 by Adriana Mallozzi, entrepreneur, innovator and disability advocate, after winning the Massachusetts Institute of Technology (MIT) Assistive Technology Hackathon with the creation of an innovative input device (Puffin) that connects to and operates smart devices. It's a game changer for many people with physical disabilities to engage in everyday activities independently."
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "m",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "aspect-ratio",
+              "percent": 52.5,
+              "content": [
+                {
+                  "renderType": "column",
+                  "width": "3-5",
+                  "classes": "l-absolute l-bottom-0 l-right-0",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "puffin-innovations/adriana-mallozzi",
+                      "alt": ""
+                    }
+                  ] 
+                },
+                {
+                  "renderType": "column",
+                  "width": "3-5",
+                  "classes": "l-absolute l-left-0 l-top-0",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "puffin-innovations/puffin",
+                      "alt": "",
+                      "border": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h2",
+              "content": "The Project"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "Redesign and develop Puffin Innovations' website to be more accessible and better reflect their mission and values."
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "h3",
+              "content": "The Brief"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "h4",
+              "content": "Context"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "This project was completed as part of Knowbility's "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://knowbility.org/programs/air/",
+                  "content": "Accessibility Internet Rally"
+                },
+                {
+                  "content": " (AIR), an annual competition that aims to educate web professionals on creating more inclusive websites by pairing them with mentors, nonprofits and community organizations to redesign and develop their sites to be, first and foremost, accessible. Groups have two months for discovery, design and development. Sites are mainly evaluated by specific criteria from the Web Content Accessibility Guidelines (WCAG) but digital accessibility is more an art than a science and technical conformance is just one facet."
+                }
+              ]
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "h4",
+              "content": "Users"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Primary"
+                    },
+                    {
+                      "content": " &ndash; people with a form of paralysis and/or limited to no mobility in their upper extremities and organizations with funding for assistive tech like independent living, vocational rehabilitation, or higher-educational institutions/organizations."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Secondary"
+                    },
+                    {
+                      "content": " &ndash; parents, clinicians, educators and assistive technology professionals."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "h4",
+              "content": "Goals"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": "Differentiate themselves from competitors particularly ease of use, portability, and customization capabilities"
+                },
+                {
+                  "tag": "li",
+                  "content": "Learn more about/from primary users to further develop product and connect with organizations with assistive tech budgets"
+                },
+                {
+                  "tag": "li",
+                  "content": "Long term &ndash; attract investors to help drive growth as shift away from crowdfunding"
+                }
+              ]
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "h4",
+              "content": "Guiding Keywords"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "From this brief and quick interviews with stakeholders we captured these keywords to use as our focus throughout all phases of the project:"
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "content": [
+            {
+              "renderType": "container",
+              "layout": "row",
+              "gap": "m",
+              "gapLarge": "l",
+              "justify": "center",
+              "align": "center",
+              "tag": "ul",
+              "paddingTop": "l",
+              "paddingTopLarge": "xl",
+              "paddingBottom": "l",
+              "paddingBottomLarge": "xl",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "li",
+                  "textStyle": "h2-d",
+                  "content": "Accessible",
+                  "style": {
+                    "color": "var(--theme-main)"
+                  }
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "li",
+                  "textStyle": "h2-d",
+                  "content": "Clear",
+                  "style": {
+                    "color": "var(--theme-grey)"
+                  }
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "li",
+                  "textStyle": "h2-d",
+                  "content": "Distinct",
+                  "style": {
+                    "color": "var(--theme-secondary)"
+                  }
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "li",
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
+                  "content": "Bold",
+                  "style": {
+                    "color": "var(--theme-black)"
+                  }
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "li",
+                  "textStyle": "h2",
+                  "classes": "t-weight-normal",
+                  "content": "Creative",
+                  "style": {
+                    "color": "var(--theme-main)"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h2",
+              "content": "The Process"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "h3",
+              "content": "Wireframes"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "The existing site was sparse on overall content and a requirement for AIR was to submit 6-10 pages for review. We used their marketing materials to add new sections like how it works, use cases and product and company differentiators to communicate their value and distinguish themselves from competitors. We also added testimonials from their social media content and kept the logo bar of supporters and professionally made video showcasing Puffin and Adriana's story as ways to inspire trust in new users."
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "In terms of learning more from primary users we extended their existing contact form to include role and location to get a better sense of where/who is generating the most interest in their product. This was also good information to prepare for calls and tailor email content to keep potential leads interested regardless of their ready state."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "l",
+              "paddingTop": "m",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "align": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "1-2",
+                      "widthMedium": "1-2",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "puffin-innovations/home-wireframe-top",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "1-2",
+                      "widthMedium": "1-2",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "puffin-innovations/home-wireframe-bottom",
+                          "alt": "",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "3-5",
+                      "widthMedium": "1-2",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "aspect-ratio",
+                          "percent": 174,
+                          "content": [
+                            {
+                              "renderType": "column",
+                              "width": "4-5",
+                              "classes": "l-absolute l-left-0 l-top-0",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/contact-form-wireframe-1",
+                                  "alt": "",
+                                  "border": true
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "3-4",
+                              "classes": "l-absolute l-bottom-0 l-right-0",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/contact-form-wireframe-2",
+                                  "alt": "",
+                                  "border": true
+                                }
+                              ] 
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h3",
+              "content": "Visual Design"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "h4",
+              "content": "Logo"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "In tandem with wireframes we also worked on updating the logo. The existing logo didn't scale well and was difficult to read. The team was open to seeing new ideas as long as the puffin was prominent. Early explorations were too generic and used pastel tones that didn't fit the bold and distinct look they were seeking. For the final version, we used more vibrant colors and were more intentional in evolving the original puffin brandmark. We also made sure all text portions of the logo have 4.5:1 contrast. The result was a more readable, flexible and scalable lockup that better reflects their growing organization."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "default",
+              "paddingTop": "m",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthLarge": "1-5",
+                      "grow": true,
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "row",
+                          "classes": "b-all b-theme b-radius-s b-radius-m-m l-overflow-hidden l-isolate l-flex-grow-1",
+                          "content": [
+                            {
+                              "renderType": "column",
+                              "width": "1-2",
+                              "widthSmall": "1-3",
+                              "widthMedium": "1-4",
+                              "widthLarge": "1-1",
+                              "classes": "l-margin-auto",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/logo-original",
+                                  "borderRadius": false,
+                                  "cover": false,
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-2",
+                              "widthSmall": "1-3",
+                              "widthMedium": "1-4",
+                              "widthLarge": "1-1",
+                              "classes": "l-margin-auto",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/logo-exploration-1",
+                                  "borderRadius": false,
+                                  "cover": false,
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-2",
+                              "widthSmall": "1-3",
+                              "widthMedium": "1-4",
+                              "widthLarge": "1-1",
+                              "classes": "l-margin-auto",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/logo-exploration-2",
+                                  "borderRadius": false,
+                                  "cover": false,
+                                  "alt": ""
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthLarge": "4-5",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "container",
+                              "layout": "row",
+                              "classes": "b-all b-theme b-radius-s b-radius-m-m l-overflow-hidden l-isolate",
+                              "content": [
+                                {
+                                  "renderType": "column",
+                                  "width": "1-2",
+                                  "widthSmall": "1-3",
+                                  "widthMedium": "1-4",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "puffin-innovations/logo-black",
+                                      "borderRadius": false,
+                                      "alt": ""
+                                    }
+                                  ]
+                                },
+                                {
+                                  "renderType": "column",
+                                  "width": "1-2",
+                                  "widthSmall": "1-3",
+                                  "widthMedium": "1-4",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "puffin-innovations/logo-white",
+                                      "borderRadius": false,
+                                      "alt": ""
+                                    }
+                                  ]
+                                },
+                                {
+                                  "renderType": "column",
+                                  "width": "1-2",
+                                  "widthSmall": "1-3",
+                                  "widthMedium": "1-4",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "puffin-innovations/logo-grey",
+                                      "borderRadius": false,
+                                      "alt": ""
+                                    }
+                                  ]
+                                },
+                                {
+                                  "renderType": "column",
+                                  "width": "1-2",
+                                  "widthSmall": "1-3",
+                                  "widthMedium": "1-4",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "puffin-innovations/logo-yellow",
+                                      "borderRadius": false,
+                                      "alt": ""
+                                    }
+                                  ]
+                                },
+                                {
+                                  "renderType": "column",
+                                  "width": "1-2",
+                                  "widthSmall": "1-3",
+                                  "widthMedium": "1-4",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "puffin-innovations/logo-blue",
+                                      "borderRadius": false,
+                                      "alt": ""
+                                    }
+                                  ]
+                                },
+                                {
+                                  "renderType": "column",
+                                  "width": "1-2",
+                                  "widthSmall": "1-3",
+                                  "widthMedium": "1-4",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "puffin-innovations/logo-blue-light",
+                                      "borderRadius": false,
+                                      "alt": ""
+                                    }
+                                  ]
+                                },
+                                {
+                                  "renderType": "column",
+                                  "width": "1-2",
+                                  "widthSmall": "1-3",
+                                  "widthMedium": "1-4",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "puffin-innovations/logo-orange",
+                                      "borderRadius": false,
+                                      "alt": ""
+                                    }
+                                  ]
+                                },
+                                {
+                                  "renderType": "column",
+                                  "width": "1-2",
+                                  "widthSmall": "1-3",
+                                  "widthMedium": "1-4",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "puffin-innovations/logo-white-blue",
+                                      "borderRadius": false,
+                                      "alt": ""
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "container",
+                              "classes": "bg-background-light b-all b-theme b-radius-s b-radius-m-m l-overflow-hidden l-isolate l-padding-top-m l-padding-bottom-m l-padding-left-m l-padding-right-m",
+                              "content": [
+                                {
+                                  "renderType": "container",
+                                  "layout": "row",
+                                  "gap": "m",
+                                  "justify": "between",
+                                  "content": [
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/white-black",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/white-charcoal",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/white-grey",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/white-blue",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/grey-light-black",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/grey-light-charcoal",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/grey-light-grey",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/grey-light-blue",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/blue-light-black",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/blue-light-charcoal",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/blue-light-grey",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/blue-light-blue",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/blue-tint-black",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/orange-black",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/yellow-black",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "classes": "l-flex",
+                                      "widthCustom": {
+                                        "default": "25%",
+                                        "small": "12.5%",
+                                        "medium": "12.5%",
+                                        "large": "12.5%"
+                                      },
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "puffin-innovations/yellow-charcoal",
+                                          "classes": "l-width-l l-width-xl-m l-margin-auto",
+                                          "borderRadius": false,
+                                          "cover": false,
+                                          "alt": ""
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h4",
+              "content": "UI design"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "Continuing the bold and distinct look from the logo we chose large type sizes for both body text and headings and large touch targets for interactive elements like buttons and form fields, which was fitting for meeting accessible target size guidelines as well. This paired well with the rounded, colour-block look in the design of overall sections, graphics and illustrations. High resolution product photos were unavailable at the time so flat illustrations and cutouts for photos worked well to meet this limitation while complementing the vibrant theme."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xl",
+              "paddingTop": "m",
+              "paddingBottom": "m",
+              "classes": "l-breakout",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "4-5",
+                      "widthMedium": "3-4",
+                      "widthLarge": "1-2",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "row",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "column",
+                              "width": "1-3",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/graphic-1",
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-3",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/graphic-2",
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-3",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/graphic-3",
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-3",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/home-middle-mobile",
+                                  "border": true,
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "2-3",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/about-us-desktop",
+                                  "border": true,
+                                  "alt": ""
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "4-5",
+                      "widthMedium": "3-4",
+                      "widthLarge": "1-2",
+                      "classes": "l-flex",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "row",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "classes": "l-flex-grow-1",
+                          "content": [
+                            {
+                              "renderType": "column",
+                              "width": "1-3",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/home-mobile",
+                                  "border": true,
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "2-3",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/product-desktop",
+                                  "alt": ""
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h3",
+              "content": "Development"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "h4",
+              "content": "Theme"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "The existing site was built on WordPress with a theme they put together quickly and AIR provided hosting for WordPress. With this in mind a new custom WordPress theme was the best choice. The new theme was built with my starter libraries "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://github.com/galaniz/wp-theme-formation",
+                  "content": "WP Theme Formation"
+                },
+                {
+                  "content": " and "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://github.com/galaniz/formation",
+                  "content": "Formation"
+                },
+                {
+                  "content": " for front end components to get started quickly and reuse updates across other projects. For example, form creation and validation, configuration and focus management improved across these libraries as a result of this project. In terms of ease of use and maintenance, we used server side rendered custom Gutenberg blocks for maximum flexibility over markup. Everything from contact form fields to media text containers are fully editable."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "paddingTop": "m",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "aspect-ratio",
+                  "percent": 60,
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "1-4",
+                      "classes": "l-absolute l-bottom-0 l-left-10-pc",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "puffin-innovations/board-members-front-end",
+                          "border": true,
+                          "alt": ""
+                        }
+                      ] 
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "3-5",
+                      "classes": "l-absolute l-right-0 l-bottom-0",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "puffin-innovations/wordpress-edit-board-member",
+                          "border": true,
+                          "alt": ""
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "3-5",
+                      "classes": "l-absolute l-top-0 l-left-0",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "puffin-innovations/wordpress-edit-form-field",
+                          "border": true,
+                          "alt": ""
+                        }
+                      ] 
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-4",
+                      "classes": "l-absolute l-top-0 l-right-10-pc",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "puffin-innovations/contact-form-front-end",
+                          "border": true,
+                          "alt": ""
+                        }
+                      ] 
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h4",
+              "content": "Testing"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "Most accessibility testing was done manually apart from  "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://www.deque.com/axe/devtools/",
+                  "content": "axe DevTools"
+                },
+                {
+                  "content": " scans and "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://codepen.io/stevef/full/YLMqbo",
+                  "content": "text spacing bookmarklet"
+                },
+                {
+                  "content": " tests. Screen reader testing was Voiceover biased from team member devices. Although non-comprehensive this phase provided many learnings. Quite a few bugs related to resize and reflow taught me that content should be understandable without scrolling in two dimensions within a 320 x 256 viewport (except elements like maps) and to check against different default font sizes to make sure user settings are respected. I also learned the importance of headings starting sections to maintain a clear content hierarchy. Focus management was also another area that proved a bit challenging particularly with interactive elements in modals resolved mainly with the newer inert HTML attribute. Autocomplete tokens in inputs were also a new learning I reuse in all forms now."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "paddingTop": "m",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "3-4",
+                      "widthMedium": "2-3",
+                      "classes": "l-flex",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "row",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "classes": "l-flex-grow-1",
+                          "content": [
+                            {
+                              "renderType": "column",
+                              "width": "1-1",
+                              "grow": true,
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/issue-text-spacing",
+                                  "classes": "l-width-1-1",
+                                  "border": true,
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-2",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/issue-zoom",
+                                  "border": true,
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-2",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/issue-non-text-contrast",
+                                  "border": true,
+                                  "alt": ""
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "2-5",
+                      "widthSmall": "1-3",
+                      "widthMedium": "1-3",
+                      "classes": "l-none l-block-m",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "puffin-innovations/issue-modal-focus",
+                          "border": true,
+                          "alt": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h2",
+              "content": "The Outcome"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "We received an overall 82% score from AIR judges, which includes technical accessibility and other factors like site appropriateness. There were a few trivial errors related to parsing but most feedback was helpful for user experience like avoiding automatically opening links in new tabs because the context change can be quite jarring for screen reader users for instance or improving the semantics of the slider navigation."
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "In the months after launching we also saw an increase in contact page visits and form submissions. Adriana shared positive feedback regarding the quality of leads as well as the overall design of the site and logo:"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "blockquote",
+              "content": [
+                {
+                  "tag": "p",
+                  "content": "\"This talented group took our input and flawlessly executed the vision — we wanted the new logo to convey INNOVATION, CREATIVITY, and of course, our fun-loving bird friend! In fact, the end result exceeded our expectations!\""
+                }
+              ]
+            },
+            {
+              "renderType": "button",
+              "title": "View Puffin Innovations",
+              "richText": true,
+              "externalLink": "https://puffininno.com/"
+            }
+          ]
         }
       ]
     }

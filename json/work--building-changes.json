@@ -1,0 +1,170 @@
+{
+  "contentType": "work",
+  "title": "Building Changes",
+  "slug": "building-changes",
+  "date": "2021-04-10",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "passwordProtected": true,
+  "hero": {
+    "image": "building-changes/hero",
+    "border": true,
+    "wave": "two"
+  },
+  "svg": {
+    "blob": "two"
+  },
+  "theme": {
+    "main": {
+      "dark": "#c22f58",
+      "light": "#de7894"
+    }
+  },
+  "related": [
+    "work--citris",
+    "work--kalamuna"
+  ],
+  "category": [
+    "work-category--ux-design",
+    "work-category--ui-design"
+  ],
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "rich-text",
+          "tag": "h2",
+          "content": "Overview"
+        },
+        {
+          "renderType": "container",
+          "layout": "row",
+          "gap": "m",
+          "gapLarge": "l",
+          "tag": "dl",
+          "classes": "l-flex-column l-flex-row-s",
+          "content": [
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
+                  "content": "Year"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "2021"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
+                  "content": "Agency"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Kalamuna"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
+                  "content": "Team"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Project Manager"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "UX Designer"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "content": "Web Developer"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "dt",
+                  "content": "Role"
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "classes": "l-padding-right-m",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--ux-design",
+                      "content": "UX design"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "rich-text",
+                  "tag": "dd",
+                  "classes": "l-padding-right-m",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--ui-design",
+                      "content": "UI design"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View Building Changes",
+          "richText": true,
+          "externalLink": "https://buildingchanges.org/"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "rich-text",
+          "tag": "h2",
+          "content": "Details coming soon!"
+        }
+      ]
+    }
+  ]
+}

@@ -39,8 +39,6 @@
 }
 
 html {
-  @extend %u-overflow-x-hidden;
-
   scroll-behavior: smooth;
 
   @include mixi.fluid-size(
@@ -65,6 +63,7 @@ body {
   @extend %u-font-family-primary;
 
   color: var(--text-color);
+  overflow-x: hidden;
   min-height: 100vh;
 }
 
@@ -74,6 +73,11 @@ a {
 
 p {
   color: var(--text-color);
+}
+
+b,
+strong {
+  font-weight: var(--font-weight-medium);
 }
 
 h1,

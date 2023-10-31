@@ -7,7 +7,6 @@
     "description": "",
     "image": ""
   },
-  "passwordProtected": true,
   "hero": {
     "image": "latercon/hero",
     "border": true,
@@ -347,7 +346,7 @@
             {
               "renderType": "rich-text",
               "tag": "p",
-              "content": "The Creative Director was also very proactive in communicating her vision for the end result and checking in with us on what was and wasn't possible in order to prioritize tasks. The idea behind the art direction was to get audiences thinking about how they can keep learning, growing, and morphing–the most successful businesses and influencers are the ones who can keep moving and adapting to new platforms and situations. Fluid and reveal transitions and animations were highlighted as ways to reflect and elevate this idea on the live site. Text distortion and text reveal examples served as inspirational references as we got ready to start development."
+              "content": "The Creative Director was also very proactive in communicating her vision for the end result and checking in with us on what was and wasn't possible in order to prioritize tasks. The idea behind the art direction was to get audiences thinking about how they can keep learning, growing, and morphing&ndash;the most successful businesses and influencers are the ones who can keep moving and adapting to new platforms and situations. Fluid and reveal transitions and animations were highlighted as ways to reflect and elevate this idea on the live site. Text distortion and text reveal examples served as inspirational references as we got ready to start development."
             }
           ]
         },
@@ -462,7 +461,7 @@
                   "content": "CodePen"
                 },
                 {
-                  "content": " with the aim of getting something for stakeholders to review quicker. Later.com is a static Gatsby generated site. At the time, I wasn't very experienced with the React library so thought this approach would work best. However, the process of moving code over and site build factors (eg. global CSS interfering with LaterCon styles–Styled Components later circumvented this issue) was time consuming and diminished earlier gains."
+                  "content": " with the aim of getting something for stakeholders to review quicker. Later.com is a static Gatsby generated site. At the time, I wasn't very experienced with the React library so thought this approach would work best. However, the process of moving code over and site build factors (eg. global CSS interfering with LaterCon styles&ndash;Styled Components later circumvented this issue) was time consuming and diminished earlier gains."
                 }
               ]
             },
@@ -610,7 +609,7 @@
             {
               "renderType": "rich-text",
               "tag": "p",
-              "content": "Although stakeholders were pleased with how the page turned out, there were some things we didn't get. The Creative Director was hoping for a mouseover distort of the LaterCon logo in the hero section. A combination of time and performance constraints resulted in a compromise. The effect required a large library and page speed was already in the orange. We opted for a smaller library and a simpler effect–clicking the cursor icon changes svg paths to simulate a morphing effect. We also encountered a significant hiccup the day before the event–the post-event version was pushed live. For about an hour registration links were disabled. This was a lesson to draft pull requests and better communicate with team members about time sensitive launches."
+              "content": "Although stakeholders were pleased with how the page turned out, there were some things we didn't get. The Creative Director was hoping for a mouseover distort of the LaterCon logo in the hero section. A combination of time and performance constraints resulted in a compromise. The effect required a large library and page speed was already in the orange. We opted for a smaller library and a simpler effect&ndash;clicking the cursor icon changes svg paths to simulate a morphing effect. We also encountered a significant hiccup the day before the event&ndash;the post-event version was pushed live. For about an hour registration links were disabled. This was a lesson to draft pull requests and better communicate with team members about time sensitive launches."
             }
           ]
         },
@@ -707,7 +706,7 @@
               "tag": "p",
               "content": [
                 {
-                  "content": "Two weeks after launching the landing page, the Demand Generation Director and Creative Project Manager wanted to better support event sign-ups. A quarter of the sign-up goal had been reached but there were only three weeks left. They settled on a homepage interstitial promoting the event. Although they'd already decided on a popup, we mocked up another option–a banner in the middle of the homepage as entry popups are quite intrusive and there are "
+                  "content": "Two weeks after launching the landing page, the Demand Generation Director and Creative Project Manager wanted to better support event sign-ups. A quarter of the sign-up goal had been reached but there were only three weeks left. They settled on a homepage interstitial promoting the event. Although they'd already decided on a popup, we mocked up another option&ndash;a banner in the middle of the homepage as entry popups are quite intrusive and there are "
                 },
                 {
                   "tag": "a",

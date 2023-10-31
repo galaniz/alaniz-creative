@@ -33,7 +33,7 @@
     "work--why-we-serve"
   ],
   "category": [
-    "work-category--web-design",
+    "work-category--ui-design",
     "work-category--web-development"
   ],
   "content": [
@@ -122,8 +122,8 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--web-design",
-                      "content": "Web design"
+                      "internalLink": "work-category--ui-design",
+                      "content": "UI design"
                     }
                   ]
                 },
@@ -263,9 +263,9 @@
               "align": "center",
               "tag": "ul",
               "paddingTop": "l",
-              "paddingTopLarge": "2xl",
+              "paddingTopLarge": "xl",
               "paddingBottom": "l",
-              "paddingBottomLarge": "2xl",
+              "paddingBottomLarge": "xl",
               "content": [
                 {
                   "renderType": "rich-text",
@@ -366,7 +366,7 @@
           "content": [
             {
               "renderType": "container",
-              "maxWidth": "2xl",
+              "maxWidth": "xl",
               "paddingTop": "m",
               "paddingTopLarge": "l",
               "classes": "l-breakout",

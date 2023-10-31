@@ -1,0 +1,6 @@
+{
+  "contentType": "redirect",
+  "redirect": [
+    "/work/categories/web-design/ /work/categories/ui-design/ 301"
+  ]
+}
