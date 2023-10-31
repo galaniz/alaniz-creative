@@ -1135,9 +1135,10 @@
           "content": [
             {
               "renderType": "container",
-              "maxWidth": "l",
+              "maxWidth": "xl",
               "paddingTop": "m",
               "paddingBottom": "m",
+              "classes": "l-breakout",
               "content": [
                 {
                   "renderType": "container",
@@ -1146,6 +1147,120 @@
                   "gapLarge": "l",
                   "justify": "center",
                   "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "4-5",
+                      "widthMedium": "3-4",
+                      "widthLarge": "1-2",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "row",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "column",
+                              "width": "1-3",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/graphic-1",
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-3",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/graphic-2",
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-3",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/graphic-3",
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-3",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/home-middle-mobile",
+                                  "border": true,
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "2-3",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/about-us-desktop",
+                                  "border": true,
+                                  "alt": ""
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "4-5",
+                      "widthMedium": "3-4",
+                      "widthLarge": "1-2",
+                      "classes": "l-flex",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "row",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "classes": "l-flex-grow-1",
+                          "content": [
+                            {
+                              "renderType": "column",
+                              "width": "1-3",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/home-mobile",
+                                  "border": true,
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "2-3",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/product-desktop",
+                                  "alt": ""
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
                   ]
                 }
               ]
@@ -1191,6 +1306,260 @@
                   "content": " for front end components to get started quickly and reuse updates across other projects. For example, form creation and validation, configuration and focus management improved across these libraries as a result of this project. In terms of ease of use and maintenance, we used server side rendered custom Gutenberg blocks for maximum flexibility over markup. Everything from contact form fields to media text containers are fully editable."
                 }
               ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "paddingTop": "m",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "aspect-ratio",
+                  "percent": 60,
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "1-4",
+                      "classes": "l-absolute l-bottom-0 l-left-10-pc",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "puffin-innovations/board-members-front-end",
+                          "border": true,
+                          "alt": ""
+                        }
+                      ] 
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "3-5",
+                      "classes": "l-absolute l-right-0 l-bottom-0",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "puffin-innovations/wordpress-edit-board-member",
+                          "border": true,
+                          "alt": ""
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "3-5",
+                      "classes": "l-absolute l-top-0 l-left-0",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "puffin-innovations/wordpress-edit-form-field",
+                          "border": true,
+                          "alt": ""
+                        }
+                      ] 
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-4",
+                      "classes": "l-absolute l-top-0 l-right-10-pc",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "puffin-innovations/contact-form-front-end",
+                          "border": true,
+                          "alt": ""
+                        }
+                      ] 
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h4",
+              "content": "Testing"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "Most accessibility testing was done manually apart from  "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://www.deque.com/axe/devtools/",
+                  "content": "axe DevTools"
+                },
+                {
+                  "content": " scans and "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://codepen.io/stevef/full/YLMqbo",
+                  "content": "text spacing bookmarklet"
+                },
+                {
+                  "content": " tests. Screen reader testing was Voiceover biased from team member devices. Although non-comprehensive this phase provided many learnings. Quite a few bugs related to resize and reflow taught me that content should be understandable without scrolling in two dimensions within a 320 x 256 viewport (except elements like maps) and to check against different default font sizes to make sure user settings are respected. I also learned the importance of headings starting sections to maintain a clear content hierarchy. Focus management was also another area that proved a bit challenging particularly with interactive elements in modals resolved mainly with the newer inert HTML attribute. Autocomplete tokens in inputs were also a new learning I reuse in all forms now."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "paddingTop": "m",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "3-4",
+                      "widthMedium": "2-3",
+                      "classes": "l-flex",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "row",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "classes": "l-flex-grow-1",
+                          "content": [
+                            {
+                              "renderType": "column",
+                              "width": "1-1",
+                              "grow": true,
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/issue-text-spacing",
+                                  "classes": "l-width-1-1",
+                                  "border": true,
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-2",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/issue-zoom",
+                                  "border": true,
+                                  "alt": ""
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "1-2",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "puffin-innovations/issue-non-text-contrast",
+                                  "border": true,
+                                  "alt": ""
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "2-5",
+                      "widthSmall": "1-3",
+                      "widthMedium": "1-3",
+                      "classes": "l-none l-block-m",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "puffin-innovations/issue-modal-focus",
+                          "border": true,
+                          "alt": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h2",
+              "content": "The Outcome"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "We received an overall 82% score from AIR judges, which includes technical accessibility and other factors like site appropriateness. There were a few trivial errors related to parsing but most feedback was helpful for user experience like avoiding automatically opening links in new tabs because the context change can be quite jarring for screen reader users for instance or improving the semantics of the slider navigation."
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "In the months after launching we also saw an increase in contact page visits and form submissions. Adriana shared positive feedback regarding the quality of leads as well as the overall design of the site and logo:"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "blockquote",
+              "content": [
+                {
+                  "tag": "p",
+                  "content": "\"This talented group took our input and flawlessly executed the vision — we wanted the new logo to convey INNOVATION, CREATIVITY, and of course, our fun-loving bird friend! In fact, the end result exceeded our expectations!\""
+                }
+              ]
+            },
+            {
+              "renderType": "button",
+              "title": "View Puffin Innovations",
+              "richText": true,
+              "externalLink": "https://puffininno.com/"
             }
           ]
         }

@@ -367,7 +367,7 @@
           "content": [
             {
               "renderType": "container",
-              "maxWidth": "2xl",
+              "maxWidth": "xl",
               "paddingTop": "m",
               "paddingTopLarge": "l",
               "classes": "l-breakout",
