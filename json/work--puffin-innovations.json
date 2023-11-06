@@ -151,23 +151,28 @@
       "tag": "section",
       "paddingTop": "l",
       "paddingTopLarge": "2xl",
-      "richTextStyles": true,
       "content": [
         {
-          "renderType": "rich-text",
-          "tag": "h2",
-          "content": "What is Puffin Innovations?"
-        },
-        {
-          "renderType": "rich-text",
-          "tag": "p",
-          "content": "Puffin Innovations is a smart assistive tech startup dedicated to helping people with disabilities lead more inclusive and independent lives. It was founded in 2015 by Adriana Mallozzi, entrepreneur, innovator and disability advocate, after winning the Massachusetts Institute of Technology (MIT) Assistive Technology Hackathon with the creation of an innovative input device (Puffin) that connects to and operates smart devices. It's a game changer for many people with physical disabilities to engage in everyday activities independently."
+          "renderType": "container",
+          "paddingBottom": "m",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "rich-text",
+              "tag": "h2",
+              "content": "What is Puffin Innovations?"
+            },
+            {
+              "renderType": "rich-text",
+              "tag": "p",
+              "content": "Puffin Innovations is a smart assistive tech startup dedicated to helping people with disabilities lead more inclusive and independent lives. It was founded in 2015 by Adriana Mallozzi, entrepreneur, innovator and disability advocate, after winning the Massachusetts Institute of Technology (MIT) Assistive Technology Hackathon with the creation of an innovative input device (Puffin) that connects to and operates smart devices. It's a game changer for many people with physical disabilities to engage in everyday activities independently."
+            }
+          ]
         },
         {
           "renderType": "container",
           "paddingTop": "l",
           "paddingTopLarge": "2xl",
-          "paddingBottom": "m",
           "tag": "figure",
           "content": [
             {
@@ -182,7 +187,7 @@
                     {
                       "renderType": "image",
                       "image": "puffin-innovations/adriana-mallozzi",
-                      "alt": ""
+                      "alt": "Founder, innovator and quadriplegic wheelchair user Adriana Mallozzi smiling"
                     }
                   ] 
                 },
@@ -194,10 +199,28 @@
                     {
                       "renderType": "image",
                       "image": "puffin-innovations/puffin",
-                      "alt": "",
+                      "alt": "Puffin input device in blue and grey plastic casing with and without arm link",
                       "border": true
                     }
                   ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "s",
+                  "classes": "t-italic",
+                  "align": "center",
+                  "content": "Puffin input device and founder Adriana Mallozzi."
                 }
               ]
             }
@@ -440,7 +463,6 @@
               "renderType": "container",
               "maxWidth": "l",
               "paddingTop": "m",
-              "paddingBottom": "m",
               "content": [
                 {
                   "renderType": "container",
@@ -459,7 +481,7 @@
                         {
                           "renderType": "image",
                           "image": "puffin-innovations/home-wireframe-top",
-                          "alt": "",
+                          "alt": "Top half of desktop homepage wireframe. First section shows video placeholder next to 'Meet Puffin' title, text and two buttons. Second section titled 'What makes puffin different' above three cards (small image box and text). Third section titled 'How it works' shows step one as row of image and text.",
                           "border": true
                         }
                       ]
@@ -473,7 +495,7 @@
                         {
                           "renderType": "image",
                           "image": "puffin-innovations/home-wireframe-bottom",
-                          "alt": "",
+                          "alt": "Bottom half of desktop homepage wireframe. First section titled 'Use Cases' above three cards (small image box and text) and button. Second section titled 'Testimonials' above row of two quotes. Third section titled 'Awards' shows three image boxes. Fourth section titled 'Funders & Supporters' shows three logos (iFundWomen, Massachusetts Life Sciences Center and Easterseals). Fifth section titled 'Our Story' above image box next to text and button.",
                           "border": true
                         }
                       ]
@@ -496,7 +518,7 @@
                                 {
                                   "renderType": "image",
                                   "image": "puffin-innovations/contact-form-wireframe-1",
-                                  "alt": "",
+                                  "alt": "First version of contact form wireframe with first name, last name, email address and message fields followed by row of outline buttons (User, Educator, Therapist and Other) for user role and zipcode and phone fields and checkboxes to receive phone call and subscribe to newsletter.",
                                   "border": true
                                 }
                               ]
@@ -509,7 +531,7 @@
                                 {
                                   "renderType": "image",
                                   "image": "puffin-innovations/contact-form-wireframe-2",
-                                  "alt": "",
+                                  "alt": "Second version of contact form wireframe with first name, last name, email address and message fields followed by radio buttons for user role (User, Educator, Caregiver, Clinician - dropdown of various health professionals, Other - text field), city, state, country and phone number fields, hidden checkbox to receive phone call, dropdown for how user heard about Puffin Innovations and checkbox to subscribe to newsletter.",
                                   "border": true
                                 }
                               ] 
@@ -519,6 +541,24 @@
                       ]
                     }
                   ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "s",
+                  "classes": "t-italic",
+                  "align": "center",
+                  "content": "Homepage and contact form wireframes."
                 }
               ]
             }
@@ -562,7 +602,6 @@
               "renderType": "container",
               "maxWidth": "default",
               "paddingTop": "m",
-              "paddingBottom": "m",
               "content": [
                 {
                   "renderType": "container",
@@ -594,7 +633,7 @@
                                   "image": "puffin-innovations/logo-original",
                                   "borderRadius": false,
                                   "cover": false,
-                                  "alt": ""
+                                  "alt": "Original logo. Large skeuomorphic Puffin representing 'P' next to smaller 'uffin' text in white against blue circle background. Overlaid on the bottom left is a small angled grey banner containing 'Innovations' in white text."
                                 }
                               ]
                             },
@@ -611,7 +650,7 @@
                                   "image": "puffin-innovations/logo-exploration-1",
                                   "borderRadius": false,
                                   "cover": false,
-                                  "alt": ""
+                                  "alt": "First logo exploration. 'Puffin' in black extra bold grotesk font. Top part of 'P' is split to mimic Puffin eye and orange beak. 'Innovations' in small thin black uppercase text below."
                                 }
                               ]
                             },
@@ -628,7 +667,7 @@
                                   "image": "puffin-innovations/logo-exploration-2",
                                   "borderRadius": false,
                                   "cover": false,
-                                  "alt": ""
+                                  "alt": "Second logo exploration. Flat Puffin logomark - circle face with orange beak to right and black neck to left. Right of the logomark is 'Puffin' in thin black lowercase geometric font and 'Innovations' in small orange uppercase text below."
                                 }
                               ]
                             }
@@ -660,7 +699,7 @@
                                       "renderType": "image",
                                       "image": "puffin-innovations/logo-black",
                                       "borderRadius": false,
-                                      "alt": ""
+                                      "alt": "New logo against black background. 'P' represented by lightbulb resembling Puffin face with eye and beak and 'uffin' text to right in white bold geometric sans font. 'Innovations' in orange bold uppercase text below."
                                     }
                                   ]
                                 },
@@ -674,7 +713,7 @@
                                       "renderType": "image",
                                       "image": "puffin-innovations/logo-white",
                                       "borderRadius": false,
-                                      "alt": ""
+                                      "alt": "New logo against white background. 'P' represented by lightbulb resembling Puffin face with eye and beak and 'uffin' text to right in black bold geometric sans font. 'Innovations' in orange bold uppercase text below."
                                     }
                                   ]
                                 },
@@ -688,7 +727,7 @@
                                       "renderType": "image",
                                       "image": "puffin-innovations/logo-grey",
                                       "borderRadius": false,
-                                      "alt": ""
+                                      "alt": "New logo against light grey background. 'P' represented by light grey lightbulb resembling Puffin face with eye and beak and 'uffin' text to right in black bold geometric sans font. 'Innovations' in grey bold uppercase text below."
                                     }
                                   ]
                                 },
@@ -702,7 +741,7 @@
                                       "renderType": "image",
                                       "image": "puffin-innovations/logo-yellow",
                                       "borderRadius": false,
-                                      "alt": ""
+                                      "alt": "New logo against yellow background. 'P' represented by lightbulb resembling Puffin face with eye and beak and 'uffin' text to right in black bold geometric sans font. 'Innovations' in charcoal bold uppercase text below."
                                     }
                                   ]
                                 },
@@ -716,7 +755,7 @@
                                       "renderType": "image",
                                       "image": "puffin-innovations/logo-blue",
                                       "borderRadius": false,
-                                      "alt": ""
+                                      "alt": "New logo against blue background. 'P' represented by lightbulb resembling Puffin face with eye and beak and 'uffin' text to right in white bold geometric sans font. 'Innovations' in light blue bold uppercase text below."
                                     }
                                   ]
                                 },
@@ -730,7 +769,7 @@
                                       "renderType": "image",
                                       "image": "puffin-innovations/logo-blue-light",
                                       "borderRadius": false,
-                                      "alt": ""
+                                      "alt": "New logo against light blue background. 'P' represented by lightbulb resembling Puffin face with eye and beak and 'uffin' text to right in black bold geometric sans font. 'Innovations' in blue bold uppercase text below."
                                     }
                                   ]
                                 },
@@ -744,7 +783,7 @@
                                       "renderType": "image",
                                       "image": "puffin-innovations/logo-orange",
                                       "borderRadius": false,
-                                      "alt": ""
+                                      "alt": "New logo against orange background. 'P' represented by lightbulb resembling Puffin face with eye and beak and 'uffin' text to right in black bold geometric sans font. 'Innovations' in black bold uppercase text below."
                                     }
                                   ]
                                 },
@@ -758,7 +797,7 @@
                                       "renderType": "image",
                                       "image": "puffin-innovations/logo-white-blue",
                                       "borderRadius": false,
-                                      "alt": ""
+                                      "alt": "New logo against white background. 'P' represented by light blue lightbulb resembling Puffin face with eye and beak and 'uffin' text to right in black bold geometric sans font. 'Innovations' in blue bold uppercase text below."
                                     }
                                   ]
                                 }
@@ -1105,6 +1144,24 @@
                   ]
                 }
               ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "s",
+                  "classes": "t-italic",
+                  "align": "center",
+                  "content": "Original logo, explorations and final version with different colour combinations."
+                }
+              ]
             }
           ]
         },
@@ -1137,7 +1194,6 @@
               "renderType": "container",
               "maxWidth": "xl",
               "paddingTop": "m",
-              "paddingBottom": "m",
               "classes": "l-breakout",
               "content": [
                 {
@@ -1166,7 +1222,7 @@
                                 {
                                   "renderType": "image",
                                   "image": "puffin-innovations/graphic-1",
-                                  "alt": ""
+                                  "alt": "Cutout graphic highlighting young man with cerebral palsy smiling against orange background"
                                 }
                               ]
                             },
@@ -1177,7 +1233,7 @@
                                 {
                                   "renderType": "image",
                                   "image": "puffin-innovations/graphic-2",
-                                  "alt": ""
+                                  "alt": "Cutout graphic highlighting young woman with spinal cord injury smiling and talking with doctor against blue background"
                                 }
                               ]
                             },
@@ -1188,7 +1244,7 @@
                                 {
                                   "renderType": "image",
                                   "image": "puffin-innovations/graphic-3",
-                                  "alt": ""
+                                  "alt": "Cutout graphic highlighting young boy with disability in wheelchair smiling next to teacher against yellow background"
                                 }
                               ]
                             },
@@ -1200,7 +1256,7 @@
                                   "renderType": "image",
                                   "image": "puffin-innovations/home-middle-mobile",
                                   "border": true,
-                                  "alt": ""
+                                  "alt": "Halfway down mobile homepage. Testimonial from Cristina Cortez as a beta tester is shown along with light blue section titled 'Accolades' with slider of award logos and names - the first one is 2015 MIT Assistive Technology Hackathon Winner."
                                 }
                               ]
                             },
@@ -1212,7 +1268,7 @@
                                   "renderType": "image",
                                   "image": "puffin-innovations/about-us-desktop",
                                   "border": true,
-                                  "alt": ""
+                                  "alt": "Top of desktop about page. First section is orange and titled 'Technologists on a mission to level up digital access' in large bold black text with cutout graphic of Adriana, Elijah and their service dog and smaller text below. Second section is white and titled 'Mission' with a few blocks of text next to it."
                                 }
                               ]
                             }
@@ -1242,7 +1298,7 @@
                                   "renderType": "image",
                                   "image": "puffin-innovations/home-mobile",
                                   "border": true,
-                                  "alt": ""
+                                  "alt": "Top of mobile homepage. First section is black and titled 'Access the digital world with smart assistive technology' in large bold white text followed by video still of Adriana using Puffin and orange and yellow buttons. Second section is white and titled 'What makes Puffin different' with icon of phone and 'Easy to set up, easy to use' text below."
                                 }
                               ]
                             },
@@ -1253,7 +1309,7 @@
                                 {
                                   "renderType": "image",
                                   "image": "puffin-innovations/product-desktop",
-                                  "alt": ""
+                                  "alt": "Top of desktop product page. First section is blue and titled 'An inclusive solution to access smart devices' in large white black text with cutout graphic of Puffin input device and smaller text below. Second section is black and titled 'How it works' with rows of illustrated product images and text representing first two steps - 'All-in-one package' and 'Connect and install.'"
                                 }
                               ]
                             }
@@ -1262,6 +1318,24 @@
                       ]
                     }
                   ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "s",
+                  "classes": "t-italic",
+                  "align": "center",
+                  "content": "Graphics for use cases, mobile homepage, desktop about us and product pages."
                 }
               ]
             }
@@ -1321,7 +1395,6 @@
               "renderType": "container",
               "maxWidth": "s",
               "paddingTop": "m",
-              "paddingBottom": "m",
               "content": [
                 {
                   "renderType": "aspect-ratio",
@@ -1336,7 +1409,7 @@
                           "renderType": "image",
                           "image": "puffin-innovations/board-members-front-end",
                           "border": true,
-                          "alt": ""
+                          "alt": "List of board members' headshot, name and title on mobile about us page"
                         }
                       ] 
                     },
@@ -1349,7 +1422,7 @@
                           "renderType": "image",
                           "image": "puffin-innovations/wordpress-edit-board-member",
                           "border": true,
-                          "alt": ""
+                          "alt": "WordPress backend for list of board members - Gutenberg block editor shows custom Styled Image block selected (nested within other custom blocks) with image of board member and options panel to the right (width, height, aspect ratio)."
                         }
                       ]
                     },
@@ -1362,7 +1435,7 @@
                           "renderType": "image",
                           "image": "puffin-innovations/wordpress-edit-form-field",
                           "border": true,
-                          "alt": ""
+                          "alt": "WordPress backend for contact form - Gutenberg block editor shows email address field within custom Contact Form block selected with options panel to the right (autocomplete tokens, error messages, width)."
                         }
                       ] 
                     },
@@ -1375,11 +1448,29 @@
                           "renderType": "image",
                           "image": "puffin-innovations/contact-form-front-end",
                           "border": true,
-                          "alt": ""
+                          "alt": "Contact form on mobile with error summary and error message on email address field."
                         }
                       ] 
                     }
                   ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "s",
+                  "classes": "t-italic",
+                  "align": "center",
+                  "content": "WordPress Gutenberg editor screens for contact form and board members list."
                 }
               ]
             }
@@ -1434,7 +1525,6 @@
               "renderType": "container",
               "maxWidth": "s",
               "paddingTop": "m",
-              "paddingBottom": "m",
               "content": [
                 {
                   "renderType": "container",
@@ -1466,7 +1556,7 @@
                                   "image": "puffin-innovations/issue-text-spacing",
                                   "classes": "l-width-1-1",
                                   "border": true,
-                                  "alt": ""
+                                  "alt": "Footer elements lose alignment when text spacing is adjusted"
                                 }
                               ]
                             },
@@ -1478,7 +1568,7 @@
                                   "renderType": "image",
                                   "image": "puffin-innovations/issue-zoom",
                                   "border": true,
-                                  "alt": ""
+                                  "alt": "Video transcript and some player controls go offscreen at 400% zoom"
                                 }
                               ]
                             },
@@ -1490,7 +1580,7 @@
                                   "renderType": "image",
                                   "image": "puffin-innovations/issue-non-text-contrast",
                                   "border": true,
-                                  "alt": ""
+                                  "alt": "Blue bounding boxes have low contrast against gray background"
                                 }
                               ]
                             }
@@ -1509,11 +1599,29 @@
                           "renderType": "image",
                           "image": "puffin-innovations/issue-modal-focus",
                           "border": true,
-                          "alt": ""
+                          "alt": "Mobile screen reader focus can escape from hamburger menu, cannot reach 'x' button"
                         }
                       ]
                     }
                   ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "rich-text",
+                  "tag": "p",
+                  "textStyle": "s",
+                  "classes": "t-italic",
+                  "align": "center",
+                  "content": "A few of several accessibility issues flagged in the testing phase of the project."
                 }
               ]
             }
