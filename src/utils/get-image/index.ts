@@ -26,6 +26,7 @@ interface Data {
 
 interface Args {
   data?: Data
+  alt?: string
   classes?: string
   attr?: string
   width?: string | number
@@ -47,6 +48,8 @@ const getImage = (args: Args = {}): string | { output: string, aspectRatio: numb
     max = 1600
   } = args
 
+  let { alt = '' } = args
+
   /* Data required */
 
   if (data == null) {
@@ -55,13 +58,17 @@ const getImage = (args: Args = {}): string | { output: string, aspectRatio: numb
 
   const {
     base = '',
-    alt = '',
+    alt: defaultAlt = '',
     width: naturalWidth,
     height: naturalHeight
   } = data
 
   if (base === '') {
     return ''
+  }
+
+  if (defaultAlt !== '' && alt === '') {
+    alt = defaultAlt
   }
 
   /* Dimensions */
