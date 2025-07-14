@@ -1,48 +1,66 @@
 {
   "name": "alaniz-creative",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.njk",
-  "engines": {
-    "node": ">=19"
-  },
+  "main": "lib/esbuild/esbuild.js",
+  "packageManager": "pnpm@10.12.3",
+  "type": "module",
   "scripts": {
-    "start": "concurrently \"tsc --watch\" \"npx @11ty/eleventy --serve\" \"npx stylelint 'src/assets/**/*.scss'\" \"npx ts-standard\"",
-    "build": "tsc && npx @11ty/eleventy",
-    "debug": "DEBUG=* npx @11ty/eleventy"
+    "build:client": "npx tsc --project tsconfig.client.json",
+    "build:node": "npx tsc --project tsconfig.node.json",
+    "build:site": "pnpm build:client && pnpm build:node && node lib/esbuild/esbuild.js",
+    "build": "pnpm build:client && pnpm build:node && node lib/esbuild/esbuild.js",
+    "watch:client": "npx tsc --watch --preserveWatchOutput --project tsconfig.client.json",
+    "watch:node": "npx tsc --watch --preserveWatchOutput --project tsconfig.node.json",
+    "watch:esbuild": "node scripts/watch.js",
+    "start": "npm-run-all --parallel watch:node watch:client watch:esbuild",
+    "lint:ts": "npx eslint .",
+    "lint:scss": "stylelint 'src/**/*.scss'",
+    "lint": "pnpm lint:ts && pnpm lint:scss",
+    "wrangler:deploy": "npx wrangler dev --config src/workers/Deploy/wrangler.json",
+    "wrangler:site": "npx wrangler dev --config wrangler.json",
+    "wrangler:staging": "npx wrangler dev --config wrangler.json --env staging",
+    "wrangler:preview": "npx wrangler dev --config wrangler.json --env preview",
+    "clean": "rm -rf node_modules/.cache/tsbuildinfo.* || true && rm -rf .cache || true && rm -rf site || true && rm -rf lib  || true && rm -rf functions || true"
   },
-  "author": "",
-  "license": "ISC",
+  "engines": {
+    "node": ">=22"
+  },
   "dependencies": {
-    "@alanizcreative/formation": "^4.1.2",
-    "uuid": "^9.0.1",
-    "validator": "^13.11.0"
+    "@alanizcreative/formation": "5.1.0-beta.17",
+    "@alanizcreative/formation-static": "1.3.0-beta.41",
+    "@cloudflare/workers-types": "4.20250705.0",
+    "@esbuild/linux-x64": "0.25.5",
+    "@fullhuman/postcss-purgecss": "7.0.2",
+    "@types/html-minifier-terser": "^7.0.2",
+    "@types/node": "^24.0.10",
+    "@types/uuid": "^10.0.0",
+    "@types/validator": "13.15.2",
+    "autoprefixer": "^10.4.21",
+    "dotenv": "^17.0.1",
+    "esbuild": "^0.25.5",
+    "html-minifier-terser": "^7.2.0",
+    "postcss": "^8.5.6",
+    "postcss-modules": "^6.0.1",
+    "sass": "^1.89.2",
+    "typescript": "^5.8.3",
+    "uuid": "^11.1.0",
+    "validator": "13.15.15"
+  },
+  "devDependencies": {
+    "eslint": "9.30.1",
+    "stylelint": "^16.21.1",
+    "stylelint-config-standard-scss": "^15.0.1",
+    "typescript-eslint": "8.35.1"
+  },
+  "optionalDependencies": {
+    "@types/safe-json-stringify": "^1.1.5",
+    "keyv": "5.3.4",
+    "keyv-file": "5.1.3",
+    "nodemon": "3.1.10",
+    "npm-run-all": "^4.1.5",
+    "safe-json-stringify": "^1.2.0",
+    "wrangler": "^4.23.0"
   },
   "browserslist": [
-    "edge 16"
-  ],
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-fetch": "^4.0.0",
-    "@miniflare/tre": "^3.0.0-next.13",
-    "@types/node": "^20.8.6",
-    "autoprefixer": "^10.4.16",
-    "concurrently": "^8.2.1",
-    "dotenv": "^16.3.1",
-    "esbuild": "^0.19.4",
-    "esbuild-sass-plugin": "^2.16.0",
-    "html-minifier": "^4.0.0",
-    "normalize.css": "^8.0.1",
-    "postcss": "^8.4.31",
-    "postcss-modules": "^6.0.0",
-    "postcss-preset-env": "^9.2.0",
-    "purgecss": "^5.0.0",
-    "safe-json-stringify": "^1.2.0",
-    "sharp": "^0.32.6",
-    "stylelint": "^15.10.3",
-    "stylelint-config-standard-scss": "^11.0.0",
-    "ts-standard": "^12.0.2",
-    "typescript": "^5.2.2",
-    "wrangler": "^3.13.1"
-  }
+    "> 0.5%"
+  ]
 }

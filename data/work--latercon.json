@@ -1,0 +1,801 @@
+{
+  "contentType": "work",
+  "title": "LaterCon",
+  "slug": "latercon",
+  "date": "2021-09-29",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "hero": {
+    "image": "latercon/hero",
+    "border": true,
+    "wave": "four"
+  },
+  "blob": "four",
+  "theme": {
+    "primary-dark": "#844bff",
+    "primary-light": "#af8afe",
+    "secondry-dark": "#fffaee",
+    "secondary-light": "#fffaee",
+    "video-bg": "#fffaee",
+    "video-border": "var(--video-play-bg)",
+    "video-play-bg": "#844bff",
+    "video-play-color": "var(--background-light)"
+  },
+  "related": [
+    "work--why-we-serve",
+    "work--later-newsroom"
+  ],
+  "category": [
+    "work-category--front-end-development"
+  ],
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "Overview"
+        },
+        {
+          "renderType": "container",
+          "layout": "row-s",
+          "gap": "m",
+          "gapLarge": "l",
+          "tag": "dl",
+          "content": [
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Year"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "2021"
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "div",
+              "type": "columns",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Team"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Operations Manager"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Campaign Manager"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Project Manager"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Creative Director"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Copywriter"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Role"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--front-end-development",
+                      "content": "Front-end development"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View LaterCon Landing Page",
+          "richText": true,
+          "externalLink": "https://deploy-preview-234--later-contentful-marketing.netlify.app/latercon/"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "What is LaterCon?"
+        },
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "content": "LaterCon is a free educational one-day event run annually and virtually by Later (an all-in-one social media marketing platform) to help small business owners learn how to grow their brand on social media."
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Project"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Develop a landing page on later.com to promote and drive sign-ups to LaterCon."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "The Brief"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Context"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "LaterCon is organized by Later's content marketing team. After months long planning and preparation they were looking to have a landing page created to announce and promote it. The Creative Director finalized a custom art direction the month before and was in the process of completing the landing page visual design, which left a timeline of a little over two weeks to complete development. Expectations were also high for this year's LaterCon as the previous year saw a 60 percent increase in sign-up and attendance numbers. The marketing team wasn't expecting to replicate 2020 success as the pandemic played a unique role in this, but set ambitious targets nonetheless."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Goals"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": "Contribute to overall goal of achieving 60,000 sign-ups amongst all channels (web, social and paid ads)"
+                },
+                {
+                  "tag": "li",
+                  "content": "Get 100,000 unique page views"
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Requirements"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": "Include prominent calls-to-action encouraging visitors to register"
+                },
+                {
+                  "tag": "li",
+                  "content": "Launch by August 24th"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Process"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Design Feedback and Handoff"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Before jumping into development there was time to provide feedback on the visual design. The overall design had great rhythm and structure but there were some contrast issues with two of the main colours. Both the tangerine and main purple had contrast ratios of less than 3:1 against off-white. We initially pushed for 4.5:1 versions to cover all text sizes but the art direction was already in production so making this leap wasn't possible (which speaks to designing with contrast in mind from the outset) so we met in the middle with 3:1 versions."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "m",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "4-5",
+                      "widthMedium": "1-2",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "latercon/description-speakers",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "3-5",
+                      "widthMedium": "1-2",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "latercon/contrast-ratios",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Mockup of landing page showing descriptions and speakers and contrast adjustments to main colours."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "The Creative Director was also very proactive in communicating her vision for the end result and checking in with us on what was and wasn't possible in order to prioritize tasks. The idea behind the art direction was to get audiences thinking about how they can keep learning, growing, and morphing&ndash;the most successful businesses and influencers are the ones who can keep moving and adapting to new platforms and situations. Fluid and reveal transitions and animations were highlighted as ways to reflect and elevate this idea on the live site. Text distortion and text reveal examples served as inspirational references as we got ready to start development."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "aspectRatio",
+                  "percent": 52.5,
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "3-5",
+                      "classes": "absolute left-0 bottom-0",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "latercon/inspo-1",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "3-5",
+                      "classes": "absolute top-0 right-0",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "latercon/inspo-2",
+                          "border": true
+                        }
+                      ] 
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "span",
+                  "content": [
+                    {
+                      "content": "Stills of a "
+                    },
+                    {
+                      "tag": "a",
+                      "link": "https://tympanus.net/Development/TextDistortionEffects/index2.html",
+                      "content": "text distortion"
+                    },
+                    {
+                      "content": " mouse effect and "
+                    },
+                    {
+                      "tag": "a",
+                      "link": "https://contra.com/freelance-industry-report-2021/",
+                      "content": "text reveal"
+                    },
+                    {
+                      "content": " scroll animation."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Development"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "We started development in "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://codepen.io/alanizcreative/pen/poPLMyJ/56845539ce4080e0db765bea698bfbb0",
+                  "content": "CodePen"
+                },
+                {
+                  "content": " with the aim of getting something for stakeholders to review quicker. Later.com is a static Gatsby generated site. At the time, I wasn't very experienced with the React library so thought this approach would work best. However, the process of moving code over and site build factors (eg. global CSS interfering with LaterCon styles&ndash;Styled Components later circumvented this issue) was time consuming and diminished earlier gains."
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "As mentioned earlier, transitions and animations were important parts of the overall vision for the landing page. We started off small with button animations inspired by "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://tympanus.net/Development/ButtonHoverStyles/",
+                  "content": "Codrops"
+                },
+                {
+                  "content": " The slight scaleY and skew effects in these examples worked well with the subtle morphing quality we were looking to achieve. This formed the base for many on scroll transitions like the text reveals. In terms of accessibility, we made sure to respect users' motion preferences with reduced motion queries as well as hiding repetitive markup (eg. individual spans for letters) from the accessibility tree. We also tested it with JavaScript disabled (mainly for SEO purposes as search engine bots might not execute all JavaScript code) to make sure all content was still visible."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "m",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "justify": "center",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "4-5",
+                      "widthMedium": "1-2",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "paddingBottom": "2xs",
+                          "paddingBottomLarge": "m",
+                          "content": [
+                            {
+                              "renderType": "richText",
+                              "tag": "h4",
+                              "content": "Default"
+                            }
+                          ]
+                        },
+                        {
+                          "renderType": "video",
+                          "title": "Default landing page animation",
+                          "source": "latercon/default.mp4"
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "4-5",
+                      "widthMedium": "1-2",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "paddingBottom": "2xs",
+                          "paddingBottomLarge": "m",
+                          "content": [
+                            {
+                              "renderType": "richText",
+                              "tag": "h4",
+                              "content": "Reduce Motion"
+                            }
+                          ]
+                        },
+                        {
+                          "renderType": "video",
+                          "title": "Reduce motion landing page",
+                          "source": "latercon/reduce-motion.mp4"
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "4-5",
+                      "widthMedium": "1-2",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "paddingBottom": "2xs",
+                          "paddingBottomLarge": "m",
+                          "content": [
+                            {
+                              "renderType": "richText",
+                              "tag": "h4",
+                              "content": "JavaScript Disabled"
+                            }
+                          ]
+                        },
+                        {
+                          "renderType": "video",
+                          "title": "No JavaScript landing page",
+                          "source": "latercon/no-js.mp4"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "The homepage with full animations and without when reduce motion is set."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Although stakeholders were pleased with how the page turned out, there were some things we didn't get. The Creative Director was hoping for a mouseover distort of the LaterCon logo in the hero section. A combination of time and performance constraints resulted in a compromise. The effect required a large library and page speed was already in the orange. We opted for a smaller library and a simpler effect&ndash;clicking the cursor icon changes svg paths to simulate a morphing effect. We also encountered a significant hiccup the day before the event&ndash;the post-event version was pushed live. For about an hour registration links were disabled. This was a lesson to draft pull requests and better communicate with team members about time sensitive launches."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthCustom": {
+                        "init": 50,
+                        "small": 40,
+                        "medium": 30,
+                        "large": 30
+                      },
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "latercon/event-passed-mobile",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthCustom": {
+                        "small": 85,
+                        "medium": 70,
+                        "large": 70
+                      },
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "latercon/easter-egg",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Mobile post-event version of the landing page and easter egg distortion of logo with cursor click."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Homepage Popup"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "Two weeks after launching the landing page, the Demand Generation Director and Creative Project Manager wanted to better support event sign-ups. A quarter of the sign-up goal had been reached but there were only three weeks left. They settled on a homepage interstitial promoting the event. Although they'd already decided on a popup, we mocked up another option&ndash;a banner in the middle of the homepage as entry popups are quite intrusive and there are "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://developers.google.com/search/docs/appearance/avoid-intrusive-interstitials",
+                  "content": "SEO penalties"
+                },
+                {
+                  "content": " associated with using them on mobile (unless they're mandatory). The interstitial design won, but we only displayed it in viewports greater than 1000 pixels."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "latercon/home-banner",
+                      "border": true
+                    },
+                    {
+                      "renderType": "image",
+                      "image": "latercon/home-popup",
+                      "border": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Homepage banner at the top compared to entry popup promoting LaterCon."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "maxWidth": "xs",
+      "content": [
+        {
+          "renderType": "container",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Outcome"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "In post-event reports we fell short on some targets but still had notable wins. In terms of page views we only reached about a third of the initial goal at around 60,000 unique page views. For sign-ups we reached two-thirds of the original goal, but the landing page alone saw around 31,000 click-throughs to the registration page (we weren't able to get full attribution for completed registrations but can safely say the landing page converted well). The popup contributed to this as we saw a 300% increase in landing page clicks after its launch. We also saw significant improvements in average time on page and bounce rate in comparison to landings pages from previous years."
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "A few weeks after launch the landing page was featured on "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://onepagelove.com/latercon",
+                  "content": "One Page Love"
+                },
+                {
+                  "content": ", a design gallery showcasing the best single page websites, templates and resources. A lot of effort was put into this landing page by the team so it was great to be recognized by industry peers."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "image",
+                  "image": "latercon/one-page-love",
+                  "border": true
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "LaterCon entry on One Page Love site."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Internally the landing page also received lots of love from the marketing team. From the Operations and Editorial Managers:"
+            },
+            {
+              "renderType": "richText",
+              "tag": "blockquote",
+              "content": [
+                {
+                  "tag": "p",
+                  "content": "\"We cannot get over how cute the landing page is! So FRESH and eye-catching. Nice work team!\""
+                }
+              ]
+            },
+            {
+              "renderType": "button",
+              "title": "View LaterCon Landing Page",
+              "richText": true,
+              "externalLink": "https://deploy-preview-234--later-contentful-marketing.netlify.app/latercon/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,906 @@
+{
+  "contentType": "work",
+  "title": "Injury Board",
+  "slug": "injury-board",
+  "date": "2018-10-15",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "hero": {
+    "image": "injury-board/hero",
+    "wave": "one"
+  },
+  "blob": "one",
+  "theme": {
+    "primary-dark": "#007fb0",
+    "primary-light": "#66b8d9",
+    "secondary-dark": "#06375d",
+    "secondary-light": "#3f8ecc",
+    "video-bg": "#06375d",
+    "video-border": "var(--video-bg)",
+    "video-play-bg": "var(--background-light)",
+    "video-play-color": "#007fb0"
+  },
+  "related": [
+    "work--fortis-group",
+    "work--why-we-serve"
+  ],
+  "category": [
+    "work-category--ui-design",
+    "work-category--web-development"
+  ],
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "Overview"
+        },
+        {
+          "renderType": "container",
+          "layout": "row-s",
+          "gap": "m",
+          "gapLarge": "l",
+          "tag": "dl",
+          "content": [
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Year"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "2018"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Agency"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Claris Marketing"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Team"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Marketing Director"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Back-end Developer"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Role"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--ui-design",
+                      "content": "UI design"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--web-development",
+                      "content": "Web development"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View Injury Board",
+          "richText": true,
+          "externalLink": "https://www.injuryboard.org/"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "What is the Injury Board?"
+        },
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "content": "The Injury Board is an association of experienced trial attorneys practicing throughout the United States and the United Kingdom. Members are champions of the civil justice system and consumer rights. They are board certified attorneys as well as leaders of trial bar organizations."
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Project"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Redesign and develop the Injury Board website."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "The Brief"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Context"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "The Injury Board was in the process of changing its rules of membership, particularly its system of acceptance and wanted the site to reflect this new direction. They wanted the new site to convey to users that members form an exclusive group made up of the best of the best and ultimately instill trust. Naturally, stakeholders voiced a desire for the site to stand-out in an elegant way."
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Overall, they wanted the redesign to make the site simpler, particularly the directory of firms and members. This not only applied to the back-end too. The existing site was built on a legacy framework that was becoming burdensome to manage. Creating a better experience for internal users to manage and update the site was also important."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Goals"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": "Convey to users exclusivity of membership and trustworthiness of Injury Board"
+                },
+                {
+                  "tag": "li",
+                  "content": "Simplify the site, especially dated and clunky directory of firms and members"
+                },
+                {
+                  "tag": "li",
+                  "content": "Create an easier to manage back-end"
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Guiding Keywords"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "From this brief and conversations with stakeholders we captured these keywords to use as our focus throughout all phases of the project:"
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "s",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "content": [
+            {
+              "renderType": "container",
+              "layout": "row",
+              "gap": "m",
+              "gapLarge": "l",
+              "justify": "center",
+              "align": "center",
+              "tag": "ul",
+              "paddingTop": "l",
+              "paddingTopLarge": "xl",
+              "paddingBottom": "l",
+              "paddingBottomLarge": "xl",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "h2-d",
+                  "content": "Easy-to-use",
+                  "color": "theme-secondary"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "h2-d",
+                  "content": "Beautiful",
+                  "color": "theme-primary"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "h2-d",
+                  "content": "Elegant/sleek",
+                  "color": "theme-secondary"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "h2",
+                  "type": "normal",
+                  "content": "Trustworthy",
+                  "color": "theme-primary"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "h2",
+                  "type": "normal",
+                  "content": "Exclusive",
+                  "color": "theme-secondary"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "h2",
+                  "type": "normal",
+                  "content": "Simple",
+                  "color": "theme-primary"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Process"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Content"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "We initially started the design process with existing content on the site but quickly learned the voice of the copy needed to change in order to suit the new brand direction. The Director of Marketing simplified the sitemap and provided us with fresh copy. The information architecture was now in a better place for us to begin designing in earnest."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xl",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "classes": "breakout",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-4",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "injury-board/concept-1",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-4",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "image",
+                              "image": "injury-board/concept-2",
+                              "border": true
+                            },
+                            {
+                              "renderType": "image",
+                              "image": "injury-board/concept-3",
+                              "border": true
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-4",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "injury-board/concept-4",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-4",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "image",
+                              "image": "injury-board/concept-5",
+                              "border": true
+                            },
+                            {
+                              "renderType": "image",
+                              "image": "injury-board/concept-6",
+                              "border": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Snapshots of some early concepts/moodboards."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Visual Design"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Some of our earlier experiments with homepage concepts didn't go to waste though. There were some typographic and color palette choices that worked well in these early iterations. We introduced navy blue into the colour palette and made the main bright blue an accent colour for buttons and links. We also brought a serif into the typographic mix. Both of these choices worked well with the keywords of trustworthiness and elegance."
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "In collaboration with the Director of Marketing and after more iterations we settled on a new look that was simple and elegant."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthCustom": {
+                        "small": 75,
+                        "medium": 75,
+                        "large": 77
+                      },
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "injury-board/home-desktop",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthCustom": {
+                        "init": 50,
+                        "small": 25,
+                        "medium": 25,
+                        "large": 23
+                      },
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "injury-board/home-mobile",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "The homepage of the Injury Board on desktop and mobile devices."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Across other pages on the site we applied these same principles. Firm pages were updated to give content previously squeezed into a tight three column layout more breathing room for easier scanning for users. We also needed to consider flexible layouts that would be balanced regardless if firms had one to multiple addresses, attorneys or social media channels and various lengths of copy for any given section."
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "This also applied to member pages with varying lengths of information provided for bios, roles and memberships."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "l",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "2-3",
+                      "widthMedium": "2-5",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "injury-board/firm-desktop",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "2-3",
+                      "widthMedium": "2-5",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "injury-board/member-desktop",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
+                      "widthMedium": "1-5",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "justify": "center",
+                          "content": [
+                            {
+                              "renderType": "image",
+                              "image": "injury-board/member-mobile",
+                              "border": true
+                            },
+                            {
+                              "renderType": "image",
+                              "image": "injury-board/firm-page-mobile",
+                              "border": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Firm and individual member pages on desktop and mobile devices."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Development"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "We applied this new look to other pages like the directory. The existing site used a standard Google Maps embed to search and show firms. It was cluttered with the number of markers and extraneous icons. Given the emphasis on simplicity we streamlined the map to outlines of countries, states and cities and street names at higher zoom levels to avoid information overload. The map was also a good opportunity to introduce greater interactivity to create a stand-out experience stakeholders had voiced as being important earlier in the project."
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Using the Leaflet and Algolia libraries we created a map with selectable states and clusters and a simple search bar with autocomplete. This reduced the clutter for a cleaner, more intuitive UI that allows users to find what they're looking for in an exploratory way. Improving the display of results was also key to creating a more intuitive UI. Previously, the results were displayed on a separate page. We removed that extra step for users in the redesign by showing results in a sidebar to the right and below on mobile devices."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "l",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "2-3",
+                      "widthMedium": "1-2",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "injury-board/directory-desktop",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "2-3",
+                      "widthMedium": "1-2",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "injury-board/directory-selected-state-desktop",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "2-3",
+                      "widthMedium": "1-2",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "injury-board/directory-selected-firm-desktop",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "injury-board/directory-mobile",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "injury-board/directory-selected-state-mobile",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "injury-board/directory-selected-firm-mobile",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Directory page in full view, with a selected state and with a selected firm."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Creating a stand-out experience with the use of animations and transitions expressed by stakeholders also formed a key part of the implementation stage. Reveals and subtle fades when elements were visible in the viewport were used to complement the content and elegant look we were seeking to achieve while not being distracting or overdone."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "video",
+                  "title": "Homepage animation",
+                  "source": "injury-board/home.mp4"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Homepage loading and content animating in on scroll."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "As outlined earlier, creating a good experience for internal users was also a priority for this project. As an organization experienced with WordPress, moving to that platform was a natural next step. We create a custom WordPress theme with custom post types and fields for firms and members and arranged them into intuitive sections for non-technical content editors to fill in the necessary information with ease."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "aspectRatio",
+                  "percent": 47,
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "3-4",
+                      "classes": "absolute top-0 left-0",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "injury-board/wordpress-edit-firm",
+                          "border": true
+                        }
+                      ] 
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "3-5",
+                      "classes": "absolute right-0 bottom-0",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "injury-board/wordpress-edit-member",
+                          "border": true
+                        }
+                      ] 
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Back-end screens for firms and members to be easily edited."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "maxWidth": "xs",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "The Outcome"
+        },
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "content": "Stakeholders were thrilled with the new look and feel of the site. It complemented the new brand direction well and created an elegant and easy-to-use experience they were seeking. Feedback from individual users and members after launch was positive. They noted the improved look and more importantly, found it easier to find the right attorney for their needs."
+        },
+        {
+          "renderType": "button",
+          "title": "View Injury Board",
+          "richText": true,
+          "externalLink": "https://www.injuryboard.org/"
+        }
+      ]
+    }
+  ]
+}

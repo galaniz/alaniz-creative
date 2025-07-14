@@ -1,0 +1,163 @@
+{
+  "contentType": "work",
+  "title": "Grand Rapids Community College",
+  "slug": "grcc",
+  "date": "2020-09-05",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "passwordProtect": true,
+  "hero": {
+    "image": "grcc/hero",
+    "border": true,
+    "wave": "four"
+  },
+  "blob": "four",
+  "theme": {
+    "primary-dark": "#005697",
+    "primary-light": "#43abf9"
+  },
+  "related": [
+    "work--link21",
+    "work--citris"
+  ],
+  "category": [
+    "work-category--ui-design",
+    "work-category--prototype"
+  ],
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "Overview"
+        },
+        {
+          "renderType": "container",
+          "layout": "row-s",
+          "gap": "m",
+          "gapLarge": "l",
+          "tag": "dl",
+          "content": [
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Year"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "2020"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Agency"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Kalamuna"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Team"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Project Manager"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "UX Designers"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Web Developer"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Role"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--ui-design",
+                      "content": "UI design"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--prototype",
+                      "content": "Prototype"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View GRCC",
+          "richText": true,
+          "externalLink": "https://www.grcc.edu/"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "Details coming soon!"
+        }
+      ]
+    }
+  ]
+}

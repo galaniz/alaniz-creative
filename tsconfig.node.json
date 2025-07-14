@@ -1,13 +1,17 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "skipLibCheck": true,
     "target": "es2022",
-    "module": "es2022",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
     "allowJs": true,
+    "resolveJsonModule": true,
     "moduleDetection": "force",
     "isolatedModules": true,
+    "incremental": true,
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.node",
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
@@ -17,10 +21,9 @@
     "noImplicitThis": true,
     "noFallthroughCasesInSwitch": true,
     "removeComments": true,
+    "outDir": "lib",
     "lib": [
-      "es2022",
-      "dom",
-      "dom.iterable"
+      "es2022"
     ]
   },
   "include": [
@@ -29,6 +32,11 @@
   "exclude": [
     "site",
     "lib",
-    "node_modules"
+    "node_modules",
+    "src/workers",
+    "src/**/*Block.ts",
+    "src/**/*Block.tsx",
+    "src/**/*Client.ts",
+    "src/**/*Types.ts"
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "name": "marketing-site",
+  "main": "./src/workers/Site/SiteWorker.ts",
+  "compatibility_date": "2025-06-01",
+  "keep_vars": true,
+  "minify": true,
+  "assets": {
+    "directory": "./site/",
+    "run_worker_first": true,
+    "not_found_handling": "404-page",
+    "binding": "ASSETS"
+  },
+  "env": {
+    "preview": {
+      "main": "./src/workers/Preview/PreviewWorker.ts"
+    },
+    "staging": {
+      "main": "./src/workers/Staging/StagingWorker.ts"
+    }
+  }
+}

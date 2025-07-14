@@ -1,0 +1,162 @@
+{
+  "contentType": "work",
+  "title": "Kalamuna",
+  "slug": "kalamuna",
+  "date": "2021-06-10",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "hero": {
+    "image": "kalamuna/hero",
+    "border": true,
+    "wave": "three"
+  },
+  "blob": "three",
+  "theme": {
+    "primary-dark": "#ce3c89",
+    "primary-light": "#e085b5"
+  },
+  "related": [
+    "work--link21",
+    "work--hey-tony"
+  ],
+  "category": [
+    "work-category--ux-design",
+    "work-category--ui-design"
+  ],
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "Overview"
+        },
+        {
+          "renderType": "container",
+          "layout": "row-s",
+          "gap": "m",
+          "gapLarge": "l",
+          "tag": "dl",
+          "content": [
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Year"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "2021"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Agency"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Kalamuna"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Team"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Project Manager"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "UX Designer"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Web Developer"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Role"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--ux-design",
+                      "content": "UX design"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--ui-design",
+                      "content": "UI design"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View Kalamuna",
+          "richText": true,
+          "externalLink": "https://www.kalamuna.com/"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "Details coming soon!"
+        }
+      ]
+    }
+  ]
+}

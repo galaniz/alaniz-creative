@@ -1,13 +1,16 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "skipLibCheck": true,
     "target": "es2022",
     "module": "es2022",
     "moduleResolution": "bundler",
-    "resolveJsonModule": true,
     "allowJs": true,
+    "resolveJsonModule": true,
     "moduleDetection": "force",
     "isolatedModules": true,
+    "incremental": true,
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.client",
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
@@ -17,6 +20,7 @@
     "noImplicitThis": true,
     "noFallthroughCasesInSwitch": true,
     "removeComments": true,
+    "outDir": "lib",
     "lib": [
       "es2022",
       "dom",
@@ -24,11 +28,11 @@
     ]
   },
   "include": [
-    "src/**/*.ts"
+    "window.d.ts",
+    "src/**/*Client.ts"
   ],
   "exclude": [
     "site",
-    "lib",
-    "node_modules"
+    "lib"
   ]
 }

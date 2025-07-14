@@ -1,0 +1,832 @@
+{
+  "contentType": "work",
+  "title": "Fortis Group",
+  "slug": "fortis-group",
+  "date": "2019-09-10",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "hero": {
+    "image": "fortis-group/hero",
+    "border": true,
+    "wave": "two"
+  },
+  "blob": "two",
+  "theme": {
+    "primary-dark": "#204389",
+    "primary-light": "#95b0e6",
+    "secondary-dark": "#141d2d",
+    "secondary-light": "#5087e8",
+    "video-bg": "#132852",
+    "video-border": "var(--video-bg)",
+    "video-play-bg": "var(--background-light)",
+    "video-play-color": "#204389"
+  },
+  "related": [
+    "work--injury-board",
+    "work--later-newsroom"
+  ],
+  "category": [
+    "work-category--ui-design",
+    "work-category--web-development"
+  ],
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "Overview"
+        },
+        {
+          "renderType": "container",
+          "layout": "row-s",
+          "gap": "m",
+          "gapLarge": "l",
+          "tag": "dl",
+          "content": [
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Year"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "2019"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Agency"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "42 North"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Team"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Project Manager"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Role"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--ui-design",
+                      "content": "UI design"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--web-development",
+                      "content": "Web development"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View Fortis Group",
+          "richText": true,
+          "externalLink": "https://fortisgroup.ca/"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "What is Fortis Group?"
+        },
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "content": "Fortis Group is a general contracting company with over 40 years of experience in the construction industry. They work in a variety of sectors with clients spanning institutional, commercial, industrial, recreational and residential industries. They are known for their experience, reputation and innovation in communities they operate in."
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Project"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Redesign and develop the Fortis Group website."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "The Brief"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Context"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Fortis Group was looking to freshen up their site. Their site was starting to look dated, particularly when compared to their competitors' sites. Many of their competitors recently updated their sites to more modern designs underscoring their work. This was an area they were seeking to improve, as their existing projects page displayed low quality images of their construction projects with little to no detail. Additionally, their site was an odd hybrid as a static site using the Kirby CMS mainly for cleaner urls. This back-end architecture was confusing and made the site difficult to maintain and update."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Goals"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": "Distinguish from competition while striving for clean and modern look"
+                },
+                {
+                  "tag": "li",
+                  "content": "Improve presentation of work projects"
+                },
+                {
+                  "tag": "li",
+                  "content": "Create an easier to manage back-end"
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Guiding Keywords"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "From this brief and conversations with stakeholders we captured these keywords to use as our focus throughout all phases of the project:"
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "s",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "content": [
+            {
+              "renderType": "container",
+              "layout": "row",
+              "gap": "m",
+              "gapLarge": "l",
+              "justify": "center",
+              "align": "center",
+              "tag": "ul",
+              "paddingTop": "l",
+              "paddingTopLarge": "xl",
+              "paddingBottom": "l",
+              "paddingBottomLarge": "xl",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "h2-d",
+                  "content": "Modern",
+                  "color": "theme-secondary"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "h2-d",
+                  "content": "Innovative",
+                  "color": "theme-primary"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "h2-d",
+                  "content": "Impressive",
+                  "color": "theme-secondary"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "h2",
+                  "type": "normal",
+                  "content": "Easy-to-use",
+                  "color": "theme-primary"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "h2",
+                  "type": "normal",
+                  "content": "Sleek",
+                  "color": "theme-secondary"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "h2",
+                  "type": "normal",
+                  "content": "Trustworthy",
+                  "color": "theme-primary"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Process"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Content"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "We started off creating a sitemap of their existing navigation structure and collaborated with their marketing team to add and remove pages as needed. For example, tenders were introduced as a new page and custom post type that would be needed for the site and their community page was removed as it was merging with their news posts. With this updated sitemap and brief analysis of their competitor sites, mainly the strengths and weaknesses, we created an outline of homepage content and iterated with their team on what to prioritize and include."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Visual Design"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Next, we got to work on sketches and homepage concepts. From these concepts, some themes emerged, like the ample use of negative space. Many of their competitors made good use of negative space to show off their work and create a modern look and feel and incorporated that in our approach as well. Text blocks overlapping images along with the use of angles throughout were other motifs that complemented our keywords—modern and innovative by introducing visual dynamism. Shifts in their colour palette were also happening simultaneously as new print materials were being developed. Darker and richer blues replaced their warmer blues to extend the maturity and trustworthiness of their brand."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xl",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "classes": "breakout",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "image",
+                              "image": "fortis-group/concept-1",
+                              "border": true
+                            },
+                            {
+                              "renderType": "image",
+                              "image": "fortis-group/concept-2",
+                              "border": true
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "image",
+                              "image": "fortis-group/concept-3",
+                              "border": true
+                            },
+                            {
+                              "renderType": "image",
+                              "image": "fortis-group/concept-4",
+                              "border": true
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "image",
+                              "image": "fortis-group/concept-5",
+                              "border": true
+                            },
+                            {
+                              "renderType": "image",
+                              "image": "fortis-group/concept-6",
+                              "border": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Snapshots of some early concepts/moodboards."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "After some more iterating the homepage content and look and feel was established. It introduced who they are, what they do and most importantly their work to users in a modern and visually interesting way."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "m",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "2-3",
+                      "widthMedium": "1-2",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "fortis-group/home-top",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "2-3",
+                      "widthMedium": "1-2",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "fortis-group/home-bottom",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Full homepage of Fortis Group on desktop devices."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "We applied this new look and feel to other pages reusing elements and patterns where suitable to create a cohesive and consistent look. The text blocks overlapping images component and variants of it were used across project, team and news pages. This component in particular was designed to be flexible to accommodate different amounts and types of information."
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "With individual project pages, we were working with a blank canvas as their existing site didn't have any. Based on what we saw on competitor sites and the importance of displaying the quality of their work we opted for a simple easy-to-follow layout with key information like budget, size, sector, client and project description at the top and images of the final outcome below."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "l",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "2-3",
+                      "widthMedium": "1-2",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "fortis-group/news-desktop",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "2-3",
+                      "widthMedium": "1-2",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "fortis-group/projects-desktop",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "2-3",
+                      "widthMedium": "1-2",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "fortis-group/project-desktop",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "fortis-group/news-mobile",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "fortis-group/team-member-mobile",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-2",
+                      "widthSmall": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "fortis-group/project-mobile",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "News and project pages on desktop and mobile views of news, about and projects pages."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Development"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "We took inspiration in some aspects of content development and visual design from competitor sites, but differentiating Fortis Group from their competitors was also important. Animations were a great way to achieve this. They also help add to the presentation of their work and team and help create a sleek and impressive feel overall. Below are samples of animations at work from a unique page loader to page transitions to reveals on scroll."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "video",
+                  "title": "Homepage animation",
+                  "source": "fortis-group/home.mp4"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Homepage loading and content animating in on scroll."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Towards the end of the project many forms grew from a few inputs to several groups of inputs. This meant including more input types and flexibility in laying them out to accommodate more complicated forms for launch and for the future. We made fields more flexible on the front and back-end to achieve this."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "aspectRatio",
+                  "percent": 59,
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "3-4",
+                      "classes": "absolute top-0 left-0",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "fortis-group/wordpress-edit-form",
+                          "border": true
+                        }
+                      ] 
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "1-2",
+                      "classes": "absolute right-0 bottom-0",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "fortis-group/form-desktop",
+                          "border": true
+                        }
+                      ] 
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Back-end and front-end screens for a subcontractor request form."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Creating an easier to manage backend was another important aspect to this project. We created custom post types for projects, tenders and careers and used custom fields and custom blocks, introduced by the Gutenberg block editor to offer flexibility and ease in choosing and laying out elements throughout."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "image",
+                  "image": "fortis-group/wordpress-edit-home",
+                  "border": true
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Back-end screen for homepage to be easily edited."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "maxWidth": "xs",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "The Outcome"
+        },
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "content": "Stakeholders were extremely pleased with the updates to the look and feel as well as the content on the site. It represented who they are, the quality of their work and company in a way they were proud to share. Updates to the website management experience were also a welcome improvement."
+        },
+        {
+          "renderType": "button",
+          "title": "View Fortis Group",
+          "richText": true,
+          "externalLink": "https://fortisgroup.ca/"
+        }
+      ]
+    }
+  ]
+}

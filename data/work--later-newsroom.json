@@ -1,0 +1,864 @@
+{
+  "contentType": "work",
+  "title": "Later Newsroom",
+  "slug": "later-newsroom",
+  "date": "2022-12-15",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "hero": {
+    "image": "later-newsroom/hero",
+    "border": true,
+    "wave": "two"
+  },
+  "blob": "two",
+  "theme": {
+    "primary-dark": "#4140B0",
+    "primary-light": "#9292d7"
+  },
+  "related": [
+    "work--why-we-serve",
+    "work--latercon"
+  ],
+  "category": [
+    "work-category--ui-design",
+    "work-category--web-development"
+  ],
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "Overview"
+        },
+        {
+          "renderType": "container",
+          "layout": "row-s",
+          "gap": "m",
+          "gapLarge": "l",
+          "tag": "dl",
+          "content": [
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Year"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "2022"
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "div",
+              "type": "columns",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Team"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Web Manager"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "PR Manager"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "SEO Manager"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Copywriter"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Graphic Designer"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Web Developer"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Role"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--ui-design",
+                      "content": "UI design"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--web-development",
+                      "content": "Web development"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View Later Newsroom",
+          "richText": true,
+          "externalLink": "https://later.com/newsroom/"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "What is Later?"
+        },
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "content": "Later (formerly Latergramme) started in 2014 as an Instagram scheduler. It has since evolved into an all-in-one social media marketing platform with over 7 million users. Their tools help small business owners and creators plan, schedule and monetize their social content."
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Project"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Design and develop a dedicated space on later.com for all press related information."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "The Brief"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Context"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "The communications team spearheaded this project around the opportunity to be more in control of the company brand and narrative by having a definitive, trustworthy source of company news for journalists and influencers. They also often handled inquiries an online newsroom could easily answer, which would be particularly helpful as they are a small team. Additionally, research on competitors' organic traffic from the demand generation SEO manager showed that all of Later's main competitors had newsrooms with good page authority scores and organic traffic levels increasing year over year."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Goals"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": "Increase organic traffic and domain authority"
+                },
+                {
+                  "tag": "li",
+                  "content": "Decrease unnecessary inquiries to communications team"
+                },
+                {
+                  "tag": "li",
+                  "content": "Long term &ndash; improve brand perception to potential and existing customers and investors to help drive growth and revenue"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Process"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Wireframes"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Communications and SEO stakeholders initially imagined the newsroom as a single landing page as they wanted to keep things simple. But once we put their content outline into a wireframe it became apparent the page was trying to do too much by placing all articles in continuous sliders and including a full contact form. To avoid information overload we suggested dividing it up into a few pages accessible by local navigation. This way content on each page can be more focused but also flexible as the newsroom evolves."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "m",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "align": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "3-4",
+                      "widthMedium": "1-2",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "later-newsroom/news-wireframe-1",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "3-4",
+                      "widthMedium": "1-2",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "later-newsroom/news-wireframe-2",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "The first wireframe of the landing page compared to the more streamlined version we ended up with."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Visual Design"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Design System Enhancements"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "We aimed to reuse as many existing components as possible so used this project as an opportunity to improve and standardize components like the secondary navigation, secondary buttons, hero, cards and form elements. Most of the updates were centered around consistency with spacing (following an 8-point grid system), more intentional use of colour like sticking to dark purple as the main interactive colour as well as following "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html",
+                  "content": "text contrast"
+                },
+                {
+                  "content": " and "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html",
+                  "content": "non-text contrast"
+                },
+                {
+                  "content": " accessibility guidelines. Prior versions of the hero and secondary buttons had poor contrast like light pink on white and vice-versa. In the new versions, hero text is charcoal and dark grey and secondary button text is dark purple as they all have contrast ratios of at least 4.5:1."
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "During this project we also learned about non-text contrast guidelines which specify that all interactive elements have a contrast ratio of at least 3:1 against adjacent backgrounds, which helps make interactivity more obvious to users. The initial design of the contact form had light grey inputs, which had an abysmal 1.17:1 contrast ratio against white. To fix this we updated all inputs to use high-contrast borders instead of backgrounds to indicate visual boundaries. We also made subtle improvements to error messaging like including an error summary at the top of the form and moving input error messages into their labels for better readability and semantics."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "l",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthCustom": {
+                        "init": 64,
+                        "small": 65,
+                        "medium": 54,
+                        "large": 39.25
+                      },
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "later-newsroom/hero-minimal",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthCustom": {
+                        "init": 36,
+                        "small": 35,
+                        "medium": 28,
+                        "large": 21.5
+                      },
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "later-newsroom/card",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthCustom": {
+                        "small": 75,
+                        "medium": 60,
+                        "large": 39.25
+                      },
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "image",
+                              "image": "later-newsroom/navigation-secondary",
+                              "border": true
+                            },
+                            {
+                              "renderType": "image",
+                              "image": "later-newsroom/button-secondary",
+                              "border": true
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthLarge": "3-4",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "later-newsroom/form-elements",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Hero, card, navigation, button and form element components before and after newsroom design update."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Graphics Art Direction"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "To start we reused thumbnails from the original news articles but variability in quality led us to create custom graphics. Our first pass at creating these graphics was based on an existing art direction for social media posts. Feedback from the creative team indicated that a custom direction was more suitable as the newsroom is a distinct part of the site. They put together a flowchart inspired design to show the link between Later and the media in a professional but playful way that better fits Later's fun brand identity."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "aspectRatio",
+                  "percent": 68.875,
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthCustom": {
+                        "init": 62.75,
+                        "small": 62.75,
+                        "medium": 62.75,
+                        "large": 62.75
+                      },
+                      "classes": "absolute left-0 top-0",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "later-newsroom/article-graphic-1",
+                          "border": true
+                        }
+                      ] 
+                    },
+                    {
+                      "renderType": "column",
+                      "widthCustom": {
+                        "init": 30.95,
+                        "small": 30.95,
+                        "medium": 30.95,
+                        "large": 30.95
+                      },
+                      "classes": "absolute top-0 right-0",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "later-newsroom/press-release-graphic-2",
+                          "border": true
+                        }
+                      ] 
+                    },
+                    {
+                      "renderType": "column",
+                      "widthCustom": {
+                        "init": 30.95,
+                        "small": 30.95,
+                        "medium": 30.95,
+                        "large": 30.95
+                      },
+                      "classes": "absolute bottom-0 left-0",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "later-newsroom/press-release-graphic-1",
+                          "border": true
+                        }
+                      ] 
+                    },
+                    {
+                      "renderType": "column",
+                      "widthCustom": {
+                        "init": 62.75,
+                        "small": 62.75,
+                        "medium": 62.75,
+                        "large": 62.75
+                      },
+                      "classes": "absolute bottom-0 right-0",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "later-newsroom/article-graphic-2",
+                          "border": true
+                        }
+                      ] 
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Initial article & press release graphics at the top vs versions using the art direction by the creative team."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Development"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "I was initially tasked with leading design on this project but due to changes on the team also took on more front-end development tasks. One of the main tasks was creating the slider of featured news articles at the top of the newsroom landing page. While sliders typically have many "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://www.a11yproject.com/posts/a-guide-to-troublesome-ui-components/#carousels",
+                  "content": "technical accessibility issues"
+                },
+                {
+                  "content": " associated with them we looked at examples like product sliders on apple.com and "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://www.w3.org/WAI/ARIA/apg/patterns/carousel/examples/carousel-2-tablist/",
+                  "content": "carousel patterns"
+                },
+                {
+                  "content": " from the W3C ARIA guides that use tab roles and structures to control and communicate slider state. We mapped this out with annotations (adapted from "
+                },
+                {
+                  "tag": "a",
+                  "link": "https://www.figma.com/community/file/953682768192596304",
+                  "content": "Indeed's A11y Annotation Kit"
+                },
+                {
+                  "content": " on top of the visual design to consider and break down the interaction into focus states, reading and tabbing order, roles and labels before jumping into development. This was a helpful reference throughout implementation."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "image",
+                  "image": "later-newsroom/a11y-annotations",
+                  "border": true
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Slider mockup overlaid with callouts and notes to communicate accessibility considerations."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "The other development challenge was validating and processing the contact form. Later.com is a static site with only third-party generated forms. The first version of the form was created with Klaviyo, but substantial issues like lack of support for textareas and unreliable email delivery to one contact presented us with the opportunity to create our own forms and implement the form element improvements made in visual design. The additional time taken in this phase was well worth it in terms of better user experience&ndash;performance, usefulness of error and result messages and style consistency versus third-party forms. And also team development&ndash;learning about and implementing serverless functions, the honeypot anti-spam technique, autocomplete tokens as well as keyboard and screen reader testing."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Outcome"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "In the months after the newsroom was launched most short term SEO goals were met. Organic traffic was comparable to Later's main competitors and exceeded expectations. Backlinks also surpassed initial targets. Domain authority didn't increase but stayed around the same value. Similarly, page authority was average. Overall, these metrics indicate the newsroom met and continues to meet genuine user interest."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "l",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "3-4",
+                      "widthMedium": "2-3",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "later-newsroom/news-desktop",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthMedium": "4-5",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "row",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "column",
+                              "widthCustom": {
+                                "small": 27,
+                                "medium": 27,
+                                "large": 100
+                              },
+                              "content": [
+                                {
+                                  "renderType": "container",
+                                  "layout": "row",
+                                  "gap": "m",
+                                  "gapLarge": "l",
+                                  "content": [
+                                    {
+                                      "renderType": "column",
+                                      "width": "1-2",
+                                      "widthSmall": "1-1",
+                                      "widthLarge": "1-2",
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "later-newsroom/news-mobile-top",
+                                          "border": true
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "renderType": "column",
+                                      "width": "1-2",
+                                      "widthSmall": "1-1",
+                                      "widthLarge": "1-2",
+                                      "content": [
+                                        {
+                                          "renderType": "image",
+                                          "image": "later-newsroom/news-mobile-middle",
+                                          "border": true
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "widthCustom": {
+                                "small": 73,
+                                "medium": 73,
+                                "large": 100
+                              },
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "later-newsroom/contact-desktop",
+                                  "border": true
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "3-4",
+                      "widthMedium": "2-3",
+                      "widthLarge": "1-3",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "image",
+                              "image": "later-newsroom/archive-desktop",
+                              "border": true
+                            },
+                            {
+                              "renderType": "image",
+                              "image": "later-newsroom/media-kit-desktop",
+                              "border": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Desktop views of landing page, contact, archive and media kit pages and mobile view of landing page."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Internally, the improvements to the design system from this project helped streamline other projects as many updated components were easy to reuse with little adjustment. One example is a project updating resource landing pages to a simplified version of the newsroom landing page as part of an ongoing effort to clean up old styles and have a more consistent visual language throughout the site. More importantly, stakeholders were extremely pleased with the end result. From the PR Manager:"
+            },
+            {
+              "renderType": "richText",
+              "tag": "blockquote",
+              "content": [
+                {
+                  "tag": "p",
+                  "content": "\"Great work team! Looks amazing! The best I have seen when it comes to press pages!\""
+                }
+              ]
+            },
+            {
+              "renderType": "button",
+              "title": "View Later Newsroom",
+              "richText": true,
+              "externalLink": "https://later.com/newsroom/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

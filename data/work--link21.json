@@ -1,0 +1,163 @@
+{
+  "contentType": "work",
+  "title": "Link21 Program",
+  "slug": "link21",
+  "date": "2021-01-10",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "passwordProtect": true,
+  "hero": {
+    "image": "link21/hero",
+    "border": true,
+    "wave": "one"
+  },
+  "blob": "one",
+  "theme": {
+    "primary-dark": "#00786a",
+    "primary-light": "#25c1af"
+  },
+  "related": [
+    "work--grcc",
+    "work--kalamuna"
+  ],
+  "category": [
+    "work-category--ui-design",
+    "work-category--prototype"
+  ],
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "Overview"
+        },
+        {
+          "renderType": "container",
+          "layout": "row-s",
+          "gap": "m",
+          "gapLarge": "l",
+          "tag": "dl",
+          "content": [
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Year"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "2021"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Agency"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Kalamuna"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Team"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Project Manager"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "UX Designers"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Web Developer"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Role"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--ui-design",
+                      "content": "UI design"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "work-category--prototype",
+                      "content": "Prototype"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View Link21 Program",
+          "richText": true,
+          "externalLink": "https://link21program.org/"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "Details coming soon!"
+        }
+      ]
+    }
+  ]
+}

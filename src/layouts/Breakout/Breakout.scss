@@ -1,0 +1,19 @@
+/**
+ * Layouts - Breakout
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/lib/utils/utils" as util;
+
+/* Styles */
+
+.breakout {
+  @include util.breakpoint-min-max("0", "container-xl-no-padding") {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: -5vw;
+    margin-right: -5vw;
+    max-width: 110vw;
+  }
+}

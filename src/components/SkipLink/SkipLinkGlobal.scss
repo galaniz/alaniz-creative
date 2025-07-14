@@ -1,0 +1,14 @@
+/**
+ * Components - Skip Link Styles
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/lib/components/SkipLink/SkipLink";
+
+/* Styles */
+
+.skip-link:focus {
+  top: var(--2xs);
+  left: var(--2xs);
+}

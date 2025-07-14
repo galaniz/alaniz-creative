@@ -1,0 +1,113 @@
+/**
+ * Objects - card
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/src/utils/functions" as func;
+@use "@alanizcreative/formation/src/utils/mixins" as mix;
+
+/* Styles */
+
+.o-card[data-type="c"],
+.o-card[data-type="a"] {
+  --ph: 0;
+
+  [data-image] {
+    max-width: func.calc-rem(900px);
+    padding: var(--ph);
+  }
+
+  @include mix.breakpoint-min("s") {
+    --ph: 0 var(--l);
+  }
+}
+
+.o-card[data-type="c"] {
+  --pl: 0;
+  --pr: 0;
+  --pt: var(--xl);
+  --pb: var(--xl);
+  --sd: block;
+  --wd: 100%;
+  --r1: 0;
+  --l1: auto;
+  --r2: auto;
+  --l2: 0;
+
+  &:nth-child(3n-1) {
+    padding-right: var(--pl);
+  }
+
+  &:nth-child(3n) {
+    padding-left: var(--pr);
+  }
+
+  &:nth-child(6n-1) [data-text] {
+    margin-left: var(--l1);
+    margin-right: var(--r1);
+  }
+
+  &:nth-child(6n+6) [data-text] {
+    margin-left: var(--l2);
+    margin-right: var(--r2);
+  }
+
+  &:nth-child(3n-1),
+  &:nth-child(3n) {
+    width: var(--wd);
+
+    svg:first-child {
+      display: var(--sd);
+    }
+  }
+
+  &:nth-child(6n+6),
+  &:nth-child(6n-4) {
+    padding-top: var(--pt);
+  }
+
+  &:nth-child(6n-1),
+  &:nth-child(6n-3) {
+    padding-bottom: var(--pb);
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  @include mix.breakpoint-min("l") {
+    --pl: var(--l);
+    --pr: var(--l);
+  }
+
+  @include mix.breakpoint-min("m") {
+    --sd: none;
+    --wd: 50%;
+    --pt: 0;
+    --pb: 0;
+    --r1: auto;
+    --l1: 0;
+    --r2: 0;
+    --l2: auto;
+
+    &:nth-child(3n+1) [data-text] {
+      --text-xs: var(--text-s);
+      --3xs: var(--2xs);
+      --s: var(--m);
+    }
+
+    &:nth-child(3n-1),
+    &:nth-child(3n) {
+      --h2: var(--h4);
+
+      [data-text] {
+        padding-top: var(--m);
+      }
+    }
+
+    [data-widow="true"] &:nth-child(6n-1):last-child {
+      padding-top: 0;
+    }
+  }
+}
