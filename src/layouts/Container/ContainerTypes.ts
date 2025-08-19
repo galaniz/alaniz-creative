@@ -5,8 +5,17 @@
 /* Imports */
 
 import type { Item } from '../../global/globalTypes.js'
-import type { ContainerArgs as FormationContainerArgs } from '@alanizcreative/formation-static/layouts/Column/ColumnTypes.js'
 import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
+import type {
+  ConfigSizes,
+  ConfigJustify,
+  ConfigAlign,
+  ConfigContainer,
+  ConfigBackgrounds
+} from '../../config/configTypes.js'
+import type {
+  ContainerArgs as FormationContainerArgs
+} from '@alanizcreative/formation-static/layouts/Container/ContainerTypes.js'
 
 /**
  * @typedef {'block'|'col'|'col-s'|'col-m'|'col-l'|'row'|'row-s'|'row-m'|'row-l'} ContainerLayout
@@ -25,42 +34,46 @@ export type ContainerLayout =
 /**
  * @typedef {object} ContainerArgs
  * @extends {FormationContainerArgs}
+ * @prop {ConfigContainer} [maxWidth]
+ * @prop {ConfigBackground} [background]
  * @prop {ContainerLayout} [layout='block']
+ * @prop {ConfigSizes} [paddingTop]
+ * @prop {ConfigSizes} [paddingTopLarge]
+ * @prop {ConfigSizes} [paddingBottom]
+ * @prop {ConfigSizes} [paddingBottomLarge]
+ * @prop {ConfigSizes} [paddingLeft]
+ * @prop {ConfigSizes} [paddingLeftLarge]
+ * @prop {ConfigSizes} [paddingRight]
+ * @prop {ConfigSizes} [paddingRightLarge]
+ * @prop {ConfigSizes} [gap]
+ * @prop {ConfigSizes} [gapLarge]
+ * @prop {ConfigJustify} [justify]
+ * @prop {ConfigAlign} [align]
  * @prop {'rounded'|'full'} [border]
  * @prop {boolean} [grow=false]
+ * @prop {boolean} [breakout=false]
+ * @prop {boolean} [richTextStyles=false]
  */
-export interface ContainerArgs extends FormationContainerArgs {
+export interface ContainerArgs extends FormationContainerArgs<string, ConfigContainer> {
+  background?: ConfigBackgrounds
   layout?: ContainerLayout
+  paddingTop?: ConfigSizes
+  paddingTopLarge?: ConfigSizes
+  paddingBottom?: ConfigSizes
+  paddingBottomLarge?: ConfigSizes
+  paddingLeft?: ConfigSizes
+  paddingLeftLarge?: ConfigSizes
+  paddingRight?: ConfigSizes
+  paddingRightLarge?: ConfigSizes
+  gap?: ConfigSizes
+  gapLarge?: ConfigSizes
+  justify?: ConfigJustify
+  align?: ConfigAlign
   border?: 'rounded' | 'full'
   grow?: boolean
+  breakout?: boolean
+  richTextStyles?: boolean
 }
-
-"classes": "b-all b-theme b-radius-s b-radius-m-m overflow-hidden l-isolate",
-"background": "background-light",
-"classes": "flex-grow-1",
-
-tag = 'div',
-layout = 'column',
-maxWidth = '',
-paddingTop = '',
-paddingTopLarge = '',
-paddingBottom = '',
-paddingBottomLarge = '',
-gap = '',
-gapLarge = '',
-justify = '',
-align = '',
-classes = '',
-attr = '',
-richTextStyles = false
-
-tag?: string
-maxWidth?: string | number
-layoutClasses?: string
-classes?: string
-style?: string
-attr?: string
-nest?: boolean
 
 /**
  * @typedef {object} ContainerProps

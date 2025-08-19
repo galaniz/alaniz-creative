@@ -1,53 +1,47 @@
 /**
- * Objects - video
+ * Objects - Video Styles
  */
 
-/* Imports */
-
-@use "@alanizcreative/formation/src/config";
-@use "@alanizcreative/formation/src/utils/functions" as func;
-
-/* Styles */
-
-.o-video__bg {
-  --ld-color: var(--video-play-bg);
-
-  background: var(--video-bg);
-  border-color: var(--video-border);
-}
-
-.o-video__play,
-.o-video__pause {
-  --outline-color: var(--video-play-bg);
-
-  svg {
-    height: 40%;
+.video {
+  &[playing] {
+    --vid-play-display: none;
+    --vid-pause-display: block;
   }
 }
 
-.o-video__play {
-  --scale: 1.08;
+.video-bg {
+  --ld-color: var(--vid-play-bg);
+
+  background: var(--vid-bg);
+  border-color: var(--vid-border);
+}
+
+.video-play,
+.video-pause {
+  --outline-color: var(--vid-play-bg);
+}
+
+.video-play {
+  --sc: 1.08;
 
   width: 15%;
   min-width: var(--l);
   max-width: var(--2xl);
-  color: var(--video-play-color);
-
-  span {
-    background: var(--video-play-bg);
-    border-color: var(--video-bg);
-  }
-
-  [data-state="play"] & {
-    display: block;
-  }
+  color: var(--vid-play-color);
+  display: var(--vid-play-display, block);
 }
 
-.o-video__pause {
+.video-pause {
   margin: var(--xs);
-  background: rgba(func.get-color("foreground-base"), 0.75);
+  background: hsla(var(--foreground-base-hsl), 0.75);
+  display: var(--vid-pause-display, none);
+}
 
-  [data-state="pause"] & {
-    display: block;
-  }
+.video-play-bg {
+  background: var(--vid-play-bg);
+  border-color: var(--vid-bg);
+}
+
+.video-icon {
+  height: 40%;
 }

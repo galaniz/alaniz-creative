@@ -9,7 +9,7 @@
 /* Styles */
 
 .text-col-2 {
-  @include mix.breakpoint-min("s") {
+  @include util.breakpoint-min("s") {
     column-count: 2;
     column-gap: var(--m);
   }

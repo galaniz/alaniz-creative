@@ -13,7 +13,7 @@
   --sharp-color: var(--background-light);
   --interactive-color: var(--background-light);
 
-  @include mix.breakpoint-min("m") {
+  @include util.breakpoint-min("m") {
     --ft-relative: relative;
     --ft-legal: var(--foreground-base);
   }

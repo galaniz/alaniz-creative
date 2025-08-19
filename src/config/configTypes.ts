@@ -29,18 +29,16 @@ export interface ConfigVarsSvg {
  * @typedef {object} ConfigVarsCss
  * @prop {string} in
  * @prop {string} out
- * @prop {string} head
- * @prop {string} cache
+ * @prop {string} replace
+ * @prop {Map<string, string>} cache
  * @prop {string[]} safelist
- * @prop {Object<string, string>} static
  */
 export interface ConfigVarsCss {
   in: string
   out: string
-  head: string
-  cache: string
+  replace: string
+  cache: Map<string, string>
   safelist: string[]
-  static: Record<string, string>
 }
 
 /**
@@ -55,6 +53,7 @@ export interface ConfigVarsJs {
 
 /**
  * @typedef {object} ConfigVars
+ * @prop {boolean} local
  * @prop {Map<string, ConfigVarsSvg>} svg
  * @prop {Map<string, string>} template
  * @prop {Set<string>} style
@@ -63,6 +62,7 @@ export interface ConfigVarsJs {
  * @prop {ConfigVarsJs} js
  */
 export interface ConfigVars {
+  local: boolean
   svg: Map<string, ConfigVarsSvg>
   template: Map<string, string>
   style: Set<string>
@@ -70,6 +70,11 @@ export interface ConfigVars {
   css: ConfigVarsCss
   js: ConfigVarsJs
 }
+
+/**
+ * @typedef {'background-light'|'foreground-base'} ConfigBackgrounds
+ */
+export type ConfigBackgrounds = 'background-light' | 'foreground-base'
 
 /**
  * @typedef {'4xs'|'3xs'|'2xs'|'xs'|'s'|'m'|'l'|'xl'|'2xl'|'3xl'|'4xl'|'5xl'} ConfigSizes
@@ -109,9 +114,9 @@ export type ConfigAspectRatio = '1-1' | '16-10' | '16-9'
 export type ConfigBreakpoint = 0 | 600 | 900 | 1200
 
 /**
- * @typedef {'container'} ConfigContainer
+ * @typedef {'default'} ConfigContainer
  */
-export type ConfigContainer = 'container'
+export type ConfigContainer = 'default' | 'xl' | 'l' | 'm' | 's' | 'xs'
 
 /**
  * @typedef {'12'|'11'|'10'|'9'|'8'|'7'|'6'|'5'|'4'|'3'|'2'|'1'} ConfigColumn
@@ -129,3 +134,13 @@ export type ConfigColumn =
   '3' |
   '2' |
   '1'
+
+/**
+ * @typedef {'one'|'two'|'three'|'four'|'five'|'six'} ConfigBlob
+ */
+export type ConfigBlob = 'one' | 'two' | 'three' | 'four' | 'five' | 'six'
+
+/**
+ * @typedef {2|3|4|5|6} ConfigHeadingLevel
+ */
+export type ConfigHeadingLevel = 2 | 3 | 4 | 5 | 6

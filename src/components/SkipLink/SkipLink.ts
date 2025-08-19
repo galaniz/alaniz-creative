@@ -2,22 +2,12 @@
  * Components - Skip Link
  */
 
-/* Imports */
-
-import { addStyle } from '@alanizcreative/formation-static/utils/scriptStyle/scriptStyle.js'
-
 /**
  * Output link to main landmark.
  *
  * @return {string} HTMLAnchorElement
  */
 const SkipLink = (): string => {
-  /* Styles */
-
-  addStyle('components/SkipLink/SkipLink')
-
-  /* Output */
-
   return /* html */`
     <a
       href="#main"

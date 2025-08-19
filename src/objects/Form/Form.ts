@@ -1,200 +1,143 @@
 /**
- * Render - form
+ * Object - Form
  */
 
 /* Imports */
 
+import type { FormProps } from './FormTypes.js'
 import { v4 as uuid } from 'uuid'
-import { enumNamespace } from '../../vars/enums'
-import { scriptData, formMeta } from '../../vars/data'
-import errorSvg from '../../svg/Error/Error'
-import checkSvg from '../../svg/Checkmark/Checkmark'
-import loader from '../Loader/Loader'
+import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
+import { setStoreItem } from '@alanizcreative/formation-static/store/store.js'
+import { addScript, addStyle } from '@alanizcreative/formation-static/utils/scriptStyle/scriptStyle.js'
+import { config, configVars } from '../../config/config.js'
+import { ErrorSvg } from '../../svg/Error/Error.js'
+import { Loader } from '../Loader/Loader.js'
+import { Info } from '../Info/Info.js'
 
 /**
- * Function - output form wrapper
+ * Filter formation form props.
  *
- * @param {object} props
- * @param {object} props.args
- * @param {string} props.args.id
- * @param {string} props.args.action
- * @param {string} props.args.subject
- * @param {string} props.args.toEmail
- * @param {string} props.args.senderEmail
- * @param {string} props.args.submitLabel
- * @param {string} props.args.successTitle
- * @param {string} props.args.successText
- * @param {string} props.args.errorTitle
- * @param {string} props.args.errorText
- * @param {boolean} props.args.wrap
- * @param {string} props.args.row
- * @param {string} props.args.align
- * @return {object}
+ * @param {FormProps} props
+ * @return {FormProps}
  */
+const Form = (props: FormProps): FormProps => {
+  /* Props and args */
 
-interface Props {
-  args: {
-    id?: string
-    action?: string
-    subject?: string
-    toEmail?: string
-    senderEmail?: string
-    submitLabel?: string
-    successTitle?: string
-    successText?: string
-    errorTitle?: string
-    errorText?: string
-    wrap?: boolean
-    row?: string
-    align?: string
-  }
-}
-
-const form = (props: Props = { args: {} }): Render.Return => {
-  const { args = {} } = props
-
+  const { args } = props
   const {
-    id = '',
-    action = 'send-form',
-    subject = '',
-    toEmail = '',
-    senderEmail = '',
-    submitLabel = 'Send',
-    successTitle = '',
-    successText = '',
-    errorTitle = '',
-    errorText = '',
-    wrap = true,
-    row = 'm',
-    align = 'm'
+    action = 'contact',
+    successTitle,
+    successText,
+    toEmail,
+    senderEmail
   } = args
 
-  /* Id required */
+  /* Error summary */
 
-  if (id === '') {
-    return {
-      start: '',
-      end: ''
-    }
-  }
+  const errorSummaryId = 'tmpl-error-summary'
 
-  /* Add to form meta data */
-
-  if (subject !== '' || toEmail !== '' || senderEmail !== '') {
-    const meta: { subject?: string, toEmail?: string, senderEmail?: string } = {}
-
-    if (subject !== '') {
-      meta.subject = subject
-    }
-
-    if (toEmail !== '') {
-      meta.toEmail = toEmail
-    }
-
-    if (senderEmail !== '') {
-      meta.senderEmail = senderEmail
-    }
-
-    formMeta[id] = meta
-  }
-
-  /* Add to script data */
-
-  if (scriptData[`form-${id}`] === undefined && (successTitle !== '' || errorTitle !== '')) {
-    const messages: { successMessage?: object, errorMessage?: object } = {}
-
-    if (successTitle !== '') {
-      messages.successMessage = {
-        primary: successTitle,
-        secondary: successText
-      }
-    }
-
-    if (errorTitle !== '') {
-      messages.errorMessage = {
-        primary: errorTitle,
-        secondary: errorText
-      }
-    }
-
-    scriptData[`form-${id}`] = messages
-  }
-
-  scriptData.sendUrl = '/ajax/'
-
-  /* Honeypot */
-
-  const honeypotId: string = uuid()
-  const honeypotName = `${enumNamespace}_asi`
-  const honeypot = `
-    <div class="o-form__field col-12" data-asi>
-      <label class="o-form__label" for="${honeypotId}">Website</label>
-      <input type="url" name="${honeypotName}" id="${honeypotId}" autocomplete="off" class="js-input">
+  configVars.template.set(errorSummaryId, /* html */`
+    <div class="info-error flex gap-3xs px-xs py-xs b-radius-s w-full none outline-none" tabindex="-1">
+      ${ErrorSvg({
+        width: 's',
+        height: 's',
+        classes: 'w-m-m h-m-m'
+      })}
+      <div>
+        <h2 class="text-m wt-medium m-0">There is a problem</h2>
+        <ul class="flex col pb-4xs gap-4xs text-s ls-none e-line-all" role="list"></ul>
+      </div>
     </div>
-  `
+  `)
+
+  /* Inline error */
+
+  const errorInlineId = 'tmpl-error-inline'
+
+  configVars.template.set(errorInlineId, /* html */`
+    <span class="form-error-inline flex gap-4xs pt-3xs">
+      ${ErrorSvg({ width: 'xs', height: 's' })}
+      <span class="a-hide-vis">Error: </span>
+      <span class="text-s wt-medium" data-form-error-text></span>
+    </span>
+  `)
+
+  /* Error */
+
+  const errorId = Info({
+    title: 'Sorry, there is a problem with the service.',
+    text: 'Try again later.',
+    template: true,
+    type: 'error'
+  })
+
+  /* Success */
+
+  const successId = Info({
+    title: 'Thank you for your message!',
+    text: 'I will get back to you as soon as possible.',
+    template: true,
+    type: 'success'
+  })
+
+  /* Loader */
+
+  const loaderId = Loader()
+
+  /* Attributes */
+
+  const formId = uuid()
+  const siteKey = config.env.prod ? '0x4AAAAAABjOkItl_wP_zKgU' : '1x00000000000000000000BB'
+  let formAttr = ` action="${action}${config.env.prod ? '' : '-dev'}" error-summary="${errorSummaryId}" error-inline="${errorInlineId}" error="${errorId}" success="${successId}" loader="${loaderId}" sitekey="${siteKey}"`
+
+  if (isStringStrict(successTitle)) {
+    formAttr += ` success-title="${successTitle}"`
+  }
+
+  if (isStringStrict(successText)) {
+    formAttr += ` success-text="${successText}"`
+  }
+
+  /* Meta */
+
+  if (action === 'contact' && isStringStrict(toEmail) && isStringStrict('senderEmail')) {
+    setStoreItem('formMeta', {
+      toEmail,
+      senderEmail
+    }, formId)
+  }
+
+  /* Scripts and styles */
+
+  addStyle('objects/Form/Form')
+  addScript('objects/Form/FormClient')
 
   /* Output */
 
-  const start = `
-    <form id="${id}" class="o-form js-send-form" data-action="${action}" method="post" novalidate>
-      <div class="flex col row-${row}${wrap ? ' flex-wrap' : ''} align-end-${align} gap-m">
-        <div class="o-form-error__summary w-full none outline-none" tabindex="-1">
-          <div class="info-negative pl-xs pr-xs pt-xs pb-xs b-radius-s">
-            <div class="flex gap-3xs">
-              <div>
-                ${errorSvg('w-s h-s w-m-m h-m-m')}
-              </div>
-              <div>
-                <h2 class="text-m wt-medium m-0">There is a problem</h2>
-                <ul class="o-form-error__list flex col pb-4xs m-bottom-4xs-all m-0-last text-s ls-none e-line-all" role="list"></ul>
-              </div>
-            </div>
-          </div>
-        </div>
-  `
-
-  const end = `
-        ${honeypot}
-        <div class="o-form-result__negative w-full none outline-none" role="alert" tabindex="-1">
-          <div class="info-negative pl-xs pr-xs pt-xs pb-xs b-radius-s">
-            <div class="flex gap-3xs">
-              <div>
-                ${errorSvg('w-s h-s w-m-m h-m-m')}
-              </div>
-              <div>
-                <h2 class="o-form-result__primary text-m lead-open wt-medium m-0"></h2>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div data-type="submit">
-          <button class="button button-primary button-xl overflow-hidden b-radius-l e-trans e-quad js-submit" type="submit">
-            ${loader({ size: 's' })}
-            <span>${submitLabel}</span>
-          </button>
-        </div>
-        <div class="o-form-result__positive w-full none outline-none" role="alert" tabindex="-1">
-          <div class="info-positive pl-xs pr-xs pt-xs pb-xs b-radius-s">
-            <div class="flex gap-3xs">
-              <div>
-                ${checkSvg('w-s h-s w-m-m h-m-m')}
-              </div>
-              <div>
-                <h2 class="o-form-result__primary text-m lead-open wt-medium m-0"></h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
-  `
-
   return {
-    start,
-    end
+    ...props,
+    args: {
+      ...args,
+      id: formId,
+      formTag: 'ac-form',
+      formClasses: 'form',
+      formAttr,
+      fields: `<div id="mpl-turnstile-${formId}" class="none"></div>`,
+      fieldsClasses: 'form flex wrap align-end gap-m',
+      fieldsAttr: 'novalidate',
+      submitFieldClasses: 'relative',
+      submitClasses: 'button button-primary button-xl b-radius-l e-trans e-quad',
+      submitLabel: 'Send',
+      honeypotName: 'ac_hp',
+      honeypotFieldClasses: 'form-field-hp col-12',
+      honeypotFieldAttr: 'data-form-field="url"',
+      honeypotLabelClasses: 'form-label',
+      honeypotClasses: 'form-input-url',
+      honeypotAttr: 'data-form-input'
+    }
   }
 }
 
 /* Exports */
 
-export default form
+export { Form }

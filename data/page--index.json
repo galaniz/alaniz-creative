@@ -2,6 +2,8 @@
   "contentType": "page",
   "title": "Home",
   "slug": "index",
+  "date": "2023-11-05T02:41:58",
+  "dateModified": "2025-08-24T02:48:03",
   "hero": {
     "title": "Hi, I'm Graciela. I'm a designer<wbr>/<wbr>developer. I strive to create elegant, engaging and accessible digital experiences.",
     "action": {
@@ -22,7 +24,7 @@
             {
               "renderType": "richText",
               "tag": "h2",
-              "headingStyle": "h2-l",
+              "headingStyle": "heading-2xl",
               "content": "Work"
             }
           ]
@@ -36,7 +38,7 @@
               "contentType": "work",
               "display": 3,
               "headingLevel": 3,
-              "layout": "cardsAlternating"
+              "layout": "alternate"
             }
           ]
         },

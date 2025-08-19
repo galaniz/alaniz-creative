@@ -45,6 +45,8 @@ const Image = (props: ImageProps): string => {
     lazy = true,
     border = false,
     borderRadius = 'rounded',
+    width,
+    widthLarge,
     contain = true,
     align,
     classes
@@ -85,6 +87,14 @@ const Image = (props: ImageProps): string => {
 
   if (border) {
     containerClasses += ' b-all b-theme'
+  }
+
+  if (isStringStrict(width)) {
+    containerClasses += ` w-${width}`
+  }
+
+  if (isStringStrict(widthLarge)) {
+    containerClasses += ` w-${widthLarge}-m`
   }
 
   if (align === 'center') {

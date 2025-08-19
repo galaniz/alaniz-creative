@@ -13,22 +13,17 @@ import { configVars } from '../../config/config.js'
 /**
  * Output loading animation.
  *
- * @param {LoaderArgs} args
+ * @param {LoaderArgs} [args]
  * @return {string}
  */
-const Loader = (args: LoaderArgs): string => {
-  /* Args required */
-
-  if (!isObjectStrict(args)) {
-    return ''
-  }
+const Loader = (args?: LoaderArgs): string => {
+  /* Args */
 
   const {
-    label,
     classes,
     size,
     focusable = true
-  } = args
+  } = isObjectStrict(args) ? args : {}
 
   /* Size */
 
@@ -56,9 +51,9 @@ const Loader = (args: LoaderArgs): string => {
   }
 
   configVars.template.set(loaderId, /* html */`
-    <span class="${containerClasses}"${focusable ? ` tabindex="-1" aria-label="${label}"` : ''}>
+    <span class="${containerClasses}"${focusable ? ' tabindex="-1" aria-label="Loading"' : ''}>
       <span class="loader-circle h-l w-l b-radius-full no-motion-hide"></span>
-      <span class="text-s wt-bold none no-motion-show">${label}</span>
+      <span class="text-s wt-bold none no-motion-show">Loading</span>
     </span>
   `)
 

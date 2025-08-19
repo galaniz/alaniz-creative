@@ -2,7 +2,8 @@
   "contentType": "work",
   "title": "Injury Board",
   "slug": "injury-board",
-  "date": "2018-10-15",
+  "date": "2018-10-15T15:59:13",
+  "dateModified": "2025-08-24T15:07:09",
   "meta": {
     "description": "",
     "image": ""
@@ -18,7 +19,7 @@
     "secondary-dark": "#06375d",
     "secondary-light": "#3f8ecc",
     "video-bg": "#06375d",
-    "video-border": "var(--video-bg)",
+    "video-border": "var(--vid-bg)",
     "video-play-bg": "var(--background-light)",
     "video-play-color": "#007fb0"
   },
@@ -263,28 +264,28 @@
                 {
                   "renderType": "richText",
                   "tag": "li",
-                  "textStyle": "h2-d",
+                  "textStyle": "heading-xl",
                   "content": "Easy-to-use",
                   "color": "theme-secondary"
                 },
                 {
                   "renderType": "richText",
                   "tag": "li",
-                  "textStyle": "h2-d",
+                  "textStyle": "heading-xl",
                   "content": "Beautiful",
                   "color": "theme-primary"
                 },
                 {
                   "renderType": "richText",
                   "tag": "li",
-                  "textStyle": "h2-d",
+                  "textStyle": "heading-xl",
                   "content": "Elegant/sleek",
                   "color": "theme-secondary"
                 },
                 {
                   "renderType": "richText",
                   "tag": "li",
-                  "textStyle": "h2",
+                  "textStyle": "heading-l",
                   "type": "normal",
                   "content": "Trustworthy",
                   "color": "theme-primary"
@@ -292,7 +293,7 @@
                 {
                   "renderType": "richText",
                   "tag": "li",
-                  "textStyle": "h2",
+                  "textStyle": "heading-l",
                   "type": "normal",
                   "content": "Exclusive",
                   "color": "theme-secondary"
@@ -300,7 +301,7 @@
                 {
                   "renderType": "richText",
                   "tag": "li",
-                  "textStyle": "h2",
+                  "textStyle": "heading-l",
                   "type": "normal",
                   "content": "Simple",
                   "color": "theme-primary"
@@ -350,7 +351,7 @@
               "maxWidth": "xl",
               "paddingTop": "m",
               "paddingTopLarge": "l",
-              "classes": "breakout",
+              "breakout": true,
               "content": [
                 {
                   "renderType": "container",
@@ -360,8 +361,8 @@
                   "content": [
                     {
                       "renderType": "column",
-                      "width": "1-2",
-                      "widthSmall": "1-4",
+                      "width": "6",
+                      "widthSmall": "3",
                       "content": [
                         {
                           "renderType": "image",
@@ -372,8 +373,8 @@
                     },
                     {
                       "renderType": "column",
-                      "width": "1-2",
-                      "widthSmall": "1-4",
+                      "width": "6",
+                      "widthSmall": "3",
                       "content": [
                         {
                           "renderType": "container",
@@ -396,8 +397,8 @@
                     },
                     {
                       "renderType": "column",
-                      "width": "1-2",
-                      "widthSmall": "1-4",
+                      "width": "6",
+                      "widthSmall": "3",
                       "content": [
                         {
                           "renderType": "image",
@@ -408,8 +409,8 @@
                     },
                     {
                       "renderType": "column",
-                      "width": "1-2",
-                      "widthSmall": "1-4",
+                      "width": "6",
+                      "widthSmall": "3",
                       "content": [
                         {
                           "renderType": "container",
@@ -566,8 +567,8 @@
                   "content": [
                     {
                       "renderType": "column",
-                      "widthSmall": "2-3",
-                      "widthMedium": "2-5",
+                      "widthSmall": "8",
+                      "widthMedium": "5",
                       "content": [
                         {
                           "renderType": "image",
@@ -578,8 +579,8 @@
                     },
                     {
                       "renderType": "column",
-                      "widthSmall": "2-3",
-                      "widthMedium": "2-5",
+                      "widthSmall": "8",
+                      "widthMedium": "5",
                       "content": [
                         {
                           "renderType": "image",
@@ -590,9 +591,9 @@
                     },
                     {
                       "renderType": "column",
-                      "width": "1-2",
-                      "widthSmall": "1-3",
-                      "widthMedium": "1-5",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "2",
                       "content": [
                         {
                           "renderType": "container",
@@ -670,9 +671,9 @@
                   "content": [
                     {
                       "renderType": "column",
-                      "widthSmall": "2-3",
-                      "widthMedium": "1-2",
-                      "widthLarge": "1-3",
+                      "widthSmall": "8",
+                      "widthMedium": "6",
+                      "widthLarge": "4",
                       "content": [
                         {
                           "renderType": "image",
@@ -683,9 +684,9 @@
                     },
                     {
                       "renderType": "column",
-                      "widthSmall": "2-3",
-                      "widthMedium": "1-2",
-                      "widthLarge": "1-3",
+                      "widthSmall": "8",
+                      "widthMedium": "6",
+                      "widthLarge": "4",
                       "content": [
                         {
                           "renderType": "image",
@@ -696,9 +697,9 @@
                     },
                     {
                       "renderType": "column",
-                      "widthSmall": "2-3",
-                      "widthMedium": "1-2",
-                      "widthLarge": "1-3",
+                      "widthSmall": "8",
+                      "widthMedium": "6",
+                      "widthLarge": "4",
                       "content": [
                         {
                           "renderType": "image",
@@ -726,8 +727,8 @@
                   "content": [
                     {
                       "renderType": "column",
-                      "width": "1-2",
-                      "widthSmall": "1-3",
+                      "width": "6",
+                      "widthSmall": "4",
                       "content": [
                         {
                           "renderType": "image",
@@ -738,8 +739,8 @@
                     },
                     {
                       "renderType": "column",
-                      "width": "1-2",
-                      "widthSmall": "1-3",
+                      "width": "6",
+                      "widthSmall": "4",
                       "content": [
                         {
                           "renderType": "image",
@@ -750,8 +751,8 @@
                     },
                     {
                       "renderType": "column",
-                      "width": "1-2",
-                      "widthSmall": "1-3",
+                      "width": "6",
+                      "widthSmall": "4",
                       "content": [
                         {
                           "renderType": "image",
@@ -843,8 +844,8 @@
                   "content": [
                     {
                       "renderType": "column",
-                      "width": "3-4",
-                      "classes": "absolute top-0 left-0",
+                      "width": "9",
+                      "position": "top-left",
                       "content": [
                         {
                           "renderType": "image",
@@ -855,8 +856,8 @@
                     },
                     {
                       "renderType": "column",
-                      "width": "3-5",
-                      "classes": "absolute right-0 bottom-0",
+                      "width": "7",
+                      "position": "bottom-right",
                       "content": [
                         {
                           "renderType": "image",

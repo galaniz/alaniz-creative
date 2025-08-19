@@ -4,19 +4,9 @@
 
 /* Imports */
 
-import type { Blob } from '../../global/globalTypes.js'
-import type { InternalLink } from '@alanizcreative/formation-static/global/globalTypes.js'
+import type { ConfigBlob } from '../../config/configTypes.js'
 import type { RenderFile } from '@alanizcreative/formation-static/render/renderTypes.js'
-
-/**
- * @typedef {object} HeroAction
- * @prop {string} [title]
- * @prop {InternalLink} [internalLink]
- */
-export interface HeroAction {
-  title?: string
-  internalLink?: InternalLink
-}
+import type { ButtonArgs } from '../../objects/Button/ButtonTypes.js'
 
 /**
  * @typedef {'one'|'two'|'three'|'four'|'five'} HeroWave
@@ -39,24 +29,24 @@ export interface HeroWaveSvg {
  * @typedef {object} HeroArgs
  * @prop {string} [contentType='page']
  * @prop {string} [archive]
- * @prop {'media-text'|'minimal'|'profile'} [type='media-text']
+ * @prop {'media-text'|'minimal'|'profile'|'index'|'error'} [type='media-text']
  * @prop {string} [title]
  * @prop {string} [text]
  * @prop {RenderFile} [image]
  * @prop {HeroWave} [wave]
- * @prop {Blob} [blob]
+ * @prop {ConfigBlob} [blob]
  * @prop {boolean} [border=false]
  * @prop {HeroAction} [action]
  */
 export interface HeroArgs {
   contentType?: string
   archive?: string
-  type?: 'media-text' | 'minimal' | 'profile'
+  type?: 'media-text' | 'minimal' | 'profile' | 'index' | 'error'
   title?: string
   text?: string
   image?: RenderFile
   wave?: HeroWave
-  blob?: Blob
+  blob?: ConfigBlob
   border?: boolean
-  action?: HeroAction
+  action?: ButtonArgs
 }

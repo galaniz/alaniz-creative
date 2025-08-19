@@ -19,8 +19,8 @@ const ArrowSvg = (args?: SvgArgs): string => {
   /* Args */
 
   const {
-    width = '20',
-    height = '20',
+    width = 'xs',
+    height = 'xs',
     classes
   } = isObjectStrict(args) ? args : {}
 

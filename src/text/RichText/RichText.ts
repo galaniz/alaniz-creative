@@ -8,7 +8,6 @@ import type {
   RichTextContentItemFilter,
   RichTextPropsFilter
 } from '@alanizcreative/formation-static/text/RichText/RichTextTypes.js'
-import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 
 /**
@@ -19,7 +18,7 @@ import { isStringStrict } from '@alanizcreative/formation-static/utils/string/st
 const RichTextProps: RichTextPropsFilter = (props) => {
   /* Props and args */
 
-  const { args, parents = [] } = props
+  const { args } = props
   const newArgs = { ...args }
   const {
     tag,
@@ -34,12 +33,6 @@ const RichTextProps: RichTextPropsFilter = (props) => {
   const classesArr: string[] = []
   const stylesArr: string[] = []
 
-  /* Parent */
-
-  const parent = parents[0]
-  const hasParent = isObjectStrict(parent)
-  const parentType = hasParent ? parent.renderType : ''
-
   /* Type */
 
   if (type === 'normal') {
@@ -48,12 +41,6 @@ const RichTextProps: RichTextPropsFilter = (props) => {
 
   if (type === 'columns') {
     classesArr.push('text-col-2')
-  }
-
-  /* Card */
-
-  if (parentType === 'card' && tag === 'p') {
-    classesArr.push('current')
   }
 
   /* Quote */

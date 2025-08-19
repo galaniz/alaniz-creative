@@ -12,10 +12,10 @@ import { SkipLink } from '../SkipLink/SkipLink.js'
  * Output header.
  *
  * @prop {string} currentLink
- * @prop {string} currentType
+ * @prop {string|string[]} [currentType]
  * @return {string} HTMLElement
  */
-const Header = (currentLink: string, currentType: string): string => {
+const Header = (currentLink: string, currentType?: string | string[]): string => {
   /* Navigation required */
 
   const navigation = NavigationPrimary({

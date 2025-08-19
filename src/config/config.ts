@@ -14,6 +14,7 @@ import { setConfig } from '@alanizcreative/formation-static/config/config.js'
  * @type {ConfigVars}
  */
 const configVars: ConfigVars = {
+  local: false,
   svg: new Map(),
   template: new Map(),
   style: new Set(),
@@ -21,12 +22,9 @@ const configVars: ConfigVars = {
   css: {
     in: 'src/global/global',
     out: 'css/global/global',
-    head: '',
-    cache: '',
-    safelist: [],
-    static: {
-      'css/global/globalGapFallback': 'src/global/globalGapFallback.scss'
-    }
+    replace: '',
+    cache: new Map(),
+    safelist: []
   },
   js: {
     in: 'lib/global/globalClient',
@@ -50,7 +48,8 @@ const config: Config = setConfig({
   wholeTypes: [
     'page',
     'work',
-    'workCategory'
+    'taxonomy',
+    'term'
   ],
   partialTypes: [
     'navigationItem',
@@ -63,11 +62,15 @@ const config: Config = setConfig({
     work: 'work'
   },
   taxonomyInSlug: {
-    workCategory: 'categories'
+    categories: 'categories'
+  },
+  local: {
+    dir: 'data'
   },
   filter: (config, env: ConfigEnv) => {
     config.env.dev = env.ENVIRONMENT === 'development'
     config.env.prod = env.ENVIRONMENT === 'production'
+    configVars.local = env.LOCAL === 'true'
 
     return config
   }

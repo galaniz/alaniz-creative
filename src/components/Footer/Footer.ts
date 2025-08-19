@@ -13,10 +13,10 @@ import { config } from '../../config/config.js'
  * Output footer.
  *
  * @prop {string} currentLink
- * @prop {string} currentType
+ * @prop {string|string[]} [currentType]
  * @return {string} HTMLElement
  */
-const Footer = (currentLink: string, currentType: string): string => {
+const Footer = (currentLink: string, currentType?: string | string[]): string => {
   /* Navigation */
   
   const listOutput = navigationsInstance?.getOutput('footer', {

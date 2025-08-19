@@ -54,7 +54,7 @@ $sizes: (
 
   /* Fonts */
 
-  $font-families: (
+  $fonts: (
     "primary": (
       "Larsseit",
       "Adjusted Tahoma",
@@ -162,7 +162,6 @@ $sizes: (
   $margin-left: $sizes,
   $margin-right: $sizes,
   $margin-bottom: $sizes,
-  $margin-bottom-all: $sizes,
   $margin-vertical-breakpoints: ("s", "m", "l"),
   $margin-horizontal-breakpoints: ("s", "m", "l"),
 
@@ -173,8 +172,8 @@ $sizes: (
 
   /* Flex */
 
-  $row-breakpoints: ("s", "m", "l"),
-  $col-breakpoints: ("s", "m", "l"),
+  $flex-row-breakpoints: ("s", "m", "l"),
+  $flex-column-breakpoints: ("s", "m", "l"),
 
   /* Align */
 

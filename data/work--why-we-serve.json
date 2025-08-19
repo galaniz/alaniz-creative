@@ -2,7 +2,8 @@
   "contentType": "work",
   "title": "Why We Serve",
   "slug": "why-we-serve",
-  "date": "2020-11-11",
+  "date": "2020-11-11T22:50:19",
+  "dateModified": "2025-08-24T22:08:44",
   "meta": {
     "description": "",
     "image": ""
@@ -29,7 +30,7 @@
     "black-dark": "#070707",
     "black-light": "#8f8f8f",
     "video-bg": "#00193a",
-    "video-border": "var(--video-bg)",
+    "video-border": "var(--vid-bg)",
     "video-play-bg": "var(--background-light)",
     "video-play-color": "#7a232f"
   },
@@ -245,8 +246,8 @@
                   "content": [
                     {
                       "renderType": "column",
-                      "width": "1-2",
-                      "widthSmall": "1-3",
+                      "width": "6",
+                      "widthSmall": "4",
                       "content": [
                         {
                           "renderType": "image",
@@ -257,8 +258,8 @@
                     },
                     {
                       "renderType": "column",
-                      "width": "1-2",
-                      "widthSmall": "1-3",
+                      "width": "6",
+                      "widthSmall": "4",
                       "content": [
                         {
                           "renderType": "image",
@@ -269,8 +270,8 @@
                     },
                     {
                       "renderType": "column",
-                      "width": "1-2",
-                      "widthSmall": "1-3",
+                      "width": "6",
+                      "widthSmall": "4",
                       "content": [
                         {
                           "renderType": "image",
@@ -366,28 +367,28 @@
                 {
                   "renderType": "richText",
                   "tag": "li",
-                  "textStyle": "h2-d",
+                  "textStyle": "heading-xl",
                   "content": "Elegant",
                   "color": "theme-secondary"
                 },
                 {
                   "renderType": "richText",
                   "tag": "li",
-                  "textStyle": "h2-d",
+                  "textStyle": "heading-xl",
                   "content": "Streamlined",
                   "color": "theme-primary"
                 },
                 {
                   "renderType": "richText",
                   "tag": "li",
-                  "textStyle": "h2-d",
+                  "textStyle": "heading-xl",
                   "content": "User-friendly",
                   "color": "theme-gold"
                 },
                 {
                   "renderType": "richText",
                   "tag": "li",
-                  "textStyle": "h2",
+                  "textStyle": "heading-l",
                   "type": "normal",
                   "content": "Clean",
                   "color": "theme-brown"
@@ -395,7 +396,7 @@
                 {
                   "renderType": "richText",
                   "tag": "li",
-                  "textStyle": "h2",
+                  "textStyle": "heading-l",
                   "type": "normal",
                   "content": "Open",
                   "color": "theme-blue"
@@ -403,7 +404,7 @@
                 {
                   "renderType": "richText",
                   "tag": "li",
-                  "textStyle": "h2",
+                  "textStyle": "heading-l",
                   "type": "normal",
                   "content": "Innovative",
                   "color": "theme-green"
@@ -411,7 +412,7 @@
                 {
                   "renderType": "richText",
                   "tag": "li",
-                  "textStyle": "h2",
+                  "textStyle": "heading-l",
                   "type": "normal",
                   "content": "Accessible",
                   "color": "theme-black"
@@ -516,8 +517,8 @@
                   "content": [
                     {
                       "renderType": "column",
-                      "widthSmall": "1-2",
-                      "widthMedium": "1-3",
+                      "widthSmall": "6",
+                      "widthMedium": "4",
                       "content": [
                         {
                           "renderType": "image",
@@ -528,8 +529,8 @@
                     },
                     {
                       "renderType": "column",
-                      "widthSmall": "1-2",
-                      "widthMedium": "1-3",
+                      "widthSmall": "6",
+                      "widthMedium": "4",
                       "content": [
                         {
                           "renderType": "image",
@@ -540,8 +541,8 @@
                     },
                     {
                       "renderType": "column",
-                      "widthSmall": "1-2",
-                      "widthMedium": "1-3",
+                      "widthSmall": "6",
+                      "widthMedium": "4",
                       "content": [
                         {
                           "renderType": "image",
@@ -606,7 +607,7 @@
                   "content": [
                     {
                       "renderType": "column",
-                      "widthSmall": "1-2",
+                      "widthSmall": "6",
                       "content": [
                         {
                           "renderType": "image",
@@ -616,7 +617,7 @@
                     },
                     {
                       "renderType": "column",
-                      "widthSmall": "1-2",
+                      "widthSmall": "6",
                       "content": [
                         {
                           "renderType": "image",
@@ -665,7 +666,7 @@
               "maxWidth": "xl",
               "paddingTop": "m",
               "paddingTopLarge": "l",
-              "classes": "breakout",
+              "breakout": true,
               "content": [
                 {
                   "renderType": "container",
@@ -691,7 +692,7 @@
                           "content": [
                             {
                               "renderType": "column",
-                              "width": "1-2",
+                              "width": "6",
                               "content": [
                                 {
                                   "renderType": "container",
@@ -712,7 +713,7 @@
                             },
                             {
                               "renderType": "column",
-                              "width": "1-2",
+                              "width": "6",
                               "content": [
                                 {
                                   "renderType": "container",
@@ -737,8 +738,8 @@
                     },
                     {
                       "renderType": "column",
-                      "widthSmall": "1-2",
-                      "widthLarge": "1-3",
+                      "widthSmall": "6",
+                      "widthLarge": "4",
                       "content": [
                         {
                           "renderType": "image",
@@ -762,7 +763,7 @@
                           "content": [
                             {
                               "renderType": "column",
-                              "width": "1-2",
+                              "width": "6",
                               "content": [
                                 {
                                   "renderType": "container",
@@ -783,7 +784,7 @@
                             },
                             {
                               "renderType": "column",
-                              "width": "1-2",
+                              "width": "6",
                               "content": [
                                 {
                                   "renderType": "container",
@@ -862,8 +863,8 @@
                   "content": [
                     {
                       "renderType": "column",
-                      "widthSmall": "3-4",
-                      "widthMedium": "1-2",
+                      "widthSmall": "9",
+                      "widthMedium": "6",
                       "content": [
                         {
                           "renderType": "container",
@@ -886,8 +887,8 @@
                     },
                     {
                       "renderType": "column",
-                      "widthSmall": "3-4",
-                      "widthMedium": "1-2",
+                      "widthSmall": "9",
+                      "widthMedium": "6",
                       "content": [
                         {
                           "renderType": "container",
@@ -959,8 +960,8 @@
                   "content": [
                     {
                       "renderType": "column",
-                      "widthSmall": "3-5",
-                      "widthLarge": "1-3",
+                      "widthSmall": "7",
+                      "widthLarge": "4",
                       "content": [
                         {
                           "renderType": "image",
@@ -970,7 +971,7 @@
                     },
                     {
                       "renderType": "column",
-                      "widthLarge": "2-3",
+                      "widthLarge": "8",
                       "content": [
                         {
                           "renderType": "container",

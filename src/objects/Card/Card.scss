@@ -1,0 +1,140 @@
+/**
+ * Objects - Card Styles
+ */
+
+/* Imports */
+
+@forward "../../config/config";
+@use "@alanizcreative/formation/lib/utils/utils" as util;
+
+/* Styles */
+
+.card-media {
+  max-width: var(--cd-media-max, none);
+  padding: var(--cd-media-padding, 0);
+}
+
+.card-text {
+  margin-left: var(--cd-text-left, 0);
+  margin-right: var(--cd-text-right, 0);
+}
+
+.card-cascade,
+.card-alternate {
+  @include util.breakpoint-min("s") {
+    --cd-media-padding: 0 var(--l);
+  }
+}
+
+.card-cascade {
+  --cd-text-left-1: auto;
+  --cd-text-left-2: 0;
+  --cd-text-right-1: 0;
+  --cd-text-right-2: auto;
+  --cd-left: 0;
+  --cd-right: 0;
+  --cd-top: var(--xl);
+  --cd-bottom: var(--xl);
+  --cd-width: 100%;
+
+  --sd: block;
+
+  &:nth-child(3n-1) {
+    padding-right: var(--cd-left);
+  }
+
+  &:nth-child(3n) {
+    padding-left: var(--cd-right);
+  }
+
+  &:nth-child(6n-1) {
+    --cd-text-left: var(--cd-text-left-1);
+    --cd-text-right: var(--cd-text-right-1);
+  }
+
+  &:nth-child(6n+6) {
+    --cd-text-left: var(--cd-text-left-2);
+    --cd-text-right: var(--cd-text-right-2);
+  }
+
+  &:nth-child(3n-1),
+  &:nth-child(3n) {
+    width: var(--cd-width);
+  }
+
+  &:nth-child(6n+6),
+  &:nth-child(6n-4) {
+    padding-top: var(--cd-top);
+  }
+
+  &:nth-child(6n-1),
+  &:nth-child(6n-3) {
+    padding-bottom: var(--cd-bottom);
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  @include util.breakpoint-min("l") {
+    --cd-left: var(--l);
+    --cd-right: var(--l);
+  }
+
+  @include util.breakpoint-min("m") {
+    --cd-text-left-1: 0;
+    --cd-text-left-2: auto;
+    --cd-text-right-1: auto;
+    --cd-text-right-2: 0;
+    --cd-top: 0;
+    --cd-bottom: 0;
+    --cd-width: 50%;
+
+    &:nth-child(3n+1) .card-text {
+      --text-xs: var(--text-s);
+      --3xs: var(--2xs);
+      --s: var(--m);
+    }
+
+    &:nth-child(3n-1),
+    &:nth-child(3n) {
+      --h2: var(--h4);
+
+      .card-text {
+        padding-top: var(--m);
+      }
+    }
+
+    .card-widow:nth-child(6n-1):last-child {
+      padding-top: 0;
+    }
+  }
+}
+
+.card-blob { 
+  transform: scaleX(var(--cd-blob-scale, 1));
+  left: var(--cd-blob-left, auto);
+  right: var(--cd-blob-right, 66.667%);
+  width: #{util.fluid-size-clamp((400px, 600px, 900px, 1000px), ("xs", "s", "m", "l"))};
+  height: #{util.fluid-size-clamp((320px, 480px, 720px, 800px), ("xs", "s", "m", "l"))};
+  display: var(--cd-blob-display, block);
+  z-index: -2;
+
+  @include util.breakpoint-min("m") {
+    --cd-blob-display: none;
+  }
+
+  @include util.breakpoint-min("xl") {
+    --cd-blob-right: 50%;
+  }
+}
+
+.card-blob-inverse {
+  --cd-blob-left: 66.667%;
+  --cd-blob-right: auto;
+  --cd-blob-scale: -1;
+
+  @include util.breakpoint-min("xl") {
+    --cd-blob-left: 50%;
+  }
+}

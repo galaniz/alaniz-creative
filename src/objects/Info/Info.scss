@@ -2,29 +2,23 @@
  * Objects - Info Styles
  */
 
-/* Imports */
-
-@use "@alanizcreative/formation/src/utils/functions" as func;
-
-/* Styles */
-
 .info-neutral {
   --info-bg: var(--muted-bg);
 }
 
-.info-negative {
+.info-error {
   --info-bg: hsla(var(--negative-color-hsl), 0.075);
-  --text-color: hsla(var(--negative-color-hsl), 1);
+  --text-color: var(--negative-color);
 }
 
-.info-positive {
+.info-success {
   --info-bg: hsla(var(--positive-color-hsl), 0.075);
-  --text-color: hsla(var(--positive-color-hsl), 1);
+  --text-color: var(--positive-color);
 }
 
 .info-neutral,
-.info-negative,
-.info-positive {
+.info-error,
+.info-success {
   --interactive-color: var(--text-color);
   --sharp-color: var(--text-color);
 

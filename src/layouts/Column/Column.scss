@@ -1,0 +1,32 @@
+/**
+ * Layouts - Column
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/lib/utils/utils" as util;
+@use "@alanizcreative/formation/lib/layouts/Column/Column";
+
+/* Styles */
+
+.col-custom {
+  --col-init: 12;
+  --col-small: 12;
+  --col-medium: 12;
+  --col-large: 12;
+  --col: var(--col-init);
+
+  width: calc(((var(--col) / var(--columns)) * 100%) - var(--gap) + (var(--gap) / (var(--columns) / var(--col))));
+
+  @include util.breakpoint-min("s") {
+    --col: var(--col-small);
+  }
+
+  @include util.breakpoint-min("m") {
+    --col: var(--col-medium);
+  }
+
+  @include util.breakpoint-min("l") {
+    --col: var(--col-large);
+  }
+}

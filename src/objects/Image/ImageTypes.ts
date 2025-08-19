@@ -10,7 +10,7 @@ import type {
   RenderFile,
   RenderRichText
 } from '@alanizcreative/formation-static/render/renderTypes.js'
-import type { ConfigAspectRatio } from '../../config/configTypes.js'
+import type { ConfigAspectRatio, ConfigSizes } from '../../config/configTypes.js'
 
 /**
  * @typedef {object} ImageArgs
@@ -22,6 +22,8 @@ import type { ConfigAspectRatio } from '../../config/configTypes.js'
  * @prop {boolean} [lazy=true]
  * @prop {boolean} [border=false]
  * @prop {'rounded'|'full'|'none'} [borderRadius='rounded']
+ * @prop {ConfigSizes} [width]
+ * @prop {ConfigSizes} [widthLarge]
  * @prop {boolean} [contain=false]
  * @prop {'center'} [align]
  * @prop {string} [classes]
@@ -35,6 +37,8 @@ export interface ImageArgs {
   lazy?: boolean
   border?: boolean
   borderRadius?: 'rounded' | 'full' | 'none'
+  width?: ConfigSizes
+  widthLarge?: ConfigSizes
   contain?: boolean
   align?: 'center'
   classes?: string

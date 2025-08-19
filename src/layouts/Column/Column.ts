@@ -28,7 +28,8 @@ const Column = (props: ColumnProps): ColumnProps => {
     align,
     classes,
     grow = false,
-    style
+    style,
+    position
   } = newArgs
 
   let { width } = newArgs
@@ -88,6 +89,44 @@ const Column = (props: ColumnProps): ColumnProps => {
     classesArr.push('grow-1')
   }
 
+  /* Position */
+
+  if (isStringStrict(position)) {
+    classesArr.push('absolute')
+
+    if (position === 'top-left') {
+      classesArr.push('top-0 left-0')
+    }
+
+    if (position === 'top-left-10') {
+      classesArr.push('top-0 left-1-10')
+    }
+
+    if (position === 'top-right') {
+      classesArr.push('top-0 right-0')
+    }
+
+    if (position === 'top-right-10') {
+      classesArr.push('top-0 right-1-10')
+    }
+
+    if (position === 'bottom-left') {
+      classesArr.push('bottom-0 left-0')
+    }
+
+    if (position === 'bottom-left-10') {
+      classesArr.push('bottom-0 left-1-10')
+    }
+
+    if (position === 'bottom-right') {
+      classesArr.push('bottom-0 right-0')
+    }
+
+    if (position === 'bottom-right-10') {
+      classesArr.push('bottom-0 right-1-10')
+    }
+  }
+
   /* Styles */
 
   const stylesArr: string[] = []
@@ -97,13 +136,13 @@ const Column = (props: ColumnProps): ColumnProps => {
   }
 
   if (isWidthCustom) {
-    classesArr.push('w-custom')
+    classesArr.push('col-custom')
 
     const styleArray = [
-      `--width:${widthCustom.init || 100}%`,
-      `--width-small:${widthCustom.small || 100}%`,
-      `--width-medium:${widthCustom.medium || 100}%`,
-      `--width-large:${widthCustom.large || 100}`
+      `--col:${(widthCustom.init || 100) * 12 / 100}`,
+      `--col-small:${(widthCustom.small || 100) * 12 / 100}`,
+      `--col-medium:${(widthCustom.medium || 100) * 12 / 100}`,
+      `--col-large:${(widthCustom.large || 100) * 12 / 100}`
     ]
 
     stylesArr.push(styleArray.join(';'))

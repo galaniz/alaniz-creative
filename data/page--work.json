@@ -2,6 +2,8 @@
   "contentType": "page",
   "title": "Work",
   "slug": "work",
+  "date": "2023-11-05T03:26:11",
+  "dateModified": "2025-08-24T03:19:57",
   "archive": "work",
   "content": [
     {
@@ -16,7 +18,7 @@
           "contentType": "work",
           "display": -1,
           "headingLevel": 2,
-          "layout": "cardsCascading"
+          "layout": "cascade"
         }
       ]
     }

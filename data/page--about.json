@@ -2,6 +2,8 @@
   "contentType": "page",
   "title": "About",
   "slug": "about",
+  "date": "2023-11-05T00:14:32",
+  "dateModified": "2025-08-24T00:22:18",
   "hero": {
     "title": "Hi, I'm Graciela Alaniz",
     "type": "profile",
@@ -16,8 +18,8 @@
         {
           "renderType": "richText",
           "tag": "p",
-          "textStyle": "l",
-          "content": "I'm a designer/developer based in Toronto, currently combining my interests in design and code as a web designer at Later with a particular focus on accessibility."
+          "textStyle": "text-l",
+          "content": "I'm a designer/developer based in Toronto, currently combining my interests in design and code as a web developer at Maple."
         }
       ]
     },
@@ -48,7 +50,7 @@
             },
             {
               "tag": "li",
-              "content": "WordPress theme development"
+              "content": "Full-stack static site development"
             },
             {
               "tag": "li",

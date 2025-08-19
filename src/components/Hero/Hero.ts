@@ -8,8 +8,9 @@ import type { HeroArgs, HeroWave, HeroWaveSvg } from './HeroTypes.js'
 import type { ImageArgs } from '../../objects/Image/ImageTypes.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
-import { isArrayStrict } from '@alanizcreative/formation-static/utils/array/array.js'
+import { configBlobs } from '../../config/configOptions.js'
 import { Image } from '../../objects/Image/Image.js'
+import { Button } from '../../objects/Button/Button.js'
 
 /**
  * Wave svg details.
@@ -81,12 +82,20 @@ const Hero = (args: HeroArgs): string => {
     action
   } = args
 
+  /* Title required */
+
+  if (!isStringStrict(title)) {
+    return ''
+  }
+
   /* Type */
 
-  const isMediaText = type === 'media-text'
+  const isMediaText = type === 'media-text' || contentType === 'work'
   const isMinimal = type === 'minimal'
   const isProfile = type === 'profile'
-  const isWork = contentType === 'work'
+  const isIndex = type === 'index'
+  const isError = type === 'error'
+  const isPage = contentType === 'page'
 
   /* Image */
 
@@ -98,18 +107,14 @@ const Hero = (args: HeroArgs): string => {
       image,
       lazy: false,
       maxWidth: isProfile ? 600 : 1600,
+      aspectRatio: '16-10',
+      borderRadius: 'rounded',
       border
     }
 
     if (isProfile) {
       imageArgs.aspectRatio = '1-1'
       imageArgs.borderRadius = 'full'
-    }
-
-    if (isWork) {
-      imageArgs.aspectRatio = '16-10'
-      imageArgs.borderRadius = 'rounded'
-      imageArgs.border = border
     }
 
     imageOutput = Image({
@@ -127,7 +132,7 @@ const Hero = (args: HeroArgs): string => {
     `
   }
 
-  if (isWork && hasImage && wave) {
+  if (isMediaText && hasImage && wave) {
     const waveSvg = heroWaves.get(wave)
 
     if (waveSvg) {
@@ -161,6 +166,130 @@ const Hero = (args: HeroArgs): string => {
       `
     }
   }
+
+  /* Blob */
+
+  let blobOutput = ''
+
+  if (blob) {
+    const blobPath = configBlobs.get(blob)
+
+    if (blobPath) {
+      blobOutput = /* html */`
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 128 75"
+          class="hero-blob absolute"
+        >
+          <path
+            d="${blobPath}"
+            fill="none"
+            stroke="var(--sharp-color)"
+            stroke-opacity="0.5"
+            stroke-width="1"
+            vector-effect="non-scaling-stroke"
+          />
+        </svg>
+      `
+    }
+  }
+
+  /* Action */
+
+  let actionOutput = ''
+
+  if (action) {
+    actionOutput = Button({
+      args: {
+        ...action,
+        size: 'l'
+      }
+    })
+  }
+
+  const hasAction = !!actionOutput
+
+  /* Text */
+
+  const hasText = isStringStrict(text)
+
+  let textOutput = ''
+
+  if (hasText) {
+    textOutput += `<p class="text-l e-line-in${hasAction ? ' pb-m pb-l-m' : ''}">${text}</p>`
+  }
+
+  /* Title */
+
+  let titleClasses = ''
+
+  if (isMediaText) {
+    titleClasses = 'text-center'
+
+    if (hasImage) {
+      titleClasses += ' pb-m pb-l-m'
+    }
+  }
+
+  if (isPage && hasAction && !hasText) {
+    titleClasses = 'pb-m pb-l-m'
+  }
+
+  if (isPage && hasAction && hasText) {
+    titleClasses = 'pb-xs pb-m-m'
+  }
+
+  textOutput = `<h1${titleClasses ? ` class="${titleClasses}"` : ''}>${title}</h1>${textOutput}`
+
+  /* Classes */
+
+  let sectionClasses = ''
+  let container = ''
+
+  if (isMediaText) {
+    sectionClasses = 'overflow-hidden text-l pt-xl-m'
+    container = 'xs'
+  }
+
+  if (isMinimal) {
+    sectionClasses = 'container-xs relative text-l pt-2xl-m pb-m pb-l-m'
+  }
+
+  if (isIndex) {
+    sectionClasses = 'container relative pt-xl pb-2xl pt-3xl-m pb-4xl-m'
+  }
+
+  if (isError) {
+    sectionClasses = 'container-xs pt-xl pt-2xl-m pb-l text-center'
+  }
+
+  if (isProfile) {
+    sectionClasses = 'container-xs relative py-m py-l-m text-center'
+  }
+
+  if (archive === 'work' || archive === 'workCategory' || contentType === 'term') {
+    sectionClasses = 'container text-l pt-2xl-m'
+  }
+
+  /* Output */
+
+  let output = blobOutput + textOutput
+
+  if (isMediaText) {
+    output = textOutput + imageOutput
+  }
+
+  if (isProfile) {
+    output = imageOutput + textOutput
+  }
+
+  return /* html */`
+    <section class="${sectionClasses}">
+      ${container ? `<div class="container-${container}">` : ''}
+      ${output}
+      ${container ? '</div>' : ''}
+    </section>
+  `
 }
 
 /* Exports */

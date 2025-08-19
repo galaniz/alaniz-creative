@@ -11,11 +11,11 @@
 @use "@alanizcreative/formation/lib/layouts/Flex/Flex";
 @use "@alanizcreative/formation/lib/layouts/Flex/FlexWrap";
 @use "@alanizcreative/formation/lib/layouts/Gap/Gap";
-@use "@alanizcreative/formation/lib/layouts/Column/Column";
+@use "./Column/Column";
 @use "@alanizcreative/formation/lib/layouts/Padding/Padding";
 @use "@alanizcreative/formation/lib/layouts/Margin/Margin";
 @use "@alanizcreative/formation/lib/layouts/Height/Height";
-@use "./Width/Width";
+@use "@alanizcreative/formation/lib/layouts/Width/Width";
 @use "@alanizcreative/formation/lib/layouts/Object/Object";
 @use "@alanizcreative/formation/lib/layouts/Object/ObjectPosition";
 @use "@alanizcreative/formation/lib/layouts/Align/Align";
