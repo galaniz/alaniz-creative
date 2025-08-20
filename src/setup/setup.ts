@@ -23,6 +23,7 @@ import { scripts, styles } from '@alanizcreative/formation-static/utils/scriptSt
 import { getAllLocalData } from '@alanizcreative/formation-static/local/localData.js'
 import { setStore } from '@alanizcreative/formation-static/store/store.js'
 import { storeArgs } from '../store/store.js'
+import { postsData } from '../objects/Posts/Posts.js'
 import { renderFunctions } from '../render/render.js'
 import { esbuildScss } from '../esbuild/esbuildScss.js'
 import { config, configVars } from '../config/config.js'
@@ -204,7 +205,28 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
 
   /* Render output */
 
-  const data = await getAllLocalData()
+  const data = await getAllLocalData({
+    refProps: [
+      'internalLink',
+      'term',
+      'taxonomy',
+      'related',
+      'category'
+    ],
+    unsetProps: [
+      'content',
+      'related'
+    ]
+  })
+
+  config.wholeTypes.forEach(type => {
+    if (type === 'page') {
+      return
+    }
+
+    postsData[type] = data?.content[type] || []
+  })
+
   const output = await render({ allData: data })
 
   /* Store, redirect and sitemap files */

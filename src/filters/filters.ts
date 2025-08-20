@@ -10,6 +10,8 @@ import { RichTextProps, RichTextContentItem } from '../text/RichText/RichText.js
 import { Container } from '../layouts/Container/Container.js'
 import { Column } from '../layouts/Column/Column.js'
 import { Term } from '../components/Term/Term.js'
+import { Form } from '../objects/Form/Form.js'
+import { FormField } from '../objects/Form/FormField.js'
 
 /**
  * Filters to hook into.
@@ -21,6 +23,8 @@ const filters: Partial<Filters> = {
   richTextContentItem: RichTextContentItem,
   containerProps: Container,
   columnProps: Column,
+  formProps: Form,
+  formFieldProps: FormField,
   renderItemData: (item: Item) => {
     if (item.contentType === 'term') {
       return Term(item)

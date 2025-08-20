@@ -25,6 +25,7 @@
   height: calc(100% - var(--l));
   right: util.fluid-size-clamp((-450px, -100px, -270px), ("s", "m", "l"));
   bottom: #{util.calc-rem(-1px)};
+  color: var(--foreground-base);
 
   @include util.breakpoint-min("2xl") {
     width: calc(80rem + (50vw - (var(--container-no-padding) / 2) - #{util.calc-rem(270px)}));
@@ -37,4 +38,6 @@
 
 .footer-legal {
   --sharp-color: var(--ft-legal, var(--background-light));
+
+  color: var(--sharp-color);
 }

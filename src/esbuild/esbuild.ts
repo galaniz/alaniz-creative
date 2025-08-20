@@ -50,8 +50,8 @@ for await (const file of glob('lib/**/*.js')) {
  * @type {Object<string, string>}
  */
 const siteCopyAssets: Record<string, string> = {
-  'static/favicon': 'site/assets/favicon',
-  'static/fonts': 'site/assets/fonts'
+  'static/favicon': 'site/favicon',
+  'static/fonts': 'site/fonts'
 }
 
 siteCopyAssets[

@@ -181,4 +181,7 @@ const Posts = (props: PostsProps): string => {
 
 /* Exports */
 
-export { Posts }
+export {
+  postsData,
+  Posts
+}

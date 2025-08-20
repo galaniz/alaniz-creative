@@ -8,7 +8,11 @@
 
 /* Styles */
 
-.skip-link:focus {
-  top: var(--2xs);
-  left: var(--2xs);
+.skip-link {
+  position: absolute;
+
+  &:focus {
+    top: var(--2xs);
+    left: var(--2xs);
+  }
 }

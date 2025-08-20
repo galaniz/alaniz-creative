@@ -230,6 +230,7 @@ const Container = (props: ContainerProps): ContainerProps => {
   }
 
   newArgs.classes = classesArr.join(' ')
+  newArgs.layoutClasses = layoutClassesArr.join(' ')
 
   /* Output */
 

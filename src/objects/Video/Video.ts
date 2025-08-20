@@ -75,7 +75,7 @@ const Video = (props: VideoProps): string => {
         <video playsinline muted class="block absolute top-0 left-0 w-full h-full object-cover">
           <source src="" type="video/mp4">
         </video>
-        <button type="button" aria-label="Play ${title}" class="video-play absolute center e-scale">
+        <button type="button" aria-label="Play ${title}" class="video-play absolute center">
           <span class="video-play-bg b-radius-full b-all block ar-1-1 e-trans" data-scale>
             ${PlaySvg({ classes: 'video-icon absolute center w-2-5' })}
           </span>

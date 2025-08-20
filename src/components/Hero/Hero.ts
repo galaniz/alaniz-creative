@@ -70,6 +70,7 @@ const Hero = (args: HeroArgs): string => {
   }
 
   const {
+    slug,
     contentType = 'page',
     archive,
     type = 'media-text',
@@ -93,7 +94,7 @@ const Hero = (args: HeroArgs): string => {
   const isMediaText = type === 'media-text' || contentType === 'work'
   const isMinimal = type === 'minimal'
   const isProfile = type === 'profile'
-  const isIndex = type === 'index'
+  const isIndex = slug === 'index'
   const isError = type === 'error'
   const isPage = contentType === 'page'
 
@@ -154,7 +155,7 @@ const Hero = (args: HeroArgs): string => {
               <path
                 d="${path}"
                 fill="none"
-                stroke="var(--theme-primary)"
+                stroke="var(--theme-color)"
                 stroke-opacity="0.5"
                 stroke-width="1"
                 vector-effect="non-scaling-stroke"

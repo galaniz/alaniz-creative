@@ -71,11 +71,7 @@ const Image = (props: ImageProps): string => {
     imageClasses.push('e-trans object-left-top')
   }
 
-  let containerClasses = 'relative overflow-hidden h-full'
-
-  if (hasAspectRatio) {
-    containerClasses += ` ar-${aspectRatio}`
-  }
+  let containerClasses = `relative overflow-hidden h-full ar-${hasAspectRatio ? aspectRatio : '1-1'}`
 
   if (borderRadius === 'rounded') {
     containerClasses += ' b-radius-s b-radius-m-m isolate'
@@ -134,11 +130,14 @@ const Image = (props: ImageProps): string => {
   /* Details */
 
   const imageDetails = getImage({
-    data: image,
+    data: {
+      ...image,
+      url: `https://assets.alanizcreative.com/${image?.path}`
+    },
     classes: imageClasses.join(' '),
     maxWidth: maxWidthNum,
     attr: imageAttr,
-    source: 'local',
+    source: 'remote',
     lazy,
     alt
   }, true)

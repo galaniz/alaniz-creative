@@ -8,6 +8,7 @@ html {
   line-height: var(--line-height-base);
   font-family: var(--font-primary);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 body {

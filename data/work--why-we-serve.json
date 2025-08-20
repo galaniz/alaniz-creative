@@ -39,8 +39,8 @@
     "work--fortis-group"
   ],
   "category": [
-    "work-category--ui-design",
-    "work-category--front-end-development"
+    "term--work-category-ui-design",
+    "term--work-category-front-end-development"
   ],
   "content": [
     {

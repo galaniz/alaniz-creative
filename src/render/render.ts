@@ -15,6 +15,9 @@ import { HttpError } from '../components/HttpError/HttpError.js'
 import { Layout } from '../components/Layout/Layout.js'
 import { Button } from '../objects/Button/Button.js'
 import { Image } from '../objects/Image/Image.js'
+import { Video } from '../objects/Video/Video.js'
+import { Posts } from '../objects/Posts/Posts.js'
+import { Card } from '../objects/Card/Card.js'
 
 /* Render functions */
 
@@ -28,8 +31,11 @@ const renderFunctions: RenderFunctionsArgs = {
     richText: RichText,
     button: Button,
     image: Image,
+    video: Video,
     form: Form,
-    formField: FormField
+    formField: FormField,
+    posts: Posts,
+    card: Card
   }
 }
 

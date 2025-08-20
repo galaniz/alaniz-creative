@@ -104,6 +104,12 @@ const Layout = (args: LayoutArgs): string => {
   let stylesOutput =
     '@media (prefers-reduced-motion:reduce){.no-motion-show{display:block}.no-motion-hide{display:none}}'
 
+  configVars.style.forEach(s => {
+    stylesOutput += s
+  })
+
+  configVars.style.clear()
+
   if (isObjectStrict(theme)) {
     const styleProps: string[] = []
 
@@ -111,7 +117,7 @@ const Layout = (args: LayoutArgs): string => {
       styleProps.push(`--${themeKey.startsWith('video') ? '' : 'theme-'}${themeKey}:${themeValue}`)
     })
 
-    stylesOutput += `:root{${styleProps.join(';')};--btn-fill:var(--theme-primary);--btn-stroke:var(--theme-primary)}`
+    stylesOutput += `:root{${styleProps.join(';')};--btn-fill:var(--theme-color);--btn-stroke:var(--theme-color)}`
   }
 
   /* Svg sprites */
@@ -182,7 +188,7 @@ const Layout = (args: LayoutArgs): string => {
 
   return /* html */`
     <!DOCTYPE html>
-    <html lang="en-CA" id="${ns}" data-root>
+    <html lang="en-CA" id="${ns}" class="bg-background-light" data-root>
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">

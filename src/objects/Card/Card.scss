@@ -36,8 +36,7 @@
   --cd-top: var(--xl);
   --cd-bottom: var(--xl);
   --cd-width: 100%;
-
-  --sd: block;
+  --cd-blob-display: block;
 
   &:nth-child(3n-1) {
     padding-right: var(--cd-left);
@@ -111,12 +110,16 @@
   }
 }
 
+.card-alternate {
+  --cd-media-max: #{util.calc-rem(800px)};
+}
+
 .card-blob { 
   transform: scaleX(var(--cd-blob-scale, 1));
   left: var(--cd-blob-left, auto);
   right: var(--cd-blob-right, 66.667%);
-  width: #{util.fluid-size-clamp((400px, 600px, 900px, 1000px), ("xs", "s", "m", "l"))};
-  height: #{util.fluid-size-clamp((320px, 480px, 720px, 800px), ("xs", "s", "m", "l"))};
+  width: #{util.fluid-size-clamp((400px, 1000px), ("xs", "l"))};
+  height: #{util.fluid-size-clamp((320px, 800px), ("xs", "l"))};
   display: var(--cd-blob-display, block);
   z-index: -2;
 

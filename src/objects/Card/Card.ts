@@ -8,6 +8,7 @@ import type { CardProps, CardType } from './CardTypes.js'
 import { isArrayStrict } from '@alanizcreative/formation-static/utils/array/array.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
+import { addStyle } from '@alanizcreative/formation-static/utils/scriptStyle/scriptStyle.js'
 import { getLink } from '@alanizcreative/formation-static/utils/link/link.js'
 import { configBlobs } from '../../config/configOptions.js'
 import { Image } from '../Image/Image.js'
@@ -85,7 +86,7 @@ const Card = (props: CardProps): string => {
   /* Text */
 
   const headingTag = `h${headingLevel}`
-  let headingClasses = 'theme-primary'
+  let headingClasses = 'theme'
   let textClasses = 'card-text'
   let subText = ''
 
@@ -126,7 +127,7 @@ const Card = (props: CardProps): string => {
   }
 
   if (theme) {
-    styles = ` style="--theme-primary:${theme['primary-dark']}"`
+    styles = ` style="--theme-color:${theme['primary-dark']}"`
   }
 
   /* Blob */
@@ -149,7 +150,7 @@ const Card = (props: CardProps): string => {
         <path
           d="${path}"
           fill="none"
-          stroke="var(--theme-primary)"
+          stroke="var(--theme-color)"
           stroke-opacity="0.5"
           stroke-width="1"
           vector-effect="non-scaling-stroke"
@@ -166,12 +167,16 @@ const Card = (props: CardProps): string => {
     lockOutput = `&nbsp;${LockSvg({ width: 's', height: 's' })}<span class="a-hide-vis"> (password protected)</span>`
   }
 
+  /* Styles */
+
+  addStyle('objects/Card/Card')
+
   /* Output */
 
   return /* html */`
     <li class="${containerClasses}"${styles}>
       ${blobOutput}
-      <div class="relative overflow-hidden e-trans e-quad e-shift e-scale">
+      <div class="relative overflow-hidden e-trans e-quad e-shift">
         <div class="${classes}">
           <div class="${textClasses}">
             <${headingTag} class="${headingClasses}">
@@ -179,7 +184,7 @@ const Card = (props: CardProps): string => {
             </${headingTag}>
             ${subText}
           </div>
-          ${Image({ args: hero, parents })}
+          ${Image({ args: { ...hero, aspectRatio: '16-10' }, parents })}
         </div>
       </div>
     </li>
