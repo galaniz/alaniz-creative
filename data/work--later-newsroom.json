@@ -424,6 +424,7 @@
                       "content": [
                         {
                           "renderType": "container",
+                          "layout": "col",
                           "gap": "m",
                           "gapLarge": "l",
                           "content": [

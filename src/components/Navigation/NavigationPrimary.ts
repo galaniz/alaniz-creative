@@ -142,7 +142,7 @@ const NavigationPrimary = (args: NavigationPrimaryArgs): string => {
 
   return /* html */`
     <mpl-navigation-primary
-      class="nav relative container py-m py-l-m flex justify-between align-center"
+      class="nav relative container py-m py-l-m flex justify-between align-center td-none"
       breakpoints="${breakpoint}"
       role="navigation"
       aria-label="Primary"

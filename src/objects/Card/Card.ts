@@ -86,16 +86,16 @@ const Card = (props: CardProps): string => {
   /* Text */
 
   const headingTag = `h${headingLevel}`
-  let headingClasses = 'theme'
-  let textClasses = 'card-text'
+  let headingClasses = 'theme td-none'
+  let textClasses = ''
   let subText = ''
 
   if (isAlternating) {
     headingClasses += ' heading-l'
-    textClasses += ` pt-m pt-l-m ${index % 2 !== 0 ? 'mr-auto' : 'ml-auto'}`
+    textClasses = `pt-m pt-l-m ${index % 2 !== 0 ? 'mr-auto' : 'ml-auto'}`
   } else {
     headingClasses += ' heading-s'
-    textClasses += ' pt-2xs pt-m-m'
+    textClasses = 'card-text pt-2xs pt-m-m'
   }
 
   if (contentType === 'work' && isArrayStrict(category)) {

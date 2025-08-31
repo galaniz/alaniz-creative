@@ -139,7 +139,7 @@ const Column = (props: ColumnProps): ColumnProps => {
     classesArr.push('col-custom')
 
     const styleArray = [
-      `--col:${(widthCustom.init || 100) * 12 / 100}`,
+      `--col-init:${(widthCustom.init || 100) * 12 / 100}`,
       `--col-small:${(widthCustom.small || 100) * 12 / 100}`,
       `--col-medium:${(widthCustom.medium || 100) * 12 / 100}`,
       `--col-large:${(widthCustom.large || 100) * 12 / 100}`

@@ -36,7 +36,6 @@
   --cd-top: var(--xl);
   --cd-bottom: var(--xl);
   --cd-width: 100%;
-  --cd-blob-display: block;
 
   &:nth-child(3n-1) {
     padding-right: var(--cd-left);
@@ -85,12 +84,13 @@
     --cd-text-left-2: auto;
     --cd-text-right-1: auto;
     --cd-text-right-2: 0;
+    --cd-blob-display: none;
     --cd-top: 0;
     --cd-bottom: 0;
     --cd-width: 50%;
 
     &:nth-child(3n+1) .card-text {
-      --text-xs: var(--text-s);
+      --text-xs: var(--font-16);
       --3xs: var(--2xs);
       --s: var(--m);
     }
@@ -111,7 +111,7 @@
 }
 
 .card-alternate {
-  --cd-media-max: #{util.calc-rem(800px)};
+  --cd-media-max: #{util.calc-rem(900px)};
 }
 
 .card-blob { 
@@ -122,10 +122,6 @@
   height: #{util.fluid-size-clamp((320px, 800px), ("xs", "l"))};
   display: var(--cd-blob-display, block);
   z-index: -2;
-
-  @include util.breakpoint-min("m") {
-    --cd-blob-display: none;
-  }
 
   @include util.breakpoint-min("xl") {
     --cd-blob-right: 50%;

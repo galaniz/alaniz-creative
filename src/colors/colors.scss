@@ -19,5 +19,7 @@
 }
 
 .theme {
-  --sharp-color: var(--theme-color);
+  --interactive-color: var(--theme-color);
+
+  color: var(--theme-color);
 }

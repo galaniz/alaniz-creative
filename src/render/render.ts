@@ -13,6 +13,7 @@ import { FormField } from '@alanizcreative/formation-static/objects/Form/FormFie
 import { Navigations } from '../components/Navigation/Navigations.js'
 import { HttpError } from '../components/HttpError/HttpError.js'
 import { Layout } from '../components/Layout/Layout.js'
+import { AspectRatio } from '../layouts/AspectRatio/AspectRatio.js'
 import { Button } from '../objects/Button/Button.js'
 import { Image } from '../objects/Image/Image.js'
 import { Video } from '../objects/Video/Video.js'
@@ -29,6 +30,7 @@ const renderFunctions: RenderFunctionsArgs = {
     container: Container,
     column: Column,
     richText: RichText,
+    aspectRatio: AspectRatio,
     button: Button,
     image: Image,
     video: Video,

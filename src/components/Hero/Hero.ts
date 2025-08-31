@@ -240,7 +240,7 @@ const Hero = (args: HeroArgs): string => {
     titleClasses = 'pb-xs pb-m-m'
   }
 
-  textOutput = `<h1${titleClasses ? ` class="${titleClasses}"` : ''}>${title}</h1>${textOutput}`
+  textOutput = `<h1${titleClasses ? ` class="${titleClasses}"` : ''}>${title}</h1>${textOutput}${actionOutput}`
 
   /* Classes */
 
