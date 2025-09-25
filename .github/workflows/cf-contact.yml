@@ -1,0 +1,31 @@
+name: Cloudflare Contact Worker
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/workers/Contact/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Install pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      # Install pnpm dependencies
+      - name: Install pnpm dependencies
+        run: pnpm install --frozen-lockfile --optional
+
+      # Upload worker
+      - name: Upload worker
+        run: pnpm exec wrangler deploy --config src/workers/Contact/wrangler.json
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_WORKER_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
