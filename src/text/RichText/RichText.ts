@@ -99,7 +99,7 @@ const RichTextContentItem: RichTextContentItemFilter = (item, props) => {
   }
 
   if (tag === 'cite') {
-    newItem.attr = 'class="text-s mt-2xs"'
+    newItem.attr = 'class="text-s mt-2xs block"'
   }
 
   if (tag === 'dt' && type === 'columns') {

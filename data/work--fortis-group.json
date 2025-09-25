@@ -19,10 +19,9 @@
     "primary-light": "#95b0e6",
     "secondary-dark": "#141d2d",
     "secondary-light": "#5087e8",
-    "video-bg": "#132852",
-    "video-border": "var(--vid-bg)",
-    "video-play-bg": "var(--background-light)",
-    "video-play-color": "#204389"
+    "med-primary": "#204389",
+    "med-secondary": "var(--background-light)",
+    "med-tertiary": "#132852"
   },
   "related": [
     "work--injury-board",
@@ -112,7 +111,7 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--ui-design",
+                      "internalLink": "term--work-category-ui-design",
                       "content": "UI design"
                     }
                   ]
@@ -123,7 +122,7 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--web-development",
+                      "internalLink": "term--work-category-web-development",
                       "content": "Web development"
                     }
                   ]
@@ -368,6 +367,7 @@
                       "content": [
                         {
                           "renderType": "container",
+                          "layout": "col",
                           "gap": "m",
                           "gapLarge": "l",
                           "content": [
@@ -392,6 +392,7 @@
                       "content": [
                         {
                           "renderType": "container",
+                          "layout": "col",
                           "gap": "m",
                           "gapLarge": "l",
                           "content": [
@@ -416,6 +417,7 @@
                       "content": [
                         {
                           "renderType": "container",
+                          "layout": "col",
                           "gap": "m",
                           "gapLarge": "l",
                           "content": [
@@ -685,7 +687,7 @@
               "paddingTopLarge": "l",
               "content": [
                 {
-                  "renderType": "video",
+                  "renderType": "media",
                   "title": "Homepage animation",
                   "source": "fortis-group/home.mp4"
                 }

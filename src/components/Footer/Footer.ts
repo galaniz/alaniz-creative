@@ -22,7 +22,7 @@ const Footer = (currentLink: string, currentType?: string | string[]): string =>
   const listOutput = navigationsInstance?.getOutput('footer', {
     currentLink,
     currentType,
-    listClass: 'flex flex-wrap gap-m gap-l-m ls-none e-line-out',
+    listClass: 'bg-foreground-base flex flex-wrap gap-m gap-l-m ls-none e-line-in',
     listAttr: 'role="list"',
     linkClass: 'text-s',
     linkAttr: 'data-rich'
@@ -40,7 +40,7 @@ const Footer = (currentLink: string, currentType?: string | string[]): string =>
     <footer class="footer relative overflow-hidden mt-auto sharp">
       <div class="container">
         <div class="flex col row-m justify-between">
-          <div class="footer-relative e-line-in">
+          <div class="footer-relative">
             <div class="pt-4xl pb-l pt-5xl-m pb-2xl-m">
               <p class="heading-l wt-normal m-0 pb-l pr-2xl">Thanks for dropping&nbsp;by!</p>
               ${navOutput}

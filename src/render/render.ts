@@ -16,7 +16,7 @@ import { Layout } from '../components/Layout/Layout.js'
 import { AspectRatio } from '../layouts/AspectRatio/AspectRatio.js'
 import { Button } from '../objects/Button/Button.js'
 import { Image } from '../objects/Image/Image.js'
-import { Video } from '../objects/Video/Video.js'
+import { Media } from '../objects/Media/Media.js'
 import { Posts } from '../objects/Posts/Posts.js'
 import { Card } from '../objects/Card/Card.js'
 
@@ -33,7 +33,7 @@ const renderFunctions: RenderFunctionsArgs = {
     aspectRatio: AspectRatio,
     button: Button,
     image: Image,
-    video: Video,
+    media: Media,
     form: Form,
     formField: FormField,
     posts: Posts,

@@ -36,10 +36,18 @@
 }
 
 .e-line-all a,
+.e-line-up a[data-rich] {
+  --ln-from: currentcolor;
+  --ln-to: currentcolor;
+  --ln-offset-to: #{util.calc-rem(4px)};
+
+  @extend %e-line;
+  @extend %e-line-transition;
+}
+
 .e-line-in a[data-rich] {
   --ln-from: transparent;
   --ln-to: currentcolor;
-  --ln-offset-to: #{util.calc-rem(4px)};
 
   @extend %e-line;
   @extend %e-line-transition;

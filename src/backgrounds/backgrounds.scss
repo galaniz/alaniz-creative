@@ -11,6 +11,7 @@
 .bg-background-light {
   --text-color: hsla(var(--foreground-base-hsl), 0.85);
   --sharp-color: var(--foreground-base);
+  --inverse-color: var(--background-light);
   --interactive-color: var(--foreground-base);
   --muted-color: hsla(var(--foreground-base-hsl), 0.075);
   --negative-color-hsl: var(--negative-dark-hsl);
@@ -25,6 +26,7 @@
 .bg-foreground-base {
   --outline-color: var(--background-light);
   --sharp-color: var(--background-light);
+  --inverse-color: var(--foreground-base);
   --interactive-color: var(--background-light);
   --text-color: hsla(var(--background-light-hsl), 0.75);
   --muted-color: hsla(var(--background-light-hsl), 0.075);

@@ -9,7 +9,7 @@ import type { ServerlessActionData } from '@alanizcreative/formation-static/serv
 import { Form as FormBase } from '@alanizcreative/formation/objects/Form/Form.js'
 import { isHtmlElement } from '@alanizcreative/formation/utils/html/html.js'
 import { getItem } from '@alanizcreative/formation/utils/item/item.js'
-import { setLoader } from '@alanizcreative/formation/utils/loader/loader.js'
+import { setDisplay } from '@alanizcreative/formation/utils/display/display.js'
 
 /**
  * Handles form submissions.
@@ -154,7 +154,7 @@ class Form extends FormBase {
         return
       }
 
-      const scriptId = 'mpl-turnstile-script'
+      const scriptId = 'ac-turnstile-script'
       const script = document.getElementById(scriptId)
 
       if (script) {
@@ -184,9 +184,7 @@ class Form extends FormBase {
    * @param {'error'|'success'} type
    * @param {HTMLElement|null} [loader]
    */
-  #displayResult (type: 'error' | 'success', loader?: HTMLElement | null): void {
-    clearTimeout(this.#delayId)
-
+  #displayResult (type: 'error' | 'success', loader: HTMLElement | null): void {
     /* Append, display and focus */
 
     const result = this.getClone(type, this.form)
@@ -208,17 +206,13 @@ class Form extends FormBase {
       }
     }
 
-    result.style.display = 'flex'
+    clearTimeout(this.#delayId)
 
-    this.#delayId = window.setTimeout(() => {
-      result.focus()
-    }, 0)
+    this.#delayId = setDisplay(result, 'focus')
 
     /* Loader */
 
-    if (loader) {
-      setLoader(loader, false)
-    }
+    setDisplay(loader, 'hide', 'loader')
 
     /* Submit state and button */
 
@@ -236,7 +230,7 @@ class Form extends FormBase {
    * @return {Promise<string>}
    */
   async #getTurnstileToken(): Promise<string> {
-    const turnstileId = `#mpl-turnstile-${this.id}`
+    const turnstileId = `#ac-turnstile-${this.id}`
 
     await Form.loadTurnstile()
 
@@ -282,8 +276,13 @@ class Form extends FormBase {
 
     /* Hide result */
 
-    this.clones.get('error')?.style.setProperty('display', 'none')
-    this.clones.get('success')?.style.setProperty('display', 'none')
+    if (this.clones.has('error')) {
+      setDisplay(this.getClone('error'), 'hide')
+    }
+
+    if (this.clones.has('success')) {
+      setDisplay(this.getClone('success'), 'hide')
+    }
 
     /* Submit state */
 
@@ -309,11 +308,7 @@ class Form extends FormBase {
 
     const loader = this.getClone('loader', this.submits?.parentElement)
 
-    if (loader) {
-      this.#loadDelayId = window.setTimeout(() => {
-        setLoader(loader, true, true)
-      }, 0)
-    }
+    this.#loadDelayId = setDisplay(loader, 'focus', 'loader')
 
     /* Turnstile token */
 
@@ -337,7 +332,7 @@ class Form extends FormBase {
     /* Request */
 
     try {
-      const resp = await fetch(`https://alanizcreative.com/api/${this.action}`, {
+      const resp = await fetch(`http://localhost:8787/${this.action}`, {
         method: 'POST',
         body: JSON.stringify(data)
       })
@@ -356,4 +351,4 @@ class Form extends FormBase {
 
 /* Register */
 
-customElements.define('mpl-form', Form)
+customElements.define('ac-form', Form)

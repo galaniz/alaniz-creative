@@ -27,11 +27,16 @@
 
 .button-primary {
   background: var(--btn-fill, var(--sharp-color));
-  color: var(--btn-color, var(--background-light));
+  color: var(--btn-color, var(--inverse-color));
 }
 
 .button-secondary {
   color: var(--btn-stroke, var(--sharp-color));
+}
+
+.button-sharp {
+  --btn-stroke: var(--sharp-color);
+  --btn-fill: var(--sharp-color);
 }
 
 .button-l {

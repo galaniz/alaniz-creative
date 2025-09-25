@@ -16,7 +16,11 @@
           "pattern": "alanizcreative.com/api/password-dev",
           "zone_name": "alanizcreative.com"
         }
-      ]
+      ],
+      "observability": {
+        "enabled": true,
+        "head_sampling_rate": 1
+      }
     }
   },
   "routes": [
@@ -24,5 +28,9 @@
       "pattern": "alanizcreative.com/api/password",
       "zone_name": "alanizcreative.com"
     }
-  ]
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
 }

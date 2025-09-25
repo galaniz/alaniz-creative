@@ -45,7 +45,7 @@ const CardMinimal = (internalLink: Item, text?: string): string => {
   return /* html */`
     <li>
       <h2 class="inline-block relative">
-        <a href="${link}" class="before outline-tight">${title}</a>
+        <a href="${link}" class="before outline-tight" data-rich>${title}</a>
       </h2>
       ${textOutput}
     </li>
@@ -60,7 +60,7 @@ const CardMinimal = (internalLink: Item, text?: string): string => {
  */
 const CardMinimalContainer = (output: string): string => {
   return /* html */`
-    <ul class="ls-none e-line-in flex col gap-m gap-l-l" role="list">
+    <ul class="ls-none e-line-up flex col gap-m gap-l-l" role="list">
       ${output}
     </ul>
   `

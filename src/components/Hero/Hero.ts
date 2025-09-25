@@ -217,7 +217,7 @@ const Hero = (args: HeroArgs): string => {
   let textOutput = ''
 
   if (hasText) {
-    textOutput += `<p class="text-l e-line-in${hasAction ? ' pb-m pb-l-m' : ''}">${text}</p>`
+    textOutput += `<p class="text-l e-line-up pt-xs pt-m-m${hasAction ? ' pb-m pb-l-m' : ''}">${text}</p>`
   }
 
   /* Title */
@@ -248,12 +248,12 @@ const Hero = (args: HeroArgs): string => {
   let container = ''
 
   if (isMediaText) {
-    sectionClasses = 'overflow-hidden text-l pt-xl-m'
+    sectionClasses = 'overflow-hidden text-l pt-l pt-xl-m'
     container = 'xs'
   }
 
   if (isMinimal) {
-    sectionClasses = 'container-xs relative text-l pt-2xl-m pb-m pb-l-m'
+    sectionClasses = 'container-xs relative text-l pt-l pt-2xl-m pb-m pb-l-m'
   }
 
   if (isIndex) {
@@ -268,8 +268,8 @@ const Hero = (args: HeroArgs): string => {
     sectionClasses = 'container-xs relative py-m py-l-m text-center'
   }
 
-  if (archive === 'work' || archive === 'workCategory' || contentType === 'term') {
-    sectionClasses = 'container text-l pt-2xl-m'
+  if (archive === 'work' || archive === 'workCategory' || contentType === 'term' || contentType === 'taxonomy') {
+    sectionClasses = 'container text-l pt-l pt-2xl-m'
   }
 
   /* Output */

@@ -220,7 +220,11 @@ const Container = (props: ContainerProps): ContainerProps => {
   /* Rich text styles */
 
   if (richTextStyles) {
-    classesArr.push('rich-text e-line-in')
+    classesArr.push('rich-text e-line-up')
+  }
+
+  if (tag === 'figcaption') {
+    classesArr.push('container-xs pt-m pt-l-m pb-m text-s text-center')
   }
 
   /* Classes */

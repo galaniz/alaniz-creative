@@ -55,7 +55,7 @@ const Form = (props: FormProps): FormProps => {
   const errorInlineId = 'tmpl-error-inline'
 
   configVars.template.set(errorInlineId, /* html */`
-    <span class="form-error-inline flex gap-4xs pt-3xs">
+    <span class="form-error-inline flex gap-4xs pb-3xs">
       ${ErrorSvg({ width: 'xs', height: 's' })}
       <span class="a-hide-vis">Error: </span>
       <span class="text-s wt-medium" data-form-error-text></span>
@@ -84,9 +84,13 @@ const Form = (props: FormProps): FormProps => {
 
   const loaderId = Loader()
 
-  /* Attributes */
+  /* Id */
 
   const formId = uuid()
+  configVars.formId = formId
+
+  /* Attributes */
+
   const siteKey = config.env.prod ? '0x4AAAAAABjOkItl_wP_zKgU' : '1x00000000000000000000BB'
   let formAttr = ` action="${action}${config.env.prod ? '' : '-dev'}" error-summary="${errorSummaryId}" error-inline="${errorInlineId}" error="${errorId}" success="${successId}" loader="${loaderId}" sitekey="${siteKey}"`
 
@@ -122,7 +126,7 @@ const Form = (props: FormProps): FormProps => {
       formTag: 'ac-form',
       formClasses: 'form',
       formAttr,
-      fields: `<div id="mpl-turnstile-${formId}" class="none"></div>`,
+      fields: `<div id="ac-turnstile-${formId}" class="none"></div>`,
       fieldsClasses: 'form flex wrap align-end gap-m',
       fieldsAttr: 'novalidate',
       submitFieldClasses: 'relative',

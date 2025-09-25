@@ -69,7 +69,9 @@ const Card = (props: CardProps): string => {
 
   /* Layout */
 
-  const isAlternating = type === 'alternate' || type === 'cascade'
+  const isCascade = type === 'cascade'
+  const isAlternate = type === 'alternate'
+  const isAlternating = isAlternate || isCascade
   const isWidow = length % 3 === 2
 
   /* Parents */
@@ -92,10 +94,18 @@ const Card = (props: CardProps): string => {
 
   if (isAlternating) {
     headingClasses += ' heading-l'
-    textClasses = `pt-m pt-l-m ${index % 2 !== 0 ? 'mr-auto' : 'ml-auto'}`
+    textClasses = 'pt-m pt-l-m'
   } else {
     headingClasses += ' heading-s'
-    textClasses = 'card-text pt-2xs pt-m-m'
+    textClasses = 'pt-2xs pt-m-m'
+  }
+
+  if (isAlternate) {
+    textClasses += index % 2 !== 0 ? ' mr-auto' : ' ml-auto'
+  }
+
+  if (isCascade) {
+    textClasses += ' card-text'
   }
 
   if (contentType === 'work' && isArrayStrict(category)) {
@@ -164,7 +174,7 @@ const Card = (props: CardProps): string => {
   let lockOutput = ''
 
   if (passwordProtect) {
-    lockOutput = `&nbsp;${LockSvg({ width: 's', height: 's' })}<span class="a-hide-vis"> (password protected)</span>`
+    lockOutput = `${LockSvg({ width: 's', height: 's' })}<span class="a-hide-vis"> (password protected)</span>`
   }
 
   /* Styles */

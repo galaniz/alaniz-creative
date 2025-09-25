@@ -103,14 +103,14 @@ const NavigationPrimary = (args: NavigationPrimaryArgs): string => {
         data-nav-modal
       >
         <a
-          class="nav-logo logo inline-flex fixed"
+          class="nav-modal-logo logo inline-flex fixed"
           href="${getPermalink()}"
           aria-label="${config.title} Home"
         ></a>
         <div class="nav-modal-scroll overflow-y-auto overflow-x-hidden overscroll-none h-full e-trans relative sharp px-3xs py-m">
           <ul class="nav-modal-list flex col pb-l gap-2xs outline-tight ls-none h-full" role="list" data-nav-modal-slot></ul>
           <button
-            class="nav-close nav-icon h-l l-fixed"
+            class="nav-close nav-icon h-l fixed"
             aria-label="Close menu"
             data-nav-close
           ></button>
@@ -141,16 +141,16 @@ const NavigationPrimary = (args: NavigationPrimaryArgs): string => {
   /* Output */
 
   return /* html */`
-    <mpl-navigation-primary
+    <ac-navigation-primary
       class="nav relative container py-m py-l-m flex justify-between align-center td-none"
       breakpoints="${breakpoint}"
       role="navigation"
       aria-label="Primary"
     >
-      ${Logo('mr-2xl')}
+      ${Logo('nav-logo mr-2xl')}
       ${listOutput}
       ${modalOutput}
-    </mpl-navigation-primary>
+    </ac-navigation-primary>
   `
 }
 

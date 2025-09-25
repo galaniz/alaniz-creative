@@ -27,8 +27,6 @@
       "renderType": "container",
       "richTextStyles": true,
       "maxWidth": "xs",
-      "gap": "m",
-      "gapLarge": "l",
       "content": [
         {
           "renderType": "richText",
@@ -93,7 +91,7 @@
         {
           "renderType": "button",
           "title": "Get in touch",
-          "size": "large",
+          "size": "l",
           "internalLink": "page--contact"
         }
       ]

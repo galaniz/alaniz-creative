@@ -11,7 +11,7 @@ const SkipLink = (): string => {
   return /* html */`
     <a
       href="#main"
-      class="skip-link button b-radius-l button-secondary b-all bg-background-light"
+      class="skip-link button button-sharp button-secondary b-all bg-background-light b-radius-l"
     >
       Skip to main content
     </a>

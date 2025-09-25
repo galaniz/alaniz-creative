@@ -1,5 +1,5 @@
 /**
- * Objects - Video Primary Client
+ * Objects - Media Primary Client
  */
 
 /* Imports */
@@ -8,4 +8,4 @@ import { Media } from '@alanizcreative/formation/objects/Media/Media.js'
 
 /* Define */
 
-customElements.define('ac-video', Media)
+customElements.define('ac-media', Media)

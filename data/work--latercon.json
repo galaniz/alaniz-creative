@@ -19,10 +19,9 @@
     "primary-light": "#af8afe",
     "secondary-dark": "#fffaee",
     "secondary-light": "#fffaee",
-    "vid-bg": "#fffaee",
-    "vid-border": "var(--vid-play-bg)",
-    "vid-play-bg": "#844bff",
-    "vid-play-color": "var(--background-light)"
+    "med-primary": "var(--background-light)",
+    "med-secondary": "#844bff",
+    "med-tertiary": "#fffaee"
   },
   "related": [
     "work--why-we-serve",
@@ -118,7 +117,7 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--front-end-development",
+                      "internalLink": "term--work-category-front-end-development",
                       "content": "Front-end development"
                     }
                   ]
@@ -493,7 +492,7 @@
                           ]
                         },
                         {
-                          "renderType": "video",
+                          "renderType": "media",
                           "title": "Default landing page animation",
                           "source": "latercon/default.mp4"
                         }
@@ -517,7 +516,7 @@
                           ]
                         },
                         {
-                          "renderType": "video",
+                          "renderType": "media",
                           "title": "Reduce motion landing page",
                           "source": "latercon/reduce-motion.mp4"
                         }
@@ -541,7 +540,7 @@
                           ]
                         },
                         {
-                          "renderType": "video",
+                          "renderType": "media",
                           "title": "No JavaScript landing page",
                           "source": "latercon/no-js.mp4"
                         }
@@ -566,7 +565,7 @@
             {
               "renderType": "richText",
               "tag": "p",
-              "content": "Although stakeholders were pleased with how the page turned out, there were some things we didn't get. The Creative Director was hoping for a mouseover distort of the LaterCon logo in the hero section. A combination of time and performance constraints resulted in a compromise. The effect required a large library and page speed was already in the orange. We opted for a smaller library and a simpler effect&ndash;clicking the cursor icon changes svg paths to simulate a morphing effect. We also encountered a significant hiccup the day before the event&ndash;the post-event version was pushed live. For about an hour registration links were disabled. This was a lesson to draft pull requests and better communicate with team members about time sensitive launches."
+              "content": "Although stakeholders were pleased with how the page turned out, there were some things we didn't get to. The Creative Director was hoping for a mouseover distort of the LaterCon logo in the hero section. A combination of time and performance constraints resulted in a compromise. The effect required a large library and page speed was already in the orange. We opted for a smaller library and a simpler effect&ndash;clicking the cursor icon changes svg paths to simulate a morphing effect. We also encountered a significant hiccup the day before the event&ndash;the post-event version was pushed live. For about an hour registration links were disabled. This was a lesson to draft pull requests and better communicate with team members about time sensitive launches."
             }
           ]
         },
@@ -678,6 +677,7 @@
               "content": [
                 {
                   "renderType": "container",
+                  "layout": "col",
                   "gap": "m",
                   "gapLarge": "l",
                   "content": [

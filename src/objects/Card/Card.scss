@@ -21,6 +21,8 @@
 
 .card-cascade,
 .card-alternate {
+  --cd-media-max: #{util.calc-rem(900px)};
+
   @include util.breakpoint-min("s") {
     --cd-media-padding: 0 var(--l);
   }
@@ -36,6 +38,14 @@
   --cd-top: var(--xl);
   --cd-bottom: var(--xl);
   --cd-width: 100%;
+
+  &:nth-child(odd) {
+    --cd-text-left: auto;
+  }
+
+  &:nth-child(even) {
+    --cd-text-right: auto;
+  }
 
   &:nth-child(3n-1) {
     padding-right: var(--cd-left);
@@ -84,20 +94,20 @@
     --cd-text-left-2: auto;
     --cd-text-right-1: auto;
     --cd-text-right-2: 0;
-    --cd-blob-display: none;
     --cd-top: 0;
     --cd-bottom: 0;
     --cd-width: 50%;
 
     &:nth-child(3n+1) .card-text {
-      --text-xs: var(--font-16);
+      --font-14: var(--font-16);
       --3xs: var(--2xs);
       --s: var(--m);
     }
 
     &:nth-child(3n-1),
     &:nth-child(3n) {
-      --h2: var(--h4);
+      --font-50-flex: var(--font-30-flex);
+      --cd-blob-display: none;
 
       .card-text {
         padding-top: var(--m);
@@ -108,10 +118,6 @@
       padding-top: 0;
     }
   }
-}
-
-.card-alternate {
-  --cd-media-max: #{util.calc-rem(900px)};
 }
 
 .card-blob { 

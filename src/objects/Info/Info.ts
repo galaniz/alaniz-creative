@@ -39,11 +39,22 @@ const Info = (args: InfoArgs): string => {
   let textOutput = ''
 
   if (hasTitle) {
-    textOutput += `<h2 class="text-m lead-open wt-medium m-0">${title}</h2>`
+    textOutput += `
+      <h2 class="text-m lead-open wt-medium m-0"${template ? ' data-info-title' : ''}>
+        ${title}
+      </h2>
+    `
   }
 
   if (isStringStrict(text)) {
-    textOutput += `<p class="text-${hasTitle ? 's' : 'm wt-medium'} lead-open m-0">${text}</p>`
+    textOutput = `
+      <div>
+        ${textOutput}
+        <p class="text-${hasTitle ? 's' : 'm wt-medium'} lead-open m-0"${template ? ' data-info-text' : ''}>
+          ${text}
+        </p>
+      </div>
+    `
   }
 
   if (!textOutput) {
@@ -73,7 +84,7 @@ const Info = (args: InfoArgs): string => {
       ${Icon({
         width: 's',
         height: 's',
-        classes: 'w-m-m h-m-m'
+        classes: 'w-m-m h-m-m shrink-0'
       })}
       ${textOutput}
     </div>

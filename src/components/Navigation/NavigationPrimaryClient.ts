@@ -8,4 +8,4 @@ import { Navigation } from '@alanizcreative/formation/components/Navigation/Navi
 
 /* Define */
 
-customElements.define('mpl-navigation-primary', Navigation)
+customElements.define('ac-navigation-primary', Navigation)

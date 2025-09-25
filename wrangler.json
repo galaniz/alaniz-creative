@@ -3,7 +3,7 @@
   "main": "./src/workers/Site/SiteWorker.ts",
   "compatibility_date": "2025-06-01",
   "workers_dev": false,
-  "preview_urls": false,
+  "preview_urls": true,
   "keep_vars": true,
   "minify": true,
   "assets": {
@@ -14,7 +14,17 @@
   },
   "env": {
     "staging": {
-      "main": "./src/workers/Site/SiteWorker.ts"
+      "main": "./src/workers/Site/SiteWorker.ts",
+      "preview_urls": false,
+      "workers_dev": false,
+      "observability": {
+        "enabled": true,
+        "head_sampling_rate": 1
+      }
     }
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.02
   }
 }

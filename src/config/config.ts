@@ -29,7 +29,8 @@ const configVars: ConfigVars = {
   js: {
     in: 'lib/global/globalClient',
     out: 'js/global/globalClient'
-  }
+  },
+  formId: ''
 }
 
 /**

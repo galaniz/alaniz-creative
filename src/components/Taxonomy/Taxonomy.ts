@@ -25,6 +25,9 @@ const Taxonomy = (itemData: Item): Item => {
 
   return {
     ...itemData,
+    hero: {
+      type: 'minimal'
+    },
     content: [
       {
         renderType: 'container',

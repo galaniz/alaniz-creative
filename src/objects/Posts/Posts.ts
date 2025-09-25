@@ -43,11 +43,12 @@ const Posts = (props: PostsProps): string => {
 
   const {
     contentType: postType,
-    order = 'date',
     headingLevel = 3,
     display = 1,
     layout = 'minimal'
   } = args
+
+  let { order = 'date' } = args
 
   /* Page data */
 
@@ -79,15 +80,19 @@ const Posts = (props: PostsProps): string => {
     posts = postsData[postType] || []
   }
 
-  if (isTaxonomy && postsData.term) {
-    posts = postsData.term.filter(item => {
-      return item.taxonomy?.id === id
-    })
+  if (isTaxonomy) {
+    order = 'title'
+
+    if (postsData.term) {
+      posts = postsData.term.filter(item => {
+        return item.taxonomy?.id === id
+      })
+    }
   }
 
   if (isTerm) {
     taxonomy?.contentTypes.forEach(type => {
-      const newPosts = postsData[type]
+      const newPosts = postsData[type]?.filter(post => post.category?.some(cat => cat.id === id))
 
       if (!newPosts) {
         return
@@ -158,12 +163,14 @@ const Posts = (props: PostsProps): string => {
       let cardText = ''
 
       if (itemType === 'term') {
-        const itemTaxonomyType = itemTaxonomy?.contentTypes[0] || ''
-        const itemPostsTotal = postsData[itemTaxonomyType]?.length || 0
-        const itemPostsLabels = getArchiveLabels(itemType, post)
+        const termTaxonomyType = itemTaxonomy?.contentTypes[0] || ''
+        const termPostsLabels = getArchiveLabels(termTaxonomyType, post)
+        const termPostsTotal = postsData[termTaxonomyType]?.filter(termPost => {
+          return termPost.category?.some(cat => cat.id === post.id)
+        }).length || 0
 
         cardText =
-          `${itemPostsTotal} ${itemPostsLabels[itemPostsTotal === 1 ? 'singular' : 'plural'].toLowerCase()}`
+          `${termPostsTotal} ${termPostsLabels[termPostsTotal === 1 ? 'singular' : 'plural'].toLowerCase()}`
       }
 
       output += CardMinimal(post, cardText)

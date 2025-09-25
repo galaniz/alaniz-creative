@@ -6,6 +6,8 @@
 
 import type { FormFieldProps } from './FormTypes.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
+import { addScript } from '@alanizcreative/formation-static/utils/scriptStyle/scriptStyle.js'
+import { configVars } from '../../config/config.js'
 
 /**
  * Filter formation form field props.
@@ -18,6 +20,7 @@ const FormField = (props: FormFieldProps): FormFieldProps => {
 
   const { args } = props
   const {
+    name,
     type = 'text',
     width = '12',
     widthSmall,
@@ -56,19 +59,29 @@ const FormField = (props: FormFieldProps): FormFieldProps => {
 
   /* Attributes */
 
-  const fieldAttr = 'data-form-field'
-  let attr = 'data-form-input'
+  let fieldAttr = 'data-form-field'
+  const attr: string[] = []
 
   if (isStringStrict(placeholder)) {
-    attr += ` placeholder="${placeholder}"`
+    attr.push(`placeholder : ${placeholder}`)
   }
 
   if (isStringStrict(autoComplete)) {
-    attr += ` autocomplete="${autoComplete}"`
+    attr.push(`autocomplete : ${autoComplete}`)
   }
 
   if (type === 'textarea') {
-    attr += ` rows="${rows}"`
+    attr.push(`rows : ${rows}`)
+  }
+
+  /* Email */
+
+  if (type === 'email') {
+    args.fieldTag = 'ac-form-field-email'
+
+    fieldAttr += ` form-id="${configVars.formId}" input-name="${name}"`
+
+    addScript('objects/Form/FormFieldEmailClient')
   }
 
   /* Output */
@@ -81,7 +94,7 @@ const FormField = (props: FormFieldProps): FormFieldProps => {
       fieldAttr,
       labelClasses: 'form-label',
       classes,
-      attr,
+      attr: attr.join('\n'),
       requiredIcon: '<span class="form-required-icon" aria-hidden="true">*</span>'
     }
   }

@@ -13,6 +13,8 @@
   --sharp-color: var(--background-light);
   --interactive-color: var(--background-light);
 
+  margin-top: calc(var(--3xs) * -1);
+
   @include util.breakpoint-min("m") {
     --ft-relative: relative;
     --ft-legal: var(--foreground-base);
@@ -23,12 +25,13 @@
   z-index: -1;
   min-width: 80rem;
   height: calc(100% - var(--l));
-  right: util.fluid-size-clamp((-450px, -100px, -270px), ("s", "m", "l"));
+  right: util.fluid-size-clamp((-450px, -100px), ("s", "m"));
   bottom: #{util.calc-rem(-1px)};
   color: var(--foreground-base);
 
-  @include util.breakpoint-min("2xl") {
+  @include util.breakpoint-min("xl") {
     width: calc(80rem + (50vw - (var(--container-no-padding) / 2) - #{util.calc-rem(270px)}));
+    right: #{util.calc-rem(-270px)};
   }
 }
 

@@ -107,7 +107,7 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--ui-design",
+                      "internalLink": "term--work-category-ui-design",
                       "content": "UI design"
                     }
                   ]
@@ -118,7 +118,7 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--web-development",
+                      "internalLink": "term--work-category-web-development",
                       "content": "Web development"
                     }
                   ]
@@ -635,6 +635,7 @@
                       "content": [
                         {
                           "renderType": "container",
+                          "layout": "col",
                           "gap": "m",
                           "gapLarge": "l",
                           "content": [
@@ -642,6 +643,7 @@
                               "renderType": "container",
                               "layout": "row",
                               "border": "rounded",
+                              "gap": "0",
                               "content": [
                                 {
                                   "renderType": "column",

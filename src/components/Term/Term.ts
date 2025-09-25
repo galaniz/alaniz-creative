@@ -25,13 +25,16 @@ const Term = (itemData: Item): Item => {
 
   return {
     ...itemData,
+    hero: {
+      type: 'minimal'
+    },
     content: [
       {
         renderType: 'container',
         tag: 'section',
         paddingBottom: 'xl',
         paddingBottomLarge: '2xl',
-        maxWidth: 'default',
+        maxWidth: 's',
         content: [
           {
             renderType: 'posts',

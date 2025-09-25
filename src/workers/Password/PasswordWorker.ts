@@ -116,6 +116,6 @@ export default {
 
     /* Result */
 
-    return await Ajax(request, env, corsHeaders, 'mpl_hp') // Request method checked here
+    return await Ajax(request, env, corsHeaders, 'ac_hp') // Request method checked here
   }
 }

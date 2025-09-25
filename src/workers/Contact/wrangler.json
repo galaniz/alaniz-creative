@@ -16,7 +16,11 @@
           "pattern": "alanizcreative.com/api/contact-dev",
           "zone_name": "alanizcreative.com"
         }
-      ]
+      ],
+      "observability": {
+        "enabled": true,
+        "head_sampling_rate": 1
+      }
     }
   },
   "routes": [
@@ -24,5 +28,9 @@
       "pattern": "alanizcreative.com/api/contact",
       "zone_name": "alanizcreative.com"
     }
-  ]
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
 }

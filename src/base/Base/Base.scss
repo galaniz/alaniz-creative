@@ -8,12 +8,12 @@ html {
   line-height: var(--line-height-base);
   font-family: var(--font-primary);
   color: var(--text-color);
-  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh; // Fallback for old browsers
   min-height: 100dvh;
+  overflow-x: hidden;
 }
 
 a {
@@ -27,4 +27,9 @@ p {
 b,
 strong {
   font-weight: var(--font-weight-medium);
+}
+
+figcaption,
+blockquote {
+  font-style: italic;
 }

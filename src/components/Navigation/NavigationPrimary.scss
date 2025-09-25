@@ -37,6 +37,10 @@
 /* Logo */
 
 .nav-logo {
+  z-index: 2;
+}
+
+.nav-modal-logo {
   top: var(--nav-padding);
   left: var(--container-padding);
 }
@@ -83,10 +87,16 @@
 
   &:hover,
   &:active,
-  &[data-current="true"],
-  &[data-descendent-current="true"] {
+  &[data-nav-current],
+  &[data-nav-archive-current] {
     --nav-link-scale: 1;
   }
+}
+
+/* Open */
+
+.nav-open {
+  z-index: 2;
 }
 
 /* Close */

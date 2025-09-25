@@ -18,10 +18,9 @@
     "primary-light": "#66b8d9",
     "secondary-dark": "#06375d",
     "secondary-light": "#3f8ecc",
-    "video-bg": "#06375d",
-    "video-border": "var(--vid-bg)",
-    "video-play-bg": "var(--background-light)",
-    "video-play-color": "#007fb0"
+    "med-primary": "#007fb0",
+    "med-secondary": "var(--background-light)",
+    "med-tertiary": "#06375d"
   },
   "related": [
     "work--fortis-group",
@@ -116,7 +115,7 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--ui-design",
+                      "internalLink": "term--work-category-ui-design",
                       "content": "UI design"
                     }
                   ]
@@ -127,7 +126,7 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--web-development",
+                      "internalLink": "term--work-category-web-development",
                       "content": "Web development"
                     }
                   ]
@@ -378,6 +377,7 @@
                       "content": [
                         {
                           "renderType": "container",
+                          "layout": "col",
                           "gap": "m",
                           "gapLarge": "l",
                           "content": [
@@ -414,6 +414,7 @@
                       "content": [
                         {
                           "renderType": "container",
+                          "layout": "col",
                           "gap": "m",
                           "gapLarge": "l",
                           "content": [
@@ -564,6 +565,7 @@
                   "gap": "m",
                   "gapLarge": "l",
                   "justify": "center",
+                  "align": "center",
                   "content": [
                     {
                       "renderType": "column",
@@ -597,6 +599,7 @@
                       "content": [
                         {
                           "renderType": "container",
+                          "layout": "col",
                           "gap": "m",
                           "gapLarge": "l",
                           "justify": "center",
@@ -799,7 +802,7 @@
               "paddingTopLarge": "l",
               "content": [
                 {
-                  "renderType": "video",
+                  "renderType": "media",
                   "title": "Homepage animation",
                   "source": "injury-board/home.mp4"
                 }

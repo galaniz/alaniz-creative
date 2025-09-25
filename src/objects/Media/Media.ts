@@ -1,10 +1,10 @@
 /**
- * Objects - Video
+ * Objects - Media
  */
 
 /* Imports */
 
-import type { VideoProps } from './VideoTypes.js'
+import type { MediaProps } from './MediaTypes.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 import { addScript, addStyle } from '@alanizcreative/formation-static/utils/scriptStyle/scriptStyle.js'
@@ -14,12 +14,12 @@ import { PlaySvg } from '../../svg/Play/Play.js'
 import { PauseSvg } from '../../svg/Pause/Pause.js'
 
 /**
- * Output video component.
+ * Output media component.
  *
- * @param {VideoProps} props
+ * @param {MediaProps} props
  * @return {string} HTMLDivElement|HTMLElement
  */
-const Video = (props: VideoProps): string => {
+const Media = (props: MediaProps): string => {
   /* Props and args required */
 
   if (!isObjectStrict(props)) {
@@ -57,38 +57,43 @@ const Video = (props: VideoProps): string => {
 
   /* Scripts and styles */
 
-  addStyle('objects/Video/Video')
-  addScript('objects/Video/VideoClient')
+  addStyle('objects/Media/Media')
+  addScript('objects/Media/MediaClient')
 
   /* Output */
 
   return /* html */`
-    <ac-video
-      class="video"
+    <ac-media
+      class="media block ar-16-9 relative overflow-hidden b-all b-radius-s b-radius-m-m l-isolate"
       role="group"
       loader="${loaderId}"
-      errorId="${errorId}"
+      error="${errorId}"
       title="${title}"
-      url="/assets/video/${source}"
+      url="https://assets.alanizcreative.com/${source}"
+      type="video"
     >
-      <div class="video-bg ar-16-9 relative overflow-hidden b-all b-radius-s b-radius-m-m l-isolate">
-        <video playsinline muted class="block absolute top-0 left-0 w-full h-full object-cover">
-          <source src="" type="video/mp4">
-        </video>
-        <button type="button" aria-label="Play ${title}" class="video-play absolute center">
-          <span class="video-play-bg b-radius-full b-all block ar-1-1 e-trans" data-scale>
-            ${PlaySvg({ classes: 'video-icon absolute center w-2-5' })}
-          </span>
-        </button>
-        <button type="button" aria-label="Pause ${title}" class="video-pause absolute right-0 bottom-0 w-l h-l b-radius-full b-all background-light">
-          <span class="block ar-1-1"></span>
-          ${PauseSvg({ classes: 'video-icon absolute center w-2-5 background-light' })}
-        </button>
-      </div>
-    </ac-video>
+      <video playsinline muted class="block absolute top-0 left-0 w-full h-full object-cover"></video>
+      <button
+        type="button"
+        aria-label="Play ${title}"
+        class="media-play b-radius-full b-all absolute all-0 m-auto e-shift e-trans"
+        data-media-control="play"
+      >
+        ${PlaySvg({ classes: 'media-icon absolute center' })}
+      </button>
+      <button
+        type="button"
+        aria-label="Pause ${title}"
+        class="media-pause absolute right-0 bottom-0 w-l h-l b-radius-full b-all background-light"
+        data-media-control="pause"
+      >
+        <span class="block ar-1-1"></span>
+        ${PauseSvg({ classes: 'media-icon absolute center background-light' })}
+      </button>
+    </ac-media>
   `
 }
 
 /* Exports */
 
-export { Video }
+export { Media }

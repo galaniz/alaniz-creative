@@ -5,11 +5,12 @@
 /* Imports */
 
 import type { ContactEnv } from './ContactTypes.js'
+import type { Store } from '@alanizcreative/formation-static/store/storeTypes.js'
 import type { ServerlessAction } from '@alanizcreative/formation-static/serverless/serverlessTypes.js'
 import { setConfig } from '@alanizcreative/formation-static/config/config.js'
 import { setFilters } from '@alanizcreative/formation-static/utils/filter/filter.js'
 import { setServerless } from '@alanizcreative/formation-static/serverless/serverless.js'
-import { ResponseError } from '@alanizcreative/formation-static/utils/ResponseError/ResponseError.js'
+import { setStoreItem } from '@alanizcreative/formation-static/store/store.js'
 import { Ajax } from '@alanizcreative/formation-static/serverless/Ajax/Ajax.js'
 import { Contact } from '@alanizcreative/formation-static/serverless/Contact/Contact.js'
 import { workerServerlessTurnstile } from '../workerUtils.js'
@@ -25,7 +26,17 @@ const contact: ServerlessAction = async (data, request, env: ContactEnv) => {
 
   await workerServerlessTurnstile(data, request, env)
 
+  /* Form meta */
+
+  /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+  // @ts-ignore - may not exist in build context
+  const { default: formMeta } = await import('../../../lib/store/formMeta.json') as { default: Store['formMeta'] }
+
+  setStoreItem('formMeta', formMeta)
+
   /* Process inputs and send email */
+
+  delete data.inputs.turnstile
 
   return Contact(data, request, env)
 }
@@ -105,7 +116,12 @@ export default {
         })
 
         if (!resendResp.ok) {
-          throw new ResponseError('Resend failed', resendResp)
+          return {
+            error: {
+              message: 'Resend failed',
+              response: resendResp
+            }
+          }
         }
 
         return {

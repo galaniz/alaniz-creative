@@ -1,5 +1,5 @@
 /**
- * Objects - Video Types
+ * Objects - Media Types
  */
 
 /* Imports */
@@ -8,22 +8,22 @@ import type { Item } from '../../global/globalTypes.js'
 import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
 
 /**
- * @typedef {object} VideoArgs
+ * @typedef {object} MediaArgs
  * @prop {string} [title]
  * @prop {string} [source]
  */
-export interface VideoArgs {
+export interface MediaArgs {
   title?: string
   source?: string
 }
 
 /**
- * @typedef {object} VideoProps
+ * @typedef {object} MediaProps
  * @extends {RenderFunctionArgs}
- * @prop {VideoArgs} args
+ * @prop {MediaArgs} args
  * @prop {Item} [itemData]
  */
-export interface VideoProps extends RenderFunctionArgs {
-  args: VideoArgs
+export interface MediaProps extends RenderFunctionArgs {
+  args: MediaArgs
   itemData?: Item
 }

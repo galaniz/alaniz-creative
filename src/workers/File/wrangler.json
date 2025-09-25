@@ -11,5 +11,9 @@
       "pattern": "alanizcreative.com/assets/*",
       "zone_name": "alanizcreative.com"
     }
-  ]
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.02
+  }
 }

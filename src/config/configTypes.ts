@@ -60,6 +60,7 @@ export interface ConfigVarsJs {
  * @prop {Set<string>} noscript
  * @prop {ConfigVarsCss} css
  * @prop {ConfigVarsJs} js
+ * @prop {string} formId
  */
 export interface ConfigVars {
   local: boolean
@@ -69,6 +70,7 @@ export interface ConfigVars {
   noscript: Set<string>
   css: ConfigVarsCss
   js: ConfigVarsJs
+  formId: string
 }
 
 /**
@@ -77,9 +79,10 @@ export interface ConfigVars {
 export type ConfigBackgrounds = 'background-light' | 'foreground-base'
 
 /**
- * @typedef {'4xs'|'3xs'|'2xs'|'xs'|'s'|'m'|'l'|'xl'|'2xl'|'3xl'|'4xl'|'5xl'} ConfigSizes
+ * @typedef {'0'|'4xs'|'3xs'|'2xs'|'xs'|'s'|'m'|'l'|'xl'|'2xl'|'3xl'|'4xl'|'5xl'} ConfigSizes
  */
 export type ConfigSizes =
+  '0' |
   '4xs' |
   '3xs' |
   '2xs' |

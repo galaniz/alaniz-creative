@@ -8,7 +8,6 @@ import type { Store, StoreServerless } from '@alanizcreative/formation-static/st
 import type { ServerlessActionData } from '@alanizcreative/formation-static/serverless/serverlessTypes.js'
 import type { Generic } from '@alanizcreative/formation-static/global/globalTypes.js'
 import type { IncomingRequestCfProperties } from '@cloudflare/workers-types'
-import { ResponseError } from '@alanizcreative/formation-static/utils/ResponseError/ResponseError.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 import { setConfig, setConfigFilter } from '@alanizcreative/formation-static/config/config.js'
 import { setActions } from '@alanizcreative/formation-static/utils/action/action.js'
@@ -89,7 +88,7 @@ const workerServerlessTurnstile = async (
   const turnstileToken = data.inputs.turnstile?.value
 
   if (!isStringStrict(turnstileToken)) {
-    throw new ResponseError('Missing token')
+    throw new Error('Missing token')
   }
 
   const turnstileResp = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
@@ -107,7 +106,7 @@ const workerServerlessTurnstile = async (
   const turnstileRes = await turnstileResp.json() as { success: boolean }
 
   if (!turnstileRes.success) {
-    throw new ResponseError('Verification failed', turnstileResp)
+    throw new Error('Verification failed')
   }
 }
 

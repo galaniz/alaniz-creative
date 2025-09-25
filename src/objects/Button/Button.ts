@@ -83,7 +83,7 @@ const Button = (props: ButtonProps): string => {
     })
   }
 
-  if (external) {
+  if (icon === 'external' && external) {
     iconAfter = ExternalSvg({
       width: 'xs',
       height: 'xs',

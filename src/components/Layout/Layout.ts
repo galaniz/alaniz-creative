@@ -17,6 +17,7 @@ import { Seo, seoSchema } from '../../seo/Seo.js'
 import { Header } from '../Header/Header.js'
 import { Footer } from '../Footer/Footer.js'
 import { Hero } from '../Hero/Hero.js'
+import { Single } from '../Single/Single.js'
 
 /**
  * Output html.
@@ -35,6 +36,7 @@ const Layout = (args: LayoutArgs): string => {
 
   const {
     slug,
+    contentType,
     content,
     itemData,
     meta
@@ -69,6 +71,14 @@ const Layout = (args: LayoutArgs): string => {
     ...itemData,
     ...hero
   })
+
+  /* Content */
+
+  let contentOutput = content
+
+  if (contentType === 'work') {
+    contentOutput = Single(content, contentType, itemData)
+  }
 
   /* Seo */
 
@@ -112,12 +122,32 @@ const Layout = (args: LayoutArgs): string => {
 
   if (isObjectStrict(theme)) {
     const styleProps: string[] = []
+    const stylePropsDark: string[] = []
+    const stylePropsLight: string[] = []
 
     Object.entries(theme).forEach(([themeKey, themeValue]) => {
-      styleProps.push(`--${themeKey.startsWith('video') ? '' : 'theme-'}${themeKey}:${themeValue}`)
+      const themeKeyPre = themeKey.startsWith('med') ? '' : 'theme-'
+
+      styleProps.push(`--${themeKeyPre}${themeKey}:${themeValue}`)
+
+      if (themeKey.endsWith('dark')) {
+        stylePropsDark.push(`--${themeKeyPre}${themeKey.replace('-dark', '')}:var(--${themeKeyPre}${themeKey})`)
+      }
+
+      if (themeKey.endsWith('light')) {
+        stylePropsLight.push(`--${themeKeyPre}${themeKey.replace('-light', '')}:var(--${themeKeyPre}${themeKey})`)
+      }
     })
 
     stylesOutput += `:root{${styleProps.join(';')};--btn-fill:var(--theme-color);--btn-stroke:var(--theme-color)}`
+
+    if (stylePropsDark.length) {
+      stylesOutput += `.bg-background-light{${stylePropsDark.join(';')}}`
+    }
+
+    if (stylePropsLight.length) {
+      stylesOutput += `.bg-foreground-base{${stylePropsLight.join(';')}}`
+    }
   }
 
   /* Svg sprites */
@@ -206,9 +236,9 @@ const Layout = (args: LayoutArgs): string => {
       <body class="${ns} no-js flex col">
         ${spritesOutput}
         ${headerOutput}
-        <main id="main">
+        <main id="main" class="pb-3xs">
           ${heroOutput}
-          ${content}
+          ${contentOutput}
         </main>
         ${footerOutput}
         ${scriptMeta}

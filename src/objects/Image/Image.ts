@@ -47,7 +47,7 @@ const Image = (props: ImageProps): string => {
     borderRadius = 'rounded',
     width,
     widthLarge,
-    contain = true,
+    contain = false,
     align,
     classes
   } = args
@@ -119,14 +119,6 @@ const Image = (props: ImageProps): string => {
     maxWidthNum = 1600
   }
 
-  /* Attributes */
-
-  let imageAttr: string | undefined
-
-  if (isCard) {
-    imageAttr = 'data-scale'
-  }
-
   /* Details */
 
   const imageDetails = getImage({
@@ -136,7 +128,6 @@ const Image = (props: ImageProps): string => {
     },
     classes: imageClasses.join(' '),
     maxWidth: maxWidthNum,
-    attr: imageAttr,
     source: 'remote',
     lazy,
     alt

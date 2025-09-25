@@ -75,7 +75,7 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--ui-design",
+                      "internalLink": "term--work-category-ui-design",
                       "content": "UI design"
                     }
                   ]
@@ -86,7 +86,7 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--web-development",
+                      "internalLink": "term--work-category-web-development",
                       "content": "Web development"
                     }
                   ]

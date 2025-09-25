@@ -29,10 +29,9 @@
     "green-light": "#8b9240",
     "black-dark": "#070707",
     "black-light": "#8f8f8f",
-    "video-bg": "#00193a",
-    "video-border": "var(--vid-bg)",
-    "video-play-bg": "var(--background-light)",
-    "video-play-color": "#7a232f"
+    "med-primary": "#7a232f",
+    "med-secondary": "var(--background-light)",
+    "med-tertiary": "#00193a"
   },
   "related": [
     "work--latercon",
@@ -132,7 +131,7 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--ui-design",
+                      "internalLink": "term--work-category-ui-design",
                       "content": "UI design"
                     }
                   ]
@@ -143,7 +142,7 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--front-end-development",
+                      "internalLink": "term--work-category-front-end-development",
                       "content": "Front-end development"
                     }
                   ]
@@ -696,6 +695,7 @@
                               "content": [
                                 {
                                   "renderType": "container",
+                                  "layout": "col",
                                   "gap": "m",
                                   "gapLarge": "l",
                                   "content": [
@@ -717,6 +717,7 @@
                               "content": [
                                 {
                                   "renderType": "container",
+                                  "layout": "col",
                                   "gap": "m",
                                   "gapLarge": "l",
                                   "content": [
@@ -767,6 +768,7 @@
                               "content": [
                                 {
                                   "renderType": "container",
+                                  "layout": "col",
                                   "gap": "m",
                                   "gapLarge": "l",
                                   "content": [
@@ -788,6 +790,7 @@
                               "content": [
                                 {
                                   "renderType": "container",
+                                  "layout": "col",
                                   "gap": "m",
                                   "gapLarge": "l",
                                   "content": [
@@ -879,7 +882,7 @@
                           ]
                         },
                         {
-                          "renderType": "video",
+                          "renderType": "media",
                           "title": "Default homepage animation",
                           "source": "why-we-serve/home-default.mp4"
                         }
@@ -903,7 +906,7 @@
                           ]
                         },
                         {
-                          "renderType": "video",
+                          "renderType": "media",
                           "title": "Reduce motion homepage",
                           "source": "why-we-serve/home-reduce-motion.mp4"
                         }

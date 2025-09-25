@@ -117,7 +117,7 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--ux-design",
+                      "internalLink": "term--work-category-ux-design",
                       "content": "UX design"
                     }
                   ]
@@ -128,7 +128,7 @@
                   "content": [
                     {
                       "tag": "a",
-                      "internalLink": "work-category--ui-design",
+                      "internalLink": "term--work-category-ui-design",
                       "content": "UI design"
                     }
                   ]

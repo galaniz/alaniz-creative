@@ -229,10 +229,13 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
 
   const output = await render({ allData: data })
 
-  /* Store, redirect and sitemap files */
+  /* Store files */
+
+  await createStoreFiles()
+
+  /* Redirect and sitemap files */
 
   if (build) {
-    await createStoreFiles()
     await createRedirectsFile()
     await createSeoSitemapFiles()
   }

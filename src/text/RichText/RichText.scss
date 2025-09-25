@@ -46,22 +46,22 @@
     letter-spacing: var(--rt-text-track);
   }
 
-  figcaption[data-rich],
-  blockquote[data-rich] {
-    font-style: italic;
-  }
-
-  blockquote[data-rich],
+  p[data-rich],
   ul[data-rich],
-  ol[data-rich],
-  > div {
+  ol[data-rich] {
     margin: var(--rt-low) 0;
   }
 
+  blockquote[data-rich],
+  > div {
+    margin: var(--rt-high) 0;
+  }
+
   blockquote[data-rich] {
-    --rt-text-size: inherit;
-    --rt-text-lead: inherit;
-    --rt-text-track: inherit;
+    --rt-text-size: ;
+    --rt-text-lead: ;
+    --rt-text-track: ;
+    --rt-low: 0;
 
     border-left: #{util.calc-rem(3px)} solid var(--sharp-color);
     padding-left: clamp(var(--xs), 5%, var(--m));
