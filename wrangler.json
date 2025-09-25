@@ -2,7 +2,7 @@
   "name": "marketing-site",
   "main": "./src/workers/Site/SiteWorker.ts",
   "compatibility_date": "2025-06-01",
-  "workers_dev": false,
+  "workers_dev": true,
   "preview_urls": true,
   "keep_vars": true,
   "minify": true,
@@ -16,7 +16,7 @@
     "staging": {
       "main": "./src/workers/Site/SiteWorker.ts",
       "preview_urls": false,
-      "workers_dev": false,
+      "workers_dev": true,
       "observability": {
         "enabled": true,
         "head_sampling_rate": 1
