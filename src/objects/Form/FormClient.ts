@@ -6,10 +6,12 @@
 
 import type { FormAction } from './FormTypes.js'
 import type { ServerlessActionData } from '@alanizcreative/formation-static/serverless/serverlessTypes.js'
+import { ResponseError } from '@alanizcreative/formation/utils/ResponseError/ResponseError.js'
 import { Form as FormBase } from '@alanizcreative/formation/objects/Form/Form.js'
 import { isHtmlElement } from '@alanizcreative/formation/utils/html/html.js'
 import { getItem } from '@alanizcreative/formation/utils/item/item.js'
 import { setDisplay } from '@alanizcreative/formation/utils/display/display.js'
+import { isString } from '@alanizcreative/formation/utils/string/string.js'
 
 /**
  * Handles form submissions.
@@ -183,8 +185,10 @@ class Form extends FormBase {
    * @private
    * @param {'error'|'success'} type
    * @param {HTMLElement|null} [loader]
+   * @param {string} [title]
+   * @param {string} [text]
    */
-  #displayResult (type: 'error' | 'success', loader: HTMLElement | null): void {
+  #displayResult (type: 'error' | 'success', loader: HTMLElement | null, title?: string, text?: string): void {
     /* Append, display and focus */
 
     const result = this.getClone(type, this.form)
@@ -193,16 +197,19 @@ class Form extends FormBase {
       return
     }
 
-    if (type === 'success' && this.successTitle && this.successText) {
+    if (isString(title)) {
       const resultTitle = getItem('[data-info-title]', result)
-      const resultText = getItem('[data-info-text]', result)
 
       if (resultTitle) {
-        resultTitle.textContent = this.successTitle
+        resultTitle.textContent = title
       }
+    }
+
+    if (isString(text)) {
+      const resultText = getItem('[data-info-text]', result)
 
       if (resultText) {
-        resultText.textContent = this.successText
+        resultText.textContent = text
       }
     }
 
@@ -332,19 +339,34 @@ class Form extends FormBase {
     /* Request */
 
     try {
-      const resp = await fetch(`http://localhost:8787/${this.action}`, {
+      const resp = await fetch(`https://alanizcreative/api/${this.action}`, {
         method: 'POST',
         body: JSON.stringify(data)
       })
 
       if (!resp.ok) {
-        throw new Error('Action failed')
+        throw new ResponseError('Action failed', resp)
       }
 
-      this.#displayResult('success', loader)
+      if (this.action.startsWith('password')) {
+        window.location.reload()
+        return
+      }
+
+      this.#displayResult('success', loader, this.successTitle, this.successText)
       this.clear()
-    } catch {
-      this.#displayResult('error', loader)
+    } catch (error) {
+      let errorTitle: string | undefined
+      let errorText: string | undefined
+
+      if (error instanceof ResponseError) {
+        const json = await error.response.json() as { error: string }
+
+        errorTitle = json.error
+        errorText = ''
+      }
+
+      this.#displayResult('error', loader, errorTitle, errorText)
     }
   }
 }

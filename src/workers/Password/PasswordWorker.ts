@@ -46,7 +46,7 @@ const password: ServerlessAction = async (data, request, env: PasswordEnv) => {
   if (password !== env.CF_PASSWORD) {
     return {
       error: {
-        message: 'Incorrect credentials',
+        message: 'Incorrect password',
         code: 400
       }
     }
