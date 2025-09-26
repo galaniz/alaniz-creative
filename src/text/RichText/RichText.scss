@@ -1,0 +1,132 @@
+/**
+ * Text - Rich Text Styles
+ */
+
+/* Imports */
+
+@forward "../../config/config";
+@use "@alanizcreative/formation/lib/utils/utils" as util;
+
+/* Styles */
+
+.rich-text {
+  --rt-high: var(--m);
+  --rt-low: var(--m);
+  --rt-add: 0rem;
+  --rt-text-size: var(--font-20-flex);
+  --rt-text-lead: var(--line-height-loose);
+  --rt-text-track: var(--letter-spacing-open);
+  --rt-quote: 0rem;
+  --rt-term: var(--3xs);
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: calc(var(--rt-add) + var(--rt-high)) 0 var(--rt-low);
+  }
+
+  h2 {
+    --rt-add: var(--xs);
+  }
+
+  h4,
+  h5,
+  h6 {
+    --rt-add: var(--4xs);
+  }
+
+  dt,
+  dd,
+  p[data-rich],
+  li[data-rich] {
+    font-size: var(--rt-text-size);
+    line-height: var(--rt-text-lead);
+    letter-spacing: var(--rt-text-track);
+  }
+
+  p[data-rich],
+  ul[data-rich],
+  ol[data-rich] {
+    margin: var(--rt-low) 0;
+  }
+
+  blockquote[data-rich],
+  > div {
+    margin: var(--rt-high) 0;
+  }
+
+  blockquote[data-rich] {
+    --rt-text-size: ;
+    --rt-text-lead: ;
+    --rt-text-track: ;
+    --rt-low: 0;
+
+    border-left: #{util.calc-rem(3px)} solid var(--sharp-color);
+    padding-left: clamp(var(--xs), 5%, var(--m));
+    margin-left: var(--rt-quote);
+  }
+
+  ul[data-rich],
+  ol[data-rich] {
+    padding-left: clamp(var(--2xs), 3%, var(--s));
+  }
+
+  ol[data-rich] ol {
+    list-style-type: lower-alpha;
+  }
+
+  li[data-rich] {
+    margin-top: var(--4xs);
+    padding-left: var(--4xs);
+
+    &::marker {
+      font-size: 0.9em;
+    }
+  }
+
+  dt,
+  dd {
+    --rt-text-lead: var(--line-height-base);
+
+    margin-bottom: var(--rt-term);
+  }
+
+  dt {
+    --rt-text-size: var(--font-25-flex);
+
+    font-weight: var(--font-weight-medium);
+    color: var(--sharp-color);
+  }
+
+  [data-rich]:first-child,
+  > :first-child {
+    margin-top: 0;
+  }
+
+  [data-rich]:last-child,
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  @include util.breakpoint-min("l") {
+    --rt-high: var(--l);
+    --rt-quote: var(--xs);
+
+    h2 {
+      --rt-add: var(--l);
+    }
+  
+    h4,
+    h5,
+    h6 {
+      --rt-high: var(--m);
+      --rt-add: var(--3xs);
+    }
+
+    dt {
+      --rt-term: var(--2xs);
+    }
+  }
+}

@@ -1,0 +1,20 @@
+/**
+ * Base - Root Styles
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/lib/utils/utils" as util;
+@use "@alanizcreative/formation/lib/base/Root/Root" as root;
+
+/* Styles */
+
+:root {
+  /* Config variables */
+
+  @include root.set-root;
+
+  /* Header height */
+
+  --header-height: #{util.fluid-size-clamp((111px, 144px), ("s", "l"))};
+}

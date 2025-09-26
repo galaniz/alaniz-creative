@@ -1,0 +1,118 @@
+/**
+ * Components - Navigation Primary Styles
+ */
+
+/* Imports */
+
+@use "sass:math";
+@forward "../../config/config";
+@use "@alanizcreative/formation/lib/utils/utils" as util;
+@use "@alanizcreative/formation/lib/components/Navigation/Navigation";
+@use "@alanizcreative/formation/lib/components/Navigation/NavigationIcon";
+@use "@alanizcreative/formation/lib/components/Navigation/NavigationIconFive";
+
+/* Wrapper */
+
+.nav {
+  --nav-padding: var(--m);
+
+  &[open="true"] {
+    --nav-modal-opacity: 1;
+    --nav-modal-y: 0
+    --nav-modal-origin: 100% 100%;
+    --nav-modal-delay: 10ms, 0ms;
+  }
+
+  &[show-modal="items"] {
+    --nav-item-opacity: 1;
+    --nav-item-y: 0;
+    --nav-item-delay: 0ms;
+  }
+
+  @include util.breakpoint-min("m") {
+    --nav-padding: var(--l);
+  }
+}
+
+/* Logo */
+
+.nav-logo {
+  z-index: 2;
+}
+
+.nav-modal-logo {
+  top: var(--nav-padding);
+  left: var(--container-padding);
+}
+
+/* List */
+
+.nav-list {
+  &[data-nav-slot] {
+    opacity: var(--nav-slot-opacity, 0);
+  }
+}
+
+/* Modal */
+
+.nav-modal-scroll {
+  margin-top: var(--header-height);
+}
+
+.nav-item {
+  --prop: opacity, transform;
+  --duration: 200ms;
+
+  .nav-modal & {
+    --delay: var(--nav-item-delay, 0ms);
+
+    transform: translateY(var(--nav-item-y, -33%));
+    opacity: var(--nav-item-opacity, 0);
+  }
+}
+
+/* Link */
+
+.nav-link {
+  &::after {
+    transform: scaleY(var(--nav-link-scale, 0));
+    transform-origin: 0 100%;
+    transition: transform var(--duration) var(--easing);
+    background: currentcolor;
+    height: var(--4xs);
+    width: calc(100% - var(--xs));
+    left: var(--3xs);
+    top: auto;
+  }
+
+  &:hover,
+  &:active,
+  &[data-nav-current],
+  &[data-nav-archive-current] {
+    --nav-link-scale: 1;
+  }
+}
+
+/* Open */
+
+.nav-open {
+  z-index: 2;
+}
+
+/* Close */
+
+.nav-close {
+  top: var(--nav-padding);
+  right: var(--container-padding);
+}
+
+/* Overlay */
+
+.nav-overlay {
+  --prop: visibility, opacity, transform;
+  --delay: var(--nav-modal-delay, 0ms);
+
+  transform: translateY(var(--nav-modal-y, -100%));
+  transform-origin: var(--nav-modal-origin, 0 0);
+  opacity: var(--nav-modal-opacity, 0);
+}

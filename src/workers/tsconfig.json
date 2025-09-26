@@ -18,18 +18,13 @@
     "noFallthroughCasesInSwitch": true,
     "removeComments": true,
     "lib": [
-      "es2022",
-      "dom",
-      "dom.iterable"
+      "es2022"
+    ],
+    "types": [
+      "@cloudflare/workers-types"
     ]
   },
   "include": [
-    "window.d.ts",
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "site",
-    "lib",
-    "node_modules"
+    "./**/*.ts"
   ]
 }

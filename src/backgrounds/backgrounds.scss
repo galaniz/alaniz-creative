@@ -1,0 +1,46 @@
+/**
+ * Backgrounds - Styles
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/lib/backgrounds/backgrounds";
+
+/* Styles */
+
+.bg-background-light {
+  --text-color: hsla(var(--foreground-base-hsl), 0.85);
+  --sharp-color: var(--foreground-base);
+  --inverse-color: var(--background-light);
+  --interactive-color: var(--foreground-base);
+  --muted-color: hsla(var(--foreground-base-hsl), 0.075);
+  --negative-color-hsl: var(--negative-dark-hsl);
+  --positive-color-hsl: var(--positive-dark-hsl);
+  --negative-color: hsla(var(--negative-color-hsl), 1);
+  --positive-color: hsla(var(--positive-color-hsl), 1);
+  --theme-color: var(--theme-primary-dark);
+
+  color: var(--text-color);
+}
+
+.bg-foreground-base {
+  --outline-color: var(--background-light);
+  --sharp-color: var(--background-light);
+  --inverse-color: var(--foreground-base);
+  --interactive-color: var(--background-light);
+  --text-color: hsla(var(--background-light-hsl), 0.75);
+  --muted-color: hsla(var(--background-light-hsl), 0.075);
+  --negative-color-hsl: var(--negative-light-hsl);
+  --positive-color-hsl: var(--positive-light-hsl);
+  --theme-color: var(--theme-primary-light);
+
+  color: var(--text-color);
+}
+
+.bg-current {
+  background-color: currentcolor;
+}
+
+.bg-muted {
+  background-color: var(--muted-color);
+}

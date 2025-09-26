@@ -1,0 +1,36 @@
+{
+  "name": "alaniz-creative-contact",
+  "main": "./ContactWorker.ts",
+  "compatibility_date": "2025-09-24",
+  "workers_dev": false,
+  "preview_urls": false,
+  "keep_vars": true,
+  "minify": true,
+  "env": {
+    "dev": {
+      "main": "./ContactWorker.ts",
+      "workers_dev": false,
+      "preview_urls": false,
+      "routes": [
+        {
+          "pattern": "alanizcreative.com/api/contact-dev",
+          "zone_name": "alanizcreative.com"
+        }
+      ],
+      "observability": {
+        "enabled": true,
+        "head_sampling_rate": 1
+      }
+    }
+  },
+  "routes": [
+    {
+      "pattern": "alanizcreative.com/api/contact",
+      "zone_name": "alanizcreative.com"
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
+}

@@ -1,0 +1,52 @@
+/**
+ * Objects - Button Global Styles
+ */
+
+.button {
+  --btn-padding: var(--3xs) var(--xs);
+  --btn-scale: 1;
+  --btn-y: 0;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  padding: var(--btn-padding);
+  font-size: var(--font-20-flex);
+  line-height: var(--line-height-open);
+  letter-spacing: var(--letter-spacing-loose);
+  font-weight: var(--font-weight-bold);
+  transform: translate3d(0, var(--btn-y), 0) scale(var(--btn-scale));
+
+  &:hover {
+    --btn-scale: 1.01;
+    --btn-y: -0.2rem;
+  }
+}
+
+.button-primary {
+  background: var(--btn-fill, var(--sharp-color));
+  color: var(--btn-color, var(--inverse-color));
+}
+
+.button-secondary {
+  color: var(--btn-stroke, var(--sharp-color));
+}
+
+.button-sharp {
+  --btn-stroke: var(--sharp-color);
+  --btn-fill: var(--sharp-color);
+}
+
+.button-l {
+  --btn-padding: var(--2xs) var(--s);
+
+  line-height: var(--line-height-base);
+}
+
+.button-xl {
+  --btn-padding: var(--xs) var(--s);
+
+  line-height: var(--line-height-loose);
+}

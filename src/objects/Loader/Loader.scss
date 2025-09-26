@@ -1,0 +1,40 @@
+/**
+ * Objects - Loader Styles
+ */
+
+/* Imports */
+
+@forward "../../config/config";
+@use "@alanizcreative/formation/lib/objects/Loader/Loader";
+
+/* Styles */
+
+@keyframes e-load {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.loader {
+  transform: scale(var(--ld-size, 1));
+  border-radius: var(--ld-radius, 0);
+}
+
+.loader-s {
+  --ld-size: 0.67;
+}
+
+.loader-circle {
+  animation: e-load 1s ease-out infinite;
+  border: 0.25rem solid var(--ld-color, var(--sharp-color));
+}

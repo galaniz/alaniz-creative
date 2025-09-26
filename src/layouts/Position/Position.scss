@@ -1,0 +1,23 @@
+/**
+ * Layouts - Position
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/lib/layouts/Position/Position";
+
+/* Styles */
+
+.left-1-10 {
+  left: 10%;
+}
+
+.right-1-10 {
+  right: 10%;
+}
+
+.center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

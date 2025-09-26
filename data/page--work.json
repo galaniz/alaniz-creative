@@ -1,0 +1,29 @@
+{
+  "contentType": "page",
+  "title": "Work",
+  "slug": "work",
+  "date": "2023-11-05T03:26:11",
+  "dateModified": "2025-08-24T03:19:57",
+  "archive": "work",
+  "hero": {
+    "type": "minimal"
+  },
+  "content": [
+    {
+      "renderType": "container",
+      "tag": "section",
+      "maxWidth": "s",
+      "paddingBottom": "xl",
+      "paddingBottomLarge": "2xl",
+      "content": [
+        {
+          "renderType": "posts",
+          "contentType": "work",
+          "display": -1,
+          "headingLevel": 2,
+          "layout": "cascade"
+        }
+      ]
+    }
+  ]
+}

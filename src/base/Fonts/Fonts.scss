@@ -1,0 +1,40 @@
+/**
+ * Base - Fonts Styles
+ */
+
+@font-face {
+  font-family: "Adjusted Tahoma";
+  src: local("Tahoma"); /* stylelint-disable-line value-keyword-case */
+  size-adjust: 95%;
+  ascent-override: 104%;
+  descent-override: 39%;
+  line-gap-override: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Larsseit;
+  src:
+    url("/fonts/larsseit.woff2") format("woff2"),
+    url("/fonts/larsseit.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Larsseit;
+  src:
+    url("/fonts/larsseit-medium.woff2") format("woff2"),
+    url("/fonts/larsseit-medium.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Larsseit;
+  src:
+    url("/fonts/larsseit-bold.woff2") format("woff2"),
+    url("/fonts/larsseit-bold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}

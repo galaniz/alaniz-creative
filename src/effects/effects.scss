@@ -1,0 +1,33 @@
+/**
+ * Effects - Styles
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/lib/effects/Transition/Transition";
+@use "./Quad/Quad";
+@use "./Line/Line";
+@use "./Shift/Shift";
+
+/* Remove animations */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  #ac .ac {
+    *,
+    *::before,
+    *::after {
+      --duration: 0.001ms;
+      --easing: linear;
+
+      transition: none;
+      transition-timing-function: linear;
+      transition-duration: var(--duration);
+      animation-duration: var(--duration);
+      animation-iteration-count: 1;
+    }
+  }
+}

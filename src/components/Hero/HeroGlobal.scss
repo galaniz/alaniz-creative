@@ -1,0 +1,29 @@
+/**
+ * Components - Hero Global Styles
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/lib/utils/utils" as util;
+
+/* Styles */
+
+.hero-blob {
+  top: calc(var(--header-height) * -1);
+  left: var(--hero-left, 60%);
+  width: #{util.fluid-size-clamp((853.33px, 1280px), ("s", "l"))};
+  height: #{util.fluid-size-clamp((500px, 750px), ("s", "l"))};
+  z-index: -2;
+
+  @include util.breakpoint-min("xl") {
+    --hero-left: 50%;
+  }
+}
+
+.hero-profile {
+  min-width: var(--4xl);
+}
+
+.hero-wave {
+  max-height: 100%;
+}

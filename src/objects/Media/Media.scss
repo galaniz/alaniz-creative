@@ -1,0 +1,43 @@
+/**
+ * Objects - Media Styles
+ */
+
+.media {
+  --ld-color: var(--med-secondary);
+  --ld-bg: var(--med-tertiary);
+
+  &[playing] {
+    --med-play-display: none;
+    --med-pause-display: block;
+  }
+
+  background: var(--med-tertiary);
+  border-color: var(--theme-color);
+}
+
+.media-play,
+.media-pause {
+  --outline-color: var(--med-secondary);
+}
+
+.media-play {
+  width: 15%;
+  min-width: var(--l);
+  max-width: var(--2xl);
+  color: var(--med-primary);
+  display: var(--med-play-display, block);
+  background: var(--med-secondary);
+  border-color: var(--med-tertiary);
+  aspect-ratio: 1 / 1;
+}
+
+.media-pause {
+  margin: var(--xs);
+  background: hsla(var(--foreground-base-hsl), 0.75);
+  display: var(--med-pause-display, none);
+}
+
+.media-icon {
+  width: 40%;
+  height: 40%;
+}

@@ -1,0 +1,10 @@
+{
+  "contentType": "taxonomy",
+  "slug": "categories",
+  "date": "2023-11-05T04:02:47",
+  "dateModified": "2025-08-24T04:54:12",
+  "title": "Work Categories",
+  "contentTypes": ["work"],
+  "isPage": true,
+  "usePrimaryContentTypeSlug": true
+}
