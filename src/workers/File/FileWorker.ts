@@ -4,7 +4,7 @@
 
 /* Imports */
 
-import type { FileWorkerImage } from './FileTypes.js'
+import type { FileWorkerMedia } from './FileTypes.js'
 
 /**
  * Serve files from R2 storage.
@@ -16,64 +16,62 @@ export default {
    */
   async fetch (request: Request): Promise<Response> {
     try {
+      const headers = new Headers(request.headers)
       const url = new URL(request.url)
       const { pathname } = url
 
       /* R2 path */
 
-      const r2Url = `https://assets.alanizcreative.com${pathname}`
+      const r2Url = `https://assets.alanizcreative.com${pathname.replace('/assets', '')}`
 
-      /* Check if image */
+      /* Check type */
 
       const isImage = /\.(jpe?g|png|gif|webp)$/i.test(pathname)
+      const isVideo = /\.(mp4|mov|webm)$/i.test(pathname)
 
-      /* Return file immediately if non-image */
+      /* Return non media files */
 
-      if (!isImage) {
-        return await fetch(new Request(r2Url))
+      if (!isImage && !isVideo) {
+        return await fetch(new Request(r2Url, { headers }))
       }
 
       /* Format */
 
       const fm = url.searchParams.get('fm')
-      const accept = request.headers.get('Accept')
+      const accept = headers.get('Accept')
       let format = !fm ? 'auto' : fm
 
-      if (format === 'auto' && accept) {
+      if (isImage && format === 'auto' && accept) {
         const isAvif = accept.includes('image/avif')
         const isWebp = accept.includes('image/webp')
 
         format = isAvif ? 'avif' : isWebp ? 'webp' : 'auto'
       }
 
-      /* Transform image */
+      /* Transform media */
 
       const quality = url.searchParams.get('q')
       const width = url.searchParams.get('w')
       const height = url.searchParams.get('h')
-      const image = { format } as FileWorkerImage
+      const media = { format } as FileWorkerMedia
 
       if (quality) {
-        image.quality = parseInt(quality, 10)
+        media.quality = parseInt(quality, 10)
       }
 
       if (width) {
-        image.width = parseInt(width, 10)
+        media.width = parseInt(width, 10)
       }
 
       if (height) {
-        image.height = parseInt(height, 10)
+        media.height = parseInt(height, 10)
       }
 
-      const imageReq = new Request(r2Url, {
-        headers: request.headers,
-        cf: {
-          image
-        }
-      })
+      const cf = isImage ? { image: media } : { media }
+      const mediaReq = new Request(r2Url, { headers, cf })
 
       // @ts-expect-error - cf object conflicts with request options
-      return await fetch(imageReq)
+      return await fetch(mediaReq)
     } catch {
       return new Response('File not found', {
         status: 404

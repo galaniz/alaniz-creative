@@ -29,7 +29,8 @@ const Form = (props: FormProps): FormProps => {
     successTitle,
     successText,
     toEmail,
-    senderEmail
+    senderEmail,
+    submitLabel = 'Send'
   } = args
 
   /* Error summary */
@@ -131,7 +132,7 @@ const Form = (props: FormProps): FormProps => {
       fieldsAttr: 'novalidate',
       submitFieldClasses: 'relative',
       submitClasses: 'button button-primary button-xl b-radius-l e-trans e-quad',
-      submitLabel: 'Send',
+      submitLabel,
       honeypotName: 'ac_hp',
       honeypotFieldClasses: 'form-field-hp col-12',
       honeypotFieldAttr: 'data-form-field="url"',

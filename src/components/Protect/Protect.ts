@@ -28,9 +28,7 @@ const Protect = (): string => {
   const [formStart, formEnd] = Form({
     args: {
       action: 'password',
-      submitLabel: 'Go',
-      row: 's',
-      align: 's'
+      submitLabel: 'Go'
     }
   })
 
@@ -59,7 +57,8 @@ const Protect = (): string => {
       slug,
       contentType,
       title,
-      baseType: contentType
+      baseType: contentType,
+      template: 'blank'
     },
     meta: {
       title,

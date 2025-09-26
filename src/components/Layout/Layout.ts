@@ -12,6 +12,7 @@ import {
   outputScripts,
   outputStyles
 } from '@alanizcreative/formation-static/utils/scriptStyle/scriptStyle.js'
+import { setStoreItem } from '@alanizcreative/formation-static/store/store.js'
 import { config, configVars } from '../../config/config.js'
 import { Seo, seoSchema } from '../../seo/Seo.js'
 import { Header } from '../Header/Header.js'
@@ -44,7 +45,13 @@ const Layout = (args: LayoutArgs): string => {
 
   /* Page data */
 
-  const { baseType, hero, theme } = itemData
+  const {
+    baseType,
+    hero,
+    theme,
+    passwordProtect,
+    template
+  } = itemData
 
   /* Assets link */
 
@@ -57,20 +64,30 @@ const Layout = (args: LayoutArgs): string => {
 
   const ns = config.namespace
 
-  /* Header */
+  /* Template */
 
-  const headerOutput = Header(slug, baseType)
+  const isBlank = template === 'blank'
 
-  /* Footer */
+  /* Password protect */
 
-  const footerOutput = Footer(slug, baseType)
+  if (passwordProtect) {
+    setStoreItem('serverless', [], slug)
+  }
 
-  /* Hero */
+  /* Header, footer and hero */
 
-  const heroOutput = Hero({
-    ...itemData,
-    ...hero
-  })
+  let headerOutput = ''
+  let footerOutput = ''
+  let heroOutput = ''
+
+  if (!isBlank) {
+    headerOutput = Header(slug, baseType)
+    footerOutput = Footer(slug, baseType)
+    heroOutput = Hero({
+      ...itemData,
+      ...hero
+    })
+  }
 
   /* Content */
 
@@ -236,7 +253,7 @@ const Layout = (args: LayoutArgs): string => {
       <body class="${ns} no-js flex col">
         ${spritesOutput}
         ${headerOutput}
-        <main id="main" class="pb-3xs">
+        <main id="main" class="${isBlank ? 'flex col justify-center grow-1' : 'pb-3xs'}">
           ${heroOutput}
           ${contentOutput}
         </main>

@@ -3,20 +3,16 @@
  */
 
 /**
- * @typedef {object} FileWorkerImage
- * @prop {string} [fit]
+ * @typedef {object} FileWorkerMedia
+ * @see {@link https://developers.cloudflare.com/images/transform-images/transform-via-workers/|Cloudflare}
  * @prop {number} [width]
  * @prop {number} [height]
  * @prop {number} [quality]
- * @prop {string} [gravity]
- * @prop {string} [format]
- * @see {@link https://developers.cloudflare.com/images/transform-images/transform-via-workers/|Cloudflare}
+ * @prop {'auto'|'avif'|'webp'|'jpeg'|'png'|'json'} [format]
  */
-export interface FileWorkerImage {
-  fit?: 'scale-down' | 'contain' | 'cover' | 'crop' | 'pad'
+export interface FileWorkerMedia {
   width?: number
   height?: number
   quality?: number
-  gravity?: 'center' | 'top' | 'bottom' | 'left' | 'right' | 'auto'
   format?: 'auto' | 'avif' | 'webp' | 'jpeg' | 'png' | 'json'
 }

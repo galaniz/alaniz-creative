@@ -56,6 +56,10 @@
   }
 }
 
+.form-input-password {
+  --letter-spacing-open: 0.1em;
+}
+
 .form-required-icon,
 .form-error-inline {
   color: var(--negative-color);

@@ -43,7 +43,7 @@ const password: ServerlessAction = async (data, request, env: PasswordEnv) => {
 
   password = escape(password)
 
-  if (password !== env.PASSWORD) {
+  if (password !== env.CF_PASSWORD) {
     return {
       error: {
         message: 'Incorrect credentials',

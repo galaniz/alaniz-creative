@@ -15,7 +15,7 @@
     "lint:scss": "stylelint 'src/**/*.scss'",
     "lint": "pnpm lint:ts && pnpm lint:scss",
     "wrangler:contact": "npx wrangler dev --config src/workers/Contact/wrangler.json",
-    "wrangler:file": "npx wrangler dev --config src/workers/File/wrangler.json",
+    "wrangler:file": "npx wrangler dev --remote --config src/workers/File/wrangler.json",
     "wrangler:password": "npx wrangler dev --config src/workers/Password/wrangler.json",
     "wrangler:site": "npx wrangler dev --config wrangler.json",
     "wrangler:staging": "npx wrangler dev --config wrangler.json --env staging",

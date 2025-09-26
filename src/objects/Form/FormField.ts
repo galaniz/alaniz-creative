@@ -38,15 +38,15 @@ const FormField = (props: FormFieldProps): FormFieldProps => {
   let classes = `form-input-${type}`
 
   if (isStringStrict(widthSmall)) {
-    fieldClasses += ` col-${widthSmall}`
+    fieldClasses += ` col-${widthSmall}-s`
   }
 
   if (isStringStrict(widthMedium)) {
-    fieldClasses += ` col-${widthMedium}`
+    fieldClasses += ` col-${widthMedium}-m`
   }
 
   if (isStringStrict(widthLarge)) {
-    fieldClasses += ` col-${widthLarge}`
+    fieldClasses += ` col-${widthLarge}-l`
   }
 
   if (grow) {

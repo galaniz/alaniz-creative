@@ -20,6 +20,7 @@ import type { ConfigBlob } from '../config/configTypes.js'
  * @prop {Object<string, string>} [theme]
  * @prop {string} [date]
  * @prop {string} [dateModified]
+ * @prop {'blank'} [template]
  */
 export interface Item extends RenderItem {
   passwordProtect?: boolean
@@ -30,4 +31,5 @@ export interface Item extends RenderItem {
   theme?: Record<string, string>
   date?: string
   dateModified?: string
+  template?: 'blank'
 }
