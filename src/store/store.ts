@@ -679,6 +679,195 @@ const storeArgs: Partial<Store> = {
       height: 1000,
       size: 235000
     },
+    'maple-onboarding/app-create-consult': {
+      path: 'maple-onboarding/app-create-consult.png',
+      name: 'app-create-consult',
+      type: 'image/png',
+      format: 'png',
+      width: 699,
+      height: 1515,
+      size: 30000
+    },
+    'maple-onboarding/app-dashboard': {
+      path: 'maple-onboarding/app-dashboard.png',
+      name: 'app-dashboard',
+      type: 'image/png',
+      format: 'png',
+      width: 699,
+      height: 1515,
+      size: 52000
+    },
+    'maple-onboarding/app-paywall': {
+      path: 'maple-onboarding/app-paywall.png',
+      name: 'app-paywall',
+      type: 'image/png',
+      format: 'png',
+      width: 699,
+      height: 1515,
+      size: 70000
+    },
+    'maple-onboarding/hero': {
+      path: 'maple-onboarding/hero.jpg',
+      name: 'hero',
+      type: 'image/jpeg',
+      format: 'jpg',
+      width: 1600,
+      height: 1000,
+      size: 56000
+    },
+    'maple-onboarding/home': {
+      path: 'maple-onboarding/home.jpg',
+      name: 'home',
+      type: 'image/jpeg',
+      format: 'jpg',
+      width: 1600,
+      height: 900,
+      size: 133000
+    },
+    'maple-onboarding/how-it-works-confirmation': {
+      path: 'maple-onboarding/how-it-works-confirmation.jpg',
+      name: 'how-it-works-confirmation',
+      type: 'image/jpeg',
+      format: 'jpg',
+      width: 699,
+      height: 1515,
+      size: 75000
+    },
+    'maple-onboarding/how-it-works-intent': {
+      path: 'maple-onboarding/how-it-works-intent.png',
+      name: 'how-it-works-intent',
+      type: 'image/png',
+      format: 'png',
+      width: 699,
+      height: 1515,
+      size: 41000
+    },
+    'maple-onboarding/how-it-works-prescriptions-1': {
+      path: 'maple-onboarding/how-it-works-prescriptions-1.jpg',
+      name: 'how-it-works-prescriptions-1',
+      type: 'image/jpeg',
+      format: 'jpg',
+      width: 699,
+      height: 1515,
+      size: 75000
+    },
+    'maple-onboarding/how-it-works-prescriptions-2': {
+      path: 'maple-onboarding/how-it-works-prescriptions-2.jpg',
+      name: 'how-it-works-prescriptions-2',
+      type: 'image/jpeg',
+      format: 'jpg',
+      width: 699,
+      height: 1515,
+      size: 80000
+    },
+    'maple-onboarding/how-it-works-prescriptions-3': {
+      path: 'maple-onboarding/how-it-works-prescriptions-3.jpg',
+      name: 'how-it-works-prescriptions-3',
+      type: 'image/jpeg',
+      format: 'jpg',
+      width: 699,
+      height: 1515,
+      size: 69000
+    },
+    'maple-onboarding/how-it-works-reassurance': {
+      path: 'maple-onboarding/how-it-works-reassurance.jpg',
+      name: 'how-it-works-reassurance',
+      type: 'image/jpeg',
+      format: 'jpg',
+      width: 699,
+      height: 1515,
+      size: 80000
+    },
+    'maple-onboarding/how-it-works-welcome': {
+      path: 'maple-onboarding/how-it-works-welcome.jpg',
+      name: 'how-it-works-welcome',
+      type: 'image/jpeg',
+      format: 'jpg',
+      width: 699,
+      height: 1515,
+      size: 64000
+    },
+    'maple-onboarding/value-prop-confirmation': {
+      path: 'maple-onboarding/value-prop-confirmation.png',
+      name: 'value-prop-confirmation',
+      type: 'image/png',
+      format: 'png',
+      width: 699,
+      height: 1515,
+      size: 54000
+    },
+    'maple-onboarding/value-prop-intent': {
+      path: 'maple-onboarding/value-prop-intent.png',
+      name: 'value-prop-intent',
+      type: 'image/png',
+      format: 'png',
+      width: 699,
+      height: 1515,
+      size: 42000
+    },
+    'maple-onboarding/value-prop-prescriptions-1': {
+      path: 'maple-onboarding/value-prop-prescriptions-1.png',
+      name: 'value-prop-prescriptions-1',
+      type: 'image/png',
+      format: 'png',
+      width: 699,
+      height: 1515,
+      size: 56000
+    },
+    'maple-onboarding/value-prop-prescriptions-2': {
+      path: 'maple-onboarding/value-prop-prescriptions-2.png',
+      name: 'value-prop-prescriptions-2',
+      type: 'image/png',
+      format: 'png',
+      width: 699,
+      height: 1515,
+      size: 69000
+    },
+    'maple-onboarding/value-prop-prescriptions-3': {
+      path: 'maple-onboarding/value-prop-prescriptions-3.png',
+      name: 'value-prop-prescriptions-3',
+      type: 'image/png',
+      format: 'png',
+      width: 699,
+      height: 1515,
+      size: 86000
+    },
+    'maple-onboarding/value-prop-welcome': {
+      path: 'maple-onboarding/value-prop-welcome.png',
+      name: 'value-prop-welcome',
+      type: 'image/png',
+      format: 'png',
+      width: 699,
+      height: 1515,
+      size: 49000
+    },
+    'maple-onboarding/weight-medication-assessment-1': {
+      path: 'maple-onboarding/weight-medication-assessment-1.png',
+      name: 'weight-medication-assessment-1',
+      type: 'image/png',
+      format: 'png',
+      width: 699,
+      height: 1515,
+      size: 59000
+    },
+    'maple-onboarding/weight-medication-assessment-2': {
+      path: 'maple-onboarding/weight-medication-assessment-2.png',
+      name: 'weight-medication-assessment-2',
+      type: 'image/png',
+      format: 'png',
+      width: 699,
+      height: 1515,
+      size: 45000
+    },
+    'maple-onboarding/weight-medication-assessment-eligible': {
+      path: 'maple-onboarding/weight-medication-assessment-eligible.png',
+      name: 'weight-medication-assessment-eligible',
+      type: 'image/png',
+      format: 'png',
+      width: 699,
+      height: 1515,
+      size: 43000
+    },
     'olivia-korosak/hero': {
       path: 'olivia-korosak/hero.jpg',
       name: 'hero',

@@ -1,0 +1,324 @@
+{
+  "contentType": "work",
+  "title": "Maple Onboarding",
+  "slug": "maple-onboarding",
+  "date": "2025-10-09T22:10:32",
+  "dateModified": "2025-10-09T22:10:19",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "passwordProtect": true,
+  "hero": {
+    "image": "maple-onboarding/hero",
+    "border": true,
+    "wave": "four"
+  },
+  "blob": "four",
+  "theme": {
+    "primary-dark": "#af2e17",
+    "primary-light": "#e76650",
+    "secondary-dark": "#f3f1ef",
+    "secondary-light": "#f3f1ef",
+    "med-primary": "var(--background-light)",
+    "med-secondary": "#af2e17",
+    "med-tertiary": "#f3f1ef"
+  },
+  "related": [
+    "work--maple-migration",
+    "work--later-newsroom"
+  ],
+  "category": [
+    "term--work-category-web-development"
+  ],
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "Overview"
+        },
+        {
+          "renderType": "container",
+          "layout": "row-s",
+          "gap": "m",
+          "gapLarge": "l",
+          "tag": "dl",
+          "content": [
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Year"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "2024–2025"
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "div",
+              "type": "columns",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Team"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Lifecycle Marketing Manager"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Product Manager"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "VP, Business Technology"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Software Engineer"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "QA Analyst"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Design Lead"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Role"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "term--work-category-web-development",
+                      "content": "Web development"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View Maple Onboarding",
+          "richText": true,
+          "externalLink": "https://www.getmaple.ca/onboarding/get-started/"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "What is Maple?"
+        },
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "content": "Maple is a virtual healthcare platform founded in 2015. It offers direct access to doctors and nurse practitioners, 24/7 from your smartphone, tablet, or computer. Maple can be accessed privately as an individual, through employer benefits or insurers or publicly through select provincial health systems. To date, over 3 million consults have been completed."
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Project"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Develop a flexible system of onboarding pages enabling continuous experimentation across the pre and post-registration experience."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "The Brief"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Context"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "The lifecycle marketing team ran several onboarding email experiments showing that soliciting intent, educating users on Maple’s offering and guiding them towards high value actions resulted in improved subscription conversion, retention and engagement. They wanted to expand this further by creating a web-based onboarding experience of pages built and managed by the marketing team to help new registrants better understand how Maple meets their needs and enhance their journey within the app."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Goals"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": "Increase conversion to subscription"
+                },
+                {
+                  "tag": "li",
+                  "content": "Reduce user drop-off"
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Requirements"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": "Editable through WordPress CMS and support both English and French"
+                },
+                {
+                  "tag": "li",
+                  "content": "Allow region-specific content based on user geolocation"
+                },
+                {
+                  "tag": "li",
+                  "content": "Capture user intent data and pass it to Braze email marketing system"
+                },
+                {
+                  "tag": "li",
+                  "content": "Support A/B test configuration through Optimizely experimentation platform"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Process"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Value Props Experiment"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Does centering onboarding around value proposition messaging increase the conversion rate to subscription for new users?"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Control (50%) &ndash; Welcome &rarr; Intent &rarr; Confirmation <br>Variant  (50%) &ndash; Welcome &rarr; Intent &rarr; Value Props &rarr; Confirmation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "maxWidth": "xs",
+      "content": [
+        {
+          "renderType": "container",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Outcome"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Each experiment has built upon previous findings, steadily improving conversion rates. The team plans on further testing and refining the pre-registration experience to drive better outcomes for both users and the business. Following the most recent experiment, the Growth Marketing Director shared:"
+            },
+            {
+              "renderType": "richText",
+              "tag": "blockquote",
+              "content": [
+                {
+                  "tag": "p",
+                  "content": "\"Couldn’t have said it better myself - just a beautiful cross functional effort that paid serious dividends! Well done team. Huge win.\""
+                }
+              ]
+            },
+            {
+              "renderType": "button",
+              "title": "View Maple Onboarding",
+              "richText": true,
+              "externalLink": "https://www.getmaple.ca/onboarding/get-started/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
