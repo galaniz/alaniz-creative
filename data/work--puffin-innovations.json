@@ -1156,7 +1156,7 @@
           "content": [
             {
               "renderType": "container",
-              "maxWidth": "xl",
+              "maxWidth": "2xl",
               "paddingTop": "m",
               "breakout": true,
               "content": [
@@ -1324,7 +1324,7 @@
                 },
                 {
                   "tag": "a",
-                  "link": "https://github.com/galaniz/formation",
+                  "link": "https://github.com/galaniz/formation/tree/beta",
                   "content": "Formation"
                 },
                 {

@@ -679,6 +679,15 @@ const storeArgs: Partial<Store> = {
       height: 1000,
       size: 235000
     },
+    'maple-migration/hero': {
+      path: 'maple-migration/hero.jpg',
+      name: 'hero',
+      type: 'image/jpeg',
+      format: 'jpg',
+      width: 1600,
+      height: 1000,
+      size: 172000
+    },
     'maple-onboarding/app-create-consult': {
       path: 'maple-onboarding/app-create-consult.png',
       name: 'app-create-consult',

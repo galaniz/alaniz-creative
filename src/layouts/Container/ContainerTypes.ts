@@ -51,6 +51,7 @@ export type ContainerLayout =
  * @prop {ConfigAlign} [align]
  * @prop {'rounded'|'full'} [border]
  * @prop {boolean} [grow=false]
+ * @prop {boolean} [shrink=true]
  * @prop {boolean} [breakout=false]
  * @prop {boolean} [richTextStyles=false]
  */
@@ -71,6 +72,7 @@ export interface ContainerArgs extends FormationContainerArgs<string, ConfigCont
   align?: ConfigAlign
   border?: 'rounded' | 'full'
   grow?: boolean
+  shrink?: boolean
   breakout?: boolean
   richTextStyles?: boolean
 }
