@@ -58,7 +58,7 @@ const password: ServerlessAction = async (data, request, env: PasswordEnv) => {
     success: {
       message: 'Correct credentials',
       headers: {
-        'Set-Cookie': 'acp_set=true; path=/'
+        'Set-Cookie': 'acp_set=true; path=/; domain=.alanizcreative.com; secure;'
       }
     }
   }
