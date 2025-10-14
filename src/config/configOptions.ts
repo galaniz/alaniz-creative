@@ -13,7 +13,8 @@ import type { ConfigContainer, ConfigBreakpoint, ConfigColumn, ConfigBlob } from
  */
 export const configContainerNumbers: Record<ConfigContainer, number> = {
   default: 1300,
-  xl: 1800,
+  '2xl': 1800,
+  xl: 1600,
   l: 1400,
   m: 1200,
   s: 1050,

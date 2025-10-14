@@ -108,7 +108,7 @@ const Image = (props: ImageProps): string => {
   if (parents && !maxWidth) {
     maxWidthNum = getImageMaxWidth({
       parents,
-      source: 'local',
+      source: 'remote',
       widths: configColumnFloats,
       maxWidths: configContainerNumbers,
       breakpoints: configBreakpointNumbers
@@ -124,7 +124,7 @@ const Image = (props: ImageProps): string => {
   const imageDetails = getImage({
     data: {
       ...image,
-      url: `https://assets.alanizcreative.com/${image?.path}`
+      url: `https://alanizcreative.com/assets/${image?.path}`
     },
     classes: imageClasses.join(' '),
     maxWidth: maxWidthNum,

@@ -5,10 +5,8 @@
 /* Imports */
 
 import type { Store, StoreServerless } from '@alanizcreative/formation-static/store/storeTypes.js'
-import type { ServerlessActionData } from '@alanizcreative/formation-static/serverless/serverlessTypes.js'
 import type { Generic } from '@alanizcreative/formation-static/global/globalTypes.js'
 import type { IncomingRequestCfProperties } from '@cloudflare/workers-types'
-import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 import { setConfig, setConfigFilter } from '@alanizcreative/formation-static/config/config.js'
 import { setActions } from '@alanizcreative/formation-static/utils/action/action.js'
 import { setFilters } from '@alanizcreative/formation-static/utils/filter/filter.js'
@@ -19,10 +17,9 @@ import { config } from '../config/config.js'
 import { filters } from '../filters/filters.js'
 import { actions } from '../actions/actions.js'
 import { renderFunctions } from '../render/render.js'
-import { WorkerEnv } from './workerTypes.js'
 
 /**
- * Setup config, filters, actions and store in serverless context.
+ * Set up config, filters, actions and store in serverless context.
  *
  * @param {Generic} [env]
  */
@@ -72,48 +69,9 @@ const workerServerlessFilter = async (
   return !!serverless?.[pathname]
 }
 
-/**
- * Verify Turnstile token.
- *
- * @param {ServerlessActionData} data
- * @param {Request} request
- * @param {WorkerEnv} env
- * @return {Promise<void>}
- */
-const workerServerlessTurnstile = async (
-  data: ServerlessActionData,
-  request: Request,
-  env: WorkerEnv
-): Promise<void> => {
-  const turnstileToken = data.inputs.turnstile?.value
-
-  if (!isStringStrict(turnstileToken)) {
-    throw new Error('Missing token')
-  }
-
-  const turnstileResp = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      secret: env.CF_TURNSTILE_KEY,
-      response: turnstileToken,
-      remoteip: request.headers.get('CF-Connecting-IP')
-    })
-  })
-
-  const turnstileRes = await turnstileResp.json() as { success: boolean }
-
-  if (!turnstileRes.success) {
-    throw new Error('Verification failed')
-  }
-}
-
 /* Exports */
 
 export {
   workerServerlessSetup,
-  workerServerlessFilter,
-  workerServerlessTurnstile
+  workerServerlessFilter
 }

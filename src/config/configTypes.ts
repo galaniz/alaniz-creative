@@ -117,9 +117,9 @@ export type ConfigAspectRatio = '1-1' | '16-10' | '16-9'
 export type ConfigBreakpoint = 0 | 600 | 900 | 1200
 
 /**
- * @typedef {'default'} ConfigContainer
+ * @typedef {'default'|'2xl'|'xl'|'l'|'m'|'s'|'xs'} ConfigContainer
  */
-export type ConfigContainer = 'default' | 'xl' | 'l' | 'm' | 's' | 'xs'
+export type ConfigContainer = 'default' | '2xl' | 'xl' | 'l' | 'm' | 's' | 'xs'
 
 /**
  * @typedef {'12'|'11'|'10'|'9'|'8'|'7'|'6'|'5'|'4'|'3'|'2'|'1'} ConfigColumn

@@ -37,6 +37,7 @@ const Container = (props: ContainerProps): ContainerProps => {
     align,
     border,
     grow = false,
+    shrink = true,
     breakout = false,
     richTextStyles = false,
     classes
@@ -144,6 +145,12 @@ const Container = (props: ContainerProps): ContainerProps => {
 
   if (grow) {
     classesArr.push('grow-1')
+  }
+
+  /* Shrink */
+
+  if (!shrink) {
+    classesArr.push('shrink-0')
   }
 
   /* Container */

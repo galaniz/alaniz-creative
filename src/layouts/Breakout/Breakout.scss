@@ -9,7 +9,7 @@
 /* Styles */
 
 .breakout {
-  @include util.breakpoint-min-max("0", "container-xl-no-padding") {
+  @include util.breakpoint-min-max("0", "container-2xl-no-padding") {
     padding-left: 0;
     padding-right: 0;
     margin-left: -5vw;

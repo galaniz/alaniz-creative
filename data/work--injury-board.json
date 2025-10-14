@@ -333,7 +333,7 @@
             {
               "renderType": "richText",
               "tag": "p",
-              "content": "We initially started the design process with existing content on the site but quickly learned the voice of the copy needed to change in order to suit the new brand direction. The Director of Marketing simplified the sitemap and provided us with fresh copy. The information architecture was now in a better place for us to begin designing in earnest."
+              "content": "We initially started the design process with existing content on the site but quickly learned the voice of the copy needed to change in order to suit the new brand direction. The Marketing Director simplified the sitemap and provided us with fresh copy. The information architecture was now in a better place for us to begin designing in earnest."
             }
           ]
         },
@@ -347,7 +347,7 @@
           "content": [
             {
               "renderType": "container",
-              "maxWidth": "xl",
+              "maxWidth": "2xl",
               "paddingTop": "m",
               "paddingTopLarge": "l",
               "breakout": true,
@@ -461,7 +461,7 @@
             {
               "renderType": "richText",
               "tag": "p",
-              "content": "In collaboration with the Director of Marketing and after more iterations we settled on a new look that was simple and elegant."
+              "content": "In collaboration with the Marketing Director and after more iterations we settled on a new look that was simple and elegant."
             }
           ]
         },

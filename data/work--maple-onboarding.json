@@ -1,0 +1,1266 @@
+{
+  "contentType": "work",
+  "title": "Maple Onboarding",
+  "slug": "maple-onboarding",
+  "date": "2025-10-13T19:47:08",
+  "dateModified": "2025-10-13T19:47:52",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "passwordProtect": true,
+  "hero": {
+    "image": "maple-onboarding/hero",
+    "border": true,
+    "wave": "four"
+  },
+  "blob": "four",
+  "theme": {
+    "primary-dark": "#af2e17",
+    "primary-light": "#e76650",
+    "secondary-dark": "#f3f1ef",
+    "secondary-light": "#f3f1ef",
+    "med-primary": "var(--background-light)",
+    "med-secondary": "#af2e17",
+    "med-tertiary": "#f3f1ef"
+  },
+  "related": [
+    "work--maple-migration",
+    "work--later-newsroom"
+  ],
+  "category": [
+    "term--work-category-web-development"
+  ],
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "Overview"
+        },
+        {
+          "renderType": "container",
+          "layout": "row-s",
+          "gap": "m",
+          "gapLarge": "l",
+          "tag": "dl",
+          "content": [
+            {
+              "renderType": "container",
+              "shrink": false,
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Year"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "2024&ndash;2025"
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "div",
+              "type": "columns",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Team"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Lifecycle Marketing Manager"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Product Manager"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "VP, Business Technology"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Software Engineer"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "QA Analyst"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Design Lead"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "shrink": false,
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Role"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "term--work-category-web-development",
+                      "content": "Web development"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View Maple Onboarding",
+          "richText": true,
+          "externalLink": "https://www.getmaple.ca/onboarding/get-started/"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "What is Maple?"
+        },
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "content": "Maple is a virtual healthcare platform founded in 2015. It offers direct access to doctors and nurse practitioners, 24/7 from your smartphone, tablet, or computer. Maple can be accessed privately as an individual, through employer benefits or insurers or publicly through select provincial health systems. To date, over 3 million consults have been completed."
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Project"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Develop a flexible system of onboarding pages enabling continuous experimentation across the pre and post registration experience."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "The Brief"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Context"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "The lifecycle marketing team ran several onboarding email experiments showing that soliciting intent, educating users on Maple's offering and guiding them towards high value actions resulted in improved subscription conversion, retention and engagement. They wanted to expand this further by creating a web-based onboarding experience of pages built and managed by the marketing team to help new registrants better understand how Maple meets their needs and enhance their journey within the app."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Goals"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": "Increase conversion to subscription"
+                },
+                {
+                  "tag": "li",
+                  "content": "Reduce user drop-off"
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Requirements"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": "Editable through WordPress CMS and support both English and French"
+                },
+                {
+                  "tag": "li",
+                  "content": "Allow region-specific content based on user geolocation"
+                },
+                {
+                  "tag": "li",
+                  "content": "Capture user intent data and pass it to Braze email marketing system"
+                },
+                {
+                  "tag": "li",
+                  "content": "Support A/B test configuration through Optimizely experimentation platform"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Process"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Value Props Experiment"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Does centering onboarding around value proposition messaging increase the conversion rate to subscription for new users?"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "tag": "strong",
+                  "content": "Control (50%) "
+                },
+                {
+                  "content": "&ndash; Welcome &rarr; Intent &rarr; Confirmation <br>"
+                },
+                {
+                  "tag": "strong",
+                  "content": "Variant &nbsp;(50%) "
+                },
+                {
+                  "content": "&ndash; Welcome &rarr; Intent &rarr; Value Props &rarr; Confirmation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xl",
+              "paddingTop": "m",
+              "breakout": true,
+              "layout": "row",
+              "gap": "m",
+              "gapLarge": "l",
+              "justify": "center",
+              "content": [
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/value-prop-welcome",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/value-prop-intent",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/value-prop-prescriptions-1",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/value-prop-prescriptions-2",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/value-prop-prescriptions-3",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/value-prop-confirmation",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Mobile welcome, intent, prescriptions flow and confirmation pages."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Value Props Development"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Migration to headless: "
+                    },
+                    {
+                      "content": "Moved from an outdated WordPress page builder to headless WordPress for improved front-end, geolocation, and localization performance and functionality."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Static site implementation: "
+                    },
+                    {
+                      "content": [
+                        {
+                          "content": "Built Cloudflare Workers site with "
+                        },
+                        {
+                          "tag": "a",
+                          "link": "https://github.com/galaniz/formation-static/tree/beta",
+                          "content": "Formation Static"
+                        },
+                        {
+                          "content": " (static site generation) and "
+                        },
+                        {
+                          "tag": "a",
+                          "link": "https://github.com/galaniz/formation/tree/beta",
+                          "content": "Formation"
+                        },
+                        {
+                          "content": " (web components/styles) libraries."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Cross-team coordination: "
+                    },
+                    {
+                      "content": "Engineering built the webview and post-message handlers; data team managed intent value passing to Braze."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Value Props Result"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "The primary metric was subscriptions started. Statistical significance was not achieved."
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "tag": "strong",
+                  "content": "Control (50%) "
+                },
+                {
+                  "content": "&ndash; No Value Props 11.54% <br>"
+                },
+                {
+                  "tag": "strong",
+                  "content": "Variant &nbsp;(50%) "
+                },
+                {
+                  "content": "&ndash; Value Props 11.04%"
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "The results are unreliable due to reporting issues caused by interference from concurrent tests and multiple webview exposure bugs. A subsequent analysis revealed onboarding itself delivered a 22.6% lift in subscription conversion compared to no onboarding, but no distinction between the variant and control was possible."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Destination Experiment"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Does changing the onboarding destination from the Paywall to either the Get Care flow or Dashboard increase subscription conversion rates?"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "tag": "strong",
+                  "content": "Control &nbsp;(30%) "
+                },
+                {
+                  "content": "&ndash; No Onboarding <br>"
+                },
+                {
+                  "tag": "strong",
+                  "content": "Variant 1 (23%) "
+                },
+                {
+                  "content": "&ndash; Onboarding &rarr; Paywall <br>"
+                },
+                {
+                  "tag": "strong",
+                  "content": "Variant 2 (23%) "
+                },
+                {
+                  "content": "&ndash; Onboarding &rarr; Get Care <br>"
+                },
+                {
+                  "tag": "strong",
+                  "content": "Variant 3 (23%) "
+                },
+                {
+                  "content": "&ndash; Onboarding &rarr; Dashboard"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xs",
+              "layout": "row",
+              "gap": "m",
+              "gapLarge": "l",
+              "justify": "center",
+              "content": [
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/app-create-consult",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/app-paywall",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/app-dashboard",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Mobile app dashboard, paywall and create consult screens."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Destination Development"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "tag": "strong",
+                  "content": "Cross-team coordination: "
+                },
+                {
+                  "content": "Engineering support was needed to create a new post-message handler for routing users to the Get Care flow, as only Dashboard and Paywall destinations were available."
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Destination Result"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "The primary metric was subscriptions started. The Get Care variant won and became the new destination for the confirmation page."
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "tag": "strong",
+                  "content": "Control &nbsp;(30%) "
+                },
+                {
+                  "content": "&ndash; No Onboarding 10.64% <br>"
+                },
+                {
+                  "tag": "strong",
+                  "content": "Variant 1 (23%) "
+                },
+                {
+                  "content": "&ndash; Paywall 13.85% <br>"
+                },
+                {
+                  "tag": "strong",
+                  "content": "Variant 2 (23%) &ndash; Get Care 15.44% <br>"
+                },
+                {
+                  "tag": "strong",
+                  "content": "Variant 3 (23%) "
+                },
+                {
+                  "content": "&ndash; Dashboard 14.39%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "How It Works Experiment"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Does introducing a new \"How It Works\" onboarding flow, focused on educating users about how Maple works improve subscription conversion compared to the existing value proposition-based onboarding screens? Additionally, how are drop-off rates affected?"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "tag": "strong",
+                  "content": "Control (50%) "
+                },
+                {
+                  "content": "&ndash; Welcome &rarr; Intent &rarr; Value Props &rarr; Confirmation <br>"
+                },
+                {
+                  "tag": "strong",
+                  "content": "Variant &nbsp;(50%) "
+                },
+                {
+                  "content": "&ndash; Welcome &rarr; Intent &rarr; How It Works &rarr; Confirmation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xl",
+              "paddingTop": "m",
+              "breakout": true,
+              "layout": "row",
+              "gap": "m",
+              "gapLarge": "l",
+              "justify": "center",
+              "content": [
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/how-it-works-welcome",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/how-it-works-prescriptions-1",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/how-it-works-prescriptions-2",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/how-it-works-prescriptions-3",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/how-it-works-reassurance",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/how-it-works-confirmation",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/how-it-works-intent",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/weight-medication-assessment-1",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/weight-medication-assessment-2",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "6",
+                  "widthSmall": "4",
+                  "widthMedium": "3",
+                  "widthLarge": "2",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-onboarding/weight-medication-assessment-eligible",
+                      "border": true,
+                      "alt": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Updated mobile welcome, intent, prescriptions flow and confirmation pages. Additional social proof page and weight medication assessment pages."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "How It Works Development"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Component refactoring: "
+                    },
+                    {
+                      "content": "Onboarding component needed to support both existing and new styles/layouts, as only select flows were updated."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Server-side geolocation: "
+                    },
+                    {
+                      "content": "Prevented users outside available provinces from seeing weight medication assessment intent option."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Complex routing logic: "
+                    },
+                    {
+                      "content": "Form component required updates to handle conditional destinations based on user input for weight medication assessment flow."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Improved validation: "
+                    },
+                    {
+                      "content": "Implemented more robust and accessible validation for intent and weight medication assessment forms."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "How It Works Result"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "The primary metric was subscriptions started. The \"How It Works\" variant won and became the new flow, but introduced more mid-funnel drop-off."
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "tag": "strong",
+                  "content": "Control (50%) "
+                },
+                {
+                  "content": "&ndash; Value Props 12.84% <br>"
+                },
+                {
+                  "tag": "strong",
+                  "content": "Variant &nbsp;(50%) &ndash; How It Works 14.95%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Pre-registration Experiment"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Does surfacing onboarding content before registration on the top 10 B2C landing pages improve B2C registration rate? At the time, the registration page was seeing significant drop-off for B2C users, while post-registration onboarding had improved subscription conversion by 36%."
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "tag": "strong",
+                  "content": "Control (50%) "
+                },
+                {
+                  "content": "&ndash; Registration &rarr; Post-registration Onboarding <br>"
+                },
+                {
+                  "tag": "strong",
+                  "content": "Variant &nbsp;(50%) "
+                },
+                {
+                  "content": "&ndash; Pre-registration Onboarding &rarr; Registration &rarr; No Onboarding"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xs",
+              "paddingBottom": "m",
+              "paddingBottomLarge": "l",
+              "content": [
+                {
+                  "renderType": "image",
+                  "image": "maple-onboarding/home",
+                  "border": true,
+                  "alt": "Top of desktop homepage with main buttons leading to registration outlined."
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "layout": "row",
+              "gap": "m",
+              "gapLarge": "l",
+              "justify": "center",
+              "content": [
+                {
+                  "renderType": "column",
+                  "widthSmall": "10",
+                  "widthMedium": "6",
+                  "content": [
+                    {
+                      "renderType": "media",
+                      "title": "Pre-registration flow",
+                      "source": "pre-reg-1280x726.mp4"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "widthSmall": "10",
+                  "widthMedium": "6",
+                  "content": [
+                    {
+                      "renderType": "media",
+                      "title": "Post-registration flow",
+                      "source": "post-reg-1280x726.mp4"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Desktop homepage, recording of the control flow (landing page, registration, post-registration onboarding) and of the variant flow (landing page, pre-registration onboarding, registration, dashboard)."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Pre-registration Development"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Cross-team collaboration: "
+                    },
+                    {
+                      "content": "Engineering, data and marketing collaborated on pre-registration cookie structure to suppress webview and pass intent data."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "App implementation: "
+                    },
+                    {
+                      "content": "Engineering added webview/data behavior on registration and coordinated on param to distinguish in-app vs marketing contexts."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Component extension: "
+                    },
+                    {
+                      "content": "Extended components to cover new and existing needs like capturing intent data in the pre-registration cookie instead of passing directly."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Pre-registration Result"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "The primary metric was account creations. The control won."
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "tag": "strong",
+                  "content": "Control (50%) &ndash; Registration 12.53% <br>"
+                },
+                {
+                  "tag": "strong",
+                  "content": "Variant &nbsp;(50%) "
+                },
+                {
+                  "content": "&ndash; Pre-registration Onboarding 9.6%"
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "The secondary metric was subscriptions started. The variant won and was rolled out across all B2C pages. Despite the dip in overall registrations the increase in subscription conversion was too significant to ignore."
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "tag": "strong",
+                  "content": "Control (50%) &ndash; "
+                },
+                {
+                  "content": "Registration 11.92% <br>"
+                },
+                {
+                  "tag": "strong",
+                  "content": "Variant &nbsp;(50%) &ndash; Pre-registration Onboarding 15.1%"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "maxWidth": "xs",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Outcome"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Each experiment has built upon previous findings, steadily improving conversion rates. The team plans on further testing and refining the pre-registration experience to drive better outcomes for both users and the business. Following the most recent experiment, the Growth Marketing Director shared:"
+            },
+            {
+              "renderType": "richText",
+              "tag": "blockquote",
+              "content": [
+                {
+                  "tag": "p",
+                  "content": "\"Couldn't have said it better myself - just a beautiful cross functional effort that paid serious dividends! Well done team. Huge win.\""
+                }
+              ]
+            },
+            {
+              "renderType": "button",
+              "title": "View Maple Onboarding",
+              "richText": true,
+              "externalLink": "https://www.getmaple.ca/onboarding/get-started/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
