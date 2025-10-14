@@ -58,7 +58,7 @@ const password: ServerlessAction = async (data, request, env: PasswordEnv) => {
     success: {
       message: 'Correct credentials',
       headers: {
-        'Set-Cookie': 'acp_set=true; path=/'
+        'Set-Cookie': 'acp_set=true; Path=/; Domain=.alanizcreative.com; SameSite=None; Secure'
       }
     }
   }
@@ -91,11 +91,12 @@ export default {
       })
     }
 
-    /* Cors handling */
+    /* CORS handling */
 
     const corsHeaders: Record<string, string> = {
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Authorization, Content-Type',
+      'Access-Control-Allow-Credentials': 'true',
       'Access-Control-Allow-Origin': origin,
       'Content-Type': 'application/json'
     }

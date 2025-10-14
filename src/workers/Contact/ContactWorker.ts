@@ -68,7 +68,7 @@ export default {
       })
     }
 
-    /* Cors handling */
+    /* CORS handling */
 
     const corsHeaders: Record<string, string> = {
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
