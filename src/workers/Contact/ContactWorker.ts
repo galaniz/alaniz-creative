@@ -13,7 +13,7 @@ import { setServerless } from '@alanizcreative/formation-static/serverless/serve
 import { setStoreItem } from '@alanizcreative/formation-static/store/store.js'
 import { Ajax } from '@alanizcreative/formation-static/serverless/Ajax/Ajax.js'
 import { Contact } from '@alanizcreative/formation-static/serverless/Contact/Contact.js'
-import { workerServerlessTurnstile } from '../workerUtils.js'
+import { workerServerlessTurnstile } from '../workerTurnstile.js'
 import { config } from '../../config/config.js'
 
 /**

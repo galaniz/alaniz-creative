@@ -18,9 +18,20 @@ jobs:
       - name: Install PNPM
         uses: pnpm/action-setup@v4
 
+      # Set up Node.js for PNPM
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
       # Install PNPM dependencies
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --optional
+
+      # Build file dependencies
+      - name: Build file dependencies
+        run: pnpm build
 
       # Upload worker
       - name: Upload worker
