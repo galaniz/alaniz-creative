@@ -93,6 +93,7 @@ const RichTextContentItem: RichTextContentItemFilter = (item, props) => {
   const { args } = props
   const { type } = args
   const newItem = { ...item }
+  const isCols = type === 'columns'
 
   if (tag === 'th') {
     newItem.attr = 'scope="col"'
@@ -102,7 +103,11 @@ const RichTextContentItem: RichTextContentItemFilter = (item, props) => {
     newItem.attr = 'class="text-s mt-2xs block"'
   }
 
-  if (tag === 'dt' && type === 'columns') {
+  if (isCols && tag === 'dd') {
+    newItem.attr = 'class="text-no-br"'
+  }
+
+  if (isCols && tag === 'dt') {
     newItem.attr = 'class="text-span"'
   }
 

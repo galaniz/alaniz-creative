@@ -18,3 +18,7 @@
 .text-span {
   column-span: all;
 }
+
+.text-no-br {
+  break-inside: avoid;
+}

@@ -1,0 +1,165 @@
+{
+  "contentType": "work",
+  "title": "Maple Migration",
+  "slug": "maple-migration",
+  "date": "2025-10-09T22:10:32",
+  "dateModified": "2025-10-09T22:10:19",
+  "meta": {
+    "description": "",
+    "image": ""
+  },
+  "passwordProtect": true,
+  "hero": {
+    "image": "maple-migration/hero",
+    "border": true,
+    "wave": "five"
+  },
+  "blob": "five",
+  "theme": {
+    "primary-dark": "#af2e17",
+    "primary-light": "#e76650",
+    "secondary-dark": "#f3f1ef",
+    "secondary-light": "#f3f1ef",
+    "med-primary": "var(--background-light)",
+    "med-secondary": "#af2e17",
+    "med-tertiary": "#f3f1ef"
+  },
+  "related": [
+    "work--maple-onboarding",
+    "work--olivia-korosak"
+  ],
+  "category": [
+    "term--work-category-web-development",
+    "term--work-category-ui-design"
+  ],
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "Overview"
+        },
+        {
+          "renderType": "container",
+          "layout": "row-s",
+          "gap": "m",
+          "gapLarge": "l",
+          "tag": "dl",
+          "content": [
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Year"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "2025"
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "div",
+              "type": "columns",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Team"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Growth Marketing Director"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Product Manager"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Marketing Enablement Director"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Production Designer"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "Product Marketing Manager"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": "SEO agency"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "dt",
+                  "content": "Role"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
+                    {
+                      "tag": "a",
+                      "internalLink": "term--work-category-web-development",
+                      "content": "Web development"
+                    },
+                    {
+                      "tag": "a",
+                      "internalLink": "term--work-category-ui-design",
+                      "content": "UI design"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View Maple",
+          "richText": true,
+          "externalLink": "https://marketing-prod.getmaple.ca/"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "content": "Details coming soon!"
+        }
+      ]
+    }
+  ]
+}

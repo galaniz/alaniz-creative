@@ -22,7 +22,7 @@ import { renderFunctions } from '../render/render.js'
 import { WorkerEnv } from './workerTypes.js'
 
 /**
- * Setup config, filters, actions and store in serverless context.
+ * Set up config, filters, actions and store in serverless context.
  *
  * @param {Generic} [env]
  */

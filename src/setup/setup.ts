@@ -33,7 +33,7 @@ import { createSeoSitemapFiles } from '../seo/seoSitemapFiles.js'
 import { HttpError } from '../components/HttpError/HttpError.js'
 
 /**
- * Setup config, filters, actions and fetch/render in build context.
+ * Set up config, filters, actions and fetch/render in build context.
  *
  * @param {boolean} build
  * @return {Promise<RenderReturn[]>}
@@ -196,7 +196,7 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
     return output
   }
 
-  /* Setup filters, actions and render functions */
+  /* Set up filters, actions and render functions */
 
   setFilters(filters)
   setActions(actions)

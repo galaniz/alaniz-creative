@@ -130,7 +130,7 @@
           "renderType": "button",
           "title": "View LaterCon Landing Page",
           "richText": true,
-          "externalLink": "https://deploy-preview-234--later-contentful-marketing.netlify.app/latercon/"
+          "externalLink": "https://assets.alanizcreative.com/latercon/snapshot/index.html"
         }
       ]
     },
@@ -792,7 +792,7 @@
               "renderType": "button",
               "title": "View LaterCon Landing Page",
               "richText": true,
-              "externalLink": "https://deploy-preview-234--later-contentful-marketing.netlify.app/latercon/"
+              "externalLink": "https://assets.alanizcreative.com/latercon/snapshot/index.html"
             }
           ]
         }

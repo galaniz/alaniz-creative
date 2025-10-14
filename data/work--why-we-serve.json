@@ -662,7 +662,7 @@
           "content": [
             {
               "renderType": "container",
-              "maxWidth": "xl",
+              "maxWidth": "2xl",
               "paddingTop": "m",
               "paddingTopLarge": "l",
               "breakout": true,

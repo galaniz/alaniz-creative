@@ -69,7 +69,7 @@ const Media = (props: MediaProps): string => {
       loader="${loaderId}"
       error="${errorId}"
       title="${title}"
-      url="https://assets.alanizcreative.com/${source}"
+      url="https://alanizcreative.com/assets/${source}"
       type="video"
     >
       <video playsinline muted class="block absolute top-0 left-0 w-full h-full object-cover"></video>
