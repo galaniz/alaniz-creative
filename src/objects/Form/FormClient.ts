@@ -339,7 +339,7 @@ class Form extends FormBase {
     /* Request */
 
     try {
-      const resp = await fetch(`https://alanizcreative/api/${this.action}`, {
+      const resp = await fetch(`https://alanizcreative.com/api/${this.action}`, {
         method: 'POST',
         body: JSON.stringify(data)
       })
