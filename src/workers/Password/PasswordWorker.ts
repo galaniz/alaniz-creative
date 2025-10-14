@@ -11,7 +11,7 @@ import { escape } from '@alanizcreative/formation-static/utils/escape/escape.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 import { setServerless } from '@alanizcreative/formation-static/serverless/serverless.js'
 import { Ajax } from '@alanizcreative/formation-static/serverless/Ajax/Ajax.js'
-import { workerServerlessTurnstile } from '../workerUtils.js'
+import { workerServerlessTurnstile } from '../workerTurnstile.js'
 import { config } from '../../config/config.js'
 
 /**
