@@ -72,7 +72,7 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
 
     await esbuild.build({
       entryPoints,
-      outdir: 'site/assets',
+      outdir: 'site',
       minify: true,
       bundle: true,
       splitting: true,
