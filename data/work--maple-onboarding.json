@@ -1091,7 +1091,7 @@
                     {
                       "renderType": "media",
                       "title": "Pre-registration flow",
-                      "source": "pre-reg-1280x726.mp4"
+                      "source": "maple-onboarding/pre-reg-1280x726.mp4"
                     }
                   ]
                 },
@@ -1103,7 +1103,7 @@
                     {
                       "renderType": "media",
                       "title": "Post-registration flow",
-                      "source": "post-reg-1280x726.mp4"
+                      "source": "maple-onboarding/post-reg-1280x726.mp4"
                     }
                   ]
                 }
