@@ -341,6 +341,7 @@ class Form extends FormBase {
     try {
       const resp = await fetch(`https://alanizcreative.com/api/${this.action}`, {
         method: 'POST',
+        credentials: 'include',
         body: JSON.stringify(data)
       })
 
