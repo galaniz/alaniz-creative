@@ -71,6 +71,8 @@ const config: Config = setConfig({
   filter: (config, env: ConfigEnv) => {
     config.env.dev = env.ENVIRONMENT === 'development'
     config.env.prod = env.ENVIRONMENT === 'production'
+    config.env.devUrl = ''
+    config.env.prodUrl = 'https://alanizcreative.com'
     configVars.local = env.LOCAL === 'true'
 
     return config

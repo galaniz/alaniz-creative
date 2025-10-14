@@ -4,8 +4,8 @@
 
 /* Imports */
 
-import { setConfigClient } from '../config/configClient.js'
+import { setConfig } from '@alanizcreative/formation/config/config.js'
 
 /* Init */
 
-setConfigClient()
+setConfig()

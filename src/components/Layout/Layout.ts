@@ -118,15 +118,15 @@ const Layout = (args: LayoutArgs): string => {
   let scriptsOutput = ''
 
   if (configVars.js.out) {
-    scriptsOutput += `<script type="module" src="${assetsLink}${configVars.js.out}.js"></script>`
+    scriptsOutput += `<script type="module" src="${baseLink}${configVars.js.out}.js"></script>`
   }
 
-  scriptsOutput += outputScripts(assetsLink)
+  scriptsOutput += outputScripts(baseLink)
 
   /* Styles */
 
   configVars.css.replace =
-    `<link rel="stylesheet" href="${assetsLink}${configVars.css.out}.css" media="all">` + outputStyles(assetsLink)
+    `<link rel="stylesheet" href="${baseLink}${configVars.css.out}.css" media="all">` + outputStyles(baseLink)
 
   let stylesOutput =
     '@media (prefers-reduced-motion:reduce){.no-motion-show{display:block}.no-motion-hide{display:none}}'
@@ -206,7 +206,7 @@ const Layout = (args: LayoutArgs): string => {
 
   /* Noscript */
 
-  let noscriptOutput = `<link rel="stylesheet" href="${assetsLink}css/global/globalNoJs.css" media="all">`
+  let noscriptOutput = `<link rel="stylesheet" href="${baseLink}css/global/globalNoJs.css" media="all">`
 
   configVars.noscript.forEach(noscript => {
     noscriptOutput += noscript
