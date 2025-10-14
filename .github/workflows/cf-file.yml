@@ -15,12 +15,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Install pnpm
-      - name: Install pnpm
+      # Install PNPM
+      - name: Install PNPM
         uses: pnpm/action-setup@v4
 
-      # Install pnpm dependencies
-      - name: Install pnpm dependencies
+      # Install PNPM dependencies
+      - name: Install dependencies
         run: pnpm install --frozen-lockfile --optional
 
       # Upload worker
