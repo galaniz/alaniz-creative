@@ -28,11 +28,7 @@ const contact: ServerlessAction = async (data, request, env: ContactEnv) => {
 
   /* Form meta */
 
-  /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
-  // @ts-ignore - may not exist in build context
-  const { default: formMeta } = await import('../../../lib/store/formMeta.json') as { default: Store['formMeta'] }
-
-  setStoreItem('formMeta', formMeta)
+  setStoreItem('formMeta', await env.CONTACT_KV?.get('formMeta', 'json') as Store['formMeta'])
 
   /* Process inputs and send email */
 
@@ -73,6 +69,7 @@ export default {
     const corsHeaders: Record<string, string> = {
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Authorization, Content-Type',
+      'Access-Control-Allow-Credentials': 'true',
       'Access-Control-Allow-Origin': origin,
       'Content-Type': 'application/json'
     }

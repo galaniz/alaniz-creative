@@ -126,7 +126,13 @@
                       "tag": "a",
                       "internalLink": "term--work-category-web-development",
                       "content": "Web development"
-                    },
+                    }
+                  ]
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "dd",
+                  "content": [
                     {
                       "tag": "a",
                       "internalLink": "term--work-category-ui-design",
