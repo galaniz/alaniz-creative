@@ -6,6 +6,12 @@
   "preview_urls": false,
   "keep_vars": true,
   "minify": true,
+  "kv_namespaces": [
+    {
+      "binding": "CONTACT_KV",
+      "id": "1618bb23224b4298847ab1eccde44307"
+    }
+  ],
   "env": {
     "dev": {
       "main": "./ContactWorker.ts",

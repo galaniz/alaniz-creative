@@ -28,11 +28,9 @@ const contact: ServerlessAction = async (data, request, env: ContactEnv) => {
 
   /* Form meta */
 
-  /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
-  // @ts-ignore - may not exist in build context
-  const { default: formMeta } = await import('../../../lib/store/formMeta.json') as { default: Store['formMeta'] }
+  const isDev = data.action === 'contact-dev'
 
-  setStoreItem('formMeta', formMeta)
+  setStoreItem('formMeta', await env.CONTACT_KV?.get(`formMeta${isDev ? ':dev' : ''}`, 'json') as Store['formMeta'])
 
   /* Process inputs and send email */
 

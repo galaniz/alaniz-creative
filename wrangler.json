@@ -6,6 +6,12 @@
   "preview_urls": true,
   "keep_vars": true,
   "minify": true,
+  "kv_namespaces": [
+    {
+      "binding": "SITE_KV",
+      "id": "1618bb23224b4298847ab1eccde44307"
+    }
+  ],
   "assets": {
     "directory": "./site/",
     "run_worker_first": true,
