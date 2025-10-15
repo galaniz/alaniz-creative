@@ -6,11 +6,23 @@
   "preview_urls": false,
   "keep_vars": true,
   "minify": true,
+  "routes": [
+    {
+      "pattern": "alanizcreative.com/api/password",
+      "zone_name": "alanizcreative.com"
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
   "env": {
     "dev": {
       "main": "./PasswordWorker.ts",
       "workers_dev": false,
       "preview_urls": false,
+      "keep_vars": true,
+      "minify": true,
       "routes": [
         {
           "pattern": "alanizcreative.com/api/password-dev",
@@ -22,15 +34,5 @@
         "head_sampling_rate": 1
       }
     }
-  },
-  "routes": [
-    {
-      "pattern": "alanizcreative.com/api/password",
-      "zone_name": "alanizcreative.com"
-    }
-  ],
-  "observability": {
-    "enabled": true,
-    "head_sampling_rate": 1
   }
 }

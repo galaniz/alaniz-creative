@@ -2,7 +2,7 @@
   "name": "alaniz-creative",
   "main": "./src/workers/Site/SiteWorker.ts",
   "compatibility_date": "2025-09-24",
-  "workers_dev": true,
+  "workers_dev": false,
   "preview_urls": true,
   "keep_vars": true,
   "minify": true,
@@ -18,19 +18,27 @@
     "not_found_handling": "404-page",
     "binding": "ASSETS"
   },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.02
+  },
   "env": {
     "staging": {
       "main": "./src/workers/Site/SiteWorker.ts",
       "preview_urls": false,
       "workers_dev": false,
+      "keep_vars": true,
+      "minify": true,
+      "kv_namespaces": [
+        {
+          "binding": "SITE_KV",
+          "id": "7581134931d6459f9ce3ed39d465825a"
+        }
+      ],
       "observability": {
         "enabled": true,
         "head_sampling_rate": 1
       }
     }
-  },
-  "observability": {
-    "enabled": true,
-    "head_sampling_rate": 0.02
   }
 }

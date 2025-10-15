@@ -28,12 +28,9 @@ const contact: ServerlessAction = async (data, request, env: ContactEnv) => {
 
   /* Form meta */
 
-  const isDev = data.action === 'contact-dev'
+  console.log(await env.CONTACT_KV?.get('formMeta', 'json'))
 
-  console.log(`formMeta${isDev ? ':dev' : ''}`)
-  console.log(await env.CONTACT_KV?.get(`formMeta${isDev ? ':dev' : ''}`, 'json'))
-
-  setStoreItem('formMeta', await env.CONTACT_KV?.get(`formMeta${isDev ? ':dev' : ''}`, 'json') as Store['formMeta'])
+  setStoreItem('formMeta', await env.CONTACT_KV?.get('formMeta', 'json') as Store['formMeta'])
 
   /* Process inputs and send email */
 
