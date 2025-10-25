@@ -235,7 +235,7 @@ const Layout = (args: LayoutArgs): string => {
       <body class="${ns} no-js flex col">
         ${spritesOutput}
         ${headerOutput}
-        <main id="main" class="${isBlank ? 'flex col justify-center grow-1' : 'main pb-3xs'}">
+        <main id="main" class="${isBlank ? 'flex col justify-center grow-1' : 'main pb-3xs overflow-hidden'}">
           ${heroOutput}
           ${contentOutput}
         </main>
