@@ -13,7 +13,6 @@ html {
 body {
   min-height: 100vh; // Fallback for old browsers
   min-height: 100dvh;
-  overflow-x: hidden;
 }
 
 a {
@@ -32,4 +31,12 @@ strong {
 figcaption,
 blockquote {
   font-style: italic;
+}
+
+.main {
+  padding-top: var(--header-height);
+}
+
+.main:target {
+  scroll-margin-top: calc(var(--header-height) * -1);
 }
