@@ -163,7 +163,11 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
               ...configVars.css.safelist
             ],
             dynamicAttributes: [
-              'data-stop-scroll'
+              'data-no-scroll',
+              'data-loader',
+              'show-modal',
+              'open',
+              'playing'
             ]
           })
         ]
