@@ -8,6 +8,7 @@ html {
   line-height: var(--line-height-base);
   font-family: var(--font-primary);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 body {
@@ -31,12 +32,4 @@ strong {
 figcaption,
 blockquote {
   font-style: italic;
-}
-
-.main {
-  padding-top: var(--header-height);
-}
-
-.main:target {
-  scroll-margin-top: calc(var(--header-height) * -1);
 }
