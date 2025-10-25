@@ -16,8 +16,6 @@
   --muted-color: hsla(var(--foreground-base-hsl), 0.075);
   --negative-color-hsl: var(--negative-dark-hsl);
   --positive-color-hsl: var(--positive-dark-hsl);
-  --negative-color: hsla(var(--negative-color-hsl), 1);
-  --positive-color: hsla(var(--positive-color-hsl), 1);
   --theme-color: var(--theme-primary-dark);
 
   color: var(--text-color);
@@ -35,6 +33,12 @@
   --theme-color: var(--theme-primary-light);
 
   color: var(--text-color);
+}
+
+.bg-background-light,
+.bg-foreground-base {
+  --negative-color: hsla(var(--negative-color-hsl), 1);
+  --positive-color: hsla(var(--positive-color-hsl), 1);
 }
 
 .bg-current {

@@ -64,7 +64,7 @@ const Media = (props: MediaProps): string => {
 
   return /* html */`
     <ac-media
-      class="media block ar-16-9 relative overflow-hidden b-all b-radius-s b-radius-m-m l-isolate"
+      class="media block ar-16-9 relative overflow-hidden b-all b-radius-s b-radius-m-m l-isolate e-shift-attr"
       role="group"
       loader="${loaderId}"
       error="${errorId}"
@@ -76,8 +76,9 @@ const Media = (props: MediaProps): string => {
       <button
         type="button"
         aria-label="Play ${title}"
-        class="media-play b-radius-full b-all absolute all-0 m-auto e-shift e-trans"
+        class="media-play b-radius-full b-all absolute all-0 m-auto e-trans"
         data-media-control="play"
+        data-shift
       >
         ${PlaySvg({ classes: 'media-icon absolute center' })}
       </button>

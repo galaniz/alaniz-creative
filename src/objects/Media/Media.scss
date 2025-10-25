@@ -12,7 +12,7 @@
   }
 
   background: var(--med-tertiary);
-  border-color: var(--theme-color);
+  border-color: var(--med-theme-color, var(--theme-color));
 }
 
 .media-play,

@@ -119,7 +119,7 @@ const Card = (props: CardProps): string => {
 
   /* Container */
 
-  let containerClasses = 'col-12'
+  let containerClasses = 'col-12 themeable'
   let classes = 'flex col'
   let styles = ''
 
@@ -137,7 +137,7 @@ const Card = (props: CardProps): string => {
   }
 
   if (theme) {
-    styles = ` style="--theme-color:${theme['primary-dark']}"`
+    styles = ` style="--theme-dark:${theme['primary-dark']};--theme-light:${theme['primary-light']}"`
   }
 
   /* Blob */
