@@ -42,9 +42,13 @@
 }
 
 .bg-current {
-  background-color: currentcolor;
+  background: currentcolor;
 }
 
 .bg-muted {
-  background-color: var(--muted-color);
+  background: var(--muted-color);
+}
+
+.bg-bright {
+  background: var(--background-light);
 }

@@ -573,6 +573,7 @@
                           "renderType": "container",
                           "layout": "row",
                           "grow": true,
+                          "background": "bright",
                           "border": "rounded",
                           "align": "center",
                           "justify": "center",
@@ -642,6 +643,7 @@
                             {
                               "renderType": "container",
                               "layout": "row",
+                              "background": "bright",
                               "border": "rounded",
                               "gap": "0",
                               "content": [
@@ -761,7 +763,7 @@
                             },
                             {
                               "renderType": "container",
-                              "background": "background-light",
+                              "background": "bright",
                               "border": "rounded",
                               "paddingTop": "m",
                               "paddingBottom": "m",

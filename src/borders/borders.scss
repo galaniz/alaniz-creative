@@ -1,0 +1,13 @@
+/**
+ * Borders - Styles
+ */
+
+/* Imports */
+
+@use "@alanizcreative/formation/lib/borders/borders";
+
+/* Styles */
+
+.b-theme {
+  border-color: var(--theme-color);
+}

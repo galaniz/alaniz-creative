@@ -46,10 +46,6 @@
   }
 
   .b-theme {
-    --border-color: transparent;
-  }
-
-  .media {
-    --med-theme-color: transparent;
+    border-color: var(--foreground-base);
   }
 }
