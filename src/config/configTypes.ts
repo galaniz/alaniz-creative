@@ -107,7 +107,7 @@ export type ConfigJustify = 'start' | 'center' | 'end' | 'between'
 export type ConfigAlign = 'start' | 'center' | 'end'
 
 /**
- * @typedef {'1-1|'16-10'|'16-9'} ConfigAspectRatio
+ * @typedef {'1-1'|'16-10'|'16-9'} ConfigAspectRatio
  */
 export type ConfigAspectRatio = '1-1' | '16-10' | '16-9'
 

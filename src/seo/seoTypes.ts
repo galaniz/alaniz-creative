@@ -17,7 +17,7 @@ export interface SeoSchemaBreadcrumb {
 }
 
 /**
- * @typedef {Map<string, *[]>} SeoSchema
+ * @typedef {Map<string, Array<*>>} SeoSchema
  * @prop {SeoSchemaBreadcrumb[]} [breadcrumbs]
  */
 export type SeoSchema = Map<string, unknown[]> & Map<'breadcrumbs', SeoSchemaBreadcrumb[]>
