@@ -1,6 +1,6 @@
 # Alaniz Creative  
 
-Static site for Alaniz Creative using [Formation Static](https://github.com/galaniz/formation-static).
+Static site for my portfolio using [Formation Static](https://github.com/galaniz/formation-static).
 
 ## Installation
 
