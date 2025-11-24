@@ -5,7 +5,7 @@
 /* Imports */
 
 import { getYear } from '@alanizcreative/formation-static/utils/year/year.js'
-import { addStyle } from '@alanizcreative/formation-static/utils/scriptStyle/scriptStyle.js'
+import { addStyle } from '@alanizcreative/formation-static/scripts/scripts.js'
 import { navigationsInstance } from '../Navigation/Navigations.js'
 import { config } from '../../config/config.js'
 
@@ -22,13 +22,13 @@ const Footer = (currentLink: string, currentType?: string | string[]): string =>
   const listOutput = navigationsInstance?.getOutput('footer', {
     currentLink,
     currentType,
-    listClass: 'bg-foreground-base flex flex-wrap gap-m gap-l-m ls-none e-line-in',
+    listClass: 'flex flex-wrap gap-m gap-l-m ls-none e-line-in',
     listAttr: 'role="list"',
     linkClass: 'text-s',
     linkAttr: 'data-rich'
   }, 1) ?? ''
 
-  const navOutput = listOutput ? `<nav aria-label="Primary">${listOutput}</nav>` : ''
+  const navOutput = listOutput ? `<nav class="bg-foreground-base" aria-label="Primary">${listOutput}</nav>` : ''
 
   /* Styles */
 
@@ -42,7 +42,7 @@ const Footer = (currentLink: string, currentType?: string | string[]): string =>
         <div class="flex col row-m justify-between">
           <div class="footer-relative">
             <div class="pt-4xl pb-l pt-5xl-m pb-2xl-m">
-              <p class="heading-l wt-normal m-0 pb-l pr-2xl">Thanks for dropping&nbsp;by!</p>
+              <p class="bg-foreground-base heading-l wt-normal m-0 pb-l pr-2xl">Thanks for dropping&nbsp;by!</p>
               ${navOutput}
             </div>
             <svg

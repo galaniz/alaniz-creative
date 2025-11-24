@@ -74,9 +74,9 @@ export interface ConfigVars {
 }
 
 /**
- * @typedef {'background-light'|'foreground-base'} ConfigBackgrounds
+ * @typedef {'background-light'|'foreground-base'|'bright'} ConfigBackgrounds
  */
-export type ConfigBackgrounds = 'background-light' | 'foreground-base'
+export type ConfigBackgrounds = 'background-light' | 'foreground-base' | 'bright'
 
 /**
  * @typedef {'0'|'4xs'|'3xs'|'2xs'|'xs'|'s'|'m'|'l'|'xl'|'2xl'|'3xl'|'4xl'|'5xl'} ConfigSizes
@@ -107,7 +107,7 @@ export type ConfigJustify = 'start' | 'center' | 'end' | 'between'
 export type ConfigAlign = 'start' | 'center' | 'end'
 
 /**
- * @typedef {'1-1|'16-10'|'16-9'} ConfigAspectRatio
+ * @typedef {'1-1'|'16-10'|'16-9'} ConfigAspectRatio
  */
 export type ConfigAspectRatio = '1-1' | '16-10' | '16-9'
 

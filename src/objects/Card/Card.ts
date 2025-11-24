@@ -5,10 +5,11 @@
 /* Imports */
 
 import type { CardProps, CardType } from './CardTypes.js'
+import type { ParentArgs } from '@alanizcreative/formation-static/global/globalTypes.js'
 import { isArrayStrict } from '@alanizcreative/formation-static/utils/array/array.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
-import { addStyle } from '@alanizcreative/formation-static/utils/scriptStyle/scriptStyle.js'
+import { addStyle } from '@alanizcreative/formation-static/scripts/scripts.js'
 import { getLink } from '@alanizcreative/formation-static/utils/link/link.js'
 import { configBlobs } from '../../config/configOptions.js'
 import { Image } from '../Image/Image.js'
@@ -43,6 +44,8 @@ const Card = (props: CardProps): string => {
     length = 1
   } = args
 
+  const n = index + 1
+
   /* Internal link required */
 
   if (!isObjectStrict(internalLink)) {
@@ -69,14 +72,17 @@ const Card = (props: CardProps): string => {
 
   /* Layout */
 
+  const isMinimal = type === 'minimal'
   const isCascade = type === 'cascade'
   const isAlternate = type === 'alternate'
   const isAlternating = isAlternate || isCascade
   const isWidow = length % 3 === 2
+  const isHalf = (n % 3 === 2 || n % 3 === 0)
+  const isFull = (isCascade && !isHalf) || isAlternate
 
   /* Parents */
 
-  const parents = [
+  const parents: ParentArgs[] = [
     {
       renderType: 'card',
       args: {
@@ -84,6 +90,32 @@ const Card = (props: CardProps): string => {
       }
     }
   ]
+
+  if (isMinimal || (isCascade && isHalf)) {
+    parents.push({
+      renderType: 'column',
+      args: {
+        width: '12',
+        widthSmall: isMinimal ? '6' : undefined,
+        widthMedium: isCascade && isHalf ? '4' : undefined
+      }
+    })
+  }
+
+  if (isFull) {
+    parents.push({
+      renderType: 'column',
+      args: {
+        width: '12',
+        widthSmall: isMinimal ? '6' : undefined,
+        widthMedium: isCascade && isHalf ? '4' : undefined
+      }
+    })
+  }
+
+  if (props.parents && !isFull) {
+    parents.push(...props.parents)
+  }
 
   /* Text */
 
@@ -119,7 +151,7 @@ const Card = (props: CardProps): string => {
 
   /* Container */
 
-  let containerClasses = 'col-12'
+  let containerClasses = 'col-12 themeable'
   let classes = 'flex col'
   let styles = ''
 
@@ -132,12 +164,12 @@ const Card = (props: CardProps): string => {
     containerClasses += ' card-widow'
   }
 
-  if (type === 'minimal') {
+  if (isMinimal) {
     containerClasses += ' col-6-s'
   }
 
   if (theme) {
-    styles = ` style="--theme-color:${theme['primary-dark']}"`
+    styles = ` style="--theme-dark:${theme['primary-dark']};--theme-light:${theme['primary-light']}"`
   }
 
   /* Blob */
@@ -194,7 +226,13 @@ const Card = (props: CardProps): string => {
             </${headingTag}>
             ${subText}
           </div>
-          ${Image({ args: { ...hero, aspectRatio: '16-10' }, parents })}
+          ${Image({
+            args: {
+              ...hero,
+              aspectRatio: '16-10'
+            },
+            parents
+          })}
         </div>
       </div>
     </li>

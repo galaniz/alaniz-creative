@@ -26,13 +26,17 @@
 
 @use "../colors/colors";
 
+/* Borders */
+
+@use "../borders/borders";
+
+/* Themes */
+
+@use "../themes/themes";
+
 /* Layouts */
 
 @use "../layouts/layouts";
-
-/* Borders */
-
-@use "@alanizcreative/formation/lib/borders/borders";
 
 /* Logo */
 

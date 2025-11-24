@@ -4,7 +4,7 @@
 
 /* Imports */
 
-import type { Actions } from '@alanizcreative/formation-static/utils/action/actionTypes.js'
+import type { Actions } from '@alanizcreative/formation-static/actions/actionsTypes.js'
 import { configVars } from '../config/config.js'
 
 /**

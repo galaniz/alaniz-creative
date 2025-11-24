@@ -7,7 +7,7 @@
 import type { ImageProps } from './ImageTypes.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
-import { getImage, getImageMaxWidth } from '@alanizcreative/formation-static/utils/image/image.js'
+import { getImage, getImageSizes } from '@alanizcreative/formation-static/utils/image/image.js'
 import { RichText } from '@alanizcreative/formation-static/text/RichText/RichText.js'
 import {
   configBreakpointNumbers,
@@ -40,7 +40,6 @@ const Image = (props: ImageProps): string => {
     image,
     alt,
     aspectRatio,
-    maxWidth,
     caption,
     lazy = true,
     border = false,
@@ -50,6 +49,12 @@ const Image = (props: ImageProps): string => {
     contain = false,
     align,
     classes
+  } = args
+
+  let {
+    viewportWidth = 80,
+    maxWidth,
+    sizes
   } = args
 
   /* Card parent */
@@ -101,22 +106,31 @@ const Image = (props: ImageProps): string => {
     containerClasses += ` ${classes}`
   }
 
-  /* Max width */
+  /* Params */
 
-  let maxWidthNum = maxWidth
+  const params = { w: '%width' }
 
-  if (parents && !maxWidth) {
-    maxWidthNum = getImageMaxWidth({
+  /* Max width and sizes */
+
+  if (parents) {
+    viewportWidth = parents.some(parent => parent.renderType === 'container' && parent.args.breakout) ? 90 : viewportWidth
+
+    const sizesRes = getImageSizes({
       parents,
       source: 'remote',
       widths: configColumnFloats,
       maxWidths: configContainerNumbers,
-      breakpoints: configBreakpointNumbers
+      breakpoints: configBreakpointNumbers,
+      viewportWidth,
+      maxWidth
     })
+
+    maxWidth = sizesRes.maxWidth
+    sizes = sizesRes.sizes
   }
 
-  if (!maxWidthNum) {
-    maxWidthNum = 1600
+  if (!maxWidth) {
+    maxWidth = 1600
   }
 
   /* Details */
@@ -127,8 +141,11 @@ const Image = (props: ImageProps): string => {
       url: `https://alanizcreative.com/assets/${image?.path}`
     },
     classes: imageClasses.join(' '),
-    maxWidth: maxWidthNum,
+    maxWidth,
+    viewportWidth,
     source: 'remote',
+    params,
+    sizes,
     lazy,
     alt
   }, true)

@@ -74,7 +74,7 @@ const Seo = (meta: RenderMeta, itemData: Item, assetsLink: string, home: boolean
 
   /* Robots */
 
-  output += !index || config.env.dev ? '<meta name="robots" content="noindex, nofollow">' : ''
+  output += `<meta name="robots" content="${!index || config.env.dev ? 'noindex, nofollow' : 'index, follow'}">`
 
   /* Canonical */
 

@@ -58,7 +58,8 @@ const RichTextProps: RichTextPropsFilter = (props) => {
   /* Color */
 
   if (isStringStrict(color)) {
-    stylesArr.push(`color:var(--${color})`)
+    classesArr.push('themeable theme')
+    stylesArr.push(`--theme-dark:var(--${color}-dark);--theme-light:var(--${color}-light)`)
   }
 
   /* Classes */

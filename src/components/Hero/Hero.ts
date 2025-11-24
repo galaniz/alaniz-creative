@@ -6,6 +6,7 @@
 
 import type { HeroArgs, HeroWave, HeroWaveSvg } from './HeroTypes.js'
 import type { ImageArgs } from '../../objects/Image/ImageTypes.js'
+import type { ParentArgs } from '@alanizcreative/formation-static/global/globalTypes.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { configBlobs } from '../../config/configOptions.js'
@@ -104,10 +105,24 @@ const Hero = (args: HeroArgs): string => {
   let hasImage = false
 
   if ((isMediaText || isProfile) && image) {
+    const parents: ParentArgs[] = [
+      {
+        renderType: 'column',
+        args: {
+          width: isProfile ? '5' : undefined
+        }
+      },
+      {
+        renderType: 'container',
+        args: {
+          maxWidth: 'xs'
+        }
+      }
+    ]
+
     const imageArgs: ImageArgs = {
       image,
       lazy: false,
-      maxWidth: isProfile ? 600 : 1600,
       aspectRatio: '16-10',
       borderRadius: 'rounded',
       border
@@ -119,7 +134,8 @@ const Hero = (args: HeroArgs): string => {
     }
 
     imageOutput = Image({
-      args: imageArgs
+      args: imageArgs,
+      parents
     })
 
     hasImage = !!imageOutput

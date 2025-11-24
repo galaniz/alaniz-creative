@@ -18,6 +18,8 @@ import type { ConfigAspectRatio, ConfigSizes } from '../../config/configTypes.js
  * @prop {string} [alt]
  * @prop {ConfigAspectRatio} [aspectRatio]
  * @prop {number} [maxWidth]
+ * @prop {number} [viewportWidth=80]
+ * @prop {string} [sizes]
  * @prop {RenderRichText[]} [caption]
  * @prop {boolean} [lazy=true]
  * @prop {boolean} [border=false]
@@ -33,6 +35,8 @@ export interface ImageArgs {
   alt?: string
   aspectRatio?: ConfigAspectRatio
   maxWidth?: number
+  viewportWidth?: number
+  sizes?: string
   caption?: RenderRichText[]
   lazy?: boolean
   border?: boolean

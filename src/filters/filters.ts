@@ -5,7 +5,7 @@
 /* Imports */
 
 import type { Item } from '../global/globalTypes.js'
-import type { Filters } from '@alanizcreative/formation-static/utils/filter/filterTypes.js'
+import type { Filters } from '@alanizcreative/formation-static/filters/filtersTypes.js'
 import { RichTextProps, RichTextContentItem } from '../text/RichText/RichText.js'
 import { Container } from '../layouts/Container/Container.js'
 import { Column } from '../layouts/Column/Column.js'

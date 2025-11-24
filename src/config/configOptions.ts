@@ -39,24 +39,24 @@ export const configBreakpointNumbers: ConfigBreakpoint[] = [
  * @type {Object<ConfigColumn, number>}
  */
 export const configColumnFloats: Record<ConfigColumn, number> = {
-  12: 1,
-  11: 0.9166,
-  10: 0.8333,
-  9: 0.75,
-  8: 0.6667,
-  7: 0.6,
-  6: 0.5,
-  5: 0.4,
-  4: 0.3333,
-  3: 0.25,
-  2: 0.1666,
-  1: 0.0833
+  '12': 1,
+  '11': 0.9166,
+  '10': 0.8333,
+  '9': 0.75,
+  '8': 0.6667,
+  '7': 0.6,
+  '6': 0.5,
+  '5': 0.4,
+  '4': 0.3333,
+  '3': 0.25,
+  '2': 0.1666,
+  '1': 0.0833
 }
 
 /**
  * Blob paths.
  *
- * @type {Map<ConfigBlob, number>}
+ * @type {Map<ConfigBlob, string>}
  */
 export const configBlobs: Map<ConfigBlob, string> = new Map([
   [

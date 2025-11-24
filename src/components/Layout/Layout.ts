@@ -11,7 +11,7 @@ import {
   scripts,
   outputScripts,
   outputStyles
-} from '@alanizcreative/formation-static/utils/scriptStyle/scriptStyle.js'
+} from '@alanizcreative/formation-static/scripts/scripts.js'
 import { setStoreItem } from '@alanizcreative/formation-static/store/store.js'
 import { config, configVars } from '../../config/config.js'
 import { Seo, seoSchema } from '../../seo/Seo.js'
@@ -139,32 +139,14 @@ const Layout = (args: LayoutArgs): string => {
 
   if (isObjectStrict(theme)) {
     const styleProps: string[] = []
-    const stylePropsDark: string[] = []
-    const stylePropsLight: string[] = []
 
     Object.entries(theme).forEach(([themeKey, themeValue]) => {
       const themeKeyPre = themeKey.startsWith('med') ? '' : 'theme-'
 
       styleProps.push(`--${themeKeyPre}${themeKey}:${themeValue}`)
-
-      if (themeKey.endsWith('dark')) {
-        stylePropsDark.push(`--${themeKeyPre}${themeKey.replace('-dark', '')}:var(--${themeKeyPre}${themeKey})`)
-      }
-
-      if (themeKey.endsWith('light')) {
-        stylePropsLight.push(`--${themeKeyPre}${themeKey.replace('-light', '')}:var(--${themeKeyPre}${themeKey})`)
-      }
     })
 
     stylesOutput += `:root{${styleProps.join(';')};--btn-fill:var(--theme-color);--btn-stroke:var(--theme-color)}`
-
-    if (stylePropsDark.length) {
-      stylesOutput += `.bg-background-light{${stylePropsDark.join(';')}}`
-    }
-
-    if (stylePropsLight.length) {
-      stylesOutput += `.bg-foreground-base{${stylePropsLight.join(';')}}`
-    }
   }
 
   /* Svg sprites */
@@ -253,7 +235,7 @@ const Layout = (args: LayoutArgs): string => {
       <body class="${ns} no-js flex col">
         ${spritesOutput}
         ${headerOutput}
-        <main id="main" class="${isBlank ? 'flex col justify-center grow-1' : 'pb-3xs'}">
+        <main id="main" class="${isBlank ? 'flex col justify-center grow-1' : 'main pb-3xs overflow-hidden'}">
           ${heroOutput}
           ${contentOutput}
         </main>

@@ -7,7 +7,7 @@
 import type { LoaderArgs } from './LoaderTypes.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
-import { addStyle } from '@alanizcreative/formation-static/utils/scriptStyle/scriptStyle.js'
+import { addStyle } from '@alanizcreative/formation-static/scripts/scripts.js'
 import { configVars } from '../../config/config.js'
 
 /**

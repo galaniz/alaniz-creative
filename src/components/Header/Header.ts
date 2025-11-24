@@ -30,7 +30,7 @@ const Header = (currentLink: string, currentType?: string | string[]): string =>
   /* Output */
 
   return /* html */`
-    <header class="header">
+    <header class="header absolute top-0 left-0 right-0">
       ${SkipLink()}
       ${navigation}
     </header>

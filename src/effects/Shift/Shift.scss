@@ -2,10 +2,14 @@
  * Effects - Shift Styles
  */
 
-.e-shift {
-  --sh-y: 0;
-
+.e-shift,
+.e-shift-attr [data-shift] {
   transform: translate3d(0, var(--sh-y), 0) scale(var(--sh-scale, 1));
+}
+
+.e-shift,
+.e-shift-attr {
+  --sh-y: 0;
 
   &:hover {
     --sh-y: -0.3125rem;
