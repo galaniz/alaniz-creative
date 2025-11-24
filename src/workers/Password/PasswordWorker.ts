@@ -9,8 +9,7 @@ import type { ServerlessAction } from '@alanizcreative/formation-static/serverle
 import { setConfig } from '@alanizcreative/formation-static/config/config.js'
 import { escape } from '@alanizcreative/formation-static/utils/escape/escape.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
-import { setServerless } from '@alanizcreative/formation-static/serverless/serverless.js'
-import { Ajax } from '@alanizcreative/formation-static/serverless/Ajax/Ajax.js'
+import { setServerless, doServerlessAction } from '@alanizcreative/formation-static/serverless/serverless.js'
 import { workerServerlessTurnstile } from '../workerTurnstile.js'
 import { config } from '../../config/config.js'
 
@@ -117,6 +116,6 @@ export default {
 
     /* Result */
 
-    return await Ajax(request, env, corsHeaders, 'ac_hp') // Request method checked here
+    return await doServerlessAction(request, env, corsHeaders, 'ac_hp') // Request method checked here
   }
 }

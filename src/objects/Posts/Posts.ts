@@ -155,7 +155,8 @@ const Posts = (props: PostsProps): string => {
           index: i,
           length: total
         },
-        parents
+        parents,
+        itemData
       })
     }
 

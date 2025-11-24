@@ -7,7 +7,7 @@
 import type { MediaProps } from './MediaTypes.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
-import { addScript, addStyle } from '@alanizcreative/formation-static/utils/scriptStyle/scriptStyle.js'
+import { addScript, addStyle } from '@alanizcreative/formation-static/scripts/scripts.js'
 import { Info } from '../Info/Info.js'
 import { Loader } from '../Loader/Loader.js'
 import { PlaySvg } from '../../svg/Play/Play.js'

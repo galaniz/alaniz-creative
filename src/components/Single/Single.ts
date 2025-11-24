@@ -32,7 +32,15 @@ const Single = (content: string, contentType: string, itemData: Item): string =>
       args: {
         headingLevel: 3,
         internalLink: relatedItem
-      }
+      },
+      parents: [
+        {
+          renderType: 'container',
+          args: {
+            maxWidth: 's'
+          }
+        }
+      ]
     })).join(''),
     'minimal',
     'pb-l pb-2xl-m'

@@ -7,7 +7,7 @@
 import type { NavigationPrimaryArgs } from './NavigationTypes.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { getPermalink } from '@alanizcreative/formation-static/utils/link/link.js'
-import { addScript, addStyle } from '@alanizcreative/formation-static/utils/scriptStyle/scriptStyle.js'
+import { addScript, addStyle } from '@alanizcreative/formation-static/scripts/scripts.js'
 import { navigationsInstance } from './Navigations.js'
 import { config, configVars } from '../../config/config.js'
 import { Logo } from '../../objects/Logo/Logo.js'

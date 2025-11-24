@@ -5,7 +5,7 @@
 /* Imports */
 
 import { getYear } from '@alanizcreative/formation-static/utils/year/year.js'
-import { addStyle } from '@alanizcreative/formation-static/utils/scriptStyle/scriptStyle.js'
+import { addStyle } from '@alanizcreative/formation-static/scripts/scripts.js'
 import { navigationsInstance } from '../Navigation/Navigations.js'
 import { config } from '../../config/config.js'
 

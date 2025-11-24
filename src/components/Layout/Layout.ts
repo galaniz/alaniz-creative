@@ -11,7 +11,7 @@ import {
   scripts,
   outputScripts,
   outputStyles
-} from '@alanizcreative/formation-static/utils/scriptStyle/scriptStyle.js'
+} from '@alanizcreative/formation-static/scripts/scripts.js'
 import { setStoreItem } from '@alanizcreative/formation-static/store/store.js'
 import { config, configVars } from '../../config/config.js'
 import { Seo, seoSchema } from '../../seo/Seo.js'
