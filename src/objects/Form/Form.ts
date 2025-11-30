@@ -46,7 +46,7 @@ const Form = (props: FormProps): FormProps => {
       })}
       <div>
         <h2 class="text-m wt-medium m-0">There is a problem</h2>
-        <ul class="flex col pb-4xs gap-4xs text-s ls-none e-line-all" role="list"></ul>
+        <ul class="flex col pb-4xs gap-4xs text-s list-none e-line-all" role="list"></ul>
       </div>
     </div>
   `)

@@ -19,13 +19,13 @@
     "wrangler:password": "npx wrangler dev --config src/workers/Password/wrangler.json",
     "wrangler:site": "npx wrangler dev --config wrangler.json",
     "wrangler:staging": "npx wrangler dev --config wrangler.json --env staging",
-    "clean": "rm -rf node_modules/.cache/tsbuildinfo.* || true && rm -rf .cache || true && rm -rf site || true && rm -rf lib  || true && rm -rf functions || true"
+    "clean": "rm -rf node_modules/.cache/tsbuildinfo.* || true && rm -rf .cache || true && rm -rf site || true && rm -rf lib || true && rm -rf functions || true"
   },
   "engines": {
     "node": ">=22"
   },
   "dependencies": {
-    "@alanizcreative/formation": "5.1.0-beta.22",
+    "@alanizcreative/formation": "5.1.0-beta.23",
     "@alanizcreative/formation-static": "0.0.1",
     "@cloudflare/workers-types": "4.20251121.0",
     "@esbuild/linux-x64": "0.27.0",

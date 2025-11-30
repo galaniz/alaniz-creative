@@ -4,8 +4,8 @@
 
 /* Imports */
 
-import type { IncomingRequestCfProperties } from '@cloudflare/workers-types'
 import type { SiteWorkerEnv } from './SiteTypes.js'
+import type { WorkerRequest } from '../workerTypes.js'
 import { WorkerEntrypoint } from 'cloudflare:workers'
 import { workerServerlessSetup, workerServerlessFilter } from '../workerUtils.js'
 import { Protect } from '../../components/Protect/Protect.js'
@@ -22,10 +22,10 @@ export default class extends WorkerEntrypoint {
   /**
    * Route serverless and serve assets.
    * 
-   * @param {Request} request
+   * @param {WorkerRequest} request
    * @return {Promise<Response>}
    */
-  override async fetch(request: Request & { cf?: IncomingRequestCfProperties }): Promise<Response> {
+  override async fetch(request: WorkerRequest): Promise<Response> {
     /* Check serverless */
 
     const passwordProtect = await workerServerlessFilter(request)

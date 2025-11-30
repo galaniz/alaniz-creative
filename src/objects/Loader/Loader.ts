@@ -32,7 +32,7 @@ const Loader = (args?: LoaderArgs): string => {
   /* Classes */
 
   let containerClasses =
-    `loader${hasSize ? ` loader-${size}` : ''} absolute all-0 flex justify-center align-center e-trans`
+    `loader${hasSize ? ` loader-${size}` : ''} absolute inset-0 flex justify-center align-center e-trans`
 
   if (isStringStrict(classes)) {
     containerClasses += ` ${classes}`

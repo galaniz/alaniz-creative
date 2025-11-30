@@ -12,15 +12,13 @@ export default tseslint.config(
   {
     ignores: [
       '**/node_modules/*',
-      '**/vendor/*',
       '**/lib/*',
       '**/site/*'
     ]
   },
   {
     files: [
-      'src/**/*.ts',
-      'src/**/*.tsx'
+      'src/**/*.ts'
     ],
     rules: {
       semi: [ // Prefer no semicolons

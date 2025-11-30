@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@alanizcreative/formation':
-        specifier: 5.1.0-beta.22
-        version: 5.1.0-beta.22
+        specifier: 5.1.0-beta.23
+        version: 5.1.0-beta.23
       '@alanizcreative/formation-static':
         specifier: 0.0.1
         version: 0.0.1
@@ -103,8 +103,8 @@ packages:
       sharp:
         optional: true
 
-  '@alanizcreative/formation@5.1.0-beta.22':
-    resolution: {integrity: sha512-F4WedgJvLLvnTKkgjz4yF1a9Hyv+dGul0ztCTaAqnRy3RuVGX5KJqZnWc3eBQr89xc+0nE746pqU/HoksAitjg==}
+  '@alanizcreative/formation@5.1.0-beta.23':
+    resolution: {integrity: sha512-bD5nR7touUtS3XieDcMtesNW4ejM3Vw+MiLAbF1ezpClc/c0JOEGmDq66Qr2piuegExI759YqgS547psdEb8dA==}
 
   '@babel/code-frame@7.27.1':
     resolution: {integrity: sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg==}
@@ -400,7 +400,6 @@ packages:
   '@esbuild/linux-x64@0.27.0':
     resolution: {integrity: sha512-1hBWx4OUJE2cab++aVZ7pObD6s+DK4mPGpemtnAORBvb5l/g5xFGk0vc0PjSkrDs0XaXj9yyob3d14XqvnQ4gw==}
     engines: {node: '>=18'}
-    cpu: [x64]
     os: [linux]
 
   '@esbuild/netbsd-arm64@0.25.4':
@@ -2490,7 +2489,7 @@ snapshots:
     dependencies:
       uuid: 13.0.0
 
-  '@alanizcreative/formation@5.1.0-beta.22': {}
+  '@alanizcreative/formation@5.1.0-beta.23': {}
 
   '@babel/code-frame@7.27.1':
     dependencies:

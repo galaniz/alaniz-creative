@@ -160,7 +160,7 @@ const Image = (props: ImageProps): string => {
   /* Output */
 
   const containerAttr = 
-    imageAspectRatio && !hasAspectRatio ? ` style="--aspect-ratio-padding:${imageAspectRatio * 100}%"` : ''
+    imageAspectRatio && !hasAspectRatio ? ` style="--aspect-ratio:1 / ${imageAspectRatio}"` : ''
 
   let output = /* html */`
     <div class="${containerClasses}"${containerAttr}>

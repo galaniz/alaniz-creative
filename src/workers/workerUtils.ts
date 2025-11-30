@@ -4,9 +4,9 @@
 
 /* Imports */
 
+import type { WorkerRequest } from './workerTypes.js'
 import type { Store, StoreServerless } from '@alanizcreative/formation-static/store/storeTypes.js'
 import type { Generic } from '@alanizcreative/formation-static/global/globalTypes.js'
-import type { IncomingRequestCfProperties } from '@cloudflare/workers-types'
 import { setConfig, setConfigFilter } from '@alanizcreative/formation-static/config/config.js'
 import { setActions } from '@alanizcreative/formation-static/actions/actions.js'
 import { setFilters } from '@alanizcreative/formation-static/filters/filters.js'
@@ -53,12 +53,10 @@ const workerServerlessSetup = async (env?: Generic) => {
 /**
  * Filter worker responses for password protection.
  *
- * @param {Request} request
+ * @param {WorkerRequest} request
  * @return {Promise<boolean>}
  */
-const workerServerlessFilter = async (
-  request: Request & { cf?: IncomingRequestCfProperties }
-): Promise<boolean> => {
+const workerServerlessFilter = async (request: WorkerRequest): Promise<boolean> => {
   const { url } = request
   const { pathname } = new URL(url)
 

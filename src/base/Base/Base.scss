@@ -37,6 +37,6 @@ blockquote {
   padding-top: var(--header-height);
 }
 
-.main:target {
+:target {
   scroll-margin-top: calc(var(--header-height) * -1);
 }

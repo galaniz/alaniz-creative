@@ -20,8 +20,8 @@
     --inverse-color: var(--foreground-base);
     --interactive-color: var(--background-light);
     --muted-color: hsla(var(--background-light-hsl), 0.075);
-    --negative-color-hsl: var(--negative-light-hsl);
-    --positive-color-hsl: var(--positive-light-hsl);
+    --negative-hsl: var(--negative-light-hsl);
+    --positive-hsl: var(--positive-light-hsl);
     --theme-color: var(--theme-primary-light);
 
     background: var(--foreground-base);
@@ -34,8 +34,8 @@
     --interactive-color: var(--foreground-base);
     --text-color: hsla(var(--foreground-base-hsl), 0.75);
     --muted-color: hsla(var(--foreground-base-hsl), 0.075);
-    --negative-color-hsl: var(--negative-dark-hsl);
-    --positive-color-hsl: var(--positive-dark-hsl);
+    --negative-hsl: var(--negative-dark-hsl);
+    --positive-hsl: var(--positive-dark-hsl);
     --theme-color: var(--theme-primary-dark);
 
     background: var(--background-light);

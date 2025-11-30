@@ -120,7 +120,7 @@ const Card = (props: CardProps): string => {
   /* Text */
 
   const headingTag = `h${headingLevel}`
-  let headingClasses = 'theme td-none'
+  let headingClasses = 'theme deco-none'
   let textClasses = ''
   let subText = ''
 
@@ -248,7 +248,7 @@ const Card = (props: CardProps): string => {
  * @return {string} HTMLUListElement
  */
 const CardContainer = (output: string, type: CardType = 'minimal', classes?: string): string => {
-  let listClasses = 'ls-none'
+  let listClasses = 'list-none'
 
   if (type === 'minimal') {
     listClasses += ' flex wrap gap-m gap-l-l'

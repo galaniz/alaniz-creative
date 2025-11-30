@@ -76,7 +76,7 @@ const Media = (props: MediaProps): string => {
       <button
         type="button"
         aria-label="Play ${title}"
-        class="media-play b-radius-full b-all absolute all-0 m-auto e-trans"
+        class="media-play b-radius-full b-all absolute inset-0 m-auto e-trans"
         data-media-control="play"
         data-shift
       >

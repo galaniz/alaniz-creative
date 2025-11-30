@@ -7,12 +7,12 @@
 }
 
 .info-error {
-  --info-bg: hsla(var(--negative-color-hsl), 0.075);
+  --info-bg: hsla(var(--negative-hsl), 0.075);
   --text-color: var(--negative-color);
 }
 
 .info-success {
-  --info-bg: hsla(var(--positive-color-hsl), 0.075);
+  --info-bg: hsla(var(--positive-hsl), 0.075);
   --text-color: var(--positive-color);
 }
 
