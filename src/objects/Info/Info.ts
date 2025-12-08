@@ -33,6 +33,13 @@ const Info = (args: InfoArgs): string => {
     type = 'neutral'
   } = args
 
+  /* Types */
+
+  const isError = type === 'error'
+  const isSuccess = type === 'success'
+  const isErrorSummary = type === 'error-summary'
+  const isAlert = isError || isSuccess
+
   /* Text */
 
   const hasTitle = isStringStrict(title)
@@ -40,7 +47,7 @@ const Info = (args: InfoArgs): string => {
 
   if (hasTitle) {
     textOutput += `
-      <h2 class="text-m lead-open wt-medium m-0"${template ? ' data-info-title' : ''}>
+      <h2 class="text-m lead-open wt-medium m-0">
         ${title}
       </h2>
     `
@@ -50,9 +57,18 @@ const Info = (args: InfoArgs): string => {
     textOutput = `
       <div>
         ${textOutput}
-        <p class="text-${hasTitle ? 's' : 'm wt-medium'} lead-open m-0"${template ? ' data-info-text' : ''}>
+        <p class="text-${hasTitle ? 's' : 'm wt-medium'} lead-open m-0">
           ${text}
         </p>
+      </div>
+    `
+  }
+
+  if (isErrorSummary) {
+    textOutput = textOutput = `
+      <div>
+        ${textOutput}
+        <ul class="flex col pb-4xs gap-4xs text-s list-none e-line-all" role="list"></ul>
       </div>
     `
   }
@@ -63,7 +79,7 @@ const Info = (args: InfoArgs): string => {
 
   /* Icon */
 
-  const Icon = type === 'error' ? ErrorSvg : type === 'success' ? CheckmarkSvg : InfoSvg
+  const Icon = isError || isErrorSummary ? ErrorSvg : isSuccess ? CheckmarkSvg : InfoSvg
 
   /* Styles */
 
@@ -74,13 +90,13 @@ const Info = (args: InfoArgs): string => {
   let attrs = ''
 
   if (template) {
-    attrs = ' tabindex="-1" role="alert"'
+    attrs = ' tabindex="-1"' + (isAlert ? ' role="alert"' : '')
   }
 
   /* Output */
 
   const output = /* html */`
-    <div class="info-${type} flex gap-3xs px-xs py-xs b-radius-s w-full none outline-none"${attrs}>
+    <div class="info-${isErrorSummary ? 'error' : type} flex gap-3xs px-xs py-xs b-radius-s w-full outline-none"${attrs}>
       ${Icon({
         width: 's',
         height: 's',

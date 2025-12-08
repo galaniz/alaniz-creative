@@ -39,6 +39,10 @@ export type ColumnPosition =
 /**
  * @typedef {object} ColumnArgs
  * @extends {FormationColumnArgs}
+ * @prop {ConfigColumn} [width]
+ * @prop {ConfigColumn} [widthSmall]
+ * @prop {ConfigColumn} [widthMedium]
+ * @prop {ConfigColumn} [widthLarge]
  * @prop {boolean} [grow=false]
  * @prop {ColumnWidthCustom} [widthCustom]
  * @prop {ColumnPosition} [position]

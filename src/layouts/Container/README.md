@@ -25,19 +25,19 @@ Filter formation container props.
 
 #### Properties  
 - **`maxWidth`** <code><a href="/src/config/README.md#configcontainer">ConfigContainer</a></code> optional  
-- **`background`** <code>ConfigBackground</code> optional  
+- **`background`** <code><a href="/src/config/README.md#configbackgroundcolor">ConfigBackgroundColor</a></code> optional  
 - **`layout`** <code><a href="#containerlayout">ContainerLayout</a></code> optional  
 Default: `'block'`  
-- **`paddingTop`** <code><a href="/src/config/README.md#configsizes">ConfigSizes</a></code> optional  
-- **`paddingTopLarge`** <code><a href="/src/config/README.md#configsizes">ConfigSizes</a></code> optional  
-- **`paddingBottom`** <code><a href="/src/config/README.md#configsizes">ConfigSizes</a></code> optional  
-- **`paddingBottomLarge`** <code><a href="/src/config/README.md#configsizes">ConfigSizes</a></code> optional  
-- **`paddingLeft`** <code><a href="/src/config/README.md#configsizes">ConfigSizes</a></code> optional  
-- **`paddingLeftLarge`** <code><a href="/src/config/README.md#configsizes">ConfigSizes</a></code> optional  
-- **`paddingRight`** <code><a href="/src/config/README.md#configsizes">ConfigSizes</a></code> optional  
-- **`paddingRightLarge`** <code><a href="/src/config/README.md#configsizes">ConfigSizes</a></code> optional  
-- **`gap`** <code><a href="/src/config/README.md#configsizes">ConfigSizes</a></code> optional  
-- **`gapLarge`** <code><a href="/src/config/README.md#configsizes">ConfigSizes</a></code> optional  
+- **`paddingTop`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
+- **`paddingTopLarge`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
+- **`paddingBottom`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
+- **`paddingBottomLarge`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
+- **`paddingLeft`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
+- **`paddingLeftLarge`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
+- **`paddingRight`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
+- **`paddingRightLarge`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
+- **`gap`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
+- **`gapLarge`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
 - **`justify`** <code><a href="/src/config/README.md#configjustify">ConfigJustify</a></code> optional  
 - **`align`** <code><a href="/src/config/README.md#configalign">ConfigAlign</a></code> optional  
 - **`border`** <code>&#39;rounded&#39; | &#39;full&#39;</code> optional  

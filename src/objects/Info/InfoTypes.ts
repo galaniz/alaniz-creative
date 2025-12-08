@@ -6,12 +6,12 @@
  * @typedef {object} InfoArgs
  * @prop {string} [title]
  * @prop {string} [text]
- * @prop {boolean} [template]
- * @prop {'error'|'success'|'neutral'} [type='neutral']
+ * @prop {boolean} [template=false]
+ * @prop {'error'|'error-summary'|'success'|'neutral'} [type='neutral']
  */
 export interface InfoArgs {
   title?: string
   text?: string
   template?: boolean
-  type: 'error' | 'success' | 'neutral'
+  type?: 'error' | 'error-summary' | 'success' | 'neutral'
 }

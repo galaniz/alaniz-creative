@@ -3,21 +3,17 @@
  */
 
 .button {
-  --btn-padding: var(--3xs) var(--xs);
-  --btn-scale: 1;
-  --btn-y: 0;
-
   display: inline-flex;
   justify-content: center;
   align-items: center;
   position: relative;
   text-decoration: none;
-  padding: var(--btn-padding);
+  padding: var(--btn-padding, var(--3xs) var(--xs));
   font-size: var(--font-20-flex);
   line-height: var(--line-height-open);
   letter-spacing: var(--letter-spacing-loose);
   font-weight: var(--font-weight-bold);
-  transform: translate3d(0, var(--btn-y), 0) scale(var(--btn-scale));
+  transform: translate3d(0, var(--btn-y, 0), 0) scale(var(--btn-scale, 1));
 
   &:hover {
     --btn-scale: 1.01;

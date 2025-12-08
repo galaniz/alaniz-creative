@@ -12,10 +12,10 @@ import { isStringStrict } from '@alanizcreative/formation-static/utils/string/st
  * @param {string} [classes]
  * @return {string} SVGElement
  */
-const LogoSvg = (classes?: string ): string => {
+const LogoSvg = (classes?: string): string => {
   /* Classes */
 
-  const classesArr = []
+  const classesArr: string[] = []
 
   if (isStringStrict(classes)) {
     classesArr.push(classes)

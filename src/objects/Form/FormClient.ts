@@ -198,7 +198,7 @@ class Form extends FormBase {
     }
 
     if (isString(title)) {
-      const resultTitle = getItem('[data-info-title]', result)
+      const resultTitle = getItem('h2', result)
 
       if (resultTitle) {
         resultTitle.textContent = title
@@ -206,7 +206,7 @@ class Form extends FormBase {
     }
 
     if (isString(text)) {
-      const resultText = getItem('[data-info-text]', result)
+      const resultText = getItem('p', result)
 
       if (resultText) {
         resultText.textContent = text

@@ -7,7 +7,7 @@
 import type { Item } from '../../global/globalTypes.js'
 import type { InternalLink } from '@alanizcreative/formation-static/global/globalTypes.js'
 import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
-import type { ConfigSizes, ConfigJustify } from '../../config/configTypes.js'
+import type { ConfigSize, ConfigJustify } from '../../config/configTypes.js'
 
 /**
  * @typedef {object} ButtonArgs
@@ -19,8 +19,8 @@ import type { ConfigSizes, ConfigJustify } from '../../config/configTypes.js'
  * @prop {'m'|'l'} [size='m']
  * @prop {ConfigJustify} [justify]
  * @prop {boolean} [richText]
- * @prop {ConfigSizes} [paddingTop]
- * @prop {ConfigSizes} [paddingBottom]
+ * @prop {ConfigSize} [paddingTop]
+ * @prop {ConfigSize} [paddingBottom]
  * @prop {string} [icon]
  */
 export interface ButtonArgs {
@@ -32,8 +32,8 @@ export interface ButtonArgs {
   size?: 'm' | 'l'
   justify?: ConfigJustify
   richText?: boolean
-  paddingTop?: ConfigSizes
-  paddingBottom?: ConfigSizes
+  paddingTop?: ConfigSize
+  paddingBottom?: ConfigSize
   icon?: string
 }
 

@@ -56,7 +56,7 @@ const ExternalSvg = (args?: SvgArgs): string => {
       aria-hidden="true"
       focusable="false"
       role="img"
-      ${classesArr.length ? ` class="${classesArr.join(' ')}"` : ''}
+      class="${classesArr.join(' ')}"
     >
       <use xlink:href="#${id}" />
     </svg>

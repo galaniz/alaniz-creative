@@ -4,7 +4,7 @@
 
 /* Imports */
 
-import type { ConfigSizes } from '../config/configTypes.js'
+import type { ConfigSize } from '../config/configTypes.js'
 
 /**
  * @typedef {object} SvgArgs
@@ -13,7 +13,7 @@ import type { ConfigSizes } from '../config/configTypes.js'
  * @prop {string} [classes]
  */
 export interface SvgArgs {
-  width?: ConfigSizes
-  height?: ConfigSizes
+  width?: ConfigSize
+  height?: ConfigSize
   classes?: string
 }

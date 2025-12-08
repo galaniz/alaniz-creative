@@ -33,24 +33,6 @@ const Form = (props: FormProps): FormProps => {
     submitLabel = 'Send'
   } = args
 
-  /* Error summary */
-
-  const errorSummaryId = 'tmpl-error-summary'
-
-  configVars.template.set(errorSummaryId, /* html */`
-    <div class="info-error flex gap-3xs px-xs py-xs b-radius-s w-full none outline-none" tabindex="-1">
-      ${ErrorSvg({
-        width: 's',
-        height: 's',
-        classes: 'w-m-m h-m-m'
-      })}
-      <div>
-        <h2 class="text-m wt-medium m-0">There is a problem</h2>
-        <ul class="flex col pb-4xs gap-4xs text-s list-none e-line-all" role="list"></ul>
-      </div>
-    </div>
-  `)
-
   /* Inline error */
 
   const errorInlineId = 'tmpl-error-inline'
@@ -62,6 +44,14 @@ const Form = (props: FormProps): FormProps => {
       <span class="text-s wt-medium" data-form-error-text></span>
     </span>
   `)
+
+  /* Error summary */
+
+  const errorSummaryId = Info({
+    title: 'There is a problem',
+    template: true,
+    type: 'error-summary'
+  })
 
   /* Error */
 

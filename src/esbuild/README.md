@@ -42,16 +42,12 @@ Transform scss content.
 
 ## esbuildHtml  
 
-**<code>esbuildHtml(args: object, args.outDir?: string, args.watch?: boolean, args.copy?: Object&lt;string, string&gt;): Plugin</code>**  
+**<code>esbuildHtml(args: EsbuildHtmlArgs): Plugin</code>**  
 
 Create site HTML files.
 
 ### Parameters  
-- **`args`** <code>object</code> required  
-- **`args.outDir`** <code>string</code> optional  
-- **`args.watch`** <code>boolean</code> optional  
-Default: `false`  
-- **`args.copy`** <code>Object&lt;string, string&gt;</code> optional
+- **`args`** <code>EsbuildHtmlArgs</code> required
 
 ### Returns  
 

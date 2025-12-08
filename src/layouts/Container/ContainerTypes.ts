@@ -7,11 +7,11 @@
 import type { Item } from '../../global/globalTypes.js'
 import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
 import type {
-  ConfigSizes,
+  ConfigSize,
   ConfigJustify,
   ConfigAlign,
   ConfigContainer,
-  ConfigBackgrounds
+  ConfigBackgroundColor
 } from '../../config/configTypes.js'
 import type {
   ContainerArgs as FormationContainerArgs
@@ -35,18 +35,18 @@ export type ContainerLayout =
  * @typedef {object} ContainerArgs
  * @extends {FormationContainerArgs}
  * @prop {ConfigContainer} [maxWidth]
- * @prop {ConfigBackground} [background]
+ * @prop {ConfigBackgroundColor} [background]
  * @prop {ContainerLayout} [layout='block']
- * @prop {ConfigSizes} [paddingTop]
- * @prop {ConfigSizes} [paddingTopLarge]
- * @prop {ConfigSizes} [paddingBottom]
- * @prop {ConfigSizes} [paddingBottomLarge]
- * @prop {ConfigSizes} [paddingLeft]
- * @prop {ConfigSizes} [paddingLeftLarge]
- * @prop {ConfigSizes} [paddingRight]
- * @prop {ConfigSizes} [paddingRightLarge]
- * @prop {ConfigSizes} [gap]
- * @prop {ConfigSizes} [gapLarge]
+ * @prop {ConfigSize} [paddingTop]
+ * @prop {ConfigSize} [paddingTopLarge]
+ * @prop {ConfigSize} [paddingBottom]
+ * @prop {ConfigSize} [paddingBottomLarge]
+ * @prop {ConfigSize} [paddingLeft]
+ * @prop {ConfigSize} [paddingLeftLarge]
+ * @prop {ConfigSize} [paddingRight]
+ * @prop {ConfigSize} [paddingRightLarge]
+ * @prop {ConfigSize} [gap]
+ * @prop {ConfigSize} [gapLarge]
  * @prop {ConfigJustify} [justify]
  * @prop {ConfigAlign} [align]
  * @prop {'rounded'|'full'} [border]
@@ -56,18 +56,18 @@ export type ContainerLayout =
  * @prop {boolean} [richTextStyles=false]
  */
 export interface ContainerArgs extends FormationContainerArgs<string, ConfigContainer> {
-  background?: ConfigBackgrounds
+  background?: ConfigBackgroundColor
   layout?: ContainerLayout
-  paddingTop?: ConfigSizes
-  paddingTopLarge?: ConfigSizes
-  paddingBottom?: ConfigSizes
-  paddingBottomLarge?: ConfigSizes
-  paddingLeft?: ConfigSizes
-  paddingLeftLarge?: ConfigSizes
-  paddingRight?: ConfigSizes
-  paddingRightLarge?: ConfigSizes
-  gap?: ConfigSizes
-  gapLarge?: ConfigSizes
+  paddingTop?: ConfigSize
+  paddingTopLarge?: ConfigSize
+  paddingBottom?: ConfigSize
+  paddingBottomLarge?: ConfigSize
+  paddingLeft?: ConfigSize
+  paddingLeftLarge?: ConfigSize
+  paddingRight?: ConfigSize
+  paddingRightLarge?: ConfigSize
+  gap?: ConfigSize
+  gapLarge?: ConfigSize
   justify?: ConfigJustify
   align?: ConfigAlign
   border?: 'rounded' | 'full'
