@@ -24,7 +24,7 @@
 %e-line-transition {
   transition-property: var(--ln-prop);
   transition-duration: var(--ln-duration);
-  transition-timing-function: var(--easing);
+  transition-timing-function: var(--ac-easing);
 
   &:hover,
   &:active,

@@ -10,24 +10,24 @@
 /* Styles */
 
 .footer {
-  margin-top: calc(var(--3xs) * -1);
+  margin-top: calc(var(--ac-3xs) * -1);
 
   @include util.breakpoint-min("m") {
     --ft-relative: relative;
-    --ft-legal: var(--sharp-color);
+    --ft-legal: var(--ac-sharp-color);
   }
 }
 
 .footer-blob {
   z-index: -1;
   min-width: 80rem;
-  height: calc(100% - var(--l));
+  height: calc(100% - var(--ac-l));
   right: util.fluid-size-clamp((-450px, -100px), ("s", "m"));
   bottom: #{util.calc-rem(-1px)};
-  color: var(--sharp-color);
+  color: var(--ac-sharp-color);
 
   @include util.breakpoint-min("xl") {
-    width: calc(80rem + (50vw - (var(--container-no-padding) / 2) - #{util.calc-rem(270px)}));
+    width: calc(80rem + (50vw - (var(--ac-container-content) / 2) - #{util.calc-rem(270px)}));
     right: #{util.calc-rem(-270px)};
   }
 }
@@ -37,5 +37,5 @@
 }
 
 .footer-legal {
-  color: var(--ft-legal, var(--inverse-color));
+  color: var(--ft-legal, var(--ac-inverse-color));
 }

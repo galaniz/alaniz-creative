@@ -3,9 +3,9 @@
  */
 
 .form {
-  --ld-bg: var(--sharp-color);
-  --ld-color: var(--inverse-color);
-  --ld-radius: var(--border-radius-l);
+  --ld-bg: var(--ac-sharp-color);
+  --ld-color: var(--ac-inverse-color);
+  --ld-radius: var(--ac-border-radius-l);
 }
 
 .form-field-hp {
@@ -13,17 +13,17 @@
 }
 
 .form-label [data-form-label] {
-  font-size: var(--font-20-flex);
-  letter-spacing: var(--letter-spacing-loose);
-  line-height: var(--line-height-base);
-  font-weight: var(--font-weight-medium);
-  color: var(--sharp-color);
-  margin-bottom: var(--3xs);
+  font-size: var(--ac-font-20-flex);
+  letter-spacing: var(--ac-letter-spacing-loose);
+  line-height: var(--ac-line-height-base);
+  font-weight: var(--ac-font-weight-medium);
+  color: var(--ac-sharp-color);
+  margin-bottom: var(--ac-3xs);
   display: block;
 }
 
 .form-input-password {
-  --letter-spacing-open: 0.1em;
+  --ac-letter-spacing-open: 0.1em;
 }
 
 .form-input-password,
@@ -32,35 +32,35 @@
 .form-input-url,
 .form-input-select,
 .form-input-textarea {
-  --border-width: 0.0625rem;
+  --ac-border-width: 0.0625rem;
 
   width: 100%;
-  padding: var(--xs) var(--s);
-  border-radius: var(--border-radius-s);
-  font-size: var(--font-20-flex);
-  line-height: var(--line-height-loose);
-  letter-spacing: var(--letter-spacing-open);
-  font-weight: var(--font-weight-normal);
-  box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
-  transition: box-shadow var(--duration) var(--easing);
+  padding: var(--ac-xs) var(--ac-s);
+  border-radius: var(--ac-border-radius-s);
+  font-size: var(--ac-font-20-flex);
+  line-height: var(--ac-line-height-loose);
+  letter-spacing: var(--ac-letter-spacing-open);
+  font-weight: var(--ac-font-weight-normal);
+  box-shadow: inset 0 0 0 var(--ac-border-width) var(--ac-border-color);
+  transition: box-shadow var(--ac-duration) var(--ac-easing);
 
   &[aria-invalid="true"] {
-    --border-color: var(--negative-color);
-    --border-width: 0.1rem;
+    --ac-border-color: var(--ac-negative-color);
+    --ac-border-width: 0.1rem;
 
     &:focus {
-      --border-color: var(--outline-color);
+      --ac-border-color: var(--ac-outline-color);
     }
   }
 
   &:focus {
-    --outline-width: 0;
-    --border-color: var(--outline-color);
-    --border-width: 0.1875rem;
+    --ac-outline-width: 0;
+    --ac-border-color: var(--ac-outline-color);
+    --ac-border-width: 0.1875rem;
   }
 }
 
 .form-required-icon,
 .form-error-inline {
-  color: var(--negative-color);
+  color: var(--ac-negative-color);
 }

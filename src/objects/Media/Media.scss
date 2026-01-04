@@ -16,13 +16,13 @@
 
 .media-play,
 .media-pause {
-  --outline-color: var(--med-secondary);
+  --ac-outline-color: var(--med-secondary);
 }
 
 .media-play {
   width: 15%;
-  min-width: var(--l);
-  max-width: var(--2xl);
+  min-width: var(--ac-l);
+  max-width: var(--ac-2xl);
   color: var(--med-primary);
   display: var(--med-play-display, block);
   background: var(--med-secondary);
@@ -31,8 +31,8 @@
 }
 
 .media-pause {
-  margin: var(--xs);
-  background: hsla(var(--foreground-base-hsl), 0.75);
+  margin: var(--ac-xs);
+  background: hsla(var(--ac-foreground-base-hsl), 0.75);
   display: var(--med-pause-display, none);
 }
 

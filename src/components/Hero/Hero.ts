@@ -171,7 +171,7 @@ const Hero = (args: HeroArgs): string => {
               <path
                 d="${path}"
                 fill="none"
-                stroke="var(--theme-color)"
+                stroke="var(--ac-theme-color)"
                 stroke-opacity="0.5"
                 stroke-width="1"
                 vector-effect="non-scaling-stroke"
@@ -201,7 +201,7 @@ const Hero = (args: HeroArgs): string => {
           <path
             d="${blobPath}"
             fill="none"
-            stroke="var(--sharp-color)"
+            stroke="var(--ac-sharp-color)"
             stroke-opacity="0.5"
             stroke-width="1"
             vector-effect="non-scaling-stroke"

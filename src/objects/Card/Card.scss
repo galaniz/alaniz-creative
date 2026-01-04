@@ -24,7 +24,7 @@
   --cd-media-max: #{util.calc-rem(900px)};
 
   @include util.breakpoint-min("s") {
-    --cd-media-padding: 0 var(--l);
+    --cd-media-padding: 0 var(--ac-l);
   }
 }
 
@@ -35,8 +35,8 @@
   --cd-text-right-2: auto;
   --cd-left: 0;
   --cd-right: 0;
-  --cd-top: var(--xl);
-  --cd-bottom: var(--xl);
+  --cd-top: var(--ac-xl);
+  --cd-bottom: var(--ac-xl);
   --cd-width: 100%;
 
   &:nth-child(odd) {
@@ -85,8 +85,8 @@
   }
 
   @include util.breakpoint-min("l") {
-    --cd-left: var(--l);
-    --cd-right: var(--l);
+    --cd-left: var(--ac-l);
+    --cd-right: var(--ac-l);
   }
 
   @include util.breakpoint-min("m") {
@@ -99,18 +99,18 @@
     --cd-width: 50%;
 
     &:nth-child(3n+1) .card-text {
-      --font-14: var(--font-16);
-      --3xs: var(--2xs);
-      --s: var(--m);
+      --ac-font-14: var(--ac-font-16);
+      --ac-3xs: var(--ac-2xs);
+      --ac-s: var(--ac-m);
     }
 
     &:nth-child(3n-1),
     &:nth-child(3n) {
-      --font-50-flex: var(--font-30-flex);
+      --ac-font-50-flex: var(--ac-font-30-flex);
       --cd-blob-display: none;
 
       .card-text {
-        padding-top: var(--m);
+        padding-top: var(--ac-m);
       }
     }
 

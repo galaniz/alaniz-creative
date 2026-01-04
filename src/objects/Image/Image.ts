@@ -160,7 +160,7 @@ const Image = (props: ImageProps): string => {
   /* Output */
 
   const containerAttr = 
-    imageAspectRatio && !hasAspectRatio ? ` style="--aspect-ratio:1 / ${imageAspectRatio}"` : ''
+    imageAspectRatio && !hasAspectRatio ? ` style="--ac-aspect-ratio:1 / ${imageAspectRatio}"` : ''
 
   let output = /* html */`
     <div class="${containerClasses}"${containerAttr}>
@@ -170,7 +170,7 @@ const Image = (props: ImageProps): string => {
 
   if (isCard) {
     output = /* html */ `
-      <div class="card-media order-first z-index--1 w-full">
+      <div class="card-media order-first z--1 w-full">
         ${output}
       </div>
     `
@@ -183,7 +183,6 @@ const Image = (props: ImageProps): string => {
       tag: 'figcaption',
       content: caption,
       textStyle: 'text-xs',
-      dataAttr: true,
       classes: 'pt-m pt-l-m'
     }
   })

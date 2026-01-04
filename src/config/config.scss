@@ -26,6 +26,10 @@ $sizes: (
 /* Config variables */
 
 @use "@alanizcreative/formation/lib/config/config" with (
+  /* Namespace */
+
+  $namespace: "ac",
+
   /* Colors */
 
   $colors-type: "hsla",
@@ -256,7 +260,7 @@ $sizes: (
       "default": 5px
     ),
     "colors": (
-      "default": "var(--foreground-base)"
+      "default": "var(--ac-foreground-base)"
     ),
     "offsets": (
       "default": 5px,

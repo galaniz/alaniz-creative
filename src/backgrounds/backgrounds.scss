@@ -9,36 +9,36 @@
 /* Styles */
 
 .bg-background-light {
-  --text-color: hsla(var(--foreground-base-hsl), 0.85);
-  --sharp-color: var(--foreground-base);
-  --inverse-color: var(--background-light);
-  --interactive-color: var(--foreground-base);
-  --muted-color: hsla(var(--foreground-base-hsl), 0.075);
-  --theme-color: var(--theme-primary-dark);
-  --negative-hsl: var(--negative-dark-hsl);
-  --positive-hsl: var(--positive-dark-hsl);
+  --ac-text-color: hsla(var(--ac-foreground-base-hsl), 0.85);
+  --ac-sharp-color: var(--ac-foreground-base);
+  --ac-inverse-color: var(--ac-background-light);
+  --ac-interactive-color: var(--ac-foreground-base);
+  --ac-muted-color: hsla(var(--ac-foreground-base-hsl), 0.075);
+  --ac-theme-color: var(--ac-theme-primary-dark);
+  --ac-negative-hsl: var(--ac-negative-dark-hsl);
+  --ac-positive-hsl: var(--ac-positive-dark-hsl);
 
-  color: var(--text-color);
+  color: var(--ac-text-color);
 }
 
 .bg-foreground-base {
-  --outline-color: var(--background-light);
-  --sharp-color: var(--background-light);
-  --inverse-color: var(--foreground-base);
-  --interactive-color: var(--background-light);
-  --text-color: hsla(var(--background-light-hsl), 0.75);
-  --muted-color: hsla(var(--background-light-hsl), 0.075);
-  --theme-color: var(--theme-primary-light);
-  --negative-hsl: var(--negative-light-hsl);
-  --positive-hsl: var(--positive-light-hsl);
+  --ac-outline-color: var(--ac-background-light);
+  --ac-sharp-color: var(--ac-background-light);
+  --ac-inverse-color: var(--ac-foreground-base);
+  --ac-interactive-color: var(--ac-background-light);
+  --ac-text-color: hsla(var(--ac-background-light-hsl), 0.75);
+  --ac-muted-color: hsla(var(--ac-background-light-hsl), 0.075);
+  --ac-theme-color: var(--ac-theme-primary-light);
+  --ac-negative-hsl: var(--ac-negative-light-hsl);
+  --ac-positive-hsl: var(--ac-positive-light-hsl);
 
-  color: var(--text-color);
+  color: var(--ac-text-color);
 }
 
 .bg-background-light,
 .bg-foreground-base {
-  --negative-color: hsla(var(--negative-hsl), 1);
-  --positive-color: hsla(var(--positive-hsl), 1);
+  --ac-negative-color: hsla(var(--ac-negative-hsl), 1);
+  --ac-positive-color: hsla(var(--ac-positive-hsl), 1);
 }
 
 .bg-current {
@@ -46,9 +46,9 @@
 }
 
 .bg-muted {
-  background: var(--muted-color);
+  background: var(--ac-muted-color);
 }
 
 .bg-bright {
-  background: var(--background-light);
+  background: var(--ac-background-light);
 }

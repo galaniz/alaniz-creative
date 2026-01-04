@@ -4,10 +4,10 @@
 
 html {
   scroll-behavior: smooth;
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-base);
-  font-family: var(--font-primary);
-  color: var(--text-color);
+  font-weight: var(--ac-font-weight-normal);
+  line-height: var(--ac-line-height-base);
+  font-family: var(--ac-font-primary);
+  color: var(--ac-text-color);
 }
 
 body {
@@ -16,16 +16,16 @@ body {
 }
 
 a {
-  color: var(--interactive-color);
+  color: var(--ac-interactive-color);
 }
 
 p {
-  color: var(--text-color);
+  color: var(--ac-text-color);
 }
 
 b,
 strong {
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--ac-font-weight-medium);
 }
 
 figcaption,
@@ -34,9 +34,9 @@ blockquote {
 }
 
 .main {
-  padding-top: var(--header-height);
+  padding-top: var(--ac-header-height);
 }
 
 :target {
-  scroll-margin-top: calc(var(--header-height) * -1);
+  scroll-margin-top: calc(var(--ac-header-height) * -1);
 }

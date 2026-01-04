@@ -77,7 +77,7 @@ const Single = (content: string, contentType: string, itemData: Item): string =>
   return /* html */`
     ${content}
     <div class="breakout pt-xl pt-2xl-m pb-l">
-      <div class="relative" style="max-height:var(--4xl)">
+      <div class="relative" style="max-height:var(--ac-4xl)">
         <div style="padding-top:${(waveHeight / waveWidth) * 100}%"></div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +91,7 @@ const Single = (content: string, contentType: string, itemData: Item): string =>
           <path
             d="m101.77,4.62c-18.28-9.87-34.42,1.06-47.08,2.43-22.54,2.44-23.62-4.33-36.08-4.33C7.81,2.72,1.75,8.12.48,11.82"
             fill="none"
-            stroke="var(--theme-color)"
+            stroke="var(--ac-theme-color)"
             stroke-opacity="0.5"
             stroke-width="1"
             vector-effect="non-scaling-stroke"

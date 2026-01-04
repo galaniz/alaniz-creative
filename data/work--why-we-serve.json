@@ -30,7 +30,7 @@
     "black-dark": "#070707",
     "black-light": "#8f8f8f",
     "med-primary": "#7a232f",
-    "med-secondary": "var(--background-light)",
+    "med-secondary": "var(--ac-background-light)",
     "med-tertiary": "#00193a"
   },
   "related": [

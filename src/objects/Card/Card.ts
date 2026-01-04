@@ -169,7 +169,7 @@ const Card = (props: CardProps): string => {
   }
 
   if (theme) {
-    styles = ` style="--theme-dark:${theme['primary-dark']};--theme-light:${theme['primary-light']}"`
+    styles = ` style="--ac-theme-dark:${theme['primary-dark']};--ac-theme-light:${theme['primary-light']}"`
   }
 
   /* Blob */
@@ -192,7 +192,7 @@ const Card = (props: CardProps): string => {
         <path
           d="${path}"
           fill="none"
-          stroke="var(--theme-color)"
+          stroke="var(--ac-theme-color)"
           stroke-opacity="0.5"
           stroke-width="1"
           vector-effect="non-scaling-stroke"

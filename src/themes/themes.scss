@@ -3,49 +3,49 @@
  */
 
 .themeable {
-  --theme-color: var(--theme-dark);
+  --ac-theme-color: var(--ac-theme-dark);
 }
 
 .theme {
-  --interactive-color: var(--theme-color);
+  --ac-interactive-color: var(--ac-theme-color);
 
-  color: var(--theme-color);
+  color: var(--ac-theme-color);
 }
 
 @media (prefers-color-scheme: dark) {
   .bg-background-light {
-    --outline-color: var(--background-light);
-    --text-color: hsla(var(--background-light-hsl), 0.85);
-    --sharp-color: var(--background-light);
-    --inverse-color: var(--foreground-base);
-    --interactive-color: var(--background-light);
-    --muted-color: hsla(var(--background-light-hsl), 0.075);
-    --negative-hsl: var(--negative-light-hsl);
-    --positive-hsl: var(--positive-light-hsl);
-    --theme-color: var(--theme-primary-light);
+    --ac-outline-color: var(--ac-background-light);
+    --ac-text-color: hsla(var(--ac-background-light-hsl), 0.85);
+    --ac-sharp-color: var(--ac-background-light);
+    --ac-inverse-color: var(--ac-foreground-base);
+    --ac-interactive-color: var(--ac-background-light);
+    --ac-muted-color: hsla(var(--ac-background-light-hsl), 0.075);
+    --ac-negative-hsl: var(--ac-negative-light-hsl);
+    --ac-positive-hsl: var(--ac-positive-light-hsl);
+    --ac-theme-color: var(--ac-theme-primary-light);
 
-    background: var(--foreground-base);
+    background: var(--ac-foreground-base);
   }
 
   .bg-foreground-base {
-    --outline-color: var(--foreground-base);
-    --sharp-color: var(--foreground-base);
-    --inverse-color: var(--background-light);
-    --interactive-color: var(--foreground-base);
-    --text-color: hsla(var(--foreground-base-hsl), 0.75);
-    --muted-color: hsla(var(--foreground-base-hsl), 0.075);
-    --negative-hsl: var(--negative-dark-hsl);
-    --positive-hsl: var(--positive-dark-hsl);
-    --theme-color: var(--theme-primary-dark);
+    --ac-outline-color: var(--ac-foreground-base);
+    --ac-sharp-color: var(--ac-foreground-base);
+    --ac-inverse-color: var(--ac-background-light);
+    --ac-interactive-color: var(--ac-foreground-base);
+    --ac-text-color: hsla(var(--ac-foreground-base-hsl), 0.75);
+    --ac-muted-color: hsla(var(--ac-foreground-base-hsl), 0.075);
+    --ac-negative-hsl: var(--ac-negative-dark-hsl);
+    --ac-positive-hsl: var(--ac-positive-dark-hsl);
+    --ac-theme-color: var(--ac-theme-primary-dark);
 
-    background: var(--background-light);
+    background: var(--ac-background-light);
   }
 
   .themeable {
-    --theme-color: var(--theme-light);
+    --ac-theme-color: var(--ac-theme-light);
   }
 
   .b-theme {
-    border-color: var(--foreground-base);
+    border-color: var(--ac-foreground-base);
   }
 }

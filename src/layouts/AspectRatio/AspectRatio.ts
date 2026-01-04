@@ -40,7 +40,7 @@ const AspectRatio = (props: AspectRatioProps): string[] => {
   /* Output */
 
   return [
-    `<div class="relative ar-1-1 w-full" style="--aspect-ratio:1 / ${percent / 100}">`,
+    `<div class="relative ar-1-1 w-full" style="--ac-aspect-ratio:1 / ${percent / 100}">`,
     '</div>'
   ]
 }

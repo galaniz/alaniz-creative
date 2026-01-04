@@ -14,7 +14,7 @@
 /* Wrapper */
 
 .nav {
-  --nav-padding: var(--m);
+  --nav-padding: var(--ac-m);
 
   &[open="true"] {
     --nav-modal-opacity: 1;
@@ -30,7 +30,7 @@
   }
 
   @include util.breakpoint-min("m") {
-    --nav-padding: var(--l);
+    --nav-padding: var(--ac-l);
   }
 }
 
@@ -42,7 +42,7 @@
 
 .nav-modal-logo {
   top: var(--nav-padding);
-  left: var(--container-padding);
+  left: var(--ac-container-padding);
 }
 
 /* List */
@@ -56,15 +56,15 @@
 /* Modal */
 
 .nav-modal-scroll {
-  margin-top: var(--header-height);
+  margin-top: var(--ac-header-height);
 }
 
 .nav-item {
-  --prop: opacity, transform;
-  --duration: 200ms;
+  --ac-prop: opacity, transform;
+  --ac-duration: 200ms;
 
   .nav-modal & {
-    --delay: var(--nav-item-delay, 0ms);
+    --ac-delay: var(--nav-item-delay, 0ms);
 
     transform: translateY(var(--nav-item-y, -33%));
     opacity: var(--nav-item-opacity, 0);
@@ -77,11 +77,11 @@
   &::after {
     transform: scaleY(var(--nav-link-scale, 0));
     transform-origin: 0 100%;
-    transition: transform var(--duration) var(--easing);
+    transition: transform var(--ac-duration) var(--ac-easing);
     background: currentcolor;
-    height: var(--4xs);
-    width: calc(100% - var(--xs));
-    left: var(--3xs);
+    height: var(--ac-4xs);
+    width: calc(100% - var(--ac-xs));
+    left: var(--ac-3xs);
     top: auto;
   }
 
@@ -103,14 +103,14 @@
 
 .nav-close {
   top: var(--nav-padding);
-  right: var(--container-padding);
+  right: var(--ac-container-padding);
 }
 
 /* Overlay */
 
 .nav-overlay {
-  --prop: visibility, opacity, transform;
-  --delay: var(--nav-modal-delay, 0ms);
+  --ac-prop: visibility, opacity, transform;
+  --ac-delay: var(--nav-modal-delay, 0ms);
 
   transform: translateY(var(--nav-modal-y, -100%));
   transform-origin: var(--nav-modal-origin, 0 0);

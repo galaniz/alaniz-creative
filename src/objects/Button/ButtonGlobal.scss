@@ -8,11 +8,11 @@
   align-items: center;
   position: relative;
   text-decoration: none;
-  padding: var(--btn-padding, var(--3xs) var(--xs));
-  font-size: var(--font-20-flex);
-  line-height: var(--line-height-open);
-  letter-spacing: var(--letter-spacing-loose);
-  font-weight: var(--font-weight-bold);
+  padding: var(--btn-padding, var(--ac-3xs) var(--ac-xs));
+  font-size: var(--ac-font-20-flex);
+  line-height: var(--ac-line-height-open);
+  letter-spacing: var(--ac-letter-spacing-loose);
+  font-weight: var(--ac-font-weight-bold);
   transform: translate3d(0, var(--btn-y, 0), 0) scale(var(--btn-scale, 1));
 
   &:hover {
@@ -22,27 +22,27 @@
 }
 
 .button-primary {
-  background: var(--btn-fill, var(--sharp-color));
-  color: var(--btn-color, var(--inverse-color));
+  background: var(--btn-fill, var(--ac-sharp-color));
+  color: var(--btn-color, var(--ac-inverse-color));
 }
 
 .button-secondary {
-  color: var(--btn-stroke, var(--sharp-color));
+  color: var(--btn-stroke, var(--ac-sharp-color));
 }
 
 .button-sharp {
-  --btn-stroke: var(--sharp-color);
-  --btn-fill: var(--sharp-color);
+  --btn-stroke: var(--ac-sharp-color);
+  --btn-fill: var(--ac-sharp-color);
 }
 
 .button-l {
-  --btn-padding: var(--2xs) var(--s);
+  --btn-padding: var(--ac-2xs) var(--ac-s);
 
-  line-height: var(--line-height-base);
+  line-height: var(--ac-line-height-base);
 }
 
 .button-xl {
-  --btn-padding: var(--xs) var(--s);
+  --btn-padding: var(--ac-xs) var(--ac-s);
 
-  line-height: var(--line-height-loose);
+  line-height: var(--ac-line-height-loose);
 }

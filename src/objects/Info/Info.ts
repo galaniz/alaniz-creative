@@ -65,7 +65,7 @@ const Info = (args: InfoArgs): string => {
   }
 
   if (isErrorSummary) {
-    textOutput = textOutput = `
+    textOutput = `
       <div>
         ${textOutput}
         <ul class="flex col pb-4xs gap-4xs text-s list-none e-line-all" role="list"></ul>

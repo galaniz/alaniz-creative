@@ -96,7 +96,7 @@ const NavigationPrimary = (args: NavigationPrimaryArgs): string => {
         <span class="text-xs wt-medium block mt-4xs" aria-hidden="true">Menu</span>
       </button>
       <div
-        class="nav-modal fixed inset-0 w-full h-full z-index-1"
+        class="nav-modal fixed inset-0 w-full h-full z-1"
         role="dialog"
         aria-modal="true"
         aria-label="Primary menu"
@@ -116,7 +116,7 @@ const NavigationPrimary = (args: NavigationPrimaryArgs): string => {
           ></button>
         </div>
         <div
-          class="nav-overlay fixed inset-0 z-index--1 w-full h-full bg-background-light e-trans e-quad"
+          class="nav-overlay fixed inset-0 z--1 w-full h-full bg-background-light e-trans e-quad"
           data-nav-close
         ></div>
       </div>
@@ -142,7 +142,7 @@ const NavigationPrimary = (args: NavigationPrimaryArgs): string => {
 
   return /* html */`
     <ac-navigation-primary
-      class="nav relative container py-m py-l-m flex justify-between align-center deco-none"
+      class="nav relative container pt-m pt-l-m flex justify-between align-center deco-none"
       breakpoints="${breakpoint}"
       role="navigation"
       aria-label="Primary"

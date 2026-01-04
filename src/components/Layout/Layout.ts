@@ -143,10 +143,10 @@ const Layout = (args: LayoutArgs): string => {
     Object.entries(theme).forEach(([themeKey, themeValue]) => {
       const themeKeyPre = themeKey.startsWith('med') ? '' : 'theme-'
 
-      styleProps.push(`--${themeKeyPre}${themeKey}:${themeValue}`)
+      styleProps.push(`--ac-${themeKeyPre}${themeKey}:${themeValue}`)
     })
 
-    stylesOutput += `:root{${styleProps.join(';')};--btn-fill:var(--theme-color);--btn-stroke:var(--theme-color)}`
+    stylesOutput += `:root{${styleProps.join(';')};--btn-fill:var(--ac-theme-color);--btn-stroke:var(--ac-theme-color)}`
   }
 
   /* Svg sprites */

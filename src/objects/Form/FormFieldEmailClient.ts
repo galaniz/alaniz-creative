@@ -9,7 +9,7 @@ import type {
   FormValidateResult
 } from '@alanizcreative/formation/objects/Form/FormTypes.js'
 import { isStringStrict } from '@alanizcreative/formation/utils/string/string.js'
-import { addFilter, removeFilter } from '@alanizcreative/formation/utils/filter/filter.js'
+import { addFilter, removeFilter } from '@alanizcreative/formation/filters/filters.js'
 import isEmail from 'validator/es/lib/isEmail.js'
 
 /**

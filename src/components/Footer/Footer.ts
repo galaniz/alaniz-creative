@@ -22,7 +22,7 @@ const Footer = (currentLink: string, currentType?: string | string[]): string =>
   const listOutput = navigationsInstance?.getOutput('footer', {
     currentLink,
     currentType,
-    listClass: 'flex flex-wrap gap-m gap-l-m list-none e-line-in',
+    listClass: 'flex wrap gap-m gap-l-m list-none e-line-in',
     listAttr: 'role="list"',
     linkClass: 'text-s',
     linkAttr: 'data-rich'
