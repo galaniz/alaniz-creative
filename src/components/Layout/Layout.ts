@@ -141,9 +141,11 @@ const Layout = (args: LayoutArgs): string => {
     const styleProps: string[] = []
 
     Object.entries(theme).forEach(([themeKey, themeValue]) => {
-      const themeKeyPre = themeKey.startsWith('med') ? '' : 'theme-'
+      const isMedia = themeKey.startsWith('med')
+      const themePre = isMedia ? '' : 'theme-'
+      const themeNs = isMedia ? '' : 'ac-'
 
-      styleProps.push(`--ac-${themeKeyPre}${themeKey}:${themeValue}`)
+      styleProps.push(`--${themeNs}${themePre}${themeKey}:${themeValue}`)
     })
 
     stylesOutput += `:root{${styleProps.join(';')};--btn-fill:var(--ac-theme-color);--btn-stroke:var(--ac-theme-color)}`

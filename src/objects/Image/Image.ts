@@ -76,7 +76,7 @@ const Image = (props: ImageProps): string => {
     imageClasses.push('e-trans object-left-top')
   }
 
-  let containerClasses = `relative overflow-hidden h-full ar-${hasAspectRatio ? aspectRatio : '1-1'}`
+  let containerClasses = `relative overflow-hidden ar-${hasAspectRatio ? aspectRatio : '1-1'}`
 
   if (borderRadius === 'rounded') {
     containerClasses += ' b-radius-s b-radius-m-m isolate'
@@ -92,6 +92,8 @@ const Image = (props: ImageProps): string => {
 
   if (isStringStrict(width)) {
     containerClasses += ` w-${width}`
+  } else {
+    containerClasses += ' w-full h-full'
   }
 
   if (isStringStrict(widthLarge)) {

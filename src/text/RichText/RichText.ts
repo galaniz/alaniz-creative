@@ -8,9 +8,7 @@ import type {
   RichTextContentItemFilter,
   RichTextPropsFilter
 } from '@alanizcreative/formation-static/text/RichText/RichTextTypes.js'
-import type { ContainerArgs } from '../../layouts/Container/ContainerTypes.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
-import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 
 /**
  * Filter formation rich text props.
@@ -34,22 +32,6 @@ const RichTextProps: RichTextPropsFilter = (props) => {
 
   const classesArr: string[] = []
   const stylesArr: string[] = []
-
-  /* Data attribute */
-
-  let dataAttr = false
-
-  /* Parents */
-
-  const parent = parents[0]
-
-  /* Content ascendant */
-
-  if (isObjectStrict(parent) && parent.renderType === 'container') {
-    const { richTextStyles = false } = parent.args as ContainerArgs
-
-    dataAttr = richTextStyles
-  }
 
   /* Type */
 
@@ -96,7 +78,7 @@ const RichTextProps: RichTextPropsFilter = (props) => {
 
   /* Data attribute */
 
-  newArgs.dataAttr = dataAttr
+  newArgs.dataAttr = parents.some(parent => parent.renderType === 'container' && parent.args.richTextStyles)
 
   /* Output */
 

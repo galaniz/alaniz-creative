@@ -24,7 +24,10 @@
     margin: var(--rt-max) 0 var(--rt-low);
   }
 
-  h3,
+  h3 {
+    margin: var(--rt-high) 0 var(--rt-low);
+  }
+
   h4,
   h5,
   h6 {

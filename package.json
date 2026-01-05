@@ -18,7 +18,7 @@
     "wrangler:password": "npx wrangler dev --config src/workers/Password/wrangler.json",
     "wrangler:site": "npx wrangler dev --config wrangler.json",
     "wrangler:staging": "npx wrangler dev --config wrangler.json --env staging",
-    "clean": "rm -rf node_modules/.cache/tsbuildinfo.* || true && rm -rf .cache || true && rm -rf site || true && rm -rf lib || true && rm -rf functions || true"
+    "clean": "rm -rf node_modules/.cache/tsbuildinfo.* || true && rm -rf .cache || true && rm -rf site || true && rm -rf lib || true"
   },
   "engines": {
     "node": ">=22"
