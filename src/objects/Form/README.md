@@ -172,6 +172,10 @@ Default: `false`
 
 ### FormAction  
 
+**Type:** <code>&#39;contact&#39; | &#39;contact-dev&#39; | &#39;password&#39; | &#39;password-dev&#39;</code>
+
+### FormType  
+
 **Type:** <code>&#39;contact&#39; | &#39;password&#39;</code>
 
 ### FormArgs  
@@ -181,7 +185,7 @@ Default: `false`
 **Augments:** <code>FormationFormArgs</code>
 
 #### Properties  
-- **`action`** <code><a href="#formaction">FormAction</a></code> optional  
+- **`type`** <code><a href="#formtype">FormType</a></code> optional  
 Default: `'contact'`  
 - **`successTitle`** <code>string</code> optional  
 - **`successText`** <code>string</code> optional  
