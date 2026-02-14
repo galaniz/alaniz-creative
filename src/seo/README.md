@@ -24,12 +24,13 @@ Create sitemap files from map items.
 
 ## setSeoSitemapItem  
 
-**<code>setSeoSitemapItem(itemData: Item): boolean</code>**  
+**<code>setSeoSitemapItem(itemData: Item, assetsLink: string): boolean</code>**  
 
 Append to sitemap.
 
 ### Parameters  
-- **`itemData`** <code><a href="/src/global/README.md#item">Item</a></code> required
+- **`itemData`** <code><a href="/src/global/README.md#item">Item</a></code> required  
+- **`assetsLink`** <code>string</code> required
 
 ### Returns  
 

@@ -4,6 +4,7 @@
 
 /* Imports */
 
+import type { InternalLink } from '@alanizcreative/formation-static/global/globalTypes.js'
 import type { RenderItem } from '@alanizcreative/formation-static/render/renderTypes.js'
 import type { HeroArgs } from '../components/Hero/HeroTypes.js'
 import type { ConfigBlob } from '../config/configTypes.js'
@@ -15,7 +16,7 @@ import type { ConfigBlob } from '../config/configTypes.js'
  * @prop {HeroArgs} [hero]
  * @prop {ConfigBlob} [blob]
  * @prop {Item[]} [related]
- * @prop {RenderItem[]} [category]
+ * @prop {InternalLink[]} [category]
  * @prop {Object<string, string>} [theme]
  * @prop {string} [date]
  * @prop {string} [dateModified]
@@ -26,7 +27,7 @@ export interface Item extends RenderItem {
   hero?: HeroArgs
   blob?: ConfigBlob
   related?: Item[]
-  category?: RenderItem[]
+  category?: InternalLink[]
   theme?: Record<string, string>
   date?: string
   dateModified?: string

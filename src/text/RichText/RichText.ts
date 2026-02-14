@@ -18,7 +18,7 @@ import { isStringStrict } from '@alanizcreative/formation-static/utils/string/st
 const RichTextProps: RichTextPropsFilter = (props) => {
   /* Props and args */
 
-  const { args, parents = [] } = props
+  const { args, parents } = props
   const newArgs = { ...args }
   const {
     tag,
@@ -78,7 +78,7 @@ const RichTextProps: RichTextPropsFilter = (props) => {
 
   /* Data attribute */
 
-  newArgs.dataAttr = parents.some(parent => parent.renderType === 'container' && parent.args.richTextStyles)
+  newArgs.dataAttr = parents?.some(parent => parent.renderType === 'container' && parent.args.richTextStyles) 
 
   /* Output */
 

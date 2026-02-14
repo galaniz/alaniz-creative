@@ -2,7 +2,7 @@
 
 **<code>Layout(args: LayoutArgs): string</code>**  
 
-Output html.
+Output root.
 
 ## Parameters  
 - **`args`** <code><a href="#layoutargs">LayoutArgs</a></code> required

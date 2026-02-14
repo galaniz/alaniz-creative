@@ -4,30 +4,35 @@
 
 /* Imports */
 
-import type { Item } from '../../global/globalTypes.js'
-import type { ConfigColumn } from '../../config/configTypes.js'
-import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
 import type {
   FormArgs as FormationFormArgs,
   FormFieldArgs as FormationFormFieldArgs
 } from '@alanizcreative/formation-static/objects/Form/FormTypes.js'
+import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
+import type { Item } from '../../global/globalTypes.js'
+import type { ConfigColumn } from '../../config/configTypes.js'
 
 /**
- * @typedef {'contact'|'password'} FormAction
+ * @typedef {'contact'|'password'} FormType
  */
-export type FormAction = 'contact' | 'password'
+export type FormType = 'contact' | 'password'
+
+/**
+ * @typedef {'contact'|'contact-dev'|'password'|'password-dev'} FormAction
+ */
+export type FormAction = 'contact' | 'contact-dev' | 'password' | 'password-dev'
 
 /**
  * @typedef {object} FormArgs
  * @extends {FormationFormArgs}
- * @prop {FormAction} [action='contact']
+ * @prop {FormType} [type='contact']
  * @prop {string} [successTitle]
  * @prop {string} [successText]
  * @prop {string} [toEmail]
  * @prop {string} [senderEmail]
  */
 export interface FormArgs extends FormationFormArgs {
-  action?: FormAction
+  type?: FormType
   successTitle?: string
   successText?: string
   toEmail?: string

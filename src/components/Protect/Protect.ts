@@ -27,7 +27,7 @@ const Protect = (): string => {
 
   const [formStart, formEnd] = Form({
     args: {
-      action: 'password',
+      type: 'password',
       submitLabel: 'Go'
     }
   })

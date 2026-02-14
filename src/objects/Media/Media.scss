@@ -5,6 +5,12 @@
 .media {
   --ld-color: var(--med-secondary);
   --ld-bg: var(--med-tertiary);
+  --info-bg: var(--ac-inverse-color);
+  --info-pos: absolute;
+  --info-inset: 0;
+  --info-layout: column;
+  --info-justify: center;
+  --info-align: center;
 
   &[playing] {
     --med-play-display: none;

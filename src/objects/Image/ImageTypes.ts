@@ -4,13 +4,13 @@
 
 /* Imports */
 
-import type { Item } from '../../global/globalTypes.js'
 import type {
   RenderFunctionArgs,
   RenderFile,
   RenderRichText
 } from '@alanizcreative/formation-static/render/renderTypes.js'
 import type { ConfigAspectRatio, ConfigSize } from '../../config/configTypes.js'
+import type { Item } from '../../global/globalTypes.js'
 
 /**
  * @typedef {object} ImageArgs

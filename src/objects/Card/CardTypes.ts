@@ -4,9 +4,9 @@
 
 /* Imports */
 
-import type { Item } from '../../global/globalTypes.js'
 import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
 import type { ConfigHeadingLevel } from '../../config/configTypes.js'
+import type { Item } from '../../global/globalTypes.js'
 
 /**
  * @typedef {'minimal'|'alternate'|'cascade'} CardType

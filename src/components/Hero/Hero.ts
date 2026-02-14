@@ -60,7 +60,7 @@ const heroWaves: Map<HeroWave, HeroWaveSvg> = new Map([
 /**
  * Output hero section.
  *
- * @prop {HeroArgs} args
+ * @param {HeroArgs} args
  * @return {string} HTMLSectionElement
  */
 const Hero = (args: HeroArgs): string => {

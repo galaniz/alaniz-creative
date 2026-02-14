@@ -28,7 +28,7 @@ const Card = (props: CardProps): string => {
     return ''
   }
 
-  const { args } = props
+  const { args, parents } = props
 
   if (!isObjectStrict(args)) {
     return ''
@@ -82,7 +82,7 @@ const Card = (props: CardProps): string => {
 
   /* Parents */
 
-  const parents: ParentArgs[] = [
+  const newParents: ParentArgs[] = [
     {
       renderType: 'card',
       args: {
@@ -91,8 +91,8 @@ const Card = (props: CardProps): string => {
     }
   ]
 
-  if (isMinimal || (isCascade && isHalf)) {
-    parents.push({
+  if (isFull || isMinimal || (isCascade && isHalf)) {
+    newParents.push({
       renderType: 'column',
       args: {
         width: '12',
@@ -102,19 +102,8 @@ const Card = (props: CardProps): string => {
     })
   }
 
-  if (isFull) {
-    parents.push({
-      renderType: 'column',
-      args: {
-        width: '12',
-        widthSmall: isMinimal ? '6' : undefined,
-        widthMedium: isCascade && isHalf ? '4' : undefined
-      }
-    })
-  }
-
-  if (props.parents && !isFull) {
-    parents.push(...props.parents)
+  if (parents && !isFull) {
+    newParents.push(...parents)
   }
 
   /* Text */
@@ -231,7 +220,7 @@ const Card = (props: CardProps): string => {
               ...hero,
               aspectRatio: '16-10'
             },
-            parents
+            parents: newParents
           })}
         </div>
       </div>

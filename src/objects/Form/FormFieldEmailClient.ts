@@ -127,7 +127,7 @@ class FormFieldEmail extends HTMLElement {
    * @param {FormValidateFilterArgs} args
    * @return {FormValidateResult}
    */
-  #validate (result: FormValidateResult, args: FormValidateFilterArgs): FormValidateResult {
+  #validate (result: FormValidateResult<string[]>, args: FormValidateFilterArgs): FormValidateResult<string[]> {
     const { name, groups } = args
 
     if (name !== this.inputName) {
@@ -144,7 +144,7 @@ class FormFieldEmail extends HTMLElement {
       }
     }
 
-    if (email && !isEmail(email as string)) {
+    if (email && !isEmail(email)) {
       return {
         ...result,
         valid: false,

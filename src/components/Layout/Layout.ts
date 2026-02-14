@@ -21,7 +21,7 @@ import { Hero } from '../Hero/Hero.js'
 import { Single } from '../Single/Single.js'
 
 /**
- * Output html.
+ * Output root.
  *
  * @param {LayoutArgs} args
  * @return {string} HTMLHtmlElement

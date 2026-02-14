@@ -39,6 +39,7 @@ const Info = (args: InfoArgs): string => {
   const isSuccess = type === 'success'
   const isErrorSummary = type === 'error-summary'
   const isAlert = isError || isSuccess
+  const isErrorType = isError || isErrorSummary
 
   /* Text */
 
@@ -46,7 +47,7 @@ const Info = (args: InfoArgs): string => {
   let textOutput = ''
 
   if (hasTitle) {
-    textOutput += `
+    textOutput += /* html */`
       <h2 class="text-m lead-open wt-medium m-0">
         ${title}
       </h2>
@@ -54,7 +55,7 @@ const Info = (args: InfoArgs): string => {
   }
 
   if (isStringStrict(text)) {
-    textOutput = `
+    textOutput = /* html */`
       <div>
         ${textOutput}
         <p class="text-${hasTitle ? 's' : 'm wt-medium'} lead-open m-0">
@@ -65,7 +66,7 @@ const Info = (args: InfoArgs): string => {
   }
 
   if (isErrorSummary) {
-    textOutput = `
+    textOutput = /* html */`
       <div>
         ${textOutput}
         <ul class="flex col pb-4xs gap-4xs text-s list-none e-line-all" role="list"></ul>
@@ -79,7 +80,7 @@ const Info = (args: InfoArgs): string => {
 
   /* Icon */
 
-  const Icon = isError || isErrorSummary ? ErrorSvg : isSuccess ? CheckmarkSvg : InfoSvg
+  const Icon = isErrorType ? ErrorSvg : isSuccess ? CheckmarkSvg : InfoSvg
 
   /* Styles */
 
@@ -96,7 +97,7 @@ const Info = (args: InfoArgs): string => {
   /* Output */
 
   const output = /* html */`
-    <div class="info-${isErrorSummary ? 'error' : type} flex gap-3xs px-xs py-xs b-radius-s w-full outline-none"${attrs}>
+    <div class="info-${isErrorType ? 'error' : type} flex gap-3xs px-xs py-xs b-radius-s w-full outline-none"${attrs}>
       ${Icon({
         width: 's',
         height: 's',

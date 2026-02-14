@@ -2,4 +2,4 @@
 
 **<code>HttpError(): </code>**  
 
-Output http error.
+Output HTTP error.

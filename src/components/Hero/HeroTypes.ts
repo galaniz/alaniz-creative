@@ -4,10 +4,10 @@
 
 /* Imports */
 
-import type { Item } from '../../global/globalTypes.js'
-import type { ConfigBlob } from '../../config/configTypes.js'
 import type { RenderFile } from '@alanizcreative/formation-static/render/renderTypes.js'
+import type { ConfigBlob } from '../../config/configTypes.js'
 import type { ButtonArgs } from '../../objects/Button/ButtonTypes.js'
+import type { Item } from '../../global/globalTypes.js'
 
 /**
  * @typedef {'one'|'two'|'three'|'four'|'five'} HeroWave

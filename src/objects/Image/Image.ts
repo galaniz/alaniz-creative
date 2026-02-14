@@ -57,13 +57,10 @@ const Image = (props: ImageProps): string => {
     sizes
   } = args
 
-  /* Card parent */
-
-  const isCard = parents?.[0]?.renderType === 'card'
-
-  /* Aspect ratio */
+  /* Types */
 
   const hasAspectRatio = isStringStrict(aspectRatio)
+  const isCard = parents?.[0]?.renderType === 'card'
 
   /* Classes */
 

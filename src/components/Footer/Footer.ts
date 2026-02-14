@@ -12,8 +12,8 @@ import { config } from '../../config/config.js'
 /**
  * Output footer.
  *
- * @prop {string} currentLink
- * @prop {string|string[]} [currentType]
+ * @param {string} currentLink
+ * @param {string|string[]} [currentType]
  * @return {string} HTMLElement
  */
 const Footer = (currentLink: string, currentType?: string | string[]): string => {

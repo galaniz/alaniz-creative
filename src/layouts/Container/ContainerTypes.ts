@@ -4,8 +4,11 @@
 
 /* Imports */
 
-import type { Item } from '../../global/globalTypes.js'
+import type {
+  ContainerArgs as FormationContainerArgs
+} from '@alanizcreative/formation-static/layouts/Container/ContainerTypes.js'
 import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
+import type { Item } from '../../global/globalTypes.js'
 import type {
   ConfigSize,
   ConfigJustify,
@@ -13,9 +16,6 @@ import type {
   ConfigContainer,
   ConfigBackgroundColor
 } from '../../config/configTypes.js'
-import type {
-  ContainerArgs as FormationContainerArgs
-} from '@alanizcreative/formation-static/layouts/Container/ContainerTypes.js'
 
 /**
  * @typedef {'block'|'col'|'col-s'|'col-m'|'col-l'|'row'|'row-s'|'row-m'|'row-l'} ContainerLayout

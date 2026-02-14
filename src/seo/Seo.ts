@@ -39,7 +39,6 @@ const Seo = (meta: RenderMeta, itemData: Item, assetsLink: string, home: boolean
     description,
     image,
     canonical,
-    canonicalParams,
     prev,
     next,
     index = true
@@ -49,7 +48,11 @@ const Seo = (meta: RenderMeta, itemData: Item, assetsLink: string, home: boolean
 
   /* Data */
 
-  const { hero, date, dateModified } = itemData
+  const {
+    hero,
+    date,
+    dateModified
+  } = itemData
 
   /* Output */
 
@@ -79,7 +82,7 @@ const Seo = (meta: RenderMeta, itemData: Item, assetsLink: string, home: boolean
   /* Canonical */
 
   if (isStringStrict(canonical) && index) {
-    output += `<link rel="canonical" href="${canonical}${isStringStrict(canonicalParams) ? canonicalParams : ''}">`
+    output += `<link rel="canonical" href="${canonical}">`
   }
 
   /* Prev */
@@ -260,7 +263,7 @@ const Seo = (meta: RenderMeta, itemData: Item, assetsLink: string, home: boolean
   })}</script>`
 
   if (index) {
-    setSeoSitemapItem(itemData)
+    setSeoSitemapItem(itemData, assetsLink)
   }
 
   /* Result */
