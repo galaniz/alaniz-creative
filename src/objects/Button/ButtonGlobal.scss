@@ -2,6 +2,13 @@
  * Objects - Button Global Styles
  */
 
+/* Imports */
+
+@forward "../../config/config";
+@use "@alanizcreative/formation/lib/utils/utils" as util;
+
+/* Styles */
+
 .button {
   display: inline-flex;
   justify-content: center;
@@ -17,7 +24,7 @@
 
   &:hover {
     --btn-scale: 1.01;
-    --btn-y: -0.2rem;
+    --btn-y: #{util.calc-rem(-3.2px)};
   }
 }
 

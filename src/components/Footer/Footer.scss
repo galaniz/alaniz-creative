@@ -20,14 +20,14 @@
 
 .footer-blob {
   z-index: -1;
-  min-width: 80rem;
+  min-width: #{util.calc-rem(1280px)};
   height: calc(100% - var(--ac-l));
   right: util.fluid-size-clamp((-450px, -100px), ("s", "m"));
   bottom: #{util.calc-rem(-1px)};
   color: var(--ac-sharp-color);
 
   @include util.breakpoint-min("xl") {
-    width: calc(80rem + (50vw - (var(--ac-container-content) / 2) - #{util.calc-rem(270px)}));
+    width: calc(#{util.calc-rem(1280px)} + (50vw - (var(--ac-container-content) / 2) - #{util.calc-rem(270px)}));
     right: #{util.calc-rem(-270px)};
   }
 }

@@ -2,6 +2,13 @@
  * Objects - Form Styles
  */
 
+/* Imports */
+
+@forward "../../config/config";
+@use "@alanizcreative/formation/lib/utils/utils" as util;
+
+/* Styles */
+
 .form {
   --ld-bg: var(--ac-sharp-color);
   --ld-color: var(--ac-inverse-color);
@@ -32,7 +39,7 @@
 .form-input-url,
 .form-input-select,
 .form-input-textarea {
-  --ac-border-width: 0.0625rem;
+  --ac-border-width: #{util.calc-rem(1px)};
 
   width: 100%;
   padding: var(--ac-xs) var(--ac-s);
@@ -46,7 +53,7 @@
 
   &[aria-invalid="true"] {
     --ac-border-color: var(--ac-negative-color);
-    --ac-border-width: 0.1rem;
+    --ac-border-width: #{util.calc-rem(1.6px)};
 
     &:focus {
       --ac-border-color: var(--ac-outline-color);
@@ -56,7 +63,7 @@
   &:focus {
     --ac-outline-width: 0;
     --ac-border-color: var(--ac-outline-color);
-    --ac-border-width: 0.1875rem;
+    --ac-border-width: #{util.calc-rem(3px)};
   }
 }
 

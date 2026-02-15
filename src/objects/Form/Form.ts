@@ -84,10 +84,14 @@ const Form = (props: FormProps): FormProps => {
 
   const action: FormAction = `${type}${config.env.prod ? '' : '-dev'}`
 
-  /* Attributes */
+  /* Site key */
 
   const siteKey = config.env.prod ? '0x4AAAAAABpyURQ9TLndYvrm' : '1x00000000000000000000BB'
-  let formAttr = ` action="${action}" error-summary="${errorSummaryId}" error-inline="${errorInlineId}" error="${errorId}" success="${successId}" loader="${loaderId}" sitekey="${siteKey}"`
+
+  /* Attributes */
+
+  let formAttr =
+    ` action="${action}" error-summary="${errorSummaryId}" error-inline="${errorInlineId}" error="${errorId}" success="${successId}" loader="${loaderId}" sitekey="${siteKey}"`
 
   if (isStringStrict(successTitle)) {
     formAttr += ` success-title="${successTitle}"`
