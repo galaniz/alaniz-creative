@@ -101,8 +101,6 @@ const Layout = (args: LayoutArgs): string => {
 
   const seoOutput = Seo(meta, itemData, assetsLink, slug === '/')
 
-  seoSchema.clear()
-
   /* Script data */
 
   const scriptJson = JSON.stringify(scripts.meta)
@@ -134,8 +132,6 @@ const Layout = (args: LayoutArgs): string => {
   configVars.style.forEach(s => {
     stylesOutput += s
   })
-
-  configVars.style.clear()
 
   if (isObjectStrict(theme)) {
     const styleProps: string[] = []
@@ -172,8 +168,6 @@ const Layout = (args: LayoutArgs): string => {
     `
   }
 
-  configVars.svg.clear()
-
   /* Templates */
 
   let templatesOutput = ''
@@ -186,17 +180,13 @@ const Layout = (args: LayoutArgs): string => {
     `
   }
 
-  configVars.template.clear()
-
-  /* Noscript */
+  /* No script */
 
   let noscriptOutput = `<link rel="stylesheet" href="${baseLink}css/global/globalNoJs.css" media="all">`
 
   configVars.noscript.forEach(noscript => {
     noscriptOutput += noscript
   })
-
-  configVars.noscript.clear()
 
   /* Check if local */
 
@@ -214,6 +204,15 @@ const Layout = (args: LayoutArgs): string => {
       </script>
     `
   }
+
+  /* Reset */
+
+  seoSchema.clear()
+  configVars.style.clear()
+  configVars.svg.clear()
+  configVars.template.clear()
+  configVars.noscript.clear()
+  configVars.formId = ''
 
   /* Output */
 

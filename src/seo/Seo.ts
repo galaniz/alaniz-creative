@@ -97,14 +97,6 @@ const Seo = (meta: RenderMeta, itemData: Item, assetsLink: string, home: boolean
     output += `<link rel="next" href="${next}">`
   }
 
-  /* Image */
-
-  let imageLink = `${assetsLink}${config.meta.image}`
-
-  if (image) {
-    imageLink = `${assetsLink}${image}`
-  }
-
   /* Hero */
 
   const heroImage = hero?.image
@@ -128,12 +120,12 @@ const Seo = (meta: RenderMeta, itemData: Item, assetsLink: string, home: boolean
       heroImageLink = heroLink
       heroImageWidth = heroWidth
       heroImageHeight = heroHeight
-
-      if (!image) {
-        imageLink = heroImageLink
-      }
     }
   }
+
+  /* Image */
+
+  const imageLink = image || heroImageLink || `${assetsLink}${config.meta.image}`
 
   output += `<meta name="image" content="${imageLink}">`
 
