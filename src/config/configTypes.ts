@@ -10,9 +10,11 @@ import type { Generic } from '@alanizcreative/formation-static/global/globalType
  * @typedef {object} ConfigEnv
  * @extends {Generic}
  * @prop {string} [ENVIRONMENT]
+ * @prop {string} [LOCAL]
  */
 export interface ConfigEnv extends Generic {
   ENVIRONMENT?: string
+  LOCAL?: string
 }
 
 /**
