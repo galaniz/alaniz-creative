@@ -84,7 +84,6 @@ const NavigationPrimary = (args: NavigationPrimaryArgs): string => {
     modalOutput = /* html */`
       <button
         class="nav-open pt-5xs flex nav-hide no-js-none"
-        aria-haspopup="true"
         aria-label="Open menu"
         data-nav-open
       >
