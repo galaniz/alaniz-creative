@@ -28,7 +28,7 @@ const workerServerlessSetup = async (env?: Generic) => {
 
   /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
   // @ts-ignore - may not exist in build context
-  const { default: parents } = await import('../../lib/store/parents.json') as unknown as { default: Store['parents'] }
+  const { default: parents } = await import('../../lib/store/parents.json') as { default: Store['parents'] }
   /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
   // @ts-ignore - may not exist in build context
   const { default: archiveMeta } = await import('../../lib/store/archiveMeta.json') as { default: Store['archiveMeta'] }

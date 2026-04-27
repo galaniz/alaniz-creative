@@ -5,7 +5,7 @@
 /* Imports */
 
 import type { CardProps, CardType } from './CardTypes.js'
-import type { ParentArgs } from '@alanizcreative/formation-static/global/globalTypes.js'
+import type { Parent } from '@alanizcreative/formation-static/global/globalTypes.js'
 import { isArrayStrict } from '@alanizcreative/formation-static/utils/array/array.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
@@ -82,7 +82,7 @@ const Card = (props: CardProps): string => {
 
   /* Parents */
 
-  const newParents: ParentArgs[] = [
+  const newParents: Parent[] = [
     {
       renderType: 'card',
       args: {

@@ -5,6 +5,8 @@
 /* Imports */
 
 import type { Plugin } from 'esbuild'
+import { readFile } from 'node:fs/promises'
+import { pathToFileURL } from 'node:url'
 import * as sass from 'sass'
 import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
@@ -21,14 +23,18 @@ const esbuildScss = (): Plugin => {
     name: 'esbuildScss',
     setup (build) {
       build.onLoad({ filter: /\.scss$/ }, async (args) => {
+        const { path } = args
+
         let styles = ''
 
-        const sassRes = sass.compile(args.path, {
+        const sassContents = await readFile(path, 'utf8')
+        const sassRes = sass.compileString(`@forward "config/config";${sassContents}`, {
           loadPaths: [
             'node_modules',
             './src'
           ],
-          style: 'compressed'
+          style: 'compressed',
+          url: pathToFileURL(path)
         })
 
         const sassCss = sassRes.css
