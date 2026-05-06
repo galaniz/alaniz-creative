@@ -43,7 +43,7 @@ const config: Config = setConfig({
   source: 'local',
   title: 'Alaniz Creative',
   meta: {
-    description: 'Graciela Alaniz is a designer/developer based in Toronto. She strives to create elegant, engaging and accessible digital experiences.',
+    description: 'Graciela Alaniz is a developer/designer based in Toronto. She strives to create elegant, engaging and accessible digital experiences.',
     image: 'alaniz-creative-meta.png'
   },
   wholeTypes: [
