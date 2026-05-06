@@ -1,6 +1,6 @@
 # Alaniz Creative  
 
-Static site for my portfolio using [Formation Static](https://github.com/galaniz/formation-static).
+Static site for my portfolio using [Formation](https://github.com/galaniz/formation) and [Formation Static](https://github.com/galaniz/formation-static).
 
 ## Installation
 
@@ -18,7 +18,7 @@ pnpm build
 pnpm start
 ```
 
-## Index
+## Reference
 <details>
 <summary>Actions</summary>
   
