@@ -15,6 +15,7 @@
   --ac-interactive-color: var(--ac-foreground-base);
   --ac-muted-color: hsla(var(--ac-foreground-base-hsl), 0.075);
   --ac-theme-color: var(--ac-theme-primary-dark);
+  --ac-dim-color: var(--ac-background-base);
   --ac-negative-hsl: var(--ac-negative-dark-hsl);
   --ac-positive-hsl: var(--ac-positive-dark-hsl);
 
@@ -29,6 +30,7 @@
   --ac-text-color: hsla(var(--ac-background-light-hsl), 0.75);
   --ac-muted-color: hsla(var(--ac-background-light-hsl), 0.075);
   --ac-theme-color: var(--ac-theme-primary-light);
+  --ac-dim-color: var(--ac-foreground-light);
   --ac-negative-hsl: var(--ac-negative-light-hsl);
   --ac-positive-hsl: var(--ac-positive-light-hsl);
 
@@ -45,8 +47,8 @@
   background: currentcolor;
 }
 
-.bg-muted {
-  background: var(--ac-muted-color);
+.bg-dim {
+  background: var(--ac-dim-color);
 }
 
 .bg-bright {

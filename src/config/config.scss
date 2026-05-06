@@ -36,8 +36,10 @@ $sizes: (
   $colors: (
     "foreground": ( // Black
       "base": "0, 0%, 13%", // #222
+      "light": "0, 0%, 20%", // #333
     ),
     "background": ( // White
+      "base": "0, 0%, 93%", // #eee
       "light": "0, 0%, 100%", // #fff
     ),
     "negative": ( // Red
