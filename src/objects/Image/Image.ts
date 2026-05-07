@@ -7,6 +7,7 @@
 import type { ImageProps } from './ImageTypes.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
+import { isArrayStrict } from '@alanizcreative/formation-static/utils/array/array.js'
 import { getImage, getImageSizes } from '@alanizcreative/formation-static/utils/image/image.js'
 import { RichText } from '@alanizcreative/formation-static/text/RichText/RichText.js'
 import {
@@ -60,6 +61,7 @@ const Image = (props: ImageProps): string => {
   /* Types */
 
   const hasAspectRatio = isStringStrict(aspectRatio)
+  const hasParents = isArrayStrict(parents)
   const isCard = parents?.[0]?.renderType === 'card'
 
   /* Classes */
@@ -73,7 +75,7 @@ const Image = (props: ImageProps): string => {
     imageClasses.push('e-trans object-left-top')
   }
 
-  let containerClasses = `relative overflow-hidden bg-dim ar-${hasAspectRatio ? aspectRatio : '1-1'}`
+  let containerClasses = `relative overflow-hidden ar-${hasAspectRatio ? aspectRatio : '1-1'}`
 
   if (borderRadius === 'rounded') {
     containerClasses += ' b-radius-s b-radius-m-m isolate'
@@ -105,13 +107,17 @@ const Image = (props: ImageProps): string => {
     containerClasses += ` ${classes}`
   }
 
+  if (hasParents && !parents.some(parent => parent.args.background)) {
+    containerClasses += ' bg-dim'
+  }
+
   /* Params */
 
   const params = { w: '%width' }
 
   /* Max width and sizes */
 
-  if (parents) {
+  if (hasParents) {
     viewportWidth = parents.some(parent => parent.renderType === 'container' && parent.args.breakout) ? 90 : viewportWidth
 
     const sizesRes = getImageSizes({
