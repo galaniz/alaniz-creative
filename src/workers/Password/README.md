@@ -4,12 +4,12 @@
 
 Escape and check password.# fetch  
 
-**<code>fetch(request: Request): Promise&lt;Response&gt;</code>**  
+**<code>fetch(request: WorkerRequest): Promise&lt;Response&gt;</code>**  
 
 Route serverless and serve assets.
 
 ## Parameters  
-- **`request`** <code>Request</code> required
+- **`request`** <code><a href="/src/workers/README.md#workerrequest">WorkerRequest</a></code> required
 
 ## Returns  
 

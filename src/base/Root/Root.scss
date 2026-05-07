@@ -16,5 +16,5 @@
 
   /* Header height */
 
-  --header-height: #{util.fluid-size-clamp((111px, 144px), ("s", "l"))};
+  --ac-header-height: #{util.fluid-size-clamp((111px, 144px), ("s", "l"))};
 }

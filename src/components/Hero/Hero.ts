@@ -6,7 +6,7 @@
 
 import type { HeroArgs, HeroWave, HeroWaveSvg } from './HeroTypes.js'
 import type { ImageArgs } from '../../objects/Image/ImageTypes.js'
-import type { ParentArgs } from '@alanizcreative/formation-static/global/globalTypes.js'
+import type { Parent } from '@alanizcreative/formation-static/global/globalTypes.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { configBlobs } from '../../config/configOptions.js'
@@ -60,7 +60,7 @@ const heroWaves: Map<HeroWave, HeroWaveSvg> = new Map([
 /**
  * Output hero section.
  *
- * @prop {HeroArgs} args
+ * @param {HeroArgs} args
  * @return {string} HTMLSectionElement
  */
 const Hero = (args: HeroArgs): string => {
@@ -105,7 +105,7 @@ const Hero = (args: HeroArgs): string => {
   let hasImage = false
 
   if ((isMediaText || isProfile) && image) {
-    const parents: ParentArgs[] = [
+    const parents: Parent[] = [
       {
         renderType: 'column',
         args: {
@@ -171,7 +171,7 @@ const Hero = (args: HeroArgs): string => {
               <path
                 d="${path}"
                 fill="none"
-                stroke="var(--theme-color)"
+                stroke="var(--ac-theme-color)"
                 stroke-opacity="0.5"
                 stroke-width="1"
                 vector-effect="non-scaling-stroke"
@@ -201,7 +201,7 @@ const Hero = (args: HeroArgs): string => {
           <path
             d="${blobPath}"
             fill="none"
-            stroke="var(--sharp-color)"
+            stroke="var(--ac-sharp-color)"
             stroke-opacity="0.5"
             stroke-width="1"
             vector-effect="non-scaling-stroke"

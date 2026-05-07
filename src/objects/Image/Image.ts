@@ -7,6 +7,7 @@
 import type { ImageProps } from './ImageTypes.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
+import { isArrayStrict } from '@alanizcreative/formation-static/utils/array/array.js'
 import { getImage, getImageSizes } from '@alanizcreative/formation-static/utils/image/image.js'
 import { RichText } from '@alanizcreative/formation-static/text/RichText/RichText.js'
 import {
@@ -57,13 +58,11 @@ const Image = (props: ImageProps): string => {
     sizes
   } = args
 
-  /* Card parent */
-
-  const isCard = parents?.[0]?.renderType === 'card'
-
-  /* Aspect ratio */
+  /* Types */
 
   const hasAspectRatio = isStringStrict(aspectRatio)
+  const hasParents = isArrayStrict(parents)
+  const isCard = parents?.[0]?.renderType === 'card'
 
   /* Classes */
 
@@ -76,7 +75,7 @@ const Image = (props: ImageProps): string => {
     imageClasses.push('e-trans object-left-top')
   }
 
-  let containerClasses = `relative overflow-hidden h-full ar-${hasAspectRatio ? aspectRatio : '1-1'}`
+  let containerClasses = `relative overflow-hidden ar-${hasAspectRatio ? aspectRatio : '1-1'}`
 
   if (borderRadius === 'rounded') {
     containerClasses += ' b-radius-s b-radius-m-m isolate'
@@ -92,6 +91,8 @@ const Image = (props: ImageProps): string => {
 
   if (isStringStrict(width)) {
     containerClasses += ` w-${width}`
+  } else {
+    containerClasses += ' w-full h-full'
   }
 
   if (isStringStrict(widthLarge)) {
@@ -106,13 +107,17 @@ const Image = (props: ImageProps): string => {
     containerClasses += ` ${classes}`
   }
 
+  if (hasParents && !parents.some(parent => parent.args.background)) {
+    containerClasses += ' bg-dim'
+  }
+
   /* Params */
 
   const params = { w: '%width' }
 
   /* Max width and sizes */
 
-  if (parents) {
+  if (hasParents) {
     viewportWidth = parents.some(parent => parent.renderType === 'container' && parent.args.breakout) ? 90 : viewportWidth
 
     const sizesRes = getImageSizes({
@@ -160,7 +165,7 @@ const Image = (props: ImageProps): string => {
   /* Output */
 
   const containerAttr = 
-    imageAspectRatio && !hasAspectRatio ? ` style="--aspect-ratio-padding:${imageAspectRatio * 100}%"` : ''
+    imageAspectRatio && !hasAspectRatio ? ` style="--ac-aspect-ratio:1 / ${imageAspectRatio}"` : ''
 
   let output = /* html */`
     <div class="${containerClasses}"${containerAttr}>
@@ -170,7 +175,7 @@ const Image = (props: ImageProps): string => {
 
   if (isCard) {
     output = /* html */ `
-      <div class="card-media order-first z-index--1 w-full">
+      <div class="card-media order-first z--1 w-full">
         ${output}
       </div>
     `
@@ -183,7 +188,6 @@ const Image = (props: ImageProps): string => {
       tag: 'figcaption',
       content: caption,
       textStyle: 'text-xs',
-      dataAttr: true,
       classes: 'pt-m pt-l-m'
     }
   })

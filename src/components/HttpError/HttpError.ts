@@ -9,19 +9,17 @@ import { renderInlineItem } from '@alanizcreative/formation-static/render/render
 import { Hero } from '../Hero/Hero.js'
 
 /**
- * Output http error.
+ * Output HTTP error.
  *
  * @type {RenderHttpError}
  */
 const HttpError: RenderHttpError = async (args) => {
   const { code } = args
 
-  let metaTitle = 'Page Not Found'
   let title = 'Page Not Found'
   let text = 'Looks like nothing was found in this location.'
 
   if (code === 500) {
-    metaTitle = 'Internal Server Error'
     title = 'Internal Server Error'
     text = 'Looks like we\'re experiencing an internal server problem.'
   }
@@ -34,7 +32,7 @@ const HttpError: RenderHttpError = async (args) => {
     id,
     slug,
     contentType,
-    title: metaTitle,
+    title,
     content: Hero({
       contentType,
       title,

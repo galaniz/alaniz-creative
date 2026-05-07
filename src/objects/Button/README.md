@@ -27,8 +27,8 @@ Output link button.
 Default: `'m'`  
 - **`justify`** <code><a href="/src/config/README.md#configjustify">ConfigJustify</a></code> optional  
 - **`richText`** <code>boolean</code> optional  
-- **`paddingTop`** <code><a href="/src/config/README.md#configsizes">ConfigSizes</a></code> optional  
-- **`paddingBottom`** <code><a href="/src/config/README.md#configsizes">ConfigSizes</a></code> optional  
+- **`paddingTop`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
+- **`paddingBottom`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
 - **`icon`** <code>string</code> optional
 
 ### ButtonProps  

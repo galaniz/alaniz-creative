@@ -16,7 +16,7 @@
   --col-large: 12;
   --col: var(--col-init);
 
-  width: calc(((var(--col) / var(--columns)) * 100%) - var(--gap) + (var(--gap) / (var(--columns) / var(--col))));
+  width: calc(((var(--col) / var(--ac-columns)) * 100%) - var(--ac-gap) + (var(--ac-gap) / (var(--ac-columns) / var(--col))));
 
   @include util.breakpoint-min("s") {
     --col: var(--col-small);

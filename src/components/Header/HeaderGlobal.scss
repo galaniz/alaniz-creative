@@ -10,6 +10,6 @@
 /* Styles */
 
 .header {
-  height: var(--header-height);
+  height: var(--ac-header-height);
   z-index: map.get(con.$z-index, "header");
 }

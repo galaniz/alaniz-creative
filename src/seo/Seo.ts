@@ -39,7 +39,6 @@ const Seo = (meta: RenderMeta, itemData: Item, assetsLink: string, home: boolean
     description,
     image,
     canonical,
-    canonicalParams,
     prev,
     next,
     index = true
@@ -49,7 +48,11 @@ const Seo = (meta: RenderMeta, itemData: Item, assetsLink: string, home: boolean
 
   /* Data */
 
-  const { hero, date, dateModified } = itemData
+  const {
+    hero,
+    date,
+    dateModified
+  } = itemData
 
   /* Output */
 
@@ -79,7 +82,7 @@ const Seo = (meta: RenderMeta, itemData: Item, assetsLink: string, home: boolean
   /* Canonical */
 
   if (isStringStrict(canonical) && index) {
-    output += `<link rel="canonical" href="${canonical}${isStringStrict(canonicalParams) ? canonicalParams : ''}">`
+    output += `<link rel="canonical" href="${canonical}">`
   }
 
   /* Prev */
@@ -92,14 +95,6 @@ const Seo = (meta: RenderMeta, itemData: Item, assetsLink: string, home: boolean
 
   if (isStringStrict(next)) {
     output += `<link rel="next" href="${next}">`
-  }
-
-  /* Image */
-
-  let imageLink = `${assetsLink}${config.meta.image}`
-
-  if (image) {
-    imageLink = `${assetsLink}${image}`
   }
 
   /* Hero */
@@ -125,12 +120,12 @@ const Seo = (meta: RenderMeta, itemData: Item, assetsLink: string, home: boolean
       heroImageLink = heroLink
       heroImageWidth = heroWidth
       heroImageHeight = heroHeight
-
-      if (!image) {
-        imageLink = heroImageLink
-      }
     }
   }
+
+  /* Image */
+
+  const imageLink = image || heroImageLink || `${assetsLink}${config.meta.image}`
 
   output += `<meta name="image" content="${imageLink}">`
 
@@ -260,7 +255,7 @@ const Seo = (meta: RenderMeta, itemData: Item, assetsLink: string, home: boolean
   })}</script>`
 
   if (index) {
-    setSeoSitemapItem(itemData)
+    setSeoSitemapItem(itemData, assetsLink)
   }
 
   /* Result */

@@ -32,8 +32,8 @@ Default: `true`
 Default: `false`  
 - **`borderRadius`** <code>&#39;rounded&#39; | &#39;full&#39; | &#39;none&#39;</code> optional  
 Default: `'rounded'`  
-- **`width`** <code><a href="/src/config/README.md#configsizes">ConfigSizes</a></code> optional  
-- **`widthLarge`** <code><a href="/src/config/README.md#configsizes">ConfigSizes</a></code> optional  
+- **`width`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
+- **`widthLarge`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
 - **`contain`** <code>boolean</code> optional  
 Default: `false`  
 - **`align`** <code>&#39;center&#39;</code> optional  

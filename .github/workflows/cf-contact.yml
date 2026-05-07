@@ -11,18 +11,20 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      # Checkout the repository
+      # Checkout repository
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # Install PNPM
       - name: Install PNPM
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 
       # Set up Node.js for PNPM
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: 'pnpm'
@@ -30,10 +32,6 @@ jobs:
       # Install PNPM dependencies
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --optional
-
-      # Build file dependencies
-      - name: Build file dependencies
-        run: pnpm build
 
       # Upload worker
       - name: Upload worker

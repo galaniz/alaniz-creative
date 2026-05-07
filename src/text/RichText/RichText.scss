@@ -4,37 +4,33 @@
 
 /* Imports */
 
-@forward "../../config/config";
 @use "@alanizcreative/formation/lib/utils/utils" as util;
 
 /* Styles */
 
 .rich-text {
-  --rt-high: var(--m);
-  --rt-low: var(--m);
-  --rt-add: 0rem;
-  --rt-text-size: var(--font-20-flex);
-  --rt-text-lead: var(--line-height-loose);
-  --rt-text-track: var(--letter-spacing-open);
-  --rt-quote: 0rem;
-  --rt-term: var(--3xs);
-
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: calc(var(--rt-add) + var(--rt-high)) 0 var(--rt-low);
-  }
+  --rt-max: var(--ac-l); // 50px
+  --rt-high: var(--ac-m); // 30px
+  --rt-mid: var(--ac-m) + var(--ac-4xs); // 35px
+  --rt-low: var(--ac-m); // 30px
+  --rt-term: var(--ac-3xs); // 10px
+  --rt-text-size: var(--ac-font-20-flex);
+  --rt-text-lead: var(--ac-line-height-loose);
+  --rt-text-track: var(--ac-letter-spacing-open);
+  --rt-quote: 0px;
 
   h2 {
-    --rt-add: var(--xs);
+    margin: var(--rt-max) 0 var(--rt-low);
+  }
+
+  h3 {
+    margin: var(--rt-high) 0 var(--rt-low);
   }
 
   h4,
   h5,
   h6 {
-    --rt-add: var(--4xs);
+    margin: calc(var(--rt-mid)) 0 var(--rt-low);
   }
 
   dt,
@@ -63,14 +59,14 @@
     --rt-text-track: ;
     --rt-low: 0;
 
-    border-left: #{util.calc-rem(3px)} solid var(--sharp-color);
-    padding-left: clamp(var(--xs), 5%, var(--m));
+    border-left: #{util.calc-rem(3px)} solid var(--ac-sharp-color);
+    padding-left: clamp(var(--ac-xs), 5%, var(--ac-m));
     margin-left: var(--rt-quote);
   }
 
   ul[data-rich],
   ol[data-rich] {
-    padding-left: clamp(var(--2xs), 3%, var(--s));
+    padding-left: clamp(var(--ac-2xs), 3%, var(--ac-s));
   }
 
   ol[data-rich] ol {
@@ -78,8 +74,8 @@
   }
 
   li[data-rich] {
-    margin-top: var(--4xs);
-    padding-left: var(--4xs);
+    margin-top: var(--ac-4xs);
+    padding-left: var(--ac-4xs);
 
     &::marker {
       font-size: 0.9em;
@@ -88,16 +84,19 @@
 
   dt,
   dd {
-    --rt-text-lead: var(--line-height-base);
-
-    margin-bottom: var(--rt-term);
+    --rt-text-lead: var(--ac-line-height-base);
   }
 
   dt {
-    --rt-text-size: var(--font-25-flex);
+    --rt-text-size: var(--ac-font-25-flex);
 
-    font-weight: var(--font-weight-medium);
-    color: var(--sharp-color);
+    font-weight: var(--ac-font-weight-medium);
+    color: var(--ac-sharp-color);
+    margin-bottom: var(--rt-term);
+  }
+
+  dd {
+    margin-bottom: var(--ac-3xs);
   }
 
   [data-rich]:first-child,
@@ -111,22 +110,10 @@
   }
 
   @include util.breakpoint-min("l") {
-    --rt-high: var(--l);
-    --rt-quote: var(--xs);
-
-    h2 {
-      --rt-add: var(--l);
-    }
-  
-    h4,
-    h5,
-    h6 {
-      --rt-high: var(--m);
-      --rt-add: var(--3xs);
-    }
-
-    dt {
-      --rt-term: var(--2xs);
-    }
+    --rt-max: var(--ac-2xl); // 100px
+    --rt-high: var(--ac-l); // 50px
+    --rt-mid: var(--ac-m) + var(--ac-3xs); // 40px
+    --rt-quote: var(--ac-xs); // 20px
+    --rt-term: var(--ac-2xs); // 15px
   }
 }

@@ -1,7 +1,6 @@
 {
   "name": "alaniz-creative",
-  "main": "lib/esbuild/esbuild.js",
-  "packageManager": "pnpm@10.23.0",
+  "packageManager": "pnpm@10.33.3",
   "type": "module",
   "scripts": {
     "build:client": "npx tsc --project tsconfig.client.json",
@@ -19,41 +18,46 @@
     "wrangler:password": "npx wrangler dev --config src/workers/Password/wrangler.json",
     "wrangler:site": "npx wrangler dev --config wrangler.json",
     "wrangler:staging": "npx wrangler dev --config wrangler.json --env staging",
-    "clean": "rm -rf node_modules/.cache/tsbuildinfo.* || true && rm -rf .cache || true && rm -rf site || true && rm -rf lib  || true && rm -rf functions || true"
+    "clean": "rm -rf node_modules/.cache/tsbuildinfo.* || true && rm -rf .cache || true && rm -rf site || true && rm -rf lib || true"
   },
   "engines": {
     "node": ">=22"
   },
+  "pnpm": {
+    "overrides": {
+      "uuid@>=13.0.0 <13.0.1": ">=13.0.1"
+    }
+  },
   "dependencies": {
-    "@alanizcreative/formation": "5.1.0-beta.22",
-    "@alanizcreative/formation-static": "0.0.1",
-    "@cloudflare/workers-types": "4.20251121.0",
-    "@esbuild/linux-x64": "0.27.0",
-    "@fullhuman/postcss-purgecss": "7.0.2",
+    "@alanizcreative/formation": "0.0.3",
+    "@alanizcreative/formation-static": "0.0.5",
+    "@cloudflare/workers-types": "4.20260506.1",
+    "@esbuild/linux-x64": "0.28.0",
+    "@fullhuman/postcss-purgecss": "8.0.0",
     "@types/html-minifier-terser": "^7.0.2",
-    "@types/node": "^24.10.1",
+    "@types/node": "^25.6.0",
     "@types/validator": "13.15.10",
-    "autoprefixer": "^10.4.22",
-    "dotenv": "^17.2.3",
-    "esbuild": "^0.27.0",
+    "autoprefixer": "^10.5.0",
+    "dotenv": "^17.4.2",
+    "esbuild": "^0.28.0",
     "html-minifier-terser": "^7.2.0",
-    "postcss": "^8.5.6",
+    "postcss": "^8.5.14",
     "postcss-modules": "^6.0.1",
-    "sass": "^1.94.2",
-    "typescript": "^5.9.3",
-    "uuid": "^13.0.0",
-    "validator": "13.15.23"
+    "sass": "^1.99.0",
+    "typescript": "^6.0.3",
+    "uuid": "^14.0.0",
+    "validator": "13.15.35"
   },
   "devDependencies": {
-    "eslint": "9.39.1",
-    "stylelint": "^16.26.0",
-    "stylelint-config-standard-scss": "^16.0.0",
-    "typescript-eslint": "8.47.0"
+    "eslint": "10.3.0",
+    "stylelint": "^17.11.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "typescript-eslint": "8.59.2"
   },
   "optionalDependencies": {
-    "nodemon": "3.1.11",
+    "nodemon": "3.1.14",
     "npm-run-all": "^4.1.5",
-    "wrangler": "^4.50.0"
+    "wrangler": "^4.88.0"
   },
   "browserslist": [
     "> 0.5%"

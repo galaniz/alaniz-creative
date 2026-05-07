@@ -18,7 +18,7 @@ import { isStringStrict } from '@alanizcreative/formation-static/utils/string/st
 const RichTextProps: RichTextPropsFilter = (props) => {
   /* Props and args */
 
-  const { args } = props
+  const { args, parents } = props
   const newArgs = { ...args }
   const {
     tag,
@@ -59,7 +59,7 @@ const RichTextProps: RichTextPropsFilter = (props) => {
 
   if (isStringStrict(color)) {
     classesArr.push('themeable theme')
-    stylesArr.push(`--theme-dark:var(--${color}-dark);--theme-light:var(--${color}-light)`)
+    stylesArr.push(`--ac-theme-dark:var(--ac-${color}-dark);--ac-theme-light:var(--ac-${color}-light)`)
   }
 
   /* Classes */
@@ -75,6 +75,10 @@ const RichTextProps: RichTextPropsFilter = (props) => {
   if (stylesArr.length) {
     newArgs.style = stylesArr.join(';')
   }
+
+  /* Data attribute */
+
+  newArgs.dataAttr = parents?.some(parent => parent.renderType === 'container' && parent.args.richTextStyles) 
 
   /* Output */
 

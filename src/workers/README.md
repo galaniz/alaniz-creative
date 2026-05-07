@@ -11,12 +11,12 @@ Set up config, filters, actions and store in serverless context.
 
 ## workerServerlessFilter  
 
-**<code>workerServerlessFilter(request: Request): Promise&lt;boolean&gt;</code>**  
+**<code>workerServerlessFilter(request: WorkerRequest): Promise&lt;boolean&gt;</code>**  
 
 Filter worker responses for password protection.
 
 ### Parameters  
-- **`request`** <code>Request</code> required
+- **`request`** <code><a href="#workerrequest">WorkerRequest</a></code> required
 
 ### Returns  
 
@@ -38,6 +38,15 @@ Verify Turnstile token.
 <code>Promise&lt;void&gt;</code>
 
 ## Types
+
+### WorkerRequest  
+
+**Type:** <code>object</code>  
+
+**Augments:** <code>Request</code>
+
+#### Properties  
+- **`cf`** <code>IncomingRequestCfProperties</code> optional
 
 ### WorkerEnv  
 

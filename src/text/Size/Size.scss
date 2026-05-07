@@ -16,7 +16,7 @@ h6,
 .heading-s,
 .heading-xs,
 .heading-2xs {
-  color: var(--sharp-color);
+  color: var(--ac-sharp-color);
 }
 
 h1,
@@ -29,7 +29,7 @@ h4,
 .heading-l,
 .heading-m,
 .heading-s {
-  letter-spacing: var(--letter-spacing-base);
+  letter-spacing: var(--ac-letter-spacing-base);
 }
 
 h1,
@@ -40,7 +40,7 @@ h3,
 .heading-xl,
 .heading-l,
 .heading-m {
-  line-height: var(--line-height-close);
+  line-height: var(--ac-line-height-close);
 }
 
 h4,
@@ -49,14 +49,14 @@ h6,
 .heading-s,
 .heading-xs,
 .heading-2xs {
-  line-height: var(--line-height-base);
+  line-height: var(--ac-line-height-base);
 }
 
 h1,
 .heading-3xl,
 .heading-2xl,
 .heading-xl {
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--ac-font-weight-normal);
 }
 
 h2,
@@ -69,7 +69,7 @@ h6,
 .heading-s,
 .heading-xs,
 .heading-2xs {
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--ac-font-weight-medium);
 }
 
 p,
@@ -77,71 +77,71 @@ p,
 .text-m,
 .text-s,
 .text-xs {
-  line-height: var(--line-height-loose);
-  letter-spacing: var(--letter-spacing-open);
+  line-height: var(--ac-line-height-loose);
+  letter-spacing: var(--ac-letter-spacing-open);
 }
 
 h1,
 .heading-3xl {
-  font-size: var(--font-70-flex);
+  font-size: var(--ac-font-70-flex);
 }
 
 .heading-2xl {
-  font-size: var(--font-60-flex);
+  font-size: var(--ac-font-60-flex);
 }
 
 .heading-xl {
-  font-size: var(--font-55-flex);
+  font-size: var(--ac-font-55-flex);
 }
 
 h2,
 .heading-l {
-  font-size: var(--font-50-flex);
+  font-size: var(--ac-font-50-flex);
 }
 
 h3,
 .heading-m {
-  font-size: var(--font-40-flex);
+  font-size: var(--ac-font-40-flex);
 }
 
 h4,
 .heading-s {
-  font-size: var(--font-30-flex);
+  font-size: var(--ac-font-30-flex);
 }
 
 h5,
 .heading-xs {
-  font-size: var(--font-25-flex);
-  letter-spacing: var(--letter-spacing-open);
+  font-size: var(--ac-font-25-flex);
+  letter-spacing: var(--ac-letter-spacing-open);
 }
 
 h6,
 .heading-2xs {
-  font-size: var(--font-20-flex);
-  letter-spacing: var(--letter-spacing-loose);
+  font-size: var(--ac-font-20-flex);
+  letter-spacing: var(--ac-letter-spacing-loose);
 }
 
 .text-quote {
   font-style: italic;
-  line-height: var(--line-height-open);
-  letter-spacing: var(--letter-spacing-open);
-  font-weight: var(--font-weight-medium);
+  line-height: var(--ac-line-height-open);
+  letter-spacing: var(--ac-letter-spacing-open);
+  font-weight: var(--ac-font-weight-medium);
 }
 
 p,
 .text-l,
 .text-quote {
-  font-size: var(--font-25-flex);
+  font-size: var(--ac-font-25-flex);
 }
 
 .text-m {
-  font-size: var(--font-20-flex);
+  font-size: var(--ac-font-20-flex);
 }
 
 .text-s {
-  font-size: var(--font-16);
+  font-size: var(--ac-font-16);
 }
 
 .text-xs {
-  font-size: var(--font-14);
+  font-size: var(--ac-font-14);
 }

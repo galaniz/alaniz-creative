@@ -34,6 +34,10 @@ Filter formation column props.
 **Augments:** <code>FormationColumnArgs</code>
 
 #### Properties  
+- **`width`** <code><a href="/src/config/README.md#configcolumn">ConfigColumn</a></code> optional  
+- **`widthSmall`** <code><a href="/src/config/README.md#configcolumn">ConfigColumn</a></code> optional  
+- **`widthMedium`** <code><a href="/src/config/README.md#configcolumn">ConfigColumn</a></code> optional  
+- **`widthLarge`** <code><a href="/src/config/README.md#configcolumn">ConfigColumn</a></code> optional  
 - **`grow`** <code>boolean</code> optional  
 Default: `false`  
 - **`widthCustom`** <code><a href="#columnwidthcustom">ColumnWidthCustom</a></code> optional  

@@ -4,7 +4,7 @@
 
 /* Imports */
 
-@forward "../../config/config";
+@use "@alanizcreative/formation/lib/utils/utils" as util;
 @use "@alanizcreative/formation/lib/objects/Loader/Loader";
 
 /* Styles */
@@ -30,11 +30,7 @@
   border-radius: var(--ld-radius, 0);
 }
 
-.loader-s {
-  --ld-size: 0.67;
-}
-
 .loader-circle {
   animation: e-load 1s ease-out infinite;
-  border: 0.25rem solid var(--ld-color, var(--sharp-color));
+  border: #{util.calc-rem(4px)} solid var(--ld-color, var(--ac-sharp-color));
 }

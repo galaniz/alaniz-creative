@@ -27,7 +27,7 @@ const Protect = (): string => {
 
   const [formStart, formEnd] = Form({
     args: {
-      action: 'password',
+      type: 'password',
       submitLabel: 'Go'
     }
   })
@@ -66,7 +66,7 @@ const Protect = (): string => {
     },
     content: /* html */`
       <div class="container-xs w-full pt-2xl pb-3xl">
-        <div class="flex w-l h-l w-xl-m h-xl-m b-radius-full bg-muted sharp">
+        <div class="flex w-l h-l w-xl-m h-xl-m b-radius-full bg-dim sharp">
           ${LockSvg({ classes: 'w-m h-m w-l-m h-l-m m-auto' })}
         </div>
         <h1 class="pt-m">${title}</h1>

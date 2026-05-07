@@ -11,7 +11,7 @@
 .text-col-2 {
   @include util.breakpoint-min("s") {
     column-count: 2;
-    column-gap: var(--m);
+    column-gap: var(--ac-m);
   }
 }
 

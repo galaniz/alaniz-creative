@@ -20,13 +20,13 @@
     *,
     *::before,
     *::after {
-      --duration: 0.001ms;
-      --easing: linear;
+      --ac-duration: 0.001ms;
+      --ac-easing: linear;
 
       transition: none;
       transition-timing-function: linear;
-      transition-duration: var(--duration);
-      animation-duration: var(--duration);
+      transition-duration: var(--ac-duration);
+      animation-duration: var(--ac-duration);
       animation-iteration-count: 1;
     }
   }

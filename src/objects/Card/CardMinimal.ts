@@ -60,7 +60,7 @@ const CardMinimal = (internalLink: Item, text?: string): string => {
  */
 const CardMinimalContainer = (output: string): string => {
   return /* html */`
-    <ul class="ls-none e-line-up flex col gap-m gap-l-l" role="list">
+    <ul class="list-none e-line-up flex col gap-m gap-l-l" role="list">
       ${output}
     </ul>
   `

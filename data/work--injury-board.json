@@ -19,7 +19,7 @@
     "secondary-dark": "#06375d",
     "secondary-light": "#3f8ecc",
     "med-primary": "#007fb0",
-    "med-secondary": "var(--background-light)",
+    "med-secondary": "var(--ac-background-light)",
     "med-tertiary": "#06375d"
   },
   "related": [

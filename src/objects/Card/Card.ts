@@ -5,7 +5,7 @@
 /* Imports */
 
 import type { CardProps, CardType } from './CardTypes.js'
-import type { ParentArgs } from '@alanizcreative/formation-static/global/globalTypes.js'
+import type { Parent } from '@alanizcreative/formation-static/global/globalTypes.js'
 import { isArrayStrict } from '@alanizcreative/formation-static/utils/array/array.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
@@ -28,7 +28,7 @@ const Card = (props: CardProps): string => {
     return ''
   }
 
-  const { args } = props
+  const { args, parents } = props
 
   if (!isObjectStrict(args)) {
     return ''
@@ -82,7 +82,7 @@ const Card = (props: CardProps): string => {
 
   /* Parents */
 
-  const parents: ParentArgs[] = [
+  const newParents: Parent[] = [
     {
       renderType: 'card',
       args: {
@@ -91,8 +91,8 @@ const Card = (props: CardProps): string => {
     }
   ]
 
-  if (isMinimal || (isCascade && isHalf)) {
-    parents.push({
+  if (isFull || isMinimal || (isCascade && isHalf)) {
+    newParents.push({
       renderType: 'column',
       args: {
         width: '12',
@@ -102,25 +102,14 @@ const Card = (props: CardProps): string => {
     })
   }
 
-  if (isFull) {
-    parents.push({
-      renderType: 'column',
-      args: {
-        width: '12',
-        widthSmall: isMinimal ? '6' : undefined,
-        widthMedium: isCascade && isHalf ? '4' : undefined
-      }
-    })
-  }
-
-  if (props.parents && !isFull) {
-    parents.push(...props.parents)
+  if (parents && !isFull) {
+    newParents.push(...parents)
   }
 
   /* Text */
 
   const headingTag = `h${headingLevel}`
-  let headingClasses = 'theme td-none'
+  let headingClasses = 'theme deco-none'
   let textClasses = ''
   let subText = ''
 
@@ -169,7 +158,7 @@ const Card = (props: CardProps): string => {
   }
 
   if (theme) {
-    styles = ` style="--theme-dark:${theme['primary-dark']};--theme-light:${theme['primary-light']}"`
+    styles = ` style="--ac-theme-dark:${theme['primary-dark']};--ac-theme-light:${theme['primary-light']}"`
   }
 
   /* Blob */
@@ -192,7 +181,7 @@ const Card = (props: CardProps): string => {
         <path
           d="${path}"
           fill="none"
-          stroke="var(--theme-color)"
+          stroke="var(--ac-theme-color)"
           stroke-opacity="0.5"
           stroke-width="1"
           vector-effect="non-scaling-stroke"
@@ -231,7 +220,7 @@ const Card = (props: CardProps): string => {
               ...hero,
               aspectRatio: '16-10'
             },
-            parents
+            parents: newParents
           })}
         </div>
       </div>
@@ -248,7 +237,7 @@ const Card = (props: CardProps): string => {
  * @return {string} HTMLUListElement
  */
 const CardContainer = (output: string, type: CardType = 'minimal', classes?: string): string => {
-  let listClasses = 'ls-none'
+  let listClasses = 'list-none'
 
   if (type === 'minimal') {
     listClasses += ' flex wrap gap-m gap-l-l'

@@ -4,7 +4,7 @@
 
 /* Imports */
 
-import type { FormProps } from './FormTypes.js'
+import type { FormAction, FormProps } from './FormTypes.js'
 import { v4 as uuid } from 'uuid'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 import { setStoreItem } from '@alanizcreative/formation-static/store/store.js'
@@ -25,31 +25,13 @@ const Form = (props: FormProps): FormProps => {
 
   const { args } = props
   const {
-    action = 'contact',
+    type = 'contact',
     successTitle,
     successText,
     toEmail,
     senderEmail,
     submitLabel = 'Send'
   } = args
-
-  /* Error summary */
-
-  const errorSummaryId = 'tmpl-error-summary'
-
-  configVars.template.set(errorSummaryId, /* html */`
-    <div class="info-error flex gap-3xs px-xs py-xs b-radius-s w-full none outline-none" tabindex="-1">
-      ${ErrorSvg({
-        width: 's',
-        height: 's',
-        classes: 'w-m-m h-m-m'
-      })}
-      <div>
-        <h2 class="text-m wt-medium m-0">There is a problem</h2>
-        <ul class="flex col pb-4xs gap-4xs text-s ls-none e-line-all" role="list"></ul>
-      </div>
-    </div>
-  `)
 
   /* Inline error */
 
@@ -62,6 +44,14 @@ const Form = (props: FormProps): FormProps => {
       <span class="text-s wt-medium" data-form-error-text></span>
     </span>
   `)
+
+  /* Error summary */
+
+  const errorSummaryId = Info({
+    title: 'There is a problem',
+    template: true,
+    type: 'error-summary'
+  })
 
   /* Error */
 
@@ -85,15 +75,23 @@ const Form = (props: FormProps): FormProps => {
 
   const loaderId = Loader()
 
-  /* Id */
+  /* ID */
 
   const formId = uuid()
   configVars.formId = formId
 
-  /* Attributes */
+  /* Action */
+
+  const action: FormAction = `${type}${config.env.prod ? '' : '-dev'}`
+
+  /* Site key */
 
   const siteKey = config.env.prod ? '0x4AAAAAABpyURQ9TLndYvrm' : '1x00000000000000000000BB'
-  let formAttr = ` action="${action}${config.env.prod ? '' : '-dev'}" error-summary="${errorSummaryId}" error-inline="${errorInlineId}" error="${errorId}" success="${successId}" loader="${loaderId}" sitekey="${siteKey}"`
+
+  /* Attributes */
+
+  let formAttr =
+    ` action="${action}" error-summary="${errorSummaryId}" error-inline="${errorInlineId}" error="${errorId}" success="${successId}" loader="${loaderId}" sitekey="${siteKey}"`
 
   if (isStringStrict(successTitle)) {
     formAttr += ` success-title="${successTitle}"`
@@ -105,7 +103,7 @@ const Form = (props: FormProps): FormProps => {
 
   /* Meta */
 
-  if (action === 'contact' && isStringStrict(toEmail) && isStringStrict('senderEmail')) {
+  if (type === 'contact' && isStringStrict(toEmail) && isStringStrict('senderEmail')) {
     setStoreItem('formMeta', {
       toEmail,
       senderEmail

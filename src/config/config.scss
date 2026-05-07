@@ -2,6 +2,10 @@
  * Config - Styles
  */
 
+/* Imports */
+
+@use "sass:list";
+
 /* Sizes */
 
 $sizes: (
@@ -22,14 +26,20 @@ $sizes: (
 /* Config variables */
 
 @use "@alanizcreative/formation/lib/config/config" with (
+  /* Namespace */
+
+  $namespace: "ac",
+
   /* Colors */
 
   $colors-type: "hsla",
   $colors: (
     "foreground": ( // Black
       "base": "0, 0%, 13%", // #222
+      "light": "0, 0%, 20%", // #333
     ),
     "background": ( // White
+      "base": "0, 0%, 93%", // #eee
       "light": "0, 0%, 100%", // #fff
     ),
     "negative": ( // Red
@@ -212,9 +222,10 @@ $sizes: (
 
   /* Aspect ratios */
 
-  $aspect-ratio-padding: (
-    "16-10": 62.5%,
-    "16-9": 56.25%,
+  $aspect-ratios: (
+    "1-1": list.slash(1, 1),
+    "16-10": list.slash(16, 10),
+    "16-9": list.slash(16, 9),
   ),
 
   /* Nav */
@@ -251,7 +262,7 @@ $sizes: (
       "default": 5px
     ),
     "colors": (
-      "default": "var(--foreground-base)"
+      "default": "var(--ac-foreground-base)"
     ),
     "offsets": (
       "default": 5px,

@@ -6,5 +6,5 @@
   "title": "Work Categories",
   "contentTypes": ["work"],
   "isPage": true,
-  "usePrimaryContentTypeSlug": true
+  "useContentTypeSlug": true
 }

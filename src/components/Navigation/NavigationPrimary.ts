@@ -32,7 +32,7 @@ const NavigationPrimary = (args: NavigationPrimaryArgs): string => {
 
   /* List */
   
-  const listClass = 'nav-list ls-none'
+  const listClass = 'nav-list list-none'
   const listAttr = 'role="list"'
   const linkClass = 'nav-link'
   const itemClass = 'nav-item e-trans'
@@ -84,7 +84,6 @@ const NavigationPrimary = (args: NavigationPrimaryArgs): string => {
     modalOutput = /* html */`
       <button
         class="nav-open pt-5xs flex nav-hide no-js-none"
-        aria-haspopup="true"
         aria-label="Open menu"
         data-nav-open
       >
@@ -96,7 +95,7 @@ const NavigationPrimary = (args: NavigationPrimaryArgs): string => {
         <span class="text-xs wt-medium block mt-4xs" aria-hidden="true">Menu</span>
       </button>
       <div
-        class="nav-modal fixed all-0 w-full h-full z-index-1"
+        class="nav-modal fixed inset-0 w-full h-full z-1"
         role="dialog"
         aria-modal="true"
         aria-label="Primary menu"
@@ -108,7 +107,7 @@ const NavigationPrimary = (args: NavigationPrimaryArgs): string => {
           aria-label="${config.title} Home"
         ></a>
         <div class="nav-modal-scroll overflow-y-auto overflow-x-hidden overscroll-none h-full e-trans relative sharp px-3xs py-m">
-          <ul class="nav-modal-list flex col pb-l gap-2xs outline-tight ls-none h-full" role="list" data-nav-modal-slot></ul>
+          <ul class="nav-modal-list flex col pb-l gap-2xs outline-tight list-none h-full" role="list" data-nav-modal-slot></ul>
           <button
             class="nav-close nav-icon h-l fixed"
             aria-label="Close menu"
@@ -116,7 +115,7 @@ const NavigationPrimary = (args: NavigationPrimaryArgs): string => {
           ></button>
         </div>
         <div
-          class="nav-overlay fixed all-0 z-index--1 w-full h-full bg-background-light e-trans e-quad"
+          class="nav-overlay fixed inset-0 z--1 w-full h-full bg-background-light e-trans e-quad"
           data-nav-close
         ></div>
       </div>
@@ -142,7 +141,7 @@ const NavigationPrimary = (args: NavigationPrimaryArgs): string => {
 
   return /* html */`
     <ac-navigation-primary
-      class="nav relative container py-m py-l-m flex justify-between align-center td-none"
+      class="nav relative container pt-m pt-l-m flex justify-between align-center deco-none"
       breakpoints="${breakpoint}"
       role="navigation"
       aria-label="Primary"

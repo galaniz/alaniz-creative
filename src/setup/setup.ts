@@ -6,6 +6,8 @@
 
 import type { RenderReturn } from '@alanizcreative/formation-static/render/renderTypes.js'
 import { resolve } from 'node:path'
+import { readFile } from 'node:fs/promises'
+import { pathToFileURL } from 'node:url'
 import esbuild from 'esbuild'
 import * as sass from 'sass'
 import autoprefixer from 'autoprefixer'
@@ -121,12 +123,14 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
         continue
       }
 
-      const sassRes = sass.compile(`./${file}`, {
+      const sassContents = await readFile(`./${file}`, 'utf8')
+      const sassRes = sass.compileString(`@forward "config/config";${sassContents}`, {
         loadPaths: [
           'node_modules',
           './src'
         ],
-        style: 'compressed'
+        style: 'compressed',
+        url: pathToFileURL(`./${file}`)
       })
 
       const sassCss = sassRes.css
@@ -163,7 +167,7 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
               ...configVars.css.safelist
             ],
             dynamicAttributes: [
-              'data-no-scroll',
+              'data-scroll',
               'data-loader',
               'show-modal',
               'open',

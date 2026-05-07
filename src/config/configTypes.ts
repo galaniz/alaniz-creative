@@ -10,9 +10,11 @@ import type { Generic } from '@alanizcreative/formation-static/global/globalType
  * @typedef {object} ConfigEnv
  * @extends {Generic}
  * @prop {string} [ENVIRONMENT]
+ * @prop {string} [LOCAL]
  */
 export interface ConfigEnv extends Generic {
   ENVIRONMENT?: string
+  LOCAL?: string
 }
 
 /**
@@ -74,14 +76,14 @@ export interface ConfigVars {
 }
 
 /**
- * @typedef {'background-light'|'foreground-base'|'bright'} ConfigBackgrounds
+ * @typedef {'background-light'|'foreground-base'|'bright'} ConfigBackgroundColor
  */
-export type ConfigBackgrounds = 'background-light' | 'foreground-base' | 'bright'
+export type ConfigBackgroundColor = 'background-light' | 'foreground-base' | 'bright'
 
 /**
- * @typedef {'0'|'4xs'|'3xs'|'2xs'|'xs'|'s'|'m'|'l'|'xl'|'2xl'|'3xl'|'4xl'|'5xl'} ConfigSizes
+ * @typedef {'0'|'4xs'|'3xs'|'2xs'|'xs'|'s'|'m'|'l'|'xl'|'2xl'|'3xl'|'4xl'|'5xl'} ConfigSize
  */
-export type ConfigSizes =
+export type ConfigSize =
   '0' |
   '4xs' |
   '3xs' |

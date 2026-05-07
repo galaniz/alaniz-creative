@@ -4,8 +4,8 @@
 
 /* Imports */
 
-import type { Item } from '../../global/globalTypes.js'
 import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
+import type { Item } from '../../global/globalTypes.js'
 
 /**
  * @typedef {object} MediaArgs

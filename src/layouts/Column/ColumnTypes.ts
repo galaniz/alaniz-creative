@@ -4,10 +4,10 @@
 
 /* Imports */
 
-import type { Item } from '../../global/globalTypes.js'
-import type { ConfigAlign, ConfigJustify, ConfigColumn } from '../../config/configTypes.js'
 import type { ColumnArgs as FormationColumnArgs } from '@alanizcreative/formation-static/layouts/Column/ColumnTypes.js'
 import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
+import type { ConfigAlign, ConfigJustify, ConfigColumn } from '../../config/configTypes.js'
+import type { Item } from '../../global/globalTypes.js'
 
 /**
  * @typedef {object} ColumnWidthCustom
@@ -39,6 +39,10 @@ export type ColumnPosition =
 /**
  * @typedef {object} ColumnArgs
  * @extends {FormationColumnArgs}
+ * @prop {ConfigColumn} [width]
+ * @prop {ConfigColumn} [widthSmall]
+ * @prop {ConfigColumn} [widthMedium]
+ * @prop {ConfigColumn} [widthLarge]
  * @prop {boolean} [grow=false]
  * @prop {ColumnWidthCustom} [widthCustom]
  * @prop {ColumnPosition} [position]

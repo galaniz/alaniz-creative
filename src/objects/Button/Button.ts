@@ -37,7 +37,7 @@ const Button = (props: ButtonProps): string => {
     internalLink,
     externalLink,
     type = 'primary',
-    size = 'medium',
+    size = 'm',
     richText = false,
     justify,
     paddingTop,
@@ -91,19 +91,7 @@ const Button = (props: ButtonProps): string => {
     })
   }
 
-  /* Output */
-
-  let output = `
-    <a class="${linkClasses}" href="${link}">
-      ${iconBefore}
-      ${title}
-      ${iconAfter}
-    </a>
-  `
-
-  if (richText) {
-    output = `<div>${output}</div>`
-  }
+  /* Layout */
 
   const classes: string[] = []
 
@@ -117,6 +105,20 @@ const Button = (props: ButtonProps): string => {
 
   if (isStringStrict(justify)) {
     classes.push(`flex justify-${justify}`)
+  }
+
+  /* Output */
+
+  let output = `
+    <a class="${linkClasses}" href="${link}">
+      ${iconBefore}
+      ${title}
+      ${iconAfter}
+    </a>
+  `
+
+  if (richText) {
+    output = `<div>${output}</div>`
   }
 
   if (classes.length) {

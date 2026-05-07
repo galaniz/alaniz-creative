@@ -11,19 +11,24 @@ import { cp, mkdir, writeFile } from 'node:fs/promises'
 import { print } from '@alanizcreative/formation-static/utils/print/print.js'
 
 /**
- * Create site HTML files.
- *
- * @param {object} args
- * @param {string} [args.outDir]
- * @param {boolean} [args.watch=false]
- * @param {Object<string, string>} [args.copy]
- * @return {Plugin}
+ * @typedef {object} EsbuildHtmlArgs
+ * @prop {string} [outDir]
+ * @prop {boolean} [watch=false]
+ * @prop {Object<string, string>} [copy]
  */
-const esbuildHtml = (args: {
+interface EsbuildHtmlArgs {
   outDir: string
   watch?: boolean
   copy?: Record<string, string>
-}): Plugin => {
+}
+
+/**
+ * Create site HTML files.
+ *
+ * @param {EsbuildHtmlArgs} args
+ * @return {Plugin}
+ */
+const esbuildHtml = (args: EsbuildHtmlArgs): Plugin => {
   const {
     outDir,
     watch = false,

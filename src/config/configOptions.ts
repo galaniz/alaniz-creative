@@ -12,13 +12,13 @@ import type { ConfigContainer, ConfigBreakpoint, ConfigColumn, ConfigBlob } from
  * @type {Object<ConfigContainer, number>}
  */
 export const configContainerNumbers: Record<ConfigContainer, number> = {
-  default: 1300,
+  'default': 1300,
   '2xl': 1800,
-  xl: 1600,
-  l: 1400,
-  m: 1200,
-  s: 1050,
-  xs: 800
+  'xl': 1600,
+  'l': 1400,
+  'm': 1200,
+  's': 1050,
+  'xs': 800
 }
 
 /**
@@ -44,9 +44,9 @@ export const configColumnFloats: Record<ConfigColumn, number> = {
   '10': 0.8333,
   '9': 0.75,
   '8': 0.6667,
-  '7': 0.6,
+  '7': 0.5833,
   '6': 0.5,
-  '5': 0.4,
+  '5': 0.4167,
   '4': 0.3333,
   '3': 0.25,
   '2': 0.1666,

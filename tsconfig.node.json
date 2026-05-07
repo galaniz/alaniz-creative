@@ -34,8 +34,6 @@
     "lib",
     "node_modules",
     "src/workers",
-    "src/**/*Block.ts",
-    "src/**/*Block.tsx",
     "src/**/*Client.ts",
     "src/**/*Types.ts"
   ]

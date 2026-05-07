@@ -2,17 +2,23 @@
  * Effects - Shift Styles
  */
 
+/* Imports */
+
+@use "@alanizcreative/formation/lib/utils/utils" as util;
+
+/* Styles */
+
 .e-shift,
-.e-shift-attr [data-shift] {
+.e-shift-item {
   transform: translate3d(0, var(--sh-y), 0) scale(var(--sh-scale, 1));
 }
 
 .e-shift,
-.e-shift-attr {
+.e-shift-hover {
   --sh-y: 0;
 
   &:hover {
-    --sh-y: -0.3125rem;
+    --sh-y: #{util.calc-rem(-5px)};
     --sh-scale: 1.01;
   }
 }

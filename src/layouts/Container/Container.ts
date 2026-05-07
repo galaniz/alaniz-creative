@@ -57,7 +57,7 @@ const Container = (props: ContainerProps): ContainerProps => {
   /* List check */
 
   if (tag === 'ul' || tag === 'ol') {
-    classesArr.push('ls-none')
+    classesArr.push('list-none')
     newArgs.attr = 'role="list"'
   }
 

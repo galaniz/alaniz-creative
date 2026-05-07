@@ -9,7 +9,7 @@ import type { ServerlessActionData } from '@alanizcreative/formation-static/serv
 import { ResponseError } from '@alanizcreative/formation/utils/ResponseError/ResponseError.js'
 import { Form as FormBase } from '@alanizcreative/formation/objects/Form/Form.js'
 import { isHtmlElement } from '@alanizcreative/formation/utils/html/html.js'
-import { getItem } from '@alanizcreative/formation/utils/item/item.js'
+import { getItem } from '@alanizcreative/formation/items/items.js'
 import { setDisplay } from '@alanizcreative/formation/utils/display/display.js'
 import { isString } from '@alanizcreative/formation/utils/string/string.js'
 
@@ -198,7 +198,7 @@ class Form extends FormBase {
     }
 
     if (isString(title)) {
-      const resultTitle = getItem('[data-info-title]', result)
+      const resultTitle = getItem('h2', result)
 
       if (resultTitle) {
         resultTitle.textContent = title
@@ -206,7 +206,7 @@ class Form extends FormBase {
     }
 
     if (isString(text)) {
-      const resultText = getItem('[data-info-text]', result)
+      const resultText = getItem('p', result)
 
       if (resultText) {
         resultText.textContent = text

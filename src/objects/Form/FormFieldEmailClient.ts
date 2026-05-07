@@ -9,7 +9,7 @@ import type {
   FormValidateResult
 } from '@alanizcreative/formation/objects/Form/FormTypes.js'
 import { isStringStrict } from '@alanizcreative/formation/utils/string/string.js'
-import { addFilter, removeFilter } from '@alanizcreative/formation/utils/filter/filter.js'
+import { addFilter, removeFilter } from '@alanizcreative/formation/filters/filters.js'
 import isEmail from 'validator/es/lib/isEmail.js'
 
 /**
@@ -127,7 +127,7 @@ class FormFieldEmail extends HTMLElement {
    * @param {FormValidateFilterArgs} args
    * @return {FormValidateResult}
    */
-  #validate (result: FormValidateResult, args: FormValidateFilterArgs): FormValidateResult {
+  #validate (result: FormValidateResult<string[]>, args: FormValidateFilterArgs): FormValidateResult<string[]> {
     const { name, groups } = args
 
     if (name !== this.inputName) {
@@ -144,7 +144,7 @@ class FormFieldEmail extends HTMLElement {
       }
     }
 
-    if (email && !isEmail(email as string)) {
+    if (email && !isEmail(email)) {
       return {
         ...result,
         valid: false,

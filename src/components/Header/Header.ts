@@ -11,8 +11,8 @@ import { SkipLink } from '../SkipLink/SkipLink.js'
 /**
  * Output header.
  *
- * @prop {string} currentLink
- * @prop {string|string[]} [currentType]
+ * @param {string} currentLink
+ * @param {string|string[]} [currentType]
  * @return {string} HTMLElement
  */
 const Header = (currentLink: string, currentType?: string | string[]): string => {
