@@ -54,10 +54,6 @@
             {
               "tag": "li",
               "content": "Headless CMS implementation"
-            },
-            {
-              "tag": "li",
-              "content": "A11y-focused development"
             }
           ]
         },

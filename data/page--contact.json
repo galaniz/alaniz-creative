@@ -7,7 +7,7 @@
   "hero": {
     "title": "Get In Touch",
     "type": "minimal",
-    "text": "Have an exciting project or collaboration you'd like to talk about? You can reach me at <a href='mailto:graciela@alanizcreative.com' data-rich>graciela@alanizcreative.com</a> or fill out the form below. Looking forward to hearing from you!"
+    "text": "Have an exciting project or collaboration you'd like to talk about? You can reach me at <a href='mailto:graciela@alanizcreative.com' data-rich>graciela@alanizcreative.com</a> or fill out the form below. Looking forward to hearing from you."
   },
   "content": [
     {
@@ -16,7 +16,7 @@
       "content": [
         {
           "renderType": "form",
-          "successTitle": "Thank you for your message!",
+          "successTitle": "Thank you for your message",
           "successText": "I will get back to you as soon as possible.",
           "toEmail": "hello@alanizcreative.com",
           "senderEmail": "info@alanizcreative.com",
