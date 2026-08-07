@@ -2,8 +2,6 @@
  * Workers - Site
  */
 
-/* Imports */
-
 import type { SiteWorkerEnv } from './SiteTypes.js'
 import type { WorkerRequest } from '../workerTypes.js'
 import { WorkerEntrypoint } from 'cloudflare:workers'

@@ -2,8 +2,6 @@
  * Global - Types
  */
 
-/* Imports */
-
 import type { InternalLink } from '@alanizcreative/formation-static/global/globalTypes.js'
 import type { RenderItem } from '@alanizcreative/formation-static/render/renderTypes.js'
 import type { HeroArgs } from '../components/Hero/HeroTypes.js'

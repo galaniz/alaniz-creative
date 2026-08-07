@@ -2,8 +2,6 @@
  * Components - Hero Types
  */
 
-/* Imports */
-
 import type { RenderFile } from '@alanizcreative/formation-static/render/renderTypes.js'
 import type { ConfigBlob } from '../../config/configTypes.js'
 import type { ButtonArgs } from '../../objects/Button/ButtonTypes.js'

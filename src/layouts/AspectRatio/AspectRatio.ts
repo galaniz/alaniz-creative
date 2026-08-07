@@ -2,8 +2,6 @@
  * Layouts - Aspect Ratio
  */
 
-/* Imports */
-
 import type { AspectRatioProps } from './AspectRatioTypes.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { isNumber } from '@alanizcreative/formation-static/utils/number/number.js'

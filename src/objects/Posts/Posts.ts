@@ -2,8 +2,6 @@
  * Objects - Posts
  */
 
-/* Imports */
-
 import type { PostsProps } from './PostsTypes.js'
 import type { Item } from '../../global/globalTypes.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'

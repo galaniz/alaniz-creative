@@ -2,8 +2,6 @@
  * Components - Header
  */
 
-/* Imports */
-
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 import { NavigationPrimary } from '../Navigation/NavigationPrimary.js'
 import { SkipLink } from '../SkipLink/SkipLink.js'

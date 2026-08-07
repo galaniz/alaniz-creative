@@ -2,8 +2,6 @@
  * Components - Layout
  */
 
-/* Imports */
-
 import type { LayoutArgs } from './LayoutTypes.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { getPermalink } from '@alanizcreative/formation-static/utils/link/link.js'
@@ -115,8 +113,8 @@ const Layout = (args: LayoutArgs): string => {
 
   let scriptsOutput = ''
 
-  if (configVars.js.out) {
-    scriptsOutput += `<script type="module" src="${baseLink}${configVars.js.out}.js"></script>`
+  if (configVars.js.globalOut) {
+    scriptsOutput += `<script type="module" src="${baseLink}${configVars.js.globalOut}.js"></script>`
   }
 
   scriptsOutput += outputScripts(baseLink)
@@ -124,7 +122,7 @@ const Layout = (args: LayoutArgs): string => {
   /* Styles */
 
   configVars.css.replace =
-    `<link rel="stylesheet" href="${baseLink}${configVars.css.out}.css" media="all">` + outputStyles(baseLink)
+    `<link rel="stylesheet" href="${baseLink}${configVars.css.globalOut}.css" media="all">` + outputStyles(baseLink)
 
   let stylesOutput =
     '@media (prefers-reduced-motion:reduce){.no-motion-show{display:block}.no-motion-hide{display:none}}'

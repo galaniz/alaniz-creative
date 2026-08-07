@@ -2,8 +2,6 @@
  * Objects - Logo
  */
 
-/* Imports */
-
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 import { getPermalink } from '@alanizcreative/formation-static/utils/link/link.js'
 import { config } from '../../config/config.js'

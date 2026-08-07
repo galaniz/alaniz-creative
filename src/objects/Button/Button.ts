@@ -2,8 +2,6 @@
  * Objects - Button
  */
 
-/* Imports */
-
 import type { ButtonProps } from './ButtonTypes.js'
 import { getLink } from '@alanizcreative/formation-static/utils/link/link.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'

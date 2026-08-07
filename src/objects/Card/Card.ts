@@ -2,8 +2,6 @@
  * Objects - Card
  */
 
-/* Imports */
-
 import type { CardProps, CardType } from './CardTypes.js'
 import type { Parent } from '@alanizcreative/formation-static/global/globalTypes.js'
 import { isArrayStrict } from '@alanizcreative/formation-static/utils/array/array.js'

@@ -2,8 +2,6 @@
  * Layouts - Column Types
  */
 
-/* Imports */
-
 import type { ColumnArgs as FormationColumnArgs } from '@alanizcreative/formation-static/layouts/Column/ColumnTypes.js'
 import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
 import type { ConfigAlign, ConfigJustify, ConfigColumn } from '../../config/configTypes.js'

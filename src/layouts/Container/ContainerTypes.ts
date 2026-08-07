@@ -2,8 +2,6 @@
  * Layouts - Container Types
  */
 
-/* Imports */
-
 import type {
   ContainerArgs as FormationContainerArgs
 } from '@alanizcreative/formation-static/layouts/Container/ContainerTypes.js'

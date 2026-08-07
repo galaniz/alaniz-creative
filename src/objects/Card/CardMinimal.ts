@@ -2,8 +2,6 @@
  * Objects - Card Minimal
  */
 
-/* Imports */
-
 import type { Item } from '../../global/globalTypes.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'

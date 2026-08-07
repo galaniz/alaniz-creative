@@ -2,8 +2,6 @@
  * Objects - Media
  */
 
-/* Imports */
-
 import type { MediaProps } from './MediaTypes.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'

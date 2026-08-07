@@ -2,8 +2,6 @@
  * Setup - Build
  */
 
-/* Imports */
-
 import type { RenderReturn } from '@alanizcreative/formation-static/render/renderTypes.js'
 import { resolve } from 'node:path'
 import { readFile } from 'node:fs/promises'
@@ -64,12 +62,12 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
 
     const { css, js } = configVars
 
-    if (css.in && css.out) {
-      entryPoints[css.out] = `${css.in}.scss`
+    if (css.globalIn && css.globalOut) {
+      entryPoints[css.globalOut] = `${css.globalIn}.scss`
     }
 
-    if (js.in && js.out) {
-      entryPoints[js.out] = `${js.in}.js`
+    if (js.globalIn && js.globalOut) {
+      entryPoints[js.globalOut] = `${js.globalIn}.js`
     }
 
     await esbuild.build({
@@ -79,7 +77,7 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
       bundle: true,
       splitting: true,
       format: 'esm',
-      target: 'es6',
+      target: 'es2022',
       external: [
         '*.woff',
         '*.woff2'
@@ -97,11 +95,11 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
   /* Inline styles */
 
   filters.renderItem = async (output) => {
-    if (!configVars.css.in || !configVars.css.replace) {
+    if (!configVars.css.globalIn || !configVars.css.replace) {
       return output
     }
 
-    const globalFile = `${configVars.css.in}.scss`
+    const globalFile = `${configVars.css.globalIn}.scss`
     const inlineFiles = new Set(styles.item.values())
 
     inlineFiles.add(globalFile)

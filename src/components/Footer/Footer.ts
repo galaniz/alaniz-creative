@@ -2,8 +2,6 @@
  * Components - Footer
  */
 
-/* Imports */
-
 import { getYear } from '@alanizcreative/formation-static/utils/year/year.js'
 import { addStyle } from '@alanizcreative/formation-static/scripts/scripts.js'
 import { navigationsInstance } from '../Navigation/Navigations.js'

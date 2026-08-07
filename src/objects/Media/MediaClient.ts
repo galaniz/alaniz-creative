@@ -2,8 +2,6 @@
  * Objects - Media Primary Client
  */
 
-/* Imports */
-
 import { Media } from '@alanizcreative/formation/objects/Media/Media.js'
 
 /* Define */

@@ -2,8 +2,6 @@
  * Text - Rich Text
  */
 
-/* Imports */
-
 import type {
   RichTextContentItemFilter,
   RichTextPropsFilter

@@ -2,8 +2,6 @@
  * Workers - File
  */
 
-/* Imports */
-
 import type { FileWorkerMedia } from './FileTypes.js'
 
 /**

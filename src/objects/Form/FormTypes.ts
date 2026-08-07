@@ -2,8 +2,6 @@
  * Objects - Form Types
  */
 
-/* Imports */
-
 import type {
   FormArgs as FormationFormArgs,
   FormFieldArgs as FormationFormFieldArgs

@@ -2,8 +2,6 @@
  * Components - Hero
  */
 
-/* Imports */
-
 import type { HeroArgs, HeroWave, HeroWaveSvg } from './HeroTypes.js'
 import type { ImageArgs } from '../../objects/Image/ImageTypes.js'
 import type { Parent } from '@alanizcreative/formation-static/global/globalTypes.js'

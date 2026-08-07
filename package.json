@@ -21,7 +21,7 @@
     "clean": "rm -rf node_modules/.cache/tsbuildinfo.* || true && rm -rf .cache || true && rm -rf site || true && rm -rf lib || true"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "pnpm": {
     "overrides": {
