@@ -2,7 +2,7 @@
   "title": "About",
   "slug": "about",
   "date": "2023-11-05T00:14:32",
-  "dateModified": "2026-08-12T23:27:35",
+  "dateModified": "2026-08-12T23:39:52",
   "hero": {
     "type": "profile",
     "title": "Hi, I'm Graciela Alaniz",
@@ -26,6 +26,7 @@
     {
       "renderType": "container",
       "maxWidth": "xs",
+      "paddingBottom": "m",
       "richTextStyles": true,
       "content": [
         {
@@ -92,8 +93,7 @@
       "renderType": "container",
       "maxWidth": "xs",
       "layout": "row",
-      "background": "background-light",
-      "border": "rounded",
+      "background": "foreground-base",
       "align": "center",
       "gap": "s",
       "paddingTop": "s",
@@ -105,7 +105,7 @@
           "renderType": "image",
           "image": "puffin-innovations/blue-light-blue",
           "alt": "",
-          "width": "xs"
+          "width": "s"
         },
         {
           "renderType": "richText",
