@@ -97,8 +97,8 @@ const imageSchema = z.object({
     .describe('Media library key, for example citris/hero. Upload images in the media library first.'),
   alt: z
     .string()
-    .min(1)
-    .describe('What the image shows, for people who cannot see it. Always required.'),
+    .optional()
+    .describe('What the image shows, for people who cannot see it. Write one unless the image is purely decorative and the surrounding text already says everything it conveys.'),
   width: sizeOption
     .or(z.literal('full'))
     .optional()
