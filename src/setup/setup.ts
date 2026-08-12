@@ -24,6 +24,7 @@ import { createRedirectsFile } from '@alanizcreative/formation-static/redirects/
 import { scripts, styles } from '@alanizcreative/formation-static/scripts/scripts.js'
 import { getAllLocalData } from '@alanizcreative/formation-static/local/localData.js'
 import { setStore } from '@alanizcreative/formation-static/store/store.js'
+import { validateContent } from '../schema/schemaValidate.js'
 import { storeArgs } from '../store/store.js'
 import { postsData } from '../objects/Posts/Posts.js'
 import { renderFunctions } from '../render/render.js'
@@ -52,6 +53,10 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
   /* Root */
 
   config.env.dir = resolve('./')
+
+  /* Content validation */
+
+  await validateContent(config.local.dir)
 
   /* Build styles and scripts */
 

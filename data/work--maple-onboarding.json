@@ -325,7 +325,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/value-prop-welcome",
                       "border": true,
-                      "alt": ""
+                      "alt": "Welcome screen in the value props variant of the Maple onboarding flow"
                     }
                   ]
                 },
@@ -340,7 +340,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/value-prop-intent",
                       "border": true,
-                      "alt": ""
+                      "alt": "Intent screen in the value props variant of the Maple onboarding flow"
                     }
                   ]
                 },
@@ -355,7 +355,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/value-prop-prescriptions-1",
                       "border": true,
-                      "alt": ""
+                      "alt": "First prescriptions value prop screen in the Maple onboarding flow"
                     }
                   ]
                 },
@@ -370,7 +370,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/value-prop-prescriptions-2",
                       "border": true,
-                      "alt": ""
+                      "alt": "Second prescriptions value prop screen in the Maple onboarding flow"
                     }
                   ]
                 },
@@ -385,7 +385,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/value-prop-prescriptions-3",
                       "border": true,
-                      "alt": ""
+                      "alt": "Third prescriptions value prop screen in the Maple onboarding flow"
                     }
                   ]
                 },
@@ -400,7 +400,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/value-prop-confirmation",
                       "border": true,
-                      "alt": ""
+                      "alt": "Confirmation screen in the value props variant of the Maple onboarding flow"
                     }
                   ]
                 }
@@ -600,7 +600,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/app-create-consult",
                       "border": true,
-                      "alt": ""
+                      "alt": "The Maple app create consult screen, one of the onboarding destinations tested"
                     }
                   ]
                 },
@@ -613,7 +613,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/app-paywall",
                       "border": true,
-                      "alt": ""
+                      "alt": "The Maple app paywall, one of the onboarding destinations tested"
                     }
                   ]
                 },
@@ -626,7 +626,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/app-dashboard",
                       "border": true,
-                      "alt": ""
+                      "alt": "The Maple app dashboard, one of the onboarding destinations tested"
                     }
                   ]
                 }
@@ -773,7 +773,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/how-it-works-welcome",
                       "border": true,
-                      "alt": ""
+                      "alt": "Welcome screen in the how it works variant of the Maple onboarding flow"
                     }
                   ]
                 },
@@ -788,7 +788,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/how-it-works-prescriptions-1",
                       "border": true,
-                      "alt": ""
+                      "alt": "First how it works screen for prescriptions in the Maple onboarding flow"
                     }
                   ]
                 },
@@ -803,7 +803,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/how-it-works-prescriptions-2",
                       "border": true,
-                      "alt": ""
+                      "alt": "Second how it works screen for prescriptions in the Maple onboarding flow"
                     }
                   ]
                 },
@@ -818,7 +818,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/how-it-works-prescriptions-3",
                       "border": true,
-                      "alt": ""
+                      "alt": "Third how it works screen for prescriptions in the Maple onboarding flow"
                     }
                   ]
                 },
@@ -833,7 +833,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/how-it-works-reassurance",
                       "border": true,
-                      "alt": ""
+                      "alt": "Reassurance screen in the how it works variant of the Maple onboarding flow"
                     }
                   ]
                 },
@@ -848,7 +848,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/how-it-works-confirmation",
                       "border": true,
-                      "alt": ""
+                      "alt": "Confirmation screen in the how it works variant of the Maple onboarding flow"
                     }
                   ]
                 },
@@ -863,7 +863,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/how-it-works-intent",
                       "border": true,
-                      "alt": ""
+                      "alt": "Intent screen in the how it works variant of the Maple onboarding flow"
                     }
                   ]
                 },
@@ -878,7 +878,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/weight-medication-assessment-1",
                       "border": true,
-                      "alt": ""
+                      "alt": "First screen of the Maple weight medication assessment"
                     }
                   ]
                 },
@@ -893,7 +893,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/weight-medication-assessment-2",
                       "border": true,
-                      "alt": ""
+                      "alt": "Second screen of the Maple weight medication assessment"
                     }
                   ]
                 },
@@ -908,7 +908,7 @@
                       "renderType": "image",
                       "image": "maple-onboarding/weight-medication-assessment-eligible",
                       "border": true,
-                      "alt": ""
+                      "alt": "Eligibility result screen of the Maple weight medication assessment"
                     }
                   ]
                 }

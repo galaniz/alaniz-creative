@@ -287,7 +287,8 @@
                         {
                           "renderType": "image",
                           "image": "later-newsroom/news-wireframe-1",
-                          "border": true
+                          "border": true,
+                          "alt": "Wireframe of the Later newsroom as a single landing page"
                         }
                       ]
                     },
@@ -299,7 +300,8 @@
                         {
                           "renderType": "image",
                           "image": "later-newsroom/news-wireframe-2",
-                          "border": true
+                          "border": true,
+                          "alt": "Wireframe of the Later newsroom once the content outline was split across sections"
                         }
                       ]
                     }
@@ -394,7 +396,8 @@
                         {
                           "renderType": "image",
                           "image": "later-newsroom/hero-minimal",
-                          "border": true
+                          "border": true,
+                          "alt": "Minimal hero component from the Later design system"
                         }
                       ]
                     },
@@ -410,7 +413,8 @@
                         {
                           "renderType": "image",
                           "image": "later-newsroom/card",
-                          "border": true
+                          "border": true,
+                          "alt": "Card component from the Later design system"
                         }
                       ]
                     },
@@ -431,12 +435,14 @@
                             {
                               "renderType": "image",
                               "image": "later-newsroom/navigation-secondary",
-                              "border": true
+                              "border": true,
+                              "alt": "Secondary navigation component from the Later design system"
                             },
                             {
                               "renderType": "image",
                               "image": "later-newsroom/button-secondary",
-                              "border": true
+                              "border": true,
+                              "alt": "Secondary button component from the Later design system"
                             }
                           ]
                         }
@@ -449,7 +455,8 @@
                         {
                           "renderType": "image",
                           "image": "later-newsroom/form-elements",
-                          "border": true
+                          "border": true,
+                          "alt": "Form elements from the Later design system"
                         }
                       ]
                     }
@@ -512,9 +519,10 @@
                         {
                           "renderType": "image",
                           "image": "later-newsroom/article-graphic-1",
-                          "border": true
+                          "border": true,
+                          "alt": "Custom graphic created for a Later newsroom article"
                         }
-                      ] 
+                      ]
                     },
                     {
                       "renderType": "column",
@@ -529,9 +537,10 @@
                         {
                           "renderType": "image",
                           "image": "later-newsroom/press-release-graphic-2",
-                          "border": true
+                          "border": true,
+                          "alt": "A second custom graphic created for a Later newsroom press release"
                         }
-                      ] 
+                      ]
                     },
                     {
                       "renderType": "column",
@@ -546,9 +555,10 @@
                         {
                           "renderType": "image",
                           "image": "later-newsroom/press-release-graphic-1",
-                          "border": true
+                          "border": true,
+                          "alt": "Custom graphic created for a Later newsroom press release"
                         }
-                      ] 
+                      ]
                     },
                     {
                       "renderType": "column",
@@ -563,9 +573,10 @@
                         {
                           "renderType": "image",
                           "image": "later-newsroom/article-graphic-2",
-                          "border": true
+                          "border": true,
+                          "alt": "A second custom graphic created for a Later newsroom article"
                         }
-                      ] 
+                      ]
                     }
                   ]
                 }
@@ -640,7 +651,8 @@
                 {
                   "renderType": "image",
                   "image": "later-newsroom/a11y-annotations",
-                  "border": true
+                  "border": true,
+                  "alt": "Later newsroom design file annotated with accessibility notes"
                 }
               ]
             },
@@ -718,7 +730,8 @@
                         {
                           "renderType": "image",
                           "image": "later-newsroom/news-desktop",
-                          "border": true
+                          "border": true,
+                          "alt": "The finished Later newsroom on desktop"
                         }
                       ]
                     },
@@ -756,7 +769,8 @@
                                         {
                                           "renderType": "image",
                                           "image": "later-newsroom/news-mobile-top",
-                                          "border": true
+                                          "border": true,
+                                          "alt": "Top of the finished Later newsroom on mobile"
                                         }
                                       ]
                                     },
@@ -769,7 +783,8 @@
                                         {
                                           "renderType": "image",
                                           "image": "later-newsroom/news-mobile-middle",
-                                          "border": true
+                                          "border": true,
+                                          "alt": "Middle of the finished Later newsroom on mobile"
                                         }
                                       ]
                                     }
@@ -788,7 +803,8 @@
                                 {
                                   "renderType": "image",
                                   "image": "later-newsroom/contact-desktop",
-                                  "border": true
+                                  "border": true,
+                                  "alt": "The Later newsroom contact page on desktop"
                                 }
                               ]
                             }
@@ -811,12 +827,14 @@
                             {
                               "renderType": "image",
                               "image": "later-newsroom/archive-desktop",
-                              "border": true
+                              "border": true,
+                              "alt": "The Later newsroom archive page on desktop"
                             },
                             {
                               "renderType": "image",
                               "image": "later-newsroom/media-kit-desktop",
-                              "border": true
+                              "border": true,
+                              "alt": "The Later newsroom media kit page on desktop"
                             }
                           ]
                         }

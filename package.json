@@ -12,6 +12,7 @@
     "start": "npm-run-all --parallel watch:node watch:client watch:esbuild",
     "lint:ts": "npx eslint .",
     "lint:scss": "stylelint 'src/**/*.scss'",
+    "lint:content": "pnpm build:node && node lib/schema/schemaValidateCli.js",
     "lint": "pnpm lint:ts && pnpm lint:scss",
     "wrangler:contact": "npx wrangler dev --config src/workers/Contact/wrangler.json",
     "wrangler:file": "npx wrangler dev --remote --config src/workers/File/wrangler.json",
@@ -31,9 +32,11 @@
   "dependencies": {
     "@alanizcreative/formation": "0.0.3",
     "@alanizcreative/formation-static": "0.0.5",
+    "@cloudflare/workers-oauth-provider": "0.10.3",
     "@cloudflare/workers-types": "4.20260506.1",
     "@esbuild/linux-x64": "0.28.0",
     "@fullhuman/postcss-purgecss": "8.0.0",
+    "@modelcontextprotocol/sdk": "1.30.0",
     "@types/html-minifier-terser": "^7.0.2",
     "@types/node": "^25.6.0",
     "@types/validator": "13.15.10",
@@ -46,7 +49,8 @@
     "sass": "^1.99.0",
     "typescript": "^6.0.3",
     "uuid": "^14.0.0",
-    "validator": "13.15.35"
+    "validator": "13.15.35",
+    "zod": "4.3.6"
   },
   "devDependencies": {
     "eslint": "10.3.0",
