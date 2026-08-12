@@ -1,0 +1,52 @@
+{
+  "name": "alaniz-creative-content",
+  "main": "./ContentWorker.ts",
+  "compatibility_date": "2025-10-14",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": false,
+  "preview_urls": false,
+  "keep_vars": true,
+  "minify": true,
+  "routes": [
+    {
+      "pattern": "content.alanizcreative.com/*",
+      "zone_name": "alanizcreative.com"
+    }
+  ],
+  "vars": {
+    "GITHUB_OWNER": "galaniz",
+    "GITHUB_REPO": "alaniz-creative",
+    "GITHUB_BASE": "main",
+    "CONTENT_BOT_NAME": "Alaniz Creative Content",
+    "CONTENT_BOT_EMAIL": "content@alanizcreative.com",
+    "CONTENT_ASSETS_URL": "https://alanizcreative.com/assets",
+    "CONTENT_PREVIEW_URL": "https://pr-{pr}.preview.alanizcreative.com",
+    "CF_ACCESS_TEAM_DOMAIN": "REPLACE_WITH_TEAM.cloudflareaccess.com",
+    "CF_ACCESS_AUD": "REPLACE_WITH_ACCESS_APPLICATION_AUDIENCE_TAG"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "OAUTH_KV",
+      "id": "REPLACE_WITH_OAUTH_KV_ID"
+    },
+    {
+      "binding": "CONTENT_KV",
+      "id": "REPLACE_WITH_CONTENT_KV_ID"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "ASSETS_BUCKET",
+      "bucket_name": "alaniz-creative-assets"
+    }
+  ],
+  "images": {
+    "binding": "IMAGES"
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
+}

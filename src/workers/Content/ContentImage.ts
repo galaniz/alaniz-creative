@@ -1,0 +1,297 @@
+/**
+ * Workers - Content Image
+ */
+
+/* Imports */
+
+import type {
+  ContentEnv,
+  ContentProps,
+  ContentImage,
+  ContentImageMeta
+} from './ContentTypes.js'
+import {
+  imageMetaPath,
+  getRepoPath,
+  githubFetch,
+  commitFile,
+  decodeBase64,
+  listPages,
+  readPage
+} from './ContentGithub.js'
+
+/**
+ * Widest an image is stored at. The file worker resizes on the way out, so
+ * anything larger is bytes nobody ever sees.
+ *
+ * @type {number}
+ */
+const imageMaxWidth: number = 1600
+
+/**
+ * Largest upload accepted, before resizing.
+ *
+ * @type {number}
+ */
+const imageMaxSize: number = 20 * 1024 * 1024
+
+/**
+ * Formats the media library accepts, mapped to the extension they are stored
+ * under.
+ *
+ * @type {Object<string, string>}
+ */
+const imageFormats: Record<string, string> = {
+  'image/jpeg': 'jpg',
+  'image/png': 'png',
+  'image/webp': 'webp',
+  'image/gif': 'gif'
+}
+
+/**
+ * Turn a file name into a media library key.
+ *
+ * @param {string} value
+ * @return {string}
+ */
+const getImageKey = (value: string): string => {
+  return value
+    .toLowerCase()
+    .replace(/\.[a-z0-9]+$/, '')
+    .replace(/[^a-z0-9/-]+/g, '-')
+    .replace(/-{2,}/g, '-')
+    .replace(/^[-/]+|[-/]+$/g, '')
+}
+
+/**
+ * Read the image metadata file the build renders from.
+ *
+ * @param {ContentEnv} env
+ * @return {Promise<{meta: ContentImageMeta, sha: string}>}
+ */
+const getImageMeta = async (
+  env: ContentEnv
+): Promise<{ meta: ContentImageMeta, sha: string }> => {
+  const file = await githubFetch<{ content: string, sha: string }>(
+    env,
+    `${getRepoPath(env)}/contents/${imageMetaPath}?ref=${env.GITHUB_BASE}`
+  )
+
+  return {
+    meta: JSON.parse(decodeBase64(file.content)) as ContentImageMeta,
+    sha: file.sha
+  }
+}
+
+/**
+ * List the media library, newest metadata first.
+ *
+ * @param {ContentEnv} env
+ * @param {string} [prefix]
+ * @return {Promise<ContentImage[]>}
+ */
+const listImages = async (env: ContentEnv, prefix?: string): Promise<ContentImage[]> => {
+  const { meta } = await getImageMeta(env)
+
+  return Object.entries(meta)
+    .filter(([key]) => !prefix || key.startsWith(prefix))
+    .map(([key, value]) => ({ key, ...value }))
+    .sort((a, b) => a.key.localeCompare(b.key))
+}
+
+/**
+ * Find the content files that use an image.
+ *
+ * @param {ContentEnv} env
+ * @param {string} key
+ * @return {Promise<string[]>}
+ */
+const getImageUses = async (env: ContentEnv, key: string): Promise<string[]> => {
+  const pages = await listPages(env)
+  const uses = await Promise.all(pages.map(async ({ id }) => {
+    const { page } = await readPage(env, id, env.GITHUB_BASE)
+    const used = JSON.stringify(page).includes(`"${key}"`)
+
+    return used ? id : ''
+  }))
+
+  return uses.filter(Boolean)
+}
+
+/**
+ * Store an image and record what the build needs to know about it.
+ *
+ * The bytes go straight to object storage and are live immediately. The
+ * metadata is committed because the build reads dimensions from it — a small
+ * mechanical record, so it goes to the published branch rather than through a
+ * pull request nobody would review.
+ *
+ * @param {ContentEnv} env
+ * @param {object} args
+ * @return {Promise<ContentImage>}
+ * @throws {Error} When the file is not a supported image, or is too large.
+ */
+const putImage = async (
+  env: ContentEnv,
+  args: {
+    file: File
+    key?: string
+    alt: string
+    actor: ContentProps
+  }
+): Promise<ContentImage> => {
+  const { file, alt, actor } = args
+  const type = file.type
+  const format = imageFormats[type]
+
+  if (!format) {
+    throw new Error(`${type || 'That file'} is not an image the library accepts — use a JPEG, PNG, WebP or GIF.`)
+  }
+
+  if (file.size > imageMaxSize) {
+    throw new Error(`That image is ${Math.round(file.size / 1024 / 1024)} MB, over the ${imageMaxSize / 1024 / 1024} MB limit.`)
+  }
+
+  if (!alt.trim()) {
+    throw new Error('Describe what the image shows before uploading it.')
+  }
+
+  const images = env.IMAGES
+
+  if (!images) {
+    throw new Error('The images binding is not configured, so uploads cannot be measured or resized.')
+  }
+
+  const key = getImageKey(args.key || file.name)
+
+  if (!key) {
+    throw new Error('That file name does not make a usable key. Give the image a name.')
+  }
+
+  /* Measure, then resize if it is wider than anything the site serves */
+
+  const info = await images.info(file.stream() as ReadableStream<Uint8Array>)
+
+  if (!('width' in info)) {
+    throw new Error('That file is not an image the library can measure.')
+  }
+
+  let bytes = await file.arrayBuffer()
+  let { width, height } = info
+
+  if (width > imageMaxWidth) {
+    const result = await images
+      .input(new Blob([bytes]).stream() as ReadableStream<Uint8Array>)
+      .transform({ width: imageMaxWidth })
+      .output({ format: type as 'image/jpeg' })
+
+    bytes = await new Response(result.image()).arrayBuffer()
+    height = Math.round((height / width) * imageMaxWidth)
+    width = imageMaxWidth
+  }
+
+  /* Bytes first — an object with no metadata is invisible, metadata with no
+     object is a broken image on a live page */
+
+  const path = `${key}.${format}`
+
+  await env.ASSETS_BUCKET.put(path, bytes, {
+    httpMetadata: {
+      contentType: type,
+      cacheControl: 'public, max-age=31536000, immutable'
+    },
+    customMetadata: {
+      alt,
+      uploadedBy: actor.email
+    }
+  })
+
+  const entry = {
+    path,
+    name: key.split('/').pop() ?? key,
+    type,
+    format,
+    width,
+    height,
+    size: bytes.byteLength
+  }
+
+  const { meta, sha } = await getImageMeta(env)
+
+  meta[key] = entry
+
+  const sorted = Object.fromEntries(
+    Object.entries(meta).sort(([a], [b]) => a.localeCompare(b))
+  )
+
+  await commitFile(env, {
+    path: imageMetaPath,
+    contents: `${JSON.stringify(sorted, null, 2)}\n`,
+    message: `chore: add ${key} to the media library`,
+    branch: env.GITHUB_BASE,
+    sha,
+    actor
+  })
+
+  return { key, ...entry }
+}
+
+/**
+ * Remove an image, refusing while a page still points at it.
+ *
+ * @param {ContentEnv} env
+ * @param {string} key
+ * @param {ContentProps} actor
+ * @return {Promise<void>}
+ * @throws {Error} When the image is still in use.
+ */
+const deleteImage = async (
+  env: ContentEnv,
+  key: string,
+  actor: ContentProps
+): Promise<void> => {
+  const uses = await getImageUses(env, key)
+
+  if (uses.length) {
+    throw new Error(`${key} is still used by ${uses.join(', ')}. Take it off those pages first.`)
+  }
+
+  const { meta, sha } = await getImageMeta(env)
+  const entry = meta[key]
+
+  if (!entry) {
+    throw new Error(`${key} is not in the media library.`)
+  }
+
+  /* Metadata first — the build stops referencing it before the bytes go, so
+     there is no window where a page points at something that is not there */
+
+  const rest = Object.fromEntries(
+    Object.entries(meta).filter(([existing]) => existing !== key)
+  )
+
+  await commitFile(env, {
+    path: imageMetaPath,
+    contents: `${JSON.stringify(rest, null, 2)}\n`,
+    message: `chore: remove ${key} from the media library`,
+    branch: env.GITHUB_BASE,
+    sha,
+    actor
+  })
+
+  await env.ASSETS_BUCKET.delete(entry.path)
+}
+
+/* Exports */
+
+export {
+  imageMaxWidth,
+  imageMaxSize,
+  imageFormats,
+  getImageKey,
+  getImageMeta,
+  listImages,
+  getImageUses,
+  putImage,
+  deleteImage
+}

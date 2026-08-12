@@ -26,6 +26,7 @@ import { getAllLocalData } from '@alanizcreative/formation-static/local/localDat
 import { setStore } from '@alanizcreative/formation-static/store/store.js'
 import { validateContent } from '../schema/schemaValidate.js'
 import { storeArgs } from '../store/store.js'
+import { getImageMeta } from '../store/storeImages.js'
 import { postsData } from '../objects/Posts/Posts.js'
 import { renderFunctions } from '../render/render.js'
 import { esbuildScss } from '../esbuild/esbuildScss.js'
@@ -214,7 +215,7 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
   setFilters(filters)
   setActions(actions)
   setRenderFunctions(renderFunctions)
-  setStore(storeArgs)
+  setStore({ ...storeArgs, imageMeta: await getImageMeta() })
 
   /* Render output */
 
