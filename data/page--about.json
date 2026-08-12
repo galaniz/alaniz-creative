@@ -1,12 +1,11 @@
 {
-  "contentType": "page",
   "title": "About",
   "slug": "about",
   "date": "2023-11-05T00:14:32",
-  "dateModified": "2025-08-24T00:22:18",
+  "dateModified": "2026-08-12T22:17:17",
   "hero": {
-    "title": "Hi, I'm Graciela Alaniz",
     "type": "profile",
+    "title": "Hi, I'm Graciela Alaniz",
     "image": "graciela-alaniz"
   },
   "content": [
@@ -26,8 +25,8 @@
     },
     {
       "renderType": "container",
-      "richTextStyles": true,
       "maxWidth": "xs",
+      "richTextStyles": true,
       "content": [
         {
           "renderType": "richText",
@@ -36,8 +35,8 @@
         },
         {
           "renderType": "richText",
-          "type": "columns",
           "tag": "ul",
+          "type": "columns",
           "content": [
             {
               "tag": "li",
@@ -84,10 +83,16 @@
         {
           "renderType": "button",
           "title": "Get in touch",
-          "size": "l",
-          "internalLink": "page--contact"
+          "internalLink": "page--contact",
+          "size": "l"
+        },
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "content": "Hola hola, camaron sin cola"
         }
       ]
     }
-  ]
+  ],
+  "contentType": "page"
 }
