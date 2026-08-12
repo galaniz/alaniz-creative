@@ -1,6 +1,12 @@
 {
-  "name": "alaniz-creative-preview",
+  "name": "alaniz-creative-pr-PR_NUMBER",
   "main": "./src/workers/Site/SiteWorker.ts",
+  "routes": [
+    {
+      "pattern": "pr-PR_NUMBER.preview.alanizcreative.com",
+      "custom_domain": true
+    }
+  ],
   "compatibility_date": "2025-10-14",
   "workers_dev": false,
   "preview_urls": false,
