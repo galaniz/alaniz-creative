@@ -83,11 +83,9 @@ jobs:
     permissions:
       contents: read
     steps:
-      # Install PNPM
-      - name: Install PNPM
-        uses: pnpm/action-setup@v5
-
-      # Set up Node.js for PNPM
+      # Set up Node.js. No pnpm and no checkout — this job runs one command,
+      # and pnpm/action-setup reads its version from a package.json that a job
+      # without a checkout does not have
       - name: Set up Node.js
         uses: actions/setup-node@v5
         with:
@@ -96,7 +94,7 @@ jobs:
       # Remove the worker this pull request was previewed on
       - name: Delete preview
         run: |
-          pnpm dlx wrangler@4 delete \
+          npx --yes wrangler@4 delete \
             --name alaniz-creative-pr-${{ github.event.pull_request.number }} \
             --force || true
         env:

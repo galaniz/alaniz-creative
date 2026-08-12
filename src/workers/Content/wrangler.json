@@ -2,6 +2,9 @@
   "name": "alaniz-creative-content",
   "main": "./ContentWorker.ts",
   "compatibility_date": "2025-10-14",
+  "compatibility_flags": [
+    "global_fetch_strictly_public"
+  ],
   "workers_dev": false,
   "preview_urls": false,
   "keep_vars": true,

@@ -147,6 +147,43 @@ const getMediaPage = (env: ContentEnv, images: ContentImage[], message?: string)
 }
 
 /**
+ * Render a failure as a page.
+ *
+ * Deliberately renders nothing but the message — whatever went wrong may be
+ * the very thing the library needs to list itself, so this must not go back
+ * to the network to say so.
+ *
+ * @param {unknown} error
+ * @return {Response}
+ */
+const getMediaError = (error: unknown): Response => {
+  const message = error instanceof Error ? error.message : 'Something went wrong.'
+  const body = /* html */`<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Media library</title>
+  <style>${mediaStyles}</style>
+</head>
+<body>
+  <h1>Media library</h1>
+  <div role="alert">${escape(message)}</div>
+  <p><a href="/media">Try again</a></p>
+</body>
+</html>`
+
+  return new Response(body, {
+    status: 500,
+    headers: {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': 'no-store'
+    }
+  })
+}
+
+/**
  * Read a text field from a submitted form.
  *
  * @param {FormData} form
@@ -172,25 +209,25 @@ const getFormText = (form: FormData, name: string): string => {
  * @return {Promise<Response>}
  */
 const handleMedia = async (request: Request, env: ContentEnv): Promise<Response> => {
-  const identity = await getAccessIdentity(request, env)
-
-  if (!identity) {
-    return new Response('Not authorised', { status: 403 })
-  }
-
   const { pathname } = new URL(request.url)
 
-  if (request.method === 'GET' && pathname === '/media') {
-    return await renderMedia(env)
-  }
-
-  if (request.method !== 'POST') {
-    return new Response('Not found', { status: 404 })
-  }
-
-  const form = await request.formData()
-
   try {
+    const identity = await getAccessIdentity(request, env)
+
+    if (!identity) {
+      return new Response('Not authorised', { status: 403 })
+    }
+
+    if (request.method === 'GET' && pathname === '/media') {
+      return await renderMedia(env)
+    }
+
+    if (request.method !== 'POST') {
+      return new Response('Not found', { status: 404 })
+    }
+
+    const form = await request.formData()
+
     if (pathname === '/media/upload') {
       const file = form.get('file')
 
@@ -215,11 +252,16 @@ const handleMedia = async (request: Request, env: ContentEnv): Promise<Response>
 
       return await renderMedia(env, `Deleted ${key}.`)
     }
-  } catch (error) {
-    return await renderMedia(env, error instanceof Error ? error.message : 'Something went wrong.')
-  }
 
-  return new Response('Not found', { status: 404 })
+    return new Response('Not found', { status: 404 })
+  } catch (error) {
+    /* Anything that gets here — a missing secret, GitHub refusing, a bad
+       upload — is rendered rather than thrown. A thrown error reaches the
+       browser as a worker exception with a ray id and nothing else, which
+       tells the person reading it nothing they can act on */
+
+    return getMediaError(error)
+  }
 }
 
 /**

@@ -51,15 +51,26 @@ const contentHandler = {
   async fetch (request: Request, env: ContentEnv): Promise<Response> {
     const { pathname } = new URL(request.url)
 
-    if (pathname === '/authorize') {
-      return await handleAuthorize(request, env)
-    }
+    try {
+      if (pathname === '/authorize') {
+        return await handleAuthorize(request, env)
+      }
 
-    if (pathname === '/media' || pathname.startsWith('/media/')) {
-      return await handleMedia(request, env)
-    }
+      if (pathname === '/media' || pathname.startsWith('/media/')) {
+        return await handleMedia(request, env)
+      }
 
-    return new Response('Not found', { status: 404 })
+      return new Response('Not found', { status: 404 })
+    } catch (error) {
+      /* A thrown error reaches the browser as a worker exception carrying a
+         ray id and nothing else. Saying what happened costs one line and
+         saves reading logs to find out */
+
+      return new Response(error instanceof Error ? error.message : 'Something went wrong', {
+        status: 500,
+        headers: { 'Content-Type': 'text/plain; charset=utf-8' }
+      })
+    }
   }
 }
 
