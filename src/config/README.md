@@ -67,8 +67,8 @@ Base, content and render type options.
 **Type:** <code>object</code>
 
 #### Properties  
-- **`in`** <code>string</code> required  
-- **`out`** <code>string</code> required  
+- **`globalIn`** <code>string</code> required  
+- **`globalOut`** <code>string</code> required  
 - **`replace`** <code>string</code> required  
 - **`cache`** <code>Map&lt;string, string&gt;</code> required  
 - **`safelist`** <code>string[]</code> required
@@ -78,8 +78,8 @@ Base, content and render type options.
 **Type:** <code>object</code>
 
 #### Properties  
-- **`in`** <code>string</code> required  
-- **`out`** <code>string</code> required
+- **`globalIn`** <code>string</code> required  
+- **`globalOut`** <code>string</code> required
 
 ### ConfigVars  
 

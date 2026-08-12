@@ -1,22 +1,12 @@
-# Site
-
-## SiteWorker  
-
-Manage site assets and requests.
-
-### Constructor  
-
-**<code>new SiteWorker(): SiteWorker</code>**
-
-## fetch  
+# fetch  
 
 **<code>fetch(request: WorkerRequest): Promise&lt;Response&gt;</code>**  
 
 Route serverless and serve assets.
 
-### Parameters  
+## Parameters  
 - **`request`** <code><a href="/src/workers/README.md#workerrequest">WorkerRequest</a></code> required
 
-### Returns  
+## Returns  
 
 <code>Promise&lt;Response&gt;</code>
