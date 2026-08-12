@@ -24,7 +24,9 @@ import { createRedirectsFile } from '@alanizcreative/formation-static/redirects/
 import { scripts, styles } from '@alanizcreative/formation-static/scripts/scripts.js'
 import { getAllLocalData } from '@alanizcreative/formation-static/local/localData.js'
 import { setStore } from '@alanizcreative/formation-static/store/store.js'
+import { validateContent } from '../schema/schemaValidate.js'
 import { storeArgs } from '../store/store.js'
+import { getImageMeta } from '../store/storeImages.js'
 import { postsData } from '../objects/Posts/Posts.js'
 import { renderFunctions } from '../render/render.js'
 import { esbuildScss } from '../esbuild/esbuildScss.js'
@@ -52,6 +54,10 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
   /* Root */
 
   config.env.dir = resolve('./')
+
+  /* Content validation */
+
+  await validateContent(config.local.dir)
 
   /* Build styles and scripts */
 
@@ -209,7 +215,7 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
   setFilters(filters)
   setActions(actions)
   setRenderFunctions(renderFunctions)
-  setStore(storeArgs)
+  setStore({ ...storeArgs, imageMeta: await getImageMeta() })
 
   /* Render output */
 
