@@ -242,4 +242,7 @@ const renderMedia = async (env: ContentEnv, message?: string): Promise<Response>
 
 /* Exports */
 
-export { handleMedia }
+export {
+  getMediaPage, // Exported so the page can be rendered without auth or network
+  handleMedia
+}
