@@ -21,15 +21,7 @@ import {
 } from './ContentGithub.js'
 
 /**
- * Widest an image is stored at. The file worker resizes on the way out, so
- * anything larger is bytes nobody ever sees.
- *
- * @type {number}
- */
-const imageMaxWidth: number = 1600
-
-/**
- * Largest upload accepted, before resizing.
+ * Largest upload accepted.
  *
  * @type {number}
  */
@@ -168,7 +160,8 @@ const putImage = async (
     throw new Error('That file name does not make a usable key. Give the image a name.')
   }
 
-  /* Measure, then resize if it is wider than anything the site serves */
+  /* Measure. The image is stored as uploaded — the file worker resizes on the
+     way out, so a second resize here would only cost quality */
 
   const info = await images.info(file.stream() as ReadableStream<Uint8Array>)
 
@@ -176,19 +169,8 @@ const putImage = async (
     throw new Error('That file is not an image the library can measure.')
   }
 
-  let bytes = await file.arrayBuffer()
-  let { width, height } = info
-
-  if (width > imageMaxWidth) {
-    const result = await images
-      .input(new Blob([bytes]).stream() as ReadableStream<Uint8Array>)
-      .transform({ width: imageMaxWidth })
-      .output({ format: type as 'image/jpeg' })
-
-    bytes = await new Response(result.image()).arrayBuffer()
-    height = Math.round((height / width) * imageMaxWidth)
-    width = imageMaxWidth
-  }
+  const bytes = await file.arrayBuffer()
+  const { width, height } = info
 
   /* Bytes first — an object with no metadata is invisible, metadata with no
      object is a broken image on a live page */
@@ -285,7 +267,6 @@ const deleteImage = async (
 /* Exports */
 
 export {
-  imageMaxWidth,
   imageMaxSize,
   imageFormats,
   getImageKey,

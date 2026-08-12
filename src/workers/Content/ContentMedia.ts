@@ -127,7 +127,7 @@ const getMediaPage = (env: ContentEnv, images: ContentImage[], message?: string)
     <label>
       Image
       <input type="file" name="file" accept="${Object.keys(imageFormats).join(',')}" required>
-      <small>JPEG, PNG, WebP or GIF, up to ${imageMaxSize / 1024 / 1024} MB. Anything wider than 1600px is resized.</small>
+      <small>JPEG, PNG, WebP or GIF, up to ${imageMaxSize / 1024 / 1024} MB. Sizing happens when the image is served, so upload the original.</small>
     </label>
     <label>
       Description
