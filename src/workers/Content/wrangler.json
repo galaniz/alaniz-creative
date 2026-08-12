@@ -22,18 +22,16 @@
     "CONTENT_BOT_NAME": "Alaniz Creative Content",
     "CONTENT_BOT_EMAIL": "content@alanizcreative.com",
     "CONTENT_ASSETS_URL": "https://alanizcreative.com/assets",
-    "CONTENT_PREVIEW_URL": "https://pr-{pr}.preview.alanizcreative.com",
-    "CF_ACCESS_TEAM_DOMAIN": "REPLACE_WITH_TEAM.cloudflareaccess.com",
-    "CF_ACCESS_AUD": "REPLACE_WITH_ACCESS_APPLICATION_AUDIENCE_TAG"
+    "CONTENT_PREVIEW_URL": "https://pr-{pr}.preview.alanizcreative.com"
   },
   "kv_namespaces": [
     {
       "binding": "OAUTH_KV",
-      "id": "REPLACE_WITH_OAUTH_KV_ID"
+      "id": "5600eb0d97fd4ce7adbf0f14130d65a6"
     },
     {
       "binding": "CONTENT_KV",
-      "id": "REPLACE_WITH_CONTENT_KV_ID"
+      "id": "f3c0fd8d07444ecb9d1a9f43a0b6c4a2"
     }
   ],
   "r2_buckets": [
