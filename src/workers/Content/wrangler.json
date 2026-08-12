@@ -39,7 +39,7 @@
   "r2_buckets": [
     {
       "binding": "ASSETS_BUCKET",
-      "bucket_name": "alaniz-creative-assets"
+      "bucket_name": "alaniz-creative"
     }
   ],
   "images": {
