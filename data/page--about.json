@@ -2,7 +2,7 @@
   "title": "About",
   "slug": "about",
   "date": "2023-11-05T00:14:32",
-  "dateModified": "2026-08-12T23:23:28",
+  "dateModified": "2026-08-12T23:27:35",
   "hero": {
     "type": "profile",
     "title": "Hi, I'm Graciela Alaniz",
@@ -85,31 +85,32 @@
           "title": "Get in touch",
           "internalLink": "page--contact",
           "size": "l"
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "layout": "row",
+      "background": "background-light",
+      "border": "rounded",
+      "align": "center",
+      "gap": "s",
+      "paddingTop": "s",
+      "paddingBottom": "s",
+      "paddingLeft": "s",
+      "paddingRight": "s",
+      "content": [
+        {
+          "renderType": "image",
+          "image": "puffin-innovations/blue-light-blue",
+          "alt": "",
+          "width": "xs"
         },
         {
-          "renderType": "container",
-          "layout": "row",
-          "background": "background-light",
-          "border": "rounded",
-          "align": "center",
-          "gap": "s",
-          "paddingTop": "s",
-          "paddingBottom": "s",
-          "paddingLeft": "s",
-          "paddingRight": "s",
-          "content": [
-            {
-              "renderType": "image",
-              "image": "puffin-innovations/blue-light-blue",
-              "alt": "",
-              "width": "3xs"
-            },
-            {
-              "renderType": "richText",
-              "tag": "p",
-              "content": "Hola hola, camaron sin cola"
-            }
-          ]
+          "renderType": "richText",
+          "tag": "p",
+          "content": "Hola hola, camaron sin cola"
         }
       ]
     }
