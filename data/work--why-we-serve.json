@@ -251,8 +251,7 @@
                         {
                           "renderType": "image",
                           "image": "why-we-serve/panel-1",
-                          "border": true,
-                          "alt": "Panel from the Why We Serve exhibition at the National Museum of the American Indian"
+                          "border": true
                         }
                       ]
                     },
@@ -264,8 +263,7 @@
                         {
                           "renderType": "image",
                           "image": "why-we-serve/panel-2",
-                          "border": true,
-                          "alt": "A second panel from the Why We Serve exhibition at the National Museum of the American Indian"
+                          "border": true
                         }
                       ]
                     },
@@ -277,8 +275,7 @@
                         {
                           "renderType": "image",
                           "image": "why-we-serve/panel-3",
-                          "border": true,
-                          "alt": "A third panel from the Why We Serve exhibition at the National Museum of the American Indian"
+                          "border": true
                         }
                       ]
                     }
@@ -468,8 +465,7 @@
                 {
                   "renderType": "image",
                   "image": "why-we-serve/content-map",
-                  "border": true,
-                  "alt": "Content map for the Why We Serve site"
+                  "border": true
                 }
               ]
             },
@@ -526,8 +522,7 @@
                         {
                           "renderType": "image",
                           "image": "why-we-serve/home-wireframe-top",
-                          "border": true,
-                          "alt": "Wireframe of the top of the Why We Serve homepage"
+                          "border": true
                         }
                       ]
                     },
@@ -539,8 +534,7 @@
                         {
                           "renderType": "image",
                           "image": "why-we-serve/home-wireframe-bottom",
-                          "border": true,
-                          "alt": "Wireframe of the lower part of the Why We Serve homepage"
+                          "border": true
                         }
                       ]
                     },
@@ -552,8 +546,7 @@
                         {
                           "renderType": "image",
                           "image": "why-we-serve/topics-wireframe",
-                          "border": true,
-                          "alt": "Wireframe of the Why We Serve topics page"
+                          "border": true
                         }
                       ]
                     }
@@ -617,8 +610,7 @@
                       "content": [
                         {
                           "renderType": "image",
-                          "image": "why-we-serve/home-top",
-                          "alt": "Top of the finished Why We Serve homepage"
+                          "image": "why-we-serve/home-top"
                         }
                       ]
                     },
@@ -628,8 +620,7 @@
                       "content": [
                         {
                           "renderType": "image",
-                          "image": "why-we-serve/home-middle",
-                          "alt": "Middle of the finished Why We Serve homepage"
+                          "image": "why-we-serve/home-middle"
                         }
                       ]
                     }
@@ -710,13 +701,11 @@
                                   "content": [
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-1",
-                                      "alt": "Why We Serve topic page design, the first of nine"
+                                      "image": "why-we-serve/topic-1"
                                     },
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-9",
-                                      "alt": "Why We Serve topic page design, the ninth of nine"
+                                      "image": "why-we-serve/topic-9"
                                     }
                                   ]
                                 }
@@ -734,13 +723,11 @@
                                   "content": [
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-2",
-                                      "alt": "Why We Serve topic page design, the second of nine"
+                                      "image": "why-we-serve/topic-2"
                                     },
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-4",
-                                      "alt": "Why We Serve topic page design, the fourth of nine"
+                                      "image": "why-we-serve/topic-4"
                                     }
                                   ]
                                 }
@@ -757,8 +744,7 @@
                       "content": [
                         {
                           "renderType": "image",
-                          "image": "why-we-serve/topics",
-                          "alt": "The finished Why We Serve topics page"
+                          "image": "why-we-serve/topics"
                         }
                       ]
                     },
@@ -788,13 +774,11 @@
                                   "content": [
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-5",
-                                      "alt": "Why We Serve topic page design, the fifth of nine"
+                                      "image": "why-we-serve/topic-5"
                                     },
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-6",
-                                      "alt": "Why We Serve topic page design, the sixth of nine"
+                                      "image": "why-we-serve/topic-6"
                                     }
                                   ]
                                 }
@@ -812,13 +796,11 @@
                                   "content": [
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-7",
-                                      "alt": "Why We Serve topic page design, the seventh of nine"
+                                      "image": "why-we-serve/topic-7"
                                     },
                                     {
                                       "renderType": "image",
-                                      "image": "why-we-serve/topic-8",
-                                      "alt": "Why We Serve topic page design, the eighth of nine"
+                                      "image": "why-we-serve/topic-8"
                                     }
                                   ]
                                 }
@@ -986,8 +968,7 @@
                       "content": [
                         {
                           "renderType": "image",
-                          "image": "why-we-serve/gallery",
-                          "alt": "The Why We Serve gallery"
+                          "image": "why-we-serve/gallery"
                         }
                       ]
                     },
@@ -1011,8 +992,7 @@
                               "content": [
                                 {
                                   "renderType": "image",
-                                  "image": "why-we-serve/gallery-item-vertical-desktop",
-                                  "alt": "A vertical Why We Serve gallery item on desktop"
+                                  "image": "why-we-serve/gallery-item-vertical-desktop"
                                 }
                               ]
                             },
@@ -1027,8 +1007,7 @@
                               "content": [
                                 {
                                   "renderType": "image",
-                                  "image": "why-we-serve/gallery-item-vertical-mobile",
-                                  "alt": "A vertical Why We Serve gallery item on mobile"
+                                  "image": "why-we-serve/gallery-item-vertical-mobile"
                                 }
                               ]
                             },
@@ -1043,8 +1022,7 @@
                               "content": [
                                 {
                                   "renderType": "image",
-                                  "image": "why-we-serve/gallery-item-vertical-tablet",
-                                  "alt": "A vertical Why We Serve gallery item on tablet"
+                                  "image": "why-we-serve/gallery-item-vertical-tablet"
                                 }
                               ]
                             },
@@ -1059,8 +1037,7 @@
                               "content": [
                                 {
                                   "renderType": "image",
-                                  "image": "why-we-serve/gallery-item-horizontal-tablet",
-                                  "alt": "A horizontal Why We Serve gallery item on tablet"
+                                  "image": "why-we-serve/gallery-item-horizontal-tablet"
                                 }
                               ]
                             },
@@ -1075,8 +1052,7 @@
                               "content": [
                                 {
                                   "renderType": "image",
-                                  "image": "why-we-serve/gallery-item-horizontal-mobile",
-                                  "alt": "A horizontal Why We Serve gallery item on mobile"
+                                  "image": "why-we-serve/gallery-item-horizontal-mobile"
                                 }
                               ]
                             },
@@ -1090,8 +1066,7 @@
                               "content": [
                                 {
                                   "renderType": "image",
-                                  "image": "why-we-serve/gallery-item-horizontal-desktop",
-                                  "alt": "A horizontal Why We Serve gallery item on desktop"
+                                  "image": "why-we-serve/gallery-item-horizontal-desktop"
                                 }
                               ]
                             }

@@ -179,7 +179,7 @@
                       "image": "puffin-innovations/adriana-mallozzi",
                       "alt": "Founder, innovator and quadriplegic wheelchair user Adriana Mallozzi smiling"
                     }
-                  ]
+                  ] 
                 },
                 {
                   "renderType": "column",
@@ -501,7 +501,7 @@
                                   "alt": "Second version of contact form wireframe with first name, last name, email address and message fields followed by radio buttons for user role (User, Educator, Caregiver, Clinician - dropdown of various health professionals, Other - text field), city, state, country and phone number fields, hidden checkbox to receive phone call, dropdown for how user heard about Puffin Innovations and checkbox to subscribe to newsletter.",
                                   "border": true
                                 }
-                              ]
+                              ] 
                             }
                           ]
                         }
@@ -793,8 +793,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in black on a white background"
+                                          "contain": true
                                         }
                                       ]
                                     },
@@ -815,8 +814,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in charcoal on a white background"
+                                          "contain": true
                                         }
                                       ]
                                     },
@@ -837,8 +835,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in grey on a white background"
+                                          "contain": true
                                         }
                                       ]
                                     },
@@ -859,8 +856,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in blue on a white background"
+                                          "contain": true
                                         }
                                       ]
                                     },
@@ -881,8 +877,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in black on a light grey background"
+                                          "contain": true
                                         }
                                       ]
                                     },
@@ -903,8 +898,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in charcoal on a light grey background"
+                                          "contain": true
                                         }
                                       ]
                                     },
@@ -925,8 +919,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in grey on a light grey background"
+                                          "contain": true
                                         }
                                       ]
                                     },
@@ -947,8 +940,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in blue on a light grey background"
+                                          "contain": true
                                         }
                                       ]
                                     },
@@ -969,8 +961,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in black on a light blue background"
+                                          "contain": true
                                         }
                                       ]
                                     },
@@ -991,8 +982,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in charcoal on a light blue background"
+                                          "contain": true
                                         }
                                       ]
                                     },
@@ -1013,8 +1003,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in grey on a light blue background"
+                                          "contain": true
                                         }
                                       ]
                                     },
@@ -1035,8 +1024,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in blue on a light blue background"
+                                          "contain": true
                                         }
                                       ]
                                     },
@@ -1057,8 +1045,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in black on a blue tinted background"
+                                          "contain": true
                                         }
                                       ]
                                     },
@@ -1079,8 +1066,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in black on an orange background"
+                                          "contain": true
                                         }
                                       ]
                                     },
@@ -1101,8 +1087,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in black on a yellow background"
+                                          "contain": true
                                         }
                                       ]
                                     },
@@ -1123,8 +1108,7 @@
                                           "width": "l",
                                           "widthLarge": "xl",
                                           "borderRadius": "none",
-                                          "contain": true,
-                                          "alt": "Puffin Innovations logo in charcoal on a yellow background"
+                                          "contain": true
                                         }
                                       ]
                                     }
@@ -1406,7 +1390,7 @@
                           "border": true,
                           "alt": "WordPress backend for contact form - Gutenberg block editor shows email address field within custom Contact Form block selected with options panel to the right (autocomplete tokens, error messages, width)."
                         }
-                      ]
+                      ] 
                     },
                     {
                       "renderType": "column",
@@ -1419,7 +1403,7 @@
                           "border": true,
                           "alt": "Contact form on mobile with error summary and error message on email address field."
                         }
-                      ]
+                      ] 
                     }
                   ]
                 }

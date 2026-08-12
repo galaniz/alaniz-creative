@@ -366,8 +366,7 @@
                         {
                           "renderType": "image",
                           "image": "injury-board/concept-1",
-                          "border": true,
-                          "alt": "Injury Board design concept, the first of six explorations"
+                          "border": true
                         }
                       ]
                     },
@@ -385,14 +384,12 @@
                             {
                               "renderType": "image",
                               "image": "injury-board/concept-2",
-                              "border": true,
-                              "alt": "Injury Board design concept, the second of six explorations"
+                              "border": true
                             },
                             {
                               "renderType": "image",
                               "image": "injury-board/concept-3",
-                              "border": true,
-                              "alt": "Injury Board design concept, the third of six explorations"
+                              "border": true
                             }
                           ]
                         }
@@ -406,8 +403,7 @@
                         {
                           "renderType": "image",
                           "image": "injury-board/concept-4",
-                          "border": true,
-                          "alt": "Injury Board design concept, the fourth of six explorations"
+                          "border": true
                         }
                       ]
                     },
@@ -425,14 +421,12 @@
                             {
                               "renderType": "image",
                               "image": "injury-board/concept-5",
-                              "border": true,
-                              "alt": "Injury Board design concept, the fifth of six explorations"
+                              "border": true
                             },
                             {
                               "renderType": "image",
                               "image": "injury-board/concept-6",
-                              "border": true,
-                              "alt": "Injury Board design concept, the sixth of six explorations"
+                              "border": true
                             }
                           ]
                         }
@@ -503,8 +497,7 @@
                         {
                           "renderType": "image",
                           "image": "injury-board/home-desktop",
-                          "border": true,
-                          "alt": "The finished Injury Board homepage on desktop"
+                          "border": true
                         }
                       ]
                     },
@@ -520,8 +513,7 @@
                         {
                           "renderType": "image",
                           "image": "injury-board/home-mobile",
-                          "border": true,
-                          "alt": "The finished Injury Board homepage on mobile"
+                          "border": true
                         }
                       ]
                     }
@@ -583,8 +575,7 @@
                         {
                           "renderType": "image",
                           "image": "injury-board/firm-desktop",
-                          "border": true,
-                          "alt": "An Injury Board firm page on desktop"
+                          "border": true
                         }
                       ]
                     },
@@ -596,8 +587,7 @@
                         {
                           "renderType": "image",
                           "image": "injury-board/member-desktop",
-                          "border": true,
-                          "alt": "An Injury Board member page on desktop"
+                          "border": true
                         }
                       ]
                     },
@@ -617,14 +607,12 @@
                             {
                               "renderType": "image",
                               "image": "injury-board/member-mobile",
-                              "border": true,
-                              "alt": "An Injury Board member page on mobile"
+                              "border": true
                             },
                             {
                               "renderType": "image",
                               "image": "injury-board/firm-page-mobile",
-                              "border": true,
-                              "alt": "An Injury Board firm page on mobile"
+                              "border": true
                             }
                           ]
                         }
@@ -693,8 +681,7 @@
                         {
                           "renderType": "image",
                           "image": "injury-board/directory-desktop",
-                          "border": true,
-                          "alt": "The Injury Board directory on desktop, with a map of the United States and a search bar"
+                          "border": true
                         }
                       ]
                     },
@@ -707,8 +694,7 @@
                         {
                           "renderType": "image",
                           "image": "injury-board/directory-selected-state-desktop",
-                          "border": true,
-                          "alt": "The Injury Board directory on desktop with a state selected on the map"
+                          "border": true
                         }
                       ]
                     },
@@ -721,8 +707,7 @@
                         {
                           "renderType": "image",
                           "image": "injury-board/directory-selected-firm-desktop",
-                          "border": true,
-                          "alt": "The Injury Board directory on desktop with a single firm selected"
+                          "border": true
                         }
                       ]
                     }
@@ -751,8 +736,7 @@
                         {
                           "renderType": "image",
                           "image": "injury-board/directory-mobile",
-                          "border": true,
-                          "alt": "The Injury Board directory on mobile, with a map of the United States and a search bar"
+                          "border": true
                         }
                       ]
                     },
@@ -764,8 +748,7 @@
                         {
                           "renderType": "image",
                           "image": "injury-board/directory-selected-state-mobile",
-                          "border": true,
-                          "alt": "The Injury Board directory on mobile with a state selected on the map"
+                          "border": true
                         }
                       ]
                     },
@@ -777,8 +760,7 @@
                         {
                           "renderType": "image",
                           "image": "injury-board/directory-selected-firm-mobile",
-                          "border": true,
-                          "alt": "The Injury Board directory on mobile with a single firm selected"
+                          "border": true
                         }
                       ]
                     }
@@ -871,10 +853,9 @@
                         {
                           "renderType": "image",
                           "image": "injury-board/wordpress-edit-firm",
-                          "border": true,
-                          "alt": "The WordPress editor for an Injury Board firm, showing its custom fields"
+                          "border": true
                         }
-                      ]
+                      ] 
                     },
                     {
                       "renderType": "column",
@@ -884,10 +865,9 @@
                         {
                           "renderType": "image",
                           "image": "injury-board/wordpress-edit-member",
-                          "border": true,
-                          "alt": "The WordPress editor for an Injury Board member, showing its custom fields"
+                          "border": true
                         }
-                      ]
+                      ] 
                     }
                   ]
                 }

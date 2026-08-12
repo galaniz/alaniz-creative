@@ -374,14 +374,12 @@
                             {
                               "renderType": "image",
                               "image": "fortis-group/concept-1",
-                              "border": true,
-                              "alt": "Fortis Group homepage design concept, the first of six explorations"
+                              "border": true
                             },
                             {
                               "renderType": "image",
                               "image": "fortis-group/concept-2",
-                              "border": true,
-                              "alt": "Fortis Group homepage design concept, the second of six explorations"
+                              "border": true
                             }
                           ]
                         }
@@ -401,14 +399,12 @@
                             {
                               "renderType": "image",
                               "image": "fortis-group/concept-3",
-                              "border": true,
-                              "alt": "Fortis Group homepage design concept, the third of six explorations"
+                              "border": true
                             },
                             {
                               "renderType": "image",
                               "image": "fortis-group/concept-4",
-                              "border": true,
-                              "alt": "Fortis Group homepage design concept, the fourth of six explorations"
+                              "border": true
                             }
                           ]
                         }
@@ -428,14 +424,12 @@
                             {
                               "renderType": "image",
                               "image": "fortis-group/concept-5",
-                              "border": true,
-                              "alt": "Fortis Group homepage design concept, the fifth of six explorations"
+                              "border": true
                             },
                             {
                               "renderType": "image",
                               "image": "fortis-group/concept-6",
-                              "border": true,
-                              "alt": "Fortis Group homepage design concept, the sixth of six explorations"
+                              "border": true
                             }
                           ]
                         }
@@ -493,8 +487,7 @@
                         {
                           "renderType": "image",
                           "image": "fortis-group/home-top",
-                          "border": true,
-                          "alt": "Top half of the finished Fortis Group homepage design"
+                          "border": true
                         }
                       ]
                     },
@@ -506,8 +499,7 @@
                         {
                           "renderType": "image",
                           "image": "fortis-group/home-bottom",
-                          "border": true,
-                          "alt": "Lower half of the finished Fortis Group homepage design"
+                          "border": true
                         }
                       ]
                     }
@@ -569,8 +561,7 @@
                         {
                           "renderType": "image",
                           "image": "fortis-group/news-desktop",
-                          "border": true,
-                          "alt": "Fortis Group news listing page on desktop"
+                          "border": true
                         }
                       ]
                     },
@@ -583,8 +574,7 @@
                         {
                           "renderType": "image",
                           "image": "fortis-group/projects-desktop",
-                          "border": true,
-                          "alt": "Fortis Group projects listing page on desktop"
+                          "border": true
                         }
                       ]
                     },
@@ -597,8 +587,7 @@
                         {
                           "renderType": "image",
                           "image": "fortis-group/project-desktop",
-                          "border": true,
-                          "alt": "A single Fortis Group project page on desktop"
+                          "border": true
                         }
                       ]
                     }
@@ -627,8 +616,7 @@
                         {
                           "renderType": "image",
                           "image": "fortis-group/news-mobile",
-                          "border": true,
-                          "alt": "Fortis Group news listing page on mobile"
+                          "border": true
                         }
                       ]
                     },
@@ -640,8 +628,7 @@
                         {
                           "renderType": "image",
                           "image": "fortis-group/team-member-mobile",
-                          "border": true,
-                          "alt": "A Fortis Group team member page on mobile"
+                          "border": true
                         }
                       ]
                     },
@@ -653,8 +640,7 @@
                         {
                           "renderType": "image",
                           "image": "fortis-group/project-mobile",
-                          "border": true,
-                          "alt": "A single Fortis Group project page on mobile"
+                          "border": true
                         }
                       ]
                     }
@@ -752,10 +738,9 @@
                         {
                           "renderType": "image",
                           "image": "fortis-group/wordpress-edit-form",
-                          "border": true,
-                          "alt": "The WordPress editor for a Fortis Group form, showing grouped input fields"
+                          "border": true
                         }
-                      ]
+                      ] 
                     },
                     {
                       "renderType": "column",
@@ -765,10 +750,9 @@
                         {
                           "renderType": "image",
                           "image": "fortis-group/form-desktop",
-                          "border": true,
-                          "alt": "A multi-part Fortis Group form on desktop"
+                          "border": true
                         }
-                      ]
+                      ] 
                     }
                   ]
                 }
@@ -810,8 +794,7 @@
                 {
                   "renderType": "image",
                   "image": "fortis-group/wordpress-edit-home",
-                  "border": true,
-                  "alt": "The WordPress editor for the Fortis Group homepage, showing its custom fields"
+                  "border": true
                 }
               ]
             },

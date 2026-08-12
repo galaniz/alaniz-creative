@@ -131,8 +131,8 @@ const getMediaPage = (env: ContentEnv, images: ContentImage[], message?: string)
     </label>
     <label>
       Description
-      <input type="text" name="alt" required maxlength="300" placeholder="What the image shows">
-      <small>Required. This is what someone hears if they cannot see the image.</small>
+      <input type="text" name="alt" maxlength="300" placeholder="What the image shows">
+      <small>Optional. Carried over as a starting point when the image is placed on a page.</small>
     </label>
     <label>
       Key

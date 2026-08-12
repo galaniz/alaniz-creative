@@ -144,10 +144,6 @@ const putImage = async (
     throw new Error(`That image is ${Math.round(file.size / 1024 / 1024)} MB, over the ${imageMaxSize / 1024 / 1024} MB limit.`)
   }
 
-  if (!alt.trim()) {
-    throw new Error('Describe what the image shows before uploading it.')
-  }
-
   const images = env.IMAGES
 
   if (!images) {

@@ -289,8 +289,7 @@
                         {
                           "renderType": "image",
                           "image": "latercon/description-speakers",
-                          "border": true,
-                          "alt": "The LaterCon description and speakers sections of the landing page"
+                          "border": true
                         }
                       ]
                     },
@@ -302,8 +301,7 @@
                         {
                           "renderType": "image",
                           "image": "latercon/contrast-ratios",
-                          "border": true,
-                          "alt": "Contrast ratio checks on the LaterCon colour pairings"
+                          "border": true
                         }
                       ]
                     }
@@ -356,8 +354,7 @@
                         {
                           "renderType": "image",
                           "image": "latercon/inspo-1",
-                          "border": true,
-                          "alt": "Visual reference collected by the Creative Director for the LaterCon landing page"
+                          "border": true
                         }
                       ]
                     },
@@ -369,10 +366,9 @@
                         {
                           "renderType": "image",
                           "image": "latercon/inspo-2",
-                          "border": true,
-                          "alt": "A second visual reference collected for the LaterCon landing page"
+                          "border": true
                         }
-                      ]
+                      ] 
                     }
                   ]
                 }
@@ -606,8 +602,7 @@
                         {
                           "renderType": "image",
                           "image": "latercon/event-passed-mobile",
-                          "border": true,
-                          "alt": "The LaterCon landing page on mobile after the event had passed"
+                          "border": true
                         }
                       ]
                     },
@@ -622,8 +617,7 @@
                         {
                           "renderType": "image",
                           "image": "latercon/easter-egg",
-                          "border": true,
-                          "alt": "The easter egg hidden in the LaterCon landing page"
+                          "border": true
                         }
                       ]
                     }
@@ -690,14 +684,12 @@
                     {
                       "renderType": "image",
                       "image": "latercon/home-banner",
-                      "border": true,
-                      "alt": "LaterCon sign-up banner across the top of the Later homepage"
+                      "border": true
                     },
                     {
                       "renderType": "image",
                       "image": "latercon/home-popup",
-                      "border": true,
-                      "alt": "LaterCon sign-up popup on the Later homepage"
+                      "border": true
                     }
                   ]
                 }
@@ -766,8 +758,7 @@
                 {
                   "renderType": "image",
                   "image": "latercon/one-page-love",
-                  "border": true,
-                  "alt": "The LaterCon landing page featured on the One Page Love gallery"
+                  "border": true
                 }
               ]
             },
