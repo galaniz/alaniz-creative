@@ -3,9 +3,6 @@
   "main": "./ContentWorker.ts",
   "compatibility_date": "2025-10-14",
   "compatibility_flags": [
-    // Without this, a subrequest to a Cloudflare proxied hostname can be
-    // routed internally instead of going out to the public internet, and the
-    // Access certs endpoint answers 403. It is public — curl gets a 200.
     "global_fetch_strictly_public"
   ],
   "workers_dev": false,

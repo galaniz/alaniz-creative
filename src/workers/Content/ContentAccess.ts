@@ -25,6 +25,11 @@ interface ContentAccessKeys {
 /**
  * Fetch the Access signing keys, from cache where possible.
  *
+ * This endpoint is public, but a worker subrequest to a Cloudflare proxied
+ * hostname can be routed internally rather than out to the public internet,
+ * where it answers 403. The `global_fetch_strictly_public` compatibility flag
+ * in `wrangler.json` is what stops that, and removing it breaks this.
+ *
  * @param {ContentEnv} env
  * @return {Promise<ContentAccessKeys>}
  */
