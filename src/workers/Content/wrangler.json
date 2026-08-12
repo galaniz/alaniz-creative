@@ -8,8 +8,8 @@
   "minify": true,
   "routes": [
     {
-      "pattern": "content.alanizcreative.com/*",
-      "zone_name": "alanizcreative.com"
+      "pattern": "content.alanizcreative.com",
+      "custom_domain": true
     }
   ],
   "vars": {
