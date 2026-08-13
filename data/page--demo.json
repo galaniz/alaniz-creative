@@ -2,11 +2,11 @@
   "title": "Demo",
   "slug": "demo",
   "date": "2026-08-13T09:00:00",
-  "dateModified": "2026-08-13T14:26:57",
+  "dateModified": "2026-08-13T14:39:27",
   "hero": {
     "type": "minimal",
-    "title": "Static Sites, Edited By The Best AI Assistant",
-    "text": "Every section on this page — copy, layout, images — was built and edited through a conversation. This is what that looks like from the marketer's seat."
+    "title": "Fresh Fruit, Delivered To Your Door",
+    "text": "A simple, seasonal selection of fruit picked at peak ripeness and delivered weekly."
   },
   "content": [
     {
@@ -29,17 +29,18 @@
               "renderType": "container",
               "background": "background-light",
               "border": "rounded",
-              "gap": "s",
+              "gap": "m",
               "paddingTop": "l",
               "paddingBottom": "l",
               "paddingLeft": "l",
               "paddingRight": "l",
+              "richTextStyles": true,
               "content": [
                 {
                   "renderType": "richText",
                   "tag": "h3",
                   "headingStyle": "heading-m",
-                  "content": "Ask For Anything"
+                  "content": "What's In Season"
                 },
                 {
                   "renderType": "richText",
@@ -48,25 +49,25 @@
                   "content": [
                     {
                       "tag": "li",
-                      "content": "Rewrite the headline"
+                      "content": "Honeycrisp apples"
                     },
                     {
                       "tag": "li",
-                      "content": "Swap this image out"
+                      "content": "Bartlett pears"
                     },
                     {
                       "tag": "li",
-                      "content": "Add a new testimonial"
+                      "content": "Yellow peaches"
                     },
                     {
                       "tag": "li",
-                      "content": "Reorder a whole section"
+                      "content": "Black plums"
                     }
                   ]
                 },
                 {
                   "renderType": "button",
-                  "title": "Get in touch",
+                  "title": "See this week's box",
                   "internalLink": "page--contact",
                   "size": "l",
                   "paddingTop": "s"
@@ -141,32 +142,31 @@
       "background": "foreground-base",
       "paddingTop": "2xl",
       "paddingBottom": "2xl",
-      "breakout": true,
       "content": [
         {
           "renderType": "container",
           "maxWidth": "default",
           "gap": "l",
+          "richTextStyles": true,
           "content": [
             {
               "renderType": "richText",
               "tag": "h2",
               "headingStyle": "heading-2xl",
               "align": "center",
-              "content": "Explore Popular Edits"
+              "content": "Explore Popular Fruit"
             },
             {
               "renderType": "richText",
               "textStyle": "text-l",
               "align": "center",
-              "content": "A few examples of changes we made live, right here on this page."
+              "content": "A few of the varieties that show up most often in our boxes."
             },
             {
               "renderType": "container",
               "layout": "row",
               "justify": "center",
               "gap": "xs",
-              "paddingBottom": "m",
               "content": [
                 {
                   "renderType": "container",
@@ -178,7 +178,7 @@
                   "content": [
                     {
                       "renderType": "richText",
-                      "content": "Copy"
+                      "content": "Apples"
                     }
                   ]
                 },
@@ -192,7 +192,7 @@
                   "content": [
                     {
                       "renderType": "richText",
-                      "content": "Layout"
+                      "content": "Berries"
                     }
                   ]
                 },
@@ -206,7 +206,7 @@
                   "content": [
                     {
                       "renderType": "richText",
-                      "content": "Images"
+                      "content": "Citrus"
                     }
                   ]
                 },
@@ -220,7 +220,7 @@
                   "content": [
                     {
                       "renderType": "richText",
-                      "content": "Structure"
+                      "content": "Stone Fruit"
                     }
                   ]
                 }
@@ -239,7 +239,6 @@
                     {
                       "renderType": "container",
                       "border": "rounded",
-                      "gap": "2xs",
                       "content": [
                         {
                           "renderType": "container",
@@ -253,20 +252,30 @@
                           ]
                         },
                         {
-                          "renderType": "richText",
-                          "textStyle": "text-xs",
-                          "content": "Example"
-                        },
-                        {
-                          "renderType": "richText",
-                          "tag": "h4",
-                          "headingStyle": "heading-s",
-                          "content": "Headline rewrite"
-                        },
-                        {
-                          "renderType": "richText",
-                          "textStyle": "text-s",
-                          "content": "Punchier copy, same message, under a minute."
+                          "renderType": "container",
+                          "gap": "3xs",
+                          "paddingTop": "s",
+                          "paddingBottom": "s",
+                          "paddingLeft": "s",
+                          "richTextStyles": true,
+                          "content": [
+                            {
+                              "renderType": "richText",
+                              "textStyle": "text-xs",
+                              "content": "This week"
+                            },
+                            {
+                              "renderType": "richText",
+                              "tag": "h4",
+                              "headingStyle": "heading-s",
+                              "content": "Honeycrisp apples"
+                            },
+                            {
+                              "renderType": "richText",
+                              "textStyle": "text-s",
+                              "content": "Crisp, sweet, and a little tart. A fall favorite."
+                            }
+                          ]
                         }
                       ]
                     }
@@ -280,7 +289,6 @@
                     {
                       "renderType": "container",
                       "border": "rounded",
-                      "gap": "2xs",
                       "content": [
                         {
                           "renderType": "container",
@@ -294,20 +302,30 @@
                           ]
                         },
                         {
-                          "renderType": "richText",
-                          "textStyle": "text-xs",
-                          "content": "Example"
-                        },
-                        {
-                          "renderType": "richText",
-                          "tag": "h4",
-                          "headingStyle": "heading-s",
-                          "content": "New section"
-                        },
-                        {
-                          "renderType": "richText",
-                          "textStyle": "text-s",
-                          "content": "Asked for a comparison table, got one."
+                          "renderType": "container",
+                          "gap": "3xs",
+                          "paddingTop": "s",
+                          "paddingBottom": "s",
+                          "paddingLeft": "s",
+                          "richTextStyles": true,
+                          "content": [
+                            {
+                              "renderType": "richText",
+                              "textStyle": "text-xs",
+                              "content": "This week"
+                            },
+                            {
+                              "renderType": "richText",
+                              "tag": "h4",
+                              "headingStyle": "heading-s",
+                              "content": "Strawberries"
+                            },
+                            {
+                              "renderType": "richText",
+                              "textStyle": "text-s",
+                              "content": "Hand-picked and never held in cold storage long."
+                            }
+                          ]
                         }
                       ]
                     }
@@ -321,7 +339,6 @@
                     {
                       "renderType": "container",
                       "border": "rounded",
-                      "gap": "2xs",
                       "content": [
                         {
                           "renderType": "container",
@@ -335,20 +352,30 @@
                           ]
                         },
                         {
-                          "renderType": "richText",
-                          "textStyle": "text-xs",
-                          "content": "Example"
-                        },
-                        {
-                          "renderType": "richText",
-                          "tag": "h4",
-                          "headingStyle": "heading-s",
-                          "content": "Reordered blocks"
-                        },
-                        {
-                          "renderType": "richText",
-                          "textStyle": "text-s",
-                          "content": "Moved testimonials above the fold."
+                          "renderType": "container",
+                          "gap": "3xs",
+                          "paddingTop": "s",
+                          "paddingBottom": "s",
+                          "paddingLeft": "s",
+                          "richTextStyles": true,
+                          "content": [
+                            {
+                              "renderType": "richText",
+                              "textStyle": "text-xs",
+                              "content": "This week"
+                            },
+                            {
+                              "renderType": "richText",
+                              "tag": "h4",
+                              "headingStyle": "heading-s",
+                              "content": "Navel oranges"
+                            },
+                            {
+                              "renderType": "richText",
+                              "textStyle": "text-s",
+                              "content": "Easy to peel, seedless, and juicy through winter."
+                            }
+                          ]
                         }
                       ]
                     }
@@ -362,7 +389,6 @@
                     {
                       "renderType": "container",
                       "border": "rounded",
-                      "gap": "2xs",
                       "content": [
                         {
                           "renderType": "container",
@@ -376,20 +402,30 @@
                           ]
                         },
                         {
-                          "renderType": "richText",
-                          "textStyle": "text-xs",
-                          "content": "Example"
-                        },
-                        {
-                          "renderType": "richText",
-                          "tag": "h4",
-                          "headingStyle": "heading-s",
-                          "content": "Swapped imagery"
-                        },
-                        {
-                          "renderType": "richText",
-                          "textStyle": "text-s",
-                          "content": "Placeholder frames, ready for real photos."
+                          "renderType": "container",
+                          "gap": "3xs",
+                          "paddingTop": "s",
+                          "paddingBottom": "s",
+                          "paddingLeft": "s",
+                          "richTextStyles": true,
+                          "content": [
+                            {
+                              "renderType": "richText",
+                              "textStyle": "text-xs",
+                              "content": "This week"
+                            },
+                            {
+                              "renderType": "richText",
+                              "tag": "h4",
+                              "headingStyle": "heading-s",
+                              "content": "Yellow peaches"
+                            },
+                            {
+                              "renderType": "richText",
+                              "textStyle": "text-s",
+                              "content": "Fragrant and soft-ripe, best eaten the day it arrives."
+                            }
+                          ]
                         }
                       ]
                     }
@@ -406,18 +442,18 @@
       "background": "background-light",
       "paddingTop": "2xl",
       "paddingBottom": "2xl",
-      "breakout": true,
       "content": [
         {
           "renderType": "container",
           "maxWidth": "default",
           "gap": "m",
+          "richTextStyles": true,
           "content": [
             {
               "renderType": "richText",
               "tag": "h2",
               "headingStyle": "heading-2xl",
-              "content": "Everything You Need In One Place"
+              "content": "Everything In Every Box"
             },
             {
               "renderType": "container",
@@ -439,12 +475,12 @@
                           "renderType": "richText",
                           "tag": "h4",
                           "headingStyle": "heading-s",
-                          "content": "Live text edits"
+                          "content": "Seasonal fruit"
                         },
                         {
                           "renderType": "richText",
                           "textStyle": "text-s",
-                          "content": "Say it in plain language, see it change."
+                          "content": "Only what's actually ripe right now."
                         }
                       ]
                     },
@@ -477,12 +513,12 @@
                           "renderType": "richText",
                           "tag": "h4",
                           "headingStyle": "heading-s",
-                          "content": "Layout changes"
+                          "content": "Locally sourced"
                         },
                         {
                           "renderType": "richText",
                           "textStyle": "text-s",
-                          "content": "Reflow columns, resize, reorder sections."
+                          "content": "Grown within a day's drive of your door."
                         }
                       ]
                     },
@@ -515,12 +551,12 @@
                           "renderType": "richText",
                           "tag": "h4",
                           "headingStyle": "heading-s",
-                          "content": "New pages, on demand"
+                          "content": "Weekly delivery"
                         },
                         {
                           "renderType": "richText",
                           "textStyle": "text-s",
-                          "content": "Like this one — built from a screenshot and a sentence."
+                          "content": "A new box shows up on the same day each week."
                         }
                       ]
                     },
@@ -553,12 +589,12 @@
                           "renderType": "richText",
                           "tag": "h4",
                           "headingStyle": "heading-s",
-                          "content": "Staged previews"
+                          "content": "Recipe cards"
                         },
                         {
                           "renderType": "richText",
                           "textStyle": "text-s",
-                          "content": "Nothing goes live until you say publish."
+                          "content": "A few ideas for using everything before it turns."
                         }
                       ]
                     },
@@ -591,12 +627,12 @@
                           "renderType": "richText",
                           "tag": "h4",
                           "headingStyle": "heading-s",
-                          "content": "Writing code"
+                          "content": "Artificial ripening"
                         },
                         {
                           "renderType": "richText",
                           "textStyle": "text-s",
-                          "content": "Not required to make any of the above happen."
+                          "content": "We let the orchard do that part."
                         }
                       ]
                     },
@@ -624,7 +660,6 @@
       "background": "foreground-base",
       "paddingTop": "2xl",
       "paddingBottom": "2xl",
-      "breakout": true,
       "content": [
         {
           "renderType": "container",
@@ -642,34 +677,34 @@
                   "renderType": "richText",
                   "tag": "h2",
                   "headingStyle": "heading-2xl",
-                  "content": "Every Change, Instantly Live"
+                  "content": "Picked At Peak Ripeness"
                 },
                 {
                   "renderType": "richText",
                   "textStyle": "text-l",
-                  "content": "No deploy pipeline to babysit and no ticket to file. Just a conversation and a preview link."
+                  "content": "Fruit is harvested only after it reaches full ripeness, then packed the same day."
                 },
                 {
                   "renderType": "richText",
                   "tag": "h4",
                   "headingStyle": "heading-s",
-                  "content": "Stay in the loop"
+                  "content": "Harvested weekly"
                 },
                 {
                   "renderType": "richText",
                   "textStyle": "text-s",
-                  "content": "Every edit opens as a preview before it touches the live site."
+                  "content": "Small batches, picked a few times a week rather than all at once."
                 },
                 {
                   "renderType": "richText",
                   "tag": "h4",
                   "headingStyle": "heading-s",
-                  "content": "Publish when ready"
+                  "content": "Delivered fresh"
                 },
                 {
                   "renderType": "richText",
                   "textStyle": "text-s",
-                  "content": "One approval, and the change is live."
+                  "content": "From tree to box to door, usually within 48 hours."
                 }
               ]
             },
@@ -702,17 +737,18 @@
       "gap": "l",
       "paddingTop": "2xl",
       "paddingBottom": "2xl",
+      "richTextStyles": true,
       "content": [
         {
           "renderType": "richText",
           "tag": "h2",
           "headingStyle": "heading-2xl",
-          "content": "Learn From The Team Behind This Demo"
+          "content": "Meet The Growers"
         },
         {
           "renderType": "richText",
           "textStyle": "text-l",
-          "content": "Fictional, for now — swap in real headshots and bios anytime."
+          "content": "A few of the people behind what ends up in your box."
         },
         {
           "renderType": "container",
@@ -739,20 +775,28 @@
                       ]
                     },
                     {
-                      "renderType": "richText",
-                      "textStyle": "text-xs",
-                      "content": "MEET"
-                    },
-                    {
-                      "renderType": "richText",
-                      "tag": "h4",
-                      "headingStyle": "heading-s",
-                      "content": "Jordan Lee"
-                    },
-                    {
-                      "renderType": "richText",
-                      "textStyle": "text-s",
-                      "content": "Marketing Lead"
+                      "renderType": "container",
+                      "gap": "3xs",
+                      "paddingTop": "xs",
+                      "richTextStyles": true,
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-xs",
+                          "content": "MEET"
+                        },
+                        {
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "Jordan Lee"
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-s",
+                          "content": "Orchard Manager"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -778,20 +822,28 @@
                       ]
                     },
                     {
-                      "renderType": "richText",
-                      "textStyle": "text-xs",
-                      "content": "MEET"
-                    },
-                    {
-                      "renderType": "richText",
-                      "tag": "h4",
-                      "headingStyle": "heading-s",
-                      "content": "Sam Rivera"
-                    },
-                    {
-                      "renderType": "richText",
-                      "textStyle": "text-s",
-                      "content": "Content Strategist"
+                      "renderType": "container",
+                      "gap": "3xs",
+                      "paddingTop": "xs",
+                      "richTextStyles": true,
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-xs",
+                          "content": "MEET"
+                        },
+                        {
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "Sam Rivera"
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-s",
+                          "content": "Farm Hand"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -817,20 +869,28 @@
                       ]
                     },
                     {
-                      "renderType": "richText",
-                      "textStyle": "text-xs",
-                      "content": "MEET"
-                    },
-                    {
-                      "renderType": "richText",
-                      "tag": "h4",
-                      "headingStyle": "heading-s",
-                      "content": "Priya Nair"
-                    },
-                    {
-                      "renderType": "richText",
-                      "textStyle": "text-s",
-                      "content": "Brand Designer"
+                      "renderType": "container",
+                      "gap": "3xs",
+                      "paddingTop": "xs",
+                      "richTextStyles": true,
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-xs",
+                          "content": "MEET"
+                        },
+                        {
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "Priya Nair"
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-s",
+                          "content": "Packing Lead"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -856,20 +916,28 @@
                       ]
                     },
                     {
-                      "renderType": "richText",
-                      "textStyle": "text-xs",
-                      "content": "MEET"
-                    },
-                    {
-                      "renderType": "richText",
-                      "tag": "h4",
-                      "headingStyle": "heading-s",
-                      "content": "Owen Clarke"
-                    },
-                    {
-                      "renderType": "richText",
-                      "textStyle": "text-s",
-                      "content": "Growth Marketer"
+                      "renderType": "container",
+                      "gap": "3xs",
+                      "paddingTop": "xs",
+                      "richTextStyles": true,
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-xs",
+                          "content": "MEET"
+                        },
+                        {
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "Owen Clarke"
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-s",
+                          "content": "Delivery Driver"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -884,7 +952,6 @@
       "background": "foreground-base",
       "paddingTop": "2xl",
       "paddingBottom": "2xl",
-      "breakout": true,
       "content": [
         {
           "renderType": "container",
@@ -895,7 +962,7 @@
               "renderType": "richText",
               "tag": "h2",
               "headingStyle": "heading-2xl",
-              "content": "Why Marketers Love This Approach"
+              "content": "Why Customers Love Their Box"
             },
             {
               "renderType": "container",
@@ -911,23 +978,23 @@
                       "renderType": "richText",
                       "tag": "h4",
                       "headingStyle": "heading-s",
-                      "content": "Alex M., Content Marketer"
+                      "content": "Alex M."
                     },
                     {
                       "renderType": "richText",
                       "textStyle": "text-s",
-                      "content": "I described the section I wanted and it was staged for review in minutes. No dev queue."
+                      "content": "The peaches this month were some of the best I've had, and everything arrived cold."
                     },
                     {
                       "renderType": "richText",
                       "tag": "h4",
                       "headingStyle": "heading-s",
-                      "content": "Devon P., Growth Lead"
+                      "content": "Devon P."
                     },
                     {
                       "renderType": "richText",
                       "textStyle": "text-s",
-                      "content": "The preview link made it easy to get sign-off before anything touched the live site."
+                      "content": "I like that the box changes with the season instead of the same fruit every week."
                     }
                   ]
                 },
@@ -940,23 +1007,23 @@
                       "renderType": "richText",
                       "tag": "h4",
                       "headingStyle": "heading-s",
-                      "content": "Sasha K., Brand Manager"
+                      "content": "Sasha K."
                     },
                     {
                       "renderType": "richText",
                       "textStyle": "text-s",
-                      "content": "It kept our layout system consistent even while I was moving things around freely."
+                      "content": "The recipe cards actually get used in our house, which is rare."
                     },
                     {
                       "renderType": "richText",
                       "tag": "h4",
                       "headingStyle": "heading-s",
-                      "content": "Marcus T., Demand Gen"
+                      "content": "Marcus T."
                     },
                     {
                       "renderType": "richText",
                       "textStyle": "text-s",
-                      "content": "I built this whole page from a screenshot. That's the part I keep telling people about."
+                      "content": "Delivery has been on time every single week since we signed up."
                     }
                   ]
                 }
@@ -969,9 +1036,10 @@
     {
       "renderType": "container",
       "maxWidth": "default",
-      "gap": "0",
+      "gap": "m",
       "paddingTop": "2xl",
       "paddingBottom": "2xl",
+      "richTextStyles": true,
       "content": [
         {
           "renderType": "richText",
@@ -983,45 +1051,45 @@
           "renderType": "richText",
           "tag": "h4",
           "headingStyle": "heading-s",
-          "content": "Do I need to know how to code?"
+          "content": "Can I choose what's in my box?"
         },
         {
           "renderType": "richText",
           "textStyle": "text-s",
-          "content": "No. Everything on this page was described in plain language."
+          "content": "Boxes are curated by what's ripe, but you can flag fruit you'd rather skip."
         },
         {
           "renderType": "richText",
           "tag": "h4",
           "headingStyle": "heading-s",
-          "content": "Can changes be undone?"
+          "content": "What if something arrives bruised?"
         },
         {
           "renderType": "richText",
           "textStyle": "text-s",
-          "content": "Yes — nothing publishes until it's reviewed, and a staged change can be discarded any time."
+          "content": "Let us know within 48 hours and we'll replace it in the next box."
         },
         {
           "renderType": "richText",
           "tag": "h4",
           "headingStyle": "heading-s",
-          "content": "Does this work for existing pages too?"
+          "content": "Can I pause or cancel anytime?"
         },
         {
           "renderType": "richText",
           "textStyle": "text-s",
-          "content": "Yes, the same process edits pages already on the site, not just new ones."
+          "content": "Yes, there's no minimum commitment and no cancellation fee."
         },
         {
           "renderType": "richText",
           "tag": "h4",
           "headingStyle": "heading-s",
-          "content": "What about real images?"
+          "content": "Where does the fruit come from?"
         },
         {
           "renderType": "richText",
           "textStyle": "text-s",
-          "content": "The bordered boxes on this page are placeholders — swap in real photos from the media library anytime."
+          "content": "Small orchards and farms within a day's drive of our packing house."
         }
       ]
     },
@@ -1030,7 +1098,6 @@
       "background": "background-light",
       "paddingTop": "xl",
       "paddingBottom": "xl",
-      "breakout": true,
       "content": [
         {
           "renderType": "container",
@@ -1053,22 +1120,22 @@
                 {
                   "renderType": "richText",
                   "textStyle": "heading-s",
-                  "content": "Marketing Weekly"
+                  "content": "Harvest Weekly"
                 },
                 {
                   "renderType": "richText",
                   "textStyle": "heading-s",
-                  "content": "SaaS Digest"
+                  "content": "The Orchard Post"
                 },
                 {
                   "renderType": "richText",
                   "textStyle": "heading-s",
-                  "content": "Growth Times"
+                  "content": "Farm To Table Digest"
                 },
                 {
                   "renderType": "richText",
                   "textStyle": "heading-s",
-                  "content": "The Static Report"
+                  "content": "Fresh Press"
                 }
               ]
             }
