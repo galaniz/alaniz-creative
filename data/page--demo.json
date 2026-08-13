@@ -2,7 +2,7 @@
   "title": "Demo",
   "slug": "demo",
   "date": "2026-08-13T09:00:00",
-  "dateModified": "2026-08-13T14:39:27",
+  "dateModified": "2026-08-13T14:50:28",
   "hero": {
     "type": "minimal",
     "title": "Fresh Fruit, Delivered To Your Door",
@@ -11,6 +11,7 @@
   "content": [
     {
       "renderType": "container",
+      "tag": "section",
       "maxWidth": "default",
       "layout": "row-m",
       "align": "center",
@@ -19,6 +20,7 @@
       "paddingTop": "l",
       "paddingTopLarge": "2xl",
       "paddingBottom": "l",
+      "paddingBottomLarge": "xl",
       "content": [
         {
           "renderType": "column",
@@ -29,7 +31,6 @@
               "renderType": "container",
               "background": "background-light",
               "border": "rounded",
-              "gap": "m",
               "paddingTop": "l",
               "paddingBottom": "l",
               "paddingLeft": "l",
@@ -139,14 +140,15 @@
     },
     {
       "renderType": "container",
+      "tag": "section",
       "background": "foreground-base",
       "paddingTop": "2xl",
       "paddingBottom": "2xl",
       "content": [
         {
           "renderType": "container",
-          "maxWidth": "default",
-          "gap": "l",
+          "maxWidth": "xs",
+          "paddingBottom": "l",
           "richTextStyles": true,
           "content": [
             {
@@ -158,274 +160,289 @@
             },
             {
               "renderType": "richText",
+              "tag": "p",
               "textStyle": "text-l",
               "align": "center",
               "content": "A few of the varieties that show up most often in our boxes."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "layout": "row",
+          "justify": "center",
+          "gap": "xs",
+          "paddingBottom": "l",
+          "content": [
+            {
+              "renderType": "container",
+              "border": "full",
+              "paddingTop": "3xs",
+              "paddingBottom": "3xs",
+              "paddingLeft": "s",
+              "paddingRight": "s",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "span",
+                  "content": "Apples"
+                }
+              ]
             },
             {
               "renderType": "container",
-              "layout": "row",
-              "justify": "center",
-              "gap": "xs",
+              "border": "full",
+              "paddingTop": "3xs",
+              "paddingBottom": "3xs",
+              "paddingLeft": "s",
+              "paddingRight": "s",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "span",
+                  "content": "Berries"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "border": "full",
+              "paddingTop": "3xs",
+              "paddingBottom": "3xs",
+              "paddingLeft": "s",
+              "paddingRight": "s",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "span",
+                  "content": "Citrus"
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "border": "full",
+              "paddingTop": "3xs",
+              "paddingBottom": "3xs",
+              "paddingLeft": "s",
+              "paddingRight": "s",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "span",
+                  "content": "Stone Fruit"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "default",
+          "layout": "row-m",
+          "gap": "m",
+          "content": [
+            {
+              "renderType": "column",
+              "width": "12",
+              "widthMedium": "3",
               "content": [
                 {
                   "renderType": "container",
-                  "border": "full",
-                  "paddingTop": "3xs",
-                  "paddingBottom": "3xs",
-                  "paddingLeft": "s",
-                  "paddingRight": "s",
+                  "border": "rounded",
                   "content": [
                     {
-                      "renderType": "richText",
-                      "content": "Apples"
-                    }
-                  ]
-                },
-                {
-                  "renderType": "container",
-                  "border": "full",
-                  "paddingTop": "3xs",
-                  "paddingBottom": "3xs",
-                  "paddingLeft": "s",
-                  "paddingRight": "s",
-                  "content": [
+                      "renderType": "container",
+                      "border": "rounded",
+                      "content": [
+                        {
+                          "renderType": "aspectRatio",
+                          "percent": 56.25,
+                          "content": []
+                        }
+                      ]
+                    },
                     {
-                      "renderType": "richText",
-                      "content": "Berries"
-                    }
-                  ]
-                },
-                {
-                  "renderType": "container",
-                  "border": "full",
-                  "paddingTop": "3xs",
-                  "paddingBottom": "3xs",
-                  "paddingLeft": "s",
-                  "paddingRight": "s",
-                  "content": [
-                    {
-                      "renderType": "richText",
-                      "content": "Citrus"
-                    }
-                  ]
-                },
-                {
-                  "renderType": "container",
-                  "border": "full",
-                  "paddingTop": "3xs",
-                  "paddingBottom": "3xs",
-                  "paddingLeft": "s",
-                  "paddingRight": "s",
-                  "content": [
-                    {
-                      "renderType": "richText",
-                      "content": "Stone Fruit"
+                      "renderType": "container",
+                      "paddingTop": "s",
+                      "paddingBottom": "s",
+                      "paddingLeft": "s",
+                      "paddingRight": "s",
+                      "richTextStyles": true,
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "tag": "p",
+                          "textStyle": "text-xs",
+                          "content": "This week"
+                        },
+                        {
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "Honeycrisp apples"
+                        },
+                        {
+                          "renderType": "richText",
+                          "tag": "p",
+                          "textStyle": "text-s",
+                          "content": "Crisp, sweet, and a little tart. A fall favorite."
+                        }
+                      ]
                     }
                   ]
                 }
               ]
             },
             {
-              "renderType": "container",
-              "layout": "row-m",
-              "gap": "m",
+              "renderType": "column",
+              "width": "12",
+              "widthMedium": "3",
               "content": [
                 {
-                  "renderType": "column",
-                  "width": "12",
-                  "widthMedium": "3",
+                  "renderType": "container",
+                  "border": "rounded",
                   "content": [
                     {
                       "renderType": "container",
                       "border": "rounded",
                       "content": [
                         {
-                          "renderType": "container",
-                          "border": "rounded",
-                          "content": [
-                            {
-                              "renderType": "aspectRatio",
-                              "percent": 56.25,
-                              "content": []
-                            }
-                          ]
+                          "renderType": "aspectRatio",
+                          "percent": 56.25,
+                          "content": []
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "container",
+                      "paddingTop": "s",
+                      "paddingBottom": "s",
+                      "paddingLeft": "s",
+                      "paddingRight": "s",
+                      "richTextStyles": true,
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "tag": "p",
+                          "textStyle": "text-xs",
+                          "content": "This week"
                         },
                         {
-                          "renderType": "container",
-                          "gap": "3xs",
-                          "paddingTop": "s",
-                          "paddingBottom": "s",
-                          "paddingLeft": "s",
-                          "richTextStyles": true,
-                          "content": [
-                            {
-                              "renderType": "richText",
-                              "textStyle": "text-xs",
-                              "content": "This week"
-                            },
-                            {
-                              "renderType": "richText",
-                              "tag": "h4",
-                              "headingStyle": "heading-s",
-                              "content": "Honeycrisp apples"
-                            },
-                            {
-                              "renderType": "richText",
-                              "textStyle": "text-s",
-                              "content": "Crisp, sweet, and a little tart. A fall favorite."
-                            }
-                          ]
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "Strawberries"
+                        },
+                        {
+                          "renderType": "richText",
+                          "tag": "p",
+                          "textStyle": "text-s",
+                          "content": "Hand-picked and never held in cold storage long."
                         }
                       ]
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "renderType": "column",
+              "width": "12",
+              "widthMedium": "3",
+              "content": [
                 {
-                  "renderType": "column",
-                  "width": "12",
-                  "widthMedium": "3",
+                  "renderType": "container",
+                  "border": "rounded",
                   "content": [
                     {
                       "renderType": "container",
                       "border": "rounded",
                       "content": [
                         {
-                          "renderType": "container",
-                          "border": "rounded",
-                          "content": [
-                            {
-                              "renderType": "aspectRatio",
-                              "percent": 56.25,
-                              "content": []
-                            }
-                          ]
+                          "renderType": "aspectRatio",
+                          "percent": 56.25,
+                          "content": []
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "container",
+                      "paddingTop": "s",
+                      "paddingBottom": "s",
+                      "paddingLeft": "s",
+                      "paddingRight": "s",
+                      "richTextStyles": true,
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "tag": "p",
+                          "textStyle": "text-xs",
+                          "content": "This week"
                         },
                         {
-                          "renderType": "container",
-                          "gap": "3xs",
-                          "paddingTop": "s",
-                          "paddingBottom": "s",
-                          "paddingLeft": "s",
-                          "richTextStyles": true,
-                          "content": [
-                            {
-                              "renderType": "richText",
-                              "textStyle": "text-xs",
-                              "content": "This week"
-                            },
-                            {
-                              "renderType": "richText",
-                              "tag": "h4",
-                              "headingStyle": "heading-s",
-                              "content": "Strawberries"
-                            },
-                            {
-                              "renderType": "richText",
-                              "textStyle": "text-s",
-                              "content": "Hand-picked and never held in cold storage long."
-                            }
-                          ]
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "Navel oranges"
+                        },
+                        {
+                          "renderType": "richText",
+                          "tag": "p",
+                          "textStyle": "text-s",
+                          "content": "Easy to peel, seedless, and juicy through winter."
                         }
                       ]
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "renderType": "column",
+              "width": "12",
+              "widthMedium": "3",
+              "content": [
                 {
-                  "renderType": "column",
-                  "width": "12",
-                  "widthMedium": "3",
+                  "renderType": "container",
+                  "border": "rounded",
                   "content": [
                     {
                       "renderType": "container",
                       "border": "rounded",
                       "content": [
                         {
-                          "renderType": "container",
-                          "border": "rounded",
-                          "content": [
-                            {
-                              "renderType": "aspectRatio",
-                              "percent": 56.25,
-                              "content": []
-                            }
-                          ]
-                        },
-                        {
-                          "renderType": "container",
-                          "gap": "3xs",
-                          "paddingTop": "s",
-                          "paddingBottom": "s",
-                          "paddingLeft": "s",
-                          "richTextStyles": true,
-                          "content": [
-                            {
-                              "renderType": "richText",
-                              "textStyle": "text-xs",
-                              "content": "This week"
-                            },
-                            {
-                              "renderType": "richText",
-                              "tag": "h4",
-                              "headingStyle": "heading-s",
-                              "content": "Navel oranges"
-                            },
-                            {
-                              "renderType": "richText",
-                              "textStyle": "text-s",
-                              "content": "Easy to peel, seedless, and juicy through winter."
-                            }
-                          ]
+                          "renderType": "aspectRatio",
+                          "percent": 56.25,
+                          "content": []
                         }
                       ]
-                    }
-                  ]
-                },
-                {
-                  "renderType": "column",
-                  "width": "12",
-                  "widthMedium": "3",
-                  "content": [
+                    },
                     {
                       "renderType": "container",
-                      "border": "rounded",
+                      "paddingTop": "s",
+                      "paddingBottom": "s",
+                      "paddingLeft": "s",
+                      "paddingRight": "s",
+                      "richTextStyles": true,
                       "content": [
                         {
-                          "renderType": "container",
-                          "border": "rounded",
-                          "content": [
-                            {
-                              "renderType": "aspectRatio",
-                              "percent": 56.25,
-                              "content": []
-                            }
-                          ]
+                          "renderType": "richText",
+                          "tag": "p",
+                          "textStyle": "text-xs",
+                          "content": "This week"
                         },
                         {
-                          "renderType": "container",
-                          "gap": "3xs",
-                          "paddingTop": "s",
-                          "paddingBottom": "s",
-                          "paddingLeft": "s",
-                          "richTextStyles": true,
-                          "content": [
-                            {
-                              "renderType": "richText",
-                              "textStyle": "text-xs",
-                              "content": "This week"
-                            },
-                            {
-                              "renderType": "richText",
-                              "tag": "h4",
-                              "headingStyle": "heading-s",
-                              "content": "Yellow peaches"
-                            },
-                            {
-                              "renderType": "richText",
-                              "textStyle": "text-s",
-                              "content": "Fragrant and soft-ripe, best eaten the day it arrives."
-                            }
-                          ]
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "Yellow peaches"
+                        },
+                        {
+                          "renderType": "richText",
+                          "tag": "p",
+                          "textStyle": "text-s",
+                          "content": "Fragrant and soft-ripe, best eaten the day it arrives."
                         }
                       ]
                     }
@@ -439,14 +456,15 @@
     },
     {
       "renderType": "container",
+      "tag": "section",
       "background": "background-light",
       "paddingTop": "2xl",
       "paddingBottom": "2xl",
       "content": [
         {
           "renderType": "container",
-          "maxWidth": "default",
-          "gap": "m",
+          "maxWidth": "xs",
+          "paddingBottom": "l",
           "richTextStyles": true,
           "content": [
             {
@@ -456,272 +474,213 @@
               "content": "Everything In Every Box"
             },
             {
-              "renderType": "container",
-              "gap": "0",
-              "content": [
-                {
-                  "renderType": "container",
-                  "layout": "row-s",
-                  "justify": "between",
-                  "align": "center",
-                  "paddingTop": "m",
-                  "paddingBottom": "m",
-                  "content": [
-                    {
-                      "renderType": "column",
-                      "width": "8",
-                      "content": [
-                        {
-                          "renderType": "richText",
-                          "tag": "h4",
-                          "headingStyle": "heading-s",
-                          "content": "Seasonal fruit"
-                        },
-                        {
-                          "renderType": "richText",
-                          "textStyle": "text-s",
-                          "content": "Only what's actually ripe right now."
-                        }
-                      ]
-                    },
-                    {
-                      "renderType": "column",
-                      "width": "4",
-                      "content": [
-                        {
-                          "renderType": "richText",
-                          "align": "end",
-                          "content": "✓"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "renderType": "container",
-                  "layout": "row-s",
-                  "justify": "between",
-                  "align": "center",
-                  "paddingTop": "m",
-                  "paddingBottom": "m",
-                  "content": [
-                    {
-                      "renderType": "column",
-                      "width": "8",
-                      "content": [
-                        {
-                          "renderType": "richText",
-                          "tag": "h4",
-                          "headingStyle": "heading-s",
-                          "content": "Locally sourced"
-                        },
-                        {
-                          "renderType": "richText",
-                          "textStyle": "text-s",
-                          "content": "Grown within a day's drive of your door."
-                        }
-                      ]
-                    },
-                    {
-                      "renderType": "column",
-                      "width": "4",
-                      "content": [
-                        {
-                          "renderType": "richText",
-                          "align": "end",
-                          "content": "✓"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "renderType": "container",
-                  "layout": "row-s",
-                  "justify": "between",
-                  "align": "center",
-                  "paddingTop": "m",
-                  "paddingBottom": "m",
-                  "content": [
-                    {
-                      "renderType": "column",
-                      "width": "8",
-                      "content": [
-                        {
-                          "renderType": "richText",
-                          "tag": "h4",
-                          "headingStyle": "heading-s",
-                          "content": "Weekly delivery"
-                        },
-                        {
-                          "renderType": "richText",
-                          "textStyle": "text-s",
-                          "content": "A new box shows up on the same day each week."
-                        }
-                      ]
-                    },
-                    {
-                      "renderType": "column",
-                      "width": "4",
-                      "content": [
-                        {
-                          "renderType": "richText",
-                          "align": "end",
-                          "content": "✓"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "renderType": "container",
-                  "layout": "row-s",
-                  "justify": "between",
-                  "align": "center",
-                  "paddingTop": "m",
-                  "paddingBottom": "m",
-                  "content": [
-                    {
-                      "renderType": "column",
-                      "width": "8",
-                      "content": [
-                        {
-                          "renderType": "richText",
-                          "tag": "h4",
-                          "headingStyle": "heading-s",
-                          "content": "Recipe cards"
-                        },
-                        {
-                          "renderType": "richText",
-                          "textStyle": "text-s",
-                          "content": "A few ideas for using everything before it turns."
-                        }
-                      ]
-                    },
-                    {
-                      "renderType": "column",
-                      "width": "4",
-                      "content": [
-                        {
-                          "renderType": "richText",
-                          "align": "end",
-                          "content": "✓"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "renderType": "container",
-                  "layout": "row-s",
-                  "justify": "between",
-                  "align": "center",
-                  "paddingTop": "m",
-                  "paddingBottom": "m",
-                  "content": [
-                    {
-                      "renderType": "column",
-                      "width": "8",
-                      "content": [
-                        {
-                          "renderType": "richText",
-                          "tag": "h4",
-                          "headingStyle": "heading-s",
-                          "content": "Artificial ripening"
-                        },
-                        {
-                          "renderType": "richText",
-                          "textStyle": "text-s",
-                          "content": "We let the orchard do that part."
-                        }
-                      ]
-                    },
-                    {
-                      "renderType": "column",
-                      "width": "4",
-                      "content": [
-                        {
-                          "renderType": "richText",
-                          "align": "end",
-                          "content": "—"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
+              "renderType": "richText",
+              "tag": "p",
+              "textStyle": "text-l",
+              "content": "What comes standard with a subscription, and what doesn't."
             }
           ]
-        }
-      ]
-    },
-    {
-      "renderType": "container",
-      "background": "foreground-base",
-      "paddingTop": "2xl",
-      "paddingBottom": "2xl",
-      "content": [
+        },
         {
           "renderType": "container",
           "maxWidth": "default",
-          "layout": "row-m",
-          "align": "center",
-          "gap": "xl",
+          "gap": "0",
           "content": [
             {
-              "renderType": "column",
-              "width": "12",
-              "widthMedium": "6",
+              "renderType": "container",
+              "layout": "row-s",
+              "justify": "between",
+              "align": "center",
+              "paddingTop": "m",
+              "paddingBottom": "m",
               "content": [
                 {
-                  "renderType": "richText",
-                  "tag": "h2",
-                  "headingStyle": "heading-2xl",
-                  "content": "Picked At Peak Ripeness"
+                  "renderType": "column",
+                  "width": "8",
+                  "content": [
+                    {
+                      "renderType": "richText",
+                      "tag": "h4",
+                      "headingStyle": "heading-s",
+                      "content": "Seasonal fruit"
+                    },
+                    {
+                      "renderType": "richText",
+                      "tag": "p",
+                      "textStyle": "text-s",
+                      "content": "Only what's actually ripe right now."
+                    }
+                  ]
                 },
                 {
-                  "renderType": "richText",
-                  "textStyle": "text-l",
-                  "content": "Fruit is harvested only after it reaches full ripeness, then packed the same day."
-                },
-                {
-                  "renderType": "richText",
-                  "tag": "h4",
-                  "headingStyle": "heading-s",
-                  "content": "Harvested weekly"
-                },
-                {
-                  "renderType": "richText",
-                  "textStyle": "text-s",
-                  "content": "Small batches, picked a few times a week rather than all at once."
-                },
-                {
-                  "renderType": "richText",
-                  "tag": "h4",
-                  "headingStyle": "heading-s",
-                  "content": "Delivered fresh"
-                },
-                {
-                  "renderType": "richText",
-                  "textStyle": "text-s",
-                  "content": "From tree to box to door, usually within 48 hours."
+                  "renderType": "column",
+                  "width": "4",
+                  "content": [
+                    {
+                      "renderType": "richText",
+                      "tag": "span",
+                      "align": "end",
+                      "content": "✓"
+                    }
+                  ]
                 }
               ]
             },
             {
-              "renderType": "column",
-              "width": "12",
-              "widthMedium": "6",
+              "renderType": "container",
+              "layout": "row-s",
+              "justify": "between",
+              "align": "center",
+              "paddingTop": "m",
+              "paddingBottom": "m",
               "content": [
                 {
-                  "renderType": "container",
-                  "background": "bright",
-                  "border": "rounded",
+                  "renderType": "column",
+                  "width": "8",
                   "content": [
                     {
-                      "renderType": "aspectRatio",
-                      "percent": 100,
-                      "content": []
+                      "renderType": "richText",
+                      "tag": "h4",
+                      "headingStyle": "heading-s",
+                      "content": "Locally sourced"
+                    },
+                    {
+                      "renderType": "richText",
+                      "tag": "p",
+                      "textStyle": "text-s",
+                      "content": "Grown within a day's drive of your door."
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "4",
+                  "content": [
+                    {
+                      "renderType": "richText",
+                      "tag": "span",
+                      "align": "end",
+                      "content": "✓"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "layout": "row-s",
+              "justify": "between",
+              "align": "center",
+              "paddingTop": "m",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "column",
+                  "width": "8",
+                  "content": [
+                    {
+                      "renderType": "richText",
+                      "tag": "h4",
+                      "headingStyle": "heading-s",
+                      "content": "Weekly delivery"
+                    },
+                    {
+                      "renderType": "richText",
+                      "tag": "p",
+                      "textStyle": "text-s",
+                      "content": "A new box shows up on the same day each week."
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "4",
+                  "content": [
+                    {
+                      "renderType": "richText",
+                      "tag": "span",
+                      "align": "end",
+                      "content": "✓"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "layout": "row-s",
+              "justify": "between",
+              "align": "center",
+              "paddingTop": "m",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "column",
+                  "width": "8",
+                  "content": [
+                    {
+                      "renderType": "richText",
+                      "tag": "h4",
+                      "headingStyle": "heading-s",
+                      "content": "Recipe cards"
+                    },
+                    {
+                      "renderType": "richText",
+                      "tag": "p",
+                      "textStyle": "text-s",
+                      "content": "A few ideas for using everything before it turns."
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "4",
+                  "content": [
+                    {
+                      "renderType": "richText",
+                      "tag": "span",
+                      "align": "end",
+                      "content": "✓"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "layout": "row-s",
+              "justify": "between",
+              "align": "center",
+              "paddingTop": "m",
+              "paddingBottom": "m",
+              "content": [
+                {
+                  "renderType": "column",
+                  "width": "8",
+                  "content": [
+                    {
+                      "renderType": "richText",
+                      "tag": "h4",
+                      "headingStyle": "heading-s",
+                      "content": "Artificial ripening"
+                    },
+                    {
+                      "renderType": "richText",
+                      "tag": "p",
+                      "textStyle": "text-s",
+                      "content": "We let the orchard do that part."
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "4",
+                  "content": [
+                    {
+                      "renderType": "richText",
+                      "tag": "span",
+                      "align": "end",
+                      "content": "—"
                     }
                   ]
                 }
@@ -733,25 +692,108 @@
     },
     {
       "renderType": "container",
+      "tag": "section",
       "maxWidth": "default",
-      "gap": "l",
+      "layout": "row-m",
+      "background": "foreground-base",
+      "align": "center",
+      "gap": "xl",
       "paddingTop": "2xl",
       "paddingBottom": "2xl",
-      "richTextStyles": true,
       "content": [
         {
-          "renderType": "richText",
-          "tag": "h2",
-          "headingStyle": "heading-2xl",
-          "content": "Meet The Growers"
+          "renderType": "column",
+          "width": "12",
+          "widthMedium": "6",
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "headingStyle": "heading-2xl",
+              "content": "Picked At Peak Ripeness"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "textStyle": "text-l",
+              "content": "Fruit is harvested only after it reaches full ripeness, then packed the same day."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "headingStyle": "heading-s",
+              "content": "Harvested weekly"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "textStyle": "text-s",
+              "content": "Small batches, picked a few times a week rather than all at once."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "headingStyle": "heading-s",
+              "content": "Delivered fresh"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "textStyle": "text-s",
+              "content": "From tree to box to door, usually within 48 hours."
+            }
+          ]
         },
         {
-          "renderType": "richText",
-          "textStyle": "text-l",
-          "content": "A few of the people behind what ends up in your box."
+          "renderType": "column",
+          "width": "12",
+          "widthMedium": "6",
+          "content": [
+            {
+              "renderType": "container",
+              "background": "bright",
+              "border": "rounded",
+              "content": [
+                {
+                  "renderType": "aspectRatio",
+                  "percent": 100,
+                  "content": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "2xl",
+      "paddingBottom": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "paddingBottom": "l",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "headingStyle": "heading-2xl",
+              "content": "Meet The Growers"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "textStyle": "text-l",
+              "content": "A few of the people behind what ends up in your box."
+            }
+          ]
         },
         {
           "renderType": "container",
+          "maxWidth": "default",
           "layout": "row-m",
           "gap": "m",
           "content": [
@@ -776,12 +818,12 @@
                     },
                     {
                       "renderType": "container",
-                      "gap": "3xs",
                       "paddingTop": "xs",
                       "richTextStyles": true,
                       "content": [
                         {
                           "renderType": "richText",
+                          "tag": "p",
                           "textStyle": "text-xs",
                           "content": "MEET"
                         },
@@ -793,6 +835,7 @@
                         },
                         {
                           "renderType": "richText",
+                          "tag": "p",
                           "textStyle": "text-s",
                           "content": "Orchard Manager"
                         }
@@ -823,12 +866,12 @@
                     },
                     {
                       "renderType": "container",
-                      "gap": "3xs",
                       "paddingTop": "xs",
                       "richTextStyles": true,
                       "content": [
                         {
                           "renderType": "richText",
+                          "tag": "p",
                           "textStyle": "text-xs",
                           "content": "MEET"
                         },
@@ -840,6 +883,7 @@
                         },
                         {
                           "renderType": "richText",
+                          "tag": "p",
                           "textStyle": "text-s",
                           "content": "Farm Hand"
                         }
@@ -870,12 +914,12 @@
                     },
                     {
                       "renderType": "container",
-                      "gap": "3xs",
                       "paddingTop": "xs",
                       "richTextStyles": true,
                       "content": [
                         {
                           "renderType": "richText",
+                          "tag": "p",
                           "textStyle": "text-xs",
                           "content": "MEET"
                         },
@@ -887,6 +931,7 @@
                         },
                         {
                           "renderType": "richText",
+                          "tag": "p",
                           "textStyle": "text-s",
                           "content": "Packing Lead"
                         }
@@ -917,12 +962,12 @@
                     },
                     {
                       "renderType": "container",
-                      "gap": "3xs",
                       "paddingTop": "xs",
                       "richTextStyles": true,
                       "content": [
                         {
                           "renderType": "richText",
+                          "tag": "p",
                           "textStyle": "text-xs",
                           "content": "MEET"
                         },
@@ -934,6 +979,7 @@
                         },
                         {
                           "renderType": "richText",
+                          "tag": "p",
                           "textStyle": "text-s",
                           "content": "Delivery Driver"
                         }
@@ -949,83 +995,90 @@
     },
     {
       "renderType": "container",
+      "tag": "section",
       "background": "foreground-base",
       "paddingTop": "2xl",
       "paddingBottom": "2xl",
       "content": [
         {
           "renderType": "container",
-          "maxWidth": "default",
-          "gap": "l",
+          "maxWidth": "xs",
+          "paddingBottom": "l",
+          "richTextStyles": true,
           "content": [
             {
               "renderType": "richText",
               "tag": "h2",
               "headingStyle": "heading-2xl",
               "content": "Why Customers Love Their Box"
-            },
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "default",
+          "layout": "row-m",
+          "gap": "l",
+          "content": [
             {
-              "renderType": "container",
-              "layout": "row-m",
-              "gap": "l",
+              "renderType": "column",
+              "width": "12",
+              "widthMedium": "6",
               "content": [
                 {
-                  "renderType": "column",
-                  "width": "12",
-                  "widthMedium": "6",
-                  "content": [
-                    {
-                      "renderType": "richText",
-                      "tag": "h4",
-                      "headingStyle": "heading-s",
-                      "content": "Alex M."
-                    },
-                    {
-                      "renderType": "richText",
-                      "textStyle": "text-s",
-                      "content": "The peaches this month were some of the best I've had, and everything arrived cold."
-                    },
-                    {
-                      "renderType": "richText",
-                      "tag": "h4",
-                      "headingStyle": "heading-s",
-                      "content": "Devon P."
-                    },
-                    {
-                      "renderType": "richText",
-                      "textStyle": "text-s",
-                      "content": "I like that the box changes with the season instead of the same fruit every week."
-                    }
-                  ]
+                  "renderType": "richText",
+                  "tag": "h4",
+                  "headingStyle": "heading-s",
+                  "content": "Alex M."
                 },
                 {
-                  "renderType": "column",
-                  "width": "12",
-                  "widthMedium": "6",
-                  "content": [
-                    {
-                      "renderType": "richText",
-                      "tag": "h4",
-                      "headingStyle": "heading-s",
-                      "content": "Sasha K."
-                    },
-                    {
-                      "renderType": "richText",
-                      "textStyle": "text-s",
-                      "content": "The recipe cards actually get used in our house, which is rare."
-                    },
-                    {
-                      "renderType": "richText",
-                      "tag": "h4",
-                      "headingStyle": "heading-s",
-                      "content": "Marcus T."
-                    },
-                    {
-                      "renderType": "richText",
-                      "textStyle": "text-s",
-                      "content": "Delivery has been on time every single week since we signed up."
-                    }
-                  ]
+                  "renderType": "richText",
+                  "tag": "p",
+                  "textStyle": "text-s",
+                  "content": "The peaches this month were some of the best I've had, and everything arrived cold."
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "h4",
+                  "headingStyle": "heading-s",
+                  "content": "Devon P."
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "p",
+                  "textStyle": "text-s",
+                  "content": "I like that the box changes with the season instead of the same fruit every week."
+                }
+              ]
+            },
+            {
+              "renderType": "column",
+              "width": "12",
+              "widthMedium": "6",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "h4",
+                  "headingStyle": "heading-s",
+                  "content": "Sasha K."
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "p",
+                  "textStyle": "text-s",
+                  "content": "The recipe cards actually get used in our house, which is rare."
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "h4",
+                  "headingStyle": "heading-s",
+                  "content": "Marcus T."
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "p",
+                  "textStyle": "text-s",
+                  "content": "Delivery has been on time every single week since we signed up."
                 }
               ]
             }
@@ -1035,8 +1088,8 @@
     },
     {
       "renderType": "container",
-      "maxWidth": "default",
-      "gap": "m",
+      "tag": "section",
+      "maxWidth": "xs",
       "paddingTop": "2xl",
       "paddingBottom": "2xl",
       "richTextStyles": true,
@@ -1055,6 +1108,7 @@
         },
         {
           "renderType": "richText",
+          "tag": "p",
           "textStyle": "text-s",
           "content": "Boxes are curated by what's ripe, but you can flag fruit you'd rather skip."
         },
@@ -1066,6 +1120,7 @@
         },
         {
           "renderType": "richText",
+          "tag": "p",
           "textStyle": "text-s",
           "content": "Let us know within 48 hours and we'll replace it in the next box."
         },
@@ -1077,6 +1132,7 @@
         },
         {
           "renderType": "richText",
+          "tag": "p",
           "textStyle": "text-s",
           "content": "Yes, there's no minimum commitment and no cancellation fee."
         },
@@ -1088,6 +1144,7 @@
         },
         {
           "renderType": "richText",
+          "tag": "p",
           "textStyle": "text-s",
           "content": "Small orchards and farms within a day's drive of our packing house."
         }
@@ -1095,14 +1152,16 @@
     },
     {
       "renderType": "container",
+      "tag": "section",
       "background": "background-light",
       "paddingTop": "xl",
       "paddingBottom": "xl",
       "content": [
         {
           "renderType": "container",
-          "maxWidth": "default",
-          "gap": "m",
+          "maxWidth": "xs",
+          "paddingBottom": "m",
+          "richTextStyles": true,
           "content": [
             {
               "renderType": "richText",
@@ -1110,34 +1169,39 @@
               "headingStyle": "heading-m",
               "align": "center",
               "content": "Featured In"
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "default",
+          "layout": "row",
+          "justify": "center",
+          "gap": "xl",
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "span",
+              "textStyle": "heading-s",
+              "content": "Harvest Weekly"
             },
             {
-              "renderType": "container",
-              "layout": "row",
-              "justify": "center",
-              "gap": "xl",
-              "content": [
-                {
-                  "renderType": "richText",
-                  "textStyle": "heading-s",
-                  "content": "Harvest Weekly"
-                },
-                {
-                  "renderType": "richText",
-                  "textStyle": "heading-s",
-                  "content": "The Orchard Post"
-                },
-                {
-                  "renderType": "richText",
-                  "textStyle": "heading-s",
-                  "content": "Farm To Table Digest"
-                },
-                {
-                  "renderType": "richText",
-                  "textStyle": "heading-s",
-                  "content": "Fresh Press"
-                }
-              ]
+              "renderType": "richText",
+              "tag": "span",
+              "textStyle": "heading-s",
+              "content": "The Orchard Post"
+            },
+            {
+              "renderType": "richText",
+              "tag": "span",
+              "textStyle": "heading-s",
+              "content": "Farm To Table Digest"
+            },
+            {
+              "renderType": "richText",
+              "tag": "span",
+              "textStyle": "heading-s",
+              "content": "Fresh Press"
             }
           ]
         }
