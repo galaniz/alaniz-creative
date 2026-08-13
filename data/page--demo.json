@@ -2,15 +2,16 @@
   "title": "Demo",
   "slug": "demo",
   "date": "2026-08-13T09:00:00",
-  "dateModified": "2026-08-13T14:07:13",
+  "dateModified": "2026-08-13T14:26:57",
   "hero": {
     "type": "minimal",
-    "title": "See How Far You Can Push A Static Site With Claude",
+    "title": "Static Sites, Edited By The Best AI Assistant",
     "text": "Every section on this page — copy, layout, images — was built and edited through a conversation. This is what that looks like from the marketer's seat."
   },
   "content": [
     {
       "renderType": "container",
+      "maxWidth": "default",
       "layout": "row-m",
       "align": "center",
       "gap": "xl",
@@ -38,7 +39,7 @@
                   "renderType": "richText",
                   "tag": "h3",
                   "headingStyle": "heading-m",
-                  "content": "Ask for anything"
+                  "content": "Ask For Anything"
                 },
                 {
                   "renderType": "richText",
@@ -68,7 +69,7 @@
                   "title": "Get in touch",
                   "internalLink": "page--contact",
                   "size": "l",
-                  "paddingTop": "xs"
+                  "paddingTop": "s"
                 }
               ]
             }
@@ -81,46 +82,51 @@
           "content": [
             {
               "renderType": "container",
-              "border": "rounded",
+              "layout": "row-s",
+              "gap": "m",
               "content": [
                 {
-                  "renderType": "aspectRatio",
-                  "percent": 100,
-                  "content": []
-                }
-              ]
-            },
-            {
-              "renderType": "column",
-              "width": "5",
-              "position": "top-right",
-              "content": [
-                {
-                  "renderType": "container",
-                  "border": "rounded",
+                  "renderType": "column",
+                  "width": "7",
                   "content": [
                     {
-                      "renderType": "aspectRatio",
-                      "percent": 100,
-                      "content": []
+                      "renderType": "container",
+                      "border": "rounded",
+                      "content": [
+                        {
+                          "renderType": "aspectRatio",
+                          "percent": 125,
+                          "content": []
+                        }
+                      ]
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "renderType": "column",
-              "width": "5",
-              "position": "bottom-right-10",
-              "content": [
+                },
                 {
-                  "renderType": "container",
-                  "border": "rounded",
+                  "renderType": "column",
+                  "width": "5",
                   "content": [
                     {
-                      "renderType": "aspectRatio",
-                      "percent": 100,
-                      "content": []
+                      "renderType": "container",
+                      "border": "rounded",
+                      "content": [
+                        {
+                          "renderType": "aspectRatio",
+                          "percent": 100,
+                          "content": []
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "container",
+                      "border": "rounded",
+                      "content": [
+                        {
+                          "renderType": "aspectRatio",
+                          "percent": 100,
+                          "content": []
+                        }
+                      ]
                     }
                   ]
                 }
@@ -147,11 +153,10 @@
               "tag": "h2",
               "headingStyle": "heading-2xl",
               "align": "center",
-              "content": "See What You Can Edit"
+              "content": "Explore Popular Edits"
             },
             {
               "renderType": "richText",
-              "tag": "p",
               "textStyle": "text-l",
               "align": "center",
               "content": "A few examples of changes we made live, right here on this page."
@@ -161,6 +166,7 @@
               "layout": "row",
               "justify": "center",
               "gap": "xs",
+              "paddingBottom": "m",
               "content": [
                 {
                   "renderType": "container",
@@ -404,14 +410,14 @@
       "content": [
         {
           "renderType": "container",
-          "maxWidth": "l",
+          "maxWidth": "default",
           "gap": "m",
           "content": [
             {
               "renderType": "richText",
               "tag": "h2",
               "headingStyle": "heading-2xl",
-              "content": "Everything You Need, Nothing You Don't"
+              "content": "Everything You Need In One Place"
             },
             {
               "renderType": "container",
@@ -422,8 +428,8 @@
                   "layout": "row-s",
                   "justify": "between",
                   "align": "center",
-                  "paddingTop": "s",
-                  "paddingBottom": "s",
+                  "paddingTop": "m",
+                  "paddingBottom": "m",
                   "content": [
                     {
                       "renderType": "column",
@@ -460,8 +466,8 @@
                   "layout": "row-s",
                   "justify": "between",
                   "align": "center",
-                  "paddingTop": "s",
-                  "paddingBottom": "s",
+                  "paddingTop": "m",
+                  "paddingBottom": "m",
                   "content": [
                     {
                       "renderType": "column",
@@ -498,8 +504,8 @@
                   "layout": "row-s",
                   "justify": "between",
                   "align": "center",
-                  "paddingTop": "s",
-                  "paddingBottom": "s",
+                  "paddingTop": "m",
+                  "paddingBottom": "m",
                   "content": [
                     {
                       "renderType": "column",
@@ -536,8 +542,8 @@
                   "layout": "row-s",
                   "justify": "between",
                   "align": "center",
-                  "paddingTop": "s",
-                  "paddingBottom": "s",
+                  "paddingTop": "m",
+                  "paddingBottom": "m",
                   "content": [
                     {
                       "renderType": "column",
@@ -574,8 +580,8 @@
                   "layout": "row-s",
                   "justify": "between",
                   "align": "center",
-                  "paddingTop": "s",
-                  "paddingBottom": "s",
+                  "paddingTop": "m",
+                  "paddingBottom": "m",
                   "content": [
                     {
                       "renderType": "column",
@@ -636,7 +642,7 @@
                   "renderType": "richText",
                   "tag": "h2",
                   "headingStyle": "heading-2xl",
-                  "content": "Every Change, Instantly Previewed"
+                  "content": "Every Change, Instantly Live"
                 },
                 {
                   "renderType": "richText",
@@ -701,7 +707,7 @@
           "renderType": "richText",
           "tag": "h2",
           "headingStyle": "heading-2xl",
-          "content": "Meet The Team Behind This Demo"
+          "content": "Learn From The Team Behind This Demo"
         },
         {
           "renderType": "richText",
@@ -720,30 +726,35 @@
               "content": [
                 {
                   "renderType": "container",
-                  "border": "rounded",
                   "content": [
                     {
-                      "renderType": "aspectRatio",
-                      "percent": 100,
-                      "content": []
+                      "renderType": "container",
+                      "border": "rounded",
+                      "content": [
+                        {
+                          "renderType": "aspectRatio",
+                          "percent": 100,
+                          "content": []
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "richText",
+                      "textStyle": "text-xs",
+                      "content": "MEET"
+                    },
+                    {
+                      "renderType": "richText",
+                      "tag": "h4",
+                      "headingStyle": "heading-s",
+                      "content": "Jordan Lee"
+                    },
+                    {
+                      "renderType": "richText",
+                      "textStyle": "text-s",
+                      "content": "Marketing Lead"
                     }
                   ]
-                },
-                {
-                  "renderType": "richText",
-                  "textStyle": "text-xs",
-                  "content": "MEET"
-                },
-                {
-                  "renderType": "richText",
-                  "tag": "h4",
-                  "headingStyle": "heading-s",
-                  "content": "Jordan Lee"
-                },
-                {
-                  "renderType": "richText",
-                  "textStyle": "text-s",
-                  "content": "Marketing Lead"
                 }
               ]
             },
@@ -754,30 +765,35 @@
               "content": [
                 {
                   "renderType": "container",
-                  "border": "rounded",
                   "content": [
                     {
-                      "renderType": "aspectRatio",
-                      "percent": 100,
-                      "content": []
+                      "renderType": "container",
+                      "border": "rounded",
+                      "content": [
+                        {
+                          "renderType": "aspectRatio",
+                          "percent": 100,
+                          "content": []
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "richText",
+                      "textStyle": "text-xs",
+                      "content": "MEET"
+                    },
+                    {
+                      "renderType": "richText",
+                      "tag": "h4",
+                      "headingStyle": "heading-s",
+                      "content": "Sam Rivera"
+                    },
+                    {
+                      "renderType": "richText",
+                      "textStyle": "text-s",
+                      "content": "Content Strategist"
                     }
                   ]
-                },
-                {
-                  "renderType": "richText",
-                  "textStyle": "text-xs",
-                  "content": "MEET"
-                },
-                {
-                  "renderType": "richText",
-                  "tag": "h4",
-                  "headingStyle": "heading-s",
-                  "content": "Sam Rivera"
-                },
-                {
-                  "renderType": "richText",
-                  "textStyle": "text-s",
-                  "content": "Content Strategist"
                 }
               ]
             },
@@ -788,30 +804,35 @@
               "content": [
                 {
                   "renderType": "container",
-                  "border": "rounded",
                   "content": [
                     {
-                      "renderType": "aspectRatio",
-                      "percent": 100,
-                      "content": []
+                      "renderType": "container",
+                      "border": "rounded",
+                      "content": [
+                        {
+                          "renderType": "aspectRatio",
+                          "percent": 100,
+                          "content": []
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "richText",
+                      "textStyle": "text-xs",
+                      "content": "MEET"
+                    },
+                    {
+                      "renderType": "richText",
+                      "tag": "h4",
+                      "headingStyle": "heading-s",
+                      "content": "Priya Nair"
+                    },
+                    {
+                      "renderType": "richText",
+                      "textStyle": "text-s",
+                      "content": "Brand Designer"
                     }
                   ]
-                },
-                {
-                  "renderType": "richText",
-                  "textStyle": "text-xs",
-                  "content": "MEET"
-                },
-                {
-                  "renderType": "richText",
-                  "tag": "h4",
-                  "headingStyle": "heading-s",
-                  "content": "Priya Nair"
-                },
-                {
-                  "renderType": "richText",
-                  "textStyle": "text-s",
-                  "content": "Brand Designer"
                 }
               ]
             },
@@ -822,30 +843,35 @@
               "content": [
                 {
                   "renderType": "container",
-                  "border": "rounded",
                   "content": [
                     {
-                      "renderType": "aspectRatio",
-                      "percent": 100,
-                      "content": []
+                      "renderType": "container",
+                      "border": "rounded",
+                      "content": [
+                        {
+                          "renderType": "aspectRatio",
+                          "percent": 100,
+                          "content": []
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "richText",
+                      "textStyle": "text-xs",
+                      "content": "MEET"
+                    },
+                    {
+                      "renderType": "richText",
+                      "tag": "h4",
+                      "headingStyle": "heading-s",
+                      "content": "Owen Clarke"
+                    },
+                    {
+                      "renderType": "richText",
+                      "textStyle": "text-s",
+                      "content": "Growth Marketer"
                     }
                   ]
-                },
-                {
-                  "renderType": "richText",
-                  "textStyle": "text-xs",
-                  "content": "MEET"
-                },
-                {
-                  "renderType": "richText",
-                  "tag": "h4",
-                  "headingStyle": "heading-s",
-                  "content": "Owen Clarke"
-                },
-                {
-                  "renderType": "richText",
-                  "textStyle": "text-s",
-                  "content": "Growth Marketer"
                 }
               ]
             }
@@ -869,7 +895,7 @@
               "renderType": "richText",
               "tag": "h2",
               "headingStyle": "heading-2xl",
-              "content": "Why Marketers Like This Approach"
+              "content": "Why Marketers Love This Approach"
             },
             {
               "renderType": "container",
@@ -942,8 +968,8 @@
     },
     {
       "renderType": "container",
-      "maxWidth": "m",
-      "gap": "m",
+      "maxWidth": "default",
+      "gap": "0",
       "paddingTop": "2xl",
       "paddingBottom": "2xl",
       "content": [
@@ -1016,7 +1042,7 @@
               "tag": "h3",
               "headingStyle": "heading-m",
               "align": "center",
-              "content": "As Seen In (Hypothetically)"
+              "content": "Featured In"
             },
             {
               "renderType": "container",
