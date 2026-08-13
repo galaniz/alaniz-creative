@@ -527,6 +527,10 @@ const baseSchema = z.object({
   blob: blobOption
     .optional()
     .describe('Decorative blob shape behind the hero.'),
+  template: z
+    .literal('blank')
+    .optional()
+    .describe('Set to blank to drop the header, footer and hero and center the content on its own.'),
   content: z
     .lazy(() => z.array(contentSchema))
     .describe('The blocks that make up the page, in the order they appear.')
