@@ -2,7 +2,7 @@
   "title": "Demo",
   "slug": "demo",
   "date": "2026-08-13T09:00:00",
-  "dateModified": "2026-08-13T18:22:45",
+  "dateModified": "2026-08-13T18:55:44",
   "content": [
     {
       "renderType": "container",
@@ -980,16 +980,9 @@
           "widthMedium": "6",
           "content": [
             {
-              "renderType": "container",
-              "background": "bright",
-              "border": "rounded",
-              "content": [
-                {
-                  "renderType": "aspectRatio",
-                  "percent": 100,
-                  "content": []
-                }
-              ]
+              "renderType": "image",
+              "image": "later-newsroom/article-graphic-1",
+              "border": true
             }
           ]
         }
