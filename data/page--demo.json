@@ -2,13 +2,44 @@
   "title": "Demo",
   "slug": "demo",
   "date": "2026-08-13T09:00:00",
-  "dateModified": "2026-08-13T15:14:38",
-  "hero": {
-    "type": "minimal",
-    "title": "Fresh Fruit, Delivered To Your Door",
-    "text": "A simple, seasonal selection of fruit picked at peak ripeness and delivered weekly."
-  },
+  "dateModified": "2026-08-13T18:14:46",
   "content": [
+    {
+      "renderType": "container",
+      "tag": "section",
+      "maxWidth": "default",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "paddingBottom": "s",
+      "content": [
+        {
+          "renderType": "container",
+          "gap": "s",
+          "paddingBottom": "s",
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h1",
+              "headingStyle": "heading-2xl",
+              "content": "Fresh Fruit, Delivered To Your Door"
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "gap": "s",
+          "paddingBottom": "l",
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "textStyle": "text-m",
+              "content": "A simple, seasonal selection of fruit picked at peak ripeness and delivered weekly."
+            }
+          ]
+        }
+      ]
+    },
     {
       "renderType": "container",
       "tag": "section",
