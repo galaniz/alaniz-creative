@@ -2,7 +2,7 @@
   "title": "Demo",
   "slug": "demo",
   "date": "2026-08-13T09:00:00",
-  "dateModified": "2026-08-13T15:01:01",
+  "dateModified": "2026-08-13T15:09:55",
   "hero": {
     "type": "minimal",
     "title": "Fresh Fruit, Delivered To Your Door",
@@ -558,7 +558,7 @@
       "content": [
         {
           "renderType": "container",
-          "maxWidth": "default",
+          "maxWidth": "s",
           "gap": "s",
           "paddingBottom": "s",
           "content": [
@@ -572,7 +572,7 @@
         },
         {
           "renderType": "container",
-          "maxWidth": "default",
+          "maxWidth": "s",
           "gap": "s",
           "paddingBottom": "l",
           "content": [
@@ -586,7 +586,7 @@
         },
         {
           "renderType": "container",
-          "maxWidth": "default",
+          "maxWidth": "s",
           "gap": "0",
           "content": [
             {
@@ -1406,13 +1406,13 @@
     {
       "renderType": "container",
       "tag": "section",
-      "maxWidth": "default",
+      "maxWidth": "s",
       "paddingTop": "2xl",
       "paddingBottom": "2xl",
       "content": [
         {
           "renderType": "container",
-          "maxWidth": "default",
+          "maxWidth": "s",
           "gap": "s",
           "paddingBottom": "l",
           "content": [
