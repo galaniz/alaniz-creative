@@ -1,0 +1,1055 @@
+{
+  "title": "Demo",
+  "slug": "demo",
+  "date": "2026-08-13T09:00:00",
+  "dateModified": "2026-08-13T14:07:13",
+  "hero": {
+    "type": "minimal",
+    "title": "See How Far You Can Push A Static Site With Claude",
+    "text": "Every section on this page — copy, layout, images — was built and edited through a conversation. This is what that looks like from the marketer's seat."
+  },
+  "content": [
+    {
+      "renderType": "container",
+      "layout": "row-m",
+      "align": "center",
+      "gap": "xl",
+      "gapLarge": "2xl",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "paddingBottom": "l",
+      "content": [
+        {
+          "renderType": "column",
+          "width": "12",
+          "widthMedium": "5",
+          "content": [
+            {
+              "renderType": "container",
+              "background": "background-light",
+              "border": "rounded",
+              "gap": "s",
+              "paddingTop": "l",
+              "paddingBottom": "l",
+              "paddingLeft": "l",
+              "paddingRight": "l",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "h3",
+                  "headingStyle": "heading-m",
+                  "content": "Ask for anything"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "ul",
+                  "type": "normal",
+                  "content": [
+                    {
+                      "tag": "li",
+                      "content": "Rewrite the headline"
+                    },
+                    {
+                      "tag": "li",
+                      "content": "Swap this image out"
+                    },
+                    {
+                      "tag": "li",
+                      "content": "Add a new testimonial"
+                    },
+                    {
+                      "tag": "li",
+                      "content": "Reorder a whole section"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "button",
+                  "title": "Get in touch",
+                  "internalLink": "page--contact",
+                  "size": "l",
+                  "paddingTop": "xs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "column",
+          "width": "12",
+          "widthMedium": "7",
+          "content": [
+            {
+              "renderType": "container",
+              "border": "rounded",
+              "content": [
+                {
+                  "renderType": "aspectRatio",
+                  "percent": 100,
+                  "content": []
+                }
+              ]
+            },
+            {
+              "renderType": "column",
+              "width": "5",
+              "position": "top-right",
+              "content": [
+                {
+                  "renderType": "container",
+                  "border": "rounded",
+                  "content": [
+                    {
+                      "renderType": "aspectRatio",
+                      "percent": 100,
+                      "content": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "column",
+              "width": "5",
+              "position": "bottom-right-10",
+              "content": [
+                {
+                  "renderType": "container",
+                  "border": "rounded",
+                  "content": [
+                    {
+                      "renderType": "aspectRatio",
+                      "percent": 100,
+                      "content": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "background": "foreground-base",
+      "paddingTop": "2xl",
+      "paddingBottom": "2xl",
+      "breakout": true,
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "default",
+          "gap": "l",
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "headingStyle": "heading-2xl",
+              "align": "center",
+              "content": "See What You Can Edit"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "textStyle": "text-l",
+              "align": "center",
+              "content": "A few examples of changes we made live, right here on this page."
+            },
+            {
+              "renderType": "container",
+              "layout": "row",
+              "justify": "center",
+              "gap": "xs",
+              "content": [
+                {
+                  "renderType": "container",
+                  "border": "full",
+                  "paddingTop": "3xs",
+                  "paddingBottom": "3xs",
+                  "paddingLeft": "s",
+                  "paddingRight": "s",
+                  "content": [
+                    {
+                      "renderType": "richText",
+                      "content": "Copy"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "container",
+                  "border": "full",
+                  "paddingTop": "3xs",
+                  "paddingBottom": "3xs",
+                  "paddingLeft": "s",
+                  "paddingRight": "s",
+                  "content": [
+                    {
+                      "renderType": "richText",
+                      "content": "Layout"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "container",
+                  "border": "full",
+                  "paddingTop": "3xs",
+                  "paddingBottom": "3xs",
+                  "paddingLeft": "s",
+                  "paddingRight": "s",
+                  "content": [
+                    {
+                      "renderType": "richText",
+                      "content": "Images"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "container",
+                  "border": "full",
+                  "paddingTop": "3xs",
+                  "paddingBottom": "3xs",
+                  "paddingLeft": "s",
+                  "paddingRight": "s",
+                  "content": [
+                    {
+                      "renderType": "richText",
+                      "content": "Structure"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "layout": "row-m",
+              "gap": "m",
+              "content": [
+                {
+                  "renderType": "column",
+                  "width": "12",
+                  "widthMedium": "3",
+                  "content": [
+                    {
+                      "renderType": "container",
+                      "border": "rounded",
+                      "gap": "2xs",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "border": "rounded",
+                          "content": [
+                            {
+                              "renderType": "aspectRatio",
+                              "percent": 56.25,
+                              "content": []
+                            }
+                          ]
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-xs",
+                          "content": "Example"
+                        },
+                        {
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "Headline rewrite"
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-s",
+                          "content": "Punchier copy, same message, under a minute."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "12",
+                  "widthMedium": "3",
+                  "content": [
+                    {
+                      "renderType": "container",
+                      "border": "rounded",
+                      "gap": "2xs",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "border": "rounded",
+                          "content": [
+                            {
+                              "renderType": "aspectRatio",
+                              "percent": 56.25,
+                              "content": []
+                            }
+                          ]
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-xs",
+                          "content": "Example"
+                        },
+                        {
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "New section"
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-s",
+                          "content": "Asked for a comparison table, got one."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "12",
+                  "widthMedium": "3",
+                  "content": [
+                    {
+                      "renderType": "container",
+                      "border": "rounded",
+                      "gap": "2xs",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "border": "rounded",
+                          "content": [
+                            {
+                              "renderType": "aspectRatio",
+                              "percent": 56.25,
+                              "content": []
+                            }
+                          ]
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-xs",
+                          "content": "Example"
+                        },
+                        {
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "Reordered blocks"
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-s",
+                          "content": "Moved testimonials above the fold."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "12",
+                  "widthMedium": "3",
+                  "content": [
+                    {
+                      "renderType": "container",
+                      "border": "rounded",
+                      "gap": "2xs",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "border": "rounded",
+                          "content": [
+                            {
+                              "renderType": "aspectRatio",
+                              "percent": 56.25,
+                              "content": []
+                            }
+                          ]
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-xs",
+                          "content": "Example"
+                        },
+                        {
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "Swapped imagery"
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-s",
+                          "content": "Placeholder frames, ready for real photos."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "background": "background-light",
+      "paddingTop": "2xl",
+      "paddingBottom": "2xl",
+      "breakout": true,
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "l",
+          "gap": "m",
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "headingStyle": "heading-2xl",
+              "content": "Everything You Need, Nothing You Don't"
+            },
+            {
+              "renderType": "container",
+              "gap": "0",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row-s",
+                  "justify": "between",
+                  "align": "center",
+                  "paddingTop": "s",
+                  "paddingBottom": "s",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "8",
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "Live text edits"
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-s",
+                          "content": "Say it in plain language, see it change."
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "4",
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "align": "end",
+                          "content": "✓"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "renderType": "container",
+                  "layout": "row-s",
+                  "justify": "between",
+                  "align": "center",
+                  "paddingTop": "s",
+                  "paddingBottom": "s",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "8",
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "Layout changes"
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-s",
+                          "content": "Reflow columns, resize, reorder sections."
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "4",
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "align": "end",
+                          "content": "✓"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "renderType": "container",
+                  "layout": "row-s",
+                  "justify": "between",
+                  "align": "center",
+                  "paddingTop": "s",
+                  "paddingBottom": "s",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "8",
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "New pages, on demand"
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-s",
+                          "content": "Like this one — built from a screenshot and a sentence."
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "4",
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "align": "end",
+                          "content": "✓"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "renderType": "container",
+                  "layout": "row-s",
+                  "justify": "between",
+                  "align": "center",
+                  "paddingTop": "s",
+                  "paddingBottom": "s",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "8",
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "Staged previews"
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-s",
+                          "content": "Nothing goes live until you say publish."
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "4",
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "align": "end",
+                          "content": "✓"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "renderType": "container",
+                  "layout": "row-s",
+                  "justify": "between",
+                  "align": "center",
+                  "paddingTop": "s",
+                  "paddingBottom": "s",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "8",
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "tag": "h4",
+                          "headingStyle": "heading-s",
+                          "content": "Writing code"
+                        },
+                        {
+                          "renderType": "richText",
+                          "textStyle": "text-s",
+                          "content": "Not required to make any of the above happen."
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "4",
+                      "content": [
+                        {
+                          "renderType": "richText",
+                          "align": "end",
+                          "content": "—"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "background": "foreground-base",
+      "paddingTop": "2xl",
+      "paddingBottom": "2xl",
+      "breakout": true,
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "default",
+          "layout": "row-m",
+          "align": "center",
+          "gap": "xl",
+          "content": [
+            {
+              "renderType": "column",
+              "width": "12",
+              "widthMedium": "6",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "h2",
+                  "headingStyle": "heading-2xl",
+                  "content": "Every Change, Instantly Previewed"
+                },
+                {
+                  "renderType": "richText",
+                  "textStyle": "text-l",
+                  "content": "No deploy pipeline to babysit and no ticket to file. Just a conversation and a preview link."
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "h4",
+                  "headingStyle": "heading-s",
+                  "content": "Stay in the loop"
+                },
+                {
+                  "renderType": "richText",
+                  "textStyle": "text-s",
+                  "content": "Every edit opens as a preview before it touches the live site."
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "h4",
+                  "headingStyle": "heading-s",
+                  "content": "Publish when ready"
+                },
+                {
+                  "renderType": "richText",
+                  "textStyle": "text-s",
+                  "content": "One approval, and the change is live."
+                }
+              ]
+            },
+            {
+              "renderType": "column",
+              "width": "12",
+              "widthMedium": "6",
+              "content": [
+                {
+                  "renderType": "container",
+                  "background": "bright",
+                  "border": "rounded",
+                  "content": [
+                    {
+                      "renderType": "aspectRatio",
+                      "percent": 100,
+                      "content": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "default",
+      "gap": "l",
+      "paddingTop": "2xl",
+      "paddingBottom": "2xl",
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "headingStyle": "heading-2xl",
+          "content": "Meet The Team Behind This Demo"
+        },
+        {
+          "renderType": "richText",
+          "textStyle": "text-l",
+          "content": "Fictional, for now — swap in real headshots and bios anytime."
+        },
+        {
+          "renderType": "container",
+          "layout": "row-m",
+          "gap": "m",
+          "content": [
+            {
+              "renderType": "column",
+              "width": "12",
+              "widthMedium": "3",
+              "content": [
+                {
+                  "renderType": "container",
+                  "border": "rounded",
+                  "content": [
+                    {
+                      "renderType": "aspectRatio",
+                      "percent": 100,
+                      "content": []
+                    }
+                  ]
+                },
+                {
+                  "renderType": "richText",
+                  "textStyle": "text-xs",
+                  "content": "MEET"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "h4",
+                  "headingStyle": "heading-s",
+                  "content": "Jordan Lee"
+                },
+                {
+                  "renderType": "richText",
+                  "textStyle": "text-s",
+                  "content": "Marketing Lead"
+                }
+              ]
+            },
+            {
+              "renderType": "column",
+              "width": "12",
+              "widthMedium": "3",
+              "content": [
+                {
+                  "renderType": "container",
+                  "border": "rounded",
+                  "content": [
+                    {
+                      "renderType": "aspectRatio",
+                      "percent": 100,
+                      "content": []
+                    }
+                  ]
+                },
+                {
+                  "renderType": "richText",
+                  "textStyle": "text-xs",
+                  "content": "MEET"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "h4",
+                  "headingStyle": "heading-s",
+                  "content": "Sam Rivera"
+                },
+                {
+                  "renderType": "richText",
+                  "textStyle": "text-s",
+                  "content": "Content Strategist"
+                }
+              ]
+            },
+            {
+              "renderType": "column",
+              "width": "12",
+              "widthMedium": "3",
+              "content": [
+                {
+                  "renderType": "container",
+                  "border": "rounded",
+                  "content": [
+                    {
+                      "renderType": "aspectRatio",
+                      "percent": 100,
+                      "content": []
+                    }
+                  ]
+                },
+                {
+                  "renderType": "richText",
+                  "textStyle": "text-xs",
+                  "content": "MEET"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "h4",
+                  "headingStyle": "heading-s",
+                  "content": "Priya Nair"
+                },
+                {
+                  "renderType": "richText",
+                  "textStyle": "text-s",
+                  "content": "Brand Designer"
+                }
+              ]
+            },
+            {
+              "renderType": "column",
+              "width": "12",
+              "widthMedium": "3",
+              "content": [
+                {
+                  "renderType": "container",
+                  "border": "rounded",
+                  "content": [
+                    {
+                      "renderType": "aspectRatio",
+                      "percent": 100,
+                      "content": []
+                    }
+                  ]
+                },
+                {
+                  "renderType": "richText",
+                  "textStyle": "text-xs",
+                  "content": "MEET"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "h4",
+                  "headingStyle": "heading-s",
+                  "content": "Owen Clarke"
+                },
+                {
+                  "renderType": "richText",
+                  "textStyle": "text-s",
+                  "content": "Growth Marketer"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "background": "foreground-base",
+      "paddingTop": "2xl",
+      "paddingBottom": "2xl",
+      "breakout": true,
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "default",
+          "gap": "l",
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "headingStyle": "heading-2xl",
+              "content": "Why Marketers Like This Approach"
+            },
+            {
+              "renderType": "container",
+              "layout": "row-m",
+              "gap": "l",
+              "content": [
+                {
+                  "renderType": "column",
+                  "width": "12",
+                  "widthMedium": "6",
+                  "content": [
+                    {
+                      "renderType": "richText",
+                      "tag": "h4",
+                      "headingStyle": "heading-s",
+                      "content": "Alex M., Content Marketer"
+                    },
+                    {
+                      "renderType": "richText",
+                      "textStyle": "text-s",
+                      "content": "I described the section I wanted and it was staged for review in minutes. No dev queue."
+                    },
+                    {
+                      "renderType": "richText",
+                      "tag": "h4",
+                      "headingStyle": "heading-s",
+                      "content": "Devon P., Growth Lead"
+                    },
+                    {
+                      "renderType": "richText",
+                      "textStyle": "text-s",
+                      "content": "The preview link made it easy to get sign-off before anything touched the live site."
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "12",
+                  "widthMedium": "6",
+                  "content": [
+                    {
+                      "renderType": "richText",
+                      "tag": "h4",
+                      "headingStyle": "heading-s",
+                      "content": "Sasha K., Brand Manager"
+                    },
+                    {
+                      "renderType": "richText",
+                      "textStyle": "text-s",
+                      "content": "It kept our layout system consistent even while I was moving things around freely."
+                    },
+                    {
+                      "renderType": "richText",
+                      "tag": "h4",
+                      "headingStyle": "heading-s",
+                      "content": "Marcus T., Demand Gen"
+                    },
+                    {
+                      "renderType": "richText",
+                      "textStyle": "text-s",
+                      "content": "I built this whole page from a screenshot. That's the part I keep telling people about."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "m",
+      "gap": "m",
+      "paddingTop": "2xl",
+      "paddingBottom": "2xl",
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "h2",
+          "headingStyle": "heading-2xl",
+          "content": "Frequently Asked Questions"
+        },
+        {
+          "renderType": "richText",
+          "tag": "h4",
+          "headingStyle": "heading-s",
+          "content": "Do I need to know how to code?"
+        },
+        {
+          "renderType": "richText",
+          "textStyle": "text-s",
+          "content": "No. Everything on this page was described in plain language."
+        },
+        {
+          "renderType": "richText",
+          "tag": "h4",
+          "headingStyle": "heading-s",
+          "content": "Can changes be undone?"
+        },
+        {
+          "renderType": "richText",
+          "textStyle": "text-s",
+          "content": "Yes — nothing publishes until it's reviewed, and a staged change can be discarded any time."
+        },
+        {
+          "renderType": "richText",
+          "tag": "h4",
+          "headingStyle": "heading-s",
+          "content": "Does this work for existing pages too?"
+        },
+        {
+          "renderType": "richText",
+          "textStyle": "text-s",
+          "content": "Yes, the same process edits pages already on the site, not just new ones."
+        },
+        {
+          "renderType": "richText",
+          "tag": "h4",
+          "headingStyle": "heading-s",
+          "content": "What about real images?"
+        },
+        {
+          "renderType": "richText",
+          "textStyle": "text-s",
+          "content": "The bordered boxes on this page are placeholders — swap in real photos from the media library anytime."
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "background": "background-light",
+      "paddingTop": "xl",
+      "paddingBottom": "xl",
+      "breakout": true,
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "default",
+          "gap": "m",
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "headingStyle": "heading-m",
+              "align": "center",
+              "content": "As Seen In (Hypothetically)"
+            },
+            {
+              "renderType": "container",
+              "layout": "row",
+              "justify": "center",
+              "gap": "xl",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "textStyle": "heading-s",
+                  "content": "Marketing Weekly"
+                },
+                {
+                  "renderType": "richText",
+                  "textStyle": "heading-s",
+                  "content": "SaaS Digest"
+                },
+                {
+                  "renderType": "richText",
+                  "textStyle": "heading-s",
+                  "content": "Growth Times"
+                },
+                {
+                  "renderType": "richText",
+                  "textStyle": "heading-s",
+                  "content": "The Static Report"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "contentType": "page"
+}
