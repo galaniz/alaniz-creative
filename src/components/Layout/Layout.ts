@@ -83,6 +83,9 @@ const Layout = (args: LayoutArgs): string => {
   if (!isBlank) {
     headerOutput = Header(slug, baseType)
     footerOutput = Footer(slug, baseType)
+  }
+
+  if (slug !== 'protect') {
     heroOutput = Hero({
       ...itemData,
       ...hero
