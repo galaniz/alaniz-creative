@@ -5,15 +5,22 @@
 /* Imports */
 
 import type { ContentEnv } from './ContentTypes.js'
-import { signJwt } from './ContentJwt.js'
+import { SignJWT, importPKCS8 } from 'jose'
 
 /**
- * Sent on every GitHub request. Without it GitHub answers with a 403 that does
- * not say why.
+ * User agent sent on every GitHub request.
  *
  * @type {string}
  */
+// Required — without it GitHub answers 403 without saying why
 const githubUserAgent: string = 'alaniz-creative-content-worker'
+
+/**
+ * The algorithm GitHub requires for app tokens.
+ *
+ * @type {string}
+ */
+const githubJwtAlgorithm: string = 'RS256'
 
 /**
  * Where the installation token is cached between requests.
@@ -23,30 +30,47 @@ const githubUserAgent: string = 'alaniz-creative-content-worker'
 const githubTokenKey: string = 'github:installation-token'
 
 /**
- * Installation tokens last an hour. Caching for fifty minutes leaves room for
- * a slow request to finish on a token that was fresh when it started.
+ * How long an installation token is cached, short of the hour it lasts.
  *
  * @type {number}
  */
 const githubTokenTtl: number = 3000
 
 /**
- * Mint a short lived app JWT.
+ * Import the app private key for signing.
  *
- * This proves the request comes from the app itself. It cannot touch the repo
- * on its own — it only buys an installation token.
+ * @param {string} pem
+ * @return {Promise<CryptoKey>}
+ * @throws {Error} When the key is not PKCS#8.
+ */
+const importAppKey = async (pem: string): Promise<CryptoKey> => {
+  const key = pem.trim()
+
+  if (!key.startsWith('-----BEGIN PRIVATE KEY-----')) {
+    throw new Error(
+      'The GitHub app key is not PKCS#8. Convert it with openssl before storing it — see the Content worker readme.'
+    )
+  }
+
+  return await importPKCS8(key, githubJwtAlgorithm)
+}
+
+/**
+ * Mint a short lived app JWT, used only to buy an installation token.
  *
  * @param {ContentEnv} env
  * @return {Promise<string>}
  */
 const getAppJwt = async (env: ContentEnv): Promise<string> => {
   const now = Math.floor(Date.now() / 1000)
+  const key = await importAppKey(env.GITHUB_APP_PRIVATE_KEY)
 
-  return await signJwt({
-    iat: now - 60, // Allow for clock drift between here and GitHub
-    exp: now + 540, // GitHub rejects anything over ten minutes
-    iss: env.GITHUB_APP_ID
-  }, env.GITHUB_APP_PRIVATE_KEY)
+  return await new SignJWT()
+    .setProtectedHeader({ alg: githubJwtAlgorithm, typ: 'JWT' })
+    .setIssuedAt(now - 60) // Allow for clock drift between here and GitHub
+    .setExpirationTime(now + 540) // GitHub rejects anything over ten minutes
+    .setIssuer(env.GITHUB_APP_ID)
+    .sign(key)
 }
 
 /**

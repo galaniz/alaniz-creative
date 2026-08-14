@@ -53,6 +53,9 @@ importers:
       html-minifier-terser:
         specifier: ^7.2.0
         version: 7.2.0
+      jose:
+        specifier: 6.2.3
+        version: 6.2.3
       postcss:
         specifier: ^8.5.14
         version: 8.5.14
