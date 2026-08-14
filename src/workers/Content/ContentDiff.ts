@@ -8,16 +8,14 @@ import type { SchemaPage } from '../../schema/schemaTypes.js'
 import { serializePage } from './ContentGithub.js'
 
 /**
- * Beyond this many changed lines the diff stops being something an editor
- * reads and starts being something they scroll past.
+ * Most changed lines shown before the diff is replaced by a summary.
  *
  * @type {number}
  */
 const diffMaxLines: number = 400
 
 /**
- * Lines of unchanged content kept either side of a change, so a changed line
- * arrives with enough around it to place it.
+ * Lines of unchanged content kept either side of a change.
  *
  * @type {number}
  */
@@ -25,10 +23,6 @@ const diffContext: number = 2
 
 /**
  * Longest common subsequence of two line ranges, as a set of matched pairs.
- *
- * Only ever called on the part of the file that actually differs — the common
- * head and tail are removed first, which for a copy edit leaves a handful of
- * lines rather than the whole page.
  *
  * @param {string[]} a
  * @param {string[]} b
@@ -76,11 +70,7 @@ const getCommonLines = (a: string[], b: string[]): number[][] => {
 }
 
 /**
- * A unified diff between two versions of a page.
- *
- * The pages are compared as formatted JSON rather than field by field, so
- * inserting a block shows up as an added block instead of renumbering
- * everything after it.
+ * A unified diff between two versions of a page, compared as formatted JSON.
  *
  * @param {SchemaPage|undefined} before
  * @param {SchemaPage} after

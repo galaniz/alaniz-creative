@@ -51,8 +51,7 @@ const toolText = (text: string) => ({
 })
 
 /**
- * Wrap a tool failure as text, so the editor sees what went wrong and can
- * answer it in the chat rather than hitting an opaque error.
+ * Wrap a tool failure as text, so the editor sees what went wrong.
  *
  * @param {unknown} error
  * @return {object}
@@ -98,10 +97,6 @@ const getPreviewUrl = (env: ContentEnv, number: number): string => {
 
 /**
  * State of the preview build for a staged page.
- *
- * The pull request exists the moment a change is staged but the preview takes
- * a minute or two to build. Without this the editor is handed a URL that 404s
- * and reasonably concludes the whole thing is broken.
  *
  * @param {ContentEnv} env
  * @param {string} id
@@ -252,8 +247,7 @@ const getMcpServer = (env: ContentEnv, actor: ContentProps): McpServer => {
     }
   }, async ({ slug, page }) => {
     try {
-      /* Validate before anything is written. An invalid page must never reach
-         the repo — the error belongs in the chat, where it can be fixed */
+      /* Validate before anything is written */
 
       const { valid, page: parsed, issues } = parsePage(page)
 

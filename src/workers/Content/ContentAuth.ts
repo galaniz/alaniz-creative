@@ -11,18 +11,14 @@ import { escape } from '@alanizcreative/formation-static/utils/escape/escape.js'
 import { getAccessIdentity } from './ContentAccess.js'
 
 /**
- * Scope the connector is granted. There is one editor and one thing to do, so
- * there is one scope.
+ * Scope the connector is granted.
  *
  * @type {string}
  */
 const contentScope: string = 'content:edit'
 
 /**
- * Ask before connecting.
- *
- * The grant is what lets a chat change the site, so it gets an explicit yes
- * rather than being handed over because the request arrived.
+ * The page asking the editor to confirm a connection.
  *
  * @param {string} clientName
  * @param {string} email
@@ -112,11 +108,8 @@ const getAuthError = (error: AuthorizationError): Response => {
 }
 
 /**
- * Run the authorization step of the connector's OAuth flow.
- *
- * Who the editor is comes from Cloudflare Access rather than from a login form
- * here — with one editor there is nothing for an identity provider to
- * federate, and Access is both free and less code.
+ * Run the authorization step of the connector's OAuth flow, identifying the
+ * editor through Cloudflare Access.
  *
  * @param {Request} request
  * @param {ContentEnv} env

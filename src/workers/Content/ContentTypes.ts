@@ -48,8 +48,7 @@ export interface ContentEnv {
 }
 
 /**
- * The authenticated editor, carried on the OAuth grant and used to attribute
- * commits to a person rather than to the app.
+ * The authenticated editor, carried on the OAuth grant.
  *
  * @typedef {object} ContentProps
  * @prop {string} email
