@@ -25,6 +25,7 @@ import type { SchemaPage } from '../../schema/schemaTypes.js'
  * @prop {string} CONTENT_BOT_NAME
  * @prop {string} CONTENT_BOT_EMAIL
  * @prop {string} CONTENT_ASSETS_URL
+ * @prop {string} CONTENT_PREVIEW_HOST
  */
 export interface ContentEnv {
   OAUTH_KV: KVNamespace
@@ -43,6 +44,7 @@ export interface ContentEnv {
   CONTENT_BOT_NAME: string
   CONTENT_BOT_EMAIL: string
   CONTENT_ASSETS_URL: string
+  CONTENT_PREVIEW_HOST: string
 }
 
 /**
@@ -198,12 +200,4 @@ export interface ContentGithubCheck {
   output?: {
     summary?: string | null
   }
-}
-
-/**
- * @typedef {object} ContentGithubComment
- * @prop {string} body
- */
-export interface ContentGithubComment {
-  body?: string
 }
