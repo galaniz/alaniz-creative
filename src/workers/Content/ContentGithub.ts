@@ -24,14 +24,6 @@ import { getInstallationToken, githubUserAgent } from './ContentGithubAuth.js'
 const contentDir: string = 'data'
 
 /**
- * File holding image metadata, which the build needs and the media library
- * writes to.
- *
- * @type {string}
- */
-const imageMetaPath: string = 'media/imageMeta.json'
-
-/**
  * Content types the editing tools own.
  *
  * @type {string[]}
@@ -136,8 +128,7 @@ const githubFetch = async <T>(
 const getContentPath = (id: string): string => `${contentDir}/${id}.json`
 
 /**
- * Branch a staged edit to a page lives on. One branch per page, so editing the
- * same page twice updates the open pull request rather than opening another.
+ * Branch a staged edit to a page lives on. One branch per page.
  *
  * @param {string} id
  * @return {string}
@@ -176,10 +167,7 @@ const getBaseSha = async (env: ContentEnv): Promise<string> => {
 }
 
 /**
- * Read a page from the repo.
- *
- * The blob sha comes back with it because updating the file later requires the
- * sha of the version being replaced.
+ * Read a page from the repo, with the blob sha needed to update it later.
  *
  * @param {ContentEnv} env
  * @param {string} id
@@ -211,10 +199,7 @@ const readPage = async (
 }
 
 /**
- * List every page the editing tools can change.
- *
- * Titles mean reading each file, so the result is cached against the head
- * commit — the list only changes when the branch does.
+ * List every page the editing tools can change, cached against the head commit.
  *
  * @param {ContentEnv} env
  * @return {Promise<ContentPageSummary[]>}
@@ -315,12 +300,7 @@ const deleteBranch = async (env: ContentEnv, branch: string): Promise<void> => {
 }
 
 /**
- * Commit a file to a branch.
- *
- * Author and committer are set separately so `git blame` names the editor who
- * asked for the change, even though the app made the commit. GitHub links the
- * author to an account when the email matches one and renders it as plain text
- * otherwise, which is what makes an editor without an account work.
+ * Commit a file to a branch, authored by the editor and committed by the app.
  *
  * @param {ContentEnv} env
  * @param {object} args
@@ -453,7 +433,6 @@ const getChecks = async (env: ContentEnv, sha: string): Promise<ContentGithubChe
 export {
   contentDir,
   contentTypes,
-  imageMetaPath,
   encodeBase64,
   decodeBase64,
   githubRequest,

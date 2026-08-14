@@ -10,15 +10,11 @@ import {
   WebStandardStreamableHTTPServerTransport
 } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js'
 import { getMcpServer } from './ContentMcp.js'
-import { handleMedia } from './ContentMedia.js'
+import { handleImageMeta, handleMedia } from './ContentMedia.js'
 import { contentScope, handleAuthorize } from './ContentAuth.js'
 
 /**
- * Serve the MCP endpoint Claude talks to.
- *
- * A transport and a server are built per request and thrown away with it.
- * There is no session to keep, so there is no durable object either — the
- * tools are stateless and the state that matters lives in the repo.
+ * Serve the MCP endpoint Claude talks to, statelessly.
  *
  * @type {object}
  */
@@ -56,15 +52,20 @@ const contentHandler = {
         return await handleAuthorize(request, env)
       }
 
+      /* Outside `/media` so the Access application does not cover it */
+
+      if (pathname === '/images.json') {
+        return await handleImageMeta(env)
+      }
+
       if (pathname === '/media' || pathname.startsWith('/media/')) {
         return await handleMedia(request, env)
       }
 
       return new Response('Not found', { status: 404 })
     } catch (error) {
-      /* A thrown error reaches the browser as a worker exception carrying a
-         ray id and nothing else. Saying what happened costs one line and
-         saves reading logs to find out */
+      /* Say what happened — an uncaught throw reaches the browser as a worker
+         exception carrying a ray id and nothing else */
 
       return new Response(error instanceof Error ? error.message : 'Something went wrong', {
         status: 500,
@@ -76,11 +77,8 @@ const contentHandler = {
 
 /**
  * Manage site content over MCP, and site images over the web.
- *
- * The provider owns the OAuth endpoints. `/register` is among them and is not
- * optional — Claude registers itself as a client dynamically, and without that
- * endpoint the connector fails to connect without saying why.
  */
+// clientRegistrationEndpoint is required — Claude registers itself dynamically
 export default new OAuthProvider<ContentEnv>({
   apiRoute: '/mcp',
   apiHandler: mcpHandler,
