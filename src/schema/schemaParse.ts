@@ -6,7 +6,7 @@
 
 import type { SchemaIssue, SchemaResult } from './schemaTypes.js'
 import { z } from 'zod'
-import { pageSchema } from './schema.js'
+import { pageSchema } from '../global/globalTypes.js'
 
 /**
  * Turn a dotted and bracketed path into something an editor can locate.
@@ -39,12 +39,8 @@ const getIssueDepth = (issues: z.core.$ZodIssue[]): number => {
 }
 
 /**
- * Flatten issues into paths and messages.
- *
- * A failed union reports itself rather than the branch that nearly matched, so
- * a missing alt attribute deep inside a container surfaces as "invalid input"
- * against the container. Unions are unwrapped here and the branch that got
- * furthest is reported, which for content is always the intended one.
+ * Flatten issues into paths and messages, unwrapping a failed union to the
+ * branch that got furthest.
  *
  * @param {z.core.$ZodIssue[]} issues
  * @param {PropertyKey[]} [prefix]
@@ -101,9 +97,6 @@ const getSchemaIssues = (error: z.ZodError): SchemaIssue[] => {
 
 /**
  * Validate a page against the shared schema.
- *
- * This is the single write-time guard. Nothing reaches the repo without
- * passing through here.
  *
  * @param {unknown} data
  * @return {SchemaResult}

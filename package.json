@@ -45,6 +45,7 @@
     "dotenv": "^17.4.2",
     "esbuild": "^0.28.0",
     "html-minifier-terser": "^7.2.0",
+    "jose": "6.2.3",
     "postcss": "^8.5.14",
     "postcss-modules": "^6.0.1",
     "sass": "^1.99.0",

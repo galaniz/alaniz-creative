@@ -21,9 +21,6 @@ const schemaTypes: string[] = [
 /**
  * Validate every editable content file against the shared schema.
  *
- * Runs as part of the build so an invalid page fails loudly here rather than
- * rendering as something subtly wrong.
- *
  * @param {string} [dir='data']
  * @return {Promise<void>}
  * @throws {Error} When any file fails validation.

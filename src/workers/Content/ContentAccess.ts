@@ -5,7 +5,8 @@
 /* Imports */
 
 import type { ContentEnv, ContentProps } from './ContentTypes.js'
-import { decodeBase64Url, verifyJwt } from './ContentJwt.js'
+import type { JWK } from 'jose'
+import { decodeProtectedHeader, importJWK, jwtVerify } from 'jose'
 
 /**
  * Where the Access signing keys are cached between requests.
@@ -15,20 +16,22 @@ import { decodeBase64Url, verifyJwt } from './ContentJwt.js'
 const accessKeysKey: string = 'access:keys'
 
 /**
+ * The algorithm Cloudflare Access signs its assertions with.
+ *
+ * @type {string}
+ */
+const accessJwtAlgorithm: string = 'RS256'
+
+/**
  * @typedef {object} ContentAccessKeys
- * @prop {JsonWebKey[]} keys
+ * @prop {JWK[]} keys
  */
 interface ContentAccessKeys {
-  keys: (JsonWebKey & { kid?: string })[]
+  keys: JWK[]
 }
 
 /**
  * Fetch the Access signing keys, from cache where possible.
- *
- * This endpoint is public, but a worker subrequest to a Cloudflare proxied
- * hostname can be routed internally rather than out to the public internet,
- * where it answers 403. The `global_fetch_strictly_public` compatibility flag
- * in `wrangler.json` is what stops that, and removing it breaks this.
  *
  * @param {ContentEnv} env
  * @return {Promise<ContentAccessKeys>}
@@ -40,6 +43,8 @@ const getAccessKeys = async (env: ContentEnv): Promise<ContentAccessKeys> => {
     return JSON.parse(cached) as ContentAccessKeys
   }
 
+  // Needs global_fetch_strictly_public in wrangler.json, or this is routed
+  // internally rather than out to the public internet and answers 403
   const res = await fetch(`https://${env.CF_ACCESS_TEAM_DOMAIN}/cdn-cgi/access/certs`)
 
   if (!res.ok) {
@@ -54,12 +59,8 @@ const getAccessKeys = async (env: ContentEnv): Promise<ContentAccessKeys> => {
 }
 
 /**
- * Identify the editor behind a request, from the assertion Cloudflare Access
- * puts on it.
- *
- * Access already turned anyone away at the edge, but the worker has its own
- * hostname and can be reached directly, so the assertion is verified here too
- * rather than trusted because it is present.
+ * Verify the Cloudflare Access assertion on a request and identify the editor
+ * behind it.
  *
  * @param {Request} request
  * @param {ContentEnv} env
@@ -77,18 +78,15 @@ const getAccessIdentity = async (
     return undefined
   }
 
-  const header = token.split('.')[0]
-
-  if (!header) {
-    return undefined
-  }
-
   let kid: string | undefined
 
   try {
-    const parsed = JSON.parse(new TextDecoder().decode(decodeBase64Url(header))) as { kid?: string }
-    kid = parsed.kid
+    kid = decodeProtectedHeader(token).kid
   } catch {
+    return undefined
+  }
+
+  if (!kid) {
     return undefined
   }
 
@@ -99,34 +97,22 @@ const getAccessIdentity = async (
     return undefined
   }
 
-  const claims = await verifyJwt(token, key)
+  let email: unknown
 
-  if (!claims) {
+  try {
+    const { payload } = await jwtVerify(token, await importJWK(key, accessJwtAlgorithm), {
+      algorithms: [accessJwtAlgorithm],
+      issuer: `https://${env.CF_ACCESS_TEAM_DOMAIN}`,
+      audience: env.CF_ACCESS_AUD,
+      requiredClaims: ['exp']
+    })
+
+    email = payload.email
+  } catch {
     return undefined
   }
 
-  const { aud, exp, iss, email } = claims as {
-    aud?: string | string[]
-    exp?: number
-    iss?: string
-    email?: string
-  }
-
-  const audiences = Array.isArray(aud) ? aud : [aud]
-
-  if (!audiences.includes(env.CF_ACCESS_AUD)) {
-    return undefined
-  }
-
-  if (!exp || exp * 1000 < Date.now()) {
-    return undefined
-  }
-
-  if (iss !== `https://${env.CF_ACCESS_TEAM_DOMAIN}`) {
-    return undefined
-  }
-
-  if (!email) {
+  if (typeof email !== 'string' || !email) {
     return undefined
   }
 

@@ -21,8 +21,7 @@
     "GITHUB_BASE": "main",
     "CONTENT_BOT_NAME": "Alaniz Creative Content",
     "CONTENT_BOT_EMAIL": "graciela@alanizcreative.com",
-    "CONTENT_ASSETS_URL": "https://alanizcreative.com/assets",
-    "CONTENT_PREVIEW_URL": "https://pr-{pr}.preview.alanizcreative.com"
+    "CONTENT_ASSETS_URL": "https://alanizcreative.com/assets"
   },
   "kv_namespaces": [
     {

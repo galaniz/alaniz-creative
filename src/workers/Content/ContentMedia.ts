@@ -10,14 +10,14 @@ import { getAccessIdentity } from './ContentAccess.js'
 import {
   imageMaxSize,
   imageFormats,
+  getImageMetaJson,
   listImages,
   putImage,
   deleteImage
 } from './ContentImage.js'
 
 /**
- * Styles for the library. Inline because this page has no build step and no
- * second visitor to amortise a request over.
+ * Styles for the library, inlined into every page it renders.
  *
  * @type {string}
  */
@@ -147,11 +147,7 @@ const getMediaPage = (env: ContentEnv, images: ContentImage[], message?: string)
 }
 
 /**
- * Render a failure as a page.
- *
- * Deliberately renders nothing but the message — whatever went wrong may be
- * the very thing the library needs to list itself, so this must not go back
- * to the network to say so.
+ * Render a failure as a page, without going back to the network.
  *
  * @param {unknown} error
  * @return {Response}
@@ -197,12 +193,7 @@ const getFormText = (form: FormData, name: string): string => {
 }
 
 /**
- * Serve the media library.
- *
- * Uploads come through here rather than going straight to object storage with
- * a signed URL: a link in a chat performs a GET, not a PUT, so a page is
- * needed either way, and once the worker is in the path it can hold the only
- * credential, check the file type, cap the size and record who uploaded it.
+ * Serve the media library, and the uploads and deletions it submits.
  *
  * @param {Request} request
  * @param {ContentEnv} env
@@ -248,20 +239,33 @@ const handleMedia = async (request: Request, env: ContentEnv): Promise<Response>
     if (pathname === '/media/delete') {
       const key = getFormText(form, 'key')
 
-      await deleteImage(env, key, identity)
+      await deleteImage(env, key)
 
       return await renderMedia(env, `Deleted ${key}.`)
     }
 
     return new Response('Not found', { status: 404 })
   } catch (error) {
-    /* Anything that gets here — a missing secret, GitHub refusing, a bad
-       upload — is rendered rather than thrown. A thrown error reaches the
-       browser as a worker exception with a ray id and nothing else, which
-       tells the person reading it nothing they can act on */
+    /* Render rather than throw — an uncaught throw reaches the browser as a
+       worker exception with a ray id and nothing else */
 
     return getMediaError(error)
   }
+}
+
+/**
+ * Serve the image metadata the build renders from.
+ *
+ * @param {ContentEnv} env
+ * @return {Promise<Response>}
+ */
+const handleImageMeta = async (env: ContentEnv): Promise<Response> => {
+  return new Response(await getImageMetaJson(env), {
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'public, max-age=60'
+    }
+  })
 }
 
 /**
@@ -286,5 +290,6 @@ const renderMedia = async (env: ContentEnv, message?: string): Promise<Response>
 
 export {
   getMediaPage, // Exported so the page can be rendered without auth or network
+  handleImageMeta,
   handleMedia
 }
