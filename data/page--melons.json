@@ -1,0 +1,26 @@
+{
+  "title": "Melons",
+  "slug": "melons",
+  "date": "2026-08-14T00:00:00",
+  "dateModified": "2026-08-14T17:37:35",
+  "hero": {
+    "type": "profile",
+    "title": "Melons",
+    "image": "melon"
+  },
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "content": "A page about melons."
+        }
+      ]
+    }
+  ],
+  "contentType": "page"
+}
