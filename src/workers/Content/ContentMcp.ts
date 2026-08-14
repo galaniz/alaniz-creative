@@ -24,6 +24,7 @@ import {
   mergePull,
   closePull,
   getChecks,
+  getComments,
   listPages,
   readPage,
   serializePage
@@ -89,10 +90,22 @@ const getPublishedPage = async (
  *
  * @param {ContentEnv} env
  * @param {number} number
- * @return {string}
+ * @return {Promise<string|undefined>}
  */
-const getPreviewUrl = (env: ContentEnv, number: number): string => {
-  return env.CONTENT_PREVIEW_URL.replace('{pr}', String(number))
+const getPreviewUrl = async (env: ContentEnv, number: number): Promise<string | undefined> => {
+  // The preview workflow leaves the alias URL in a comment, as it is only
+  // known once the version has been uploaded
+  const comments = await getComments(env, number)
+
+  for (const { body } of comments.reverse()) {
+    const url = body?.match(/<!-- cloudflare-preview (\S+) -->/)?.[1]
+
+    if (url) {
+      return url
+    }
+  }
+
+  return undefined
 }
 
 /**
@@ -112,7 +125,7 @@ const getPreview = async (env: ContentEnv, id: string): Promise<ContentPreview> 
     }
   }
 
-  const url = getPreviewUrl(env, pull.number)
+  const url = await getPreviewUrl(env, pull.number)
   const checks = await getChecks(env, pull.head.sha)
   const preview = checks.filter(check => check.name.toLowerCase().includes('preview'))
 
@@ -138,6 +151,15 @@ const getPreview = async (env: ContentEnv, id: string): Promise<ContentPreview> 
       status: 'failed',
       url: failed.details_url ?? url,
       detail: failed.output?.summary ?? 'The preview build failed.'
+    }
+  }
+
+  // The workflow comments before the job ends, so a green check without a URL
+  // means the comment has not come back from the API yet
+  if (!url) {
+    return {
+      status: 'building',
+      detail: 'The build has finished — the preview URL is a moment behind it.'
     }
   }
 
@@ -299,14 +321,18 @@ const getMcpServer = (env: ContentEnv, actor: ContentProps): McpServer => {
         body: `Requested by ${actor.email} through the content connector.`
       })
 
+      // Only there once a previous stage of this page has been previewed —
+      // the alias URL is the same for every version of a pull request
+      const url = await getPreviewUrl(env, pull.number)
+
       return toolText([
         `Staged as pull request #${pull.number}.`,
         '',
         diff,
         '',
-        `Preview: ${getPreviewUrl(env, pull.number)}`,
+        url ? `Preview: ${url}` : '',
         'The preview takes a minute or two — check_preview will say when it is ready.'
-      ].join('\n'))
+      ].filter(Boolean).join('\n'))
     } catch (error) {
       return toolError(error)
     }
@@ -333,7 +359,7 @@ const getMcpServer = (env: ContentEnv, actor: ContentProps): McpServer => {
         return toolText(`The preview build failed: ${detail ?? 'no detail given'}\n${url ?? ''}`)
       }
 
-      return toolText(`Ready at ${url ?? ''}`)
+      return toolText(`Ready at ${url}`)
     } catch (error) {
       return toolError(error)
     }
