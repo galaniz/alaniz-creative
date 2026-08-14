@@ -1,0 +1,93 @@
+{
+  "title": "Lemons",
+  "slug": "lemons",
+  "date": "2026-08-14T00:00:00",
+  "dateModified": "2026-08-14T15:06:04",
+  "hero": {
+    "type": "profile",
+    "title": "All about lemons",
+    "image": "lemons"
+  },
+  "content": [
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "paddingBottom": "m",
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "textStyle": "text-l",
+          "align": "center",
+          "content": "A bright, sour little citrus with a surprisingly big reputation."
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "richTextStyles": true,
+      "content": [
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "content": "Lemons are one of the most versatile fruits around, prized for their sharp acidity, fragrant zest, and endless uses in the kitchen and beyond. Whether you're brightening up a dish, mixing a drink, or just need a natural cleaning trick, the humble lemon usually delivers. A few of the ways lemons show up:"
+        },
+        {
+          "renderType": "richText",
+          "tag": "ul",
+          "type": "columns",
+          "content": [
+            {
+              "tag": "li",
+              "content": "Fresh-squeezed lemonade"
+            },
+            {
+              "tag": "li",
+              "content": "Zest for baking"
+            },
+            {
+              "tag": "li",
+              "content": "A twist in your tea"
+            },
+            {
+              "tag": "li",
+              "content": "Natural cleaning solutions"
+            }
+          ]
+        },
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "content": "Beyond the kitchen, lemons have long symbolized freshness, cleanliness, and a little bit of cheerful energy. They're also a good source of vitamin C, which hasn't hurt their reputation over the centuries. And sometimes inspirational quotes like this one:"
+        },
+        {
+          "renderType": "richText",
+          "tag": "blockquote",
+          "content": [
+            {
+              "tag": "p",
+              "content": "\"When life gives you lemons, make lemonade.\""
+            },
+            {
+              "tag": "cite",
+              "content": "Popular proverb"
+            }
+          ]
+        },
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "content": "Whatever you're working on, there's probably a lemon that can help."
+        },
+        {
+          "renderType": "button",
+          "title": "Get in touch",
+          "internalLink": "page--contact",
+          "size": "l"
+        }
+      ]
+    }
+  ],
+  "contentType": "page"
+}
