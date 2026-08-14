@@ -6,7 +6,7 @@
 
 import type { SchemaIssue, SchemaResult } from './schemaTypes.js'
 import { z } from 'zod'
-import { pageSchema } from './schema.js'
+import { pageSchema } from '../global/globalTypes.js'
 
 /**
  * Turn a dotted and bracketed path into something an editor can locate.

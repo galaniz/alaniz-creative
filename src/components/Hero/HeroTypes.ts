@@ -9,11 +9,21 @@ import type { ButtonArgs } from '../../objects/Button/ButtonTypes.js'
 import type { Item } from '../../global/globalTypes.js'
 import { z } from 'zod'
 import { buttonSchema } from '../../objects/Button/ButtonTypes.js'
-import {
-  blobOption,
-  waveOption,
-  imageKeyOption
-} from '../../schema/schemaOptions.js'
+import { blobOption } from '../../config/configTypes.js'
+import { imageKeyOption } from '../../schema/schemaOptions.js'
+
+/**
+ * Decorative wave shapes below a hero.
+ *
+ * @type {z.ZodEnum}
+ */
+const waveOption = z.enum([
+  'one',
+  'two',
+  'three',
+  'four',
+  'five'
+])
 
 /**
  * @type {z.ZodObject}

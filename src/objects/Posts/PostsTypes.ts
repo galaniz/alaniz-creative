@@ -7,7 +7,7 @@
 import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
 import type { Item } from '../../global/globalTypes.js'
 import { z } from 'zod'
-import { headingLevelOption } from '../../schema/schemaOptions.js'
+import { headingLevelOption } from '../../config/configTypes.js'
 
 /**
  * An automatic list of the most recent items of a content type.

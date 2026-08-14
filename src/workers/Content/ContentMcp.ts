@@ -8,7 +8,7 @@ import type { ContentEnv, ContentProps, ContentPreview } from './ContentTypes.js
 import type { SchemaPage } from '../../schema/schemaTypes.js'
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { z } from 'zod'
-import { pageSchema } from '../../schema/schema.js'
+import { pageSchema } from '../../global/globalTypes.js'
 import { parsePage, getSchemaIssuesMessage } from '../../schema/schemaParse.js'
 import { getPageDiff } from './ContentDiff.js'
 import { listImages } from './ContentImage.js'

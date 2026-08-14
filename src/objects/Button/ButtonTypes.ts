@@ -8,11 +8,8 @@ import type { InternalLink } from '@alanizcreative/formation-static/global/globa
 import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
 import type { Item } from '../../global/globalTypes.js'
 import { z } from 'zod'
-import {
-  sizeOption,
-  justifyOption,
-  referenceOption
-} from '../../schema/schemaOptions.js'
+import { sizeOption, justifyOption } from '../../config/configTypes.js'
+import { referenceOption } from '../../schema/schemaOptions.js'
 
 /**
  * @type {z.ZodObject}

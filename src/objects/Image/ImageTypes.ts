@@ -12,11 +12,8 @@ import type {
 import type { ConfigAspectRatio, ConfigSize } from '../../config/configTypes.js'
 import type { Item } from '../../global/globalTypes.js'
 import { z } from 'zod'
-import {
-  sizeOption,
-  aspectRatioOption,
-  imageKeyOption
-} from '../../schema/schemaOptions.js'
+import { sizeOption, aspectRatioOption } from '../../config/configTypes.js'
+import { imageKeyOption } from '../../schema/schemaOptions.js'
 
 /**
  * An image from the media library.

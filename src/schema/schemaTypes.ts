@@ -9,24 +9,7 @@ import type {
   pageSchema,
   pageContentSchema,
   workContentSchema
-} from './schema.js'
-
-/**
- * Inline markup inside a rich text block.
- *
- * @typedef {object} SchemaRichTextContent
- * @prop {string} [tag]
- * @prop {string} [internalLink]
- * @prop {string} [link]
- * @prop {string|SchemaRichTextContent[]} [content]
- */
-// Written out by hand rather than inferred because it refers to itself
-export interface SchemaRichTextContent {
-  tag?: string
-  internalLink?: string
-  link?: string
-  content?: string | SchemaRichTextContent[]
-}
+} from '../global/globalTypes.js'
 
 /**
  * A single block within a page, tagged by render type.
