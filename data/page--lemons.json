@@ -2,7 +2,7 @@
   "title": "Lemons",
   "slug": "lemons",
   "date": "2026-08-14T00:00:00",
-  "dateModified": "2026-08-14T15:06:04",
+  "dateModified": "2026-08-14T22:09:21",
   "hero": {
     "type": "profile",
     "title": "All about lemons",
@@ -55,7 +55,48 @@
               "content": "Natural cleaning solutions"
             }
           ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "layout": "row-s",
+      "gap": "s",
+      "content": [
+        {
+          "renderType": "column",
+          "width": "6",
+          "content": [
+            {
+              "renderType": "image",
+              "image": "blueberries",
+              "alt": "A cluster of fresh blueberries",
+              "width": "full",
+              "aspectRatio": "1-1"
+            }
+          ]
         },
+        {
+          "renderType": "column",
+          "width": "6",
+          "content": [
+            {
+              "renderType": "image",
+              "image": "melon",
+              "alt": "A sliced melon",
+              "width": "full",
+              "aspectRatio": "1-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "maxWidth": "xs",
+      "richTextStyles": true,
+      "content": [
         {
           "renderType": "richText",
           "tag": "p",
