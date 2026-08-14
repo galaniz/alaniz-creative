@@ -24,7 +24,6 @@ import {
   mergePull,
   closePull,
   getChecks,
-  getComments,
   listPages,
   readPage,
   serializePage
@@ -86,26 +85,41 @@ const getPublishedPage = async (
 }
 
 /**
- * Where the preview for a pull request lives.
+ * Where the page ends up on the site.
+ *
+ * @param {SchemaPage} page
+ * @return {string}
+ */
+// Mirrors typeInSlug in the site config — the worker stands apart from the
+// build, so the two have to be kept in step by hand
+const getPagePath = (page: SchemaPage): string => {
+  if (page.contentType === 'work') {
+    return `/work/${page.slug}/`
+  }
+
+  return page.slug === 'index' ? '/' : `/${page.slug}/`
+}
+
+/**
+ * Where the preview of a staged page lives.
  *
  * @param {ContentEnv} env
  * @param {number} number
- * @return {Promise<string|undefined>}
+ * @param {SchemaPage} page
+ * @return {string|undefined}
  */
-const getPreviewUrl = async (env: ContentEnv, number: number): Promise<string | undefined> => {
-  // The preview workflow leaves the alias URL in a comment, as it is only
-  // known once the version has been uploaded
-  const comments = await getComments(env, number)
-
-  for (const { body } of comments.reverse()) {
-    const url = body?.match(/<!-- cloudflare-preview (\S+) -->/)?.[1]
-
-    if (url) {
-      return url
-    }
+// The preview workflow aliases every version of a pull request to pr-<number>,
+// so the URL is known before the build that fills it has finished
+const getPreviewUrl = (
+  env: ContentEnv,
+  number: number,
+  page: SchemaPage
+): string | undefined => {
+  if (!env.CONTENT_PREVIEW_HOST) {
+    return undefined
   }
 
-  return undefined
+  return `https://pr-${number}-${env.CONTENT_PREVIEW_HOST}${getPagePath(page)}`
 }
 
 /**
@@ -125,7 +139,10 @@ const getPreview = async (env: ContentEnv, id: string): Promise<ContentPreview> 
     }
   }
 
-  const url = await getPreviewUrl(env, pull.number)
+  // The staged page rather than the published one, as an edit can move the
+  // page to a different URL
+  const { page } = await readPage(env, id, pull.head.ref)
+  const url = getPreviewUrl(env, pull.number, page)
   const checks = await getChecks(env, pull.head.sha)
   const preview = checks.filter(check => check.name.toLowerCase().includes('preview'))
 
@@ -151,15 +168,6 @@ const getPreview = async (env: ContentEnv, id: string): Promise<ContentPreview> 
       status: 'failed',
       url: failed.details_url ?? url,
       detail: failed.output?.summary ?? 'The preview build failed.'
-    }
-  }
-
-  // The workflow comments before the job ends, so a green check without a URL
-  // means the comment has not come back from the API yet
-  if (!url) {
-    return {
-      status: 'building',
-      detail: 'The build has finished — the preview URL is a moment behind it.'
     }
   }
 
@@ -265,9 +273,14 @@ const getMcpServer = (env: ContentEnv, actor: ContentProps): McpServer => {
     ].join(' '),
     inputSchema: {
       slug: slugArg,
-      page: pageSchema.describe('The complete page, as it should end up.')
+      page: pageSchema.describe('The complete page, as it should end up.'),
+      summary: z
+        .string()
+        .min(1)
+        .max(60)
+        .describe('What this edit does, lowercase and in a few words — for example swap the hero image or rewrite the intro. Becomes the commit message.')
     }
-  }, async ({ slug, page }) => {
+  }, async ({ slug, page, summary }) => {
     try {
       /* Validate before anything is written */
 
@@ -306,7 +319,7 @@ const getMcpServer = (env: ContentEnv, actor: ContentProps): McpServer => {
       await commitFile(env, {
         path: getContentPath(slug),
         contents: serializePage(staged),
-        message: `content: update ${parsed.title}`,
+        message: `content: ${summary}`,
         branch,
         sha,
         actor
@@ -317,20 +330,20 @@ const getMcpServer = (env: ContentEnv, actor: ContentProps): McpServer => {
       const existing = await getOpenPull(env, slug)
       const pull = existing ?? await createPull(env, {
         branch,
-        title: `content: update ${parsed.title}`,
+        title: `content: update ${parsed.title.toLowerCase()}`,
         body: `Requested by ${actor.email} through the content connector.`
       })
 
-      // Only there once a previous stage of this page has been previewed —
-      // the alias URL is the same for every version of a pull request
-      const url = await getPreviewUrl(env, pull.number)
+      // The URL is the same for every version of a pull request, so until this
+      // version has been uploaded it still shows whatever was staged before
+      const url = getPreviewUrl(env, pull.number, staged)
 
       return toolText([
         `Staged as pull request #${pull.number}.`,
         '',
         diff,
         '',
-        url ? `Preview: ${url}` : '',
+        url ? `Preview, once it has built: ${url}` : '',
         'The preview takes a minute or two — check_preview will say when it is ready.'
       ].filter(Boolean).join('\n'))
     } catch (error) {
@@ -359,7 +372,7 @@ const getMcpServer = (env: ContentEnv, actor: ContentProps): McpServer => {
         return toolText(`The preview build failed: ${detail ?? 'no detail given'}\n${url ?? ''}`)
       }
 
-      return toolText(`Ready at ${url}`)
+      return toolText(url ? `Ready at ${url}` : 'Ready — the preview has finished building.')
     } catch (error) {
       return toolError(error)
     }

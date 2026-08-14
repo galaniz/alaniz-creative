@@ -11,8 +11,7 @@ import type {
   ContentPageSummary,
   ContentGithubContent,
   ContentGithubPull,
-  ContentGithubCheck,
-  ContentGithubComment
+  ContentGithubCheck
 } from './ContentTypes.js'
 import type { SchemaPage } from '../../schema/schemaTypes.js'
 import { getInstallationToken, githubUserAgent } from './ContentGithubAuth.js'
@@ -429,20 +428,6 @@ const getChecks = async (env: ContentEnv, sha: string): Promise<ContentGithubChe
   return res.check_runs
 }
 
-/**
- * Comments on a pull request.
- *
- * @param {ContentEnv} env
- * @param {number} number
- * @return {Promise<ContentGithubComment[]>}
- */
-const getComments = async (env: ContentEnv, number: number): Promise<ContentGithubComment[]> => {
-  return await githubFetch<ContentGithubComment[]>(
-    env,
-    `${getRepoPath(env)}/issues/${number}/comments`
-  )
-}
-
 /* Exports */
 
 export {
@@ -466,6 +451,5 @@ export {
   createPull,
   mergePull,
   closePull,
-  getChecks,
-  getComments
+  getChecks
 }
