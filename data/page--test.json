@@ -2,12 +2,13 @@
   "title": "Test",
   "slug": "test",
   "date": "2026-08-13T00:00:00",
-  "dateModified": "2026-08-14T03:26:40",
+  "dateModified": "2026-08-14T03:29:58",
   "hero": {
     "type": "profile",
     "title": "Hi, I'm Lorem Ipsum",
     "image": "placeholder"
   },
+  "template": "blank",
   "content": [
     {
       "renderType": "container",
