@@ -2,7 +2,7 @@
   "title": "Lemons",
   "slug": "lemons",
   "date": "2026-08-14T00:00:00",
-  "dateModified": "2026-08-14T22:10:58",
+  "dateModified": "2026-08-14T22:16:12",
   "hero": {
     "type": "profile",
     "title": "All about lemons",
@@ -63,8 +63,10 @@
       "maxWidth": "xs",
       "layout": "row-s",
       "gap": "s",
-      "paddingTop": "l",
-      "paddingBottom": "l",
+      "paddingTop": "m",
+      "paddingTopLarge": "l",
+      "paddingBottom": "m",
+      "paddingBottomLarge": "l",
       "content": [
         {
           "renderType": "column",
