@@ -9,6 +9,91 @@ import type {
 import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
 import type { Item } from '../../global/globalTypes.js'
 import type { ConfigColumn } from '../../config/configTypes.js'
+import { z } from 'zod'
+
+/**
+ * A single field in a contact form.
+ *
+ * @type {z.ZodObject}
+ */
+export const formFieldSchema = z.object({
+  renderType: z.literal('formField'),
+  name: z
+    .string()
+    .describe('Field name submitted with the form, for example email.'),
+  label: z
+    .string()
+    .describe('Visible label for the field.'),
+  type: z
+    .enum(['text', 'email', 'tel', 'number', 'textarea', 'checkbox', 'radio', 'select'])
+    .optional()
+    .describe('Input type. Defaults to text.'),
+  required: z
+    .boolean()
+    .optional()
+    .describe('Whether the field must be filled in.'),
+  rows: z
+    .number()
+    .int()
+    .optional()
+    .describe('Visible rows, for a textarea.'),
+  emptyError: z
+    .string()
+    .optional()
+    .describe('Message shown when a required field is left empty.'),
+  invalidError: z
+    .string()
+    .optional()
+    .describe('Message shown when the value is the wrong shape, for example a malformed email.')
+})
+
+/**
+ * A contact form and the message shown once it is sent.
+ *
+ * @type {z.ZodObject}
+ */
+export const formSchema = z.object({
+  renderType: z.literal('form'),
+  successTitle: z
+    .string()
+    .describe('Heading shown after the form is sent.'),
+  successText: z
+    .string()
+    .describe('Message shown after the form is sent.'),
+  toEmail: z
+    .string()
+    .describe('Address submissions are delivered to.'),
+  senderEmail: z
+    .string()
+    .describe('Address submissions are sent from. Must be on a verified domain.'),
+  content: z
+    .array(formFieldSchema)
+    .describe('The fields in the form, in the order they appear.')
+})
+
+/**
+ * @typedef {object} FormFieldSchema
+ * @prop {'formField'} renderType
+ * @prop {string} name
+ * @prop {string} label
+ * @prop {'text'|'email'|'tel'|'number'|'textarea'|'checkbox'|'radio'|'select'} [type='text']
+ * @prop {boolean} [required=false]
+ * @prop {number} [rows]
+ * @prop {string} [emptyError]
+ * @prop {string} [invalidError]
+ */
+export type FormFieldSchema = z.infer<typeof formFieldSchema>
+
+/**
+ * @typedef {object} FormSchema
+ * @prop {'form'} renderType
+ * @prop {string} successTitle
+ * @prop {string} successText
+ * @prop {string} toEmail
+ * @prop {string} senderEmail
+ * @prop {FormFieldSchema[]} content
+ */
+export type FormSchema = z.infer<typeof formSchema>
 
 /**
  * @typedef {'contact'|'password'} FormType

@@ -37,7 +37,7 @@ const workerServerlessTurnstile = async (
     })
   })
 
-  const turnstileRes = await turnstileResp.json() as WorkerTurnstile
+  const turnstileRes = await turnstileResp.json<WorkerTurnstile>()
 
   if (!turnstileRes.success) {
     throw new Error('Verification failed')

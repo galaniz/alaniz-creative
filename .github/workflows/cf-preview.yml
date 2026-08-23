@@ -1,0 +1,109 @@
+name: Cloudflare Preview
+
+# Uploads a pull request as a version of the site worker, served at a preview
+# alias URL so a change can be looked at before it is published.
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  # Named so the content worker can find this check and tell an editor whether
+  # the preview is ready yet
+  preview:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      # Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      # Install PNPM
+      - name: Install PNPM
+        uses: pnpm/action-setup@v5
+
+      # Set up Node.js for PNPM
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      # Install PNPM dependencies
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --optional
+
+      # Build the site, which also validates the content files. Staging keeps
+      # the noindex robots.txt
+      - name: Build site
+        run: pnpm build
+        env:
+          ENVIRONMENT: staging
+
+      # Upload the build as a version of the site worker, aliased to this pull
+      # request. The version takes no production traffic, and wrangler prints
+      # the alias URL rather than returning it
+      - name: Upload preview
+        id: upload
+        run: |
+          set -o pipefail
+
+          RESULT=$(pnpm exec wrangler versions upload \
+            --preview-alias pr-${{ github.event.pull_request.number }} \
+            --config wrangler.json \
+            --env="")
+
+          echo "$RESULT"
+
+          PREVIEW_URL=$(echo "$RESULT" | sed -n 's/^Version Preview Alias URL:[[:space:]]*\(https\?:\/\/[^[:space:]]*\)/\1/p' | head -n1)
+
+          if [ -z "${PREVIEW_URL:-}" ]; then
+            echo "Could not read the preview URL out of the wrangler output" >&2
+            exit 1
+          fi
+
+          echo "preview_url=$PREVIEW_URL" >> "$GITHUB_OUTPUT"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_WORKER_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+
+      # Say where it is, for anyone looking at the pull request itself
+      - name: Comment preview URL
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo
+            const issue_number = context.payload.pull_request.number
+            const url = '${{ steps.upload.outputs.preview_url }}'
+            const body = `🚀 Preview: ${url}\n\n<!-- cloudflare-preview ${url} -->`
+
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner,
+              repo,
+              issue_number
+            })
+
+            const existing = comments.find(comment =>
+              typeof comment.body === 'string' && comment.body.includes('<!-- cloudflare-preview ')
+            )
+
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body })
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number, body })
+            }
+
+      # Say where it is here too
+      - name: Summarise
+        run: |
+          echo "Preview: ${{ steps.upload.outputs.preview_url }}" >> $GITHUB_STEP_SUMMARY

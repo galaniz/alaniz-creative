@@ -3,14 +3,82 @@
  */
 
 import type { RenderFile } from '@alanizcreative/formation-static/render/renderTypes.js'
-import type { ConfigBlob } from '../../config/configTypes.js'
 import type { ButtonArgs } from '../../objects/Button/ButtonTypes.js'
 import type { Item } from '../../global/globalTypes.js'
+import { z } from 'zod'
+import { buttonSchema } from '../../objects/Button/ButtonTypes.js'
+import { blobOption } from '../../config/configTypes.js'
+import { imageKeyOption } from '../../schema/schemaOptions.js'
+
+/**
+ * Decorative wave shapes below a hero.
+ *
+ * @type {z.ZodEnum}
+ */
+const waveOption = z.enum([
+  'one',
+  'two',
+  'three',
+  'four',
+  'five'
+])
+
+/**
+ * @type {z.ZodObject}
+ */
+export const heroBaseSchema = z.object({
+  type: z
+    .enum(['media-text', 'minimal', 'profile', 'error'])
+    .optional()
+    .describe('Hero treatment. minimal is text only, profile pairs text with a portrait.'),
+  title: z
+    .string()
+    .optional()
+    .describe('Hero heading. Falls back to the page title when unset.'),
+  text: z
+    .string()
+    .optional()
+    .describe('A sentence or two below the heading.'),
+  wave: waveOption
+    .optional()
+    .describe('Decorative wave shape below the hero.'),
+  blob: blobOption
+    .optional()
+    .describe('Decorative blob shape behind the hero.'),
+  border: z
+    .boolean()
+    .optional()
+    .describe('Draw a border around the hero image.')
+})
+
+/**
+ * @type {z.ZodObject}
+ */
+export const heroSchema = heroBaseSchema.extend({
+  image: imageKeyOption
+    .optional()
+    .describe('Media library key for the hero image.'),
+  action: buttonSchema
+    .omit({ renderType: true })
+    .optional()
+    .describe('A single call to action button in the hero.')
+})
+
+/**
+ * @typedef {object} Hero
+ * @prop {'media-text'|'minimal'|'profile'|'error'} [type='media-text']
+ * @prop {string} [title]
+ * @prop {string} [text]
+ * @prop {HeroWave} [wave]
+ * @prop {ConfigBlob} [blob]
+ * @prop {boolean} [border=false]
+ */
+export type Hero = z.infer<typeof heroBaseSchema>
 
 /**
  * @typedef {'one'|'two'|'three'|'four'|'five'} HeroWave
  */
-export type HeroWave = 'one' | 'two' | 'three' | 'four' | 'five'
+export type HeroWave = NonNullable<Hero['wave']>
 
 /**
  * @typedef {object} HeroWaveSvg
@@ -25,28 +93,21 @@ export interface HeroWaveSvg {
 }
 
 /**
+ * @typedef {object} HeroSchema
+ * @extends {Hero}
+ * @prop {string} [image]
+ * @prop {ButtonSchema} [action]
+ */
+export type HeroSchema = z.infer<typeof heroSchema>
+
+/**
  * @typedef {object} HeroArgs
  * @extends {Item}
- * @prop {string} [contentType='page']
- * @prop {string} [archive]
- * @prop {'media-text'|'minimal'|'profile'|'error'} [type='media-text']
- * @prop {string} [title]
- * @prop {string} [text]
+ * @extends {Hero}
  * @prop {RenderFile} [image]
- * @prop {HeroWave} [wave]
- * @prop {ConfigBlob} [blob]
- * @prop {boolean} [border=false]
- * @prop {HeroAction} [action]
+ * @prop {ButtonArgs} [action]
  */
-export interface HeroArgs extends Item {
-  contentType?: string
-  archive?: string
-  type?: 'media-text' | 'minimal' | 'profile' | 'error'
-  title?: string
-  text?: string
+export type HeroArgs = Item & Hero & {
   image?: RenderFile
-  wave?: HeroWave
-  blob?: ConfigBlob
-  border?: boolean
   action?: ButtonArgs
 }

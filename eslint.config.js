@@ -46,9 +46,19 @@ export default tseslint.config(
     ],
     languageOptions: {
       parserOptions: {
-        project: true,
         tsconfigRootDir: import.meta.dirname,
         project: './tsconfig.json'
+      }
+    }
+  },
+  {
+    files: [ // Workers run against the workers runtime types, not the DOM
+      'src/workers/**/*.ts'
+    ],
+    languageOptions: {
+      parserOptions: {
+        tsconfigRootDir: import.meta.dirname,
+        project: './src/workers/tsconfig.json'
       }
     }
   }
