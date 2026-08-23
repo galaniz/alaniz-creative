@@ -88,6 +88,12 @@ pnpm start
 
 </details>
 <details>
+<summary>Schema</summary>
+  
+- <a href="/src/schema/README.md">Schema</a>
+
+</details>
+<details>
 <summary>Seo</summary>
   
 - <a href="/src/seo/README.md">Seo</a>
@@ -129,6 +135,7 @@ pnpm start
 <summary>Workers</summary>
   
 - <a href="/src/workers/Contact/README.md">Contact</a>  
+- <a href="/src/workers/Content/README.md">Content</a>  
 - <a href="/src/workers/File/README.md">File</a>  
 - <a href="/src/workers/Password/README.md">Password</a>  
 - <a href="/src/workers/Site/README.md">Site</a>  

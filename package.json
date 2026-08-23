@@ -1,6 +1,6 @@
 {
   "name": "alaniz-creative",
-  "packageManager": "pnpm@10.33.3",
+  "packageManager": "pnpm@11.22.0",
   "type": "module",
   "scripts": {
     "build:client": "npx tsc --project tsconfig.client.json",
@@ -26,45 +26,40 @@
   "engines": {
     "node": ">=24"
   },
-  "pnpm": {
-    "overrides": {
-      "uuid@>=13.0.0 <13.0.1": ">=13.0.1"
-    }
-  },
   "dependencies": {
-    "@alanizcreative/formation": "0.0.3",
-    "@alanizcreative/formation-static": "0.0.5",
+    "@alanizcreative/formation": "0.0.4",
+    "@alanizcreative/formation-static": "0.0.6",
     "@cloudflare/workers-oauth-provider": "0.10.3",
-    "@cloudflare/workers-types": "4.20260506.1",
-    "@esbuild/linux-x64": "0.28.0",
+    "@cloudflare/workers-types": "5.20260823.1",
+    "@esbuild/linux-x64": "0.28.2",
     "@fullhuman/postcss-purgecss": "8.0.0",
     "@modelcontextprotocol/sdk": "1.30.0",
     "@types/html-minifier-terser": "^7.0.2",
-    "@types/node": "^25.6.0",
+    "@types/node": "^26.2.0",
     "@types/validator": "13.15.10",
-    "autoprefixer": "^10.5.0",
+    "autoprefixer": "^10.5.4",
     "dotenv": "^17.4.2",
-    "esbuild": "^0.28.0",
+    "esbuild": "^0.28.2",
     "html-minifier-terser": "^7.2.0",
-    "jose": "6.2.3",
-    "postcss": "^8.5.14",
-    "postcss-modules": "^6.0.1",
-    "sass": "^1.99.0",
+    "jose": "6.2.10",
+    "postcss": "^8.5.26",
+    "postcss-modules": "^9.0.1",
+    "sass": "^1.103.1",
     "typescript": "^6.0.3",
-    "uuid": "^14.0.0",
+    "uuid": "^14.0.2",
     "validator": "13.15.35",
-    "zod": "4.3.6"
+    "zod": "4.4.3"
   },
   "devDependencies": {
-    "eslint": "10.3.0",
-    "stylelint": "^17.11.0",
+    "eslint": "10.9.0",
+    "stylelint": "^17.14.1",
     "stylelint-config-standard-scss": "^17.0.0",
-    "typescript-eslint": "8.59.2"
+    "typescript-eslint": "8.67.0"
   },
   "optionalDependencies": {
     "nodemon": "3.1.14",
     "npm-run-all": "^4.1.5",
-    "wrangler": "^4.88.0"
+    "wrangler": "^4.125.0"
   },
   "browserslist": [
     "> 0.5%"
