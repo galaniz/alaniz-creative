@@ -185,8 +185,6 @@ const Posts = (props: PostsProps): string => {
   return CardContainer(output, layout)
 }
 
-/* Exports */
-
 export {
   postsData,
   Posts

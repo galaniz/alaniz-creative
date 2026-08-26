@@ -61,6 +61,4 @@ const InfoSvg = (args?: SvgArgs): string => {
   `
 }
 
-/* Exports */
-
 export { InfoSvg }

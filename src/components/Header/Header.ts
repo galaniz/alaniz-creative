@@ -35,6 +35,4 @@ const Header = (currentLink: string, currentType?: string | string[]): string =>
   `
 }
 
-/* Exports */
-
 export { Header }

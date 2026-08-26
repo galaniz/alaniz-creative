@@ -37,6 +37,4 @@ const filters: Partial<Filters> = {
   }
 }
 
-/* Exports */
-
 export { filters }

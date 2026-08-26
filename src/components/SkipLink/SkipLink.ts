@@ -18,6 +18,4 @@ const SkipLink = (): string => {
   `
 }
 
-/* Exports */
-
 export { SkipLink }

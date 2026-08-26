@@ -75,6 +75,4 @@ const Protect = (): string => {
   })
 }
 
-/* Exports */
-
 export { Protect }

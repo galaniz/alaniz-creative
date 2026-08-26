@@ -2,8 +2,6 @@
  * Workers - Content Media
  */
 
-/* Imports */
-
 import type { ContentEnv, ContentImage } from './ContentTypes.js'
 import { escape } from '@alanizcreative/formation-static/utils/escape/escape.js'
 import { getAccessIdentity } from './ContentAccess.js'
@@ -131,8 +129,8 @@ const getMediaPage = (env: ContentEnv, images: ContentImage[], message?: string)
     </label>
     <label>
       Description
-      <input type="text" name="alt" maxlength="300" placeholder="What the image shows">
-      <small>Optional. Carried over as a starting point when the image is placed on a page.</small>
+      <input type="text" name="alt" placeholder="What the image shows">
+      <small>Optional. Default alt text for image.</small>
     </label>
     <label>
       Key
@@ -285,8 +283,6 @@ const renderMedia = async (env: ContentEnv, message?: string): Promise<Response>
     }
   })
 }
-
-/* Exports */
 
 export {
   getMediaPage, // Exported so the page can be rendered without auth or network

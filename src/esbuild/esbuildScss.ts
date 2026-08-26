@@ -54,6 +54,4 @@ const esbuildScss = (): Plugin => {
   }
 }
 
-/* Exports */
-
 export { esbuildScss }

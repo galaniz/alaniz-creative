@@ -61,6 +61,4 @@ const LockSvg = (args?: SvgArgs): string => {
   `
 }
 
-/* Exports */
-
 export { LockSvg }

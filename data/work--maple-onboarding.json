@@ -324,8 +324,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/value-prop-welcome",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -339,8 +338,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/value-prop-intent",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -354,8 +352,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/value-prop-prescriptions-1",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -369,8 +366,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/value-prop-prescriptions-2",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -384,8 +380,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/value-prop-prescriptions-3",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -399,8 +394,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/value-prop-confirmation",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 }
@@ -453,7 +447,7 @@
                         },
                         {
                           "tag": "a",
-                          "link": "https://github.com/galaniz/formation-static/tree/beta",
+                          "link": "https://github.com/galaniz/formation-static",
                           "content": "Formation Static"
                         },
                         {
@@ -461,7 +455,7 @@
                         },
                         {
                           "tag": "a",
-                          "link": "https://github.com/galaniz/formation/tree/beta",
+                          "link": "https://github.com/galaniz/formation",
                           "content": "Formation"
                         },
                         {
@@ -599,8 +593,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/app-create-consult",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -612,8 +605,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/app-paywall",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -625,8 +617,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/app-dashboard",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 }
@@ -772,8 +763,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/how-it-works-welcome",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -787,8 +777,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/how-it-works-prescriptions-1",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -802,8 +791,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/how-it-works-prescriptions-2",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -817,8 +805,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/how-it-works-prescriptions-3",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -832,8 +819,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/how-it-works-reassurance",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -847,8 +833,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/how-it-works-confirmation",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -862,8 +847,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/how-it-works-intent",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -877,8 +861,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/weight-medication-assessment-1",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -892,8 +875,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/weight-medication-assessment-2",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 },
@@ -907,8 +889,7 @@
                     {
                       "renderType": "image",
                       "image": "maple-onboarding/weight-medication-assessment-eligible",
-                      "border": true,
-                      "alt": ""
+                      "border": true
                     }
                   ]
                 }
@@ -1070,8 +1051,7 @@
                 {
                   "renderType": "image",
                   "image": "maple-onboarding/home",
-                  "border": true,
-                  "alt": "Top of desktop homepage with main buttons leading to registration outlined."
+                  "border": true
                 }
               ]
             },

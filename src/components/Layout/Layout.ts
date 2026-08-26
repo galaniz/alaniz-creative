@@ -251,6 +251,4 @@ const Layout = (args: LayoutArgs): string => {
   `
 }
 
-/* Exports */
-
 export { Layout }

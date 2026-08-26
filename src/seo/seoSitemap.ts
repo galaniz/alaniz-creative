@@ -46,8 +46,6 @@ const setSeoSitemapItem = (itemData: Item, assetsLink: string): boolean => {
   return true
 }
 
-/* Exports */
-
 export {
   seoSitemap,
   setSeoSitemapItem

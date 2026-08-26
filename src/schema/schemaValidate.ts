@@ -2,8 +2,6 @@
  * Schema - Validate
  */
 
-/* Imports */
-
 import { readdir, readFile } from 'node:fs/promises'
 import { extname, basename, resolve } from 'node:path'
 import { parsePage, getSchemaIssuesMessage } from './schemaParse.js'
@@ -63,7 +61,5 @@ const validateContent = async (dir = 'data'): Promise<void> => {
     throw new Error(`Content failed validation:\n\n${errors.join('\n\n')}\n`)
   }
 }
-
-/* Exports */
 
 export { validateContent }

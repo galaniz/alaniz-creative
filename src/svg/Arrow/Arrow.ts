@@ -61,6 +61,4 @@ const ArrowSvg = (args?: SvgArgs): string => {
   `
 }
 
-/* Exports */
-
 export { ArrowSvg }

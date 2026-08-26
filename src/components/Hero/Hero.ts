@@ -307,6 +307,4 @@ const Hero = (args: HeroArgs): string => {
   `
 }
 
-/* Exports */
-
 export { Hero }

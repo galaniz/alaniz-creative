@@ -61,6 +61,4 @@ const PauseSvg = (args?: SvgArgs): string => {
   `
 }
 
-/* Exports */
-
 export { PauseSvg }

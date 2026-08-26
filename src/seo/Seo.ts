@@ -261,8 +261,6 @@ const Seo = (meta: RenderMeta, itemData: Item, assetsLink: string, home: boolean
   return output
 }
 
-/* Exports */
-
 export {
   Seo,
   seoSchema

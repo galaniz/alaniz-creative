@@ -202,6 +202,4 @@ const Image = (props: ImageProps): string => {
   return output
 }
 
-/* Exports */
-
 export { Image }

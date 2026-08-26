@@ -77,8 +77,6 @@ const config: Config = setConfig({
   }
 })
 
-/* Exports */
-
 export {
   config,
   configVars

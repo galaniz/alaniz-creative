@@ -65,8 +65,6 @@ const workerServerlessFilter = async (request: WorkerRequest): Promise<boolean> 
   return !!serverless?.[pathname]
 }
 
-/* Exports */
-
 export {
   workerServerlessSetup,
   workerServerlessFilter

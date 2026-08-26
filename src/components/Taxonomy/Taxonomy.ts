@@ -62,6 +62,4 @@ const Taxonomy = (itemData: Item): Item => {
   }
 }
 
-/* Exports */
-
 export { Taxonomy }

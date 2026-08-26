@@ -92,6 +92,4 @@ const Media = (props: MediaProps): string => {
   `
 }
 
-/* Exports */
-
 export { Media }

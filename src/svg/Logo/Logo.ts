@@ -40,6 +40,4 @@ const LogoSvg = (classes?: string): string => {
   `
 }
 
-/* Exports */
-
 export { LogoSvg }

@@ -50,6 +50,4 @@ const HttpError: RenderHttpError = async (args) => {
   })
 }
 
-/* Exports */
-
 export { HttpError }

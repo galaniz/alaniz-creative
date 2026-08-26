@@ -22,6 +22,4 @@ const Logo = (classes?: string): string => {
   `
 }
 
-/* Exports */
-
 export { Logo }

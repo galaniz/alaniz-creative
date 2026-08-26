@@ -61,6 +61,4 @@ const ExternalSvg = (args?: SvgArgs): string => {
   `
 }
 
-/* Exports */
-
 export { ExternalSvg }

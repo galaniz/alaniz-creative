@@ -2,8 +2,6 @@
  * Workers - Content Types
  */
 
-/* Imports */
-
 import type { OAuthHelpers } from '@cloudflare/workers-oauth-provider'
 import type { SchemaPage } from '../../schema/schemaTypes.js'
 
@@ -103,6 +101,7 @@ export interface ContentPageSummary {
  * @prop {number} width
  * @prop {number} height
  * @prop {number} size
+ * @prop {string} [alt]
  */
 export interface ContentImage {
   key: string
@@ -113,6 +112,7 @@ export interface ContentImage {
   width: number
   height: number
   size: number
+  alt?: string
 }
 
 /**

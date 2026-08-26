@@ -98,6 +98,4 @@ const FormField = (props: FormFieldProps): FormFieldProps => {
   }
 }
 
-/* Exports */
-
 export { FormField }

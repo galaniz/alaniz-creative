@@ -18,6 +18,4 @@ const actions: Partial<Actions> = {
   }
 }
 
-/* Exports */
-
 export { actions }

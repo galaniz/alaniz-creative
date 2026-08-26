@@ -2,8 +2,6 @@
  * Schema - Parse
  */
 
-/* Imports */
-
 import type { SchemaIssue, SchemaResult } from './schemaTypes.js'
 import { z } from 'zod'
 import { pageSchema } from '../global/globalTypes.js'
@@ -127,8 +125,6 @@ const parsePage = (data: unknown): SchemaResult => {
 const getSchemaIssuesMessage = (issues: SchemaIssue[]): string => {
   return issues.map(issue => `  ${issue.path}: ${issue.message}`).join('\n')
 }
-
-/* Exports */
 
 export {
   getSchemaIssues,

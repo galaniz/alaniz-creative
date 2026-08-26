@@ -64,6 +64,4 @@ const Footer = (currentLink: string, currentType?: string | string[]): string =>
   `
 }
 
-/* Exports */
-
 export { Footer }

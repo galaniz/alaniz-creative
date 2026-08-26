@@ -151,6 +151,4 @@ const NavigationPrimary = (args: NavigationPrimaryArgs): string => {
   `
 }
 
-/* Exports */
-
 export { NavigationPrimary }

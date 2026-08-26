@@ -18,6 +18,4 @@ const storeArgs: Partial<Store> = {
   }
 }
 
-/* Exports */
-
 export { storeArgs }

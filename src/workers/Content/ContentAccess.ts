@@ -2,8 +2,6 @@
  * Workers - Content Access
  */
 
-/* Imports */
-
 import type { ContentEnv, ContentProps } from './ContentTypes.js'
 import type { JWK } from 'jose'
 import { decodeProtectedHeader, importJWK, jwtVerify } from 'jose'
@@ -121,7 +119,5 @@ const getAccessIdentity = async (
     name: email.split('@')[0] ?? email
   }
 }
-
-/* Exports */
 
 export { getAccessIdentity }

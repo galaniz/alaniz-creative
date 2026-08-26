@@ -117,8 +117,6 @@ const RichTextContentItem: RichTextContentItemFilter = (item, props) => {
   return newItem
 }
 
-/* Exports */
-
 export {
   RichTextProps,
   RichTextContentItem

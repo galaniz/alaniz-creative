@@ -2,8 +2,6 @@
  * Workers - Content Github
  */
 
-/* Imports */
-
 import type {
   ContentEnv,
   ContentProps,
@@ -427,8 +425,6 @@ const getChecks = async (env: ContentEnv, sha: string): Promise<ContentGithubChe
 
   return res.check_runs
 }
-
-/* Exports */
 
 export {
   contentDir,

@@ -838,7 +838,8 @@ An entry in the media library.
 - **`format`** <code>string</code> required  
 - **`width`** <code>number</code> required  
 - **`height`** <code>number</code> required  
-- **`size`** <code>number</code> required
+- **`size`** <code>number</code> required  
+- **`alt`** <code>string</code> optional
 
 ### ContentPreviewStatus  
 

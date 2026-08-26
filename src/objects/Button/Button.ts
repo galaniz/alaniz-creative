@@ -126,6 +126,4 @@ const Button = (props: ButtonProps): string => {
   return output
 }
 
-/* Exports */
-
 export { Button }

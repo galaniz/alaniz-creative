@@ -61,6 +61,4 @@ const PlaySvg = (args?: SvgArgs): string => {
   `
 }
 
-/* Exports */
-
 export { PlaySvg }

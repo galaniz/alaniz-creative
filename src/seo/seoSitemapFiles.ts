@@ -88,6 +88,4 @@ const createSeoSitemapFiles = async (): Promise<void> => {
   print('[AC] Successfully wrote', paths.join('\n'), 'success')
 } 
 
-/* Exports */
-
 export { createSeoSitemapFiles }

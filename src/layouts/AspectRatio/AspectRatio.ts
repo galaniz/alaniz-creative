@@ -43,6 +43,4 @@ const AspectRatio = (props: AspectRatioProps): string[] => {
   ]
 }
 
-/* Exports */
-
 export { AspectRatio }

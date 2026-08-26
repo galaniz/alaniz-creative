@@ -61,6 +61,4 @@ const ErrorSvg = (args?: SvgArgs): string => {
   `
 }
 
-/* Exports */
-
 export { ErrorSvg }

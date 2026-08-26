@@ -2,8 +2,6 @@
  * Schema - Options
  */
 
-/* Imports */
-
 import { z } from 'zod'
 
 /**
@@ -29,8 +27,6 @@ const imageKeyOption = z
     /^[a-z0-9][a-z0-9/-]*$/,
     'Must be a media library key such as citris/hero, lowercase with no file extension'
   )
-
-/* Exports */
 
 export {
   referenceOption,

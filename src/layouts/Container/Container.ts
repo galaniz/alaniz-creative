@@ -249,6 +249,4 @@ const Container = (props: ContainerProps): ContainerProps => {
   }
 }
 
-/* Exports */
-
 export { Container }

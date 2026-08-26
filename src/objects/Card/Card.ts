@@ -256,8 +256,6 @@ const CardContainer = (output: string, type: CardType = 'minimal', classes?: str
   `
 }
 
-/* Exports */
-
 export {
   Card,
   CardContainer

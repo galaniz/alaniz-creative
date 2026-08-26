@@ -45,8 +45,6 @@ const Navigations: RenderNavigation = (args): void => {
   return
 }
 
-/* Exports */
-
 export {
   Navigations,
   navigationsInstance

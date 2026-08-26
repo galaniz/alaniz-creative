@@ -54,6 +54,4 @@ const Term = (itemData: Item): Item => {
   }
 }
 
-/* Exports */
-
 export { Term }

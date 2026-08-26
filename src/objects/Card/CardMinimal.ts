@@ -64,8 +64,6 @@ const CardMinimalContainer = (output: string): string => {
   `
 }
 
-/* Exports */
-
 export {
   CardMinimal,
   CardMinimalContainer

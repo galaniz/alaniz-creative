@@ -270,6 +270,4 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
   return output
 }
 
-/* Exports */
-
 export { setupBuild }

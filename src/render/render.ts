@@ -39,6 +39,4 @@ const renderFunctions: RenderFunctionsArgs = {
   }
 }
 
-/* Exports */
-
 export { renderFunctions }

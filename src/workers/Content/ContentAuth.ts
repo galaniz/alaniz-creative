@@ -2,8 +2,6 @@
  * Workers - Content Auth
  */
 
-/* Imports */
-
 import type { AuthRequest } from '@cloudflare/workers-oauth-provider'
 import type { ContentEnv } from './ContentTypes.js'
 import { AuthorizationError } from '@cloudflare/workers-oauth-provider'
@@ -158,8 +156,6 @@ const handleAuthorize = async (request: Request, env: ContentEnv): Promise<Respo
 
   return Response.redirect(redirectTo, 302)
 }
-
-/* Exports */
 
 export {
   contentScope,

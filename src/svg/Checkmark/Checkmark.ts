@@ -61,6 +61,4 @@ const CheckmarkSvg = (args?: SvgArgs): string => {
   `
 }
 
-/* Exports */
-
 export { CheckmarkSvg }

@@ -29,6 +29,4 @@ const Loader = (): string => {
   return loaderId
 }
 
-/* Exports */
-
 export { Loader }

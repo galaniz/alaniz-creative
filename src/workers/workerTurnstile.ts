@@ -44,6 +44,4 @@ const workerServerlessTurnstile = async (
   }
 }
 
-/* Exports */
-
 export { workerServerlessTurnstile }

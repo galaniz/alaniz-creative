@@ -122,6 +122,4 @@ const Info = (args: InfoArgs): string => {
   return template ? templateId : output
 }
 
-/* Exports */
-
 export { Info }

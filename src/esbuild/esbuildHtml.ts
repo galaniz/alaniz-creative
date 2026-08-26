@@ -92,6 +92,4 @@ const esbuildHtml = (args: EsbuildHtmlArgs): Plugin => {
   }
 }
 
-/* Exports */
-
 export { esbuildHtml }

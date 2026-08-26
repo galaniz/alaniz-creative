@@ -139,6 +139,4 @@ const Form = (props: FormProps): FormProps => {
   }
 }
 
-/* Exports */
-
 export { Form }

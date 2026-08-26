@@ -107,6 +107,4 @@ const Single = (content: string, contentType: string, itemData: Item): string =>
   `
 }
 
-/* Exports */
-
 export { Single }

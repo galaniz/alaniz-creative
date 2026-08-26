@@ -166,6 +166,4 @@ const Column = (props: ColumnProps): ColumnProps => {
   }
 }
 
-/* Exports */
-
 export { Column }
