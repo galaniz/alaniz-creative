@@ -9,7 +9,7 @@ import { setFilters } from '@alanizcreative/formation-static/filters/filters.js'
 import { setServerless, doServerlessAction } from '@alanizcreative/formation-static/serverless/serverless.js'
 import { setStoreItem } from '@alanizcreative/formation-static/store/store.js'
 import { Contact } from '@alanizcreative/formation-static/serverless/Contact/Contact.js'
-import { workerServerlessTurnstile } from '../workerTurnstile.js'
+import { workerTurnstile } from '../workerTurnstile.js'
 
 /**
  * Send contact form email with Resend.
@@ -19,7 +19,7 @@ import { workerServerlessTurnstile } from '../workerTurnstile.js'
 const contact: ServerlessAction = async (data, request, env: ContactEnv) => {
   /* Turnstile check */
 
-  await workerServerlessTurnstile(data, request, env)
+  await workerTurnstile(data, request, env)
 
   /* Form meta */
 

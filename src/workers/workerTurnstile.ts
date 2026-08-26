@@ -14,7 +14,7 @@ import { isStringStrict } from '@alanizcreative/formation-static/utils/string/st
  * @param {WorkerEnv} env
  * @return {Promise<void>}
  */
-const workerServerlessTurnstile = async (
+const workerTurnstile = async (
   data: ServerlessActionData,
   request: Request,
   env: WorkerEnv
@@ -44,4 +44,4 @@ const workerServerlessTurnstile = async (
   }
 }
 
-export { workerServerlessTurnstile }
+export { workerTurnstile }

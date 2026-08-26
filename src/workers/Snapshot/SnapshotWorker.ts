@@ -4,7 +4,7 @@
 
 import type { SnapshotEnv } from './SnapshotTypes.js'
 import type { WorkerRequest } from '../workerTypes.js'
-import { workerServerlessSetup } from '../workerUtils.js'
+import { workerProtectSetup } from '../workerSetup.js'
 import { Protect } from '../../components/Protect/Protect.js'
 
 /**
@@ -31,7 +31,7 @@ export default {
     /* Password page */
 
     if (!hasAuth) {
-      await workerServerlessSetup(env)
+      workerProtectSetup(env)
 
       return new Response(Protect(), {
         status: 200,
