@@ -2,8 +2,6 @@
  * Components - Navigation Primary
  */
 
-/* Imports */
-
 import type { NavigationPrimaryArgs } from './NavigationTypes.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { getPermalink } from '@alanizcreative/formation-static/utils/link/link.js'
@@ -152,7 +150,5 @@ const NavigationPrimary = (args: NavigationPrimaryArgs): string => {
     </ac-navigation-primary>
   `
 }
-
-/* Exports */
 
 export { NavigationPrimary }

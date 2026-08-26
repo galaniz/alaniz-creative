@@ -2,8 +2,6 @@
  * Worker - Utils
  */
 
-/* Imports */
-
 import type { WorkerRequest } from './workerTypes.js'
 import type { Store, StoreServerless } from '@alanizcreative/formation-static/store/storeTypes.js'
 import type { Generic } from '@alanizcreative/formation-static/global/globalTypes.js'
@@ -66,8 +64,6 @@ const workerServerlessFilter = async (request: WorkerRequest): Promise<boolean> 
 
   return !!serverless?.[pathname]
 }
-
-/* Exports */
 
 export {
   workerServerlessSetup,

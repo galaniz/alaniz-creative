@@ -2,8 +2,6 @@
  * Actions
  */
 
-/* Imports */
-
 import type { Actions } from '@alanizcreative/formation-static/actions/actionsTypes.js'
 import { configVars } from '../config/config.js'
 
@@ -19,7 +17,5 @@ const actions: Partial<Actions> = {
     configVars.css.cache.clear()
   }
 }
-
-/* Exports */
 
 export { actions }

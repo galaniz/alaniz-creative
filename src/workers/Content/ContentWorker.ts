@@ -2,8 +2,6 @@
  * Workers - Content
  */
 
-/* Imports */
-
 import type { ContentEnv, ContentProps } from './ContentTypes.js'
 import { OAuthProvider } from '@cloudflare/workers-oauth-provider'
 import {

@@ -2,8 +2,6 @@
  * Layouts - Container
  */
 
-/* Imports */
-
 import type { ContainerProps } from './ContainerTypes.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 
@@ -250,7 +248,5 @@ const Container = (props: ContainerProps): ContainerProps => {
     args: newArgs
   }
 }
-
-/* Exports */
 
 export { Container }

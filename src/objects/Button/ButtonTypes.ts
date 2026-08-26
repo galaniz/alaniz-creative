@@ -2,8 +2,6 @@
  * Objects - Button Types
  */
 
-/* Imports */
-
 import type { InternalLink } from '@alanizcreative/formation-static/global/globalTypes.js'
 import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
 import type { Item } from '../../global/globalTypes.js'

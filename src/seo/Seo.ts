@@ -2,8 +2,6 @@
  * Seo
  */
 
-/* Imports */
-
 import type { SeoSchema } from './seoTypes.js'
 import type { Item } from '../global/globalTypes.js'
 import type { Generic } from '@alanizcreative/formation-static/global/globalTypes.js'
@@ -262,8 +260,6 @@ const Seo = (meta: RenderMeta, itemData: Item, assetsLink: string, home: boolean
 
   return output
 }
-
-/* Exports */
 
 export {
   Seo,

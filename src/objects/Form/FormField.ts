@@ -2,8 +2,6 @@
  * Object - Form Field
  */
 
-/* Imports */
-
 import type { FormFieldProps } from './FormTypes.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 import { addScript } from '@alanizcreative/formation-static/scripts/scripts.js'
@@ -99,7 +97,5 @@ const FormField = (props: FormFieldProps): FormFieldProps => {
     }
   }
 }
-
-/* Exports */
 
 export { FormField }

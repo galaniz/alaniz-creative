@@ -2,8 +2,6 @@
  * Components - Http Error
  */
 
-/* Imports */
-
 import type { RenderHttpError } from '@alanizcreative/formation-static/render/renderTypes.js'
 import { renderInlineItem } from '@alanizcreative/formation-static/render/renderInline.js'
 import { Hero } from '../Hero/Hero.js'
@@ -51,7 +49,5 @@ const HttpError: RenderHttpError = async (args) => {
     })
   })
 }
-
-/* Exports */
 
 export { HttpError }

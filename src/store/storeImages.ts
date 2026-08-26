@@ -2,8 +2,6 @@
  * Store - Images
  */
 
-/* Imports */
-
 import type { Store } from '@alanizcreative/formation-static/store/storeTypes.js'
 
 /**
@@ -29,8 +27,6 @@ const getImageMeta = async (): Promise<Store['imageMeta']> => {
 
   return await res.json() as Store['imageMeta']
 }
-
-/* Exports */
 
 export {
   imageMetaUrl,

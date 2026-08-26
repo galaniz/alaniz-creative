@@ -2,8 +2,6 @@
  * Components - Term
  */
 
-/* Imports */
-
 import type { Item } from '../../global/globalTypes.js'
 import { getArchiveLink } from '@alanizcreative/formation-static/utils/archive/archive.js'
 
@@ -55,7 +53,5 @@ const Term = (itemData: Item): Item => {
     ]
   }
 }
-
-/* Exports */
 
 export { Term }

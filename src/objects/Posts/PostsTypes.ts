@@ -2,8 +2,6 @@
  * Objects - Posts Types
  */
 
-/* Imports */
-
 import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
 import type { Item } from '../../global/globalTypes.js'
 import { z } from 'zod'

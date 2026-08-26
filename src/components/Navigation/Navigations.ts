@@ -2,8 +2,6 @@
  * Components - Navigations
  */
 
-/* Imports */
-
 import type { NavigationLocations } from './NavigationTypes.js'
 import type { RenderNavigation } from '@alanizcreative/formation-static/render/renderTypes.js'
 import { isArrayStrict } from '@alanizcreative/formation-static/utils/array/array.js'
@@ -46,8 +44,6 @@ const Navigations: RenderNavigation = (args): void => {
 
   return
 }
-
-/* Exports */
 
 export {
   Navigations,

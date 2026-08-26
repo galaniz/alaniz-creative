@@ -2,8 +2,6 @@
  * Schema - Types
  */
 
-/* Imports */
-
 import type { z } from 'zod'
 import type {
   pageSchema,

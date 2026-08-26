@@ -2,8 +2,6 @@
  * Workers - Content Mcp
  */
 
-/* Imports */
-
 import type { ContentEnv, ContentProps, ContentPreview } from './ContentTypes.js'
 import type { SchemaPage } from '../../schema/schemaTypes.js'
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
@@ -240,7 +238,7 @@ const getMcpServer = (env: ContentEnv, actor: ContentProps): McpServer => {
   })
 
   server.registerTool('list_images', {
-    description: 'List the images in the media library, with the key each one is referenced by.',
+    description: 'List the images in the media library — the key each one is referenced by, its dimensions, and the description it was uploaded with.',
     inputSchema: {
       prefix: z
         .string()
@@ -255,7 +253,12 @@ const getMcpServer = (env: ContentEnv, actor: ContentProps): McpServer => {
         return toolText('The media library is empty. Upload an image before referencing one.')
       }
 
-      const lines = images.map(image => `${image.key} — ${image.width}×${image.height}`)
+      const lines = images.map(image => {
+        const size = `${image.width}×${image.height}`
+        const alt = image.alt?.replace(/\s+/g, ' ').trim() // Flattened as newlines would break the line per image
+
+        return alt ? `${image.key} — ${size} — ${alt}` : `${image.key} — ${size}`
+      })
 
       return toolText(`${images.length} images:\n${lines.join('\n')}`)
     } catch (error) {
@@ -424,7 +427,5 @@ const getMcpServer = (env: ContentEnv, actor: ContentProps): McpServer => {
 
   return server
 }
-
-/* Exports */
 
 export { getMcpServer }

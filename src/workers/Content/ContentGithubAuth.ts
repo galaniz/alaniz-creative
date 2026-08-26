@@ -2,8 +2,6 @@
  * Workers - Content Github Auth
  */
 
-/* Imports */
-
 import type { ContentEnv } from './ContentTypes.js'
 import { SignJWT, importPKCS8 } from 'jose'
 
@@ -116,8 +114,6 @@ const getInstallationToken = async (env: ContentEnv): Promise<string> => {
 
   return token
 }
-
-/* Exports */
 
 export {
   githubUserAgent,

@@ -2,8 +2,6 @@
  * Esbuild - Scss
  */
 
-/* Imports */
-
 import type { Plugin } from 'esbuild'
 import { readFile } from 'node:fs/promises'
 import { pathToFileURL } from 'node:url'
@@ -55,7 +53,5 @@ const esbuildScss = (): Plugin => {
     }
   }
 }
-
-/* Exports */
 
 export { esbuildScss }

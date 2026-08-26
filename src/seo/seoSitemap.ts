@@ -2,8 +2,6 @@
  * Seo - Sitemap
  */
 
-/* Imports */
-
 import type { SeoSitemapItem } from './seoTypes.js'
 import type { Item } from '../global/globalTypes.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
@@ -47,8 +45,6 @@ const setSeoSitemapItem = (itemData: Item, assetsLink: string): boolean => {
 
   return true
 }
-
-/* Exports */
 
 export {
   seoSitemap,

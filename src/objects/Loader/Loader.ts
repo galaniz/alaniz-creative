@@ -2,8 +2,6 @@
  * Objects - Loader
  */
 
-/* Imports */
-
 import { addStyle } from '@alanizcreative/formation-static/scripts/scripts.js'
 import { configVars } from '../../config/config.js'
 
@@ -30,7 +28,5 @@ const Loader = (): string => {
 
   return loaderId
 }
-
-/* Exports */
 
 export { Loader }

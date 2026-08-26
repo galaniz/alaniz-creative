@@ -1,0 +1,25 @@
+{
+  "name": "alaniz-creative-snapshot",
+  "main": "./SnapshotWorker.ts",
+  "compatibility_date": "2026-05-11",
+  "workers_dev": false,
+  "preview_urls": false,
+  "keep_vars": true,
+  "minify": true,
+  "r2_buckets": [
+    {
+      "binding": "SNAPSHOT_BUCKET",
+      "bucket_name": "alaniz-creative-snapshot"
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "alanizcreative.com/snapshot/*",
+      "zone_name": "alanizcreative.com"
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.02
+  }
+}

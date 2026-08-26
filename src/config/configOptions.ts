@@ -2,8 +2,6 @@
  * Config - Options
  */
 
-/* Imports */
-
 import type { ConfigContainer, ConfigBreakpoint, ConfigColumn, ConfigBlob } from './configTypes.js'
 
 /**

@@ -2,8 +2,6 @@
  * Layouts - Column
  */
 
-/* Imports */
-
 import type { ColumnProps } from './ColumnTypes.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
@@ -167,7 +165,5 @@ const Column = (props: ColumnProps): ColumnProps => {
     args: newArgs
   }
 }
-
-/* Exports */
 
 export { Column }

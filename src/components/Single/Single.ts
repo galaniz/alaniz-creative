@@ -2,8 +2,6 @@
  * Components - Single
  */
 
-/* Imports */
-
 import type { Item } from '../../global/globalTypes.js'
 import { isArrayStrict } from '@alanizcreative/formation-static/utils/array/array.js'
 import { getArchiveLink } from '@alanizcreative/formation-static/utils/archive/archive.js'
@@ -108,7 +106,5 @@ const Single = (content: string, contentType: string, itemData: Item): string =>
     </section>
   `
 }
-
-/* Exports */
 
 export { Single }

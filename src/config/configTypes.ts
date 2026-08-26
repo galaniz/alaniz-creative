@@ -2,8 +2,6 @@
  * Config - Types
  */
 
-/* Imports */
-
 import type { Generic } from '@alanizcreative/formation-static/global/globalTypes.js'
 import { z } from 'zod'
 
@@ -30,15 +28,15 @@ export interface ConfigVarsSvg {
 
 /**
  * @typedef {object} ConfigVarsCss
- * @prop {string} in
- * @prop {string} out
+ * @prop {string} globalIn
+ * @prop {string} globalOut
  * @prop {string} replace
  * @prop {Map<string, string>} cache
  * @prop {string[]} safelist
  */
 export interface ConfigVarsCss {
-  in: string
-  out: string
+  globalIn: string
+  globalOut: string
   replace: string
   cache: Map<string, string>
   safelist: string[]
@@ -46,12 +44,12 @@ export interface ConfigVarsCss {
 
 /**
  * @typedef {object} ConfigVarsJs
- * @prop {string} in
- * @prop {string} out
+ * @prop {string} globalIn
+ * @prop {string} globalOut
  */
 export interface ConfigVarsJs {
-  in: string
-  out: string
+  globalIn: string
+  globalOut: string
 }
 
 /**

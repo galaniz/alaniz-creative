@@ -2,8 +2,6 @@
  * Workers - Password
  */
 
-/* Imports */
-
 import type { PasswordEnv } from './PasswordTypes.js'
 import type { ServerlessAction } from '@alanizcreative/formation-static/serverless/serverlessTypes.js'
 import { setConfig } from '@alanizcreative/formation-static/config/config.js'

@@ -2,8 +2,6 @@
  * Workers - Content Image
  */
 
-/* Imports */
-
 import type {
   ContentEnv,
   ContentProps,
@@ -194,7 +192,7 @@ const putImage = async (
     }
   })
 
-  const entry = {
+  const entry: Omit<ContentImage, 'key'> = {
     path,
     name: key.split('/').pop() ?? key,
     type,
@@ -202,6 +200,10 @@ const putImage = async (
     width,
     height,
     size: bytes.byteLength
+  }
+
+  if (alt) {
+    entry.alt = alt
   }
 
   const meta = await getImageMeta(env)
@@ -244,8 +246,6 @@ const deleteImage = async (env: ContentEnv, key: string): Promise<void> => {
   await putImageMeta(env, rest)
   await env.ASSETS_BUCKET.delete(entry.path)
 }
-
-/* Exports */
 
 export {
   imageMetaKey,

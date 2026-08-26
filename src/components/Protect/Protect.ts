@@ -2,8 +2,6 @@
  * Components - Protect
  */
 
-/* Imports */
-
 import { Form } from '@alanizcreative/formation-static/objects/Form/Form.js'
 import { FormField } from '@alanizcreative/formation-static/objects/Form/FormField.js'
 import { Layout } from '../Layout/Layout.js'
@@ -76,7 +74,5 @@ const Protect = (): string => {
     `
   })
 }
-
-/* Exports */
 
 export { Protect }

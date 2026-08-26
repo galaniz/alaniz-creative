@@ -2,8 +2,6 @@
  * Svg - Logo
  */
 
-/* Imports */
-
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 
 /**
@@ -41,7 +39,5 @@ const LogoSvg = (classes?: string): string => {
     </svg>
   `
 }
-
-/* Exports */
 
 export { LogoSvg }

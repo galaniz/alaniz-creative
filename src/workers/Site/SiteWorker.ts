@@ -2,8 +2,6 @@
  * Workers - Site
  */
 
-/* Imports */
-
 import type { SiteWorkerEnv } from './SiteTypes.js'
 import type { WorkerRequest } from '../workerTypes.js'
 import { WorkerEntrypoint } from 'cloudflare:workers'
@@ -41,7 +39,7 @@ export default class extends WorkerEntrypoint {
     const cookieName = 'acp_set'
     const cookie = request.headers.get('cookie')
 
-    if (cookie && cookie.includes(`${cookieName}=true`)) {
+    if (!!cookie && cookie.includes(`${cookieName}=true`)) {
       return await this.env.ASSETS.fetch(request)
     }
 

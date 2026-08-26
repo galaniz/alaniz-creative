@@ -2,8 +2,6 @@
  * Schema
  */
 
-/* Imports */
-
 import type { SchemaContent } from './schemaTypes.js'
 import { z } from 'zod'
 import { buttonSchema } from '../objects/Button/ButtonTypes.js'
@@ -35,7 +33,5 @@ const contentSchema: z.ZodType<SchemaContent> = z.lazy(() => z.discriminatedUnio
   formSchema,
   formFieldSchema
 ]))
-
-/* Exports */
 
 export { contentSchema }

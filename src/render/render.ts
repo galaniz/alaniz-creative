@@ -2,8 +2,6 @@
  * Render
  */
 
-/* Imports */
-
 import type { RenderFunctionsArgs } from '@alanizcreative/formation-static/render/renderTypes.js'
 import { Container } from '@alanizcreative/formation-static/layouts/Container/Container.js'
 import { Column } from '@alanizcreative/formation-static/layouts/Column/Column.js'
@@ -40,7 +38,5 @@ const renderFunctions: RenderFunctionsArgs = {
     card: Card
   }
 }
-
-/* Exports */
 
 export { renderFunctions }

@@ -2,8 +2,6 @@
  * Objects - Image
  */
 
-/* Imports */
-
 import type { ImageProps } from './ImageTypes.js'
 import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/object.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
@@ -203,7 +201,5 @@ const Image = (props: ImageProps): string => {
 
   return output
 }
-
-/* Exports */
 
 export { Image }

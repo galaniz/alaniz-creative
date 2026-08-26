@@ -2,8 +2,6 @@
  * Text - Rich Text Types
  */
 
-/* Imports */
-
 import { z } from 'zod'
 import {
   alignOption,

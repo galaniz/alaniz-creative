@@ -2,8 +2,6 @@
  * Schema - Validate Cli
  */
 
-/* Imports */
-
 import { print } from '@alanizcreative/formation-static/utils/print/print.js'
 import { validateContent } from './schemaValidate.js'
 

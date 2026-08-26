@@ -2,8 +2,6 @@
  * Components - Taxonomy
  */
 
-/* Imports */
-
 import type { Item } from '../../global/globalTypes.js'
 import { getArchiveLink } from '@alanizcreative/formation-static/utils/archive/archive.js'
 
@@ -63,7 +61,5 @@ const Taxonomy = (itemData: Item): Item => {
     ]
   }
 }
-
-/* Exports */
 
 export { Taxonomy }

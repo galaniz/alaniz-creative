@@ -2,8 +2,6 @@
  * Object - Form
  */
 
-/* Imports */
-
 import type { FormAction, FormProps } from './FormTypes.js'
 import { v4 as uuid } from 'uuid'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
@@ -140,7 +138,5 @@ const Form = (props: FormProps): FormProps => {
     }
   }
 }
-
-/* Exports */
 
 export { Form }

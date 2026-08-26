@@ -2,8 +2,6 @@
  * Objects - Image Types
  */
 
-/* Imports */
-
 import type {
   RenderFunctionArgs,
   RenderFile,

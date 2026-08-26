@@ -2,8 +2,6 @@
  * Config
  */
 
-/* Imports */
-
 import type { ConfigVars, ConfigEnv } from './configTypes.js'
 import type { Config } from '@alanizcreative/formation-static/config/configTypes.js'
 import { setConfig } from '@alanizcreative/formation-static/config/config.js'
@@ -20,15 +18,15 @@ const configVars: ConfigVars = {
   style: new Set(),
   noscript: new Set(),
   css: {
-    in: 'src/global/global',
-    out: 'css/global/global',
+    globalIn: 'src/global/global',
+    globalOut: 'css/global/global',
     replace: '',
     cache: new Map(),
     safelist: []
   },
   js: {
-    in: 'lib/global/globalClient',
-    out: 'js/global/globalClient'
+    globalIn: 'lib/global/globalClient',
+    globalOut: 'js/global/globalClient'
   },
   formId: ''
 }
@@ -78,8 +76,6 @@ const config: Config = setConfig({
     return config
   }
 })
-
-/* Exports */
 
 export {
   config,

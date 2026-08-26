@@ -2,8 +2,6 @@
  * Store
  */
 
-/* Imports */
-
 import type { Store } from '@alanizcreative/formation-static/store/storeTypes.js'
 
 /**
@@ -19,7 +17,5 @@ const storeArgs: Partial<Store> = {
     }
   }
 }
-
-/* Exports */
 
 export { storeArgs }

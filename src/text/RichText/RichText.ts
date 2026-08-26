@@ -2,8 +2,6 @@
  * Text - Rich Text
  */
 
-/* Imports */
-
 import type {
   RichTextContentItemFilter,
   RichTextPropsFilter
@@ -118,8 +116,6 @@ const RichTextContentItem: RichTextContentItemFilter = (item, props) => {
 
   return newItem
 }
-
-/* Exports */
 
 export {
   RichTextProps,

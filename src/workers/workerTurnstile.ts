@@ -2,8 +2,6 @@
  * Worker - Turnstile
  */
 
-/* Imports */
-
 import type { WorkerEnv, WorkerTurnstile } from './workerTypes.js'
 import type { ServerlessActionData } from '@alanizcreative/formation-static/serverless/serverlessTypes.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
@@ -45,7 +43,5 @@ const workerServerlessTurnstile = async (
     throw new Error('Verification failed')
   }
 }
-
-/* Exports */
 
 export { workerServerlessTurnstile }

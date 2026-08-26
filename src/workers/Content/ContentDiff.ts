@@ -2,8 +2,6 @@
  * Workers - Content Diff
  */
 
-/* Imports */
-
 import type { SchemaPage } from '../../schema/schemaTypes.js'
 import { serializePage } from './ContentGithub.js'
 
@@ -174,7 +172,5 @@ const getPageDiff = (before: SchemaPage | undefined, after: SchemaPage): string 
 
   return lines.join('\n')
 }
-
-/* Exports */
 
 export { getPageDiff }
