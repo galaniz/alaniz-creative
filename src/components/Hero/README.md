@@ -13,6 +13,10 @@ Output hero section.
 
 ## Types
 
+### HeroType  
+
+**Type:** <code>&#39;media-text&#39; | &#39;minimal&#39; | &#39;profile&#39; | &#39;error&#39;</code>
+
 ### HeroWave  
 
 **Type:** <code>&#39;one&#39; | &#39;two&#39; | &#39;three&#39; | &#39;four&#39; | &#39;five&#39;</code>
@@ -22,7 +26,7 @@ Output hero section.
 **Type:** <code>object</code>
 
 #### Properties  
-- **`type`** <code>&#39;media-text&#39; | &#39;minimal&#39; | &#39;profile&#39; | &#39;error&#39;</code> optional  
+- **`type`** <code><a href="#herotype">HeroType</a></code> optional  
 Default: `'media-text'`  
 - **`title`** <code>string</code> optional  
 - **`text`** <code>string</code> optional  

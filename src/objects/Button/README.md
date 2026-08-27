@@ -13,6 +13,14 @@ Output link button.
 
 ## Types
 
+### ButtonType  
+
+**Type:** <code>&#39;primary&#39; | &#39;secondary&#39;</code>
+
+### ButtonSize  
+
+**Type:** <code>&#39;m&#39; | &#39;l&#39;</code>
+
 ### ButtonSchema  
 
 **Type:** <code>object</code>
@@ -22,9 +30,9 @@ Output link button.
 - **`title`** <code>string</code> required  
 - **`internalLink`** <code>string</code> optional  
 - **`externalLink`** <code>string</code> optional  
-- **`type`** <code>&#39;primary&#39; | &#39;secondary&#39;</code> optional  
+- **`type`** <code><a href="#buttontype">ButtonType</a></code> optional  
 Default: `'primary'`  
-- **`size`** <code>&#39;m&#39; | &#39;l&#39;</code> optional  
+- **`size`** <code><a href="#buttonsize">ButtonSize</a></code> optional  
 Default: `'m'`  
 - **`justify`** <code><a href="/src/config/README.md#configjustify">ConfigJustify</a></code> optional  
 - **`richText`** <code>boolean</code> optional  

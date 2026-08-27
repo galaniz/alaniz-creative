@@ -13,6 +13,10 @@ Output image.
 
 ## Types
 
+### ImageBorderRadius  
+
+**Type:** <code>&#39;rounded&#39; | &#39;full&#39; | &#39;none&#39;</code>
+
 ### ImageArgs  
 
 **Type:** <code>object</code>
@@ -30,7 +34,7 @@ Default: `80`
 Default: `true`  
 - **`border`** <code>boolean</code> optional  
 Default: `false`  
-- **`borderRadius`** <code>&#39;rounded&#39; | &#39;full&#39; | &#39;none&#39;</code> optional  
+- **`borderRadius`** <code><a href="#imageborderradius">ImageBorderRadius</a></code> optional  
 Default: `'rounded'`  
 - **`width`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
 - **`widthLarge`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  

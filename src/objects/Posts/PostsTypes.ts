@@ -7,11 +7,18 @@ import type { Item } from '../../global/globalTypes.js'
 import { z } from 'zod'
 import { headingLevelOption } from '../../config/configTypes.js'
 
-/**
- * An automatic list of the most recent items of a content type.
- *
- * @type {z.ZodObject}
- */
+const postsOrderOption = z.enum([
+  'date',
+  'title'
+])
+
+const postsLayoutOption = z.enum([
+  'text',
+  'minimal',
+  'alternate',
+  'cascade'
+])
+
 export const postsSchema = z.object({
   renderType: z.literal('posts'),
   contentType: z
@@ -21,15 +28,13 @@ export const postsSchema = z.object({
     .number()
     .int()
     .describe('How many items to show. Use -1 for all of them.'),
-  order: z
-    .enum(['date', 'title'])
+  order: postsOrderOption
     .optional()
     .describe('Sort order. Defaults to date, newest first.'),
   headingLevel: headingLevelOption
     .optional()
     .describe('Heading level for each card title. Pick the one that keeps the page outline correct.'),
-  layout: z
-    .enum(['text', 'minimal', 'alternate', 'cascade'])
+  layout: postsLayoutOption
     .optional()
     .describe('How the list is arranged.')
 })
@@ -39,19 +44,29 @@ export const postsSchema = z.object({
  * @prop {'posts'} renderType
  * @prop {string} contentType
  * @prop {number} display
- * @prop {'date'|'title'} [order='date']
+ * @prop {PostsOrder} [order='date']
  * @prop {ConfigHeadingLevel} [headingLevel=3]
- * @prop {'text'|'minimal'|'alternate'|'cascade'} [layout='minimal']
+ * @prop {PostsLayout} [layout='minimal']
  */
 export type PostsSchema = z.infer<typeof postsSchema>
+
+/**
+ * @typedef {'date'|'title'} PostsOrder
+ */
+export type PostsOrder = z.infer<typeof postsOrderOption>
+
+/**
+ * @typedef {'text'|'minimal'|'alternate'|'cascade'} PostsLayout
+ */
+export type PostsLayout = z.infer<typeof postsLayoutOption>
 
 /**
  * @typedef {object} PostsArgs
  * @prop {string} [contentType]
  * @prop {number} [display=1]
- * @prop {'date'|'title'} [order='date']
+ * @prop {PostsOrder} [order='date']
  * @prop {ConfigHeadingLevel} [headingLevel=3]
- * @prop {'text'|'minimal'|'alternate'|'cascade'} [layout='minimal']
+ * @prop {PostsLayout} [layout='minimal']
  */
 export type PostsArgs = Partial<Omit<PostsSchema, 'renderType'>>
 

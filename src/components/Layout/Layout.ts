@@ -34,6 +34,7 @@ const Layout = (args: LayoutArgs): string => {
   /* Args */
 
   const {
+    id,
     slug,
     contentType,
     content,
@@ -83,7 +84,7 @@ const Layout = (args: LayoutArgs): string => {
     footerOutput = Footer(slug, baseType)
   }
 
-  if (slug !== 'protect') {
+  if (slug !== 'protect' && !id.startsWith('http-error')) {
     heroOutput = Hero({
       ...itemData,
       ...hero

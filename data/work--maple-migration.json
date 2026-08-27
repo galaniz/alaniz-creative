@@ -148,7 +148,7 @@
           "renderType": "button",
           "title": "View Maple",
           "richText": true,
-          "externalLink": "https://marketing-prod.getmaple.ca/"
+          "externalLink": "https://alanizcreative.com/snapshot/maple-migration/"
         }
       ]
     },
@@ -163,7 +163,1088 @@
         {
           "renderType": "richText",
           "tag": "h2",
-          "content": "Details coming soon."
+          "content": "What is Maple?"
+        },
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "content": "Maple is a virtual healthcare platform founded in 2015. It offers direct access to doctors and nurse practitioners, 24/7 from your smartphone, tablet, or computer. Maple can be accessed privately as an individual, through employer benefits or insurers or publicly through select provincial health systems. To date, over 3 million consults have been completed."
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Project"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Migrate the existing monolithic WordPress site to a static site build on Cloudflare Workers using headless WordPress on AWS Lightsail."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "The Brief"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Context"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "An audit of the top 20 pages by traffic revealed significant performance, UX, accessibility and brand-consistency problems across the marketing site: "
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Outdated platform: "
+                    },
+                    {
+                      "content": "WordPress ran as a multisite install on an outdated core, theme and PHP version, with over 44 active plugins."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Expensive hosting: "
+                    },
+                    {
+                      "content": "Pantheon's plan ran around $1k a month and was difficult to optimize. Pushing a single change per environment took over ten minutes, in addition to persistent caching issues."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Buggy page builder: "
+                    },
+                    {
+                      "content": "Beaver Builder was slow and tedious to edit, requiring manually recreating pages across environments to share previews with stakeholders and introduced inconsistencies with custom CSS/JS per page."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Client-side geotargeting: "
+                    },
+                    {
+                      "content": "GeoTargetingWP swapped page content entirely client-side, causing layout shifts and loading overhead."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Unreliable scheduling: "
+                    },
+                    {
+                      "content": "WordPress's built-in scheduler wasn't a real cron job, so scheduled pages often failed to publish on time."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "A11Y issues: "
+                    },
+                    {
+                      "content": "Interactive components were missing state feedback and proper focus management."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "l",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "align": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/pre-homepage",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/pre-homepage-fr",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/pre-pricing",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/pre-nova-scotia",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/pre-sick-notes",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/pre-online-prescriptions",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/pre-how-it-works",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/pre-dermatologists",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Pre-migration desktop screenshots of top 8 pages along with corresponding metrics."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Goals"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "content": "Pass Core Web Vitals across the top 20 pages by traffic, with a focus on "
+                    },
+                    {
+                      "tag": "strong",
+                      "content": "Largest Contentful Paint "
+                    },
+                    {
+                      "content": "(LCP), "
+                    },
+                    {
+                      "tag": "strong",
+                      "content": "Cumulative Layout Shift "
+                    },
+                    {
+                      "content": " (CLS) and "
+                    },
+                    {
+                      "tag": "strong",
+                      "content": "Time to First Byte "
+                    },
+                    {
+                      "content": "(TTFB)"
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": "Simplify the deploy and content-editing workflow, and reduce hosting cost"
+                },
+                {
+                  "tag": "li",
+                  "content": "Replace page-by-page custom styling with a consistent, on-brand design system"
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Requirements"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": "Editable for the entire marketing team, in both English and French"
+                },
+                {
+                  "tag": "li",
+                  "content": "Region-specific content based on geolocation"
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "content": "Preserve existing "
+                    },
+                    {
+                      "tag": "strong",
+                      "content": "SEO value "
+                    },
+                    {
+                      "content": "and minimize content loss"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Process"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Design System"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Before any page could be rebuilt, the site needed a design system to rebuild it with. Since the product design team already had one, base typography, colours and spacing, along with elements like buttons and form fields, were reused directly and extended to cover the range of components marketing pages needed. New pages started pulling in these new styles, along with standardized headers, footers and heroes built on the new tokens, iterating further as new content types came up throughout the migration."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "2xl",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "breakout": true,
+              "layout": "row",
+              "gap": "m",
+              "gapLarge": "l",
+              "justify": "center",
+              "content": [
+                {
+                  "renderType": "column",
+                  "widthLarge": "4",
+                  "grow": true,
+                  "content": [
+                    {
+                      "renderType": "container",
+                      "layout": "row",
+                      "gap": "m",
+                      "gapLarge": "l",
+                      "grow": true,
+                      "content": [
+                        {
+                          "renderType": "column",
+                          "width": "6",
+                          "widthLarge": "12",
+                          "content": [
+                            {
+                              "renderType": "image",
+                              "image": "maple-migration/design-system-typography",
+                              "border": true
+                            }
+                          ]
+                        },
+                        {
+                          "renderType": "column",
+                          "width": "6",
+                          "widthLarge": "12",
+                          "content": [
+                            {
+                              "renderType": "image",
+                              "image": "maple-migration/design-system-colours",
+                              "border": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "10",
+                  "widthSmall": "6",
+                  "widthLarge": "4",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "maple-migration/design-system-hero-variants",
+                      "border": true
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "widthSmall": "6",
+                  "widthLarge": "4",
+                  "grow": true,
+                  "content": [
+                    {
+                      "renderType": "container",
+                      "layout": "row",
+                      "gap": "m",
+                      "gapLarge": "l",
+                      "grow": true,
+                      "content": [
+                        {
+                          "renderType": "column",
+                          "width": "6",
+                          "widthSmall": "12",
+                          "content": [
+                            {
+                              "renderType": "image",
+                              "image": "maple-migration/design-system-image-variants",
+                              "border": true
+                            }
+                          ]
+                        },
+                        {
+                          "renderType": "column",
+                          "width": "6",
+                          "widthSmall": "12",
+                          "content": [
+                            {
+                              "renderType": "image",
+                              "image": "maple-migration/design-system-form-elements",
+                              "border": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "content": [
+                    {
+                      "content": "Typography, colours, hero and image variants as well as form elements from the "
+                    },
+                    {
+                      "tag": "a",
+                      "link": "https://alanizcreative.com/snapshot/maple-migration/demos/",
+                      "content": "marketing design system"
+                    },
+                    {
+                      "content": "."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Edge Static Site"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Optimizing the existing site incrementally was considered, but was decided against because of the high effort and modest gains from improvements like opting for a lighter plugin or switching to a faster host. Going static with serverless functionality through Cloudflare Workers removed the entire class of problems in one move instead."
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Static site generation: "
+                    },
+                    {
+                      "content": [
+                        {
+                          "tag": "a",
+                          "link": "https://github.com/galaniz/formation-static",
+                          "content": "Formation Static"
+                        },
+                        {
+                          "content": " handles site generation, and "
+                        },
+                        {
+                          "tag": "a",
+                          "link": "https://github.com/galaniz/formation",
+                          "content": "Formation"
+                        },
+                        {
+                          "content": " handles web components and styles for an optimized front end."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Geotargeting: "
+                    },
+                    {
+                      "content": "Cloudflare-provided geolocation information allows redirects and content rewrites at the edge, replacing client-side logic."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Optimized media: "
+                    },
+                    {
+                      "content": "Uploads now live in Cloudflare R2, served through a Worker that transforms width, height, format and quality."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "SEO preservation: "
+                    },
+                    {
+                      "content": "Redirects compile into static 301s at build time, alongside more consistent per-page schema and auto-generated sitemaps."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "aspectRatio",
+                  "percent": 62.5,
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "9",
+                      "position": "top-right",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/admin-builds",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "9",
+                      "position": "bottom-left",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/admin-geotarget",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Admin screens showing production and preview builds and page with geotargeting enabled."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Headless WordPress"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Sticking with WordPress instead of switching to another headless CMS came down to practical factors. AWS was already used elsewhere at Maple. It also meant owning our own data and having the option to sit behind SSO without extra cost. Staying on the same CMS also simplified the migration and shortened the learning curve for the team."
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Shareable previews: "
+                    },
+                    {
+                      "content": "Live preview links and copyable/syncable patterns replaced manually recreating pages across environments to share with the team."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Faster workflows: "
+                    },
+                    {
+                      "content": "Production data can be selectively pulled into local and staging environments to keep them in sync, and bulk changes are easier with WP CLI and Gutenberg blocks instead of Beaver Builder's serialized data."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Reliable scheduling: "
+                    },
+                    {
+                      "content": "A real server-level cron job replaced WordPress's traffic-triggered scheduler, so entries publish on time."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Editable forms: "
+                    },
+                    {
+                      "content": "Forms moved from Gravity Forms to Formstack, allowing the business development team to update them on their own."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "aspectRatio",
+                  "percent": 57,
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "9",
+                      "position": "top-left",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/admin-patterns"
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "7",
+                      "position": "bottom-right",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/admin-container-block",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Admin screens showing editable patterns and container block with nested pattern and options."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Outcome"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "A month after launch, Core Web Vitals passed across every one of the top pages. Search Console also told the same story. Pages flagged as "
+                },
+                {
+                  "tag": "em",
+                  "content": "poor"
+                },
+                {
+                  "content": " or "
+                },
+                {
+                  "tag": "em",
+                  "content": "needing improvement"
+                },
+                {
+                  "content": " dropped to zero across both mobile and desktop, and the count of "
+                },
+                {
+                  "tag": "em",
+                  "content": "good"
+                },
+                {
+                  "content": " URLs more than doubled on mobile."
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "textStyle": "heading-s",
+              "content": "Mobile"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Poor URLs "
+                    },
+                    {
+                      "content": "&ndash; 66 &rarr; 0"
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "URLs need improvement "
+                    },
+                    {
+                      "content": "&ndash; 582 &rarr; 0"
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Good URLs "
+                    },
+                    {
+                      "content": "&ndash; 272 &rarr; 1,029"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "textStyle": "heading-s",
+              "content": "Desktop"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Poor URLs "
+                    },
+                    {
+                      "content": "&ndash; 24 &rarr; 0"
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "URLs need improvement "
+                    },
+                    {
+                      "content": "&ndash; 322 &rarr; 0"
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Good URLs "
+                    },
+                    {
+                      "content": "&ndash; 574 &rarr; 1,045"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "l",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "align": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/post-homepage",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/post-homepage-fr",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/post-pricing",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/post-nova-scotia",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/post-sick-notes",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/post-online-prescriptions",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/post-how-it-works",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "6",
+                      "widthSmall": "4",
+                      "widthMedium": "3",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "maple-migration/post-dermatologists",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Post-migration desktop screenshots of top 8 pages along with corresponding metrics."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "The design system has held up past launch too. Content editors have been able to make updates on their own with relative ease. A recent brand refresh, adjusting components and site-wide styles, rolled out with a fraction of the effort it would have taken pre-migration. Stakeholders have noticed the difference too, remarking how much faster the site feels since launch."
+            },
+            {
+              "renderType": "button",
+              "title": "View Maple",
+              "richText": true,
+              "externalLink": "https://alanizcreative.com/snapshot/maple-migration/"
+            }
+          ]
         }
       ]
     }

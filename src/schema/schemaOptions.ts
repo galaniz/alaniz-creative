@@ -6,8 +6,6 @@ import { z } from 'zod'
 
 /**
  * Reference to another content file, as `contentType--slug`.
- *
- * @type {z.ZodString}
  */
 const referenceOption = z
   .string()
@@ -18,8 +16,6 @@ const referenceOption = z
 
 /**
  * Key of an image in the media library, without a file extension.
- *
- * @type {z.ZodString}
  */
 const imageKeyOption = z
   .string()

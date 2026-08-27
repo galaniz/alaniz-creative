@@ -10,12 +10,7 @@ import { buttonSchema } from '../../objects/Button/ButtonTypes.js'
 import { blobOption } from '../../config/configTypes.js'
 import { imageKeyOption } from '../../schema/schemaOptions.js'
 
-/**
- * Decorative wave shapes below a hero.
- *
- * @type {z.ZodEnum}
- */
-const waveOption = z.enum([
+const heroWaveOption = z.enum([
   'one',
   'two',
   'three',
@@ -23,12 +18,15 @@ const waveOption = z.enum([
   'five'
 ])
 
-/**
- * @type {z.ZodObject}
- */
+const heroTypeOption = z.enum([
+  'media-text',
+  'minimal',
+  'profile',
+  'error'
+])
+
 export const heroBaseSchema = z.object({
-  type: z
-    .enum(['media-text', 'minimal', 'profile', 'error'])
+  type: heroTypeOption
     .optional()
     .describe('Hero treatment. minimal is text only, profile pairs text with a portrait.'),
   title: z
@@ -39,7 +37,7 @@ export const heroBaseSchema = z.object({
     .string()
     .optional()
     .describe('A sentence or two below the heading.'),
-  wave: waveOption
+  wave: heroWaveOption
     .optional()
     .describe('Decorative wave shape below the hero.'),
   blob: blobOption
@@ -51,9 +49,6 @@ export const heroBaseSchema = z.object({
     .describe('Draw a border around the hero image.')
 })
 
-/**
- * @type {z.ZodObject}
- */
 export const heroSchema = heroBaseSchema.extend({
   image: imageKeyOption
     .optional()
@@ -66,7 +61,7 @@ export const heroSchema = heroBaseSchema.extend({
 
 /**
  * @typedef {object} Hero
- * @prop {'media-text'|'minimal'|'profile'|'error'} [type='media-text']
+ * @prop {HeroType} [type='media-text']
  * @prop {string} [title]
  * @prop {string} [text]
  * @prop {HeroWave} [wave]
@@ -74,6 +69,11 @@ export const heroSchema = heroBaseSchema.extend({
  * @prop {boolean} [border=false]
  */
 export type Hero = z.infer<typeof heroBaseSchema>
+
+/**
+ * @typedef {'media-text'|'minimal'|'profile'|'error'} HeroType
+ */
+export type HeroType = NonNullable<Hero['type']>
 
 /**
  * @typedef {'one'|'two'|'three'|'four'|'five'} HeroWave

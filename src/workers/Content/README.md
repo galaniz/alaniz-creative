@@ -20,10 +20,7 @@ Styles for the library, inlined into every page it renders.
 
 ## slugArg  
 
-Identifier of a content file, as used throughout the site to reference one
-page from another.  
-
-**Type:** <code>z.ZodString</code>
+**Type:** <code></code>
 
 ## imageMetaKey  
 

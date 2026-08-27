@@ -20,8 +20,8 @@
     "secondary-light": "#4c94d5",
     "grey-dark": "#626870",
     "grey-light": "#b8bcc1",
-    "black-dark": "#141415",
-    "black-light": "#8c8c92"
+    "neutral-dark": "#141415",
+    "neutral-light": "#8c8c92"
   },
   "related": [
     "work--hey-tony",
@@ -137,13 +137,13 @@
     },
     {
       "renderType": "container",
-      "maxWidth": "xs",
       "tag": "section",
       "paddingTop": "l",
       "paddingTopLarge": "2xl",
       "content": [
         {
           "renderType": "container",
+          "maxWidth": "xs",
           "paddingBottom": "m",
           "richTextStyles": true,
           "content": [
@@ -166,29 +166,35 @@
           "tag": "figure",
           "content": [
             {
-              "renderType": "aspectRatio",
-              "percent": 52.5,
+              "renderType": "container",
+              "maxWidth": "xs",
               "content": [
                 {
-                  "renderType": "column",
-                  "width": "7",
-                  "position": "bottom-right",
+                  "renderType": "aspectRatio",
+                  "percent": 52.5,
                   "content": [
                     {
-                      "renderType": "image",
-                      "image": "puffin-innovations/adriana-mallozzi"
-                    }
-                  ] 
-                },
-                {
-                  "renderType": "column",
-                  "width": "7",
-                  "position": "top-left",
-                  "content": [
+                      "renderType": "column",
+                      "width": "7",
+                      "position": "bottom-right",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "puffin-innovations/adriana-mallozzi"
+                        }
+                      ] 
+                    },
                     {
-                      "renderType": "image",
-                      "image": "puffin-innovations/puffin",
-                      "border": true
+                      "renderType": "column",
+                      "width": "7",
+                      "position": "top-left",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "puffin-innovations/puffin",
+                          "border": true
+                        }
+                      ]
                     }
                   ]
                 }
@@ -369,7 +375,7 @@
                   "textStyle": "heading-l",
                   "type": "normal",
                   "content": "Bold",
-                  "color": "theme-black"
+                  "color": "theme-neutral"
                 },
                 {
                   "renderType": "richText",
@@ -428,6 +434,7 @@
               "renderType": "container",
               "maxWidth": "l",
               "paddingTop": "m",
+              "paddingTopLarge": "l",
               "content": [
                 {
                   "renderType": "container",
@@ -532,7 +539,7 @@
               "tag": "p",
               "content": [
                 {
-                  "content": "In tandem with wireframes we also worked on updating the logo. The existing logo didn't scale well and was difficult to read. The team was open to seeing new ideas as long as the puffin was prominent. Early explorations were too generic and used pastel tones that didn't fit the bold and distinct look they were seeking. For the final version, we used more vibrant colors and were more intentional in evolving the original puffin brandmark. We also made sure all text portions of the logo have 4.5:1 contrast. The result was a more readable, flexible and scalable lockup that better reflects their growing organization."
+                  "content": "In tandem with wireframes we also worked on updating the logo. The existing logo didn't scale well and was difficult to read. The team was open to seeing new ideas as long as the puffin was prominent. Early explorations were too generic and used pastel tones that didn't fit the bold and distinct look they were seeking. For the final version, we used more vibrant colours and were more intentional in evolving the original puffin brandmark. We also made sure all text portions of the logo have 4.5:1 contrast. The result was a more readable, flexible and scalable lockup that better reflects their growing organization."
                 }
               ]
             }
@@ -550,6 +557,7 @@
               "renderType": "container",
               "maxWidth": "default",
               "paddingTop": "m",
+              "paddingTopLarge": "l",
               "content": [
                 {
                   "renderType": "container",
@@ -1143,6 +1151,7 @@
               "renderType": "container",
               "maxWidth": "2xl",
               "paddingTop": "m",
+              "paddingTopLarge": "l",
               "breakout": true,
               "content": [
                 {
@@ -1302,7 +1311,7 @@
                 },
                 {
                   "tag": "a",
-                  "link": "https://github.com/galaniz/formation/tree/beta",
+                  "link": "https://github.com/galaniz/formation",
                   "content": "Formation"
                 },
                 {
@@ -1324,6 +1333,7 @@
               "renderType": "container",
               "maxWidth": "s",
               "paddingTop": "m",
+              "paddingTopLarge": "l",
               "content": [
                 {
                   "renderType": "aspectRatio",
@@ -1437,6 +1447,7 @@
               "renderType": "container",
               "maxWidth": "s",
               "paddingTop": "m",
+              "paddingTopLarge": "l",
               "content": [
                 {
                   "renderType": "container",

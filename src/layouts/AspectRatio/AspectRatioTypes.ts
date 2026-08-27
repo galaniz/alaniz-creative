@@ -7,11 +7,6 @@ import type { Item } from '../../global/globalTypes.js'
 import { z } from 'zod'
 import { contentSchema } from '../../schema/schema.js'
 
-/**
- * A fixed-proportion box, used to reserve space for media.
- *
- * @type {z.ZodObject}
- */
 export const aspectRatioSchema = z.object({
   renderType: z.literal('aspectRatio'),
   percent: z

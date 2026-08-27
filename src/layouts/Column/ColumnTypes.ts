@@ -14,11 +14,17 @@ import {
   columnOption
 } from '../../config/configTypes.js'
 
-/**
- * A column within a container laid out as a row.
- *
- * @type {z.ZodObject}
- */
+const columnPositionOption = z.enum([
+  'top-left',
+  'top-left-10',
+  'top-right',
+  'top-right-10',
+  'bottom-left',
+  'bottom-left-10',
+  'bottom-right',
+  'bottom-right-10'
+])
+
 export const columnSchema = z.object({
   renderType: z.literal('column'),
   width: columnOption
@@ -43,17 +49,7 @@ export const columnSchema = z.object({
     .boolean()
     .optional()
     .describe('Let the column absorb leftover space.'),
-  position: z
-    .enum([
-      'top-left',
-      'top-left-10',
-      'top-right',
-      'top-right-10',
-      'bottom-left',
-      'bottom-left-10',
-      'bottom-right',
-      'bottom-right-10'
-    ])
+  position: columnPositionOption
     .optional()
     .describe('Pin the column to a corner of its parent, for overlapping layouts.'),
   widthCustom: z
@@ -108,15 +104,7 @@ export interface ColumnWidthCustom {
 /**
  * @typedef {'top-left'|'top-left-10'|'top-right'|'top-right-10'|'bottom-left'|'bottom-left-10'|'bottom-right'|'bottom-right-10'} ColumnPosition
  */
-export type ColumnPosition = 
-  'top-left' |
-  'top-left-10' |
-  'top-right' |
-  'top-right-10' |
-  'bottom-left' |
-  'bottom-left-10' |
-  'bottom-right' |
-  'bottom-right-10'
+export type ColumnPosition = z.infer<typeof columnPositionOption>
 
 /**
  * @typedef {object} ColumnArgs

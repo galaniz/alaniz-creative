@@ -13,11 +13,12 @@ import { z } from 'zod'
 import { sizeOption, aspectRatioOption } from '../../config/configTypes.js'
 import { imageKeyOption } from '../../schema/schemaOptions.js'
 
-/**
- * An image from the media library.
- *
- * @type {z.ZodObject}
- */
+const imageBorderRadiusOption = z.enum([
+  'rounded',
+  'full',
+  'none'
+])
+
 export const imageSchema = z.object({
   renderType: z.literal('image'),
   image: imageKeyOption
@@ -37,8 +38,7 @@ export const imageSchema = z.object({
   aspectRatio: aspectRatioOption
     .optional()
     .describe('Crop the image to a fixed ratio. Leave unset to keep its own proportions.'),
-  borderRadius: z
-    .enum(['rounded', 'full', 'none'])
+  borderRadius: imageBorderRadiusOption
     .optional()
     .describe('Corner rounding. Defaults to rounded.'),
   border: z
@@ -59,11 +59,16 @@ export const imageSchema = z.object({
  * @prop {ConfigSize|'full'} [width]
  * @prop {ConfigSize|'full'} [widthLarge]
  * @prop {ConfigAspectRatio} [aspectRatio]
- * @prop {'rounded'|'full'|'none'} [borderRadius='rounded']
+ * @prop {ImageBorderRadius} [borderRadius='rounded']
  * @prop {boolean} [border=false]
  * @prop {boolean} [contain=false]
  */
 export type ImageSchema = z.infer<typeof imageSchema>
+
+/**
+ * @typedef {'rounded'|'full'|'none'} ImageBorderRadius
+ */
+export type ImageBorderRadius = z.infer<typeof imageBorderRadiusOption>
 
 /**
  * @typedef {object} ImageArgs
@@ -76,7 +81,7 @@ export type ImageSchema = z.infer<typeof imageSchema>
  * @prop {RenderRichText[]} [caption]
  * @prop {boolean} [lazy=true]
  * @prop {boolean} [border=false]
- * @prop {'rounded'|'full'|'none'} [borderRadius='rounded']
+ * @prop {ImageBorderRadius} [borderRadius='rounded']
  * @prop {ConfigSize} [width]
  * @prop {ConfigSize} [widthLarge]
  * @prop {boolean} [contain=false]
@@ -93,7 +98,7 @@ export interface ImageArgs {
   caption?: RenderRichText[]
   lazy?: boolean
   border?: boolean
-  borderRadius?: 'rounded' | 'full' | 'none'
+  borderRadius?: ImageBorderRadius
   width?: ConfigSize
   widthLarge?: ConfigSize
   contain?: boolean

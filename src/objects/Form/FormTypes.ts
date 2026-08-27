@@ -11,11 +11,17 @@ import type { Item } from '../../global/globalTypes.js'
 import type { ConfigColumn } from '../../config/configTypes.js'
 import { z } from 'zod'
 
-/**
- * A single field in a contact form.
- *
- * @type {z.ZodObject}
- */
+const formFieldTypeOption = z.enum([
+  'text',
+  'email',
+  'tel',
+  'number',
+  'textarea',
+  'checkbox',
+  'radio',
+  'select'
+])
+
 export const formFieldSchema = z.object({
   renderType: z.literal('formField'),
   name: z
@@ -24,8 +30,7 @@ export const formFieldSchema = z.object({
   label: z
     .string()
     .describe('Visible label for the field.'),
-  type: z
-    .enum(['text', 'email', 'tel', 'number', 'textarea', 'checkbox', 'radio', 'select'])
+  type: formFieldTypeOption
     .optional()
     .describe('Input type. Defaults to text.'),
   required: z
@@ -47,11 +52,6 @@ export const formFieldSchema = z.object({
     .describe('Message shown when the value is the wrong shape, for example a malformed email.')
 })
 
-/**
- * A contact form and the message shown once it is sent.
- *
- * @type {z.ZodObject}
- */
 export const formSchema = z.object({
   renderType: z.literal('form'),
   successTitle: z
@@ -76,13 +76,18 @@ export const formSchema = z.object({
  * @prop {'formField'} renderType
  * @prop {string} name
  * @prop {string} label
- * @prop {'text'|'email'|'tel'|'number'|'textarea'|'checkbox'|'radio'|'select'} [type='text']
+ * @prop {FormFieldType} [type='text']
  * @prop {boolean} [required=false]
  * @prop {number} [rows]
  * @prop {string} [emptyError]
  * @prop {string} [invalidError]
  */
 export type FormFieldSchema = z.infer<typeof formFieldSchema>
+
+/**
+ * @typedef {'text'|'email'|'tel'|'number'|'textarea'|'checkbox'|'radio'|'select'} FormFieldType
+ */
+export type FormFieldType = z.infer<typeof formFieldTypeOption>
 
 /**
  * @typedef {object} FormSchema
