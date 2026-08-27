@@ -106,6 +106,13 @@ export type FormType = 'contact' | 'password'
 export type FormAction = 'contact' | 'contact-dev' | 'password' | 'password-dev'
 
 /**
+ * @typedef {function} FormTokenWait
+ * @param {string} token
+ * @return {void}
+ */
+export type FormTokenWait = ((token: string) => void)
+
+/**
  * @typedef {object} FormArgs
  * @extends {FormationFormArgs}
  * @prop {FormType} [type='contact']

@@ -2,7 +2,7 @@
  * Objects - Form Client
  */
 
-import type { FormAction } from './FormTypes.js'
+import type { FormAction, FormTokenWait } from './FormTypes.js'
 import type { ServerlessActionData } from '@alanizcreative/formation-static/serverless/serverlessTypes.js'
 import { ResponseError } from '@alanizcreative/formation/utils/ResponseError/ResponseError.js'
 import { Form as FormBase } from '@alanizcreative/formation/objects/Form/Form.js'
@@ -58,11 +58,36 @@ class Form extends FormBase {
   static #turnstileReady: Promise<void> | null = null
 
   /**
-   * Turnstile widget rendered flag.
+   * Turnstile widget rendered.
    *
-   * @type {boolean}
+   * @private
+   * @type {Promise<void>|null}
    */
-  #turnstileRendered: boolean = false
+  #turnstileRendered: Promise<void> | null = null
+
+  /**
+   * ID of the rendered Turnstile widget.
+   *
+   * @private
+   * @type {string}
+   */
+  #turnstileId: string = ''
+
+  /**
+   * Current unused Turnstile token.
+   *
+   * @private
+   * @type {string}
+   */
+  #turnstileToken: string = ''
+
+  /**
+   * Request waiting for a Turnstile token.
+   *
+   * @private
+   * @type {FormTokenWait|null}
+   */
+  #turnstileTokenWait: FormTokenWait | null = null
 
   /**
    * ID for focus timeout.
@@ -89,8 +114,6 @@ class Form extends FormBase {
    * Init after added to DOM.
    */
   override connectedCallback (): void {
-    /* Inherit */
-
     super.connectedCallback()
 
     /* Items */
@@ -101,37 +124,25 @@ class Form extends FormBase {
       this.submits = submits
     }
 
-    /* Action */
+    /* Attributes */
 
     this.action = (this.getAttribute('action') || 'contact') as FormAction
-
-    /* Site key */
-
     this.siteKey = this.getAttribute('sitekey') || ''
-
-    /* Success message */
-
     this.successTitle = this.getAttribute('success-title') || ''
     this.successText = this.getAttribute('success-text') || ''
 
-    /* Load Turnstile on focus */
+    /* Request Turnstile token on focus */
 
-    this.addEventListener('focusin', () => { void Form.loadTurnstile() }, { once: true })
+    this.addEventListener('focusin', () => { void this.#renderTurnstile() }, { once: true })
   }
 
   /**
    * Clean up after removed from DOM.
    */
   override async disconnectedCallback (): Promise<void> {
-    /* Inherit */
-
     await super.disconnectedCallback()
 
-    /* Empty items */
-
     this.submits = null
-
-    /* Clear timeouts */
 
     clearTimeout(this.#delayId)
     clearTimeout(this.#loadDelayId)
@@ -168,8 +179,8 @@ class Form extends FormBase {
 
       newScript.id = scriptId
       newScript.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
-      newScript.onerror = () => { resolve() }
       newScript.onload = () => { resolve() }
+      newScript.onerror = () => { resolve() }
 
       document.body.appendChild(newScript)
     })
@@ -182,13 +193,16 @@ class Form extends FormBase {
    *
    * @private
    * @param {'error'|'success'} type
-   * @param {HTMLElement|null} [loader]
+   * @param {HTMLElement|null} loader
    * @param {string} [title]
    * @param {string} [text]
    */
-  #displayResult (type: 'error' | 'success', loader: HTMLElement | null, title?: string, text?: string): void {
-    /* Append, display and focus */
-
+  #displayResult (
+    type: 'error' | 'success',
+    loader: HTMLElement | null,
+    title?: string,
+    text?: string
+  ): void {
     const result = this.getClone(type, this.form)
 
     if (!result) {
@@ -215,11 +229,7 @@ class Form extends FormBase {
 
     this.#delayId = setDisplay(result, 'focus')
 
-    /* Loader */
-
     setDisplay(loader, 'hide', 'loader')
-
-    /* Submit state and button */
 
     if (this.submits) {
       this.submits.disabled = false
@@ -229,45 +239,84 @@ class Form extends FormBase {
   }
 
   /**
-   * Promisify Turnstile token generation.
+   * Render the Turnstile widget.
+   *
+   * @private
+   * @return {Promise<void>}
+   */
+  #renderTurnstile (): Promise<void> {
+    if (this.#turnstileRendered) {
+      return this.#turnstileRendered
+    }
+
+    this.#turnstileRendered = (async () => {
+      await Form.loadTurnstile()
+
+      if (!window.turnstile) {
+        return
+      }
+
+      this.#turnstileId = window.turnstile.render(`#ac-turnstile-${this.id}`, {
+        sitekey: this.siteKey,
+
+        callback: token => {
+          this.#turnstileToken = token
+
+          // Resolve the pending token request.
+          this.#turnstileTokenWait?.(token)
+
+          // Clear the request so it cannot be resolved again.
+          this.#turnstileTokenWait = null
+        },
+
+        'expired-callback': () => {
+          this.#turnstileToken = ''
+        },
+
+        'timeout-callback': () => {
+          // Resolve the pending request with no token.
+          this.#turnstileTokenWait?.('')
+
+          // Clear the request so it cannot be resolved again.
+          this.#turnstileTokenWait = null
+        },
+
+        'error-callback': () => {
+          // Resolve the pending request with no token.
+          this.#turnstileTokenWait?.('')
+
+          // Clear the request so it cannot be resolved again.
+          this.#turnstileTokenWait = null
+        }
+      }) || ''
+    })()
+
+    return this.#turnstileRendered
+  }
+
+  /**
+   * Get a fresh Turnstile token.
    *
    * @private
    * @return {Promise<string>}
    */
-  async #getTurnstileToken(): Promise<string> {
-    const turnstileId = `#ac-turnstile-${this.id}`
+  async #getTurnstileToken (): Promise<string> {
+    await this.#renderTurnstile()
 
-    await Form.loadTurnstile()
+    if (!this.#turnstileId) {
+      return ''
+    }
 
-    return new Promise(resolve => {
-      if (!window.turnstile) {
-        resolve('')
-        return
-      }
-
-      if (!this.#turnstileRendered) {
-        window.turnstile.render(turnstileId, {
-          sitekey: this.siteKey,
-          callback: (token) => {
-            this.#turnstileRendered = true
-            resolve(token)
-          },
-          'error-callback' () {
-            resolve('')
-          }
-        })
-
-        return
-      }
-
-      window.turnstile.reset(turnstileId)
-      window.turnstile.execute(turnstileId, {
-        callback: resolve,
-        'error-callback' () {
-          resolve('')
-        }
-      })
+    const token = this.#turnstileToken || await new Promise<string>(resolve => {
+      // Store the request so the Turnstile callback can resolve it.
+      this.#turnstileTokenWait = resolve
     })
+
+    this.#turnstileToken = ''
+
+    window.turnstile?.reset(this.#turnstileId)
+
+    return token
   }
 
   /**
@@ -295,13 +344,11 @@ class Form extends FormBase {
 
     /* Validate */
 
-    const valid = this.validate()
-
-    if (!valid) {
+    if (!this.validate()) {
       return
     }
 
-    /* Submit buttton */
+    /* Submit button */
 
     if (this.submits) {
       this.submits.disabled = true
@@ -322,6 +369,7 @@ class Form extends FormBase {
     /* Data */
 
     const values = this.getValues()
+
     const data: ServerlessActionData = {
       id: this.id,
       action: this.action,
@@ -352,7 +400,13 @@ class Form extends FormBase {
         return
       }
 
-      this.#displayResult('success', loader, this.successTitle, this.successText)
+      this.#displayResult(
+        'success',
+        loader,
+        this.successTitle,
+        this.successText
+      )
+
       this.clear()
     } catch (error) {
       let errorTitle: string | undefined
@@ -365,7 +419,12 @@ class Form extends FormBase {
         errorText = ''
       }
 
-      this.#displayResult('error', loader, errorTitle, errorText)
+      this.#displayResult(
+        'error',
+        loader,
+        errorTitle,
+        errorText
+      )
     }
   }
 }
