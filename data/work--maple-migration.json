@@ -539,7 +539,7 @@
             {
               "renderType": "richText",
               "tag": "p",
-              "content": "Before any page could be rebuilt, the site needed a design system to rebuild it with. Since the product design team already had one, base typography, colors and spacing, along with elements like buttons and form fields, were reused directly and extended to cover the range of components marketing pages needed. New pages started pulling in these new styles, along with standardized headers, footers and heroes built on the new tokens, iterating further as new content types came up throughout the migration."
+              "content": "Before any page could be rebuilt, the site needed a design system to rebuild it with. Since the product design team already had one, base typography, colours and spacing, along with elements like buttons and form fields, were reused directly and extended to cover the range of components marketing pages needed. New pages started pulling in these new styles, along with standardized headers, footers and heroes built on the new tokens, iterating further as new content types came up throughout the migration."
             }
           ]
         },
@@ -665,7 +665,7 @@
                   "renderType": "richText",
                   "content": [
                     {
-                      "content": "Typography, colors, hero and image variants as well as form elements from the "
+                      "content": "Typography, colours, hero and image variants as well as form elements from the "
                     },
                     {
                       "tag": "a",
