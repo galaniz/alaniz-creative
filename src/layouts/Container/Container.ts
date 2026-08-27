@@ -34,6 +34,7 @@ const Container = (props: ContainerProps): ContainerProps => {
     justify,
     align,
     border,
+    fill = false,
     grow = false,
     shrink = true,
     breakout = false,
@@ -137,6 +138,12 @@ const Container = (props: ContainerProps): ContainerProps => {
 
   if (isStringStrict(gapLarge) && gapLarge !== gap) {
     layoutClassesArr.push(`gap-${gapLarge}-l`)
+  }
+
+  /* Fill */
+
+  if (fill) {
+    classesArr.push('h-full')
   }
 
   /* Grow */

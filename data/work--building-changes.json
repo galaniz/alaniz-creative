@@ -17,7 +17,15 @@
   "blob": "two",
   "theme": {
     "primary-dark": "#c22f58",
-    "primary-light": "#de7894"
+    "primary-light": "#de7894",
+    "neutral-dark": "#0b020a",
+    "neutral-light": "#acaaac",
+    "teal-dark": "#008386",
+    "teal-light": "#00b9be",
+    "orange-dark": "#b85e00",
+    "orange-light": "#e88622",
+    "plum-dark": "#743952",
+    "plum-light": "#b26284"
   },
   "related": [
     "work--citris",
@@ -147,8 +155,642 @@
     },
     {
       "renderType": "container",
-      "maxWidth": "xs",
       "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "paddingBottom": "m",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "What is Building Changes?"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Building Changes is a non-profit dedicated to tackling homelessness at the systems level in Washington state. Initially founded in response to homelessness from the Seattle AIDS epidemic, they now undertake long-term driven work in research, policy, advocacy, capacity building and grant making. They focus on the intersection of systems&ndash;education, employment, social and health services&ndash;to sustainably and equitably empower people to achieve housing stability."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xs",
+              "content": [
+                {
+                  "renderType": "aspectRatio",
+                  "percent": 55,
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "8",
+                      "position": "top-right",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "building-changes/individual",
+                          "border": true
+                        }
+                      ] 
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "8",
+                      "position": "bottom-left",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "building-changes/family",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Families and individuals positively affected by Building Changes programs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Project"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Redesign and develop Building Changes' website to better communicate who they are and what they do as an evolving organization."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "The Brief"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Context"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Building Changes was in a state of transition. They were in the process of revising their vision, mission and values, merging Schoolhouse Washington (student homelessness project) into their brand and reducing their grant making programs because of changes in funding. Their existing site was outdated, difficult to navigate and presented a narrative at odds with their new strategic direction around policy and advocacy."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Users"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Primary"
+                    },
+                    {
+                      "content": " &ndash; housing and homeless service providers like shelters as well as school districts and school staff"
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Secondary"
+                    },
+                    {
+                      "content": " &ndash; advocates and policymakers like state legislators and housing/health nonprofits and advocacy groups"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Goals"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": "Reflect shift towards policy and advocacy work (and away from grant making)"
+                },
+                {
+                  "tag": "li",
+                  "content": "Improve site engagement&ndash;page views, bounce rates and overall traffic"
+                },
+                {
+                  "tag": "li",
+                  "content": "Merge Schoolhouse Washington into Building Changes"
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Guiding Keywords"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "From this brief and interviews with stakeholders we captured these keywords to use as our focus throughout all phases of the project: "
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "s",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "content": [
+            {
+              "renderType": "container",
+              "layout": "row",
+              "gap": "m",
+              "gapLarge": "l",
+              "justify": "center",
+              "align": "center",
+              "tag": "ul",
+              "paddingTop": "l",
+              "paddingTopLarge": "xl",
+              "paddingBottom": "l",
+              "paddingBottomLarge": "xl",
+              "content": [
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "heading-xl",
+                  "content": "Simple",
+                  "color": "theme-neutral"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "heading-xl",
+                  "content": "Bold",
+                  "color": "theme-primary"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "heading-xl",
+                  "content": "Modern",
+                  "color": "theme-teal"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "heading-xl",
+                  "content": "Accessible",
+                  "color": "theme-plum"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "heading-l",
+                  "type": "normal",
+                  "content": "Vibrant",
+                  "color": "theme-orange"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "heading-l",
+                  "type": "normal",
+                  "content": "Compelling",
+                  "color": "theme-neutral"
+                },
+                {
+                  "renderType": "richText",
+                  "tag": "li",
+                  "textStyle": "heading-l",
+                  "type": "normal",
+                  "content": "Evergreen",
+                  "color": "theme-primary"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Process"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Wireframes"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "With the homepage, we focused on better communicating what Building Changes does in the above the fold area by priority&ndash;housing, education and health. As well as including resources. Stakeholders highlighted how important resources are to their primary user group and how it serves as an entry point for many site visitors. The new layout offers flexible display and discoverability across multiple resource types and jointly helps reflect their shift towards policy work. Moreover, as they would be relying on donations in the future, we decided to make it more prominent in the main navigation."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "m",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "align": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "6",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "building-changes/home-wireframe",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "6",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "col",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "image",
+                              "image": "building-changes/resources-wireframe",
+                              "border": true
+                            },
+                            {
+                              "renderType": "image",
+                              "image": "building-changes/help-build-change-wireframe",
+                              "border": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Homepage, resource and help build change landing page wireframes."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Visual Design"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "UI Design"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "Bold and modern were our anchoring principles. Unique polygon background shapes nod to their logo, an intentional motif rather than a decorative one. Asymmetrical layouts, justified buttons and hero offsets create a sense of dynamism that speaks to a modern, evolving organization pushing against the status quo. We were careful not to let these devices overwhelm the site's clarity: ample negative space and clean, legible typography keep information easy to scan and digest. A bolder use of colour sharpens visual hierarchy too, reserved for specific sections like the work pillars so it continues to guide attention rather than dilute it."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "2xl",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "breakout": true,
+              "layout": "row",
+              "gap": "m",
+              "gapLarge": "l",
+              "justify": "center",
+              "content": [
+                {
+                  "renderType": "column",
+                  "width": "10",
+                  "widthSmall": "6",
+                  "widthLarge": "4",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "building-changes/home",
+                      "border": true
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "10",
+                  "widthSmall": "6",
+                  "widthLarge": "4",
+                  "content": [
+                    {
+                      "renderType": "container",
+                      "layout": "col",
+                      "gap": "m",
+                      "gapLarge": "l",
+                      "fill": true,
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "row",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "content": [
+                            {
+                              "renderType": "column",
+                              "width": "6",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "building-changes/navigation-mobile",
+                                  "border": true
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "column",
+                              "width": "6",
+                              "content": [
+                                {
+                                  "renderType": "image",
+                                  "image": "building-changes/footer-mobile"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "renderType": "image",
+                          "image": "building-changes/work-education",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "10",
+                  "widthSmall": "12",
+                  "widthLarge": "4",
+                  "content": [
+                    {
+                      "renderType": "container",
+                      "layout": "row",
+                      "gap": "m",
+                      "gapLarge": "l",
+                      "fill": true,
+                      "content": [
+                        {
+                          "renderType": "column",
+                          "widthSmall": "6",
+                          "widthLarge": "12",
+                          "content": [
+                            {
+                              "renderType": "image",
+                              "image": "building-changes/resources",
+                              "border": true
+                            }
+                          ]
+                        },
+                        {
+                          "renderType": "column",
+                          "widthSmall": "6",
+                          "widthLarge": "12",
+                          "content": [
+                            {
+                              "renderType": "image",
+                              "image": "building-changes/help-build-change",
+                              "border": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Home, work, resources and help build change pages on desktop and mobile navigation and footer."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Style Tile"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "Not every page or surface warranted a full high-fidelity mockup, so we built a style tile: a contained, at-a-glance design system covering colours, typography as well as buttons, form elements, cards and other key components and sections. It gave the Building Changes team the building blocks to extend the new visual language consistently to any surface we hadn't designed directly."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "content": [
+                {
+                  "renderType": "aspectRatio",
+                  "percent": 100,
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "9",
+                      "position": "bottom-right",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "building-changes/style-tile-cards-form-elements",
+                          "border": true
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "9",
+                      "position": "top-left",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "building-changes/style-tile-colours-typography-buttons",
+                          "border": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Colour, typography, button, form and card styles."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Diagram"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "We were also tasked with creating a visual that could express their new direction as an organization at a glance, with racial equity front and center. We designed custom icons for each core value in a circular diagram, a form that shows how each value informs the next and reinforces the fact that this work is ongoing."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xs",
+              "paddingTop": "m",
+              "content": [
+                {
+                  "renderType": "image",
+                  "image": "building-changes/diagram",
+                  "border": true
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Building Changes' core values, shown as an ongoing cycle centered on racial equity."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "maxWidth": "xs",
       "paddingTop": "l",
       "paddingTopLarge": "2xl",
       "richTextStyles": true,
@@ -156,7 +798,43 @@
         {
           "renderType": "richText",
           "tag": "h2",
-          "content": "Details coming soon."
+          "content": "The Outcome"
+        },
+        {
+          "renderType": "richText",
+          "tag": "p",
+          "content": [
+            {
+              "content": "Stakeholders were pleased with the result, noting how much clearer and more cohesive Building Changes' message and identity felt on the new site. The data backed that up: while overall traffic dipped in the months after launch, engagement improved substantially. Pages per visit more than "
+            },
+            {
+              "tag": "strong",
+              "content": "doubled"
+            },
+            {
+              "content": ", visitors spent nearly "
+            },
+            {
+              "tag": "strong",
+              "content": "10 times longer"
+            },
+            {
+              "content": " on the site on average and bounce rate "
+            },
+            {
+              "tag": "strong",
+              "content": "dropped by more than 40%"
+            },
+            {
+              "content": ", all indicating that visitors were engaging far more deeply with the content once they found it."
+            }
+          ]
+        },
+        {
+          "renderType": "button",
+          "title": "View Building Changes",
+          "richText": true,
+          "externalLink": "https://buildingchanges.org/"
         }
       ]
     }

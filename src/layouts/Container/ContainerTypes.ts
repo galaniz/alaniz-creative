@@ -85,6 +85,10 @@ export const containerSchema = z.object({
   paddingRightLarge: sizeOption
     .optional()
     .describe('Space to the right of the content on large screens.'),
+  fill: z
+    .boolean()
+    .optional()
+    .describe('Let the container fill the height of its parent.'),
   grow: z
     .boolean()
     .optional()
@@ -111,7 +115,7 @@ export const containerSchema = z.object({
  * @prop {'container'} renderType
  * @prop {string} [tag='div']
  * @prop {ConfigContainer} [maxWidth]
- * @prop {ContainerLayout} [layout]
+ * @prop {ContainerLayout} [layout='layout']
  * @prop {ConfigBackgroundColor} [background]
  * @prop {'rounded'|'full'} [border]
  * @prop {ConfigJustify} [justify]
@@ -126,10 +130,11 @@ export const containerSchema = z.object({
  * @prop {ConfigSize} [paddingLeftLarge]
  * @prop {ConfigSize} [paddingRight]
  * @prop {ConfigSize} [paddingRightLarge]
- * @prop {boolean} [grow]
+ * @prop {boolean} [fill=false]
+ * @prop {boolean} [grow=false]
  * @prop {boolean} [shrink=true]
- * @prop {boolean} [breakout]
- * @prop {boolean} [richTextStyles]
+ * @prop {boolean} [breakout=false]
+ * @prop {boolean} [richTextStyles=false]
  * @prop {string|SchemaContent[]} content
  */
 export type ContainerSchema = z.infer<typeof containerSchema>

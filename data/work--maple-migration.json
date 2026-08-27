@@ -300,6 +300,7 @@
               "renderType": "container",
               "maxWidth": "l",
               "paddingTop": "m",
+              "paddingTopLarge": "l",
               "content": [
                 {
                   "renderType": "container",
@@ -555,6 +556,7 @@
               "renderType": "container",
               "maxWidth": "2xl",
               "paddingTop": "m",
+              "paddingTopLarge": "l",
               "breakout": true,
               "layout": "row",
               "gap": "m",
@@ -1101,6 +1103,7 @@
               "renderType": "container",
               "maxWidth": "l",
               "paddingTop": "m",
+              "paddingTopLarge": "l",
               "content": [
                 {
                   "renderType": "container",

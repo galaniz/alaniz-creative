@@ -27,8 +27,8 @@
     "blue-light": "#5289e0",
     "green-dark": "#545827",
     "green-light": "#8b9240",
-    "black-dark": "#070707",
-    "black-light": "#8f8f8f",
+    "neutral-dark": "#070707",
+    "neutral-light": "#8f8f8f",
     "med-primary": "#7a232f",
     "med-secondary": "var(--ac-background-light)",
     "med-tertiary": "#00193a"
@@ -414,7 +414,7 @@
                   "textStyle": "heading-l",
                   "type": "normal",
                   "content": "Accessible",
-                  "color": "theme-black"
+                  "color": "theme-neutral"
                 }
               ]
             }
