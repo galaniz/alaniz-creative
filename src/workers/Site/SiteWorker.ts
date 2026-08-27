@@ -5,7 +5,8 @@
 import type { SiteWorkerEnv } from './SiteTypes.js'
 import type { WorkerRequest } from '../workerTypes.js'
 import { WorkerEntrypoint } from 'cloudflare:workers'
-import { workerServerlessSetup, workerServerlessFilter } from '../workerUtils.js'
+import { workerProtectFilter } from '../workerFilter.js'
+import { workerProtectSetup } from '../workerSetup.js'
 import { Protect } from '../../components/Protect/Protect.js'
 
 /**
@@ -26,7 +27,7 @@ export default class extends WorkerEntrypoint {
   override async fetch(request: WorkerRequest): Promise<Response> {
     /* Check serverless */
 
-    const passwordProtect = await workerServerlessFilter(request)
+    const passwordProtect = await workerProtectFilter(request)
 
     /* Serve assets */
 
@@ -45,7 +46,7 @@ export default class extends WorkerEntrypoint {
 
     /* Password page */
 
-    await workerServerlessSetup(this.env)
+    workerProtectSetup(this.env)
 
     return new Response(Protect(), {
       status: 200,

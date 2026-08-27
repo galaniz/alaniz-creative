@@ -8,7 +8,7 @@ import { setConfig } from '@alanizcreative/formation-static/config/config.js'
 import { escape } from '@alanizcreative/formation-static/utils/escape/escape.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 import { setServerless, doServerlessAction } from '@alanizcreative/formation-static/serverless/serverless.js'
-import { workerServerlessTurnstile } from '../workerTurnstile.js'
+import { workerTurnstile } from '../workerTurnstile.js'
 import { config } from '../../config/config.js'
 
 /**
@@ -19,7 +19,7 @@ import { config } from '../../config/config.js'
 const password: ServerlessAction = async (data, request, env: PasswordEnv) => {
   /* Turnstile check */
 
-  await workerServerlessTurnstile(data, request, env)
+  await workerTurnstile(data, request, env)
 
   /* Password value */
 
