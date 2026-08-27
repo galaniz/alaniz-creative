@@ -76,8 +76,6 @@ export interface ConfigVars {
 
 /**
  * Background colors a container can be painted with.
- *
- * @type {z.ZodEnum}
  */
 export const backgroundOption = z.enum([
   'background-light',
@@ -92,8 +90,6 @@ export type ConfigBackgroundColor = z.infer<typeof backgroundOption>
 
 /**
  * Spacing scale shared by padding, gap and width props.
- *
- * @type {z.ZodEnum}
  */
 export const sizeOption = z.enum([
   '0',
@@ -118,8 +114,6 @@ export type ConfigSize = z.infer<typeof sizeOption>
 
 /**
  * Horizontal distribution of children.
- *
- * @type {z.ZodEnum}
  */
 export const justifyOption = z.enum([
   'start',
@@ -135,8 +129,6 @@ export type ConfigJustify = z.infer<typeof justifyOption>
 
 /**
  * Cross axis alignment of children.
- *
- * @type {z.ZodEnum}
  */
 export const alignOption = z.enum([
   'start',
@@ -151,8 +143,6 @@ export type ConfigAlign = z.infer<typeof alignOption>
 
 /**
  * Fixed aspect ratios an image can be cropped to.
- *
- * @type {z.ZodEnum}
  */
 export const aspectRatioOption = z.enum([
   '1-1',
@@ -172,8 +162,6 @@ export type ConfigBreakpoint = 0 | 600 | 900 | 1200
 
 /**
  * Named max widths a container can be constrained to.
- *
- * @type {z.ZodEnum}
  */
 export const containerOption = z.enum([
   'default',
@@ -192,8 +180,6 @@ export type ConfigContainer = z.infer<typeof containerOption>
 
 /**
  * Column widths out of a twelve column grid.
- *
- * @type {z.ZodEnum}
  */
 export const columnOption = z.enum([
   '12',
@@ -217,8 +203,6 @@ export type ConfigColumn = z.infer<typeof columnOption>
 
 /**
  * Decorative blob shapes behind a hero.
- *
- * @type {z.ZodEnum}
  */
 export const blobOption = z.enum([
   'one',
@@ -236,8 +220,6 @@ export type ConfigBlob = z.infer<typeof blobOption>
 
 /**
  * Heading level cards in a posts list start at.
- *
- * @type {z.ZodLiteral}
  */
 export const headingLevelOption = z.literal([
   2,
@@ -254,8 +236,6 @@ export type ConfigHeadingLevel = z.infer<typeof headingLevelOption>
 
 /**
  * Preset heading sizes, independent of heading level.
- *
- * @type {z.ZodEnum}
  */
 export const headingStyleOption = z.enum([
   'heading-3xl',
@@ -275,8 +255,6 @@ export type ConfigHeadingStyle = z.infer<typeof headingStyleOption>
 
 /**
  * Preset body text sizes.
- *
- * @type {z.ZodEnum}
  */
 export const textStyleOption = z.enum([
   'text-l',

@@ -10,9 +10,12 @@ import {
 } from '../../config/configTypes.js'
 import { referenceOption } from '../../schema/schemaOptions.js'
 
+const richTextTypeOption = z.enum([
+  'normal',
+  'columns'
+])
+
 /**
- * Inline markup inside a rich text block, such as a list item or a link.
- *
  * @typedef {object} RichTextContentSchema
  * @prop {string} [tag]
  * @prop {string} [internalLink]
@@ -26,12 +29,7 @@ export interface RichTextContentSchema {
   content?: string | RichTextContentSchema[]
 }
 
-/**
- * Inline markup inside a rich text block.
- *
- * @type {z.ZodType<RichTextContentSchema>}
- */
-// Lazy and annotated because it contains itself
+// Lazy because it contains itself.
 export const richTextContentSchema: z.ZodType<RichTextContentSchema> = z.lazy(() => z.object({
   tag: z
     .string()
@@ -50,19 +48,13 @@ export const richTextContentSchema: z.ZodType<RichTextContentSchema> = z.lazy(()
     .describe('Text for this fragment, or nested fragments for lists and tables.')
 }))
 
-/**
- * A block of prose — a heading, paragraph, list or quote.
- *
- * @type {z.ZodObject}
- */
 export const richTextSchema = z.object({
   renderType: z.literal('richText'),
   tag: z
     .string()
     .optional()
     .describe('HTML tag to render, for example p, h2, h3, ul, blockquote or dl. Defaults to p.'),
-  type: z
-    .enum(['normal', 'columns'])
+  type: richTextTypeOption
     .optional()
     .describe('Set to columns to lay a list out in two columns, or normal to drop heading styling.'),
   headingStyle: headingStyleOption
@@ -89,7 +81,7 @@ export const richTextSchema = z.object({
  * @typedef {object} RichTextSchema
  * @prop {'richText'} renderType
  * @prop {string} [tag='p']
- * @prop {'normal'|'columns'} [type]
+ * @prop {RichTextType} [type]
  * @prop {ConfigHeadingStyle} [headingStyle]
  * @prop {ConfigTextStyle|ConfigHeadingStyle} [textStyle]
  * @prop {ConfigAlign} [align]
@@ -97,3 +89,8 @@ export const richTextSchema = z.object({
  * @prop {string|RichTextContentSchema[]} content
  */
 export type RichTextSchema = z.infer<typeof richTextSchema>
+
+/**
+ * @typedef {'normal'|'columns'} RichTextType
+ */
+export type RichTextType = z.infer<typeof richTextTypeOption>

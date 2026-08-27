@@ -21,6 +21,14 @@ Output posts.
 
 ## Types
 
+### PostsOrder  
+
+**Type:** <code>&#39;date&#39; | &#39;title&#39;</code>
+
+### PostsLayout  
+
+**Type:** <code>&#39;text&#39; | &#39;minimal&#39; | &#39;alternate&#39; | &#39;cascade&#39;</code>
+
 ### PostsArgs  
 
 **Type:** <code>object</code>
@@ -29,11 +37,11 @@ Output posts.
 - **`contentType`** <code>string</code> optional  
 - **`display`** <code>number</code> optional  
 Default: `1`  
-- **`order`** <code>&#39;date&#39; | &#39;title&#39;</code> optional  
+- **`order`** <code><a href="#postsorder">PostsOrder</a></code> optional  
 Default: `'date'`  
 - **`headingLevel`** <code><a href="/src/config/README.md#configheadinglevel">ConfigHeadingLevel</a></code> optional  
 Default: `3`  
-- **`layout`** <code>&#39;text&#39; | &#39;minimal&#39; | &#39;alternate&#39; | &#39;cascade&#39;</code> optional  
+- **`layout`** <code><a href="#postslayout">PostsLayout</a></code> optional  
 Default: `'minimal'`
 
 ### PostsProps  

@@ -6,11 +6,6 @@ import type { RenderFunctionArgs } from '@alanizcreative/formation-static/render
 import type { Item } from '../../global/globalTypes.js'
 import { z } from 'zod'
 
-/**
- * A video from the media library, with a title used as its accessible name.
- *
- * @type {z.ZodObject}
- */
 export const mediaSchema = z.object({
   renderType: z.literal('media'),
   source: z

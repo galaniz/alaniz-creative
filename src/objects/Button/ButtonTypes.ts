@@ -9,9 +9,16 @@ import { z } from 'zod'
 import { sizeOption, justifyOption } from '../../config/configTypes.js'
 import { referenceOption } from '../../schema/schemaOptions.js'
 
-/**
- * @type {z.ZodObject}
- */
+const buttonTypeOption = z.enum([
+  'primary',
+  'secondary'
+])
+
+const buttonSizeOption = z.enum([
+  'm',
+  'l'
+])
+
 export const buttonSchema = z.object({
   renderType: z.literal('button'),
   title: z
@@ -24,12 +31,10 @@ export const buttonSchema = z.object({
     .string()
     .optional()
     .describe('URL outside this site to link to. Use this or internalLink.'),
-  type: z
-    .enum(['primary', 'secondary'])
+  type: buttonTypeOption
     .optional()
     .describe('Visual weight. Defaults to primary.'),
-  size: z
-    .enum(['m', 'l'])
+  size: buttonSizeOption
     .optional()
     .describe('Button size. Defaults to m.'),
   justify: justifyOption
@@ -53,14 +58,24 @@ export const buttonSchema = z.object({
  * @prop {string} title
  * @prop {string} [internalLink]
  * @prop {string} [externalLink]
- * @prop {'primary'|'secondary'} [type='primary']
- * @prop {'m'|'l'} [size='m']
+ * @prop {ButtonType} [type='primary']
+ * @prop {ButtonSize} [size='m']
  * @prop {ConfigJustify} [justify]
  * @prop {boolean} [richText]
  * @prop {ConfigSize} [paddingTop]
  * @prop {ConfigSize} [paddingBottom]
  */
 export type ButtonSchema = z.infer<typeof buttonSchema>
+
+/**
+ * @typedef {'primary'|'secondary'} ButtonType
+ */
+export type ButtonType = z.infer<typeof buttonTypeOption>
+
+/**
+ * @typedef {'m'|'l'} ButtonSize
+ */
+export type ButtonSize = z.infer<typeof buttonSizeOption>
 
 /**
  * @typedef {object} ButtonArgs

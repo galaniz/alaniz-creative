@@ -17,6 +17,10 @@ Filter formation container props.
 
 **Type:** <code>&#39;block&#39; | &#39;col&#39; | &#39;col-s&#39; | &#39;col-m&#39; | &#39;col-l&#39; | &#39;row&#39; | &#39;row-s&#39; | &#39;row-m&#39; | &#39;row-l&#39;</code>
 
+### ContainerBorder  
+
+**Type:** <code>&#39;rounded&#39; | &#39;full&#39;</code>
+
 ### ContainerArgs  
 
 **Type:** <code>object</code>  
@@ -40,7 +44,7 @@ Default: `'block'`
 - **`gapLarge`** <code><a href="/src/config/README.md#configsize">ConfigSize</a></code> optional  
 - **`justify`** <code><a href="/src/config/README.md#configjustify">ConfigJustify</a></code> optional  
 - **`align`** <code><a href="/src/config/README.md#configalign">ConfigAlign</a></code> optional  
-- **`border`** <code>&#39;rounded&#39; | &#39;full&#39;</code> optional  
+- **`border`** <code><a href="#containerborder">ContainerBorder</a></code> optional  
 - **`grow`** <code>boolean</code> optional  
 Default: `false`  
 - **`shrink`** <code>boolean</code> optional  

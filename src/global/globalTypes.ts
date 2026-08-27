@@ -12,11 +12,6 @@ import { heroSchema } from '../components/Hero/HeroTypes.js'
 import { blobOption } from '../config/configTypes.js'
 import { referenceOption } from '../schema/schemaOptions.js'
 
-/**
- * Search engine and social sharing overrides.
- *
- * @type {z.ZodObject}
- */
 export const metaSchema = z.object({
   description: z
     .string()
@@ -26,11 +21,6 @@ export const metaSchema = z.object({
     .describe('Media library key for the link preview image.')
 })
 
-/**
- * Fields shared by every editable content type.
- *
- * @type {z.ZodObject}
- */
 export const baseSchema = z.object({
   title: z
     .string()
@@ -64,11 +54,6 @@ export const baseSchema = z.object({
     .describe('The blocks that make up the page, in the order they appear.')
 })
 
-/**
- * A standalone page.
- *
- * @type {z.ZodObject}
- */
 export const pageContentSchema = baseSchema.extend({
   contentType: z.literal('page'),
   archive: z
@@ -77,11 +62,6 @@ export const pageContentSchema = baseSchema.extend({
     .describe('Content type this page is the archive for, for example work.')
 })
 
-/**
- * A work item — a case study in the portfolio.
- *
- * @type {z.ZodObject}
- */
 export const workContentSchema = baseSchema.extend({
   contentType: z.literal('work'),
   passwordProtect: z
@@ -102,11 +82,6 @@ export const workContentSchema = baseSchema.extend({
     .describe('Taxonomy terms this item belongs to, as contentType--slug.')
 })
 
-/**
- * Every page the editing tools can read and write.
- *
- * @type {z.ZodDiscriminatedUnion}
- */
 export const pageSchema = z.discriminatedUnion('contentType', [
   pageContentSchema,
   workContentSchema

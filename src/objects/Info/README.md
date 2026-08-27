@@ -13,6 +13,10 @@ Output info message.
 
 ## Types
 
+### InfoType  
+
+**Type:** <code>&#39;error&#39; | &#39;error-summary&#39; | &#39;success&#39; | &#39;neutral&#39;</code>
+
 ### InfoArgs  
 
 **Type:** <code>object</code>
@@ -22,5 +26,5 @@ Output info message.
 - **`text`** <code>string</code> optional  
 - **`template`** <code>boolean</code> optional  
 Default: `false`  
-- **`type`** <code>&#39;error&#39; | &#39;error-summary&#39; | &#39;success&#39; | &#39;neutral&#39;</code> optional  
+- **`type`** <code><a href="#infotype">InfoType</a></code> optional  
 Default: `'neutral'`

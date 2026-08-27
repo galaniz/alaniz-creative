@@ -24,11 +24,23 @@ import {
   backgroundOption
 } from '../../config/configTypes.js'
 
-/**
- * A grouping element carrying spacing, width and layout.
- *
- * @type {z.ZodObject}
- */
+const containerLayoutOption = z.enum([
+  'block',
+  'col',
+  'col-s',
+  'col-m',
+  'col-l',
+  'row',
+  'row-s',
+  'row-m',
+  'row-l'
+])
+
+const containerBorderOption = z.enum([
+  'rounded',
+  'full'
+])
+
 export const containerSchema = z.object({
   renderType: z.literal('container'),
   tag: z
@@ -38,15 +50,13 @@ export const containerSchema = z.object({
   maxWidth: containerOption
     .optional()
     .describe('Constrain the content to a named max width. Narrower widths suit prose.'),
-  layout: z
-    .enum(['block', 'col', 'col-s', 'col-m', 'col-l', 'row', 'row-s', 'row-m', 'row-l'])
+  layout: containerLayoutOption
     .optional()
     .describe('Stacked, column or row. The suffix is the screen size the row starts at.'),
   background: backgroundOption
     .optional()
     .describe('Background color for the whole band.'),
-  border: z
-    .enum(['rounded', 'full'])
+  border: containerBorderOption
     .optional()
     .describe('Border treatment.'),
   justify: justifyOption
@@ -117,7 +127,7 @@ export const containerSchema = z.object({
  * @prop {ConfigContainer} [maxWidth]
  * @prop {ContainerLayout} [layout='layout']
  * @prop {ConfigBackgroundColor} [background]
- * @prop {'rounded'|'full'} [border]
+ * @prop {ContainerBorder} [border]
  * @prop {ConfigJustify} [justify]
  * @prop {ConfigAlign} [align]
  * @prop {ConfigSize} [gap]
@@ -142,16 +152,12 @@ export type ContainerSchema = z.infer<typeof containerSchema>
 /**
  * @typedef {'block'|'col'|'col-s'|'col-m'|'col-l'|'row'|'row-s'|'row-m'|'row-l'} ContainerLayout
  */
-export type ContainerLayout =
-  'block' |
-  'col' |
-  'col-s' |
-  'col-m' |
-  'col-l' |
-  'row' |
-  'row-s' |
-  'row-m' |
-  'row-l'
+export type ContainerLayout = z.infer<typeof containerLayoutOption>
+
+/**
+ * @typedef {'rounded'|'full'} ContainerBorder
+ */
+export type ContainerBorder = z.infer<typeof containerBorderOption>
 
 /**
  * @typedef {object} ContainerArgs
@@ -171,7 +177,7 @@ export type ContainerLayout =
  * @prop {ConfigSize} [gapLarge]
  * @prop {ConfigJustify} [justify]
  * @prop {ConfigAlign} [align]
- * @prop {'rounded'|'full'} [border]
+ * @prop {ContainerBorder} [border]
  * @prop {boolean} [grow=false]
  * @prop {boolean} [shrink=true]
  * @prop {boolean} [breakout=false]
@@ -192,7 +198,7 @@ export interface ContainerArgs extends FormationContainerArgs<string, ConfigCont
   gapLarge?: ConfigSize
   justify?: ConfigJustify
   align?: ConfigAlign
-  border?: 'rounded' | 'full'
+  border?: ContainerBorder
   grow?: boolean
   shrink?: boolean
   breakout?: boolean

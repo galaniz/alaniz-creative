@@ -16,8 +16,6 @@ import { aspectRatioSchema } from '../layouts/AspectRatio/AspectRatioTypes.js'
 
 /**
  * Every block a page can contain, tagged by renderType.
- *
- * @type {z.ZodType<SchemaContent>}
  */
 // Lazy and annotated because containers hold containers. Every block file
 // imports this back, so references across that cycle must all stay deferred

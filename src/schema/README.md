@@ -8,21 +8,15 @@ Content types the editing tools own, and therefore validate.
 
 ## referenceOption  
 
-Reference to another content file, as `contentType--slug`.  
-
-**Type:** <code>z.ZodString</code>
+**Type:** <code></code>
 
 ## imageKeyOption  
 
-Key of an image in the media library, without a file extension.  
-
-**Type:** <code>z.ZodString</code>
+**Type:** <code></code>
 
 ## contentSchema  
 
-Every block a page can contain, tagged by renderType.  
-
-**Type:** <code>z.ZodType&lt;<a href="#schemacontent">SchemaContent</a>&gt;</code>
+**Type:** <code></code>
 
 ## validateContent  
 
@@ -140,12 +134,3 @@ Render issues as a list an editor can act on.
 - **`valid`** <code>boolean</code> required  
 - **`page`** <code><a href="#schemapage">SchemaPage</a></code> optional  
 - **`issues`** <code><a href="#schemaissue">SchemaIssue</a>[]</code> required
-
-### SchemaContent  
-
-A single block within a page, tagged by render type.  
-
-**Type:** <code>object</code>
-
-#### Properties  
-- **`renderType`** <code>string</code> required

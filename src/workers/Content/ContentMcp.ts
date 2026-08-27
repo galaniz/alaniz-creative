@@ -30,8 +30,6 @@ import {
 /**
  * Identifier of a content file, as used throughout the site to reference one
  * page from another.
- *
- * @type {z.ZodString}
  */
 const slugArg = z
   .string()
