@@ -18,7 +18,7 @@ jobs:
 
       # Install PNPM
       - name: Install PNPM
-        uses: pnpm/action-setup@v5
+        uses: pnpm/action-setup@v6
 
       # Set up Node.js for PNPM
       - name: Set up Node.js
