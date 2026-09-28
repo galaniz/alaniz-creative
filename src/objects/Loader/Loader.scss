@@ -7,16 +7,9 @@
 
 /* Styles */
 
-@property --ld-scale {
-  syntax: "<number>";
-  inherits: false;
-  initial-value: 1;
-}
-
 @keyframes e-load {
   0% {
-    --ld-scale: 0;
-
+    scale: 0;
     opacity: 0;
   }
 
@@ -25,8 +18,7 @@
   }
 
   100% {
-    --ld-scale: 1;
-
+    scale: 1;
     opacity: 0;
   }
 }
@@ -36,7 +28,6 @@
 }
 
 .loader-circle {
-  transform: scale(var(--ld-scale));
   animation: e-load 1s ease-out infinite;
   border: #{util.calc-rem(4px)} solid var(--ld-color, var(--ac-sharp-color));
 }
