@@ -8,7 +8,6 @@
     "description": "",
     "image": ""
   },
-  "passwordProtect": true,
   "hero": {
     "image": "maple-onboarding/hero",
     "border": true,

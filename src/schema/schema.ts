@@ -15,10 +15,9 @@ import { columnSchema } from '../layouts/Column/ColumnTypes.js'
 import { aspectRatioSchema } from '../layouts/AspectRatio/AspectRatioTypes.js'
 
 /**
- * Every block a page can contain, tagged by renderType.
+ * Layouts hold content, so container, column and aspect ratio import this list
+ * while it imports them. Lazy delays reading it until every import has finished.
  */
-// Lazy and annotated because containers hold containers. Every block file
-// imports this back, so references across that cycle must all stay deferred
 const contentSchema: z.ZodType<SchemaContent> = z.lazy(() => z.discriminatedUnion('renderType', [
   containerSchema,
   columnSchema,

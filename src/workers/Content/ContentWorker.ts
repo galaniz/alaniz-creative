@@ -84,5 +84,10 @@ export default new OAuthProvider<ContentEnv>({
   authorizeEndpoint: '/authorize',
   tokenEndpoint: '/token',
   clientRegistrationEndpoint: '/register',
-  scopesSupported: [contentScope]
+  scopesSupported: [contentScope],
+  resourceMetadata: {
+    resource: 'https://content.alanizcreative.com/mcp',
+    authorization_servers: ['https://content.alanizcreative.com'],
+    scopes_supported: [contentScope]
+  }
 })
