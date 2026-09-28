@@ -34,3 +34,7 @@ jobs:
       # Lint TS and SCSS files
       - name: Lint files (TS and SCSS)
         run: pnpm lint
+
+      # Typecheck client, node and workers
+      - name: Typecheck
+        run: pnpm typecheck

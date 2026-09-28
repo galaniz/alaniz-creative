@@ -8,7 +8,6 @@
     "description": "",
     "image": ""
   },
-  "passwordProtect": true,
   "hero": {
     "image": "maple-migration/hero",
     "border": true,
@@ -191,7 +190,7 @@
             {
               "renderType": "richText",
               "tag": "p",
-              "content": "Migrate the existing monolithic WordPress site to a static site build on Cloudflare Workers using headless WordPress on AWS Lightsail."
+              "content": "Migrate Maple's existing monolithic WordPress site to a static site build on Cloudflare Workers using headless WordPress on AWS Lightsail."
             },
             {
               "renderType": "richText",

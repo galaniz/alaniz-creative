@@ -15,22 +15,7 @@ const richTextTypeOption = z.enum([
   'columns'
 ])
 
-/**
- * @typedef {object} RichTextContentSchema
- * @prop {string} [tag]
- * @prop {string} [internalLink]
- * @prop {string} [link]
- * @prop {string|RichTextContentSchema[]} [content]
- */
-export interface RichTextContentSchema {
-  tag?: string
-  internalLink?: string
-  link?: string
-  content?: string | RichTextContentSchema[]
-}
-
-// Lazy because it contains itself.
-export const richTextContentSchema: z.ZodType<RichTextContentSchema> = z.lazy(() => z.object({
+export const richTextContentSchema = z.object({
   tag: z
     .string()
     .optional()
@@ -42,11 +27,13 @@ export const richTextContentSchema: z.ZodType<RichTextContentSchema> = z.lazy(()
     .string()
     .optional()
     .describe('Link to a URL outside this site. Use internalLink for pages on this site.'),
-  content: z
-    .union([z.string(), z.array(richTextContentSchema)])
-    .optional()
-    .describe('Text for this fragment, or nested fragments for lists and tables.')
-}))
+  get content () { // Getter because it contains itself
+    return z
+      .union([z.string(), z.array(richTextContentSchema)])
+      .optional()
+      .describe('Text for this fragment, or nested fragments for lists and tables.')
+  }
+})
 
 export const richTextSchema = z.object({
   renderType: z.literal('richText'),
@@ -76,6 +63,15 @@ export const richTextSchema = z.object({
     .union([z.string(), z.array(richTextContentSchema)])
     .describe('The text itself. A plain string for a single tag, or fragments for lists and tables.')
 })
+
+/**
+ * @typedef {object} RichTextContentSchema
+ * @prop {string} [tag]
+ * @prop {string} [internalLink]
+ * @prop {string} [link]
+ * @prop {string|RichTextContentSchema[]} [content]
+ */
+export type RichTextContentSchema = z.infer<typeof richTextContentSchema>
 
 /**
  * @typedef {object} RichTextSchema
