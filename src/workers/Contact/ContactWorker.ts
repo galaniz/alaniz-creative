@@ -4,10 +4,12 @@
 
 import type { Store } from '@alanizcreative/formation-static/store/storeTypes.js'
 import type { ServerlessAction } from '@alanizcreative/formation-static/serverless/serverlessTypes.js'
+import { setConfig, setConfigFilter } from '@alanizcreative/formation-static/config/config.js'
 import { setFilters } from '@alanizcreative/formation-static/filters/filters.js'
 import { setServerless, doServerlessAction } from '@alanizcreative/formation-static/serverless/serverless.js'
 import { setStoreItem } from '@alanizcreative/formation-static/store/store.js'
 import { Contact } from '@alanizcreative/formation-static/serverless/Contact/Contact.js'
+import { config } from '../../config/config.js'
 import { workerTurnstile } from '../workerTurnstile.js'
 
 /**
@@ -78,6 +80,8 @@ export default {
 
     /* Set up */
 
+    setConfig(config)
+    setConfigFilter(env)
     setServerless({ contact, 'contact-dev': contact })
     setFilters({
       contactResult: async (_, body) => {

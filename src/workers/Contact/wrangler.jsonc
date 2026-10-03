@@ -18,6 +18,7 @@
     }
   ],
   "vars": {
+    "ENVIRONMENT": "production",
     "CF_CONTACT_ALLOWED_ORIGINS": "https://alanizcreative.com"
   },
   "secrets": {
@@ -37,6 +38,7 @@
       "preview_urls": false,
       "minify": true,
       "vars": {
+        "ENVIRONMENT": "development",
         "CF_CONTACT_ALLOWED_ORIGINS": "https://staging.alanizcreative.com"
       },
       "secrets": {
