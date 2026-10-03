@@ -14,6 +14,12 @@
   "vars": {
     "CF_PASSWORD_ALLOWED_ORIGINS": "https://alanizcreative.com"
   },
+  "secrets": {
+    "required": [
+      "CF_PASSWORD",
+      "CF_TURNSTILE_KEY"
+    ]
+  },
   "observability": {
     "enabled": true,
     "head_sampling_rate": 1
@@ -26,6 +32,12 @@
       "minify": true,
       "vars": {
         "CF_PASSWORD_ALLOWED_ORIGINS": "https://staging.alanizcreative.com"
+      },
+      "secrets": {
+        "required": [
+          "CF_PASSWORD",
+          "CF_TURNSTILE_KEY"
+        ]
       },
       "routes": [
         {

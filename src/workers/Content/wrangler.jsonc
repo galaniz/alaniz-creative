@@ -1,7 +1,7 @@
 {
   "name": "alaniz-creative-content",
   "main": "./ContentWorker.ts",
-  "compatibility_date": "2025-10-14",
+  "compatibility_date": "2026-05-11",
   "compatibility_flags": [
     "global_fetch_strictly_public"
   ],
@@ -22,6 +22,15 @@
     "CONTENT_BOT_EMAIL": "graciela@alanizcreative.com",
     "CONTENT_ASSETS_URL": "https://alanizcreative.com/assets",
     "CONTENT_PREVIEW_HOST": "alaniz-creative.ac-site.workers.dev"
+  },
+  "secrets": {
+    "required": [
+      "GITHUB_APP_ID",
+      "GITHUB_APP_PRIVATE_KEY",
+      "GITHUB_INSTALLATION_ID",
+      "CF_ACCESS_TEAM_DOMAIN",
+      "CF_ACCESS_AUD"
+    ]
   },
   "kv_namespaces": [
     {

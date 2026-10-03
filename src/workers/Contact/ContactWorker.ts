@@ -2,7 +2,6 @@
  * Workers - Contact
  */
 
-import type { ContactEnv } from './ContactTypes.js'
 import type { Store } from '@alanizcreative/formation-static/store/storeTypes.js'
 import type { ServerlessAction } from '@alanizcreative/formation-static/serverless/serverlessTypes.js'
 import { setFilters } from '@alanizcreative/formation-static/filters/filters.js'
@@ -16,14 +15,14 @@ import { workerTurnstile } from '../workerTurnstile.js'
  *
  * @type {ServerlessAction}
  */
-const contact: ServerlessAction = async (data, request, env: ContactEnv) => {
+const contact: ServerlessAction<ContactBindings> = async (data, request, env) => {
   /* Turnstile check */
 
   await workerTurnstile(data, request, env)
 
   /* Form meta */
 
-  setStoreItem('formMeta', await env.CONTACT_KV?.get('formMeta', 'json') as Store['formMeta'])
+  setStoreItem('formMeta', await env.CONTACT_KV.get('formMeta', 'json') as Store['formMeta'])
 
   /* Process inputs and send email */
 
@@ -38,19 +37,18 @@ const contact: ServerlessAction = async (data, request, env: ContactEnv) => {
 export default {
   /**
    * @param {Request} request
-   * @param {ContactEnv} env
+   * @param {ContactBindings} env
    * @return {Promise<Response>}
    */
-  async fetch (request: Request, env: ContactEnv): Promise<Response> {
+  async fetch (request: Request, env: ContactBindings): Promise<Response> {
     const { headers, method } = request
 
     /* Check origin */
 
-    const allowedOrigins = env.CF_CONTACT_ALLOWED_ORIGINS
+    const origins = env.CF_CONTACT_ALLOWED_ORIGINS.split(',')
     const origin = headers.get('Origin')
-    const origins = allowedOrigins?.split(',')
 
-    if (!origin || !origins || !origins.includes(origin)) {
+    if (!origin || !origins.includes(origin)) {
       return new Response(JSON.stringify({ error: 'Unauthorized origin' }), {
         status: 403,
         headers: {

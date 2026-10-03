@@ -2,7 +2,6 @@
  * Worker - Protect
  */
 
-import type { Generic } from '@alanizcreative/formation-static/global/globalTypes.js'
 import { setConfig, setConfigFilter } from '@alanizcreative/formation-static/config/config.js'
 import { setActions } from '@alanizcreative/formation-static/actions/actions.js'
 import { setFilters } from '@alanizcreative/formation-static/filters/filters.js'
@@ -17,12 +16,12 @@ import { renderFunctions } from '../render/render.js'
 /**
  * Set up config, filters, actions and store for the password page.
  *
- * @param {Generic} [env]
+ * @param {object} env
  */
-const workerProtectSetup = (env?: Generic) => {
+const workerProtectSetup = (env: object) => {
   setStore(storeArgs)
   setConfig(config)
-  setConfigFilter(env || {})
+  setConfigFilter(env)
   setFilters(filters)
   setActions(actions)
   setRenderFunctions(renderFunctions)

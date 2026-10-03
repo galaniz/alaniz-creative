@@ -2,7 +2,6 @@
  * Workers - Password
  */
 
-import type { PasswordEnv } from './PasswordTypes.js'
 import type { ServerlessAction } from '@alanizcreative/formation-static/serverless/serverlessTypes.js'
 import { setConfig } from '@alanizcreative/formation-static/config/config.js'
 import { escape } from '@alanizcreative/formation-static/utils/escape/escape.js'
@@ -16,7 +15,7 @@ import { config } from '../../config/config.js'
  *
  * @type {ServerlessAction}
  */
-const password: ServerlessAction = async (data, request, env: PasswordEnv) => {
+const password: ServerlessAction<PasswordBindings> = async (data, request, env) => {
   /* Turnstile check */
 
   await workerTurnstile(data, request, env)
@@ -67,19 +66,18 @@ const password: ServerlessAction = async (data, request, env: PasswordEnv) => {
 export default {
   /**
    * @param {Request} request
-   * @param {PasswordEnv} env
+   * @param {PasswordBindings} env
    * @return {Promise<Response>}
    */
-  async fetch (request: Request, env: PasswordEnv): Promise<Response> {
+  async fetch (request: Request, env: PasswordBindings): Promise<Response> {
     const { headers, method } = request
 
     /* Check origin */
 
-    const allowedOrigins = env.CF_PASSWORD_ALLOWED_ORIGINS
+    const origins = env.CF_PASSWORD_ALLOWED_ORIGINS.split(',')
     const origin = headers.get('Origin')
-    const origins = allowedOrigins?.split(',')
 
-    if (!origin || !origins || !origins.includes(origin)) {
+    if (!origin || !origins.includes(origin)) {
       return new Response(JSON.stringify({ error: 'Unauthorized origin' }), {
         status: 403,
         headers: {

@@ -1,7 +1,7 @@
 {
   "name": "alaniz-creative",
   "main": "./src/workers/Site/SiteWorker.ts",
-  "compatibility_date": "2025-10-14",
+  "compatibility_date": "2026-05-11",
   "workers_dev": false,
   "preview_urls": true,
   "minify": true,
@@ -24,6 +24,9 @@
   "vars": {
     "ENVIRONMENT": "production"
   },
+  "secrets": {
+    "required": []
+  },
   "env": {
     "staging": {
       "main": "./src/workers/Site/SiteWorker.ts",
@@ -32,6 +35,9 @@
       "minify": true,
       "vars": {
         "ENVIRONMENT": "development"
+      },
+      "secrets": {
+        "required": []
       },
       "kv_namespaces": [
         {

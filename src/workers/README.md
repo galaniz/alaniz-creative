@@ -17,12 +17,12 @@ Verify Turnstile token.
 
 ## workerProtectSetup  
 
-**<code>workerProtectSetup(env?: Generic): </code>**  
+**<code>workerProtectSetup(env?: object): </code>**  
 
 Set up config, filters, actions and store for the password page.
 
 ### Parameters  
-- **`env`** <code>Generic</code> optional
+- **`env`** <code>object</code> optional
 
 ## workerProtectFilter  
 
@@ -41,9 +41,7 @@ Filter worker responses for password protection.
 
 ### WorkerEnv  
 
-**Type:** <code>object</code>  
-
-**Augments:** <code>Generic</code>
+**Type:** <code>object</code>
 
 #### Properties  
 - **`CF_TURNSTILE_KEY`** <code>string</code> optional

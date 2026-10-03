@@ -170,14 +170,11 @@ importers:
         specifier: 0.0.5
         version: 0.0.5
       '@alanizcreative/formation-static':
-        specifier: 0.0.7
-        version: 0.0.7(sharp@0.35.4(@types/node@26.6.4))
+        specifier: 0.0.8
+        version: 0.0.8(sharp@0.35.4(@types/node@26.6.4))
       '@cloudflare/workers-oauth-provider':
         specifier: 1.1.0
         version: 1.1.0
-      '@cloudflare/workers-types':
-        specifier: 5.20260928.1
-        version: 5.20260928.1
       '@esbuild/linux-x64':
         specifier: 0.28.2
         version: 0.28.2
@@ -254,12 +251,12 @@ importers:
         version: 4.1.5
       wrangler:
         specifier: ^4.142.0
-        version: 4.146.0(@cloudflare/workers-types@5.20260928.1)(@types/node@26.6.4)
+        version: 4.146.0(@types/node@26.6.4)
 
 packages:
 
-  '@alanizcreative/formation-static@0.0.7':
-    resolution: {integrity: sha512-N6fJ+pG53eETZyzwtfMqdvsM7oRsenzYowX/+uFHhn+OPj3Ua8Kf3hluHTwm8O5pEFMJWOc066QuGpbHKvOhjA==}
+  '@alanizcreative/formation-static@0.0.8':
+    resolution: {integrity: sha512-xL2g+uF07qpcnAUBxfGpdqXFqvGRoGri5QKKBysb2NawXIsecEu7n2cdlwIlsYsPdsSKhrCzR+Z86fyFLBB4bA==}
     engines: {node: '>=22'}
     peerDependencies:
       '@wordpress/block-serialization-default-parser': ^5.53.0
@@ -335,9 +332,6 @@ packages:
 
   '@cloudflare/workers-oauth-provider@1.1.0':
     resolution: {integrity: sha512-J3J7AZ/Iok8DyIeXobc6zk9vSj5oeQB1I6Jxe8OqgvlhTq6nm/9fKhdyjKba82tLzLCfEc0w8yy8s715TeNe6Q==}
-
-  '@cloudflare/workers-types@5.20260928.1':
-    resolution: {integrity: sha512-B/El15v5HqZyuyfR7Z0W443iA6Ml4nZjaR8rgHyW612r8reO+1JaDKtNbP3CPdzVIM2egp98by3NlpMm5pKbcg==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -2869,7 +2863,7 @@ packages:
 
 snapshots:
 
-  '@alanizcreative/formation-static@0.0.7(sharp@0.35.4(@types/node@26.6.4))':
+  '@alanizcreative/formation-static@0.0.8(sharp@0.35.4(@types/node@26.6.4))':
     dependencies:
       uuid: 14.0.2
     optionalDependencies:
@@ -2923,8 +2917,6 @@ snapshots:
     optional: true
 
   '@cloudflare/workers-oauth-provider@1.1.0': {}
-
-  '@cloudflare/workers-types@5.20260928.1': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -5624,7 +5616,7 @@ snapshots:
       '@cloudflare/workerd-windows-64': 1.20261001.1
     optional: true
 
-  wrangler@4.146.0(@cloudflare/workers-types@5.20260928.1)(@types/node@26.6.4):
+  wrangler@4.146.0(@types/node@26.6.4):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.5.0
       '@cloudflare/unenv-preset': 2.16.2(unenv@2.0.0-rc.24)(workerd@1.20261001.1)
@@ -5635,7 +5627,6 @@ snapshots:
       unenv: 2.0.0-rc.24
       workerd: 1.20261001.1
     optionalDependencies:
-      '@cloudflare/workers-types': 5.20260928.1
       fsevents: 2.3.3
     transitivePeerDependencies:
       - '@types/node'

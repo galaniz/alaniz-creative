@@ -2,7 +2,6 @@
  * Workers - Site
  */
 
-import type { SiteWorkerEnv } from './SiteTypes.js'
 import type { WorkerRequest } from '../workerTypes.js'
 import { WorkerEntrypoint } from 'cloudflare:workers'
 import { workerProtectFilter } from '../workerFilter.js'
@@ -12,12 +11,7 @@ import { Protect } from '../../components/Protect/Protect.js'
 /**
  * Manage site assets and requests.
  */
-export default class extends WorkerEntrypoint {
-  /**
-   * Typed env.
-   */
-  declare env: SiteWorkerEnv
-
+export default class extends WorkerEntrypoint<SiteBindings> {
   /**
    * Route serverless and serve assets.
    * 
