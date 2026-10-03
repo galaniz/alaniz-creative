@@ -3,12 +3,10 @@
  */
 
 import type { ServerlessAction } from '@alanizcreative/formation-static/serverless/serverlessTypes.js'
-import { setConfig } from '@alanizcreative/formation-static/config/config.js'
 import { escape } from '@alanizcreative/formation-static/utils/escape/escape.js'
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 import { setServerless, doServerlessAction } from '@alanizcreative/formation-static/serverless/serverless.js'
 import { workerTurnstile } from '../workerTurnstile.js'
-import { config } from '../../config/config.js'
 
 /**
  * Escape and check password.
@@ -107,7 +105,6 @@ export default {
 
     /* Set up */
 
-    setConfig(config)
     setServerless({ password, 'password-dev': password })
 
     /* Result */
