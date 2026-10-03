@@ -4,7 +4,6 @@
   "compatibility_date": "2025-10-14",
   "workers_dev": false,
   "preview_urls": true,
-  "keep_vars": true,
   "minify": true,
   "kv_namespaces": [
     {
@@ -22,13 +21,18 @@
     "enabled": true,
     "head_sampling_rate": 0.02
   },
+  "vars": {
+    "ENVIRONMENT": "production"
+  },
   "env": {
     "staging": {
       "main": "./src/workers/Site/SiteWorker.ts",
       "preview_urls": false,
       "workers_dev": false,
-      "keep_vars": true,
       "minify": true,
+      "vars": {
+        "ENVIRONMENT": "development"
+      },
       "kv_namespaces": [
         {
           "binding": "SITE_KV",

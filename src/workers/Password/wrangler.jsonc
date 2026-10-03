@@ -4,7 +4,6 @@
   "compatibility_date": "2026-05-11",
   "workers_dev": false,
   "preview_urls": false,
-  "keep_vars": true,
   "minify": true,
   "routes": [
     {
@@ -12,6 +11,9 @@
       "zone_name": "alanizcreative.com"
     }
   ],
+  "vars": {
+    "CF_PASSWORD_ALLOWED_ORIGINS": "https://alanizcreative.com"
+  },
   "observability": {
     "enabled": true,
     "head_sampling_rate": 1
@@ -21,8 +23,10 @@
       "main": "./PasswordWorker.ts",
       "workers_dev": false,
       "preview_urls": false,
-      "keep_vars": true,
       "minify": true,
+      "vars": {
+        "CF_PASSWORD_ALLOWED_ORIGINS": "https://staging.alanizcreative.com"
+      },
       "routes": [
         {
           "pattern": "alanizcreative.com/api/password-dev",

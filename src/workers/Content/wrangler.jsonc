@@ -7,7 +7,6 @@
   ],
   "workers_dev": false,
   "preview_urls": false,
-  "keep_vars": true,
   "minify": true,
   "routes": [
     {
@@ -21,7 +20,8 @@
     "GITHUB_BASE": "main",
     "CONTENT_BOT_NAME": "Alaniz Creative Content",
     "CONTENT_BOT_EMAIL": "graciela@alanizcreative.com",
-    "CONTENT_ASSETS_URL": "https://alanizcreative.com/assets"
+    "CONTENT_ASSETS_URL": "https://alanizcreative.com/assets",
+    "CONTENT_PREVIEW_HOST": "alaniz-creative.ac-site.workers.dev"
   },
   "kv_namespaces": [
     {
