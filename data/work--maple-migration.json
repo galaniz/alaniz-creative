@@ -145,7 +145,7 @@
         },
         {
           "renderType": "button",
-          "title": "View Maple",
+          "title": "View Maple Snapshot",
           "richText": true,
           "externalLink": "https://alanizcreative.com/snapshot/maple-migration/"
         }
@@ -1239,7 +1239,7 @@
             },
             {
               "renderType": "button",
-              "title": "View Maple",
+              "title": "View Maple Snapshot",
               "richText": true,
               "externalLink": "https://alanizcreative.com/snapshot/maple-migration/"
             }
