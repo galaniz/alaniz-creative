@@ -80,8 +80,10 @@ const Layout = (args: LayoutArgs): string => {
   let heroOutput = ''
 
   if (!isBlank) {
-    headerOutput = Header(slug, baseType)
-    footerOutput = Footer(slug, baseType)
+    const currentLink = getPermalink(slug)
+
+    headerOutput = Header(currentLink, baseType)
+    footerOutput = Footer(currentLink, baseType)
   }
 
   if (slug !== 'protect' && !id.startsWith('http-error')) {
