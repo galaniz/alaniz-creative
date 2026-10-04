@@ -105,16 +105,603 @@
     },
     {
       "renderType": "container",
-      "maxWidth": "xs",
       "tag": "section",
       "paddingTop": "l",
       "paddingTopLarge": "2xl",
-      "richTextStyles": true,
       "content": [
         {
-          "renderType": "richText",
-          "tag": "h2",
-          "content": "Details coming soon."
+          "renderType": "container",
+          "maxWidth": "xs",
+          "paddingBottom": "m",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "Who is Olivia Korosak?"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Olivia Korosak is an award-winning Canadian composer for film, orchestras and ensembles as well as a sound designer for theatre. Trained in piano and voice from age four, she graduated with highest honours from McMaster University in Music and Classical Voice. She is a member of the Screen Composers Guild of Canada and the Association of Canadian Women Composers."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "xs",
+              "content": [
+                {
+                  "renderType": "aspectRatio",
+                  "percent": 55,
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "width": "8",
+                      "position": "top-right",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "olivia-korosak/sheet-music"
+                        }
+                      ] 
+                    },
+                    {
+                      "renderType": "column",
+                      "width": "8",
+                      "position": "bottom-left",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "olivia-korosak/olivia-korosak"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Composer Olivia Korosak and background sheet music."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Project"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Redesign and develop Olivia's portfolio site to better showcase her work and migrate it from WordPress to a static site built with Contentful on Cloudflare Workers."
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "The Brief"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Context"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Olivia's site was coming up for renewal at a higher cost and its custom WordPress theme had become limiting. Compositions were tracks grouped by a category standing in for its project, all on a single archive page. This made it hard to add detail to a project and as the page grew, so did its load time. Credits, performances and scoring were later added as separate pages, disconnected from the rest of her work. Having designed and built the original site myself, it was also a chance to revisit my own work and improve on it as a designer and developer."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "paddingTop": "m",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "align": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "6",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "olivia-korosak/pre-work-1"
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "6",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "olivia-korosak/pre-work-2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Pre-migration desktop work page, a single page displaying projects and tracks."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h4",
+              "content": "Goals"
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": "Organize work more clearly for prospective clients and content editors"
+                },
+                {
+                  "tag": "li",
+                  "content": "Reduce hosting cost and move to faster, more flexible hosting"
+                },
+                {
+                  "tag": "li",
+                  "content": "Improve page load time on homepage and work pages (~2-4 seconds)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Process"
+            },
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Visual Redesign"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "The redesign started with rethinking the information architecture of the work content type, bringing everything together under "
+                },
+                {
+                  "tag": "strong",
+                  "content": "work"
+                },
+                {
+                  "content": " as one place to explore and to point prospective clients to."
+                }
+              ]
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Flexible projects: "
+                    },
+                    {
+                      "content": "projects can be a composition, credit, score or any other project type, with or without tracks."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Flexible tracks: "
+                    },
+                    {
+                      "content": "tracks are now their own content type, assignable to a specific project and/or genre."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Better wayfinding: "
+                    },
+                    {
+                      "content": "breadcrumbs throughout make it easier to navigate and explore related work."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "2xl",
+              "paddingTop": "m",
+              "paddingTopLarge": "l",
+              "breakout": true,
+              "layout": "row",
+              "gap": "m",
+              "gapLarge": "l",
+              "justify": "center",
+              "content": [
+                {
+                  "renderType": "column",
+                  "width": "10",
+                  "widthSmall": "6",
+                  "widthLarge": "4",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "olivia-korosak/post-work"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "10",
+                  "widthSmall": "6",
+                  "widthLarge": "4",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "olivia-korosak/post-projects"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "10",
+                  "widthSmall": "6",
+                  "widthLarge": "4",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "olivia-korosak/post-tracks"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "10",
+                  "widthSmall": "6",
+                  "widthLarge": "4",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "olivia-korosak/post-project"
+                    }
+                  ]
+                },
+                {
+                  "renderType": "column",
+                  "width": "10",
+                  "widthSmall": "6",
+                  "widthLarge": "4",
+                  "content": [
+                    {
+                      "renderType": "image",
+                      "image": "olivia-korosak/post-track"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Post-migration desktop work, project and track archive and entry pages."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h3",
+              "content": "Headless Static Site"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "Rather than iterate on the existing WordPress theme, the redesign was an opportunity to start fresh. With rising hosting costs and the ongoing admin maintenance that comes with any monolithic CMS, a managed headless CMS and static host, both with generous free tiers, made the most sense."
+            },
+            {
+              "renderType": "richText",
+              "tag": "ul",
+              "content": [
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Static site generation: "
+                    },
+                    {
+                      "content": [
+                        {
+                          "tag": "a",
+                          "link": "https://github.com/galaniz/formation-static",
+                          "content": "Formation Static"
+                        },
+                        {
+                          "content": " generates every page ahead of time and "
+                        },
+                        {
+                          "tag": "a",
+                          "link": "https://github.com/galaniz/formation",
+                          "content": "Formation"
+                        },
+                        {
+                          "content": " provides lightweight front-end web components and styles."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Headless CMS: "
+                    },
+                    {
+                      "content": "Contentful manages all content with no self-hosted admin to maintain, serving assets from its CDN with dynamic image resizing."
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "content": [
+                    {
+                      "tag": "strong",
+                      "content": "Edge hosting: "
+                    },
+                    {
+                      "content": "Cloudflare Workers serve the site from the edge for fast load times with serverless flexibility only where needed."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "renderType": "container",
+      "tag": "section",
+      "paddingTop": "l",
+      "paddingTopLarge": "2xl",
+      "content": [
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "h2",
+              "content": "The Outcome"
+            },
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": [
+                {
+                  "content": "A month after launch, Cloudflare Web Analytics showed page load times of around "
+                },
+                {
+                  "tag": "strong",
+                  "content": "500ms"
+                },
+                {
+                  "content": " across pages, down from 2&ndash;4 seconds pre-migration, with most visits in the green for "
+                },
+                {
+                  "tag": "strong",
+                  "content": "Largest Contentful Paint"
+                },
+                {
+                  "content": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "paddingTop": "l",
+          "paddingTopLarge": "2xl",
+          "paddingBottom": "l",
+          "paddingBottomLarge": "2xl",
+          "tag": "figure",
+          "content": [
+            {
+              "renderType": "container",
+              "maxWidth": "s",
+              "paddingTop": "m",
+              "content": [
+                {
+                  "renderType": "container",
+                  "layout": "row",
+                  "gap": "m",
+                  "gapLarge": "l",
+                  "justify": "center",
+                  "content": [
+                    {
+                      "renderType": "column",
+                      "widthSmall": "6",
+                      "content": [
+                        {
+                          "renderType": "image",
+                          "image": "olivia-korosak/post-home"
+                        }
+                      ]
+                    },
+                    {
+                      "renderType": "column",
+                      "widthSmall": "6",
+                      "content": [
+                        {
+                          "renderType": "container",
+                          "layout": "col",
+                          "gap": "m",
+                          "gapLarge": "l",
+                          "fill": true,
+                          "content": [
+                            {
+                              "renderType": "container",
+                              "layout": "row",
+                              "gap": "m",
+                              "gapLarge": "l",
+                              "content": [
+                                {
+                                  "renderType": "column",
+                                  "width": "6",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "olivia-korosak/post-project-mobile"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "renderType": "column",
+                                  "width": "6",
+                                  "content": [
+                                    {
+                                      "renderType": "image",
+                                      "image": "olivia-korosak/post-audio-player-mobile",
+                                      "border": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "renderType": "image",
+                              "image": "olivia-korosak/post-audio-player",
+                              "border": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "renderType": "container",
+              "tag": "figcaption",
+              "content": "Desktop homepage, mobile project page and mobile and desktop track pages with audio player."
+            }
+          ]
+        },
+        {
+          "renderType": "container",
+          "maxWidth": "xs",
+          "richTextStyles": true,
+          "content": [
+            {
+              "renderType": "richText",
+              "tag": "p",
+              "content": "The site is now faster and easier to maintain. New work is simpler to add and for visitors and clients to explore. At launch, from Olivia:"
+            },
+            {
+              "renderType": "richText",
+              "tag": "blockquote",
+              "content": [
+                {
+                  "tag": "p",
+                  "content": "\"Ahhh it looks amazing! I just googled myself! I cannot thank you enough, I absolutely love it!\""
+                }
+              ]
+            },
+            {
+              "renderType": "button",
+              "title": "View Olivia Korosak",
+              "richText": true,
+              "externalLink": "https://www.oliviakorosak.com/"
+            }
+          ]
         }
       ]
     }

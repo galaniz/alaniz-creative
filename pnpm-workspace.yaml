@@ -3,8 +3,5 @@ allowBuilds:
   esbuild: true
   workerd: true
 minimumReleaseAgeExclude:
-  - '@alanizcreative/formation-static@0.0.7'
-  - '@alanizcreative/formation@0.0.5'
-  - '@cloudflare/workers-types@5.20260928.1'
-  - miniflare@5.20260926.0-alpha
-  - wrangler@4.142.0
+  - '@alanizcreative/formation'
+  - '@alanizcreative/formation-static'

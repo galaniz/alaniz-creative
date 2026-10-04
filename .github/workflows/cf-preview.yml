@@ -47,7 +47,7 @@ jobs:
       - name: Build site
         run: pnpm build
         env:
-          ENVIRONMENT: staging
+          ENVIRONMENT: development
 
       # Upload the build as a version of the site worker, aliased to this pull
       # request. The version takes no production traffic, and wrangler prints
@@ -59,7 +59,7 @@ jobs:
 
           RESULT=$(pnpm exec wrangler versions upload \
             --preview-alias pr-${{ github.event.pull_request.number }} \
-            --config wrangler.json \
+            --config wrangler.jsonc \
             --env="")
 
           echo "$RESULT"

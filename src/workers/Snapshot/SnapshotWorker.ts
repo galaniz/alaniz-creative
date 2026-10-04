@@ -2,7 +2,6 @@
  * Workers - Snapshot
  */
 
-import type { SnapshotEnv } from './SnapshotTypes.js'
 import type { WorkerRequest } from '../workerTypes.js'
 import { workerProtectSetup } from '../workerSetup.js'
 import { Protect } from '../../components/Protect/Protect.js'
@@ -13,10 +12,10 @@ import { Protect } from '../../components/Protect/Protect.js'
 export default {
   /**
    * @param {WorkerRequest} request
-   * @param {SnapshotEnv} env
+   * @param {SnapshotBindings} env
    * @return {Promise<Response>}
    */
-  async fetch (request: WorkerRequest, env: SnapshotEnv): Promise<Response> {
+  async fetch (request: WorkerRequest, env: SnapshotBindings): Promise<Response> {
     const { headers, url } = request
     const robotsHeaders = {
       'X-Robots-Tag': 'noindex, nofollow, noarchive'

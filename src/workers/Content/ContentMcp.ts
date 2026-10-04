@@ -102,7 +102,7 @@ const getPagePath = (page: SchemaPage): string => {
  * @param {ContentEnv} env
  * @param {number} number
  * @param {SchemaPage} page
- * @return {string|undefined}
+ * @return {string}
  */
 // The preview workflow aliases every version of a pull request to pr-<number>,
 // so the URL is known before the build that fills it has finished
@@ -110,11 +110,7 @@ const getPreviewUrl = (
   env: ContentEnv,
   number: number,
   page: SchemaPage
-): string | undefined => {
-  if (!env.CONTENT_PREVIEW_HOST) {
-    return undefined
-  }
-
+): string => {
   return `https://pr-${number}-${env.CONTENT_PREVIEW_HOST}${getPagePath(page)}`
 }
 
@@ -344,7 +340,7 @@ const getMcpServer = (env: ContentEnv, actor: ContentProps): McpServer => {
         '',
         diff,
         '',
-        url ? `Preview, once it has built: ${url}` : '',
+        `Preview, once it has built: ${url}`,
         'The preview takes a minute or two — check_preview will say when it is ready.'
       ].filter(Boolean).join('\n'))
     } catch (error) {

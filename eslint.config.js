@@ -11,7 +11,8 @@ export default tseslint.config(
     ignores: [
       '**/node_modules/*',
       '**/lib/*',
-      '**/site/*'
+      '**/site/*',
+      '**/worker-configuration.d.ts'
     ]
   },
   {

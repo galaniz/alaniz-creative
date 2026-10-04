@@ -2,16 +2,14 @@
  * Config - Types
  */
 
-import type { Generic } from '@alanizcreative/formation-static/global/globalTypes.js'
 import { z } from 'zod'
 
 /**
  * @typedef {object} ConfigEnv
- * @extends {Generic}
  * @prop {string} [ENVIRONMENT]
  * @prop {string} [LOCAL]
  */
-export interface ConfigEnv extends Generic {
+export interface ConfigEnv {
   ENVIRONMENT?: string
   LOCAL?: string
 }

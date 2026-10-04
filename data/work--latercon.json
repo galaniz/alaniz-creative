@@ -128,7 +128,7 @@
         },
         {
           "renderType": "button",
-          "title": "View LaterCon Landing Page",
+          "title": "View LaterCon Snapshot",
           "richText": true,
           "externalLink": "https://alanizcreative.com/snapshot/latercon/"
         }
@@ -790,7 +790,7 @@
             },
             {
               "renderType": "button",
-              "title": "View LaterCon Landing Page",
+              "title": "View LaterCon Snapshot",
               "richText": true,
               "externalLink": "https://alanizcreative.com/snapshot/latercon/"
             }

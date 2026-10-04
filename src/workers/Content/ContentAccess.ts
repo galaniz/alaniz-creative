@@ -41,7 +41,7 @@ const getAccessKeys = async (env: ContentEnv): Promise<ContentAccessKeys> => {
     return JSON.parse(cached) as ContentAccessKeys
   }
 
-  // Needs global_fetch_strictly_public in wrangler.json, or this is routed
+  // Needs global_fetch_strictly_public in wrangler.jsonc, or this is routed
   // internally rather than out to the public internet and answers 403
   const res = await fetch(`https://${env.CF_ACCESS_TEAM_DOMAIN}/cdn-cgi/access/certs`)
 

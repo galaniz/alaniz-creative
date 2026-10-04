@@ -156,10 +156,6 @@ const putImage = async (
 
   const images = env.IMAGES
 
-  if (!images) {
-    throw new Error('The images binding is not configured, so uploads cannot be measured or resized.')
-  }
-
   const key = getImageKey(args.key || file.name)
 
   if (!key) {
