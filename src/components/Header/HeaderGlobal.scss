@@ -5,8 +5,6 @@
 @use "sass:map";
 @use "@alanizcreative/formation/lib/config/config" as con;
 
-/* Styles */
-
 .header {
   height: var(--ac-header-height);
   z-index: map.get(con.$z-index, "header");

@@ -4,8 +4,6 @@
 
 @use "@alanizcreative/formation/lib/utils/utils" as util;
 
-/* Styles */
-
 .hero-blob {
   top: calc(var(--ac-header-height) * -1);
   left: var(--hero-left, 60%);
