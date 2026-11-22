@@ -9,3 +9,4 @@ lib/
 .env
 esbuild.key
 esbuild.cert
+snapshot/

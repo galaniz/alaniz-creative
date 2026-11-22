@@ -1,0 +1,48 @@
+/**
+ * Effects - Fade Styles
+ */
+
+@use "@alanizcreative/formation/lib/utils/utils" as util;
+
+.e-fade-up {
+  --fd-y: #{util.fluid-size-clamp(("m", "l"), ("s", "l"))};
+}
+
+.e-fade-rotate {
+  --fd-duration: 750ms;
+  --fd-rotate: calc(3deg * var(--fd-rotate-dir, 1));
+  --fd-y: 20%;
+
+  transform-origin: var(--fd-origin, 0 0);
+}
+
+@supports (timeline-trigger-source: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .e-fade,
+    .e-fade-up,
+    .e-fade-rotate {
+      opacity: 0;
+      rotate: var(--fd-rotate, 0deg);
+      translate: 0 var(--fd-y, 0px);
+      timeline-trigger-name: --e-fade;
+      timeline-trigger-source: view();
+      timeline-trigger-activation-range: entry 50% cover 100%;
+      animation: var(--fd-duration, 600ms) e-fade var(--fd-easing, cubic-bezier(0.5, 1, 0.89, 1)) both;
+      animation-trigger: --e-fade play-forwards;
+    }
+  }
+}
+
+@keyframes e-fade {
+  0% {
+    opacity: 0;
+    rotate: var(--fd-rotate, 0deg);
+    translate: 0 var(--fd-y, 0px);
+  }
+
+  100% {
+    opacity: 1;
+    rotate: 0deg;
+    translate: 0;
+  }
+}

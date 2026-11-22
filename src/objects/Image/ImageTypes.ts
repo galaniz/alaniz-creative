@@ -4,8 +4,7 @@
 
 import type {
   RenderFunctionArgs,
-  RenderFile,
-  RenderRichText
+  RenderFile
 } from '@alanizcreative/formation-static/render/renderTypes.js'
 import type { ConfigAspectRatio, ConfigSize } from '../../config/configTypes.js'
 import type { Item } from '../../global/globalTypes.js'
@@ -78,7 +77,6 @@ export type ImageBorderRadius = z.infer<typeof imageBorderRadiusOption>
  * @prop {number} [maxWidth]
  * @prop {number} [viewportWidth=80]
  * @prop {string} [sizes]
- * @prop {RenderRichText[]} [caption]
  * @prop {boolean} [lazy=true]
  * @prop {boolean} [border=false]
  * @prop {ImageBorderRadius} [borderRadius='rounded']
@@ -95,7 +93,6 @@ export interface ImageArgs {
   maxWidth?: number
   viewportWidth?: number
   sizes?: string
-  caption?: RenderRichText[]
   lazy?: boolean
   border?: boolean
   borderRadius?: ImageBorderRadius

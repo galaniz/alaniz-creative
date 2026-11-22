@@ -7,7 +7,6 @@ import { isObjectStrict } from '@alanizcreative/formation-static/utils/object/ob
 import { isStringStrict } from '@alanizcreative/formation-static/utils/string/string.js'
 import { isArrayStrict } from '@alanizcreative/formation-static/utils/array/array.js'
 import { getImage, getImageSizes } from '@alanizcreative/formation-static/utils/image/image.js'
-import { RichText } from '@alanizcreative/formation-static/text/RichText/RichText.js'
 import {
   configBreakpointNumbers,
   configColumnFloats,
@@ -39,7 +38,6 @@ const Image = (props: ImageProps): string => {
     image,
     alt,
     aspectRatio,
-    caption,
     lazy = true,
     border = false,
     borderRadius = 'rounded',
@@ -74,6 +72,10 @@ const Image = (props: ImageProps): string => {
   }
 
   let containerClasses = `relative overflow-hidden ar-${hasAspectRatio ? aspectRatio : '1-1'}`
+
+  if (!isCard) {
+    containerClasses += ' e-fade-up'
+  }
 
   if (borderRadius === 'rounded') {
     containerClasses += ' b-radius-s b-radius-m-m isolate'
@@ -176,26 +178,6 @@ const Image = (props: ImageProps): string => {
       <div class="card-media order-first z--1 w-full">
         ${output}
       </div>
-    `
-  }
-
-  /* Caption */
-
-  const captionOutput = RichText({
-    args: {
-      tag: 'figcaption',
-      content: caption,
-      textStyle: 'text-xs',
-      classes: 'pt-m pt-l-m'
-    }
-  })
-
-  if (isStringStrict(captionOutput)) {
-    output = /* html */`
-      <figure>
-        ${output}
-        ${captionOutput}
-      </figure>
     `
   }
 

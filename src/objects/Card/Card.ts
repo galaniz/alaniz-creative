@@ -205,21 +205,23 @@ const Card = (props: CardProps): string => {
   return /* html */`
     <li class="${containerClasses}"${styles}>
       ${blobOutput}
-      <div class="relative overflow-hidden e-trans e-quad e-shift">
-        <div class="${classes}">
-          <div class="${textClasses}">
-            <${headingTag} class="${headingClasses}">
-              <a href="${link}" class="before outline-tight" data-rich>${title}</a>${lockOutput}
-            </${headingTag}>
-            ${subText}
+      <div class="${isAlternating ? 'e-fade-rotate' : 'e-fade-up'}">
+        <div class="relative overflow-clip e-trans e-quad e-shift">
+          <div class="${classes}">
+            <div class="${textClasses}">
+              <${headingTag} class="${headingClasses}">
+                <a href="${link}" class="before outline-tight" data-rich>${title}</a>${lockOutput}
+              </${headingTag}>
+              ${subText}
+            </div>
+            ${Image({
+              args: {
+                ...hero,
+                aspectRatio: '16-10'
+              },
+              parents: newParents
+            })}
           </div>
-          ${Image({
-            args: {
-              ...hero,
-              aspectRatio: '16-10'
-            },
-            parents: newParents
-          })}
         </div>
       </div>
     </li>

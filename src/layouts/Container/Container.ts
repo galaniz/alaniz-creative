@@ -236,7 +236,7 @@ const Container = (props: ContainerProps): ContainerProps => {
   }
 
   if (tag === 'figcaption') {
-    classesArr.push('container-xs pt-m pt-l-m pb-m text-s text-center')
+    classesArr.push('container-xs pt-m pt-l-m pb-m text-s text-center e-fade')
   }
 
   /* Classes */

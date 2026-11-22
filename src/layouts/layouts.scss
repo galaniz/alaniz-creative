@@ -4,7 +4,7 @@
 
 @use "./Position/Position";
 @use "@alanizcreative/formation/lib/layouts/AspectRatio/AspectRatio";
-@use "@alanizcreative/formation/lib/layouts/Overflow/Overflow";
+@use "./Overflow/Overflow";
 @use "@alanizcreative/formation/lib/layouts/Container/Container";
 @use "./Breakout/Breakout";
 @use "@alanizcreative/formation/lib/layouts/Display/Display";

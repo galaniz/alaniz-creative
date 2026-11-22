@@ -31,6 +31,12 @@ const RichTextProps: RichTextPropsFilter = (props) => {
   const classesArr: string[] = []
   const stylesArr: string[] = []
 
+  /* Fade */
+
+  if (parents?.length) {
+    classesArr.push('e-fade-up')
+  }
+
   /* Type */
 
   if (type === 'normal') {
@@ -76,7 +82,7 @@ const RichTextProps: RichTextPropsFilter = (props) => {
 
   /* Data attribute */
 
-  newArgs.dataAttr = parents?.some(parent => parent.renderType === 'container' && parent.args.richTextStyles) 
+  newArgs.dataAttr = parents?.some(parent => parent.args.richTextStyles)
 
   /* Output */
 
