@@ -62,7 +62,7 @@ const Media = (props: MediaProps): string => {
 
   return /* html */`
     <ac-media
-      class="media block ar-16-9 relative overflow-hidden b-all b-theme b-radius-s b-radius-m-m l-isolate e-shift-hover"
+      class="media block ar-16-9 relative overflow-hidden b-all b-theme b-radius-s b-radius-m-m l-isolate e-shift-hover e-fade-up"
       role="group"
       loader="${loaderId}"
       error="${errorId}"

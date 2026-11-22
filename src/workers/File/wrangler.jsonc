@@ -13,6 +13,9 @@
   ],
   "observability": {
     "enabled": true,
-    "head_sampling_rate": 0.02
+    "head_sampling_rate": 0.02,
+    "issues": {
+      "enabled": true
+    }
   }
 }

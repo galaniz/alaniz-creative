@@ -80,8 +80,10 @@ const Layout = (args: LayoutArgs): string => {
   let heroOutput = ''
 
   if (!isBlank) {
-    headerOutput = Header(slug, baseType)
-    footerOutput = Footer(slug, baseType)
+    const currentLink = getPermalink(slug)
+
+    headerOutput = Header(currentLink, baseType)
+    footerOutput = Footer(currentLink, baseType)
   }
 
   if (slug !== 'protect' && !id.startsWith('http-error')) {
@@ -238,7 +240,7 @@ const Layout = (args: LayoutArgs): string => {
       <body class="${ns} no-js flex col">
         ${spritesOutput}
         ${headerOutput}
-        <main id="main" class="${isBlank ? 'flex col justify-center grow-1' : 'main pb-3xs overflow-hidden'}">
+        <main id="main" class="${isBlank ? 'flex col justify-center grow-1' : 'main pb-3xs overflow-clip'}">
           ${heroOutput}
           ${contentOutput}
         </main>

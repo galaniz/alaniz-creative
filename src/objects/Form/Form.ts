@@ -121,7 +121,7 @@ const Form = (props: FormProps): FormProps => {
       ...args,
       id: formId,
       formTag: 'ac-form',
-      formClasses: 'form',
+      formClasses: 'form block e-fade-up',
       formAttr,
       fields: `<div id="ac-turnstile-${formId}" class="none"></div>`,
       fieldsClasses: 'form flex wrap align-end gap-m',

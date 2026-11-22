@@ -4,8 +4,6 @@
 
 @use "@alanizcreative/formation/lib/utils/utils" as util;
 
-/* Styles */
-
 .e-shift,
 .e-shift-item {
   transform: translate3d(0, var(--sh-y), 0) scale(var(--sh-scale, 1));

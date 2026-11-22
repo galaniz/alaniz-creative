@@ -3,6 +3,7 @@
  */
 
 @use "@alanizcreative/formation/lib/effects/Transition/Transition";
+@use "./Fade/Fade";
 @use "./Quad/Quad";
 @use "./Line/Line";
 @use "./Shift/Shift";

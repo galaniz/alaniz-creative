@@ -29,7 +29,6 @@ Output image.
 - **`viewportWidth`** <code>number</code> optional  
 Default: `80`  
 - **`sizes`** <code>string</code> optional  
-- **`caption`** <code>RenderRichText[]</code> optional  
 - **`lazy`** <code>boolean</code> optional  
 Default: `true`  
 - **`border`** <code>boolean</code> optional  

@@ -231,30 +231,26 @@ const Hero = (args: HeroArgs): string => {
   let textOutput = ''
 
   if (hasText) {
-    textOutput += `<p class="text-l e-line-up pt-xs pt-m-m${hasAction ? ' pb-m pb-l-m' : ''}">${text}</p>`
+    textOutput += `<p class="text-l e-line-up e-fade-up pt-xs pt-m-m${hasAction ? ' pb-m pb-l-m' : ''}">${text}</p>`
   }
 
   /* Title */
 
-  let titleClasses = ''
+  const isTitleOnly = !hasText && !hasAction && !hasImage
 
-  if (isMediaText) {
-    titleClasses = 'text-center'
+  let titleClasses = isTitleOnly ? 'e-fade' : 'e-fade-up'
+
+  if (isPage && hasAction) {
+    titleClasses += hasText ? ' pb-xs pb-m-m' : ' pb-m pb-l-m'
+  } else if (isMediaText) {
+    titleClasses += ' text-center'
 
     if (hasImage) {
       titleClasses += ' pb-m pb-l-m'
     }
   }
 
-  if (isPage && hasAction && !hasText) {
-    titleClasses = 'pb-m pb-l-m'
-  }
-
-  if (isPage && hasAction && hasText) {
-    titleClasses = 'pb-xs pb-m-m'
-  }
-
-  textOutput = `<h1${titleClasses ? ` class="${titleClasses}"` : ''}>${title}</h1>${textOutput}${actionOutput}`
+  textOutput = `<h1 class="${titleClasses}">${title}</h1>${textOutput}${actionOutput}`
 
   /* Classes */
 

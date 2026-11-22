@@ -29,7 +29,10 @@
   },
   "observability": {
     "enabled": true,
-    "head_sampling_rate": 1
+    "head_sampling_rate": 1,
+    "issues": {
+      "enabled": true
+    }
   },
   "env": {
     "dev": {
@@ -61,7 +64,10 @@
       ],
       "observability": {
         "enabled": true,
-        "head_sampling_rate": 1
+        "head_sampling_rate": 1,
+        "issues": {
+          "enabled": true
+        }
       }
     }
   }

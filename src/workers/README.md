@@ -17,12 +17,12 @@ Verify Turnstile token.
 
 ## workerProtectSetup  
 
-**<code>workerProtectSetup(env?: object): </code>**  
+**<code>workerProtectSetup(env: object): </code>**  
 
 Set up config, filters, actions and store for the password page.
 
 ### Parameters  
-- **`env`** <code>object</code> optional
+- **`env`** <code>object</code> required
 
 ## workerProtectFilter  
 

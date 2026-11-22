@@ -4,8 +4,6 @@
 
 @use "@alanizcreative/formation/lib/utils/utils" as util;
 
-/* Styles */
-
 %e-line {
   --ln-prop: text-decoration-color, text-underline-offset;
   --ln-color: var(--ln-from, currentcolor);

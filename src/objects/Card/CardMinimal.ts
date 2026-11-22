@@ -41,7 +41,7 @@ const CardMinimal = (internalLink: Item, text?: string): string => {
   /* Output */
 
   return /* html */`
-    <li>
+    <li class="e-fade-up">
       <h2 class="inline-block relative">
         <a href="${link}" class="before outline-tight" data-rich>${title}</a>
       </h2>

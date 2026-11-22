@@ -99,7 +99,7 @@ const Single = (content: string, contentType: string, itemData: Item): string =>
     </div>
     <section class="container-s button-sharp">
       <div class="pb-m pb-l-m">
-        <h2 class="heading-m">Explore more work</h2>
+        <h2 class="heading-m e-fade-up">Explore more work</h2>
       </div>
       ${relatedOutput}
       ${archiveOutput}

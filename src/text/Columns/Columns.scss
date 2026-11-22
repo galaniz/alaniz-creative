@@ -4,8 +4,6 @@
 
 @use "@alanizcreative/formation/lib/utils/utils" as util;
 
-/* Styles */
-
 .text-col-2 {
   @include util.breakpoint-min("s") {
     column-count: 2;

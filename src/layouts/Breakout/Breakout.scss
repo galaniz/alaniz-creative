@@ -4,8 +4,6 @@
 
 @use "@alanizcreative/formation/lib/utils/utils" as util;
 
-/* Styles */
-
 .breakout {
   @include util.breakpoint-min-max("0", "container-2xl-content") {
     padding-left: 0;

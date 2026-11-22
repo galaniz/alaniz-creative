@@ -4,8 +4,6 @@
 
 @use "@alanizcreative/formation/lib/utils/utils" as util;
 
-/* Styles */
-
 .card-media {
   max-width: var(--cd-media-max, none);
   padding: var(--cd-media-padding, 0);
@@ -30,6 +28,10 @@
   --cd-text-left-2: 0;
   --cd-text-right-1: 0;
   --cd-text-right-2: auto;
+  --cd-origin-1: 100% 0;
+  --cd-rotate-1: -1;
+  --cd-origin-2: 0 0;
+  --cd-rotate-2: 1;
   --cd-left: 0;
   --cd-right: 0;
   --cd-top: var(--ac-xl);
@@ -38,10 +40,14 @@
 
   &:nth-child(odd) {
     --cd-text-left: auto;
+    --fd-origin: 100% 0;
+    --fd-rotate-dir: -1;
   }
 
   &:nth-child(even) {
     --cd-text-right: auto;
+    --fd-origin: 0 0;
+    --fd-rotate-dir: 1;
   }
 
   &:nth-child(3n-1) {
@@ -55,11 +61,15 @@
   &:nth-child(6n-1) {
     --cd-text-left: var(--cd-text-left-1);
     --cd-text-right: var(--cd-text-right-1);
+    --fd-origin: var(--cd-origin-1);
+    --fd-rotate-dir: var(--cd-rotate-1);
   }
 
   &:nth-child(6n+6) {
     --cd-text-left: var(--cd-text-left-2);
     --cd-text-right: var(--cd-text-right-2);
+    --fd-origin: var(--cd-origin-2);
+    --fd-rotate-dir: var(--cd-rotate-2);
   }
 
   &:nth-child(3n-1),
@@ -91,6 +101,10 @@
     --cd-text-left-2: auto;
     --cd-text-right-1: auto;
     --cd-text-right-2: 0;
+    --cd-origin-1: 0 0;
+    --cd-rotate-1: 1;
+    --cd-origin-2: 100% 0;
+    --cd-rotate-2: -1;
     --cd-top: 0;
     --cd-bottom: 0;
     --cd-width: 50%;
@@ -117,7 +131,12 @@
   }
 }
 
-.card-blob { 
+.card-alternate:nth-child(odd) {
+  --fd-origin: 100% 0;
+  --fd-rotate-dir: -1;
+}
+
+.card-blob {
   transform: scaleX(var(--cd-blob-scale, 1));
   left: var(--cd-blob-left, auto);
   right: var(--cd-blob-right, 66.667%);
