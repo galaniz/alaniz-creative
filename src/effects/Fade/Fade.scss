@@ -10,7 +10,7 @@
 
 .e-fade-rotate {
   --fd-duration: 750ms;
-  --fd-rotate: calc(3deg * var(--fd-rotate-dir, 1));
+  --fd-rotate: calc(2deg * var(--fd-rotate-dir, 1));
   --fd-y: 20%;
 
   transform-origin: var(--fd-origin, 0 0);
