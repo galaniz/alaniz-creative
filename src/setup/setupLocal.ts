@@ -8,6 +8,8 @@ import { resolve } from 'node:path'
 import { watch } from 'node:fs'
 import { print } from '@alanizcreative/formation-static/utils/print/print.js'
 import { getLocalData } from '@alanizcreative/formation-static/local/localData.js'
+import { setStoreItem } from '@alanizcreative/formation-static/store/store.js'
+import { getImageMeta } from '../store/storeImages.js'
 import { validateContent } from '../schema/schemaValidate.js'
 import { config } from '../config/config.js'
 import { localDataArgs } from './setupData.js'
@@ -55,6 +57,8 @@ const writeLocalData = async (): Promise<boolean> => {
  * @return {Promise<FSWatcher>}
  */
 const setupLocal = async (): Promise<FSWatcher> => {
+  setStoreItem('imageMeta', await getImageMeta())
+
   await writeLocalData()
 
   let dataTimer: ReturnType<typeof setTimeout> | undefined
