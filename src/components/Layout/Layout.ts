@@ -192,23 +192,6 @@ const Layout = (args: LayoutArgs): string => {
     noscriptOutput += noscript
   })
 
-  /* Check if local */
-
-  const isLocal = configVars.local
-
-  /* Hot reload */
-
-  let reloadScript = ''
-
-  if (isLocal) {
-    reloadScript = /* html */`
-      <script>
-        const esbuild = new EventSource('/esbuild')
-        esbuild.addEventListener('change', () => { location.reload() })
-      </script>
-    `
-  }
-
   /* Reset */
 
   seoSchema.clear()
@@ -248,7 +231,6 @@ const Layout = (args: LayoutArgs): string => {
         ${scriptMeta}
         ${templatesOutput}
         ${scriptsOutput}
-        ${reloadScript}
       </body>
     </html>
   `

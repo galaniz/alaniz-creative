@@ -86,7 +86,6 @@ Base, content and render type options.
 **Type:** <code>object</code>
 
 #### Properties  
-- **`local`** <code>boolean</code> required  
 - **`svg`** <code>Map&lt;string, <a href="#configvarssvg">ConfigVarsSvg</a>&gt;</code> required  
 - **`template`** <code>Map&lt;string, string&gt;</code> required  
 - **`style`** <code>Set&lt;string&gt;</code> required  

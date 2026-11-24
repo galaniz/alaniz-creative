@@ -6,7 +6,10 @@ import type { BuildOptions } from 'esbuild'
 import dotenv from 'dotenv'
 import esbuild from 'esbuild'
 import { glob } from 'node:fs/promises'
+import { spawn } from 'node:child_process'
 import { esbuildHtml } from './esbuildHtml.js'
+import { esbuildScss } from './esbuildScss.js'
+import { setupLocal } from '../setup/setupLocal.js'
 dotenv.config()
 
 /**
@@ -18,7 +21,7 @@ dotenv.config()
 const argExists = (a: string): boolean => process.argv.includes(`--${a}`)
 
 /**
- * Watch state.
+ * Watch styles, client scripts and data and run local worker.
  *
  * @type {boolean}
  */
@@ -69,7 +72,6 @@ const siteArgs: BuildOptions = {
   platform: 'node',
   plugins: [
     esbuildHtml({
-      watch: isWatch,
       outDir: 'site',
       copy: siteCopyAssets
     })
@@ -81,4 +83,58 @@ const siteArgs: BuildOptions = {
  */
 if (isSite) {
   await esbuild.build(siteArgs)
+}
+
+/**
+ * Watch styles, client scripts and data and serve pages with local worker.
+ */
+if (isWatch) {
+  const localDataWatcher = await setupLocal()
+
+  const ctx = await esbuild.context({
+    entryPoints: [
+      'src/**/*Client.ts',
+      'src/**/*.scss'
+    ],
+    outbase: 'src',
+    entryNames: '[ext]/[dir]/[name]',
+    outdir: 'site',
+    bundle: true,
+    splitting: true,
+    format: 'esm',
+    target: 'es2022',
+    logLevel: 'warning',
+    external: [
+      '*.woff',
+      '*.woff2'
+    ],
+    resolveExtensions: [
+      '.ts',
+      '.js',
+      '.scss'
+    ],
+    plugins: [
+      esbuildScss()
+    ]
+  })
+
+  await ctx.rebuild()
+  await ctx.watch()
+
+  /* Render pages from local data with live reload */
+
+  const wrangler = spawn('npx', [
+    'wrangler',
+    'dev',
+    '--config',
+    'wrangler.jsonc',
+    '--env',
+    'local',
+    '--live-reload'
+  ], { stdio: 'inherit' })
+
+  wrangler.on('exit', (code) => {
+    localDataWatcher.close()
+    void ctx.dispose().then(() => process.exit(code ?? 0))
+  })
 }

@@ -6,10 +6,7 @@
     "build:client": "npx tsc --project tsconfig.client.json",
     "build:node": "npx tsc --project tsconfig.node.json",
     "build": "pnpm build:client && pnpm build:node && node lib/esbuild/esbuild.js --site",
-    "watch:client": "npx tsc --watch --preserveWatchOutput --project tsconfig.client.json",
-    "watch:node": "npx tsc --watch --preserveWatchOutput --project tsconfig.node.json",
-    "watch:esbuild": "node scripts/watch.js",
-    "start": "npm-run-all --parallel watch:node watch:client watch:esbuild",
+    "start": "node lib/esbuild/esbuild.js --watch",
     "typecheck:client": "npx tsc --noEmit --project tsconfig.client.json",
     "typecheck:node": "npx tsc --noEmit --project tsconfig.node.json",
     "typecheck:workers": "npx tsc --noEmit --project src/workers/tsconfig.json",
@@ -27,7 +24,7 @@
     "wrangler:site": "npx wrangler dev --config wrangler.jsonc",
     "wrangler:snapshot": "npx wrangler dev --remote --config src/workers/Snapshot/wrangler.jsonc",
     "wrangler:staging": "npx wrangler dev --config wrangler.jsonc --env staging",
-    "clean": "rm -rf node_modules/.cache/tsbuildinfo.* || true && rm -rf .cache || true && rm -rf site || true && rm -rf lib || true"
+    "clean": "rm -rf node_modules/.cache/tsbuildinfo.* || true && rm -rf .wrangler src/workers/*/.wrangler || true && rm -rf site || true && rm -rf lib || true"
   },
   "engines": {
     "node": ">=24"
@@ -62,8 +59,6 @@
     "typescript-eslint": "8.70.1"
   },
   "optionalDependencies": {
-    "nodemon": "3.1.14",
-    "npm-run-all": "^4.1.5",
     "wrangler": "^4.142.0"
   },
   "browserslist": [

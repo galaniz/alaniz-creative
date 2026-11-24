@@ -7,11 +7,9 @@ import { z } from 'zod'
 /**
  * @typedef {object} ConfigEnv
  * @prop {string} [ENVIRONMENT]
- * @prop {string} [LOCAL]
  */
 export interface ConfigEnv {
   ENVIRONMENT?: string
-  LOCAL?: string
 }
 
 /**
@@ -52,7 +50,6 @@ export interface ConfigVarsJs {
 
 /**
  * @typedef {object} ConfigVars
- * @prop {boolean} local
  * @prop {Map<string, ConfigVarsSvg>} svg
  * @prop {Map<string, string>} template
  * @prop {Set<string>} style
@@ -62,7 +59,6 @@ export interface ConfigVarsJs {
  * @prop {string} formId
  */
 export interface ConfigVars {
-  local: boolean
   svg: Map<string, ConfigVarsSvg>
   template: Map<string, string>
   style: Set<string>

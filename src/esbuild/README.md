@@ -2,7 +2,7 @@
 
 ## isWatch  
 
-Watch state.  
+Watch styles, client scripts and data and run local worker.  
 
 **Type:** <code>boolean</code>
 

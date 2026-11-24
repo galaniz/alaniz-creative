@@ -55,6 +55,23 @@
           "enabled": true
         }
       }
+    },
+    "local": {
+      "main": "./src/workers/Local/LocalWorker.ts",
+      "compatibility_flags": [
+        "nodejs_compat"
+      ],
+      "preview_urls": false,
+      "minify": false,
+      "vars": {
+        "ENVIRONMENT": "development"
+      },
+      "kv_namespaces": [
+        {
+          "binding": "SITE_KV",
+          "id": "7581134931d6459f9ce3ed39d465825a"
+        }
+      ]
     }
   }
 }

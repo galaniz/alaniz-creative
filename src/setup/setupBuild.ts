@@ -23,9 +23,9 @@ import { scripts, styles } from '@alanizcreative/formation-static/scripts/script
 import { getAllLocalData } from '@alanizcreative/formation-static/local/localData.js'
 import { setStore } from '@alanizcreative/formation-static/store/store.js'
 import { validateContent } from '../schema/schemaValidate.js'
+import { localDataArgs, setPostsData } from './setupData.js'
 import { storeArgs } from '../store/store.js'
 import { getImageMeta } from '../store/storeImages.js'
-import { postsData } from '../objects/Posts/Posts.js'
 import { renderFunctions } from '../render/render.js'
 import { esbuildScss } from '../esbuild/esbuildScss.js'
 import { config, configVars } from '../config/config.js'
@@ -37,17 +37,16 @@ import { HttpError } from '../components/HttpError/HttpError.js'
 /**
  * Set up config, filters, actions and fetch/render in build context.
  *
- * @param {boolean} build
  * @return {Promise<RenderReturn[]>}
  */
-const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
+const setupBuild = async (): Promise<RenderReturn[]> => {
   /* Config env */
 
   setConfigFilter(process.env)
 
   /* Build */
 
-  config.env.build = build
+  config.env.build = true
 
   /* Root */
 
@@ -217,27 +216,9 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
 
   /* Render output */
 
-  const data = await getAllLocalData({
-    refProps: [
-      'internalLink',
-      'term',
-      'taxonomy',
-      'related',
-      'category'
-    ],
-    unsetProps: [
-      'content',
-      'related'
-    ]
-  })
+  const data = await getAllLocalData(localDataArgs)
 
-  config.wholeTypes.forEach(type => {
-    if (type === 'page') {
-      return
-    }
-
-    postsData[type] = data?.content[type] || []
-  })
+  setPostsData(data)
 
   const output = await render({ allData: data })
 
@@ -247,10 +228,8 @@ const setupBuild = async (build: boolean): Promise<RenderReturn[]> => {
 
   /* Redirect and sitemap files */
 
-  if (build) {
-    await createRedirectsFile()
-    await createSeoSitemapFiles()
-  }
+  await createRedirectsFile()
+  await createSeoSitemapFiles()
 
   /* Output */
 

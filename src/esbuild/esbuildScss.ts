@@ -26,7 +26,8 @@ const esbuildScss = (): Plugin => {
         let styles = ''
 
         const sassContents = await readFile(path, 'utf8')
-        const sassRes = sass.compileString(`@forward "config/config";${sassContents}`, {
+        const sassConfig = path.endsWith('config/config.scss') ? '' : '@forward "config/config";' // Avoid config forwarding itself
+        const sassRes = sass.compileString(`${sassConfig}${sassContents}`, {
           loadPaths: [
             'node_modules',
             './src'

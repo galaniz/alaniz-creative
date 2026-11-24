@@ -11,12 +11,10 @@ import { print } from '@alanizcreative/formation-static/utils/print/print.js'
 /**
  * @typedef {object} EsbuildHtmlArgs
  * @prop {string} [outDir]
- * @prop {boolean} [watch=false]
  * @prop {Object<string, string>} [copy]
  */
 interface EsbuildHtmlArgs {
   outDir: string
-  watch?: boolean
   copy?: Record<string, string>
 }
 
@@ -29,7 +27,6 @@ interface EsbuildHtmlArgs {
 const esbuildHtml = (args: EsbuildHtmlArgs): Plugin => {
   const {
     outDir,
-    watch = false,
     copy
   } = args
 
@@ -40,8 +37,8 @@ const esbuildHtml = (args: EsbuildHtmlArgs): Plugin => {
         /* Create files */
 
         const { minify } = await import('html-minifier-terser')
-        const { setupBuild } = await import('../setup/setup.js')
-        const res: RenderReturn[] = await setupBuild(!watch)
+        const { setupBuild } = await import('../setup/setupBuild.js')
+        const res: RenderReturn[] = await setupBuild()
         const paths: string[] = []
 
         for (const item of res) {
@@ -51,16 +48,12 @@ const esbuildHtml = (args: EsbuildHtmlArgs): Plugin => {
             continue
           }
 
-          let outputFile = output
-
-          if (!watch) {
-            outputFile = await minify(output, {
-              useShortDoctype: true,
-              removeComments: true,
-              collapseWhitespace: true,
-              minifyJS: true
-            })
-          }
+          const outputFile = await minify(output, {
+            useShortDoctype: true,
+            removeComments: true,
+            collapseWhitespace: true,
+            minifyJS: true
+          })
 
           let dir = resolve(outDir, `./${slug}`)
           let path = `${dir}/index.html`
@@ -78,7 +71,7 @@ const esbuildHtml = (args: EsbuildHtmlArgs): Plugin => {
 
         /* Copy assets */
 
-        if (!watch && copy) {
+        if (copy) {
           for (const [inPath, outPath] of Object.entries(copy)) {
             await cp(inPath, outPath, { recursive: true })
           }
