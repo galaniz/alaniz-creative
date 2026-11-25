@@ -136,8 +136,8 @@ pnpm start
   
 - <a href="/src/workers/Contact/README.md">Contact</a>  
 - <a href="/src/workers/Content/README.md">Content</a>  
+- <a href="/src/workers/Dev/README.md">Dev</a>  
 - <a href="/src/workers/File/README.md">File</a>  
-- <a href="/src/workers/Local/README.md">Local</a>  
 - <a href="/src/workers/Password/README.md">Password</a>  
 - <a href="/src/workers/Site/README.md">Site</a>  
 - <a href="/src/workers/Snapshot/README.md">Snapshot</a>  

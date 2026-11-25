@@ -9,7 +9,6 @@ import { glob } from 'node:fs/promises'
 import { spawn } from 'node:child_process'
 import { esbuildHtml } from './esbuildHtml.js'
 import { esbuildScss } from './esbuildScss.js'
-import { setupLocal } from '../setup/setupLocal.js'
 dotenv.config()
 
 /**
@@ -21,7 +20,7 @@ dotenv.config()
 const argExists = (a: string): boolean => process.argv.includes(`--${a}`)
 
 /**
- * Watch styles, client scripts and data and run local worker.
+ * Watch styles and client scripts and run dev worker.
  *
  * @type {boolean}
  */
@@ -86,11 +85,9 @@ if (isSite) {
 }
 
 /**
- * Watch styles, client scripts and data and serve pages with local worker.
+ * Watch styles and client scripts and serve pages with dev worker.
  */
 if (isWatch) {
-  const localDataWatcher = await setupLocal()
-
   const ctx = await esbuild.context({
     entryPoints: [
       'src/**/*Client.ts',
@@ -129,12 +126,11 @@ if (isWatch) {
     '--config',
     'wrangler.jsonc',
     '--env',
-    'local',
+    'dev',
     '--live-reload'
   ], { stdio: 'inherit' })
 
   wrangler.on('exit', (code) => {
-    localDataWatcher.close()
     void ctx.dispose().then(() => process.exit(code ?? 0))
   })
 }

@@ -20,25 +20,15 @@ Write JSON file, creating its directory if needed.
 
 <code>Promise&lt;void&gt;</code>
 
-## writeLocalData  
+## setupDev  
 
-**<code>writeLocalData(): Promise&lt;boolean&gt;</code>**  
+**<code>setupDev(): Promise&lt;void&gt;</code>**  
 
-Validate data files and merge and normalize them into one file the local worker imports.
-
-### Returns  
-
-<code>Promise&lt;boolean&gt;</code>
-
-## setupLocal  
-
-**<code>setupLocal(): Promise&lt;FSWatcher&gt;</code>**  
-
-Write data for the local worker and rewrite it when data files change.
+Validate data files and write them with image metadata as one file the dev worker imports.
 
 ### Returns  
 
-<code>Promise&lt;FSWatcher&gt;</code>
+<code>Promise&lt;void&gt;</code>
 
 ## setPostsData  
 

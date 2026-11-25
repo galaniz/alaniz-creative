@@ -56,8 +56,12 @@
         }
       }
     },
-    "local": {
-      "main": "./src/workers/Local/LocalWorker.ts",
+    "dev": {
+      "main": "./src/workers/Dev/DevWorker.ts",
+      "build": {
+        "command": "node lib/setup/setupDev.js",
+        "watch_dir": "./data"
+      },
       "compatibility_flags": [
         "nodejs_compat"
       ],

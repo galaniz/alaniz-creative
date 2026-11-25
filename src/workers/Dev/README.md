@@ -1,18 +1,18 @@
-# Local
+# Dev
 
-## LocalWorker  
+## DevWorker  
 
 Render pages on request for local development.
 
 ### Constructor  
 
-**<code>new LocalWorker(): LocalWorker</code>**
+**<code>new DevWorker(): DevWorker</code>**
 
 ## getData  
 
 **<code>getData(): Promise&lt;RenderAllData&gt;</code>**  
 
-Get all data from data.json and store it for render.
+Data from dev JSON stored for render.
 
 ### Returns  
 
