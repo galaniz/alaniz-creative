@@ -5,14 +5,14 @@
 import type { Store } from '@alanizcreative/formation-static/store/storeTypes.js'
 
 /**
- * Where the content worker serves image metadata, overridable per build.
+ * Where the content worker serves image metadata, overridden by IMAGE_META_URL.
  *
  * @type {string}
  */
 const imageMetaUrl: string = 'https://content.alanizcreative.com/images.json'
 
 /**
- * Read the metadata of every image the site can reference.
+ * Fetch the metadata of every image the site can reference.
  *
  * @return {Promise<StoreImageMeta>}
  * @throws {Error}

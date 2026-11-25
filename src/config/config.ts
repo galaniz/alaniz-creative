@@ -12,7 +12,6 @@ import { setConfig } from '@alanizcreative/formation-static/config/config.js'
  * @type {ConfigVars}
  */
 const configVars: ConfigVars = {
-  local: false,
   svg: new Map(),
   template: new Map(),
   style: new Set(),
@@ -71,7 +70,6 @@ const config: Config = setConfig({
     config.env.prod = env.ENVIRONMENT === 'production'
     config.env.devUrl = ''
     config.env.prodUrl = 'https://alanizcreative.com'
-    configVars.local = env.LOCAL === 'true'
 
     return config
   }

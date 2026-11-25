@@ -55,6 +55,30 @@
           "enabled": true
         }
       }
+    },
+    "dev": {
+      "main": "./src/workers/Dev/DevWorker.ts",
+      "build": {
+        "command": "node lib/setup/setupDev.js",
+        "watch_dir": "./data"
+      },
+      "compatibility_flags": [
+        "nodejs_compat"
+      ],
+      "preview_urls": false,
+      "minify": false,
+      "vars": {
+        "ENVIRONMENT": "development"
+      },
+      "secrets": {
+        "required": []
+      },
+      "kv_namespaces": [
+        {
+          "binding": "SITE_KV",
+          "id": "7581134931d6459f9ce3ed39d465825a"
+        }
+      ]
     }
   }
 }

@@ -26,7 +26,7 @@
       translate: 0 var(--fd-y, 0px);
       timeline-trigger-name: --e-fade;
       timeline-trigger-source: view();
-      timeline-trigger-activation-range: entry 50% cover 100%;
+      timeline-trigger-activation-range: entry 30% cover 100%;
       animation: var(--fd-duration, 600ms) e-fade var(--fd-easing, cubic-bezier(0.5, 1, 0.89, 1)) both;
       animation-trigger: --e-fade play-forwards;
     }

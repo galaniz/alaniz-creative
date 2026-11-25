@@ -2,7 +2,7 @@
 
 ## imageMetaUrl  
 
-Where the content worker serves image metadata, overridable per build.  
+Where the content worker serves image metadata, overridden by IMAGE_META_URL.  
 
 **Type:** <code>string</code>
 
